@@ -60,9 +60,12 @@ const App: React.FC = () => {
               <button 
                 key={item}
                 onClick={() => handleNavClick(item.toLowerCase())} 
-                className={`hover:text-white transition-colors ${currentPage === item.toLowerCase() ? 'text-white border-b border-white/50' : ''}`}
+                className={`hover:text-white transition-colors relative ${currentPage === item.toLowerCase() ? 'text-white' : ''}`}
               >
                 {item}
+                {currentPage === item.toLowerCase() && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-[1px] bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
+                )}
               </button>
             ))}
           </div>
@@ -75,14 +78,14 @@ const App: React.FC = () => {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl flex items-center justify-center">
+        <div className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl flex items-center justify-center animate-slide-in-right">
            <div className="flex flex-col gap-8 text-center text-2xl font-light tracking-widest uppercase">
             {navItems.map((item, index) => (
               <button 
                 key={item}
                 onClick={() => handleNavClick(item.toLowerCase())}
-                className="opacity-0 animate-fade-in-up hover:text-purple-400 transition-colors"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className={`opacity-0 animate-fade-in-up hover:text-purple-400 transition-colors ${currentPage === item.toLowerCase() ? 'text-white font-bold' : 'text-white/60'}`}
+                style={{ animationDelay: `${index * 100 + 200}ms` }}
               >
                 {item}
               </button>

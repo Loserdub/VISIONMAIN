@@ -4,7 +4,7 @@ import FuzzyText from './FuzzyText';
 
 const Home: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center items-center px-4 pt-20">
+    <section className="relative min-h-screen flex flex-col justify-center items-center px-4 -mt-20">
       <div className="text-center z-10 space-y-4 max-w-5xl animate-fade-in-up flex flex-col items-center">
         {/* Animated Title */}
         <div className="flex flex-col items-center leading-none">
@@ -20,7 +20,7 @@ const Home: React.FC = () => {
           >
             HYBRID
           </FuzzyText>
-          <div className="mt-2 sm:mt-4">
+          <div className="mt-4 sm:mt-8">
             <FuzzyText 
               fontSize="clamp(2.5rem, 6.5vw, 7rem)"
               fontWeight={800}
@@ -44,10 +44,6 @@ const Home: React.FC = () => {
       {/* SoundCloud Embed Widget Area */}
       <div className="w-full z-20 animate-fade-in-up mt-8" style={{ animationDelay: '0.2s' }}>
          <SoundCloudPlayer />
-      </div>
-
-      <div className="absolute bottom-10 animate-bounce">
-        <p className="text-[10px] uppercase tracking-[0.3em] text-white/40">Scroll to Explore</p>
       </div>
     </section>
   );

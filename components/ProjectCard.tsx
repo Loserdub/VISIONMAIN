@@ -12,7 +12,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
     <div 
       className="group relative w-full aspect-square overflow-hidden bg-zinc-900 border border-white/5 transition-all duration-500 hover:border-white/20"
       style={{
-        animationDelay: `${index * 150}ms` 
+        animationDelay: `${index * 150}ms`,
+        contentVisibility: 'auto' // Improves rendering performance for off-screen content
       }}
     >
       {/* Background Image with "Oil" effect on hover */}
@@ -20,8 +21,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         <img 
           src={project.imageUrl} 
           alt={project.name}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover opacity-60 grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110 group-hover:opacity-80"
-          style={{ filter: 'url(#oil-paint)' }} // Applying the global SVG filter for texture
+          style={{ filter: 'url(#oil-paint)' }} // Kept strictly for the visual effect requested, but note: heavy on GPU
         />
         <div className={`absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-700 mix-blend-overlay ${project.color}`} />
       </div>

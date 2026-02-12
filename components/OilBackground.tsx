@@ -1,36 +1,34 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 const OilBackground: React.FC = () => {
-  return (
-    <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
-      {/* Base Dark Layer */}
-      <div className="absolute inset-0 bg-[#050505]" />
+  // Use a data URI for noise to avoid expensive real-time SVG filter compositing on the entire screen
+  const noiseBg = useMemo(() => {
+    return `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E")`;
+  }, []);
 
-      {/* Abstract Colorful Blobs mimicking oil paints */}
+  return (
+    <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-[#050505]">
+      {/* Abstract Colorful Blobs - Optimized gradients */}
       <div 
-        className="absolute top-[-20%] left-[-20%] w-[140%] h-[140%] opacity-60 oil-bg-animate"
+        className="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] opacity-60 oil-bg-animate"
         style={{
           background: `
-            radial-gradient(circle at 50% 50%, rgba(76, 29, 149, 0.4), transparent 60%),
-            radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.3), transparent 50%),
-            radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.2), transparent 50%),
+            radial-gradient(circle at 50% 50%, rgba(76, 29, 149, 0.4), transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.3), transparent 40%),
+            radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.2), transparent 40%),
             linear-gradient(45deg, #1a1a2e, #16213e, #0f3460)
           `,
-          filter: 'blur(80px) contrast(120%) saturate(150%)',
-          transform: 'translateZ(0)' // Hardware accel
+          filter: 'blur(60px)', // Reduced blur radius for performance
+          transform: 'translateZ(0)', // Force hardware acceleration
+          willChange: 'transform' // Hint to browser
         }}
       />
       
-      {/* Texture Overlay (Noise) */}
-      <div className="absolute inset-0 opacity-[0.07] mix-blend-overlay" style={{ filter: 'url(#noise)' }}></div>
-      
-      {/* SVG Oil Filter Application Layer on a random image for extra texture */}
-      <img 
-        src="https://picsum.photos/seed/abstract_art_99/1920/1080" 
-        alt="Texture" 
-        className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-soft-light"
-        style={{ filter: 'url(#oil-paint)' }}
-      />
+      {/* Lightweight Noise Overlay */}
+      <div 
+        className="absolute inset-0 opacity-[0.07] mix-blend-overlay" 
+        style={{ backgroundImage: noiseBg }}
+      ></div>
     </div>
   );
 };

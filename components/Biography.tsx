@@ -45,6 +45,8 @@ const Biography: React.FC = () => {
                 <img 
                   src="https://picsum.photos/seed/justinray_producer/800/1000" 
                   alt="Justin Ray" 
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover opacity-80 transition-all duration-1000 group-hover:scale-105 group-hover:contrast-125 grayscale group-hover:grayscale-0"
                   style={{ filter: 'url(#oil-paint)' }}
                 />
