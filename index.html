@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hybrid Production Artist</title>
+    <title>Hybrid Production | Justin Ray</title>
+    <meta name="description" content="Explore Hybrid Production by Justin Ray. A multi-project auditory experience blending raw human emotion with algorithmic complexity. Featuring loserdub, VISION, and le vide." />
+    <meta name="keywords" content="Hybrid Production, Justin Ray, AI Music, Electronic Music, Dubstep, Ambient, Generative Audio, loserdub, VISION" />
+    <meta name="author" content="Justin Ray" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,12 +58,78 @@
         animation: slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
 
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      .animate-fade-in {
+        animation: fadeIn 0.3s ease-out forwards;
+      }
+
       /* Utility for text strokes */
       .text-stroke {
         -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
         color: transparent;
       }
     </style>
+
+    <!-- JSON-LD Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Justin Ray",
+      "url": "https://jray.me",
+      "jobTitle": "Hybrid Music Creator",
+      "description": "A pioneer in Hybrid Production, blending generative AI with traditional audio engineering.",
+      "alternateName": [
+        "loserdub",
+        "VISION",
+        "Le Vide",
+        "Flawed Future"
+      ],
+      "worksFor": [
+        {
+          "@type": "Organization",
+          "name": "Suno",
+          "roleName": "Growth Specialist"
+        }
+      ],
+      "knowsAbout": [
+        "Hybrid Production",
+        "AI Music",
+        "Suno",
+        "Logic Pro",
+        "Ableton Live",
+        "iZotope RX11"
+      ],
+      "memberOf": [
+        {
+          "@type": "MusicGroup",
+          "name": "loserdub"
+        },
+        {
+          "@type": "MusicGroup",
+          "name": "VISION"
+        },
+        {
+          "@type": "MusicGroup",
+          "name": "Le Vide"
+        },
+        {
+          "@type": "MusicGroup",
+          "name": "Flawed Future"
+        }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/justinray-placeholder",
+        "https://twitter.com/justinray-placeholder",
+        "https://www.scribd.com/user/justinray-placeholder"
+      ]
+    }
+    </script>
+    
   <script type="importmap">
 {
   "imports": {
@@ -71,6 +140,7 @@
   }
 }
 </script>
+<link rel="stylesheet" href="/index.css">
 </head>
   <body class="bg-black text-white antialiased overflow-x-hidden">
     <div id="root"></div>
@@ -89,6 +159,6 @@
         </filter>
       </defs>
     </svg>
-    <script type="module" src="/index.tsx"></script>
-  </body>
+  <script type="module" src="/index.tsx"></script>
+</body>
 </html>

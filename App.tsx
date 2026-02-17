@@ -3,8 +3,9 @@ import OilBackground from './components/OilBackground';
 import Biography from './components/Biography';
 import Home from './components/Home';
 import ProjectsList from './components/ProjectsList';
-import Manifesto from './components/Manifesto';
 import Contact from './components/Contact';
+import WhatIsHybrid from './components/WhatIsHybrid';
+import Services from './components/Services';
 import { Menu, X, Disc } from 'lucide-react';
 
 const App: React.FC = () => {
@@ -30,14 +31,15 @@ const App: React.FC = () => {
     setIsMenuOpen(false);
   };
 
-  const navItems = ['Home', 'Projects', 'Bio', 'Manifesto', 'Contact'];
+  const navItems = ['Home', 'Projects', 'Bio', 'What Is Hybrid', 'Services', 'Contact'];
 
   const renderContent = () => {
     switch(currentPage) {
       case 'home': return <Home />;
       case 'projects': return <ProjectsList />;
       case 'bio': return <Biography />;
-      case 'manifesto': return <Manifesto />;
+      case 'what is hybrid': return <WhatIsHybrid onBack={() => handleNavClick('home')} />;
+      case 'services': return <Services />;
       case 'contact': return <Contact />;
       default: return <Home />;
     }
@@ -55,7 +57,7 @@ const App: React.FC = () => {
             <span className="text-lg font-bold tracking-widest uppercase">JRAY.ME</span>
           </div>
           
-          <div className="hidden md:flex gap-8 text-sm font-medium tracking-widest uppercase text-white/70">
+          <div className="hidden md:flex gap-8 text-xs font-medium tracking-widest uppercase text-white/70">
             {navItems.map(item => (
               <button 
                 key={item}
@@ -78,14 +80,14 @@ const App: React.FC = () => {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl flex items-center justify-center animate-slide-in-right">
+        <div className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl flex items-center justify-center animate-fade-in">
            <div className="flex flex-col gap-8 text-center text-2xl font-light tracking-widest uppercase">
             {navItems.map((item, index) => (
               <button 
                 key={item}
                 onClick={() => handleNavClick(item.toLowerCase())}
                 className={`opacity-0 animate-fade-in-up hover:text-purple-400 transition-colors ${currentPage === item.toLowerCase() ? 'text-white font-bold' : 'text-white/60'}`}
-                style={{ animationDelay: `${index * 100 + 200}ms` }}
+                style={{ animationDelay: `${index * 150 + 100}ms` }}
               >
                 {item}
               </button>

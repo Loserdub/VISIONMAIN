@@ -1,20 +1,37 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Sonic Canvas - Hybrid Artist Portfolio
 
-# Run and deploy your AI Studio app
+A visually immersive, interactive landing page for Justin Ray, a hybrid music production artist. This project features an abstract "oil-on-canvas" aesthetic, generative visuals, and a custom audio-visual experience.
 
-This contains everything you need to run your app locally.
+## Project Overview
 
-View your app in AI Studio: https://ai.studio/apps/drive/1ZNQo1mXEhYPmXoVqm3SZkM3s57hx4zKk
+This application serves as the central hub for the "Hybrid Production" identity, showcasing multiple music projects (loserdub, VISION, le vide, etc.) and experimental creative apps.
 
-## Run Locally
+## Tech Stack
 
-**Prerequisites:**  Node.js
+- **Framework**: React 19
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **Typography**: Space Grotesk & Syne (via Google Fonts)
 
+## Key Features
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- **Oil Paint Aesthetic**: Custom SVG filters (`<filter id="oil-paint">`) and CSS keyframe animations create a fluid, organic background effect.
+- **Fuzzy Text Engine**: A custom Canvas-based component (`FuzzyText.tsx`) that renders text with analog distortion, fuzz, and interactive hover states.
+- **Interactive UI**: Custom cursor tooltips, glassmorphism effects, and micro-interactions using Tailwind.
+- **SoundCloud Integration**: Embedded player for the latest "VISION" tracks.
+- **Transmission System**: A contact form that constructs pre-formatted emails for collaboration inquiries.
+
+## Projects
+
+1.  **loserdub**: Indie/Electronic - Emotional Dissonance Meets Optimistic Nostalgia.
+2.  **VISION**: Hybrid/Funko Pop - Cinematic soundscapes.
+3.  **le vide**: French/AltPop - Minimalist textures.
+4.  **flawed future**: EDM/Hardstyle - Glitch mechanics.
+5.  **disarray**: Alternative/Indie - Controlled chaos.
+
+## Development
+
+This project is structured to run in a browser-based ES module environment or a standard Vite setup.
+
+**Entry Point**: `index.html` -> `index.tsx` -> `App.tsx`
