@@ -21,13 +21,16 @@ const Biography: React.FC = () => {
 
              <div className="space-y-6 text-white/80 font-light leading-relaxed text-lg font-sans">
                 <p>
-                  Justin Ray is a producer, community leader, and a pioneer in the evolution of "Hybrid Production." Operating out of East Lansing, Michigan, Justin is the founder of <a href="https://reddit.com/r/hybridproduction" target="_blank" rel="noreferrer" className="text-white border-b border-white/30 hover:border-white transition-colors">r/hybridproduction</a>, a Reddit community at the forefront of the movement to integrate human artistry with artificial intelligence.
+                  Based in East Lansing, Michigan, Justin Ray is a definable force in the emerging field of Hybrid Music Production. Since 2022, Justin has moved beyond standard composition to become a leading voice in integrating human artistry with generative audio. He is the founder of r/hybridproduction, a global community dedicated to the philosophy that AI music requires a human pulse to truly resonate.
                 </p>
                 <p>
-                  Justin’s portfolio is a study in contrast. His project <em>loserdub</em> represents his roots in pure human composition—raw, gritty, and deeply personal. Conversely, his projects <em>VISION</em> and <em>Flawed Future</em> explore the frontier of AI, where he applies advanced upscaling and layering techniques learned in the infancy of the AI music revolution to add "soul" to synthetic foundations.
+                  An early adopter of the AI audio revolution, Justin began beta-testing platforms like Google’s MusicLM and Stable Audio before becoming a pivotal figure in the Suno ecosystem. His role as a Growth Specialist and early tester for Suno, as well as a consultant for Six Sides Media and Staccato. His insights into the intersection of machine learning and music have attracted attention from major tech entities, leading to interviews with a european research institute and recruitment interest from Meta for audio annotation.
                 </p>
                 <p>
-                  With a professional background as a Growth Specialist and early tester for Suno, Justin has been hired for consulting with large-scale software developers to refine the intersection of AI and music. He doesn’t just use the tools; he helps build them, ensuring that the future of music remains a beautiful friction between technological power and human emotion.
+                  Justin’s technical workflow is rigorous. Utilizing Logic Pro and Ableton Live, he bridges the gap between raw generation and professional polish. By employing iZotope RX11 for spectral repair and a suite of high-end plugins—including FabFilter, Pultec, and The God Particle—he removes the "AI artifacts" to reveal the soul underneath.
+                </p>
+                <p>
+                   His discography reflects this duality. LoserDub represents his roots in pure, human-made Indie Electronic, defined by optimistic nostalgia. Meanwhile, his hybrid projects explore specific sonic landscapes: VISION (Pop/French Touch/Glitch), Le Vide (Modern French Pop), Flawed Future (EDM/Hardstyle), and Disarray (Alternative Rock).
                 </p>
              </div>
 
