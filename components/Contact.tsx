@@ -29,10 +29,10 @@ const Contact: React.FC = () => {
     // Frequency -> Return Email (Included in body)
     // Transmission -> Body
     
-    const subject = `Transmission from ${name}`;
+    const subject = name;
     const body = `${message}\n\n---\nReturn Frequency: ${email}`;
     
-    window.location.href = `mailto:loserdub@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:jray517@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
@@ -112,7 +112,7 @@ const Contact: React.FC = () => {
 
                 {/* Email */}
                 <a 
-                  href="mailto:loserdub@gmail.com" 
+                  href="mailto:jray517@gmail.com" 
                   aria-label="Send Email"
                   className="p-4 rounded-none border border-white/10 hover:border-white hover:bg-white hover:text-black transition-all duration-300 group"
                   onMouseEnter={(e) => handleMouseEnter(e, "Email Me")}

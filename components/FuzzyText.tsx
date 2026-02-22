@@ -20,6 +20,7 @@ interface FuzzyTextProps {
   gradient?: string[] | null;
   letterSpacing?: number;
   className?: string;
+  mobileOptimization?: boolean;
 }
 
 const FuzzyText: React.FC<FuzzyTextProps> = ({
@@ -41,7 +42,8 @@ const FuzzyText: React.FC<FuzzyTextProps> = ({
   glitchDuration = 200,
   gradient = null,
   letterSpacing = 0,
-  className = ''
+  className = '',
+  mobileOptimization = true
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -55,8 +57,19 @@ const FuzzyText: React.FC<FuzzyTextProps> = ({
     if (!canvas) return;
 
     const init = async () => {
-      const ctx = canvas.getContext('2d');
+      const ctx = canvas.getContext('2d', { alpha: true });
       if (!ctx) return;
+
+      // --- OPTIMIZATION SETTINGS ---
+      const isMobile = mobileOptimization && window.innerWidth < 768;
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      
+      // Cap FPS on mobile to 30 to save battery, or 0 if reduced motion is requested
+      const effectiveFps = prefersReducedMotion ? 0 : (isMobile ? Math.min(fps, 30) : fps);
+      
+      // Draw thicker slices on mobile to reduce draw calls (e.g., 3px vs 1px)
+      const sliceSize = isMobile ? 3 : 1;
+      // -----------------------------
 
       const computedFontFamily =
         fontFamily === 'inherit' ? window.getComputedStyle(canvas).fontFamily || 'sans-serif' : fontFamily;
@@ -156,10 +169,10 @@ const FuzzyText: React.FC<FuzzyTextProps> = ({
       let currentIntensity = baseIntensity;
       let targetIntensity = baseIntensity;
       let lastFrameTime = 0;
-      const frameDuration = 1000 / fps;
+      const frameDuration = 1000 / (effectiveFps || 60);
 
       const startGlitchLoop = () => {
-        if (!glitchMode || isCancelled) return;
+        if (!glitchMode || isCancelled || effectiveFps === 0) return;
         glitchTimeoutId = setTimeout(() => {
           if (isCancelled) return;
           isGlitching = true;
@@ -209,40 +222,60 @@ const FuzzyText: React.FC<FuzzyTextProps> = ({
           currentIntensity = targetIntensity;
         }
 
+        // Optimized Drawing Loops
         if (direction === 'horizontal') {
-          for (let j = 0; j < tightHeight; j++) {
+          for (let j = 0; j < tightHeight; j += sliceSize) {
+            const h = Math.min(sliceSize, tightHeight - j);
             const dx = Math.floor(currentIntensity * (Math.random() - 0.5) * fuzzRange);
-            ctx.drawImage(offscreen, 0, j, offscreenWidth, 1, dx, j, offscreenWidth, 1);
+            ctx.drawImage(offscreen, 0, j, offscreenWidth, h, dx, j, offscreenWidth, h);
           }
         } else if (direction === 'vertical') {
-          for (let i = 0; i < offscreenWidth; i++) {
+          for (let i = 0; i < offscreenWidth; i += sliceSize) {
+            const w = Math.min(sliceSize, offscreenWidth - i);
             const dy = Math.floor(currentIntensity * (Math.random() - 0.5) * fuzzRange);
-            ctx.drawImage(offscreen, i, 0, 1, tightHeight, i, dy, 1, tightHeight);
+            ctx.drawImage(offscreen, i, 0, w, tightHeight, i, dy, w, tightHeight);
           }
         } else {
-          for (let j = 0; j < tightHeight; j++) {
-            const dx = Math.floor(currentIntensity * (Math.random() - 0.5) * fuzzRange);
-            ctx.drawImage(offscreen, 0, j, offscreenWidth, 1, dx, j, offscreenWidth, 1);
-          }
-          const tempData = ctx.getImageData(0, 0, offscreenWidth + fuzzRange, tightHeight + fuzzRange);
-          ctx.clearRect(
-            -fuzzRange - 20,
-            -fuzzRange - 10,
-            offscreenWidth + 2 * (fuzzRange + 20),
-            tightHeight + 2 * (fuzzRange + 10)
-          );
-          ctx.putImageData(tempData, 0, 0);
-          for (let i = 0; i < offscreenWidth + fuzzRange; i++) {
-            const dy = Math.floor(currentIntensity * (Math.random() - 0.5) * fuzzRange * 0.5);
-            const colData = ctx.getImageData(i, 0, 1, tightHeight + fuzzRange);
-            ctx.clearRect(i, -fuzzRange, 1, tightHeight + 2 * fuzzRange);
-            ctx.putImageData(colData, i, dy);
-          }
+           // 'both' direction logic
+           if (isMobile) {
+             // OPTIMIZATION: On mobile, fallback to horizontal only to avoid the very expensive getImageData/putImageData
+             // which can cause significant stuttering.
+             for (let j = 0; j < tightHeight; j += sliceSize) {
+                const h = Math.min(sliceSize, tightHeight - j);
+                const dx = Math.floor(currentIntensity * (Math.random() - 0.5) * fuzzRange);
+                ctx.drawImage(offscreen, 0, j, offscreenWidth, h, dx, j, offscreenWidth, h);
+             }
+           } else {
+             // Desktop: Full bi-directional distortion (Expensive)
+             for (let j = 0; j < tightHeight; j++) {
+               const dx = Math.floor(currentIntensity * (Math.random() - 0.5) * fuzzRange);
+               ctx.drawImage(offscreen, 0, j, offscreenWidth, 1, dx, j, offscreenWidth, 1);
+             }
+             const tempData = ctx.getImageData(0, 0, offscreenWidth + fuzzRange, tightHeight + fuzzRange);
+             ctx.clearRect(
+               -fuzzRange - 20,
+               -fuzzRange - 10,
+               offscreenWidth + 2 * (fuzzRange + 20),
+               tightHeight + 2 * (fuzzRange + 10)
+             );
+             ctx.putImageData(tempData, 0, 0);
+             for (let i = 0; i < offscreenWidth + fuzzRange; i++) {
+               const dy = Math.floor(currentIntensity * (Math.random() - 0.5) * fuzzRange * 0.5);
+               const colData = ctx.getImageData(i, 0, 1, tightHeight + fuzzRange);
+               ctx.clearRect(i, -fuzzRange, 1, tightHeight + 2 * fuzzRange);
+               ctx.putImageData(colData, i, dy);
+             }
+           }
         }
         animationFrameId = window.requestAnimationFrame(run);
       };
 
-      animationFrameId = window.requestAnimationFrame(run);
+      if (effectiveFps > 0) {
+        animationFrameId = window.requestAnimationFrame(run);
+      } else {
+        // Static render for reduced motion
+        ctx.drawImage(offscreen, 0, 0);
+      }
 
       const isInsideTextArea = (x: number, y: number) => {
         return x >= interactiveLeft && x <= interactiveRight && y >= interactiveTop && y <= interactiveBottom;
@@ -271,7 +304,8 @@ const FuzzyText: React.FC<FuzzyTextProps> = ({
 
       const handleTouchMove = (e: TouchEvent) => {
         if (!enableHover) return;
-        e.preventDefault();
+        // Don't prevent default on touch move usually to allow scrolling, unless intended.
+        // e.preventDefault(); 
         const rect = canvas.getBoundingClientRect();
         const touch = e.touches[0];
         const x = touch.clientX - rect.left;
@@ -286,7 +320,7 @@ const FuzzyText: React.FC<FuzzyTextProps> = ({
       if (enableHover) {
         canvas.addEventListener('mousemove', handleMouseMove);
         canvas.addEventListener('mouseleave', handleMouseLeave);
-        canvas.addEventListener('touchmove', handleTouchMove, { passive: false });
+        canvas.addEventListener('touchmove', handleTouchMove, { passive: true }); // passive true for scroll performance
         canvas.addEventListener('touchend', handleTouchEnd);
       }
 
@@ -343,7 +377,8 @@ const FuzzyText: React.FC<FuzzyTextProps> = ({
     glitchInterval,
     glitchDuration,
     gradient,
-    letterSpacing
+    letterSpacing,
+    mobileOptimization
   ]);
 
   return <canvas ref={canvasRef} className={className} />;

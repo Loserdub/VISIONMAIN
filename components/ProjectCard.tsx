@@ -23,8 +23,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
           alt={project.name}
           loading="lazy"
           decoding="async"
-          className="w-full h-full object-cover opacity-60 grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110 group-hover:opacity-80"
-          style={{ filter: 'url(#oil-paint)' }} // Kept strictly for the visual effect requested, but note: heavy on GPU
+          className="w-full h-full object-cover opacity-60 grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110 group-hover:opacity-80 will-change-[transform]"
+          style={{ filter: 'url(#oil-paint)' }} // Note: heavy on GPU, but optimized in index.html (reduced octaves)
         />
         <div className={`absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-700 mix-blend-overlay ${project.color}`} />
       </div>
