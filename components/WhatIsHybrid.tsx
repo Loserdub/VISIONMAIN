@@ -48,7 +48,7 @@ const WhatIsHybrid: React.FC<WhatIsHybridProps> = ({ onBack }) => {
             <h3 className="text-xl font-display font-bold text-white mb-2 uppercase tracking-wider">Method #01</h3>
             <h4 className="text-xs font-mono text-white/50 mb-4 uppercase tracking-widest border-b border-white/10 pb-2 inline-block">The Curator</h4>
             <p className="text-white/60 text-sm leading-relaxed">
-                Selecting the perfect seed. Navigating the latent space to find the "ghost in the machine."
+                Putting prompts together in the optimal order, using the best descriptors, structuring prompts to get intended output.
             </p>
           </div>
         </div>
@@ -63,7 +63,7 @@ const WhatIsHybrid: React.FC<WhatIsHybridProps> = ({ onBack }) => {
             <h3 className="text-xl font-display font-bold text-white mb-2 uppercase tracking-wider">Method #02</h3>
             <h4 className="text-xs font-mono text-white/50 mb-4 uppercase tracking-widest border-b border-white/10 pb-2 inline-block">The Architect</h4>
             <p className="text-white/60 text-sm leading-relaxed">
-                Structuring chaos. Using arrangement and composition to tame generative output into song.
+                Giving the model the skeleton of the idea, and allowing it to refine an idea.
             </p>
           </div>
         </div>

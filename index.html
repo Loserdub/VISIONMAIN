@@ -7,6 +7,10 @@
     <meta name="description" content="Explore Hybrid Production by Justin Ray. A multi-project auditory experience blending raw human emotion with algorithmic complexity. Featuring loserdub, VISION, and le vide." />
     <meta name="keywords" content="Hybrid Production, Justin Ray, AI Music, Electronic Music, Dubstep, Ambient, Generative Audio, loserdub, VISION" />
     <meta name="author" content="Justin Ray" />
+    
+    <!-- Favicon: White Waveform on Chip -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='10' y='10' width='80' height='80' rx='15' fill='none' stroke='%23ffffff' stroke-width='8'/%3E%3Cpath d='M20 50 H30 L40 20 L60 80 L70 50 H80' fill='none' stroke='%23ffffff' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -145,17 +149,21 @@
   <body class="bg-black text-white antialiased overflow-x-hidden">
     <div id="root"></div>
     
-    <!-- Global SVG Filters for Effects -->
+    <!-- Global SVG Filters for Effects - OPTIMIZED -->
+    <!-- Reduced octaves in feTurbulence significantly improves rendering performance on low-end devices -->
     <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <defs>
         <filter id="oil-paint">
-          <feTurbulence type="turbulence" baseFrequency="0.005" numOctaves="5" result="turbulence"/>
-          <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="30" xChannelSelector="R" yChannelSelector="G"/>
-          <feGaussianBlur stdDeviation="0.5" />
-          <feColorMatrix type="saturate" values="1.5"/>
+          <!-- Reduced octaves from 5 to 2 for performance -->
+          <feTurbulence type="turbulence" baseFrequency="0.006" numOctaves="2" result="turbulence"/>
+          <!-- Adjusted scale slightly to compensate for lower detail -->
+          <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="25" xChannelSelector="R" yChannelSelector="G"/>
+          <!-- Removed feGaussianBlur to save a pass; turbulence provides enough distortion -->
+          <feColorMatrix type="saturate" values="1.3"/>
         </filter>
         <filter id="noise">
-           <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/>
+           <!-- Reduced octaves from 3 to 1 for background noise -->
+           <feTurbulence type="fractalNoise" baseFrequency="0.80" numOctaves="1" stitchTiles="stitch"/>
         </filter>
       </defs>
     </svg>

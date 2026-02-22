@@ -2,7 +2,7 @@ import React from 'react';
 
 const Biography: React.FC = () => {
   return (
-    <section id="bio" className="py-24 px-4 sm:px-8 relative z-10 overflow-hidden">
+    <section className="py-24 px-4 sm:px-8 relative z-10 overflow-hidden animate-fade-in-up">
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
           
@@ -50,7 +50,7 @@ const Biography: React.FC = () => {
                   alt="Justin Ray" 
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-cover opacity-80 transition-all duration-1000 group-hover:scale-105 group-hover:contrast-125 grayscale group-hover:grayscale-0"
+                  className="w-full h-full object-cover opacity-80 transition-all duration-1000 group-hover:scale-105 group-hover:contrast-125 grayscale group-hover:grayscale-0 will-change-[transform]"
                   style={{ filter: 'url(#oil-paint)' }}
                 />
                 

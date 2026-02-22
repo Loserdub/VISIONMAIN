@@ -1,47 +1,54 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, Suspense, lazy } from 'react';
 import OilBackground from './components/OilBackground';
-import Biography from './components/Biography';
-import Home from './components/Home';
-import ProjectsList from './components/ProjectsList';
-import Contact from './components/Contact';
-import WhatIsHybrid from './components/WhatIsHybrid';
-import Services from './components/Services';
-import { Menu, X, Disc } from 'lucide-react';
+import { Menu, X, Disc, Loader2 } from 'lucide-react';
+
+// Lazy load components for performance optimization
+const Home = lazy(() => import('./components/Home'));
+const MusicList = lazy(() => import('./components/MusicList'));
+const ProjectsList = lazy(() => import('./components/ProjectsList'));
+const Biography = lazy(() => import('./components/Biography'));
+const WhatIsHybrid = lazy(() => import('./components/WhatIsHybrid'));
+const Services = lazy(() => import('./components/Services'));
+const Contact = lazy(() => import('./components/Contact'));
 
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [currentPage, setCurrentPage] = useState('home');
+  const [activeTab, setActiveTab] = useState('home');
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const navItems = [
+    { label: 'Home', id: 'home' },
+    { label: 'Music', id: 'music' },
+    { label: 'Projects', id: 'projects' },
+    { label: 'Bio', id: 'bio' },
+    { label: 'What Is Hybrid', id: 'hybrid' },
+    { label: 'Services', id: 'services' },
+    { label: 'Contact', id: 'contact' },
+  ];
 
-  // Scroll to top when page changes
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [currentPage]);
-
-  const handleNavClick = (page: string) => {
-    setCurrentPage(page);
+  const handleNavClick = (id: string) => {
+    setActiveTab(id);
     setIsMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const navItems = ['Home', 'Projects', 'Bio', 'What Is Hybrid', 'Services', 'Contact'];
-
   const renderContent = () => {
-    switch(currentPage) {
-      case 'home': return <Home />;
-      case 'projects': return <ProjectsList />;
-      case 'bio': return <Biography />;
-      case 'what is hybrid': return <WhatIsHybrid onBack={() => handleNavClick('home')} />;
-      case 'services': return <Services />;
-      case 'contact': return <Contact />;
-      default: return <Home />;
+    switch (activeTab) {
+      case 'home':
+        return <Home />;
+      case 'music':
+        return <MusicList />;
+      case 'projects':
+        return <ProjectsList />;
+      case 'bio':
+        return <Biography />;
+      case 'hybrid':
+        return <WhatIsHybrid onBack={() => handleNavClick('home')} />;
+      case 'services':
+        return <Services onContactClick={() => handleNavClick('contact')} />;
+      case 'contact':
+        return <Contact />;
+      default:
+        return <Home />;
     }
   };
 
@@ -50,22 +57,22 @@ const App: React.FC = () => {
       <OilBackground />
 
       {/* Navigation */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-md py-4' : 'bg-transparent py-6'}`}>
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md py-4 border-b border-white/5">
         <div className="container mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => handleNavClick('home')}>
-            <Disc className={`animate-spin-slow ${scrolled ? 'text-white' : 'text-white/80'}`} size={24} />
+            <Disc className="animate-spin-slow text-white" size={24} />
             <span className="text-lg font-bold tracking-widest uppercase">JRAY.ME</span>
           </div>
           
           <div className="hidden md:flex gap-8 text-xs font-medium tracking-widest uppercase text-white/70">
             {navItems.map(item => (
               <button 
-                key={item}
-                onClick={() => handleNavClick(item.toLowerCase())} 
-                className={`hover:text-white transition-colors relative ${currentPage === item.toLowerCase() ? 'text-white' : ''}`}
+                key={item.id}
+                onClick={() => handleNavClick(item.id)} 
+                className={`hover:text-white transition-colors relative ${activeTab === item.id ? 'text-white' : ''}`}
               >
-                {item}
-                {currentPage === item.toLowerCase() && (
+                {item.label}
+                {activeTab === item.id && (
                   <span className="absolute -bottom-1 left-0 right-0 h-[1px] bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
                 )}
               </button>
@@ -84,12 +91,12 @@ const App: React.FC = () => {
            <div className="flex flex-col gap-8 text-center text-2xl font-light tracking-widest uppercase">
             {navItems.map((item, index) => (
               <button 
-                key={item}
-                onClick={() => handleNavClick(item.toLowerCase())}
-                className={`opacity-0 animate-fade-in-up hover:text-purple-400 transition-colors ${currentPage === item.toLowerCase() ? 'text-white font-bold' : 'text-white/60'}`}
+                key={item.id}
+                onClick={() => handleNavClick(item.id)}
+                className={`opacity-0 animate-fade-in-up hover:text-purple-400 transition-colors ${activeTab === item.id ? 'text-white font-bold' : 'text-white/60'}`}
                 style={{ animationDelay: `${index * 150 + 100}ms` }}
               >
-                {item}
+                {item.label}
               </button>
             ))}
            </div>
@@ -97,8 +104,14 @@ const App: React.FC = () => {
       )}
 
       {/* Main Content Area */}
-      <main className="flex-grow pt-20">
-        {renderContent()}
+      <main className="flex-grow w-full pt-24 min-h-screen flex flex-col">
+        <Suspense fallback={
+          <div className="flex-grow flex items-center justify-center">
+            <Loader2 className="animate-spin text-white/20" size={32} />
+          </div>
+        }>
+          {renderContent()}
+        </Suspense>
       </main>
 
     </div>
