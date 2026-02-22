@@ -73,7 +73,7 @@ const Contact: React.FC = () => {
                   <Instagram size={20} />
                 </a>
 
-                {/* TikTok (Custom SVG as it may not be in all Lucide versions) */}
+                {/* TikTok */}
                 <a 
                   href="https://www.tiktok.com/@im_the_vision" 
                   target="_blank" 
