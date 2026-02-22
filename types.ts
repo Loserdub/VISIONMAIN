@@ -5,6 +5,7 @@ export interface Project {
   tags: string[];
   imageUrl: string;
   color: string;
+  spotifyUrl?: string;
 }
 
 export interface SocialLink {

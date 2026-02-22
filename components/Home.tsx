@@ -3,8 +3,21 @@ import SoundCloudPlayer from './SoundCloudPlayer';
 import FuzzyText from './FuzzyText';
 
 const Home: React.FC = () => {
+  const scrollToHybrid = () => {
+    const element = document.getElementById('hybrid');
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
   return (
-    <section className="relative min-h-screen flex flex-col items-center px-4 py-32 sm:pt-40">
+    <div className="relative flex flex-col items-center px-4 py-32 sm:pt-40">
       {/* SEO: Hidden H1 for crawlers as the visual title is canvas-based */}
       <h1 className="sr-only">Hybrid Production | Justin Ray</h1>
 
@@ -40,7 +53,7 @@ const Home: React.FC = () => {
         </div>
 
         <p className="text-lg sm:text-2xl font-light text-white/60 tracking-[0.2em] uppercase max-w-2xl mx-auto mt-4">
-          A Multi-Project Auditory Experience
+          A Multi-Project Odyssey Of A Human In The Loop
         </p>
       </div>
 
@@ -60,7 +73,10 @@ const Home: React.FC = () => {
 
       {/* NEW SECTION: What is Hybrid Production? */}
       <div className="w-full max-w-5xl mx-auto z-20 animate-fade-in-up mt-24 px-4" style={{ animationDelay: '0.3s' }}>
-        <div className="relative overflow-hidden rounded-sm border border-white/10 bg-zinc-900/40 backdrop-blur-md p-8 md:p-12 hover:bg-zinc-900/60 transition-colors duration-500 group">
+        <button 
+            onClick={scrollToHybrid}
+            className="w-full text-left relative overflow-hidden rounded-sm border border-white/10 bg-zinc-900/40 backdrop-blur-md p-8 md:p-12 hover:bg-zinc-900/60 transition-colors duration-500 group cursor-pointer focus:outline-none focus:ring-1 focus:ring-purple-500"
+        >
             <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-purple-500 to-transparent"></div>
             
             {/* Background Glow */}
@@ -85,7 +101,7 @@ const Home: React.FC = () => {
                     </p>
                 </div>
             </div>
-        </div>
+        </button>
       </div>
 
       {/* Social Icons */}
@@ -145,7 +161,7 @@ const Home: React.FC = () => {
         </a>
       </div>
       
-    </section>
+    </div>
   );
 };
 

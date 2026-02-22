@@ -11,13 +11,13 @@ const Services: React.FC<ServicesProps> = ({ onContactClick }) => {
       icon: <Sliders size={32} />,
       title: "Hybrid Mixing",
       description: "Blending analog warmth with digital precision. I treat generative stems as raw material, applying spectral repair and dynamic processing to achieve industry-standard loudness and clarity.",
-      price: "Starting at $150/track"
+      price: "Starting at $50/track"
     },
     {
       icon: <Headphones size={32} />,
       title: "Audio Review",
       description: "Detailed feedback on your productions. Whether human-composed or AI-generated, get actionable advice on arrangement, sound design, and mix balance.",
-      price: "$50 / Session"
+      price: "Inquire for Pricing"
     },
     {
       icon: <Lightbulb size={32} />,

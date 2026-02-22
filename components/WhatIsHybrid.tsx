@@ -1,13 +1,9 @@
 import React from 'react';
-import { ArrowLeft, Cpu, Fingerprint, Waves } from 'lucide-react';
+import { Cpu, Fingerprint, Waves } from 'lucide-react';
 
-interface WhatIsHybridProps {
-  onBack: () => void;
-}
-
-const WhatIsHybrid: React.FC<WhatIsHybridProps> = ({ onBack }) => {
+const WhatIsHybrid: React.FC = () => {
   return (
-    <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up max-w-7xl mx-auto">
+    <div className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up max-w-7xl mx-auto">
       {/* Header */}
       <div className="mb-16 text-center space-y-6">
         <h2 className="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-tighter leading-tight">
@@ -83,18 +79,7 @@ const WhatIsHybrid: React.FC<WhatIsHybridProps> = ({ onBack }) => {
           </div>
         </div>
       </div>
-
-      {/* Back Button */}
-      <div className="flex justify-center">
-        <button
-          onClick={onBack}
-          className="group flex items-center gap-3 px-8 py-4 border border-white/20 hover:bg-white hover:text-black hover:border-white transition-all duration-300 rounded-sm uppercase tracking-widest text-xs font-bold"
-        >
-          <ArrowLeft size={16} className="transition-transform group-hover:-translate-x-1" />
-          Return to Signal
-        </button>
-      </div>
-    </section>
+    </div>
   );
 };
 
