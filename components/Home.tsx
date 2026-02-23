@@ -148,7 +148,7 @@ const Home: React.FC = () => {
 
         {/* LANDR (Custom Icon representing Network/Audio) */}
         <a 
-          href="https://app.landr.com/network/users/vision-9e58" 
+          href="https://network.landr.com/users/vision-hybrid" 
           target="_blank" 
           rel="noopener noreferrer" 
           aria-label="LANDR Network"
