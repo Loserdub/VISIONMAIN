@@ -7,7 +7,7 @@ const PROJECTS: Project[] = [
     id: 'loserdub',
     name: 'loserdub',
     description: 'Emotional Dissonance Meets Optimistic Nostalgia. A raw exploration of melody through the lens of imperfection.',
-    tags: ['#Indie', '#Electronic', '#LoFi'],
+    tags: ['#Indie', '#Electronic', '#Human'],
     imageUrl: 'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=800', 
     color: 'bg-red-500',
     spotifyUrl: 'https://open.spotify.com/artist/3VZelnnW9OR0DyR2qRn4Oq'
@@ -15,8 +15,8 @@ const PROJECTS: Project[] = [
   {
     id: 'vision',
     name: 'VISION',
-    description: 'Cinematic soundscapes for a future that hasn\'t happened yet. Polished, synthetic, and deeply immersive.',
-    tags: ['#Hybrid', '#Cinematic', '#FutureBass'],
+    description: 'Cinematic soundscapes And Hazy Funk.',
+    tags: ['#Hybrid', '#Cinematic', '#Funk'],
     imageUrl: './vision.png', 
     color: 'bg-cyan-500',
     spotifyUrl: 'https://open.spotify.com/artist/6GGZwLOLxVxYGOcMry3NDi'
@@ -24,8 +24,8 @@ const PROJECTS: Project[] = [
   {
     id: 'levide',
     name: 'le vide',
-    description: 'The Void. Minimalist textures and negative space. Music that breathes in the silence between notes.',
-    tags: ['#French', '#AltPop', '#Minimalism'],
+    description: 'The Void. Music that breathes in the silence between notes, in French.',
+    tags: ['#French', '#AltPop', '#Electronic'],
     imageUrl: 'https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&q=80&w=800', 
     color: 'bg-white',
     spotifyUrl: 'https://open.spotify.com/artist/42TmrCeIumkPRyTNOPP78t'
@@ -42,8 +42,8 @@ const PROJECTS: Project[] = [
   {
     id: 'disarray',
     name: 'disarray',
-    description: 'Controlled chaos. High BPM, breakcore influences, and the beauty of structural collapse.',
-    tags: ['#Alternative', '#Indie', '#Breakcore'],
+    description: 'Controlled chaos. Alternative Rock with its Own Style.',
+    tags: ['#Alternative', '#Rock', '#Indie'],
     imageUrl: 'https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&q=80&w=800', 
     color: 'bg-yellow-500',
     spotifyUrl: 'https://open.spotify.com/artist/6TlAxGL1Hm4FRWfTxprlMi'
