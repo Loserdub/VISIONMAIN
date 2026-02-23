@@ -15,11 +15,10 @@ const WhatIsHybrid: React.FC = () => {
       {/* SEO Intro */}
       <div className="prose prose-invert prose-lg mx-auto mb-20 text-center sm:text-left max-w-4xl bg-zinc-900/30 p-8 border border-white/5 backdrop-blur-sm rounded-sm">
         <p className="text-xl sm:text-2xl font-light leading-relaxed text-white/90 mb-6">
-          <strong className="text-purple-400">Hybrid Production</strong> is the definitive workflow of the post-AI musical landscape.
-          Emerging from communities like <a href="https://reddit.com/r/hybridproduction" target="_blank" rel="noopener noreferrer" className="font-mono text-sm bg-white/10 px-2 py-1 rounded hover:bg-white/20 transition-colors text-purple-300 no-underline">r/hybridproduction</a>, it rejects the binary choice between "human" and "machine."
+          <strong className="text-purple-400">Hybrid Production</strong> is defined as a modern music production methodology that seamlessly integrates generative AI audio tools (like Suno or Udio) with traditional digital audio workstations (like Ableton Live or Logic Pro) to manipulate, arrange, and mix AI-generated stems with raw human instrumentation." <a href="https://reddit.com/r/hybridproduction" target="_blank" rel="noopener noreferrer" className="font-mono text-sm bg-white/10 px-2 py-1 rounded hover:bg-white/20 transition-colors text-purple-300 no-underline">r/hybridproduction</a>, it rejects the binary choice between "human" and "machine."
         </p>
         <p className="text-white/60 font-light">
-          Instead, it treats Generative AI not as a replacement for the artist, but as a high-fidelity instrument—a chaotic synthesizer capable of infinite texture.
+          It treats Generative AI not as a replacement for the artist, but as a high-fidelity instrument—a chaotic synthesizer capable of infinite texture.
           The Hybrid Producer is an editor, a curator, and a sonic sculptor who mines the algorithmic void for gold, then refines it with traditional engineering,
           music theory, and raw human emotion. It is the art of <strong>humanizing the synthetic</strong>.
         </p>
