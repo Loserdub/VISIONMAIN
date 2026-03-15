@@ -126,6 +126,68 @@ const ProjectsList: React.FC = () => {
                         </a>
                     </div>
                 </div>
+
+                {/* FractalAudio Card */}
+                <div className="group relative aspect-video bg-zinc-900 border border-white/5 hover:border-white/20 transition-all p-8 flex flex-col justify-center items-center text-center overflow-hidden">
+                    {/* Background Image */}
+                    <div className="absolute inset-0 z-0">
+                        <img 
+                            src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=800&auto=format&fit=crop" 
+                            alt="FractalAudio Background" 
+                            className="w-full h-full object-cover opacity-30 grayscale transition-all duration-700 group-hover:opacity-50 group-hover:scale-110 group-hover:grayscale-0"
+                        />
+                        <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors duration-500"></div>
+                    </div>
+                    
+                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                    
+                    <div className="relative z-10">
+                        <h3 className="text-xl font-display font-bold text-white mb-2">FractalAudio</h3>
+                        <p className="text-xs font-mono text-white/50 mb-4 max-w-[80%] mx-auto">Audio Processing &amp; Effects</p>
+                        <a 
+                           href="https://loserdub.github.io/FractalAudio/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           className="inline-block px-6 py-2 border border-white/10 hover:border-white hover:bg-white hover:text-black text-[10px] tracking-widest uppercase text-white/60 hover:text-black transition-all duration-300"
+                           onMouseEnter={(e) => handleMouseEnter(e, "FractalAudio Project")}
+                           onMouseMove={handleMouseMove}
+                           onMouseLeave={handleMouseLeave}
+                        >
+                           Launch
+                        </a>
+                    </div>
+                </div>
+
+                {/* IMAGESIZER Card */}
+                <div className="group relative aspect-video bg-zinc-900 border border-white/5 hover:border-white/20 transition-all p-8 flex flex-col justify-center items-center text-center overflow-hidden">
+                    {/* Background Image */}
+                    <div className="absolute inset-0 z-0">
+                        <img 
+                            src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=800&auto=format&fit=crop" 
+                            alt="IMAGESIZER Background" 
+                            className="w-full h-full object-cover opacity-30 grayscale transition-all duration-700 group-hover:opacity-50 group-hover:scale-110 group-hover:grayscale-0"
+                        />
+                        <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors duration-500"></div>
+                    </div>
+                    
+                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-rose-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                    
+                    <div className="relative z-10">
+                        <h3 className="text-xl font-display font-bold text-white mb-2">IMAGESIZER</h3>
+                        <p className="text-xs font-mono text-white/50 mb-4 max-w-[80%] mx-auto">Image Resizing and Processing</p>
+                        <a 
+                           href="https://loserdub.github.io/IMAGESIZER"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           className="inline-block px-6 py-2 border border-white/10 hover:border-white hover:bg-white hover:text-black text-[10px] tracking-widest uppercase text-white/60 hover:text-black transition-all duration-300"
+                           onMouseEnter={(e) => handleMouseEnter(e, "IMAGESIZER Utility")}
+                           onMouseMove={handleMouseMove}
+                           onMouseLeave={handleMouseLeave}
+                        >
+                           Launch
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
