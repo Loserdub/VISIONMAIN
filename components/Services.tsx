@@ -1,5 +1,6 @@
 import React from 'react';
 import { Sliders, Headphones, Lightbulb, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface ServicesProps {
   onContactClick?: () => void;
@@ -8,19 +9,19 @@ interface ServicesProps {
 const Services: React.FC<ServicesProps> = ({ onContactClick }) => {
   const services = [
     {
-      icon: <Sliders size={32} />,
+      icon: <Sliders size={32} />, 
       title: "Hybrid Mixing",
       description: "Blending analog warmth with digital precision. I treat generative stems as raw material, applying spectral repair and dynamic processing to achieve industry-standard loudness and clarity.",
       price: "Starting at $50/track"
     },
     {
-      icon: <Headphones size={32} />,
+      icon: <Headphones size={32} />, 
       title: "Audio Review",
       description: "Detailed feedback on your productions. Whether human-composed or AI-generated, get actionable advice on arrangement, sound design, and mix balance.",
       price: "Inquire for Pricing"
     },
     {
-      icon: <Lightbulb size={32} />,
+      icon: <Lightbulb size={32} />, 
       title: "Creative Consultation",
       description: "Stuck in the loop? Let's break down your workflow. I offer guidance on integrating generative tools into your creative process without losing your artistic identity.",
       price: "Contact for Rates"
@@ -55,12 +56,12 @@ const Services: React.FC<ServicesProps> = ({ onContactClick }) => {
              
              <div className="relative z-10 mt-auto w-full pt-6 border-t border-white/5">
                 <span className="block text-xs font-mono text-white/40 mb-4">{service.price}</span>
-                <button 
-                  onClick={onContactClick}
+                <Link 
+                  to="/contact"
                   className="w-full py-3 bg-white/5 hover:bg-white hover:text-black border border-white/10 transition-all duration-300 uppercase text-xs font-bold tracking-widest flex items-center justify-center gap-2"
                 >
                   Inquire <ArrowRight size={14} />
-                </button>
+                </Link>
              </div>
           </div>
         ))}
