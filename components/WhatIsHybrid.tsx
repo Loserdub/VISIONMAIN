@@ -40,7 +40,7 @@ const WhatIsHybrid: React.FC = () => {
       {/* Method Placeholders */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
         {/* Method 1 */}
-        <div className="group p-8 border border-white/10 bg-zinc-900/50 hover:bg-zinc-900 transition-all duration-500 hover:border-purple-500/30 relative overflow-hidden">
+        <a href="https://futuretonestudio.blogspot.com/2026/03/method-1-prompting.html" target="_blank" rel="noopener noreferrer" className="group p-8 border border-white/10 bg-zinc-900/50 hover:bg-zinc-900 transition-all duration-500 hover:border-purple-500/30 relative overflow-hidden block">
           <div className="absolute inset-0 bg-gradient-to-b from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           <div className="relative z-10">
             <div className="mb-6 text-purple-400 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
@@ -52,7 +52,7 @@ const WhatIsHybrid: React.FC = () => {
                 Putting prompts together in the optimal order, using the best descriptors, structuring prompts to get intended output.
             </p>
           </div>
-        </div>
+        </a>
 
         {/* Method 2 */}
         <div className="group p-8 border border-white/10 bg-zinc-900/50 hover:bg-zinc-900 transition-all duration-500 hover:border-cyan-500/30 relative overflow-hidden">
