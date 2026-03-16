@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const ProjectsList: React.FC = () => {
   const [tooltip, setTooltip] = useState({ show: false, x: 0, y: 0, text: '' });
@@ -16,6 +17,11 @@ const ProjectsList: React.FC = () => {
   };
 
   return (
+    <>
+      <Helmet>
+        <title>Creative Projects | Justin Ray - Hybrid Producer</title>
+        <meta name="description" content="Explore Justin Ray's creative web apps: VISION SYNTH (polyphonic synthesizer), ChordCompose (MIDI sketchpad), FractalAudio (audio effects), IMAGESIZER, and J-DAW (browser-based DAW)." />
+      </Helmet>
     <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up w-full overflow-hidden">
       {/* Tooltip Portal */}
       {tooltip.show && (
@@ -35,9 +41,9 @@ const ProjectsList: React.FC = () => {
         {/* CREATIVE APPS SECTION */}
         <div>
             <div className="flex items-end justify-between mb-8 border-b border-white/10 pb-4">
-                <h2 className="text-2xl sm:text-3xl font-display font-bold text-transparent text-stroke uppercase tracking-wider">
+                <h1 className="text-2xl sm:text-3xl font-display font-bold text-transparent text-stroke uppercase tracking-wider">
                     Creative Apps
-                </h2>
+                </h1>
                 <span className="hidden sm:block text-xs font-mono text-white/50">
                     EXPERIMENTAL
                 </span>
@@ -59,7 +65,7 @@ const ProjectsList: React.FC = () => {
                     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
                     
                     <div className="relative z-10">
-                        <h3 className="text-xl font-display font-bold text-white mb-2">AestheticLens</h3>
+                        <h2 className="text-xl font-display font-bold text-white mb-2">AestheticLens</h2>
                         <p className="text-xs font-mono text-white/50 mb-4">Computational Visual Analysis</p>
                         <span className="inline-block px-3 py-1 border border-white/10 text-[10px] tracking-widest uppercase text-white/40 backdrop-blur-sm bg-black/20">Coming Soon</span>
                     </div>
@@ -80,12 +86,13 @@ const ProjectsList: React.FC = () => {
                     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
                     
                     <div className="relative z-10">
-                        <h3 className="text-xl font-display font-bold text-white mb-2">VISION SYNTH</h3>
+                        <h2 className="text-xl font-display font-bold text-white mb-2">VISION SYNTH</h2>
                         <p className="text-xs font-mono text-white/50 mb-4">It's Poly-FUN-ic !</p>
                         <a 
                            href="https://loserdub.github.io/Subtractive/"
                            target="_blank"
                            rel="noopener noreferrer"
+                           aria-label="Launch VISION SYNTH - Desktop Polyphonic Synthesizer"
                            className="inline-block px-6 py-2 border border-white/10 hover:border-white hover:bg-white hover:text-black text-[10px] tracking-widest uppercase text-white/60 hover:text-black transition-all duration-300"
                            onMouseEnter={(e) => handleMouseEnter(e, "Desktop Polyphonic Synthesizer")}
                            onMouseMove={handleMouseMove}
@@ -111,12 +118,13 @@ const ProjectsList: React.FC = () => {
                     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
                     
                     <div className="relative z-10">
-                        <h3 className="text-xl font-display font-bold text-white mb-2">ChordCompose</h3>
+                        <h2 className="text-xl font-display font-bold text-white mb-2">ChordCompose</h2>
                         <p className="text-xs font-mono text-white/50 mb-4 max-w-[80%] mx-auto">Chord Arranger / Idea sketch pad with exportable MIDI</p>
                         <a 
                            href="https://loserdub.github.io/chordcreate/"
                            target="_blank"
                            rel="noopener noreferrer"
+                           aria-label="Launch ChordCompose - MIDI Chord Idea Sketchpad"
                            className="inline-block px-6 py-2 border border-white/10 hover:border-white hover:bg-white hover:text-black text-[10px] tracking-widest uppercase text-white/60 hover:text-black transition-all duration-300"
                            onMouseEnter={(e) => handleMouseEnter(e, "MIDI Idea Sketchpad")}
                            onMouseMove={handleMouseMove}
@@ -142,12 +150,13 @@ const ProjectsList: React.FC = () => {
                     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
                     
                     <div className="relative z-10">
-                        <h3 className="text-xl font-display font-bold text-white mb-2">FractalAudio</h3>
+                        <h2 className="text-xl font-display font-bold text-white mb-2">FractalAudio</h2>
                         <p className="text-xs font-mono text-white/50 mb-4 max-w-[80%] mx-auto">Audio Processing &amp; Effects</p>
                         <a 
                            href="https://loserdub.github.io/FractalAudio/"
                            target="_blank"
                            rel="noopener noreferrer"
+                           aria-label="Launch FractalAudio - Audio Processing and Effects"
                            className="inline-block px-6 py-2 border border-white/10 hover:border-white hover:bg-white hover:text-black text-[10px] tracking-widest uppercase text-white/60 hover:text-black transition-all duration-300"
                            onMouseEnter={(e) => handleMouseEnter(e, "FractalAudio Project")}
                            onMouseMove={handleMouseMove}
@@ -173,12 +182,13 @@ const ProjectsList: React.FC = () => {
                     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-rose-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
                     
                     <div className="relative z-10">
-                        <h3 className="text-xl font-display font-bold text-white mb-2">IMAGESIZER</h3>
+                        <h2 className="text-xl font-display font-bold text-white mb-2">IMAGESIZER</h2>
                         <p className="text-xs font-mono text-white/50 mb-4 max-w-[80%] mx-auto">Image Resizing and Processing</p>
                         <a 
                            href="https://loserdub.github.io/IMAGESIZER"
                            target="_blank"
                            rel="noopener noreferrer"
+                           aria-label="Launch IMAGESIZER - Image Resizing Utility"
                            className="inline-block px-6 py-2 border border-white/10 hover:border-white hover:bg-white hover:text-black text-[10px] tracking-widest uppercase text-white/60 hover:text-black transition-all duration-300"
                            onMouseEnter={(e) => handleMouseEnter(e, "IMAGESIZER Utility")}
                            onMouseMove={handleMouseMove}
@@ -204,12 +214,13 @@ const ProjectsList: React.FC = () => {
                     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
                     
                     <div className="relative z-10">
-                        <h3 className="text-xl font-display font-bold text-white mb-2">J-DAW</h3>
+                        <h2 className="text-xl font-display font-bold text-white mb-2">J-DAW</h2>
                         <p className="text-xs font-mono text-white/50 mb-4 max-w-[80%] mx-auto">your DAW in the browser!</p>
                         <a 
                            href="https://loserdub.github.io/jdaw/"
                            target="_blank"
                            rel="noopener noreferrer"
+                           aria-label="Launch J-DAW - Browser-based Digital Audio Workstation"
                            className="inline-block px-6 py-2 border border-white/10 hover:border-white hover:bg-white hover:text-black text-[10px] tracking-widest uppercase text-white/60 hover:text-black transition-all duration-300"
                            onMouseEnter={(e) => handleMouseEnter(e, "Browser-based DAW")}
                            onMouseMove={handleMouseMove}
@@ -225,6 +236,7 @@ const ProjectsList: React.FC = () => {
 
       </div>
     </section>
+    </>
   );
 };
 

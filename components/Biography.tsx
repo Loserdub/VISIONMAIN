@@ -1,7 +1,13 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Biography: React.FC = () => {
   return (
+    <>
+      <Helmet>
+        <title>Biography | Justin Ray - Hybrid Music Producer</title>
+        <meta name="description" content="Justin Ray is a Hybrid Music Producer based in East Lansing, MI. Founder of r/hybridproduction, early Suno ecosystem contributor, and developer of custom audio tools. Discography: LoserDub, VISION, Le Vide, Flawed Future, Disarray." />
+      </Helmet>
     <section className="py-24 px-4 sm:px-8 relative z-10 overflow-hidden animate-fade-in-up">
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
@@ -9,10 +15,10 @@ const Biography: React.FC = () => {
           {/* Text Content */}
           <div className="order-2 md:order-1 space-y-8">
              <div className="space-y-2">
-                <h4 className="text-purple-400 font-mono text-xs tracking-[0.3em] uppercase">The Architect</h4>
-                <h2 className="text-5xl sm:text-7xl font-display font-bold text-white leading-none tracking-tight">
+                <p className="text-purple-400 font-mono text-xs tracking-[0.3em] uppercase">The Architect</p>
+                <h1 className="text-5xl sm:text-7xl font-display font-bold text-white leading-none tracking-tight">
                   JUSTIN<br/><span className="text-stroke text-transparent">RAY</span>
-                </h2>
+                </h1>
                 <div className="flex items-center gap-4 pt-2">
                    <div className="h-[1px] w-12 bg-white/30"></div>
                    <p className="text-white/50 font-mono text-sm tracking-widest uppercase">East Lansing, MI</p>
@@ -24,10 +30,10 @@ const Biography: React.FC = () => {
                   Based in East Lansing, Michigan, Justin Ray is a definable force in the emerging field of Hybrid Music Production. Since 2022, Justin has moved beyond standard composition to become a leading voice in integrating human artistry with generative audio. He is the founder of r/hybridproduction, a global community dedicated to the philosophy that AI music requires a human pulse to truly resonate.
                 </p>
                 <p>
-                  An early adopter of the AI audio revolution, Justin began beta-testing platforms like Google’s MusicLM and Stable Audio before becoming a pivotal figure in the Suno ecosystem. His role as a Growth Specialist and early tester for Suno, as well as a consultant for Six Sides Media and Staccato. His insights into the intersection of machine learning and music have attracted attention from major tech entities, leading to interviews with a european research institute and recruitment interest from Meta for audio annotation.
+                  An early adopter of the AI audio revolution, Justin began beta-testing platforms like Google's MusicLM and Stable Audio before becoming a pivotal figure in the Suno ecosystem. His role as a Growth Specialist and early tester for Suno, as well as a consultant for Six Sides Media and Staccato. His insights into the intersection of machine learning and music have attracted attention from major tech entities, leading to interviews with a european research institute and recruitment interest from Meta for audio annotation.
                 </p>
                 <p>
-                  Justin’s technical workflow is rigorous. Utilizing Logic Pro and Ableton Live, he bridges the gap between raw generation and professional polish. By employing iZotope RX11 for spectral repair and a suite of high-end plugins—including FabFilter, Pultec, and The God Particle—he removes the "AI artifacts" to reveal the soul underneath.
+                  Justin's technical workflow is rigorous. Utilizing Logic Pro and Ableton Live, he bridges the gap between raw generation and professional polish. By employing iZotope RX11 for spectral repair and a suite of high-end plugins—including FabFilter, Pultec, and The God Particle—he removes the "AI artifacts" to reveal the soul underneath.
                 </p>
                 <p>
                    His discography reflects this duality. LoserDub represents his roots in pure, human-made Indie Electronic, defined by optimistic nostalgia. Meanwhile, his hybrid projects explore specific sonic landscapes: VISION (Pop/French Touch/Glitch), Le Vide (Modern French Pop), Flawed Future (EDM/Hardstyle), and Disarray (Alternative Rock).
@@ -72,6 +78,7 @@ const Biography: React.FC = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

@@ -1,14 +1,20 @@
 import React from 'react';
 import { Cpu, Fingerprint, Waves } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const WhatIsHybrid: React.FC = () => {
   return (
-    <div className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up max-w-7xl mx-auto">
+    <>
+      <Helmet>
+        <title>What is Hybrid Production? | Justin Ray</title>
+        <meta name="description" content="Hybrid Production integrates generative AI audio tools (like Suno or Udio) with traditional DAWs (Ableton Live, Logic Pro) to create innovative music. Learn the three methods: The Curator, The Architect, and The Alchemist." />
+      </Helmet>
+    <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up max-w-7xl mx-auto">
       {/* Header */}
       <div className="mb-16 text-center space-y-6">
-        <h2 className="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-tighter leading-tight">
+        <h1 className="text-4xl sm:text-6xl font-display font-bold text-white uppercase tracking-tighter leading-tight">
           What is <br className="sm:hidden" /><span className="text-transparent text-stroke">Hybrid</span> Production?
-        </h2>
+        </h1>
         <div className="h-1 w-24 bg-purple-500 mx-auto rounded-full"></div>
       </div>
 
@@ -40,8 +46,8 @@ const WhatIsHybrid: React.FC = () => {
             <div className="mb-6 text-purple-400 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
                 <Fingerprint size={48} strokeWidth={1} />
             </div>
-            <h3 className="text-xl font-display font-bold text-white mb-2 uppercase tracking-wider">Method #01</h3>
-            <h4 className="text-xs font-mono text-white/50 mb-4 uppercase tracking-widest border-b border-white/10 pb-2 inline-block">The Curator</h4>
+            <h2 className="text-xl font-display font-bold text-white mb-2 uppercase tracking-wider">Method #01</h2>
+            <h3 className="text-xs font-mono text-white/50 mb-4 uppercase tracking-widest border-b border-white/10 pb-2 inline-block">The Curator</h3>
             <p className="text-white/60 text-sm leading-relaxed">
                 Putting prompts together in the optimal order, using the best descriptors, structuring prompts to get intended output.
             </p>
@@ -55,8 +61,8 @@ const WhatIsHybrid: React.FC = () => {
             <div className="mb-6 text-cyan-400 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
                 <Cpu size={48} strokeWidth={1} />
             </div>
-            <h3 className="text-xl font-display font-bold text-white mb-2 uppercase tracking-wider">Method #02</h3>
-            <h4 className="text-xs font-mono text-white/50 mb-4 uppercase tracking-widest border-b border-white/10 pb-2 inline-block">The Architect</h4>
+            <h2 className="text-xl font-display font-bold text-white mb-2 uppercase tracking-wider">Method #02</h2>
+            <h3 className="text-xs font-mono text-white/50 mb-4 uppercase tracking-widest border-b border-white/10 pb-2 inline-block">The Architect</h3>
             <p className="text-white/60 text-sm leading-relaxed">
                 Giving the model the skeleton of the idea, and allowing it to refine an idea.
             </p>
@@ -70,15 +76,16 @@ const WhatIsHybrid: React.FC = () => {
             <div className="mb-6 text-yellow-400 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
                 <Waves size={48} strokeWidth={1} />
             </div>
-            <h3 className="text-xl font-display font-bold text-white mb-2 uppercase tracking-wider">Method #03</h3>
-            <h4 className="text-xs font-mono text-white/50 mb-4 uppercase tracking-widest border-b border-white/10 pb-2 inline-block">The Alchemist</h4>
+            <h2 className="text-xl font-display font-bold text-white mb-2 uppercase tracking-wider">Method #03</h2>
+            <h3 className="text-xs font-mono text-white/50 mb-4 uppercase tracking-widest border-b border-white/10 pb-2 inline-block">The Alchemist</h3>
             <p className="text-white/60 text-sm leading-relaxed">
                 Spectral repair and mixing. Removing artifacts to reveal the high-fidelity soul beneath.
             </p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+    </>
   );
 };
 

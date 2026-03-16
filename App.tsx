@@ -37,7 +37,7 @@ const Navigation = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md py-4 border-b border-white/5">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md py-4 border-b border-white/5">
         <div className="container mx-auto px-6 flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
             <Disc className="animate-spin-slow text-white" size={24} />
@@ -45,7 +45,7 @@ const Navigation = () => {
           </Link>
           
           {/* Desktop Nav */}
-          <div className="hidden md:flex gap-8 text-xs font-medium tracking-widest uppercase text-white/70">
+          <nav className="hidden md:flex gap-8 text-xs font-medium tracking-widest uppercase text-white/70" aria-label="Main navigation">
             {navItems.map(item => {
               const isActive = location.pathname === item.path;
               return (
@@ -61,19 +61,19 @@ const Navigation = () => {
                 </Link>
               );
             })}
-          </div>
+          </nav>
 
           {/* Mobile Menu Toggle */}
-          <button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}>
             {isMenuOpen ? <X /> : <Menu />}
           </button>
         </div>
-      </nav>
+      </header>
 
       {/* Mobile Nav Overlay */}
       {isMenuOpen && (
         <div className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl flex items-center justify-center animate-fade-in">
-           <div className="flex flex-col gap-8 text-center text-2xl font-light tracking-widest uppercase">
+           <nav className="flex flex-col gap-8 text-center text-2xl font-light tracking-widest uppercase" aria-label="Mobile navigation">
             {navItems.map((item, index) => {
               const isActive = location.pathname === item.path;
               return (
@@ -88,7 +88,7 @@ const Navigation = () => {
                 </Link>
               );
             })}
-           </div>
+           </nav>
         </div>
       )}
     </>
