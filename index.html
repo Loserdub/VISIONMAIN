@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+    <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hybrid Production | Justin Ray</title>
-    <meta name="description" content="Explore Hybrid Production by Justin Ray. A multi-project auditory experience blending raw human emotion with algorithmic complexity. Featuring loserdub, VISION, and le vide." />
-    <meta name="keywords" content="Hybrid Production, Justin Ray, AI Music, Electronic Music, Dubstep, Ambient, Generative Audio, loserdub, VISION" />
+    
+    <title>Justin Ray | AI Music Producer & Creative Audio Developer</title>
+    <meta name="description" content="Justin Ray is a Hybrid Producer and software developer blending Generative AI with traditional engineering. Offering AI music mixing and vocal cleanup, while building innovative tools like in-browser DAWs, polyphonic synths, and web-based image editors." />
+    <meta name="keywords" content="AI music producer, Suno audio editor, in-browser DAW, polyphonic web synth, React audio developer, hybrid production, AI vocal cleanup, web based photoshop tool" />
     <meta name="author" content="Justin Ray" />
     
     <!-- Favicon: White Waveform on Chip -->
@@ -15,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+    
     <style>
       /* Custom Scrollbar */
       ::-webkit-scrollbar {
@@ -68,84 +70,25 @@
       }
 
       .animate-fade-in {
-        animation: fadeIn 0.3s ease-out forwards;
+        animation: fadeIn 0.5s ease-out forwards;
       }
 
-      /* Utility for text strokes */
       .text-stroke {
         -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
         color: transparent;
       }
+      
+      .animate-spin-slow {
+        animation: spin 8s linear infinite;
+      }
+      
+      .bg-grid-pattern {
+        background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 30px 30px;
+      }
     </style>
-
-    <!-- JSON-LD Schema Markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Justin Ray",
-      "url": "https://jray.me",
-      "jobTitle": "Hybrid Music Creator",
-      "description": "A pioneer in Hybrid Production, blending generative AI with traditional audio engineering.",
-      "alternateName": [
-        "loserdub",
-        "VISION",
-        "Le Vide",
-        "Flawed Future"
-      ],
-      "worksFor": [
-        {
-          "@type": "Organization",
-          "name": "Suno",
-          "roleName": "Growth Specialist"
-        }
-      ],
-      "knowsAbout": [
-        "Hybrid Production",
-        "AI Music",
-        "Suno",
-        "Logic Pro",
-        "Ableton Live",
-        "iZotope RX11"
-      ],
-      "memberOf": [
-        {
-          "@type": "MusicGroup",
-          "name": "loserdub"
-        },
-        {
-          "@type": "MusicGroup",
-          "name": "VISION"
-        },
-        {
-          "@type": "MusicGroup",
-          "name": "Le Vide"
-        },
-        {
-          "@type": "MusicGroup",
-          "name": "Flawed Future"
-        }
-      ],
-      "sameAs": [
-        "https://www.linkedin.com/in/justinray-placeholder",
-        "https://twitter.com/justinray-placeholder",
-        "https://www.scribd.com/user/justinray-placeholder"
-      ]
-    }
-    </script>
-    
-  <script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-</head>
+  </head>
   <body class="bg-black text-white antialiased overflow-x-hidden">
     <div id="root"></div>
     
