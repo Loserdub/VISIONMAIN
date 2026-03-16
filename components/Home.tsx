@@ -52,8 +52,8 @@ const Home: React.FC = () => {
           </div>
         </div>
 
-        <p className="text-lg sm:text-2xl font-light text-white/60 tracking-[0.2em] uppercase max-w-2xl mx-auto mt-4">
-          The Multi-Project Odyssey Of A Human In The Loop
+        <p className="text-lg sm:text-2xl font-light text-white/60 tracking-[0.2em] uppercase max-w-3xl mx-auto mt-4">
+          Hybrid Producer & Creative Developer
         </p>
       </div>
 
@@ -62,13 +62,40 @@ const Home: React.FC = () => {
          <SoundCloudPlayer />
       </div>
 
-      {/* Manifesto Quote Section (Replaces Bio) */}
+      {/* Philosophy / Manifesto Section */}
       <div className="w-full max-w-4xl mx-auto z-20 animate-fade-in-up mt-24 px-4 text-center">
-        <h2 className="text-sm font-bold tracking-[0.3em] text-purple-400 mb-6 uppercase">Manifesto</h2>
+        <h2 className="text-sm font-bold tracking-[0.3em] text-purple-400 mb-6 uppercase">The Philosophy</h2>
         <p className="text-2xl sm:text-4xl md:text-5xl font-light leading-tight text-white/90 font-sans">
-          "While others argue over black or white - pure human or pure AI - all or nothing - the future exists in the <span className="text-transparent bg-clip-text bg-gradient-to-tr from-gray-500 via-gray-100 to-gray-500 font-bold">grey</span>. Hybrid production is the search for the soul inside the algorithm. In some form, this is the only way forward with the modern music industry."
+          "While others argue over black or white - pure human or pure AI - all or nothing - the future exists in the <span className="text-transparent bg-clip-text bg-gradient-to-tr from-gray-500 via-gray-100 to-gray-500 font-bold">grey</span>. Hybrid production is the search for the soul inside the algorithm."
         </p>
-        <div className="mt-12 h-1 w-24 bg-white/20 mx-auto rounded-full"></div>
+        <p className="text-lg sm:text-xl font-light text-white/60 mt-8 max-w-3xl mx-auto">
+          As a <span className="text-white font-medium">creative developer</span> and audio engineer, I don't just use software—I build my own ecosystem. From developing custom <span className="text-white font-medium">in-browser audio tools</span> to utilizing <span className="text-white font-medium">AI vocal cleanup</span> algorithms, I build the tools I use to mix, master, and humanize AI-generated music.
+        </p>
+      </div>
+
+      {/* Developer Ecosystem Section */}
+      <div className="w-full max-w-5xl mx-auto z-20 animate-fade-in-up mt-24 px-4 text-center">
+        <h2 className="text-sm font-bold tracking-[0.3em] text-purple-400 mb-6 uppercase">My Ecosystem</h2>
+        <p className="text-xl font-light text-white/80 max-w-3xl mx-auto mb-12">
+          Specializing in <span className="font-bold">AI music mixing</span> and web applications, my development work directly feeds into my production workflow. Here are some of the tools I've built:
+        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+          <div className="bg-zinc-900/80 border border-white/10 p-8 hover:border-purple-500/50 transition-colors duration-500 group">
+            <h3 className="text-xl font-display font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">In-Browser DAW</h3>
+            <p className="text-sm text-white/60 leading-relaxed">A full-fledged digital audio workstation living entirely in the browser, built to streamline hybrid mixing and on-the-fly audio manipulation without leaving the web.</p>
+          </div>
+          <div className="bg-zinc-900/80 border border-white/10 p-8 hover:border-purple-500/50 transition-colors duration-500 group">
+            <h3 className="text-xl font-display font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Polyphonic Web-Synth</h3>
+            <p className="text-sm text-white/60 leading-relaxed">A custom generative web-synth engineered for rich, evolving soundscapes that blend seamlessly with AI-generated audio tracks and human compositions.</p>
+          </div>
+          <div className="bg-zinc-900/80 border border-white/10 p-8 hover:border-purple-500/50 transition-colors duration-500 group">
+            <h3 className="text-xl font-display font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Web-Based Image Tool</h3>
+            <p className="text-sm text-white/60 leading-relaxed">A lightweight, Photoshop-style utility designed to quickly resize, process, and manipulate visual assets to accompany my audio releases.</p>
+          </div>
+        </div>
+
+        <div className="mt-20 h-1 w-24 bg-white/20 mx-auto rounded-full"></div>
       </div>
 
       {/* NEW SECTION: What is Hybrid Production? */}
