@@ -225,6 +225,7 @@ const ProjectsList: React.FC = () => {
 
       </div>
     </section>
+  );
 };
 
 export default ProjectsList;
