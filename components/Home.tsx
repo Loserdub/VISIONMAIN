@@ -53,7 +53,7 @@ const Home: React.FC = () => {
         </div>
 
         <p className="text-lg sm:text-2xl font-light text-white/60 tracking-[0.2em] uppercase max-w-2xl mx-auto mt-4">
-          A Multi-Project Odyssey Of A Human In The Loop
+          The Multi-Project Odyssey Of A Human In The Loop
         </p>
       </div>
 
