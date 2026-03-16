@@ -39,7 +39,7 @@ const ProjectsList: React.FC = () => {
       <div className="container mx-auto max-w-[95vw] xl:max-w-7xl">
 
         {/* CREATIVE APPS SECTION */}
-        <div>
+        <section aria-label="Creative Apps">
             <div className="flex items-end justify-between mb-8 border-b border-white/10 pb-4">
                 <h1 className="text-2xl sm:text-3xl font-display font-bold text-transparent text-stroke uppercase tracking-wider">
                     Creative Apps
@@ -51,7 +51,7 @@ const ProjectsList: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {/* AestheticLens Card */}
-                <div className="group relative aspect-video bg-zinc-900 border border-white/5 hover:border-white/20 transition-all p-8 flex flex-col justify-center items-center text-center overflow-hidden">
+                <article className="group relative aspect-video bg-zinc-900 border border-white/5 hover:border-white/20 transition-all p-8 flex flex-col justify-center items-center text-center overflow-hidden">
                     {/* Background Image */}
                     <div className="absolute inset-0 z-0">
                         <img 
@@ -69,10 +69,10 @@ const ProjectsList: React.FC = () => {
                         <p className="text-xs font-mono text-white/50 mb-4">Computational Visual Analysis</p>
                         <span className="inline-block px-3 py-1 border border-white/10 text-[10px] tracking-widest uppercase text-white/40 backdrop-blur-sm bg-black/20">Coming Soon</span>
                     </div>
-                </div>
+                </article>
 
                  {/* VISION SYNTH Card */}
-                 <div className="group relative aspect-video bg-zinc-900 border border-white/5 hover:border-white/20 transition-all p-8 flex flex-col justify-center items-center text-center overflow-hidden">
+                 <article className="group relative aspect-video bg-zinc-900 border border-white/5 hover:border-white/20 transition-all p-8 flex flex-col justify-center items-center text-center overflow-hidden">
                     {/* Background Image */}
                     <div className="absolute inset-0 z-0">
                         <img 
@@ -101,10 +101,10 @@ const ProjectsList: React.FC = () => {
                            Launch
                         </a>
                     </div>
-                </div>
+                </article>
 
                 {/* ChordCompose Card */}
-                <div className="group relative aspect-video bg-zinc-900 border border-white/5 hover:border-white/20 transition-all p-8 flex flex-col justify-center items-center text-center overflow-hidden">
+                <article className="group relative aspect-video bg-zinc-900 border border-white/5 hover:border-white/20 transition-all p-8 flex flex-col justify-center items-center text-center overflow-hidden">
                     {/* Background Image */}
                     <div className="absolute inset-0 z-0">
                         <img 
@@ -133,10 +133,10 @@ const ProjectsList: React.FC = () => {
                            Launch
                         </a>
                     </div>
-                </div>
+                </article>
 
                 {/* FractalAudio Card */}
-                <div className="group relative aspect-video bg-zinc-900 border border-white/5 hover:border-white/20 transition-all p-8 flex flex-col justify-center items-center text-center overflow-hidden">
+                <article className="group relative aspect-video bg-zinc-900 border border-white/5 hover:border-white/20 transition-all p-8 flex flex-col justify-center items-center text-center overflow-hidden">
                     {/* Background Image */}
                     <div className="absolute inset-0 z-0">
                         <img 
@@ -165,10 +165,10 @@ const ProjectsList: React.FC = () => {
                            Launch
                         </a>
                     </div>
-                </div>
+                </article>
 
                 {/* IMAGESIZER Card */}
-                <div className="group relative aspect-video bg-zinc-900 border border-white/5 hover:border-white/20 transition-all p-8 flex flex-col justify-center items-center text-center overflow-hidden">
+                <article className="group relative aspect-video bg-zinc-900 border border-white/5 hover:border-white/20 transition-all p-8 flex flex-col justify-center items-center text-center overflow-hidden">
                     {/* Background Image */}
                     <div className="absolute inset-0 z-0">
                         <img 
@@ -197,10 +197,10 @@ const ProjectsList: React.FC = () => {
                            Launch
                         </a>
                     </div>
-                </div>
+                </article>
 
                 {/* J-DAW Card */}
-                <div className="group relative aspect-video bg-zinc-900 border border-white/5 hover:border-white/20 transition-all p-8 flex flex-col justify-center items-center text-center overflow-hidden">
+                <article className="group relative aspect-video bg-zinc-900 border border-white/5 hover:border-white/20 transition-all p-8 flex flex-col justify-center items-center text-center overflow-hidden">
                     {/* Background Image */}
                     <div className="absolute inset-0 z-0">
                         <img 
@@ -229,10 +229,10 @@ const ProjectsList: React.FC = () => {
                            Launch
                         </a>
                     </div>
-                </div>
+                </article>
 
             </div>
-        </div>
+        </section>
 
       </div>
     </section>
