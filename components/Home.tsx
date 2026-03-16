@@ -1,6 +1,7 @@
 import React from 'react';
 import SoundCloudPlayer from './SoundCloudPlayer';
 import FuzzyText from './FuzzyText';
+import { Helmet } from 'react-helmet-async';
 
 const Home: React.FC = () => {
   const scrollToHybrid = () => {
@@ -17,9 +18,14 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="relative flex flex-col items-center px-4 py-32 sm:pt-40">
-      {/* SEO: Hidden H1 for crawlers as the visual title is canvas-based */}
-      <h1 className="sr-only">Hybrid Production | Justin Ray</h1>
+    <>
+      <Helmet>
+        <title>Justin Ray | AI Music Producer & Hybrid Audio Engineer</title>
+        <meta name="description" content="Justin Ray is a Hybrid Producer and software developer blending Generative AI with traditional engineering. Offering AI music mixing and vocal cleanup, while building innovative tools like in-browser DAWs, polyphonic synths, and web-based image editors." />
+      </Helmet>
+      <section className="relative flex flex-col items-center px-4 py-32 sm:pt-40">
+        {/* SEO: Hidden H1 for crawlers as the visual title is canvas-based */}
+        <h1 className="sr-only">Hybrid Production | Justin Ray</h1>
 
       <div className="text-center z-10 space-y-4 max-w-5xl animate-fade-in-up flex flex-col items-center">
         {/* Animated Title */}
@@ -63,7 +69,7 @@ const Home: React.FC = () => {
       </div>
 
       {/* Philosophy / Manifesto Section */}
-      <div className="w-full max-w-4xl mx-auto z-20 animate-fade-in-up mt-24 px-4 text-center">
+      <section className="w-full max-w-4xl mx-auto z-20 animate-fade-in-up mt-24 px-4 text-center">
         <h2 className="text-sm font-bold tracking-[0.3em] text-purple-400 mb-6 uppercase">The Philosophy</h2>
         <p className="text-2xl sm:text-4xl md:text-5xl font-light leading-tight text-white/90 font-sans">
           "While others argue over black or white - pure human or pure AI - all or nothing - the future exists in the <span className="text-transparent bg-clip-text bg-gradient-to-tr from-gray-500 via-gray-100 to-gray-500 font-bold">grey</span>. Hybrid production is the search for the soul inside the algorithm."
@@ -71,10 +77,10 @@ const Home: React.FC = () => {
         <p className="text-lg sm:text-xl font-light text-white/60 mt-8 max-w-3xl mx-auto">
           As a <span className="text-white font-medium">creative developer</span> and audio engineer, I don't just use software—I build my own ecosystem. From developing custom <span className="text-white font-medium">in-browser audio tools</span> to utilizing <span className="text-white font-medium">AI vocal cleanup</span> algorithms, I build the tools I use to mix, master, and humanize AI-generated music.
         </p>
-      </div>
+      </section>
 
       {/* Developer Ecosystem Section */}
-      <div className="w-full max-w-5xl mx-auto z-20 animate-fade-in-up mt-24 px-4 text-center">
+      <section className="w-full max-w-5xl mx-auto z-20 animate-fade-in-up mt-24 px-4 text-center">
         <h2 className="text-sm font-bold tracking-[0.3em] text-purple-400 mb-6 uppercase">My Ecosystem</h2>
         <p className="text-xl font-light text-white/80 max-w-3xl mx-auto mb-12">
           Specializing in <span className="font-bold">AI music mixing</span> and web applications, my development work directly feeds into my production workflow. Here are some of the tools I've built:
@@ -96,7 +102,7 @@ const Home: React.FC = () => {
         </div>
 
         <div className="mt-20 h-1 w-24 bg-white/20 mx-auto rounded-full"></div>
-      </div>
+      </section>
 
       {/* NEW SECTION: What is Hybrid Production? */}
       <div className="w-full max-w-5xl mx-auto z-20 animate-fade-in-up mt-24 px-4" style={{ animationDelay: '0.3s' }}>
@@ -132,14 +138,14 @@ const Home: React.FC = () => {
       </div>
 
       {/* Social Icons */}
-      <div className="flex justify-center items-center gap-8 sm:gap-12 mt-16 mb-20 z-20 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+      <section className="flex justify-center items-center gap-8 sm:gap-12 mt-16 mb-20 z-20 animate-fade-in-up" style={{ animationDelay: '0.4s' }} aria-label="Social media links">
         
         {/* X (Twitter) */}
         <a 
           href="https://x.com/TheInnerVision" 
           target="_blank" 
           rel="noopener noreferrer" 
-          aria-label="X (Twitter)"
+          aria-label="Follow Justin Ray on X (Twitter)"
           className="group text-white/40 hover:text-white transition-all duration-300 transform hover:scale-110"
         >
           <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current" aria-hidden="true">
@@ -152,7 +158,7 @@ const Home: React.FC = () => {
           href="https://youtube.com" 
           target="_blank" 
           rel="noopener noreferrer" 
-          aria-label="YouTube"
+          aria-label="Visit Justin Ray's YouTube Channel"
           className="group text-white/40 hover:text-[#FF0000] transition-all duration-300 transform hover:scale-110"
         >
           <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current" aria-hidden="true">
@@ -165,7 +171,7 @@ const Home: React.FC = () => {
           href="https://www.linkedin.com/in/justin-ray-277b8548/" 
           target="_blank" 
           rel="noopener noreferrer" 
-          aria-label="LinkedIn"
+          aria-label="Connect with Justin Ray on LinkedIn"
           className="group text-white/40 hover:text-[#0077B5] transition-all duration-300 transform hover:scale-110"
         >
           <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current" aria-hidden="true">
@@ -178,7 +184,7 @@ const Home: React.FC = () => {
           href="https://network.landr.com/users/vision-hybrid" 
           target="_blank" 
           rel="noopener noreferrer" 
-          aria-label="LANDR Network"
+          aria-label="Justin Ray on LANDR Network"
           className="group text-white/40 hover:text-[#00E6CB] transition-all duration-300 transform hover:scale-110"
         >
           <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current" aria-hidden="true">
@@ -186,9 +192,10 @@ const Home: React.FC = () => {
           </svg>
           <span className="sr-only">LANDR</span>
         </a>
-      </div>
+      </section>
       
-    </div>
+    </section>
+    </>
   );
 };
 

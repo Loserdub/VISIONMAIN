@@ -1,6 +1,7 @@
 import React from 'react';
 import { Sliders, Headphones, Lightbulb, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 interface ServicesProps {
   onContactClick?: () => void;
@@ -29,11 +30,16 @@ const Services: React.FC<ServicesProps> = ({ onContactClick }) => {
   ];
 
   return (
+    <>
+      <Helmet>
+        <title>Studio Services | Justin Ray - Hybrid Mixing & Audio Consultation</title>
+        <meta name="description" content="Professional hybrid mixing, audio review, and creative consultation services by Justin Ray. Starting at $50/track. Specializing in AI-generated music engineering and hybrid production workflows." />
+      </Helmet>
     <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up max-w-7xl mx-auto">
       <div className="mb-20 text-center space-y-4">
-        <h2 className="text-4xl sm:text-5xl font-display font-bold text-white uppercase tracking-tighter">
+        <h1 className="text-4xl sm:text-5xl font-display font-bold text-white uppercase tracking-tighter">
           Studio <span className="text-transparent text-stroke">Services</span>
-        </h2>
+        </h1>
         <p className="text-white/60 font-light max-w-2xl mx-auto">
           Elevate your sonic identity. Professional engineering and guidance for the modern hybrid artist.
         </p>
@@ -49,7 +55,7 @@ const Services: React.FC<ServicesProps> = ({ onContactClick }) => {
                 {service.icon}
              </div>
              
-             <h3 className="relative z-10 text-xl font-display font-bold text-white mb-4 uppercase tracking-wider">{service.title}</h3>
+             <h2 className="relative z-10 text-xl font-display font-bold text-white mb-4 uppercase tracking-wider">{service.title}</h2>
              <p className="relative z-10 text-white/60 text-sm leading-relaxed mb-8 flex-grow">
                {service.description}
              </p>
@@ -58,6 +64,7 @@ const Services: React.FC<ServicesProps> = ({ onContactClick }) => {
                 <span className="block text-xs font-mono text-white/40 mb-4">{service.price}</span>
                 <Link 
                   to="/contact"
+                  aria-label={`Inquire about ${service.title} services`}
                   className="w-full py-3 bg-white/5 hover:bg-white hover:text-black border border-white/10 transition-all duration-300 uppercase text-xs font-bold tracking-widest flex items-center justify-center gap-2"
                 >
                   Inquire <ArrowRight size={14} />
@@ -67,6 +74,7 @@ const Services: React.FC<ServicesProps> = ({ onContactClick }) => {
         ))}
       </div>
     </section>
+    </>
   );
 };
 

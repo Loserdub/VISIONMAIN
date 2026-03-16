@@ -1,6 +1,7 @@
 import React from 'react';
 import { Project } from '../types';
 import { ExternalLink } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const PROJECTS: Project[] = [
   {
@@ -55,13 +56,18 @@ const MusicList: React.FC = () => {
   const secondaryProjects = PROJECTS.slice(3);
 
   return (
+    <>
+      <Helmet>
+        <title>Music | Justin Ray - Hybrid Producer</title>
+        <meta name="description" content="Explore Justin Ray's music projects: loserdub, VISION, le vide, flawed future, and disarray. Hybrid production blending AI and human creativity." />
+      </Helmet>
     <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up w-full">
       <div className="container mx-auto max-w-6xl">
          {/* Header */}
          <div className="mb-12 text-center">
-             <h2 className="text-4xl sm:text-5xl font-display font-bold text-transparent text-stroke uppercase tracking-widest">
+             <h1 className="text-4xl sm:text-5xl font-display font-bold text-transparent text-stroke uppercase tracking-widest">
                 Sonic Projects
-             </h2>
+             </h1>
              <div className="h-1 w-24 bg-purple-500 mx-auto mt-6 rounded-full"></div>
          </div>
 
@@ -73,6 +79,7 @@ const MusicList: React.FC = () => {
                  href={project.spotifyUrl}
                  target="_blank"
                  rel="noopener noreferrer"
+                 aria-label={`Listen to ${project.name} on Spotify`}
                  className={`group relative aspect-square w-full border border-white/10 hover:border-purple-500/50 transition-all duration-500 flex flex-col items-center justify-center p-8 text-center overflow-hidden cursor-pointer
                     bg-zinc-900/40 hover:bg-zinc-900/60 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)]
                  `}
@@ -82,9 +89,9 @@ const MusicList: React.FC = () => {
                   
                   {/* Content */}
                   <div className="relative z-10 flex flex-col items-center justify-center h-full space-y-4">
-                      <h3 className="text-4xl sm:text-5xl font-display font-black uppercase tracking-tighter transition-all duration-500 text-white group-hover:text-purple-400 group-hover:scale-110">
+                      <h2 className="text-4xl sm:text-5xl font-display font-black uppercase tracking-tighter transition-all duration-500 text-white group-hover:text-purple-400 group-hover:scale-110">
                         {project.name}
-                      </h3>
+                      </h2>
                       
                       <div className="flex flex-wrap justify-center gap-2 relative">
                         {/* Decorative Line */}
@@ -121,6 +128,7 @@ const MusicList: React.FC = () => {
                  href={project.spotifyUrl}
                  target="_blank"
                  rel="noopener noreferrer"
+                 aria-label={`Listen to ${project.name} on Spotify`}
                  className={`group relative border border-white/5 hover:border-purple-500/30 transition-all duration-500 p-8 flex flex-col items-center justify-center text-center overflow-hidden min-h-[180px] w-full cursor-pointer
                     bg-zinc-900/20 hover:bg-zinc-900/40
                  `}
@@ -128,9 +136,9 @@ const MusicList: React.FC = () => {
                    <div className={`absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-500 ${project.color}`}></div>
                    
                    <div className="relative z-10">
-                        <h3 className="text-2xl sm:text-3xl font-display font-bold uppercase tracking-wider mb-3 transition-colors duration-300 text-white/60 group-hover:text-white">
+                        <h2 className="text-2xl sm:text-3xl font-display font-bold uppercase tracking-wider mb-3 transition-colors duration-300 text-white/60 group-hover:text-white">
                                 {project.name}
-                        </h3>
+                        </h2>
                         <div className="flex flex-wrap justify-center gap-2">
                             {project.tags.map(tag => (
                                 <span key={tag} className="text-[10px] font-mono text-white/30 group-hover:text-white/60 uppercase tracking-widest transition-colors">
@@ -149,6 +157,7 @@ const MusicList: React.FC = () => {
          </div>
       </div>
     </section>
+    </>
   );
 };
 
