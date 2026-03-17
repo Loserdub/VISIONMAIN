@@ -1,5 +1,4 @@
 import React from 'react';
-import SoundCloudPlayer from './SoundCloudPlayer';
 import FuzzyText from './FuzzyText';
 import { Helmet } from 'react-helmet-async';
 
@@ -61,11 +60,6 @@ const Home: React.FC = () => {
         <p className="text-lg sm:text-2xl font-light text-white/60 tracking-[0.2em] uppercase max-w-3xl mx-auto mt-4">
           Hybrid Producer & Creative Developer
         </p>
-      </div>
-
-      {/* SoundCloud Embed Widget Area */}
-      <div className="w-full z-20 animate-fade-in-up mt-8" style={{ animationDelay: '0.2s' }}>
-         <SoundCloudPlayer />
       </div>
 
       {/* Philosophy / Manifesto Section */}
