@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react
 import OilBackground from './components/OilBackground';
 import { Menu, X, Disc } from 'lucide-react';
 import Home from './components/Home';
+import SoundCloudPlayer from './components/SoundCloudPlayer';
 
 // Lazy load components so the website loads instantly
 const MusicList = lazy(() => import('./components/MusicList'));
@@ -102,6 +103,7 @@ const App: React.FC = () => {
       <div className="relative min-h-screen font-sans selection:bg-white selection:text-black flex flex-col text-white">
         <OilBackground />
         <Navigation />
+        <SoundCloudPlayer />
 
         {/* Main Content Area - Separate Pages */}
         <main className="flex-grow w-full pt-24 pb-12 flex flex-col" id="main-content">
