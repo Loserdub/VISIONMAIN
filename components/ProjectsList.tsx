@@ -67,7 +67,18 @@ const ProjectsList: React.FC = () => {
                     <div className="relative z-10">
                         <h2 className="text-xl font-display font-bold text-white mb-2">AestheticLens</h2>
                         <p className="text-xs font-mono text-white/50 mb-4">Computational Visual Analysis</p>
-                        <span className="inline-block px-3 py-1 border border-white/10 text-[10px] tracking-widest uppercase text-white/40 backdrop-blur-sm bg-black/20">Coming Soon</span>
+                        <a 
+                           href="https://loserdub.github.io/lookingglass"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Launch AestheticLens - Computational Visual Analysis"
+                           className="inline-block px-6 py-2 border border-white/10 hover:border-white hover:bg-white hover:text-black text-[10px] tracking-widest uppercase text-white/60 hover:text-black transition-all duration-300"
+                           onMouseEnter={(e) => handleMouseEnter(e, "Computational Visual Analysis")}
+                           onMouseMove={handleMouseMove}
+                           onMouseLeave={handleMouseLeave}
+                        >
+                           Live
+                        </a>
                     </div>
                 </article>
 
