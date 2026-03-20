@@ -1,4 +1,4 @@
-# Sonic Canvas - Hybrid Artist Portfolio
+# jray.me - Hybrid Artist Portfolio
 
 A visually immersive, interactive landing page for Justin Ray, a hybrid music production artist. This project features an abstract "oil-on-canvas" aesthetic, generative visuals, and a custom audio-visual experience.
 
