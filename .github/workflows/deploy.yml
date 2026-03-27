@@ -9,13 +9,17 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    
+
     steps:
       - name: Get your code
         uses: actions/checkout@v4
@@ -28,9 +32,14 @@ jobs:
 
       - name: Download your plugins
         run: npm ci
+        env:
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: '1'
 
       - name: Build the site (This takes the SEO snapshots!)
         run: npm run build
+        env:
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: '1'
+          PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome-stable
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
