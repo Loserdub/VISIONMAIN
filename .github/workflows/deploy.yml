@@ -32,10 +32,13 @@ jobs:
 
       - name: Download your plugins
         run: npm ci
+        env:
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: '1'
 
       - name: Build the site (This takes the SEO snapshots!)
         run: npm run build
         env:
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: '1'
           PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome-stable
 
       - name: Setup Pages
