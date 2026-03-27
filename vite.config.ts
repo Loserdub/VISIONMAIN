@@ -19,6 +19,8 @@ export default defineConfig(({ mode }) => {
           routes: ['/'],
           renderer: new PuppeteerRenderer({
             renderAfterTime: 2000,
+            headless: true,
+            ...(process.env.CI ? { args: ['--no-sandbox', '--disable-setuid-sandbox'] } : {}),
           }),
         }),
       ],
