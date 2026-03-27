@@ -1,9 +1,6 @@
 import path from 'path';
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
-import vitePrerender from 'vite-plugin-prerender';
-
-const { PuppeteerRenderer } = vitePrerender;
 
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
@@ -14,15 +11,6 @@ export default defineConfig(({ mode }) => {
       },
       plugins: [
         react(),
-        vitePrerender({
-          staticDir: path.join(__dirname, 'dist'),
-          routes: ['/'],
-          renderer: new PuppeteerRenderer({
-            renderAfterTime: 2000,
-            headless: true,
-            ...(process.env.CI ? { args: ['--no-sandbox', '--disable-setuid-sandbox'] } : {}),
-          }),
-        }),
       ],
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
