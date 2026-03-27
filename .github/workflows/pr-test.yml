@@ -1,0 +1,26 @@
+name: PR Build Test
+
+# Tell the robot to wake up whenever a Pull Request is opened!
+on:
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  test-build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Get your code
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Download plugins
+        run: npm ci
+
+      - name: Test the Build (Make sure it doesn't crash!)
+        run: npm run build
