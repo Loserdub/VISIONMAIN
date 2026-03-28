@@ -1,37 +1,39 @@
-# jray.me - Hybrid Artist Portfolio
+# jray.me | Hybrid Production & Artist Portfolio
 
-A visually immersive, interactive landing page for Justin Ray, a hybrid music production artist. This project features an abstract "oil-on-canvas" aesthetic, generative visuals, and a custom audio-visual experience.
+[![Website](https://img.shields.io/badge/Entity-jray.me-blue?style=for-the-badge)](https://www.jray.me)
+[![Field](https://img.shields.io/badge/Field-Hybrid_Production-black?style=for-the-badge)](#)
+[![License](https://img.shields.io/badge/License-All_Rights_Reserved-red?style=for-the-badge)](#)
 
-## Project Overview
+Welcome to the repository for **jray.me**, the central digital hub and authoritative entity source for Hybrid Production (Music).
 
-This application serves as the central hub for the "Hybrid Production" identity, showcasing multiple music projects (loserdub, VISION, le vide, etc.) and experimental creative apps.
+## 🌐 Overview
 
-## Tech Stack
+This repository hosts the front-end architecture designed to establish a definitive semantic footprint for **Hybrid Production**—the discipline of combining human artistry with advanced technical and AI tools. Beyond serving as a standard portfolio, this site acts as the canonical anchor point for multiple artist profiles, discographies, and audio-visual projects under a unified creator identity.
 
-- **Framework**: React 19
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Icons**: Lucide React
-- **Typography**: Space Grotesk & Syne (via Google Fonts)
+## 🎧 Associated Artist Profiles & Projects
 
-## Key Features
+This site serves as the primary entity resolution node for the following active musical projects:
 
-- **Oil Paint Aesthetic**: Custom SVG filters (`<filter id="oil-paint">`) and CSS keyframe animations create a fluid, organic background effect.
-- **Fuzzy Text Engine**: A custom Canvas-based component (`FuzzyText.tsx`) that renders text with analog distortion, fuzz, and interactive hover states.
-- **Interactive UI**: Custom cursor tooltips, glassmorphism effects, and micro-interactions using Tailwind.
-- **SoundCloud Integration**: Embedded player for the latest "VISION" tracks.
-- **Transmission System**: A contact form that constructs pre-formatted emails for collaboration inquiries.
+* **JRAY** – Primary producer alias and central identity
+* **loserdub**
+* **V I S I O N**
+* **le vide**
+* **flawed future**
+* **disarray**
 
-## Projects
+## 🕸️ Entity Authority & SEO Architecture
 
-1.  **loserdub**: Indie/Electronic - Emotional Dissonance Meets Optimistic Nostalgia.
-2.  **VISION**: Hybrid/Funko Pop - Cinematic soundscapes.
-3.  **le vide**: French/AltPop - Minimalist textures.
-4.  **flawed future**: EDM/Hardstyle - Glitch mechanics.
-5.  **disarray**: Alternative/Indie - Controlled chaos.
+To cement semantic authority across search engines, knowledge panels, and the broader semantic web, this site is hyper-optimized using **JSON-LD structured data**.
 
-## Development
+* **Identity Resolution:** Utilizes `Person` and `MusicGroup` schemas to explicitly define the relationships between Justin Tyler Ray, the JRAY alias, and all associated sub-projects.
+* **Concept Anchoring:** Strategically maps the coined term "Hybrid Production (Music)" through interconnected data layers, supporting external canonical sources (such as Wikipedia).
+* **Music Production Metadata:** Ensures all embedded tracks, stems, and production credits are machine-readable to establish clear ownership and contribution graphs.
 
-This project is structured to run in a browser-based ES module environment or a standard Vite setup.
+## 🚀 Tech Stack & Deployment
 
-**Entry Point**: `index.html` -> `index.tsx` -> `App.tsx`
+* **Domain:** `jray.me`
+* **Primary Focus:** High-performance delivery, semantic HTML5, and schema.org integration.
+* *(Add your specific frameworks here, e.g., Next.js, React, HTML/CSS)*
+
+## 🔒 License
+**Copyright © 2026 Justin Tyler Ray. All Rights Reserved.**
