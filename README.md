@@ -8,7 +8,7 @@ Welcome to the repository for **jray.me**, the central digital hub and authorita
 
 ## 🌐 Overview
 
-This repository hosts the front-end architecture designed to establish a definitive semantic footprint for **Hybrid Production**—the discipline of combining human artistry with advanced technical and AI tools. Beyond serving as a standard portfolio, this site acts as the canonical anchor point for multiple artist profiles, discographies, and audio-visual projects under a unified creator identity.
+This repository hosts the front-end architecture designed to establish a definitive semantic footprint for **Hybrid Production**—the discipline of combining human artistry with advanced technical and AI tools. Beyond serving as a standard portfolio, this site acts as the canonical anchor point for multiple artist profiles, discographies, and audio-visual projects under a unified creator identity. Includes side projects, such as in browser daw, fractal audio visualizer, image liquify, and so much more
 
 ## 🎧 Associated Artist Profiles & Projects
 
@@ -33,7 +33,7 @@ To cement semantic authority across search engines, knowledge panels, and the br
 
 * **Domain:** `jray.me`
 * **Primary Focus:** High-performance delivery, semantic HTML5, and schema.org integration.
-* *(Add your specific frameworks here, e.g., Next.js, React, HTML/CSS)*
+* *Next.js , react, html , all that boring stuff
 
 ## 🔒 License
 **Copyright © 2026 Justin Tyler Ray. All Rights Reserved.**
