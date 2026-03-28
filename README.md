@@ -3,6 +3,7 @@
 [![Website](https://img.shields.io/badge/Entity-jray.me-blue?style=for-the-badge)](https://www.jray.me)
 [![Field](https://img.shields.io/badge/Field-Hybrid_Production-black?style=for-the-badge)](#)
 [![License](https://img.shields.io/badge/License-All_Rights_Reserved-red?style=for-the-badge)](#)
+[![Authority](https://img.shields.io/badge/Authority-Hybrid_Production-gold?style=for-the-badge)](#)
 
 Welcome to the repository for **jray.me**, the central digital hub and authoritative entity source for Hybrid Production (Music).
 
