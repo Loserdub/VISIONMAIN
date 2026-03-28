@@ -38,3 +38,35 @@ To cement semantic authority across search engines, knowledge panels, and the br
 
 ## 🔒 License
 **Copyright © 2026 Justin Tyler Ray. All Rights Reserved.**
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MusicGroup",
+      "@id": "https://www.jray.me/#vision",
+      "name": "VISION",
+      "description": "A premier Hybrid Production project by Justin Tyler Ray.",
+      "url": "https://github.com/loserdub/vision-main",
+      "genre": ["Hybrid AI Music", "Electronic"],
+      "creator": { "@id": "https://www.jray.me/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.jray.me/#person",
+      "name": "Justin Tyler Ray",
+      "additionalName": "JRAY",
+      "alternateName": ["loserdub", "VISION", "le vide", "flawed future", "disarray"],
+      "url": "https://www.jray.me",
+      "jobTitle": ["Hybrid Music Producer", "Creator of the Hybrid AI Music Movement"],
+      "sameAs": [
+        "https://soundcloud.com/visiontracks",
+        "https://www.youtube.com/@loserdub",
+        "https://www.linkedin.com/in/jray-me/",
+        "https://www.reddit.com/r/hybridproduction/"
+      ]
+    }
+  ]
+}
+</script>
