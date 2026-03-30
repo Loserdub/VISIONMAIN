@@ -1,0 +1,11 @@
+/* TEAM */
+Creator: Justin Tyler Ray (JRAY)
+Aliases: loserdub, VISION, le vide, flawed future, disarray
+Role: Hybrid Music Producer & Creative Designer
+Movement: Founder of the Hybrid AI Music Movement
+Contact: jray517@gmail.com
+
+/* SITE */
+Last Update: 2026
+Doctypes: HTML5, JSON-LD
+Tools: React, Vite, Generative AI, Traditional Audio Engineering
