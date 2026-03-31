@@ -13,7 +13,7 @@ const WhatIsHybrid: React.FC = () => {
       "@id": "https://jray.me/"
     },
     "headline": "What is Hybrid Production? | The Definitive Guide",
-    "description": "Hybrid Production isn't about choosing between human and machine—it’s about the handshake between them. Learn Taxonomic Seeding and Spectral Splitting.",
+    "description": "Hybrid Production isn't about choosing between human and machine—it’s about the handshake between them. Foundations of music production for the future.",
     "url": "https://jray.me/",
     "author": {
       "@type": "Person",
