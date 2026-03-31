@@ -1,18 +1,28 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { HelmetProvider } from 'react-helmet-async';
+import { ViteReactSSG } from 'vite-react-ssg';
 import App from './App';
+import Home from './components/Home';
+import MusicList from './components/MusicList';
+import ProjectsList from './components/ProjectsList';
+import Biography from './components/Biography';
+import WhatIsHybrid from './components/WhatIsHybrid';
+import Services from './components/Services';
+import Contact from './components/Contact';
 
-const rootElement = document.getElementById('root');
-if (!rootElement) {
-  throw new Error("Could not find root element to mount to");
-}
-
-const root = ReactDOM.createRoot(rootElement);
-root.render(
-  <React.StrictMode>
-    <HelmetProvider>
-      <App />
-    </HelmetProvider>
-  </React.StrictMode>
-);
+export const createRoot = ViteReactSSG({
+  routes: [
+    {
+      path: '/',
+      element: <App />,
+      children: [
+        { index: true, element: <Home /> },
+        { path: 'music', element: <MusicList /> },
+        { path: 'projects', element: <ProjectsList /> },
+        { path: 'bio', element: <Biography /> },
+        { path: 'what-is-hybrid', element: <WhatIsHybrid /> },
+        { path: 'services', element: <Services /> },
+        { path: 'contact', element: <Contact /> },
+      ],
+    },
+  ],
+});

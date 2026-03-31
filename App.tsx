@@ -1,17 +1,9 @@
-import React, { useState, Suspense, lazy, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import React, { useState, Suspense, useEffect } from 'react';
+import { Outlet, Link, useLocation } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import OilBackground from './components/OilBackground';
 import { Menu, X, Disc } from 'lucide-react';
-import Home from './components/Home';
 import SoundCloudPlayer from './components/SoundCloudPlayer';
-
-// Lazy load components so the website loads instantly
-const MusicList = lazy(() => import('./components/MusicList'));
-const ProjectsList = lazy(() => import('./components/ProjectsList'));
-const Biography = lazy(() => import('./components/Biography'));
-const WhatIsHybrid = lazy(() => import('./components/WhatIsHybrid'));
-const Services = lazy(() => import('./components/Services'));
-const Contact = lazy(() => import('./components/Contact'));
 
 // This fixes a React Router bug where changing pages doesn't scroll to the top
 const ScrollToTop = () => {
@@ -31,7 +23,7 @@ const Navigation = () => {
     { label: 'Music', path: '/music' },
     { label: 'Projects', path: '/projects' },
     { label: 'Bio', path: '/bio' },
-    { label: 'What Is Hybrid', path: '/hybrid' },
+    { label: 'What Is Hybrid', path: '/what-is-hybrid' },
     { label: 'Services', path: '/services' },
     { label: 'Contact', path: '/contact' },
   ];
@@ -98,9 +90,9 @@ const Navigation = () => {
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <ScrollToTop />
+    <HelmetProvider>
       <div className="relative min-h-screen font-sans selection:bg-white selection:text-black flex flex-col text-white">
+        <ScrollToTop />
         <OilBackground />
         <Navigation />
         <SoundCloudPlayer />
@@ -112,19 +104,11 @@ const App: React.FC = () => {
               <div className="text-white/20 font-mono text-xs tracking-widest animate-pulse uppercase">Loading Route...</div>
             </div>
           }>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/music" element={<MusicList />} />
-              <Route path="/projects" element={<ProjectsList />} />
-              <Route path="/bio" element={<Biography />} />
-              <Route path="/hybrid" element={<WhatIsHybrid />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
+            <Outlet />
           </Suspense>
         </main>
       </div>
-    </Router>
+    </HelmetProvider>
   );
 };
 

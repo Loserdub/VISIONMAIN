@@ -12,6 +12,19 @@ export default defineConfig(({ mode }) => {
       plugins: [
         react(),
       ],
+      ssgOptions: {
+        entry: '/index.tsx',
+        dirStyle: 'nested',
+        includedRoutes: () => [
+          '/',
+          '/music',
+          '/projects',
+          '/bio',
+          '/what-is-hybrid',
+          '/services',
+          '/contact',
+        ],
+      },
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
         'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
