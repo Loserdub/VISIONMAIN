@@ -52,12 +52,15 @@ const WhatIsHybrid: React.FC = () => {
   };
   return (
     <>
-      <Helmet>
+     <Helmet>
         <title>What is Hybrid Production? | Justin Ray</title>
         <meta name="description" content="Hybrid Production isn't about choosing between human and machine—it’s about the handshake between them. Learn Taxonomic Seeding and Spectral Splitting." />
-        <script type="application/ld+json">
-          {JSON.stringify(schemaData)}
-        </script>
+        
+        {/* THE FIX: Correctly injecting raw JSON for SSG Snapshotters */}
+        <script 
+          type="application/ld+json" 
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} 
+        />
       </Helmet>
 
       <article className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up max-w-7xl mx-auto text-zinc-300">
