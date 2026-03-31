@@ -90,13 +90,15 @@ const MusicList: React.FC = () => {
 
   return (
     <>
-      <Helmet>
+     <Helmet>
         <title>Music | Justin Ray - Hybrid Producer</title>
         <meta name="description" content="Explore Justin Ray's music projects: loserdub, VISION, le vide, flawed future, and disarray. Hybrid production blending AI and human creativity." />
-        {/* 2. INJECTING THE SCHEMA IN THE HELMET */}
-        <script type="application/ld+json">
-          {JSON.stringify(schemaData)}
-        </script>
+        
+        {/* THE FIX: Correctly injecting raw JSON for SSG Snapshotters */}
+        <script 
+          type="application/ld+json" 
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} 
+        />
       </Helmet>
       
       <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up w-full">
