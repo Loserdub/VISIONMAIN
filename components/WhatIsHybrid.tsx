@@ -3,7 +3,6 @@ import { Cpu, Fingerprint, Waves, ChevronRight, Zap, Lightbulb, Sliders } from '
 import { Helmet } from 'react-helmet-async';
 
 const WhatIsHybrid: React.FC = () => {
-  // Structured Data (Schema) for SEO Authority
   // Structured Data (Schema) for SEO Authority & Entity Building
   const schemaData = {
     "@context": "https://schema.org",
@@ -50,16 +49,77 @@ const WhatIsHybrid: React.FC = () => {
       { "@type": "Thing", "name": "Spectral Splitting" }
     ]
   };
+
+  // Structured Data (Schema) specifically for How-To Spectral Split
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Use Spectral Splitting in Hybrid Music Production",
+    "description": "Learn the 5-step architectural DAW routing methodology to dissect flat AI audio generations into surgical, multi-band tracks.",
+    "tool": [
+      {
+        "@type": "HowToTool",
+        "name": "Digital Audio Workstation (DAW)"
+      },
+      {
+        "@type": "HowToTool",
+        "name": "High-Pass / Low-Pass Equalizer"
+      },
+      {
+        "@type": "HowToTool",
+        "name": "Multiband Compressor / True-Peak Limiter"
+      }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "1. Set Up the Reconstruction Bus",
+        "text": "Create a single unifying Bus track (the Hybrid Master). Then create three duplicate audio tracks of the raw AI generation (Low, Mid, High branches) and route them directly into the Reconstruction Bus.",
+        "url": "https://jray.me/what-is-hybrid#step-1"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "2. Apply Isolation EQ",
+        "text": "Place steep high-pass and low-pass filters on each branch. Low Band: 20Hz-200Hz. Mid Band: 200Hz-4kHz. High Band: 4kHz-20kHz.",
+        "url": "https://jray.me/what-is-hybrid#step-2"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "3. Create the Mono Anchor",
+        "text": "Collapse the isolated Low band into pure mono. This prevents phase cancellation and ensures maximum kinetic structural integrity for the sub-bass frequencies.",
+        "url": "https://jray.me/what-is-hybrid#step-3"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "4. Route the Refinement Chain",
+        "text": "Apply dedicated signal chains to each branch. Boost fundamental sub-harmonics on the Low Anchor, use dynamic resonance suppression on the Mid Band, and apply spatial wideners to the High Band.",
+        "url": "https://jray.me/what-is-hybrid#step-4"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "5. Insert Final Limiter",
+        "text": "Place a glue compressor and true-peak limiter on the final Reconstruction Bus to catch rogue dynamic peaks where frequency bands intersect.",
+        "url": "https://jray.me/what-is-hybrid#step-5"
+      }
+    ]
+  };
+
   return (
     <>
      <Helmet>
         <title>What is Hybrid Production? | Justin Ray</title>
         <meta name="description" content="Hybrid Production isn't about choosing between human and machine—it’s about the handshake between them. Learn Taxonomic Seeding and Spectral Splitting." />
         
-        {/* THE FIX: Correctly injecting raw JSON for SSG Snapshotters */}
+        {/* Inject TechArticle Schema */}
         <script 
           type="application/ld+json" 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} 
+        />
+        
+        {/* Inject HowTo Schema for Google Snippets */}
+        <script 
+          type="application/ld+json" 
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} 
         />
       </Helmet>
 
@@ -281,7 +341,6 @@ const WhatIsHybrid: React.FC = () => {
                 </h4>
                 <p className="text-sm">Because the three branches are routed back together into the Reconstruction Bus, a final stage of control is required. A glue compressor and a true-peak limiter must be placed at the end of the Bus signal chain. This catches and suppresses any rogue dynamic peaks created where the frequency bands intersect, delivering a polished, professional foundation ready for the next phase of production.</p>
               </div>
-
             </div>
           </div>
         </section>
