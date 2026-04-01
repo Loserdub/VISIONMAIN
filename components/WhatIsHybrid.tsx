@@ -131,6 +131,15 @@ const WhatIsHybrid: React.FC = () => {
                 <li><a href="#step-5" className="hover:text-white transition-colors">↳ 5. The Final Limiter</a></li>
               </ul>
             </li>
+
+            <li className="pt-2">
+              <a href="#round-trip" className="flex items-center hover:text-purple-400 transition-colors font-bold text-white"><ChevronRight size={16} className="mr-2 text-purple-400"/> Part Three: The Round Trip (Feedback Loop)</a>
+              <ul className="pl-8 mt-2 space-y-2 text-white/60">
+                <li><a href="#node-a" className="hover:text-white transition-colors">↳ Node A: The Anchor</a></li>
+                <li><a href="#node-b" className="hover:text-white transition-colors">↳ Node B: Neural Seeding & Refinement</a></li>
+                <li><a href="#node-c" className="hover:text-white transition-colors">↳ Node C: The Manifestation</a></li>
+              </ul>
+            </li>
           </ul>
         </nav>
 
@@ -274,6 +283,65 @@ const WhatIsHybrid: React.FC = () => {
               </div>
 
             </div>
+          </div>
+        </section>
+
+        {/* PART 3: THE ROUND TRIP */}
+        <section id="round-trip" className="max-w-4xl mx-auto mb-24 pt-10 mt-[-40px]">
+          <h2 className="text-3xl font-display font-bold text-white mb-6 border-b border-white/10 pb-4">
+            <span className="text-purple-400">Part Three:</span> The Round Trip (Feedback Loop)
+          </h2>
+
+          <div className="space-y-6 text-white/80 leading-relaxed">
+            <p>
+              The real magic of Hybrid Production doesn't happen when you just generate audio. It happens in the continuous feedback loop between human intent and machine complexity. Lets refer tot his as the "Round Trip".
+            </p>
+            <p>
+              This three-step cycle makes sure the AI serves the composition instead of the other way around. It is a deliberate workflow designed to cut out the randomness and give you a final product with real intent.
+            </p>
+
+            <div className="space-y-8">
+              
+              <div id="node-a" className="bg-zinc-900/50 border border-white/10 p-6 rounded-sm relative overflow-hidden pt-10 mt-[-40px]">
+                <div className="absolute top-0 left-0 w-1 h-full bg-purple-500"></div>
+                <h4 className="text-xl font-bold text-white mb-3 flex items-center">
+                  Node A: The Anchor (Human Source DNA)
+                </h4>
+                <p className="text-sm">Every Hybrid track starts in the physical world. Instead of typing a blank text prompt, the whole process kicks off with a human anchor. This could be a custom sample, a recorded vocal, or an original instrumental progression (even a previous entire song!). We inject this seed right into the workflow so the AI has a strict rhythmic and harmonic DNA to follow. By setting this anchor first, you lock in the original soul of the track.</p>
+              </div>
+
+              <div id="node-b" className="bg-zinc-900/50 border border-white/10 p-6 rounded-sm relative overflow-hidden pt-10 mt-[-40px]">
+                <div className="absolute top-0 left-0 w-1 h-full bg-purple-500"></div>
+                <h4 className="text-xl font-bold text-white mb-3 flex items-center">
+                  Node B: Neural Seeding & Refinement
+                </h4>
+                <p className="text-sm">Once the anchor is locked in, we feed it into the AI's latent space for seeding. This is where the actual heavy lifting of prompting and refining takes place.</p>
+                <p className="text-sm mt-2">I use the anchor to guide the AI to build specific textures and expansions around the original audio.</p>
+                <p className="text-sm mt-2">We refine and re-roll the generation continuously until the output perfectly matches the creative vision.</p>
+                <p className="text-sm mt-2">Once we hit that ideal variation, I export the new audio file and pull it directly back into the local DAW(Logic, Ableton, FL Studio, Etc.).</p>
+              </div>
+
+              <div id="node-c" className="bg-zinc-900/50 border border-white/10 p-6 rounded-sm relative overflow-hidden pt-10 mt-[-40px]">
+                <div className="absolute top-0 left-0 w-1 h-full bg-purple-500"></div>
+                <h4 className="text-xl font-bold text-white mb-3 flex items-center">
+                  Node C: The Manifestation (Surgical Refinement)
+                </h4>
+                <p className="text-sm mb-4">This step is where the producer takes total control back. The audio exported from the AI is treated like just another raw track on the mixing desk. To reach the final manifestation, we use a few key techniques:</p>
+                <div className="space-y-4 text-sm bg-black/20 p-4 rounded">
+                  <p><strong>Spectral Splitting:</strong> Surgically carving out frequencies to separate the complex AI textures from the core stems.</p>
+                  <p><strong>Human Instrumentation:</strong> Overdubbing live synthesizers, adding vocals, or chopping manual drum breaks to bring the groove back down to earth. (This is where you get creative)</p>
+                  <p><strong>Mixing & Mastering:</strong> Applying traditional audio engineering techniques to glue the human and digital elements together.</p>
+                </div>
+              </div>
+            </div>
+
+            <h3 className="text-xl font-bold text-white mt-8">The Result</h3>
+            <div className="bg-zinc-800/40 p-6 border-l-4 border-purple-500 rounded-r-sm">
+              <p>
+                What you get is a continuous feedback loop. Human emotion informs the machine intelligence, and the machine's complexity inspires the human mix. The Round Trip guarantees that the final output is never just a random hallucination. It becomes a highly controlled and deeply intentional piece of art.
+              </p>
+            </div>
+
           </div>
         </section>
 
