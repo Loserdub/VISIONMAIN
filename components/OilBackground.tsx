@@ -9,15 +9,15 @@ const OilBackground: React.FC = () => {
 
   return (
     <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-[#050505]">
-      {/* Abstract Colorful Blobs - Optimized gradients */}
+      {/* Black Glassmorphism Blobs - deep charcoals and cool greys */}
       <div 
         className="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] opacity-60 oil-bg-animate"
         style={{
           background: `
-            radial-gradient(circle at 50% 50%, rgba(76, 29, 149, 0.4), transparent 50%),
-            radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.3), transparent 40%),
-            radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.2), transparent 40%),
-            linear-gradient(45deg, #1a1a2e, #16213e, #0f3460)
+            radial-gradient(circle at 50% 50%, rgba(30, 41, 59, 0.6), transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(51, 65, 85, 0.4), transparent 40%),
+            radial-gradient(circle at 20% 80%, rgba(15, 23, 42, 0.5), transparent 40%),
+            linear-gradient(45deg, #0a0a0a, #111111, #0f172a)
           `,
           filter: 'blur(60px)', // Reduced blur radius for performance
           transform: 'translateZ(0)', // Force hardware acceleration

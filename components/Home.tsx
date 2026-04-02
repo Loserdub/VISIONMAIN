@@ -64,7 +64,7 @@ const Home: React.FC = () => {
 
       {/* Philosophy / Manifesto Section */}
       <section className="w-full max-w-4xl mx-auto z-20 animate-fade-in-up mt-24 px-4 text-center">
-        <h2 className="text-sm font-bold tracking-[0.3em] text-purple-400 mb-6 uppercase">The Philosophy</h2>
+        <h2 className="text-sm font-bold tracking-[0.3em] text-slate-400 mb-6 uppercase">The Philosophy</h2>
         <p className="text-2xl sm:text-4xl md:text-5xl font-light leading-tight text-white/90 font-sans">
           "While others argue over black or white - pure human or pure AI - all or nothing - the future exists in the <span className="text-transparent bg-clip-text bg-gradient-to-tr from-gray-500 via-gray-100 to-gray-500 font-bold">grey</span>. Hybrid production is the search for the soul inside the algorithm."
         </p>
@@ -75,22 +75,22 @@ const Home: React.FC = () => {
 
       {/* Developer Ecosystem Section */}
       <section className="w-full max-w-5xl mx-auto z-20 animate-fade-in-up mt-24 px-4 text-center">
-        <h2 className="text-sm font-bold tracking-[0.3em] text-purple-400 mb-6 uppercase">My Ecosystem</h2>
+        <h2 className="text-sm font-bold tracking-[0.3em] text-slate-400 mb-6 uppercase">My Ecosystem</h2>
         <p className="text-xl font-light text-white/80 max-w-3xl mx-auto mb-12">
           Specializing in <span className="font-bold">AI music mixing</span> and web applications, my development work directly feeds into my production workflow. Here are some of the tools I've built:
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-          <div className="bg-zinc-900/80 border border-white/10 p-8 hover:border-purple-500/50 transition-colors duration-500 group">
-            <h3 className="text-xl font-display font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">In-Browser DAW</h3>
+          <div className="bg-zinc-900/80 border border-white/10 p-8 hover:border-slate-500/50 transition-colors duration-500 group">
+            <h3 className="text-xl font-display font-bold text-white mb-3 group-hover:text-slate-300 transition-colors">In-Browser DAW</h3>
             <p className="text-sm text-white/60 leading-relaxed">A full-fledged digital audio workstation living entirely in the browser, built to streamline hybrid mixing and on-the-fly audio manipulation without leaving the web.</p>
           </div>
-          <div className="bg-zinc-900/80 border border-white/10 p-8 hover:border-purple-500/50 transition-colors duration-500 group">
-            <h3 className="text-xl font-display font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Polyphonic Web-Synth</h3>
+          <div className="bg-zinc-900/80 border border-white/10 p-8 hover:border-slate-500/50 transition-colors duration-500 group">
+            <h3 className="text-xl font-display font-bold text-white mb-3 group-hover:text-slate-300 transition-colors">Polyphonic Web-Synth</h3>
             <p className="text-sm text-white/60 leading-relaxed">A custom generative web-synth engineered for rich, evolving soundscapes that blend seamlessly with AI-generated audio tracks and human compositions.</p>
           </div>
-          <div className="bg-zinc-900/80 border border-white/10 p-8 hover:border-purple-500/50 transition-colors duration-500 group">
-            <h3 className="text-xl font-display font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Web-Based Image Tool</h3>
+          <div className="bg-zinc-900/80 border border-white/10 p-8 hover:border-slate-500/50 transition-colors duration-500 group">
+            <h3 className="text-xl font-display font-bold text-white mb-3 group-hover:text-slate-300 transition-colors">Web-Based Image Tool</h3>
             <p className="text-sm text-white/60 leading-relaxed">A lightweight, Photoshop-style utility designed to quickly resize, process, and manipulate visual assets to accompany my audio releases.</p>
           </div>
         </div>
@@ -102,17 +102,17 @@ const Home: React.FC = () => {
       <div className="w-full max-w-5xl mx-auto z-20 animate-fade-in-up mt-24 px-4" style={{ animationDelay: '0.3s' }}>
         <button 
             onClick={scrollToHybrid}
-            className="w-full text-left relative overflow-hidden rounded-sm border border-white/10 bg-zinc-900/40 backdrop-blur-md p-8 md:p-12 hover:bg-zinc-900/60 transition-colors duration-500 group cursor-pointer focus:outline-none focus:ring-1 focus:ring-purple-500"
+            className="w-full text-left relative overflow-hidden rounded-sm border border-white/10 bg-zinc-900/40 backdrop-blur-md p-8 md:p-12 hover:bg-zinc-900/60 transition-colors duration-500 group cursor-pointer focus:outline-none focus:ring-1 focus:ring-slate-500"
         >
-            <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-purple-500 to-transparent"></div>
+            <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-slate-400 to-transparent"></div>
             
             {/* Background Glow */}
-            <div className="absolute -right-20 -top-20 w-64 h-64 bg-purple-900/20 rounded-full blur-[100px] pointer-events-none group-hover:bg-purple-800/30 transition-colors duration-700"></div>
+            <div className="absolute -right-20 -top-20 w-64 h-64 bg-slate-800/20 rounded-full blur-[100px] pointer-events-none group-hover:bg-slate-700/30 transition-colors duration-700"></div>
 
             <div className="grid md:grid-cols-[1fr_2fr] gap-8 items-start relative z-10">
                 <div>
                     <h2 className="text-2xl md:text-3xl font-display font-bold text-white uppercase tracking-tighter leading-none mb-4">
-                        What is <br/><span className="text-purple-400">Hybrid</span><br/>Production?
+                        What is <br/><span className="text-slate-300">Hybrid</span><br/>Production?
                     </h2>
                     <div className="w-12 h-[1px] bg-white/20 my-4 group-hover:w-24 transition-all duration-500"></div>
                     <p className="text-xs font-mono text-white/40 tracking-widest uppercase">

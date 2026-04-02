@@ -10,7 +10,7 @@ const PROJECTS: Project[] =[
     description: 'Emotional Dissonance Meets Optimistic Nostalgia. A raw exploration of melody through the lens of imperfection.',
     tags:['#Indie', '#Electronic', '#Human'],
     imageUrl: 'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=800', 
-    color: 'bg-red-500',
+    color: 'bg-slate-600',
     spotifyUrl: 'https://open.spotify.com/artist/3VZelnnW9OR0DyR2qRn4Oq'
   },
   {
@@ -19,7 +19,7 @@ const PROJECTS: Project[] =[
     description: 'Cinematic soundscapes And Hazy Funk.',
     tags: ['#Hybrid', '#Cinematic', '#Funk'],
     imageUrl: './vision.png', 
-    color: 'bg-cyan-500',
+    color: 'bg-slate-400',
     spotifyUrl: 'https://open.spotify.com/artist/6GGZwLOLxVxYGOcMry3NDi'
   },
   {
@@ -37,7 +37,7 @@ const PROJECTS: Project[] =[
     description: 'Glitch mechanics and broken rhythms. Embracing the artifacts of digital decay.',
     tags: ['#EDM', '#Hardstyle', '#Hybrid'],
     imageUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800', 
-    color: 'bg-purple-500',
+    color: 'bg-slate-500',
     spotifyUrl: 'https://open.spotify.com/artist/3FNFzRyU0PCA2vjihWsg6y'
   },
   {
@@ -46,7 +46,7 @@ const PROJECTS: Project[] =[
     description: 'Controlled chaos. Alternative Rock with its Own Style.',
     tags:['#Alternative', '#Rock', '#Hybrid'],
     imageUrl: 'https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&q=80&w=800', 
-    color: 'bg-yellow-500',
+    color: 'bg-slate-700',
     spotifyUrl: 'https://open.spotify.com/artist/6TlAxGL1Hm4FRWfTxprlMi'
   }
 ];
@@ -108,7 +108,7 @@ const MusicList: React.FC = () => {
                <h1 className="text-4xl sm:text-5xl font-display font-bold text-transparent text-stroke uppercase tracking-widest">
                   Sonic Projects
                </h1>
-               <div className="h-1 w-24 bg-purple-500 mx-auto mt-6 rounded-full"></div>
+               <div className="h-1 w-24 bg-slate-500 mx-auto mt-6 rounded-full"></div>
            </div>
 
            {/* Row 1: First 3 Projects (Squares) */}
@@ -120,8 +120,8 @@ const MusicList: React.FC = () => {
                    target="_blank"
                    rel="noopener noreferrer"
                    aria-label={`Listen to ${project.name} on Spotify`}
-                   className={`group relative aspect-square w-full border border-white/10 hover:border-purple-500/50 transition-all duration-500 flex flex-col items-center justify-center p-8 text-center overflow-hidden cursor-pointer
-                      bg-zinc-900/40 hover:bg-zinc-900/60 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)]
+                   className={`group relative aspect-square w-full border border-white/10 hover:border-slate-500/50 transition-all duration-500 flex flex-col items-center justify-center p-8 text-center overflow-hidden cursor-pointer
+                      bg-zinc-900/40 hover:bg-zinc-900/60 hover:shadow-[0_0_30px_rgba(148,163,184,0.15)]
                    `}
                  >
                     {/* Subtle Background Glow on Hover */}
@@ -129,16 +129,16 @@ const MusicList: React.FC = () => {
                     
                     {/* Content */}
                     <div className="relative z-10 flex flex-col items-center justify-center h-full space-y-4">
-                        <h2 className="text-4xl sm:text-5xl font-display font-black uppercase tracking-tighter transition-all duration-500 text-white group-hover:text-purple-400 group-hover:scale-110">
+                        <h2 className="text-4xl sm:text-5xl font-display font-black uppercase tracking-tighter transition-all duration-500 text-white group-hover:text-slate-300 group-hover:scale-110">
                           {project.name}
                         </h2>
                         
                         <div className="flex flex-wrap justify-center gap-2 relative">
                           {/* Decorative Line */}
-                          <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 h-[1px] w-8 bg-white/20 transition-all duration-500 group-hover:w-16 group-hover:bg-purple-500"></div>
+                          <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 h-[1px] w-8 bg-white/20 transition-all duration-500 group-hover:w-16 group-hover:bg-slate-400"></div>
                           
                           {project.tags.map(tag => (
-                              <span key={tag} className="text-xs font-mono text-purple-400 group-hover:text-purple-300 uppercase tracking-widest">
+                              <span key={tag} className="text-xs font-mono text-slate-400 group-hover:text-slate-300 uppercase tracking-widest">
                                   {tag}
                               </span>
                           ))}
@@ -169,7 +169,7 @@ const MusicList: React.FC = () => {
                    target="_blank"
                    rel="noopener noreferrer"
                    aria-label={`Listen to ${project.name} on Spotify`}
-                   className={`group relative border border-white/5 hover:border-purple-500/30 transition-all duration-500 p-8 flex flex-col items-center justify-center text-center overflow-hidden min-h-[180px] w-full cursor-pointer
+                   className={`group relative border border-white/5 hover:border-slate-500/30 transition-all duration-500 p-8 flex flex-col items-center justify-center text-center overflow-hidden min-h-[180px] w-full cursor-pointer
                       bg-zinc-900/20 hover:bg-zinc-900/40
                    `}
                  >
