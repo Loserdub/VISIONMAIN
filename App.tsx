@@ -74,7 +74,7 @@ const Navigation = () => {
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`opacity-0 animate-fade-in-up hover:text-purple-400 transition-colors ${isActive ? 'text-white font-bold' : 'text-white/60'}`}
+                  className={`opacity-0 animate-fade-in-up hover:text-slate-300 transition-colors ${isActive ? 'text-white font-bold' : 'text-white/60'}`}
                   style={{ animationDelay: `${index * 150 + 100}ms` }}
                 >
                   {item.label}

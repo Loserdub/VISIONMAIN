@@ -14,7 +14,7 @@ const SoundCloudPlayer: React.FC = () => {
       {/* Label above the player */}
       <div className="flex items-center justify-between mb-2 px-2">
         <div className="flex items-center gap-2 opacity-50 text-[10px] tracking-[0.4em] uppercase font-mono text-white">
-          <Radio size={12} className="animate-pulse text-purple-500" />
+          <Radio size={12} className="animate-pulse text-slate-400" />
           Latest Transmission
         </div>
         
@@ -30,7 +30,7 @@ const SoundCloudPlayer: React.FC = () => {
       </div>
 
       {/* Player Container */}
-      <div className="relative overflow-hidden rounded-sm border border-white/10 bg-black/80 backdrop-blur-md shadow-2xl shadow-purple-500/10">
+      <div className="relative overflow-hidden rounded-sm border border-white/10 bg-black/80 backdrop-blur-md shadow-2xl shadow-slate-500/10">
         <iframe 
           width="100%" 
           height="120" // Reduced height for a sleeker look
@@ -41,16 +41,16 @@ const SoundCloudPlayer: React.FC = () => {
              CHANGES MADE TO SRC:
              - visual=false: This brings back the track name and navigation list.
              - height=120: Standard player height.
-             - color=%23a855f7: Matches your purple theme.
+             - color=%2394a3b8: Matches the cool grey/slate theme.
           */
-          src={`https://w.soundcloud.com/player/?url=${trackUrl}&color=%23a855f7&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false`}
+          src={`https://w.soundcloud.com/player/?url=${trackUrl}&color=%2394a3b8&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false`}
           title="SoundCloud Player"
           className="opacity-90 hover:opacity-100 transition-opacity"
         >
         </iframe>
         
         {/* Subtle decorative edge */}
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-slate-500/50 to-transparent"></div>
       </div>
     </div>
   );

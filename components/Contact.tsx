@@ -133,7 +133,7 @@ const Contact: React.FC = () => {
 
           {/* Contact Form */}
           <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-b from-purple-900/20 to-transparent blur-xl -z-10" />
+            <div className="absolute -inset-1 bg-gradient-to-b from-slate-900/20 to-transparent blur-xl -z-10" />
             <form className="space-y-6 p-8 bg-white/[0.02] border border-white/5 backdrop-blur-sm" onSubmit={handleSendTransmission}>
               <div className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -146,7 +146,7 @@ const Contact: React.FC = () => {
                         onChange={handleInputChange}
                         placeholder="NAME" 
                         required
-                        className="w-full bg-black/40 border border-white/10 p-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-purple-500/50 focus:bg-white/[0.02] transition-colors font-mono"
+                        className="w-full bg-black/40 border border-white/10 p-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-slate-500/50 focus:bg-white/[0.02] transition-colors font-mono"
                     />
                   </div>
                   <div className="space-y-1">
@@ -158,7 +158,7 @@ const Contact: React.FC = () => {
                         onChange={handleInputChange}
                         placeholder="EMAIL" 
                         required
-                        className="w-full bg-black/40 border border-white/10 p-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-purple-500/50 focus:bg-white/[0.02] transition-colors font-mono"
+                        className="w-full bg-black/40 border border-white/10 p-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-slate-500/50 focus:bg-white/[0.02] transition-colors font-mono"
                     />
                   </div>
                 </div>
@@ -172,14 +172,14 @@ const Contact: React.FC = () => {
                       onChange={handleInputChange}
                       placeholder="ENTER MESSAGE..." 
                       required
-                      className="w-full bg-black/40 border border-white/10 p-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-purple-500/50 focus:bg-white/[0.02] transition-colors font-mono resize-none"
+                      className="w-full bg-black/40 border border-white/10 p-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-slate-500/50 focus:bg-white/[0.02] transition-colors font-mono resize-none"
                   />
                 </div>
               </div>
 
               <button 
                 type="submit" 
-                className="w-full group relative overflow-hidden bg-white text-black font-display font-bold uppercase tracking-widest py-4 hover:bg-purple-500 hover:text-white transition-all duration-300"
+                className="w-full group relative overflow-hidden bg-white text-black font-display font-bold uppercase tracking-widest py-4 hover:bg-slate-700 hover:text-white transition-all duration-300"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   Send Transmission <Send size={16} />
@@ -194,7 +194,7 @@ const Contact: React.FC = () => {
            <div className="text-white/40 font-mono text-sm tracking-widest uppercase flex flex-col sm:flex-row items-center gap-2">
               <span>&copy; {new Date().getFullYear()} HYBRID PRODUCTION.</span>
               <span className="hidden sm:block text-white/20">|</span>
-              <span className="text-white/60 font-semibold transition-all duration-500 hover:text-purple-400 hover:tracking-[0.4em] hover:shadow-[0_0_15px_rgba(168,85,247,0.5)] cursor-default">
+              <span className="text-white/60 font-semibold transition-all duration-500 hover:text-slate-300 hover:tracking-[0.4em] hover:shadow-[0_0_15px_rgba(148,163,184,0.3)] cursor-default">
                 ALL RIGHTS RESERVED
               </span>
            </div>

@@ -47,11 +47,11 @@ const Services: React.FC<ServicesProps> = ({ onContactClick }) => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
         {services.map((service, index) => (
-          <div key={index} className="group p-8 border border-white/10 bg-zinc-900/50 hover:bg-zinc-900 transition-all duration-500 hover:border-purple-500/30 flex flex-col items-center text-center relative overflow-hidden">
+          <div key={index} className="group p-8 border border-white/10 bg-zinc-900/50 hover:bg-zinc-900 transition-all duration-500 hover:border-slate-500/30 flex flex-col items-center text-center relative overflow-hidden">
              {/* Hover Gradient */}
-             <div className="absolute inset-0 bg-gradient-to-b from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+             <div className="absolute inset-0 bg-gradient-to-b from-slate-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
              
-             <div className="relative z-10 mb-6 p-4 rounded-full border border-white/10 bg-black group-hover:border-purple-500/50 transition-colors duration-500 text-purple-400">
+             <div className="relative z-10 mb-6 p-4 rounded-full border border-white/10 bg-black group-hover:border-slate-500/50 transition-colors duration-500 text-slate-400">
                 {service.icon}
              </div>
              

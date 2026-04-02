@@ -15,7 +15,7 @@ const Biography: React.FC = () => {
           {/* Text Content */}
           <div className="order-2 md:order-1 space-y-8">
              <div className="space-y-2">
-                <p className="text-purple-400 font-mono text-xs tracking-[0.3em] uppercase">The Architect</p>
+                <p className="text-slate-400 font-mono text-xs tracking-[0.3em] uppercase">The Architect</p>
                 <h1 className="text-5xl sm:text-7xl font-display font-bold text-white leading-none tracking-tight">
                   JUSTIN<br/><span className="text-stroke text-transparent">RAY</span>
                 </h1>
@@ -61,9 +61,9 @@ const Biography: React.FC = () => {
                 />
                 
                 {/* Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/40 to-transparent mix-blend-overlay pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/40 to-transparent mix-blend-overlay pointer-events-none"></div>
                 <div className="absolute -inset-4 border border-white/5 rotate-3 transition-transform duration-700 group-hover:rotate-0 pointer-events-none"></div>
-                <div className="absolute -inset-4 border border-purple-500/20 -rotate-2 transition-transform duration-700 group-hover:rotate-0 pointer-events-none"></div>
+                <div className="absolute -inset-4 border border-slate-500/20 -rotate-2 transition-transform duration-700 group-hover:rotate-0 pointer-events-none"></div>
              </div>
              
              {/* Floating Badge */}
