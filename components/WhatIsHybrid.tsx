@@ -267,7 +267,7 @@ const WhatIsHybrid: React.FC = () => {
         </section>
 
         {/* PART 2: SPECTRAL SPLITTING */}
-        <section id="spectral-splitting" className="max-w-4xl mx-auto mb-24 pt-10 mt-[10px]">
+        <section id="spectral-splitting" className="max-w-4xl mx-auto mb-24 pt-10 mt-[-30px]">
           <h2 className="text-3xl font-display font-bold text-white mb-6 border-b border-white/10 pb-4">
             <span className="text-cyan-400">Part Two:</span> Spectral Splitting (The Tri-Band Dissection)
           </h2>
