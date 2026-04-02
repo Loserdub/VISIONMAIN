@@ -134,7 +134,7 @@ const WhatIsHybrid: React.FC = () => {
         </header>
 
         {/* DEFINITION SECTION */}
-        <section id="definition" className="max-w-4xl mx-auto mb-16 pt-10 mt-[-40px] text-center bg-zinc-900/30 p-8 border border-white/5 backdrop-blur-sm rounded-sm">
+        <section id="definition" className="max-w-4xl mx-auto mb-16 scroll-mt-24 text-center bg-zinc-900/30 p-8 border border-white/5 backdrop-blur-sm rounded-sm">
           <h2 className="text-sm font-mono text-slate-400 mb-4 uppercase tracking-widest">Definition</h2>
           <p className="text-2xl sm:text-3xl font-light leading-relaxed text-white/90 italic">
             "Hybrid Production isn't about choosing between human and machine—it’s about the handshake between them. It’s using AI to sprout the initial 'seeds' of an idea, then taking the wheel with live synths, real instruments, and human intuition to turn those sparks into a finished track."
@@ -142,7 +142,7 @@ const WhatIsHybrid: React.FC = () => {
         </section>
 
         {/* PROS OF HYBRID */}
-        <section id="pros" className="max-w-4xl mx-auto mb-20 pt-10 mt-[-40px]">
+        <section id="pros" className="max-w-4xl mx-auto mb-20 scroll-mt-24">
           <h2 className="text-2xl font-display font-bold text-white mb-6 border-b border-white/10 pb-4 text-center sm:text-left">
             Why Hybrid is Superior
           </h2>
@@ -204,7 +204,7 @@ const WhatIsHybrid: React.FC = () => {
         </nav>
 
         {/* PART 1: SEEDING */}
-        <section id="seeding" className="max-w-4xl mx-auto mb-24 pt-10 mt-[-40px]">
+        <section id="seeding" className="max-w-4xl mx-auto mb-24 scroll-mt-24">
           <h2 className="text-3xl font-display font-bold text-white mb-6 border-b border-white/10 pb-4">
             <span className="text-slate-400">Part One:</span> Seeding (The Prompt)
           </h2>
@@ -224,7 +224,7 @@ const WhatIsHybrid: React.FC = () => {
             </p>
 
             {/* Taxonomy Table */}
-            <div id="taxonomy-table" className="my-12 overflow-x-auto pt-10 mt-[-40px]">
+            <div id="taxonomy-table" className="my-12 overflow-x-auto scroll-mt-24">
               <h3 className="text-lg font-bold text-white mb-4 font-mono uppercase tracking-widest text-center">The Hybrid Taxonomy Chart</h3>
               <table className="w-full text-left border-collapse border border-white/10 bg-zinc-900/50">
                 <thead>
@@ -267,7 +267,7 @@ const WhatIsHybrid: React.FC = () => {
         </section>
 
         {/* PART 2: SPECTRAL SPLITTING */}
-        <section id="spectral-splitting" className="max-w-4xl mx-auto mb-24 pt-10 mt-[-40px]">
+        <section id="spectral-splitting" className="max-w-4xl mx-auto mb-24 scroll-mt-24">
           <h2 className="text-3xl font-display font-bold text-white mb-6 border-b border-white/10 pb-4">
             <span className="text-slate-400">Part Two:</span> Spectral Splitting (The Tri-Band Dissection)
           </h2>
@@ -289,7 +289,7 @@ const WhatIsHybrid: React.FC = () => {
             {/* DAW Steps */}
             <div className="space-y-8">
               
-              <div id="step-1" className="bg-zinc-900/50 border border-white/10 p-6 rounded-sm relative overflow-hidden pt-10 mt-[-40px]">
+              <div id="step-1" className="bg-zinc-900/50 border border-white/10 p-6 rounded-sm relative overflow-hidden scroll-mt-24">
                 <div className="absolute top-0 left-0 w-1 h-full bg-slate-500"></div>
                 <h4 className="text-xl font-bold text-white mb-3 flex items-center">
                   <span className="font-mono text-slate-400 mr-3 text-lg">1.</span> The Reconstruction Bus and the Three Branches
@@ -298,7 +298,7 @@ const WhatIsHybrid: React.FC = () => {
                 <p className="text-sm mt-2">These three tracks will serve as the High, Mid, and Low branches. All three branches must be routed directly into the Reconstruction Bus, ensuring they are processed as a single, cohesive unit before hitting the master output.</p>
               </div>
 
-              <div id="step-2" className="bg-zinc-900/50 border border-white/10 p-6 rounded-sm relative overflow-hidden pt-10 mt-[-40px]">
+              <div id="step-2" className="bg-zinc-900/50 border border-white/10 p-6 rounded-sm relative overflow-hidden scroll-mt-24">
                 <div className="absolute top-0 left-0 w-1 h-full bg-slate-500"></div>
                 <h4 className="text-xl font-bold text-white mb-3 flex items-center">
                   <span className="font-mono text-slate-400 mr-3 text-lg">2.</span> The Isolation EQ (First Position)
@@ -312,7 +312,7 @@ const WhatIsHybrid: React.FC = () => {
                 <p className="text-sm">During this phase, the workflow requires isolating the active band by muting the others to allow for surgical precision. The producer must frequently unmute the full stack to check the combined mix, ensuring the crossover points remain phase-aligned and transparent.</p>
               </div>
 
-              <div id="step-3" className="bg-zinc-900/50 border border-white/10 p-6 rounded-sm relative overflow-hidden pt-10 mt-[-40px]">
+              <div id="step-3" className="bg-zinc-900/50 border border-white/10 p-6 rounded-sm relative overflow-hidden scroll-mt-24">
                 <div className="absolute top-0 left-0 w-1 h-full bg-slate-500"></div>
                 <h4 className="text-xl font-bold text-white mb-3 flex items-center">
                   <span className="font-mono text-slate-400 mr-3 text-lg">3.</span> The Mono Anchor (The Low Band)
@@ -321,7 +321,7 @@ const WhatIsHybrid: React.FC = () => {
                 <p className="text-sm mt-2">When a stereo bass signal is summed to mono on club PA systems or mobile devices, the opposing left and right frequencies cancel each other out, leaving a hollow mix. Forcing the Low Anchor into mono ensures maximum kinetic impact and absolute structural integrity.</p>
               </div>
 
-              <div id="step-4" className="bg-zinc-900/50 border border-white/10 p-6 rounded-sm relative overflow-hidden pt-10 mt-[-40px]">
+              <div id="step-4" className="bg-zinc-900/50 border border-white/10 p-6 rounded-sm relative overflow-hidden scroll-mt-24">
                 <div className="absolute top-0 left-0 w-1 h-full bg-slate-500"></div>
                 <h4 className="text-xl font-bold text-white mb-3 flex items-center">
                   <span className="font-mono text-slate-400 mr-3 text-lg">4.</span> The Refinement Chain (Artist Intent)
@@ -334,7 +334,7 @@ const WhatIsHybrid: React.FC = () => {
                 </div>
               </div>
 
-              <div id="step-5" className="bg-zinc-900/50 border border-white/10 p-6 rounded-sm relative overflow-hidden pt-10 mt-[-40px]">
+              <div id="step-5" className="bg-zinc-900/50 border border-white/10 p-6 rounded-sm relative overflow-hidden scroll-mt-24">
                 <div className="absolute top-0 left-0 w-1 h-full bg-slate-500"></div>
                 <h4 className="text-xl font-bold text-white mb-3 flex items-center">
                   <span className="font-mono text-slate-400 mr-3 text-lg">5.</span> The Final Limiter
@@ -346,7 +346,7 @@ const WhatIsHybrid: React.FC = () => {
         </section>
 
         {/* PART 3: THE ROUND TRIP */}
-        <section id="round-trip" className="max-w-4xl mx-auto mb-24 pt-10 mt-[-40px]">
+        <section id="round-trip" className="max-w-4xl mx-auto mb-24 scroll-mt-24">
           <h2 className="text-3xl font-display font-bold text-white mb-6 border-b border-white/10 pb-4">
             <span className="text-slate-400">Part Three:</span> The Round Trip (Feedback Loop)
           </h2>
@@ -361,7 +361,7 @@ const WhatIsHybrid: React.FC = () => {
 
             <div className="space-y-8">
               
-              <div id="node-a" className="bg-zinc-900/50 border border-white/10 p-6 rounded-sm relative overflow-hidden pt-10 mt-[-40px]">
+              <div id="node-a" className="bg-zinc-900/50 border border-white/10 p-6 rounded-sm relative overflow-hidden scroll-mt-24">
                 <div className="absolute top-0 left-0 w-1 h-full bg-slate-500"></div>
                 <h4 className="text-xl font-bold text-white mb-3 flex items-center">
                   Node A: The Anchor (Human Source DNA)
@@ -369,7 +369,7 @@ const WhatIsHybrid: React.FC = () => {
                 <p className="text-sm">Every Hybrid track starts in the physical world. Instead of typing a blank text prompt, the whole process kicks off with a human anchor. This could be a custom sample, a recorded vocal, or an original instrumental progression (even a previous entire song!). We inject this seed right into the workflow so the AI has a strict rhythmic and harmonic DNA to follow. By setting this anchor first, you lock in the original soul of the track.</p>
               </div>
 
-              <div id="node-b" className="bg-zinc-900/50 border border-white/10 p-6 rounded-sm relative overflow-hidden pt-10 mt-[-40px]">
+              <div id="node-b" className="bg-zinc-900/50 border border-white/10 p-6 rounded-sm relative overflow-hidden scroll-mt-24">
                 <div className="absolute top-0 left-0 w-1 h-full bg-slate-500"></div>
                 <h4 className="text-xl font-bold text-white mb-3 flex items-center">
                   Node B: Neural Seeding & Refinement
@@ -380,7 +380,7 @@ const WhatIsHybrid: React.FC = () => {
                 <p className="text-sm mt-2">Once we hit that ideal variation, I export the new audio file and pull it directly back into the local DAW(Logic, Ableton, FL Studio, Etc.).</p>
               </div>
 
-              <div id="node-c" className="bg-zinc-900/50 border border-white/10 p-6 rounded-sm relative overflow-hidden pt-10 mt-[-40px]">
+              <div id="node-c" className="bg-zinc-900/50 border border-white/10 p-6 rounded-sm relative overflow-hidden scroll-mt-24">
                 <div className="absolute top-0 left-0 w-1 h-full bg-slate-500"></div>
                 <h4 className="text-xl font-bold text-white mb-3 flex items-center">
                   Node C: The Manifestation (Surgical Refinement)
