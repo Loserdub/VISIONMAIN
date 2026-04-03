@@ -10,7 +10,8 @@ const SoundCloudPlayer: React.FC = () => {
   const trackUrl = "https%3A//soundcloud.com/visiontracks";
 
   return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-2xl animate-fade-in-up">
+    <div className="fixed bottom-6 inset-x-0 flex justify-center z-50 px-4 animate-fade-in-up">
+      <div className="w-full max-w-2xl">
       {/* Label above the player */}
       <div className="flex items-center justify-between mb-2 px-2">
         <div className="flex items-center gap-2 opacity-50 text-[10px] tracking-[0.4em] uppercase font-mono text-white">
@@ -51,6 +52,7 @@ const SoundCloudPlayer: React.FC = () => {
         
         {/* Subtle decorative edge */}
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-slate-500/50 to-transparent"></div>
+      </div>
       </div>
     </div>
   );
