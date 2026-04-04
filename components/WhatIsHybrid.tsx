@@ -394,7 +394,7 @@ const WhatIsHybrid: React.FC = () => {
                 </div>
               </div>
             </div>
-            <img src="/cycle-diagram.webp" alt="Hybrid Production Round Trip Cycle Diagram" className="w-full max-w-3xl mx-auto rounded-sm border border-white/10 mt-12 mb-8" />
+            <img src="/assets/images/cycle-diagram.webp" alt="Hybrid Production Round Trip Cycle Diagram" className="w-full max-w-3xl mx-auto rounded-sm border border-white/10 mt-12 mb-8" />
             <h3 className="text-xl font-bold text-white mt-8">The Result</h3>
             <div className="bg-zinc-800/40 p-6 border-l-4 border-slate-500 rounded-r-sm">
               <p>
