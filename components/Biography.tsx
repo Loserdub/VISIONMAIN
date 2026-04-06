@@ -7,6 +7,43 @@ const Biography: React.FC = () => {
       <Helmet>
         <title>Biography | Justin Ray - Hybrid Music Producer</title>
         <meta name="description" content="Justin Ray is a Hybrid Music Producer based in East Lansing, MI. Founder of r/hybridproduction, early Suno ecosystem contributor, and developer of custom audio tools. Discography: LoserDub, VISION, Le Vide, Flawed Future, Disarray." />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfilePage",
+          "url": "https://jray.me/bio",
+          "mainEntity": {
+            "@type": "Person",
+            "name": "JRay",
+            "alternateName": ["Justin Ray", "Justin Tyler Ray"],
+            "jobTitle": [
+              "Hybrid Producer",
+              "Sound Engineer",
+              "Creative Developer",
+              "Artist"
+            ],
+            "description": "Hybrid Producer and creative developer bridging the gap between raw human artistry and generative AI audio workflows.",
+            "image": "PLACEHOLDER_FOR_ABSOLUTE_IMAGE_URL",
+            "knowsAbout": [
+              "Hybrid Production",
+              "Generative AI Audio",
+              "Sound Engineering",
+              "Music Production",
+              "Ableton Live",
+              "Logic Pro X",
+              "Prompt Design",
+              "Spectral Splitting",
+              "Creative Software Development"
+            ],
+            "sameAs": [
+              "https://open.spotify.com/artist/3VZelnnW9OR0DyR2qRn4Oq",
+              "https://www.linkedin.com/in/jray-me/",
+              "https://github.com/Loserdub",
+              "https://soundcloud.com/visiontracks/",
+              "https://www.youtube.com/@loserdub",
+              "https://www.reddit.com/r/hybridproduction/"
+            ]
+          }
+        })}</script>
       </Helmet>
     <section className="py-24 px-4 sm:px-8 relative z-10 overflow-hidden animate-fade-in-up">
       <div className="container mx-auto max-w-6xl">
@@ -25,19 +62,37 @@ const Biography: React.FC = () => {
                 </div>
              </div>
 
-             <div className="space-y-6 text-white/80 font-light leading-relaxed text-lg font-sans">
-                <p>
-                  Based in East Lansing, Michigan, Justin Ray is a definable force in the emerging field of Hybrid Music Production. Since 2022, Justin has moved beyond standard composition to become a leading voice in integrating human artistry with generative audio. He is the founder of r/hybridproduction, a global community dedicated to the philosophy that AI music requires a human pulse to truly resonate.
-                </p>
-                <p>
-                  An early adopter of the AI audio revolution, Justin began beta-testing platforms like Google's MusicLM and Stable Audio before becoming a pivotal figure in the Suno ecosystem. His role as a Growth Specialist and early tester for Suno, as well as a consultant for Six Sides Media and Staccato. His insights into the intersection of machine learning and music have attracted attention from major tech entities, leading to interviews with a european research institute and recruitment interest from Meta for audio annotation.
-                </p>
-                <p>
-                  Justin's technical workflow is rigorous. Utilizing Logic Pro and Ableton Live, he bridges the gap between raw generation and professional polish. By employing iZotope RX11 for spectral repair and a suite of high-end plugins—including FabFilter, Pultec, and The God Particle—he removes the "AI artifacts" to reveal the soul underneath.
-                </p>
-                <p>
-                   His discography reflects this duality. LoserDub represents his roots in pure, human-made Indie Electronic, defined by optimistic nostalgia. Meanwhile, his hybrid projects explore specific sonic landscapes: VISION (Pop/French Touch/Glitch), Le Vide (Modern French Pop), Flawed Future (EDM/Hardstyle), and Disarray (Alternative Rock).
-                </p>
+             <div className="space-y-8 text-white/80 font-light leading-relaxed text-lg font-sans">
+                <div className="space-y-4">
+                  <h2 className="text-xs font-mono tracking-[0.3em] uppercase text-slate-400">My Origin</h2>
+                  <p>
+                    Based in East Lansing, Michigan, I am a Hybrid Producer and creative developer dedicated to bridging the gap between raw human artistry and generative AI audio workflows.
+                  </p>
+                  <p>
+                    My journey into music production didn't begin with algorithms; it began with a profound need for self-expression. Following a series of life-altering shifts, I turned away from the noise of traditional social networking and immersed myself in daily, completely human songwriting. I learned the foundational mechanics of composition, keys, and guitar from the ground up—developing a deep respect for the emotional core of music.
+                  </p>
+                </div>
+                <div className="space-y-4">
+                  <h2 className="text-xs font-mono tracking-[0.3em] uppercase text-slate-400">The Age of Imagination</h2>
+                  <p>
+                    But as the landscape of audio engineering shifted, so did my workflow. About a year into my traditional production journey, I was invited to be an early beta tester for Google's MusicLM. That experience, combined with early experiments using Large Language Models to analyze audio files, was a revelation. While early AI often hallucinated, the potential was undeniable: generative AI was not a replacement for the artist, but a powerful new instrument.
+                  </p>
+                  <p>
+                    This realization led me to Suno at its very inception, where I proudly served as a Growth Specialist for a year. During that time, I witnessed the polarization of the music industry—creators divided between traditional purists and AI enthusiasts. I stepped away to forge a new path that unifies both: Hybrid Production.
+                  </p>
+                  <p>
+                    To prove this concept, I founded the rapidly growing Reddit community r/hybridproduction. Here, we are developing new methodologies—like Taxonomic Rank and Spectral Splitting—that blend AI music generation with advanced sound engineering.
+                  </p>
+                </div>
+                <div className="space-y-4">
+                  <h2 className="text-xs font-mono tracking-[0.3em] uppercase text-slate-400">The Tech Stack</h2>
+                  <p>
+                    Today, my creative ecosystem is a true hybrid of coding and composition. As a creative developer, I leverage AI models like Gemini and Claude alongside GitHub to build forward-thinking app concepts. As a sound engineer, my workflow relies on industry-standard DAWs like Logic Pro X and Ableton Live. I sculpt sounds using powerful plugins like Xfer Serum and Sonic Academy ANA 2, and refine the final product using the FabFilter suite for mixing and mastering, alongside iZotope RX11 for meticulous audio restoration and cleanup. Finally, the finished tracks are distributed via LANDR and visualizers are published to YouTube.
+                  </p>
+                  <p>
+                    We are in an era where the boundaries of audio are limitless. Whether you are a forward-thinking creator looking to step outside the box, an artist seeking creative consulting to elevate your tracks, or a pioneering music-tech company looking to bring visionary ideas to life—the future of music is a collaborative, hybrid effort.
+                  </p>
+                </div>
              </div>
 
              <div className="pt-4">
