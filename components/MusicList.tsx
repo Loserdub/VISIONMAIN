@@ -70,7 +70,8 @@ const MusicList: React.FC = () => {
       "url": "https://jray.me",
       "jobTitle": "Hybrid Music Producer",
       "sameAs":[
-        "https://reddit.com/r/hybridproduction"
+        "https://reddit.com/r/hybridproduction",
+        ...PROJECTS.map((p) => p.spotifyUrl)
       ],
       "knowsAbout":[
         { "@type": "Thing", "name": "Hybrid Music Production" },
