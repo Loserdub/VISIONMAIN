@@ -37,7 +37,7 @@ const Biography: React.FC = () => {
             "sameAs": [
               "https://open.spotify.com/artist/3VZelnnW9OR0DyR2qRn4Oq",
               "https://www.linkedin.com/in/jray-me/",
-              "ADD_GITHUB_URL",
+              "https://github.com/Loserdub",
               "https://soundcloud.com/visiontracks/",
               "https://www.youtube.com/@loserdub",
               "https://www.reddit.com/r/hybridproduction/"
