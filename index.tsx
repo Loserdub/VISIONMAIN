@@ -1,4 +1,5 @@
 import React from 'react';
+import './assets/index.css';
 import { ViteReactSSG } from 'vite-react-ssg';
 import App from './App';
 import Home from './components/Home';
