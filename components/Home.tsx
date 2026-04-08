@@ -19,7 +19,7 @@ const Home: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Justin Ray | AI Music Producer & Hybrid Audio Engineer</title>
+        <title>Justin Ray | Creative Technologist & Hybrid Artist</title>
         <meta name="description" content="Justin Ray is a Hybrid Producer and software developer blending Generative AI with traditional engineering. Offering AI music mixing and vocal cleanup, while building innovative tools like in-browser DAWs, polyphonic synths, and web-based image editors." />
       </Helmet>
       <section className="relative flex flex-col items-center px-4 py-32 sm:pt-40">
@@ -58,7 +58,7 @@ const Home: React.FC = () => {
         </div>
 
         <p className="text-lg sm:text-2xl font-light text-white/60 tracking-[0.2em] uppercase max-w-3xl mx-auto mt-4">
-          Hybrid Producer & Creative Developer
+          Creative Technologist & Hybrid Artist
         </p>
       </div>
 
@@ -188,7 +188,7 @@ const Home: React.FC = () => {
         </a>
       </section>
       
-    </section>
+      </section>
     </>
   );
 };
