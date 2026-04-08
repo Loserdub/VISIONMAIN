@@ -73,36 +73,51 @@ const Home: React.FC = () => {
         </p>
       </section>
 
-      {/* Developer Ecosystem Section */}
+      {/* The Multiverse / Studio Model Section */}
       <section className="w-full max-w-5xl mx-auto z-20 animate-fade-in-up mt-24 px-4 text-center">
-        <h2 className="text-sm font-bold tracking-[0.3em] text-slate-400 mb-6 uppercase">My Ecosystem</h2>
+        <h2 className="text-sm font-bold tracking-[0.3em] text-slate-400 mb-6 uppercase">The Multiverse</h2>
         <p className="text-xl font-light text-white/80 max-w-3xl mx-auto mb-12">
-          Specializing in <span className="font-bold">AI music mixing</span> and web applications, my development work directly feeds into my production workflow. Here are some of the tools I've built:
+          A study in identity. Exploring the spectrum of sound through a lens of <span className="font-bold">Hybrid Production</span>.
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-left">
+          {/* Alias: loserdub */}
           <div className="bg-zinc-900/80 border border-white/10 p-8 hover:border-slate-500/50 transition-colors duration-500 group">
-            <h3 className="text-xl font-display font-bold text-white mb-3 group-hover:text-slate-300 transition-colors">In-Browser DAW</h3>
-            <p className="text-sm text-white/60 leading-relaxed">A full-fledged digital audio workstation living entirely in the browser, built to streamline hybrid mixing and on-the-fly audio manipulation without leaving the web.</p>
+            <h3 className="text-xl font-display font-bold text-white mb-3 group-hover:text-slate-300 transition-colors">loserdub</h3>
+            <p className="text-sm text-white/60 leading-relaxed">The foundational alias. A space for raw, experimental bass music and genre-fluid explorations.</p>
           </div>
+          {/* Alias: VISION */}
           <div className="bg-zinc-900/80 border border-white/10 p-8 hover:border-slate-500/50 transition-colors duration-500 group">
-            <h3 className="text-xl font-display font-bold text-white mb-3 group-hover:text-slate-300 transition-colors">Polyphonic Web-Synth</h3>
-            <p className="text-sm text-white/60 leading-relaxed">A custom generative web-synth engineered for rich, evolving soundscapes that blend seamlessly with AI-generated audio tracks and human compositions.</p>
+            <h3 className="text-xl font-display font-bold text-white mb-3 group-hover:text-slate-300 transition-colors">VISION</h3>
+            <p className="text-sm text-white/60 leading-relaxed">High-fidelity hybrid compositions. Pushing the boundaries of human and AI collaboration.</p>
           </div>
+          {/* Alias: flawed future */}
           <div className="bg-zinc-900/80 border border-white/10 p-8 hover:border-slate-500/50 transition-colors duration-500 group">
-            <h3 className="text-xl font-display font-bold text-white mb-3 group-hover:text-slate-300 transition-colors">Web-Based Image Tool</h3>
-            <p className="text-sm text-white/60 leading-relaxed">A lightweight, Photoshop-style utility designed to quickly resize, process, and manipulate visual assets to accompany my audio releases.</p>
+            <h3 className="text-xl font-display font-bold text-white mb-3 group-hover:text-slate-300 transition-colors">flawed future</h3>
+            <p className="text-sm text-white/60 leading-relaxed">Embracing the artifacts of the algorithmic void. Nostalgic yet fiercely forward-looking.</p>
+          </div>
+          {/* Alias: le vide */}
+          <div className="bg-zinc-900/80 border border-white/10 p-8 hover:border-slate-500/50 transition-colors duration-500 group">
+            <h3 className="text-xl font-display font-bold text-white mb-3 group-hover:text-slate-300 transition-colors">le vide</h3>
+            <p className="text-sm text-white/60 leading-relaxed">Ambient, textural, and cinematic. The space between the notes, sculpted for deep listening.</p>
+          </div>
+          {/* Alias: disarray */}
+          <div className="bg-zinc-900/80 border border-white/10 p-8 hover:border-slate-500/50 transition-colors duration-500 group">
+            <h3 className="text-xl font-display font-bold text-white mb-3 group-hover:text-slate-300 transition-colors">disarray</h3>
+            <p className="text-sm text-white/60 leading-relaxed">Organized chaos. High-energy structural sound design meant to shatter expectations.</p>
           </div>
         </div>
 
         <div className="mt-20 h-1 w-24 bg-white/20 mx-auto rounded-full"></div>
       </section>
 
-      {/* NEW SECTION: What is Hybrid Production? */}
-      <div className="w-full max-w-5xl mx-auto z-20 animate-fade-in-up mt-24 px-4" style={{ animationDelay: '0.3s' }}>
-        <button 
-            onClick={scrollToHybrid}
-            className="w-full text-left relative overflow-hidden rounded-sm border border-white/10 bg-zinc-900/40 backdrop-blur-md p-8 md:p-12 hover:bg-zinc-900/60 transition-colors duration-500 group cursor-pointer focus:outline-none focus:ring-1 focus:ring-slate-500"
+      {/* Methodology as a Product */}
+      <div id="hybrid" className="w-full max-w-5xl mx-auto z-20 animate-fade-in-up mt-24 px-4" style={{ animationDelay: '0.3s' }}>
+        <a 
+            href="https://www.reddit.com/r/hybridproduction/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full text-left relative overflow-hidden rounded-sm border border-white/10 bg-zinc-900/40 backdrop-blur-md p-8 md:p-12 hover:bg-zinc-900/60 transition-colors duration-500 group cursor-pointer focus:outline-none focus:ring-1 focus:ring-slate-500"
         >
             <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-slate-400 to-transparent"></div>
             
@@ -112,27 +127,47 @@ const Home: React.FC = () => {
             <div className="grid md:grid-cols-[1fr_2fr] gap-8 items-start relative z-10">
                 <div>
                     <h2 className="text-2xl md:text-3xl font-display font-bold text-white uppercase tracking-tighter leading-none mb-4">
-                        What is <br/><span className="text-slate-300">Hybrid</span><br/>Production?
+                        The Hybrid <br/><span className="text-slate-300">Methodology</span>
                     </h2>
                     <div className="w-12 h-[1px] bg-white/20 my-4 group-hover:w-24 transition-all duration-500"></div>
                     <p className="text-xs font-mono text-white/40 tracking-widest uppercase">
-                        The Third Way
+                        Codifying the Future
                     </p>
                 </div>
                 <div className="space-y-6">
                     <p className="text-lg font-light text-white/80 leading-relaxed">
-                        It is the definitive workflow of the post-AI musical landscape. Rejecting the binary choice between "human" and "machine", it treats Generative AI as a high-fidelity instrument—a chaotic synthesizer capable of infinite texture.
+                        A codified, systemic framework for the post-AI musical landscape. We treat Generative AI as a high-fidelity instrument, an infinite collaborator—while maintaining <span className="font-medium text-white">the human as the final node in the creative chain.</span>
                     </p>
                     <p className="text-sm font-mono text-white/60">
-                        The Hybrid Producer is an editor, a curator, and a sonic sculptor who mines the algorithmic void for gold, then refines it with traditional engineering.
+                        Join the vanguard of the movement. Build, learn, and scale your workflows in the r/hybridproduction ecosystem. <span className="underline decoration-slate-500 underline-offset-4 group-hover:text-white transition-colors">Enter the community →</span>
                     </p>
                 </div>
             </div>
-        </button>
+        </a>
       </div>
 
+      {/* Current Focus / Builder Signal */}
+      <section className="w-full max-w-4xl mx-auto z-20 animate-fade-in-up mt-24 px-4 text-center border-t border-white/10 pt-16" style={{ animationDelay: '0.4s' }}>
+        <h2 className="text-xs font-mono tracking-[0.2em] text-white/40 mb-8 uppercase">Currently Building</h2>
+        
+        <div className="flex flex-col md:flex-row justify-center items-start gap-8 md:gap-12 text-left md:text-center">
+            <div className="flex-1 space-y-2">
+                <h3 className="text-sm font-bold text-white uppercase tracking-widest">Music</h3>
+                <p className="text-sm font-light text-white/60 leading-relaxed">Mastering the next VISION EP using Hybrid V3.</p>
+            </div>
+            <div className="flex-1 space-y-2">
+                <h3 className="text-sm font-bold text-white uppercase tracking-widest">Community</h3>
+                <p className="text-sm font-light text-white/60 leading-relaxed">Scaling the r/hybridproduction ecosystem.</p>
+            </div>
+            <div className="flex-1 space-y-2">
+                <h3 className="text-sm font-bold text-white uppercase tracking-widest">Innovation</h3>
+                <p className="text-sm font-light text-white/60 leading-relaxed">Refining workflows for the post-AI musical landscape.</p>
+            </div>
+        </div>
+      </section>
+
       {/* Social Icons */}
-      <section className="flex justify-center items-center gap-8 sm:gap-12 mt-16 mb-20 z-20 animate-fade-in-up" style={{ animationDelay: '0.4s' }} aria-label="Social media links">
+      <section className="flex justify-center items-center gap-8 sm:gap-12 mt-16 mb-20 z-20 animate-fade-in-up" style={{ animationDelay: '0.5s' }} aria-label="Social media links">
         
         {/* X (Twitter) */}
         <a 
