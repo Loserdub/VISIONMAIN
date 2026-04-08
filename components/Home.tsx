@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import FuzzyText from './FuzzyText';
 import { Helmet } from 'react-helmet-async';
+import doodleImg from '../assets/images/doodle.jpg';
 
 const Home: React.FC = () => {
   const scrollToHybrid = () => {
@@ -140,10 +141,19 @@ const Home: React.FC = () => {
             <button 
               key={idx} 
               onClick={() => setCurrentAlias(idx)}
-              className={`w-2 h-2 rounded-full transition-colors ${idx === currentAlias ? 'bg-white' : 'bg-white/20'}`}
+              className={`w-2 h-2 rounded-full transition-colors ${idx === currentAlias ? 'bg-white' : 'bg-white/20'}`} 
               aria-label={`Go to alias ${idx + 1}`}
             />
           ))}
+        </div>
+
+        {/* Doodle Image */}
+        <div className="mt-16 flex justify-center w-full">
+          <img 
+            src={doodleImg} 
+            alt="Hybrid Production Doodle" 
+            className="w-full max-w-[280px] sm:max-w-sm md:max-w-md lg:max-w-lg object-contain opacity-80 mix-blend-lighten pointer-events-none"
+          />
         </div>
 
         <div className="mt-20 h-1 w-24 bg-white/20 mx-auto rounded-full"></div>
