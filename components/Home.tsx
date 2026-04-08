@@ -97,13 +97,13 @@ const Home: React.FC = () => {
           "While others argue over black or white - pure human or pure AI - all or nothing - the future exists in the <span className="text-transparent bg-clip-text bg-gradient-to-tr from-gray-500 via-gray-100 to-gray-500 font-bold">grey</span>. Hybrid production is the search for the soul inside the algorithm."
         </p>
         <p className="text-lg sm:text-xl font-light text-white/60 mt-8 max-w-3xl mx-auto">
-          As a <span className="text-white font-medium">creative developer</span> and audio engineer, I don't just use software—I build my own ecosystem. From developing custom <span className="text-white font-medium">in-browser audio tools</span> to utilizing <span className="text-white font-medium">AI vocal cleanup</span> algorithms, I build the tools I use to mix, master, and humanize AI-generated music.
+          As a <span className="text-white font-medium">creative developer</span> and artist, I don't just use software, I build my own. From developing custom <span className="text-white font-medium">in-browser audio tools</span> to utilizing <span className="text-white font-medium">AI vocal cleanup</span> algorithms. Instead of using prompts like rock or edm with music generators, I use the platform as a modulator of existing human creations.
         </p>
       </section>
 
       {/* The Multiverse / Studio Model Section (Carousel) */}
       <section className="w-full max-w-5xl mx-auto z-20 animate-fade-in-up mt-24 px-4 text-center">
-        <h2 className="text-sm font-bold tracking-[0.3em] text-slate-400 mb-6 uppercase">The Multiverse</h2>
+        <h2 className="text-sm font-bold tracking-[0.3em] text-slate-400 mb-6 uppercase">The Dissection</h2>
         <p className="text-xl font-light text-white/80 max-w-3xl mx-auto mb-12">
           A study in identity. Exploring the spectrum of sound through a lens of <span className="font-bold">Hybrid Production</span>.
         </p>
