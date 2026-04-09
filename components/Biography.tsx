@@ -22,7 +22,7 @@ const Biography: React.FC = () => {
               "Artist"
             ],
             "description": "Hybrid Producer and creative developer bridging the gap between raw human artistry and generative AI audio workflows.",
-            "image": "PLACEHOLDER_FOR_ABSOLUTE_IMAGE_URL",
+            "image": "https://jray.me/favicon.png",
             "knowsAbout": [
               "Hybrid Production",
               "Generative AI Audio",
