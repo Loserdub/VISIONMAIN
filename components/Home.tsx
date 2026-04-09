@@ -98,7 +98,7 @@ const Home: React.FC = () => {
           "While others argue over black or white - pure human or pure AI - all or nothing - the future exists in the <span className="text-transparent bg-clip-text bg-gradient-to-tr from-gray-500 via-gray-100 to-gray-500 font-bold">grey</span>. Hybrid production is the search for the soul inside the algorithm."
         </p>
         <p className="text-lg sm:text-xl font-light text-white/60 mt-8 max-w-3xl mx-auto">
-          As a <span className="text-white font-medium">creative developer</span> and artist, I don't just use software, I build my own. From developing custom <span className="text-white font-medium">in-browser audio tools</span> to utilizing <span className="text-white font-medium">AI vocal cleanup</span> algorithms. Instead of using prompts like rock or edm with music generators, I use the platform as a modulator of existing human creations.
+          As a <span className="text-white font-medium">creative developer</span> and artist, I don't just use the tools — I build them. Custom <span className="text-white font-medium">in-browser audio environments</span>, <span className="text-white font-medium">AI-driven feedback</span>, sample creation, bespoke workflows. When it comes to generative music, I don't start from a blank prompt. I start from something human, and let the algorithm react to it.
         </p>
       </section>
 
