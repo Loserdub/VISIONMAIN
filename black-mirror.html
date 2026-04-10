@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Mirror — Sonic Dialogue</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Share+Tech+Mono&family=Raleway:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #050508;
+  --deep: #0a0a0f;
+  --surface: #0f0f16;
+  --surface2: #141420;
+  --border: rgba(255,255,255,0.07);
+  --border-bright: rgba(255,255,255,0.18);
+  --user: #2979ff;
+  --user-bright: #5c9fff;
+  --user-glow: rgba(41,121,255,0.35);
+  --resp: #e53935;
+  --resp-bright: #ff6b6b;
+  --resp-glow: rgba(229,57,53,0.35);
+  --gold: #c9a84c;
+  --gold-dim: rgba(201,168,76,0.25);
+  --text: #e8e8f0;
+  --text-dim: rgba(232,232,240,0.45);
+  --text-muted: rgba(232,232,240,0.25);
+  --scanline: rgba(255,255,255,0.015);
+  --play-col: rgba(255,255,255,0.08);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--black);
+  color: var(--text);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    var(--scanline) 2px,
+    var(--scanline) 4px
+  );
+  pointer-events: none;
+  z-index: 1000;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(41,121,255,0.06) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 100%, rgba(229,57,53,0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.app {
+  position: relative;
+  z-index: 1;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+/* ── HEADER ── */
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.header::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin-top: 1.5rem;
+  opacity: 0.5;
+}
+
+.app-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 6vw, 3.8rem);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #050508;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  -webkit-text-stroke: 2px #8b0000;
+  text-shadow: 0 0 18px rgba(139,0,0,0.4), 0 0 40px rgba(139,0,0,0.15);
+  transition: color 0.1s;
+}
+.app-title::before,
+.app-title::after {
+  content: 'Black Mirror';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  font-family: 'Cinzel', serif;
+  font-size: inherit;
+  font-weight: 900;
+  letter-spacing: inherit;
+  text-transform: uppercase;
+  color: #050508;
+  -webkit-text-stroke: 2px #8b0000;
+  opacity: 0;
+  pointer-events: none;
+}
+.app-title:hover::before {
+  opacity: 0.85;
+  color: #1a0000;
+  -webkit-text-stroke: 2px #cc0000;
+  animation: glitch-before 0.35s step-end forwards;
+}
+.app-title:hover::after {
+  opacity: 0.6;
+  color: #050508;
+  -webkit-text-stroke: 2px #660000;
+  animation: glitch-after 0.35s step-end forwards;
+}
+.app-title:hover {
+  animation: glitch-main 0.35s step-end forwards;
+}
+@keyframes glitch-main {
+  0%   { transform: translate(0,0); }
+  15%  { transform: translate(-3px, 1px); }
+  30%  { transform: translate(3px,-2px); }
+  45%  { transform: translate(-2px, 3px); }
+  60%  { transform: translate(2px,-1px); }
+  75%  { transform: translate(-1px, 2px); }
+  100% { transform: translate(0,0); }
+}
+@keyframes glitch-before {
+  0%   { clip-path: inset(0 0 80% 0); transform: translate(-4px,0); }
+  20%  { clip-path: inset(20% 0 60% 0); transform: translate(4px,0); }
+  40%  { clip-path: inset(50% 0 30% 0); transform: translate(-3px,0); }
+  60%  { clip-path: inset(70% 0 10% 0); transform: translate(3px,0); }
+  80%  { clip-path: inset(10% 0 70% 0); transform: translate(-2px,0); }
+  100% { clip-path: inset(0 0 100% 0); transform: translate(0,0); }
+}
+@keyframes glitch-after {
+  0%   { clip-path: inset(60% 0 0% 0); transform: translate(4px,0); }
+  20%  { clip-path: inset(40% 0 20% 0); transform: translate(-4px,0); }
+  40%  { clip-path: inset(10% 0 60% 0); transform: translate(3px,0); }
+  60%  { clip-path: inset(80% 0 5% 0); transform: translate(-3px,0); }
+  80%  { clip-path: inset(30% 0 50% 0); transform: translate(2px,0); }
+  100% { clip-path: inset(0 0 100% 0); transform: translate(0,0); }
+}
+
+.subtitle {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(0.65rem, 1.8vw, 0.85rem);
+  letter-spacing: 0.25em;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+  opacity: 0.9;
+}
+
+/* ── CONTROLS ── */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: flex-end;
+  margin-bottom: 1.4rem;
+  padding: 1rem 1.2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.ctrl-group { display: flex; flex-direction: column; gap: 5px; }
+.ctrl-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.ctrl-val {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px;
+  color: var(--gold);
+  min-width: 34px;
+  display: inline-block;
+}
+
+input[type=range] {
+  width: 90px;
+  -webkit-appearance: none;
+  height: 2px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--black);
+  box-shadow: 0 0 8px var(--gold-dim);
+  cursor: pointer;
+}
+input[type=range]::-moz-range-thumb {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--black);
+  cursor: pointer;
+}
+
+select {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 12px;
+  padding: 5px 8px;
+  border-radius: 3px;
+  border: 1px solid var(--border-bright);
+  background: var(--surface2);
+  color: var(--text);
+  cursor: pointer;
+  outline: none;
+}
+select:focus { border-color: var(--gold); }
+
+.tension-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  font-family: 'Share Tech Mono', monospace;
+  color: var(--text-muted);
+  width: 90px;
+  margin-top: 2px;
+}
+
+/* ── MAIN GRID ── */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.panel.user-panel::before {
+  box-shadow: inset 0 0 30px rgba(41,121,255,0.04);
+}
+.panel.resp-panel-box::before {
+  box-shadow: inset 0 0 30px rgba(229,57,53,0.04);
+}
+
+.panel-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.panel-label.blue { color: var(--user-bright); }
+.panel-label.red { color: var(--resp-bright); }
+
+.sequencer-wrap { display: flex; flex-direction: column; gap: 3px; }
+.seq-row { display: grid; grid-template-columns: repeat(16, 1fr); gap: 2px; }
+
+.step {
+  aspect-ratio: 1;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  cursor: pointer;
+  transition: background 0.07s, border-color 0.07s, box-shadow 0.07s;
+  position: relative;
+}
+
+.step:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.22); }
+
+.step.u-on {
+  background: var(--user);
+  border-color: var(--user-bright);
+  box-shadow: 0 0 6px var(--user-glow);
+}
+.step.r-on {
+  background: var(--resp);
+  border-color: var(--resp-bright);
+  box-shadow: 0 0 6px var(--resp-glow);
+}
+.step.u-play {
+  outline: 2px solid rgba(255,220,80,0.9);
+  outline-offset: 1px;
+  z-index: 2;
+}
+.step.r-play {
+  outline: 2px solid rgba(255,220,80,0.9);
+  outline-offset: 1px;
+  z-index: 2;
+}
+.step.col-highlight {
+  background: var(--play-col) !important;
+}
+
+.viz-bar {
+  height: 44px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 3px;
+  margin-top: 8px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--border);
+}
+.viz-bar canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+/* ── EXPORT ROW ── */
+.export-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+.btn-export {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: 1px solid;
+  background: transparent;
+}
+.btn-export.blue {
+  color: var(--user-bright);
+  border-color: rgba(41,121,255,0.4);
+}
+.btn-export.blue:hover {
+  background: rgba(41,121,255,0.12);
+  border-color: var(--user-bright);
+}
+.btn-export.red {
+  color: var(--resp-bright);
+  border-color: rgba(229,57,53,0.4);
+}
+.btn-export.red:hover {
+  background: rgba(229,57,53,0.12);
+  border-color: var(--resp-bright);
+}
+
+.drop-zone {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px dashed rgba(255,255,255,0.12);
+  border-radius: 3px;
+  padding: 5px 12px;
+  cursor: default;
+  transition: all 0.2s;
+  text-align: center;
+  flex: 1;
+}
+.drop-zone.dragover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: var(--gold-dim);
+}
+
+/* ── METRICS ── */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.metric {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 10px 12px;
+}
+.metric-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.metric-val {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text);
+}
+.metric-sub {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* ── RESPONSE PANEL ── */
+.resp-info {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 14px;
+}
+.resp-info .panel-label { margin-bottom: 6px; }
+.resp-desc {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.7;
+  min-height: 36px;
+  font-weight: 300;
+}
+.tag {
+  display: inline-block;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.07em;
+  padding: 2px 9px;
+  border-radius: 2px;
+  margin: 0 4px 4px 0;
+  border: 1px solid;
+}
+.tag.blue { color: var(--user-bright); border-color: rgba(41,121,255,0.35); background: rgba(41,121,255,0.08); }
+.tag.amber { color: #f0a500; border-color: rgba(240,165,0,0.35); background: rgba(240,165,0,0.08); }
+.tag.red { color: var(--resp-bright); border-color: rgba(229,57,53,0.35); background: rgba(229,57,53,0.08); }
+.tag.gold { color: var(--gold); border-color: var(--gold-dim); background: rgba(201,168,76,0.08); }
+
+/* ── BUTTONS ── */
+.btn-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+
+.btn-play {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 10px 28px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.15s;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: var(--text);
+  position: relative;
+  overflow: hidden;
+}
+.btn-play::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.4s;
+}
+.btn-play:hover::before { transform: translateX(100%); }
+.btn-play:hover { border-color: var(--gold); color: var(--gold); }
+.btn-play.on { border-color: var(--resp-bright); color: var(--resp-bright); }
+
+.btn-sec {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.15s;
+  background: transparent;
+  border: 1px solid var(--border-bright);
+  color: var(--text-dim);
+}
+.btn-sec:hover { border-color: rgba(255,255,255,0.35); color: var(--text); }
+
+/* ── DIVIDER ── */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-bright), transparent);
+  margin: 1.5rem 0;
+  opacity: 0.4;
+}
+
+/* ── STATUS BAR ── */
+.status {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.status span { color: var(--gold); }
+
+.btn-pushback {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: 1px solid rgba(229,57,53,0.55);
+  background: transparent;
+  color: var(--resp-bright);
+  position: relative;
+  overflow: hidden;
+}
+.btn-pushback:hover {
+  background: rgba(229,57,53,0.15);
+  border-color: var(--resp-bright);
+  box-shadow: 0 0 12px rgba(229,57,53,0.3);
+}
+.btn-pushback:active { transform: scale(0.96); }
+.btn-pushback.fired {
+  animation: pushback-flash 0.5s ease-out forwards;
+}
+@keyframes pushback-flash {
+  0%   { background: rgba(229,57,53,0.4); box-shadow: 0 0 24px rgba(229,57,53,0.7); }
+  100% { background: transparent; box-shadow: none; }
+}
+
+/* Step chaos flash during pushback */
+.step.chaos-flash {
+  animation: chaos-cell 0.4s ease-out forwards;
+}
+@keyframes chaos-cell {
+  0%   { background: #e53935 !important; box-shadow: 0 0 10px rgba(229,57,53,0.9); }
+  60%  { background: #ff6b6b !important; }
+  100% { background: var(--user); box-shadow: 0 0 6px var(--user-glow); }
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="header">
+    <div>
+      <a class="app-title" href="https://jray.me" target="_blank">Black Mirror</a>
+    </div>
+    <div class="subtitle">Your Digital Twin Beckons.</div>
+  </div>
+
+  <!-- CONTROLS -->
+  <div class="controls">
+    <div class="ctrl-group">
+      <span class="ctrl-label">BPM</span>
+      <div style="display:flex;align-items:center;gap:6px">
+        <input type="range" id="bpm" min="60" max="200" value="120" step="1">
+        <span class="ctrl-val" id="bpm-val">120</span>
+      </div>
+    </div>
+    <div class="ctrl-group">
+      <span class="ctrl-label">Root</span>
+      <select id="root">
+        <option>C</option><option>C#</option><option>D</option><option>D#</option>
+        <option>E</option><option>F</option><option>F#</option><option>G</option>
+        <option>G#</option><option>A</option><option>A#</option><option>B</option>
+      </select>
+    </div>
+    <div class="ctrl-group">
+      <span class="ctrl-label">Scale</span>
+      <select id="scale">
+        <option>Pentatonic Minor</option><option>Dorian</option><option>Phrygian</option>
+        <option>Lydian</option><option>Mixolydian</option><option>Whole Tone</option>
+        <option>Diminished</option>
+      </select>
+    </div>
+    <div class="ctrl-group">
+      <span class="ctrl-label">Tension / Atonality</span>
+      <div style="display:flex;align-items:center;gap:6px">
+        <input type="range" id="tension" min="0" max="100" value="30" step="1">
+        <span class="ctrl-val" id="tension-val">30</span>
+      </div>
+      <div class="tension-labels"><span>mirror</span><span>eerie</span></div>
+    </div>
+    <div class="ctrl-group">
+      <span class="ctrl-label">Reverb</span>
+      <div style="display:flex;align-items:center;gap:6px">
+        <input type="range" id="verb" min="0" max="100" value="40" step="1">
+        <span class="ctrl-val" id="verb-val">40</span>
+      </div>
+    </div>
+    <div class="ctrl-group">
+      <span class="ctrl-label">Voice</span>
+      <select id="voice">
+        <option value="pluck">Pluck</option>
+        <option value="pad">Pad</option>
+        <option value="bell">Bell</option>
+        <option value="bass">Bass</option>
+      </select>
+    </div>
+    <div class="ctrl-group">
+      <span class="ctrl-label">Response delay</span>
+      <select id="resp-delay">
+        <option value="0">Immediate</option>
+        <option value="1" selected>1 bar</option>
+        <option value="2">2 bars</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- MAIN GRIDS -->
+  <div class="main-grid">
+    <div class="panel user-panel">
+      <div class="panel-label blue">
+        <span>Your Phrase</span>
+        <span style="font-size:9px;opacity:0.5">draw below</span>
+      </div>
+      <div class="sequencer-wrap" id="user-seq"></div>
+      <div class="viz-bar"><canvas id="user-viz"></canvas></div>
+      <div class="export-row">
+        <button class="btn-export blue" id="export-user">Export MIDI</button>
+        <div class="drop-zone" id="drop-user">drop .mid to load</div>
+      </div>
+    </div>
+    <div class="panel resp-panel-box">
+      <div class="panel-label red">
+        <span>Digital Twin</span>
+        <span style="font-size:9px;opacity:0.5">machine answers</span>
+      </div>
+      <div class="sequencer-wrap" id="resp-seq"></div>
+      <div class="viz-bar"><canvas id="resp-viz"></canvas></div>
+      <div class="export-row">
+        <button class="btn-export red" id="export-resp">Export MIDI</button>
+        <button class="btn-pushback" id="btn-pushback">Push Back</button>
+        <div class="drop-zone" id="drop-resp" style="display:none;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- METRICS -->
+  <div class="metrics">
+    <div class="metric"><div class="metric-label">Density</div><div class="metric-val" id="m-density">0%</div><div class="metric-sub">note fill</div></div>
+    <div class="metric"><div class="metric-label">Entropy</div><div class="metric-val" id="m-entropy">0.00</div><div class="metric-sub">pitch chaos</div></div>
+    <div class="metric"><div class="metric-label">Gravity</div><div class="metric-val" id="m-cog">—</div><div class="metric-sub">rhythmic lean</div></div>
+    <div class="metric"><div class="metric-label">Dissonance</div><div class="metric-val" id="m-itension">—</div><div class="metric-sub">harmonic weight</div></div>
+  </div>
+
+  <!-- RESPONSE INFO -->
+  <div class="resp-info">
+    <div class="panel-label gold"><span>Response Logic</span></div>
+    <div id="resp-tags" style="margin-bottom:6px"></div>
+    <div class="resp-desc" id="resp-desc">Draw a pattern above. The twin is waiting.</div>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn-play" id="btn-play">Invoke</button>
+    <button class="btn-sec" id="btn-clear">Clear</button>
+    <button class="btn-sec" id="btn-rand">Randomise</button>
+  </div>
+
+  <div class="status">
+    Black Mirror — Sonic Dialogue &nbsp;|&nbsp; <span>offline</span> rule-based engine &nbsp;|&nbsp;
+    <a href="https://jray.me" target="_blank" style="color:var(--gold);text-decoration:none;">jray.me</a>
+  </div>
+</div>
+
+<script>
+// ── SCALES & CONSTANTS ──────────────────────────────────────────────────────
+const SCALES = {
+  "Pentatonic Minor":[0,3,5,7,10],
+  "Dorian":[0,2,3,5,7,9,10],
+  "Phrygian":[0,1,3,5,7,8,10],
+  "Lydian":[0,2,4,6,7,9,11],
+  "Mixolydian":[0,2,4,5,7,9,10],
+  "Whole Tone":[0,2,4,6,8,10],
+  "Diminished":[0,2,3,5,6,8,9,11]
+};
+const ROOTS=['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
+const ROWS=8, COLS=16;
+// Dissonance weights indexed by semitone interval (0-11)
+// Higher = more dissonant/atonal
+const DISSONANCE = [0, 0.85, 0.3, 0.2, 0.1, 0.15, 0.95, 0.05, 0.15, 0.2, 0.55, 0.8];
+
+let userGrid  = Array.from({length:ROWS},()=>Array(COLS).fill(false));
+let respGrid  = Array.from({length:ROWS},()=>Array(COLS).fill(false));
+let playing=false, beat=0, intervalId=null;
+let audioCtx=null, reverbNode=null, masterGain=null;
+
+// ── AUDIO ENGINE ────────────────────────────────────────────────────────────
+function getCtx(){
+  if(!audioCtx){
+    audioCtx = new (window.AudioContext||window.webkitAudioContext)();
+    masterGain = audioCtx.createGain();
+    masterGain.gain.value = 0.65;
+    masterGain.connect(audioCtx.destination);
+    buildReverb();
+  }
+  return audioCtx;
+}
+
+function buildReverb(){
+  reverbNode = audioCtx.createConvolver();
+  const sr = audioCtx.sampleRate;
+  const len = sr * 2.8;
+  const buf = audioCtx.createBuffer(2, len, sr);
+  for(let ch=0;ch<2;ch++){
+    const d = buf.getChannelData(ch);
+    for(let i=0;i<len;i++){
+      d[i] = (Math.random()*2-1) * Math.pow(1-i/len, 2.0);
+    }
+  }
+  reverbNode.buffer = buf;
+  reverbNode.connect(masterGain);
+}
+
+function getFreq(row, rootName, scaleName){
+  const rootIdx = ROOTS.indexOf(rootName);
+  const scale = SCALES[scaleName];
+  const noteIndex = ROWS-1-row;
+  const octave = 3 + Math.floor(noteIndex/scale.length);
+  const degree = noteIndex % scale.length;
+  const semitones = rootIdx + scale[degree] + octave*12;
+  return 440 * Math.pow(2,(semitones-69)/12);
+}
+
+function playNote(freq, startTime, stepDur, isResp){
+  const ctx = getCtx();
+  const voice = document.getElementById('voice').value;
+  const verbMix = parseInt(document.getElementById('verb').value)/100;
+
+  const dryGain = ctx.createGain();
+  const wetGain = ctx.createGain();
+  dryGain.connect(masterGain);
+  wetGain.connect(reverbNode);
+  dryGain.gain.value = 1 - verbMix*0.75;
+  wetGain.gain.value = verbMix;
+
+  const envGain = ctx.createGain();
+  envGain.connect(dryGain);
+  envGain.connect(wetGain);
+
+  const filter = ctx.createBiquadFilter();
+  filter.connect(envGain);
+
+  let oscs = [];
+  let attack, decay, sustain, release, filterStart, filterEnd;
+
+  if(voice==='pluck'){
+    filter.type='lowpass';
+    filterStart = isResp ? 1400 : 2800;
+    filterEnd = 280;
+    attack=0.003; decay=0.2; sustain=0.0; release=0.28;
+    const o1=ctx.createOscillator(); o1.type='sawtooth'; o1.frequency.value=freq;
+    const o2=ctx.createOscillator(); o2.type='sawtooth'; o2.frequency.value=freq; o2.detune.value=isResp?-8:8;
+    oscs=[o1,o2]; [o1,o2].forEach(o=>o.connect(filter));
+  } else if(voice==='pad'){
+    filter.type='lowpass';
+    filterStart=isResp?900:1600; filterEnd=isResp?650:950;
+    attack=0.14; decay=0.3; sustain=0.55; release=0.7;
+    const o1=ctx.createOscillator(); o1.type='sine'; o1.frequency.value=freq;
+    const o2=ctx.createOscillator(); o2.type='triangle'; o2.frequency.value=freq; o2.detune.value=isResp?-6:6;
+    const o3=ctx.createOscillator(); o3.type='sine'; o3.frequency.value=freq*2;
+    oscs=[o1,o2,o3]; [o1,o2,o3].forEach(o=>o.connect(filter));
+  } else if(voice==='bell'){
+    filter.type='bandpass'; filter.Q.value=1.8;
+    filterStart=freq*3.2; filterEnd=freq*1.6;
+    attack=0.002; decay=0.06; sustain=0.08; release=isResp?1.4:0.9;
+    const o1=ctx.createOscillator(); o1.type='sine'; o1.frequency.value=freq;
+    const o2=ctx.createOscillator(); o2.type='sine'; o2.frequency.value=freq*(isResp?2.756:2.414);
+    const o3=ctx.createOscillator(); o3.type='sine'; o3.frequency.value=freq*4.0;
+    oscs=[o1,o2,o3]; [o1,o2,o3].forEach(o=>o.connect(filter));
+  } else {
+    filter.type='lowpass';
+    filterStart=isResp?700:1000; filterEnd=200;
+    attack=0.01; decay=0.14; sustain=0.4; release=0.4;
+    const o1=ctx.createOscillator(); o1.type='sawtooth'; o1.frequency.value=freq;
+    const o2=ctx.createOscillator(); o2.type='square'; o2.frequency.value=freq/2;
+    oscs=[o1,o2]; [o1,o2].forEach(o=>o.connect(filter));
+  }
+
+  const noteEnd = startTime + stepDur;
+  filter.frequency.setValueAtTime(filterStart, startTime);
+  filter.frequency.exponentialRampToValueAtTime(Math.max(filterEnd,20), startTime+decay+0.01);
+
+  const vol = isResp ? 0.2 : 0.26;
+  envGain.gain.setValueAtTime(0.0001, startTime);
+  envGain.gain.linearRampToValueAtTime(vol, startTime+attack);
+  envGain.gain.linearRampToValueAtTime(vol*sustain+0.0001, startTime+attack+decay);
+  envGain.gain.setValueAtTime(vol*sustain+0.0001, noteEnd);
+  envGain.gain.exponentialRampToValueAtTime(0.0001, noteEnd+release);
+  oscs.forEach(o=>{ o.start(startTime); o.stop(noteEnd+release+0.06); });
+}
+
+// ── RESPONSE MATH ────────────────────────────────────────────────────────────
+// The key upgrade: tension drives "harmonic distance" in response pitch selection.
+// At low tension: response picks the closest consonant interval partner.
+// At high tension: response picks maximally dissonant / chromatic intervals,
+// breaking out of the scale entirely using the full 12-tone chromatic space.
+
+function getResponseRow(sourceRow, tension, scaleName, rootName){
+  const scale = SCALES[scaleName];
+  const rootIdx = ROOTS.indexOf(rootName);
+  const scaleLen = scale.length;
+
+  // Map sourceRow → semitone value (within one octave, 0-based from root)
+  const noteIndex = ROWS-1-sourceRow;
+  const degree = noteIndex % scaleLen;
+  const sourceSemitone = scale[degree];
+
+  if(tension < 0.05){
+    // Pure mirror
+    return ROWS-1-sourceRow;
+  }
+
+  // Build a pool of candidate pitches weighted by their interval relationship
+  // to the source note. Low tension = prefer consonant intervals.
+  // High tension = prefer dissonant / tritone / chromatic intervals.
+  let candidates = [];
+  for(let targetRow=0; targetRow<ROWS; targetRow++){
+    const tNoteIndex = ROWS-1-targetRow;
+    const tDegree = tNoteIndex % scaleLen;
+    const tSemitone = scale[tDegree];
+    const interval = Math.abs(sourceSemitone - tSemitone) % 12;
+    const dissonance = DISSONANCE[interval];
+
+    // Score: at tension=0, prefer consonant (low dissonance).
+    // At tension=1, prefer dissonant (high dissonance).
+    // Use a sigmoid-shaped blend to make the transition feel eerie.
+    const score = tension < 0.5
+      ? Math.pow(1-dissonance, 2*(1-tension)) // consonant pull
+      : Math.pow(dissonance+0.01, 2*tension);   // dissonance pull
+
+    candidates.push({ row: targetRow, score });
+  }
+
+  // At high tension, inject chromatic (out-of-scale) intervals
+  // by slightly shifting the target row using semitone math
+  if(tension > 0.4){
+    // Add ghost candidates that bend pitch outside the scale
+    const chromaticShift = Math.round(tension * 6 * Math.sin(sourceRow * 1.618 + beat * 0.05));
+    const ghostRow = Math.max(0, Math.min(ROWS-1, sourceRow + chromaticShift));
+    candidates.push({ row: ghostRow, score: tension * 1.5 });
+    // tritone ghost at high tension
+    if(tension > 0.65){
+      const tritoneRow = Math.max(0, Math.min(ROWS-1, ROWS-1-sourceRow + Math.round((tension-0.5)*4)));
+      candidates.push({ row: tritoneRow, score: tension * 2.0 });
+    }
+  }
+
+  // Weighted random selection from candidates
+  const totalScore = candidates.reduce((s,c)=>s+c.score,0);
+  let rand = Math.random() * totalScore;
+  for(const c of candidates){
+    rand -= c.score;
+    if(rand <= 0) return c.row;
+  }
+  return candidates[candidates.length-1].row;
+}
+
+function getResponseCol(sourceCol, tension){
+  const phi = 1.618033988749895;
+  // Low tension: retrograde (reverse position)
+  // High tension: golden-ratio scramble + phase distortion
+  const retrograde = COLS-1-sourceCol;
+  const phiShift = Math.floor(((sourceCol*phi)%1)*COLS);
+  const lissajous = Math.floor(Math.abs(Math.sin(sourceCol*2.399+beat*0.01))*COLS);
+
+  if(tension < 0.33){
+    return retrograde;
+  } else if(tension < 0.66){
+    const blend = (tension-0.33)/0.33;
+    return Math.round(retrograde*(1-blend) + phiShift*blend) % COLS;
+  } else {
+    const blend = (tension-0.66)/0.34;
+    return Math.round(phiShift*(1-blend) + lissajous*blend) % COLS;
+  }
+}
+
+function buildResponse(tension){
+  const resp = Array.from({length:ROWS},()=>Array(COLS).fill(false));
+  const scaleName = document.getElementById('scale').value;
+  const rootName = document.getElementById('root').value;
+
+  for(let r=0;r<ROWS;r++){
+    for(let c=0;c<COLS;c++){
+      if(!userGrid[r][c]) continue;
+      const respRow = getResponseRow(r, tension, scaleName, rootName);
+      const respCol = getResponseCol(c, tension);
+      resp[respRow][respCol] = true;
+
+      // Chaos echoes at very high tension
+      if(tension > 0.7){
+        const chaos = Math.sin(c*2.399+r*1.618)*0.5+0.5;
+        if(chaos > (1-tension)){
+          const echoRow = getResponseRow(r, Math.min(1,tension+0.2), scaleName, rootName);
+          const echoCol = (respCol + 1 + Math.floor(chaos*3)) % COLS;
+          resp[Math.max(0,Math.min(ROWS-1,echoRow))][echoCol] = true;
+        }
+      }
+    }
+  }
+  return resp;
+}
+
+// ── ANALYSIS ─────────────────────────────────────────────────────────────────
+function analyzeAndRespond(){
+  const tension = parseInt(document.getElementById('tension').value)/100;
+  const flat = userGrid.flat();
+  const activeCount = flat.filter(Boolean).length;
+
+  if(activeCount===0){
+    respGrid=Array.from({length:ROWS},()=>Array(COLS).fill(false));
+    document.getElementById('m-density').textContent='0%';
+    document.getElementById('m-entropy').textContent='0.00';
+    document.getElementById('m-cog').textContent='—';
+    document.getElementById('m-itension').textContent='—';
+    document.getElementById('resp-tags').innerHTML='';
+    document.getElementById('resp-desc').textContent='Draw a pattern above. The twin is waiting.';
+    return;
+  }
+
+  const density = activeCount/(ROWS*COLS);
+  let pitchCounts=Array(ROWS).fill(0), colCounts=Array(COLS).fill(0);
+  for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++) if(userGrid[r][c]){pitchCounts[r]++;colCounts[c]++;}
+  const pitchDist = pitchCounts.map(x=>x/activeCount);
+  const entropy = -pitchDist.reduce((s,p)=>p>0?s+p*Math.log2(p+1e-9):s,0)/Math.log2(ROWS);
+  let wCol=0; for(let c=0;c<COLS;c++) wCol+=colCounts[c]*c;
+  const cog = wCol/activeCount;
+  const cogLabel = cog<5?'front-heavy':cog>11?'back-heavy':'balanced';
+  const activePitches = pitchCounts.map((c,i)=>c>0?i:-1).filter(x=>x>=0);
+  let intTension=0;
+  const scale = SCALES[document.getElementById('scale').value];
+  for(let i=0;i<activePitches.length-1;i++){
+    const interval = Math.abs(activePitches[i]-activePitches[i+1]) % 12;
+    intTension += DISSONANCE[interval];
+  }
+  const normTension = activePitches.length>1?intTension/(activePitches.length-1):0;
+  const tensionLabel = normTension<0.3?'consonant':normTension<0.6?'modal':'dissonant';
+
+  document.getElementById('m-density').textContent=Math.round(density*100)+'%';
+  document.getElementById('m-entropy').textContent=entropy.toFixed(2);
+  document.getElementById('m-cog').textContent=cogLabel;
+  document.getElementById('m-itension').textContent=tensionLabel;
+
+  respGrid = buildResponse(tension);
+
+  const tags=[];
+  const tenLabel = tension<0.2?'mirror inversion':tension<0.45?'φ-retrograde':tension<0.7?'harmonic displacement':'chromatic atonality';
+  const tenCls = tension<0.45?'blue':tension<0.7?'amber':'red';
+  tags.push({t:tenLabel,c:tenCls});
+  if(tensionLabel==='dissonant') tags.push({t:'high dissonance input',c:'red'});
+  if(entropy>0.65) tags.push({t:'high entropy',c:'amber'});
+  if(density<0.1) tags.push({t:'sparse phrase',c:'gold'});
+  if(tension>0.7) tags.push({t:'tritone injection active',c:'red'});
+  document.getElementById('resp-tags').innerHTML=tags.map(t=>`<span class="tag ${t.c}">${t.t}</span>`).join('');
+
+  const rootName=document.getElementById('root').value;
+  const scaleName=document.getElementById('scale').value;
+  const eerieDesc = tension>0.7?' — chromatic drift and tritone ghosts destabilise the tonal centre':'';
+  document.getElementById('resp-desc').textContent=
+    `Strategy: ${tenLabel}${eerieDesc}. Input in ${rootName} ${scaleName} — ${tensionLabel}, ${Math.round(entropy*100)}% pitch entropy, ${cogLabel}.`;
+}
+
+// ── UI RENDERING ─────────────────────────────────────────────────────────────
+function buildSeqUI(id, grid, onCls){
+  const el=document.getElementById(id);
+  el.innerHTML='';
+  for(let r=0;r<ROWS;r++){
+    const row=document.createElement('div');
+    row.className='seq-row';
+    for(let c=0;c<COLS;c++){
+      const s=document.createElement('div');
+      s.className='step'+(grid[r][c]?' '+onCls:'');
+      s.dataset.r=r; s.dataset.c=c;
+      if(id==='user-seq') s.addEventListener('click',()=>{ userGrid[r][c]=!userGrid[r][c]; analyzeAndRespond(); refresh(); });
+      row.appendChild(s);
+    }
+    el.appendChild(row);
+  }
+}
+
+function refresh(){
+  buildSeqUI('user-seq',userGrid,'u-on');
+  buildSeqUI('resp-seq',respGrid,'r-on');
+  drawViz('user-viz',userGrid,'#2979ff');
+  drawViz('resp-viz',respGrid,'#e53935');
+}
+
+function drawViz(id,grid,color){
+  const canvas=document.getElementById(id);
+  const ctx=canvas.getContext('2d');
+  canvas.width=canvas.offsetWidth||400;
+  canvas.height=44;
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  const cw=canvas.width/COLS, ch=44/ROWS;
+  for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++){
+    if(grid[r][c]){
+      ctx.fillStyle=color;
+      ctx.globalAlpha=0.75;
+      ctx.beginPath();
+      ctx.roundRect(c*cw+1,r*ch+1,cw-2,ch-2,2);
+      ctx.fill();
+    }
+  }
+  ctx.globalAlpha=1;
+}
+
+function highlightStep(col,gridId,cls){
+  const el=document.getElementById(gridId);
+  if(!el) return;
+  el.querySelectorAll('.step').forEach(s=>{
+    s.classList.remove('u-play','r-play');
+    if(parseInt(s.dataset.c)===col) s.classList.add(cls);
+  });
+}
+
+// ── PLAYBACK ─────────────────────────────────────────────────────────────────
+function startPlay(){
+  const ctx=getCtx();
+  if(ctx.state==='suspended') ctx.resume();
+  const bpm=parseInt(document.getElementById('bpm').value);
+  const stepSec=(60/bpm)/4;
+  const delayBars=parseInt(document.getElementById('resp-delay').value);
+  const delayCols=delayBars*16;
+  const rootName=document.getElementById('root').value;
+  const scaleName=document.getElementById('scale').value;
+  beat=0;
+  intervalId=setInterval(()=>{
+    const col=beat%COLS;
+    const rBeat=beat-delayCols;
+    const rCol=rBeat>=0?rBeat%COLS:-1;
+    highlightStep(col,'user-seq','u-play');
+    if(rCol>=0) highlightStep(rCol,'resp-seq','r-play');
+    const now=ctx.currentTime;
+    for(let r=0;r<ROWS;r++){
+      if(userGrid[r][col]) playNote(getFreq(r,rootName,scaleName),now,stepSec,false);
+      if(rCol>=0&&respGrid[r][rCol]) playNote(getFreq(r,rootName,scaleName),now+0.006,stepSec,true);
+    }
+    beat++;
+  },stepSec*1000);
+}
+
+function stopPlay(){
+  clearInterval(intervalId);
+  document.querySelectorAll('.step').forEach(s=>s.classList.remove('u-play','r-play'));
+}
+
+// ── PUSH BACK ─────────────────────────────────────────────────────────────────
+// The machine's response grid fires a one-time chaotic mutation back onto
+// the user grid. Each active resp cell targets a nearby user cell using
+// a combination of: Lorenz-inspired drift, bitwise XOR scramble, and
+// a radial gravity pull toward the response's centre of mass.
+function pushBack(){
+  const btn = document.getElementById('btn-pushback');
+  btn.classList.remove('fired');
+  void btn.offsetWidth; // reflow to restart animation
+  btn.classList.add('fired');
+
+  // Calculate response centre of mass (row & col weighted average)
+  let totalR=0, totalC=0, respCount=0;
+  for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++){
+    if(respGrid[r][c]){ totalR+=r; totalC+=c; respCount++; }
+  }
+  if(respCount===0) return;
+  const cogR = totalR/respCount;
+  const cogC = totalC/respCount;
+
+  // Save original user grid for XOR comparison
+  const original = userGrid.map(row=>[...row]);
+  const newGrid = userGrid.map(row=>[...row]);
+
+  // Collect all active resp cells and apply chaos transforms
+  const phi = 1.618033988749895;
+  const mutations = [];
+
+  for(let r=0;r<ROWS;r++){
+    for(let c=0;c<COLS;c++){
+      if(!respGrid[r][c]) continue;
+
+      // 1. Lorenz-inspired: drift direction based on position relative to CoM
+      const driftR = (r - cogR) * 0.4 + Math.sin(c * 1.618) * 1.5;
+      const driftC = (c - cogC) * 0.4 + Math.cos(r * 2.399) * 2.5;
+
+      // 2. Golden-ratio phase twist
+      const phiTwistR = Math.floor(((r * phi) % 1) * ROWS);
+      const phiTwistC = Math.floor(((c * phi) % 1) * COLS);
+
+      // 3. Bitwise XOR scramble on packed coords
+      const packed = (r << 4) | c;
+      const xorSeed = (packed ^ 0b10110011) & 0xFF;
+      const xorR = (xorSeed >> 4) % ROWS;
+      const xorC = xorSeed & 0x0F;
+
+      // 4. Blend all three by tension value
+      const t = parseInt(document.getElementById('tension').value)/100;
+      const targetR = Math.round(
+        r*(1-t)*0.3 +
+        (r + driftR)*t*0.35 +
+        phiTwistR*0.2 +
+        xorR*t*0.15
+      );
+      const targetC = Math.round(
+        c*(1-t)*0.3 +
+        (c + driftC)*t*0.35 +
+        phiTwistC*0.2 +
+        xorC*t*0.15
+      );
+
+      const clampR = Math.max(0, Math.min(ROWS-1, Math.round(targetR)));
+      const clampC = Math.max(0, Math.min(COLS-1, Math.round(targetC)));
+
+      // Toggle — if user had it on, chaos can flip it off and vice versa
+      newGrid[clampR][clampC] = !original[clampR][clampC];
+      mutations.push({r: clampR, c: clampC});
+
+      // High tension: secondary scatter echo
+      if(t > 0.55){
+        const echoR = Math.max(0,Math.min(ROWS-1, ROWS-1-clampR));
+        const echoC = Math.max(0,Math.min(COLS-1, (clampC + Math.floor(t*7)+1) % COLS));
+        newGrid[echoR][echoC] = true;
+        mutations.push({r: echoR, c: echoC});
+      }
+    }
+  }
+
+  // Apply and rebuild UI
+  for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++) userGrid[r][c]=newGrid[r][c];
+
+  // Rebuild user grid UI then flash mutated cells with staggered animation
+  buildSeqUI('user-seq', userGrid, 'u-on');
+  drawViz('user-viz', userGrid, '#2979ff');
+
+  // Flash the mutated steps
+  const userEl = document.getElementById('user-seq');
+  mutations.forEach((m, i)=>{
+    setTimeout(()=>{
+      const steps = userEl.querySelectorAll('.step');
+      steps.forEach(s=>{
+        if(parseInt(s.dataset.r)===m.r && parseInt(s.dataset.c)===m.c){
+          s.classList.add('chaos-flash');
+          setTimeout(()=>s.classList.remove('chaos-flash'), 450);
+        }
+      });
+    }, i * 18);
+  });
+
+  // Re-run analysis on the mutated phrase after animation settles
+  setTimeout(()=>{ analyzeAndRespond(); refresh(); }, mutations.length*18 + 500);
+}
+
+// ── MIDI EXPORT ───────────────────────────────────────────────────────────────
+function gridToMidi(grid, rootName, scaleName, bpm){
+  // Build a minimal Type-0 MIDI file from scratch
+  const scale = SCALES[scaleName];
+  const rootIdx = ROOTS.indexOf(rootName);
+  const ticksPerBeat = 96;
+  const microsPerBeat = Math.round(60000000/bpm);
+  const stepTicks = ticksPerBeat/4; // 16th note
+
+  // Collect note events: {tick, type:'on'|'off', pitch, vel}
+  const events = [];
+  for(let c=0;c<COLS;c++){
+    for(let r=0;r<ROWS;r++){
+      if(!grid[r][c]) continue;
+      const noteIndex = ROWS-1-r;
+      const octave = 3 + Math.floor(noteIndex/scale.length);
+      const degree = noteIndex % scale.length;
+      const semitones = rootIdx + scale[degree] + octave*12;
+      const midiNote = semitones + 12; // shift to MIDI range
+      const clampedNote = Math.max(0,Math.min(127,midiNote));
+      const onTick = c*stepTicks;
+      const offTick = onTick + stepTicks - 2;
+      events.push({tick:onTick, type:'on', note:clampedNote, vel:90});
+      events.push({tick:offTick, type:'off', note:clampedNote, vel:0});
+    }
+  }
+  events.sort((a,b)=>a.tick-b.tick || (a.type==='off'?-1:1));
+
+  // Variable length quantity encoder
+  function vlq(val){
+    const bytes=[];
+    bytes.unshift(val&0x7f);
+    val>>=7;
+    while(val>0){ bytes.unshift((val&0x7f)|0x80); val>>=7; }
+    return bytes;
+  }
+
+  // Build track data
+  const trackData=[];
+  // Tempo meta event (delta=0)
+  trackData.push(...[0x00,0xff,0x51,0x03,(microsPerBeat>>16)&0xff,(microsPerBeat>>8)&0xff,microsPerBeat&0xff]);
+  // Time signature 4/4 (delta=0)
+  trackData.push(...[0x00,0xff,0x58,0x04,0x04,0x02,0x18,0x08]);
+
+  let lastTick=0;
+  for(const ev of events){
+    const delta=ev.tick-lastTick;
+    lastTick=ev.tick;
+    trackData.push(...vlq(delta));
+    if(ev.type==='on') trackData.push(0x90,ev.note,ev.vel);
+    else trackData.push(0x80,ev.note,ev.vel);
+  }
+  // End of track
+  trackData.push(0x00,0xff,0x2f,0x00);
+
+  // Build full MIDI file
+  function int32(n){ return [(n>>24)&0xff,(n>>16)&0xff,(n>>8)&0xff,n&0xff]; }
+  function int16(n){ return [(n>>8)&0xff,n&0xff]; }
+
+  const header=[0x4d,0x54,0x68,0x64,...int32(6),...int16(0),...int16(1),...int16(ticksPerBeat)];
+  const track=[0x4d,0x54,0x72,0x6b,...int32(trackData.length),...trackData];
+  const midiBytes=new Uint8Array([...header,...track]);
+
+  const blob=new Blob([midiBytes],{type:'audio/midi'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;
+  a.download=`black-mirror-${Date.now()}.mid`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// ── MIDI IMPORT (drag & drop) ─────────────────────────────────────────────────
+function parseMidiDrop(file, targetGrid, isUser){
+  const reader=new FileReader();
+  reader.onload=e=>{
+    try{
+      const buf=new Uint8Array(e.target.result);
+      // Find track chunk, parse note-on events, map to grid
+      let pos=14; // skip header
+      if(pos+8>buf.length) return;
+      // skip 'MTrk' + length
+      pos+=8;
+      const grid=Array.from({length:ROWS},()=>Array(COLS).fill(false));
+      const noteOnTimes={};
+      let tick=0;
+      while(pos<buf.length){
+        // read delta
+        let delta=0, b;
+        do{ b=buf[pos++]; delta=(delta<<7)|(b&0x7f); } while(b&0x80);
+        tick+=delta;
+        const status=buf[pos++];
+        if(status===0xff){ const t=buf[pos++]; const l=buf[pos++]; pos+=l; continue; }
+        const chan=status&0x0f;
+        const type=status>>4;
+        if(type===0x9 || type===0x8){
+          const note=buf[pos++], vel=buf[pos++];
+          if(type===0x9&&vel>0){
+            noteOnTimes[note]={tick};
+            // Map to grid: col from tick, row from pitch
+            const col=Math.floor(tick/6)%COLS;
+            const row=ROWS-1-((note-36)%(ROWS));
+            if(row>=0&&row<ROWS) grid[Math.max(0,row)][col]=true;
+          }
+        } else if(type===0xa){ pos+=2; }
+        else if(type===0xb){ pos+=2; }
+        else if(type===0xc){ pos+=1; }
+        else if(type===0xd){ pos+=1; }
+        else if(type===0xe){ pos+=2; }
+      }
+      if(isUser){
+        for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++) userGrid[r][c]=grid[r][c];
+        analyzeAndRespond();
+      } else {
+        for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++) respGrid[r][c]=grid[r][c];
+      }
+      refresh();
+    }catch(err){ console.error('MIDI parse error',err); }
+  };
+  reader.readAsArrayBuffer(file);
+}
+
+// ── EVENT WIRING ──────────────────────────────────────────────────────────────
+document.getElementById('btn-play').addEventListener('click',()=>{
+  playing=!playing;
+  const btn=document.getElementById('btn-play');
+  if(playing){ btn.textContent='Silence'; btn.classList.add('on'); startPlay(); }
+  else { btn.textContent='Invoke'; btn.classList.remove('on'); stopPlay(); }
+});
+
+document.getElementById('btn-clear').addEventListener('click',()=>{
+  userGrid=Array.from({length:ROWS},()=>Array(COLS).fill(false));
+  respGrid=Array.from({length:ROWS},()=>Array(COLS).fill(false));
+  refresh();
+  document.getElementById('resp-tags').innerHTML='';
+  document.getElementById('resp-desc').textContent='Draw a pattern above. The twin is waiting.';
+  document.getElementById('m-density').textContent='0%';
+  document.getElementById('m-entropy').textContent='0.00';
+  document.getElementById('m-cog').textContent='—';
+  document.getElementById('m-itension').textContent='—';
+});
+
+document.getElementById('btn-rand').addEventListener('click',()=>{
+  userGrid=Array.from({length:ROWS},()=>Array.from({length:COLS},()=>Math.random()<0.2));
+  analyzeAndRespond(); refresh();
+});
+
+document.getElementById('bpm').addEventListener('input',function(){ document.getElementById('bpm-val').textContent=this.value; });
+document.getElementById('tension').addEventListener('input',function(){
+  document.getElementById('tension-val').textContent=this.value;
+  analyzeAndRespond(); refresh();
+});
+document.getElementById('verb').addEventListener('input',function(){ document.getElementById('verb-val').textContent=this.value; });
+document.getElementById('root').addEventListener('change',()=>{ analyzeAndRespond(); refresh(); });
+document.getElementById('scale').addEventListener('change',()=>{ analyzeAndRespond(); refresh(); });
+document.getElementById('voice').addEventListener('change',()=>{ analyzeAndRespond(); refresh(); });
+
+document.getElementById('export-user').addEventListener('click',()=>{
+  getCtx();
+  gridToMidi(userGrid,document.getElementById('root').value,document.getElementById('scale').value,parseInt(document.getElementById('bpm').value));
+});
+document.getElementById('export-resp').addEventListener('click',()=>{
+  getCtx();
+  gridToMidi(respGrid,document.getElementById('root').value,document.getElementById('scale').value,parseInt(document.getElementById('bpm').value));
+});
+document.getElementById('btn-pushback').addEventListener('click', pushBack);
+
+// Drag & drop on user panel
+const dropUser=document.getElementById('drop-user');
+['dragover','dragleave','drop'].forEach(ev=>{
+  dropUser.addEventListener(ev,e=>{
+    e.preventDefault();
+    if(ev==='dragover') dropUser.classList.add('dragover');
+    else if(ev==='dragleave') dropUser.classList.remove('dragover');
+    else{
+      dropUser.classList.remove('dragover');
+      const file=e.dataTransfer.files[0];
+      if(file) parseMidiDrop(file,userGrid,true);
+    }
+  });
+});
+
+refresh();
+</script>
+</body>
+</html>
