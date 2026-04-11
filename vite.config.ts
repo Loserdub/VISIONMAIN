@@ -19,21 +19,22 @@ function hoistMetaTagsToHead(html: string): string {
   const bodyDescMatch = html.match(/<div id="root"[^>]*>[\s\S]*?<meta name="description" content="([^"]*)"/);
   if (bodyDescMatch) {
     html = html.replace(
-      /<meta name="description" content="[^"]*">/,
+      /<meta name="description" content="[^"]*"\s*\/?>/,
       `<meta name="description" content="${bodyDescMatch[1]}">`
     );
   }
 
-  // 3. Extract and replace <link rel="canonical">
-  // The template always puts one canonical in <head>; the per-page one is the
-  // second occurrence (rendered by Helmet inside <div id="root">).
-  const allCanonicals = [...html.matchAll(/<link rel="canonical" href="([^"]*)"/g)];
-  if (allCanonicals.length >= 2) {
-    const pageCanonical = allCanonicals[1][1];
-    html = html.replace(
-      /<link rel="canonical" href="[^"]*">/,
-      `<link rel="canonical" href="${pageCanonical}">`
-    );
+  // 3. Extract and hoist <link rel="canonical"> from body to <head>.
+  // React 19 + react-helmet-async renders the tag inline in <div id="root">;
+  // we remove every canonical from the document and re-insert the page-specific
+  // one inside <head> so there is exactly one, correct canonical per page.
+  const bodyCanonicalMatch = html.match(/<div id="root"[\s\S]*?<link rel="canonical" href="([^"]*)"/);
+  if (bodyCanonicalMatch) {
+    const pageCanonical = bodyCanonicalMatch[1];
+    // Remove all canonical tags (template fallback + Helmet-rendered body copy).
+    html = html.replace(/<link rel="canonical" href="[^"]*"\s*\/?>/g, '');
+    // Insert the page-specific canonical in <head>.
+    html = html.replace('</head>', `  <link rel="canonical" href="${pageCanonical}">\n  </head>`);
   }
 
   // 4. Extract and replace OG meta tags
@@ -44,7 +45,7 @@ function hoistMetaTagsToHead(html: string): string {
     const bodyOgMatch = html.match(new RegExp(`<div id="root"[\\s\\S]*?<meta property="${escapedProp}" content="([^"]*)"`));
     if (bodyOgMatch) {
       html = html.replace(
-        new RegExp(`<meta property="${escapedProp}" content="[^"]*">`),
+        new RegExp(`<meta property="${escapedProp}" content="[^"]*"\\s*\\/?>`, ''),
         `<meta property="${prop}" content="${bodyOgMatch[1]}">`
       );
     }
@@ -56,7 +57,7 @@ function hoistMetaTagsToHead(html: string): string {
     const escapedName = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     const bodyTwMatch = html.match(new RegExp(`<div id="root"[\\s\\S]*?<meta name="${escapedName}" content="([^"]*)"`));
     if (bodyTwMatch) {
-      const existingRe = new RegExp(`<meta name="${escapedName}" content="[^"]*">`);
+      const existingRe = new RegExp(`<meta name="${escapedName}" content="[^"]*"\\s*\\/?>`);
       if (existingRe.test(html)) {
         html = html.replace(existingRe, `<meta name="${name}" content="${bodyTwMatch[1]}">`);
       }
