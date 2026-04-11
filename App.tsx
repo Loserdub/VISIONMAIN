@@ -1,6 +1,5 @@
 import React, { useState, Suspense, useEffect } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
 import OilBackground from './components/OilBackground';
 import { Menu, X, Disc } from 'lucide-react';
 import SoundCloudPlayer from './components/SoundCloudPlayer';
@@ -90,8 +89,7 @@ const Navigation = () => {
 
 const App: React.FC = () => {
   return (
-    <HelmetProvider>
-      <div className="relative min-h-screen font-sans selection:bg-white selection:text-black flex flex-col text-white">
+    <div className="relative min-h-screen font-sans selection:bg-white selection:text-black flex flex-col text-white">
         <ScrollToTop />
         <OilBackground />
         <Navigation />
@@ -108,7 +106,6 @@ const App: React.FC = () => {
           </Suspense>
         </main>
       </div>
-    </HelmetProvider>
   );
 };
 

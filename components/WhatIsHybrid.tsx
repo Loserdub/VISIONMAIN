@@ -111,6 +111,17 @@ const WhatIsHybrid: React.FC = () => {
      <Helmet>
         <title>What is Hybrid Production? | Justin Ray</title>
         <meta name="description" content="Hybrid Production isn't about choosing between human and machine—it’s about the handshake between them. Learn Taxonomic Seeding and Spectral Splitting." />
+        <link rel="canonical" href="https://jray.me/what-is-hybrid" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://jray.me/what-is-hybrid" />
+        <meta property="og:title" content="What is Hybrid Production? | Justin Ray" />
+        <meta property="og:description" content="Hybrid Production isn’t about choosing between human and machine—it’s about the handshake between them. Learn Taxonomic Seeding and Spectral Splitting." />
+        <meta property="og:image" content="https://jray.me/favicon.png" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:url" content="https://jray.me/what-is-hybrid" />
+        <meta name="twitter:title" content="What is Hybrid Production? | Justin Ray" />
+        <meta name="twitter:description" content="Hybrid Production isn’t about choosing between human and machine—it’s about the handshake between them. Learn Taxonomic Seeding and Spectral Splitting." />
+        <meta name="twitter:image" content="https://jray.me/favicon.png" />
         
         {/* Inject TechArticle Schema */}
         <script 
