@@ -50,34 +50,74 @@ const ProjectsList: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {/* AestheticLens Card */}
-                <article className="group relative aspect-video bg-zinc-900 border border-white/5 hover:border-white/20 transition-all p-8 flex flex-col justify-center items-center text-center overflow-hidden">
-                    {/* Background Image */}
-                    <div className="absolute inset-0 z-0">
-                        <img 
-                            src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=800&auto=format&fit=crop" 
-                            alt="AestheticLens Background" 
-                            className="w-full h-full object-cover opacity-30 grayscale transition-all duration-700 group-hover:opacity-50 group-hover:scale-110 group-hover:grayscale-0"
-                        />
-                        <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors duration-500"></div>
-                    </div>
-                    
-                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-800/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
-                    
+                {/* Black Mirror Card */}
+                <article
+                    className="group relative aspect-video border transition-all p-8 flex flex-col justify-center items-center text-center overflow-hidden"
+                    style={{
+                        background: '#0a0a0f',
+                        borderColor: 'rgba(201,168,76,0.25)',
+                        boxShadow: 'inset 0 0 40px rgba(41,121,255,0.04), inset 0 0 40px rgba(229,57,53,0.03)',
+                    }}
+                >
+                    {/* Scanlines overlay */}
+                    <div
+                        className="absolute inset-0 pointer-events-none z-0"
+                        style={{
+                            background: 'repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,255,255,0.018) 2px,rgba(255,255,255,0.018) 4px)',
+                        }}
+                    />
+                    {/* Red/blue ambient glow */}
+                    <div
+                        className="absolute pointer-events-none z-0 opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+                        style={{
+                            inset: '-40% -20%',
+                            background: 'radial-gradient(ellipse at 30% 0%,rgba(41,121,255,0.09),transparent 55%),radial-gradient(ellipse at 80% 100%,rgba(229,57,53,0.08),transparent 55%)',
+                        }}
+                    />
+                    {/* Gold border glow on hover */}
+                    <div
+                        className="absolute inset-0 pointer-events-none z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                        style={{
+                            boxShadow: '0 0 24px rgba(201,168,76,0.18), inset 0 0 24px rgba(201,168,76,0.06)',
+                        }}
+                    />
+
                     <div className="relative z-10">
-                        <h2 className="text-xl font-display font-bold text-white mb-2">AestheticLens</h2>
-                        <p className="text-xs font-mono text-white/50 mb-4">Computational Visual Analysis</p>
-                        <a 
-                           href="https://loserdub.github.io/lookingglass"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           aria-label="Launch AestheticLens - Computational Visual Analysis"
-                           className="inline-block px-6 py-2 border border-white/10 hover:border-white hover:bg-white hover:text-black text-[10px] tracking-widest uppercase text-white/60 hover:text-black transition-all duration-300"
-                           onMouseEnter={(e) => handleMouseEnter(e, "Computational Visual Analysis")}
-                           onMouseMove={handleMouseMove}
-                           onMouseLeave={handleMouseLeave}
+                        <h2
+                            className="text-xl font-display font-bold mb-2 uppercase tracking-widest"
+                            style={{
+                                color: '#c9a84c',
+                                textShadow: '0 0 18px rgba(201,168,76,0.4)',
+                            }}
                         >
-                           Live
+                            Black Mirror
+                        </h2>
+                        <p className="text-xs font-mono mb-6 tracking-widest uppercase" style={{ color: 'rgba(232,232,240,0.6)', letterSpacing: '0.18em' }}>
+                            Summon Your Digital Twin
+                        </p>
+                        <a
+                            href="/black-mirror.html"
+                            aria-label="Launch Black Mirror - Summon Your Digital Twin"
+                            className="inline-block px-6 py-2 text-[10px] tracking-widest uppercase transition-all duration-300"
+                            style={{
+                                color: 'rgba(201,168,76,0.9)',
+                                background: 'rgba(20,20,32,0.55)',
+                                border: '1px solid rgba(201,168,76,0.35)',
+                                borderRadius: '4px',
+                            }}
+                            onMouseEnter={(e) => {
+                                (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(201,168,76,0.7)';
+                                (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 0 18px rgba(41,121,255,0.2),0 0 18px rgba(229,57,53,0.15)';
+                                handleMouseEnter(e, "Summon Your Digital Twin");
+                            }}
+                            onMouseMove={handleMouseMove}
+                            onMouseLeave={(e) => {
+                                (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(201,168,76,0.35)';
+                                (e.currentTarget as HTMLAnchorElement).style.boxShadow = '';
+                                handleMouseLeave();
+                            }}
+                        >
+                            Live
                         </a>
                     </div>
                 </article>
