@@ -25,22 +25,26 @@ function hoistMetaTagsToHead(html: string): string {
   }
 
   // 3. Extract and replace <link rel="canonical">
-  // Find the canonical specifically in the metadata block of the body (before actual content divs)
-  const bodyCanonicalMatch = html.match(/<div id="root"[^>]*>[\s\S]*?<link rel="canonical" href="([^"]*)">(?:<div|<article|<section|<main)/);
-  if (bodyCanonicalMatch) {
+  // The template always puts one canonical in <head>; the per-page one is the
+  // second occurrence (rendered by Helmet inside <div id="root">).
+  const allCanonicals = [...html.matchAll(/<link rel="canonical" href="([^"]*)"/g)];
+  if (allCanonicals.length >= 2) {
+    const pageCanonical = allCanonicals[1][1];
     html = html.replace(
       /<link rel="canonical" href="[^"]*">/,
-      `<link rel="canonical" href="${bodyCanonicalMatch[1]}">`
+      `<link rel="canonical" href="${pageCanonical}">`
     );
   }
 
   // 4. Extract and replace OG meta tags
   const ogProps = ['og:type', 'og:url', 'og:title', 'og:description', 'og:image'];
   for (const prop of ogProps) {
-    const bodyOgMatch = html.match(new RegExp(`<div id="root"[^>]*>[\\s\\S]*?<meta property="${prop}" content="([^"]*)"`));
+    // Escape any regex special chars in prop (e.g. the colon is safe but be defensive)
+    const escapedProp = prop.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const bodyOgMatch = html.match(new RegExp(`<div id="root"[\\s\\S]*?<meta property="${escapedProp}" content="([^"]*)"`));
     if (bodyOgMatch) {
       html = html.replace(
-        new RegExp(`<meta property="${prop}" content="[^"]*">`),
+        new RegExp(`<meta property="${escapedProp}" content="[^"]*">`),
         `<meta property="${prop}" content="${bodyOgMatch[1]}">`
       );
     }
@@ -49,11 +53,12 @@ function hoistMetaTagsToHead(html: string): string {
   // 5. Extract and replace Twitter meta tags
   const twitterNames = ['twitter:card', 'twitter:title', 'twitter:description', 'twitter:image'];
   for (const name of twitterNames) {
-    const bodyTwMatch = html.match(new RegExp(`<div id="root"[^>]*>[\\s\\S]*?<meta name="${name}" content="([^"]*)"`));
+    const escapedName = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const bodyTwMatch = html.match(new RegExp(`<div id="root"[\\s\\S]*?<meta name="${escapedName}" content="([^"]*)"`));
     if (bodyTwMatch) {
-      const existing = new RegExp(`<meta name="${name}" content="[^"]*">`);
-      if (existing.test(html)) {
-        html = html.replace(existing, `<meta name="${name}" content="${bodyTwMatch[1]}">`);
+      const existingRe = new RegExp(`<meta name="${escapedName}" content="[^"]*">`);
+      if (existingRe.test(html)) {
+        html = html.replace(existingRe, `<meta name="${name}" content="${bodyTwMatch[1]}">`);
       }
     }
   }
