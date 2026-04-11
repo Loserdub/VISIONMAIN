@@ -1,6 +1,5 @@
 import React, { useState, Suspense, useEffect } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
 import OilBackground from './components/OilBackground';
 import { Menu, X, Disc } from 'lucide-react';
 import SoundCloudPlayer from './components/SoundCloudPlayer';
@@ -90,25 +89,23 @@ const Navigation = () => {
 
 const App: React.FC = () => {
   return (
-    <HelmetProvider>
-      <div className="relative min-h-screen font-sans selection:bg-white selection:text-black flex flex-col text-white">
-        <ScrollToTop />
-        <OilBackground />
-        <Navigation />
-        <SoundCloudPlayer />
+    <div className="relative min-h-screen font-sans selection:bg-white selection:text-black flex flex-col text-white">
+      <ScrollToTop />
+      <OilBackground />
+      <Navigation />
+      <SoundCloudPlayer />
 
-        {/* Main Content Area - Separate Pages */}
-        <main className="flex-grow w-full pt-24 pb-12 flex flex-col" id="main-content">
-          <Suspense fallback={
-            <div className="min-h-[60vh] w-full flex items-center justify-center">
-              <div className="text-white/20 font-mono text-xs tracking-widest animate-pulse uppercase">Loading Route...</div>
-            </div>
-          }>
-            <Outlet />
-          </Suspense>
-        </main>
-      </div>
-    </HelmetProvider>
+      {/* Main Content Area - Separate Pages */}
+      <main className="flex-grow w-full pt-24 pb-12 flex flex-col" id="main-content">
+        <Suspense fallback={
+          <div className="min-h-[60vh] w-full flex items-center justify-center">
+            <div className="text-white/20 font-mono text-xs tracking-widest animate-pulse uppercase">Loading Route...</div>
+          </div>
+        }>
+          <Outlet />
+        </Suspense>
+      </main>
+    </div>
   );
 };
 

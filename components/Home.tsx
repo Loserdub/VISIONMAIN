@@ -50,6 +50,17 @@ const Home: React.FC = () => {
       <Helmet>
         <title>Justin Ray | Creative Technologist & Hybrid Artist</title>
         <meta name="description" content="Justin Ray is a Hybrid Producer and software developer blending Generative AI with traditional engineering. Offering AI music mixing and vocal cleanup, while building innovative tools like in-browser DAWs, polyphonic synths, and web-based image editors." />
+        <link rel="canonical" href="https://jray.me/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://jray.me/" />
+        <meta property="og:title" content="Justin Ray | Creative Technologist & Hybrid Artist" />
+        <meta property="og:description" content="Justin Ray is a Hybrid Producer and software developer blending Generative AI with traditional engineering. Offering AI music mixing and vocal cleanup, while building innovative tools like in-browser DAWs, polyphonic synths, and web-based image editors." />
+        <meta property="og:image" content="https://jray.me/favicon.png" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:url" content="https://jray.me/" />
+        <meta name="twitter:title" content="Justin Ray | Creative Technologist & Hybrid Artist" />
+        <meta name="twitter:description" content="Justin Ray is a Hybrid Producer and software developer blending Generative AI with traditional engineering. Offering AI music mixing and vocal cleanup, while building innovative tools like in-browser DAWs, polyphonic synths, and web-based image editors." />
+        <meta name="twitter:image" content="https://jray.me/favicon.png" />
       </Helmet>
       <section className="relative flex flex-col items-center px-4 py-32 sm:pt-40">
         {/* SEO: Hidden H1 for crawlers as the visual title is canvas-based */}
