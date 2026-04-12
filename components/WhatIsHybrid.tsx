@@ -397,7 +397,7 @@ const WhatIsHybrid: React.FC = () => {
                     </ul>
                   </div>
                 </div>
-                <figure className="mt-10 rounded-sm border border-white/10 bg-black/20 p-6">
+  <figure className="mt-10 rounded-sm border border-white/10 bg-black/20 p-6">
   <figcaption className="text-xl font-bold text-white/90">
     Hybrid Production Round Trip Cycle Diagram
   </figcaption>
@@ -417,6 +417,7 @@ const WhatIsHybrid: React.FC = () => {
                 </div>
               </section>
             </div>
+                        
           </article>
 
           <div
