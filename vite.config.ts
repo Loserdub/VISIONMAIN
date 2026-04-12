@@ -64,6 +64,23 @@ function hoistMetaTagsToHead(html: string): string {
     }
   }
 
+  // 6. Remove duplicate metadata tags left inside <div id="root"> after hoisting.
+  // React 19 renders <Helmet> tags inline in the component tree during SSG; they
+  // have already been hoisted to <head> above, so strip them from the body to
+  // avoid duplicate title/description/OG signals for crawlers.
+  const rootDivIdx = html.indexOf('<div id="root"');
+  if (rootDivIdx !== -1) {
+    const headPart = html.slice(0, rootDivIdx);
+    let bodyPart = html.slice(rootDivIdx);
+    bodyPart = bodyPart
+      .replace(/<title>[^<]*<\/title>/g, '')
+      .replace(/<meta name="description" content="[^"]*"\s*\/?>/g, '')
+      .replace(/<meta name="twitter:[^"]*" content="[^"]*"\s*\/?>/g, '')
+      .replace(/<meta property="og:[^"]*" content="[^"]*"\s*\/?>/g, '')
+      .replace(/<link rel="canonical" href="[^"]*"\s*\/?>/g, '');
+    html = headPart + bodyPart;
+  }
+
   return html;
 }
 

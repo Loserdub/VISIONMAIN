@@ -33,8 +33,40 @@ To cement semantic authority across search engines, knowledge panels, and the br
 ## 🚀 Tech Stack & Deployment
 
 * **Domain:** `jray.me`
-* **Primary Focus:** High-performance delivery, semantic HTML5, and schema.org integration.
-* *Next.js , react, html , all that boring stuff
+* **Framework:** [Vite](https://vitejs.dev/) + [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+* **SSG:** [`vite-react-ssg`](https://github.com/Daydreamer-riri/vite-react-ssg) — pre-renders every route to static HTML at build time
+* **Routing:** React Router v6 (client-side hydration after the static HTML is served)
+* **Styling:** Tailwind CSS v3
+* **Hosting:** GitHub Pages with a custom domain (`jray.me`)
+* **CI/CD:** GitHub Actions — builds and deploys automatically on every push to `main`
+
+### Running locally
+
+```bash
+npm install       # install dependencies
+npm run dev       # start dev server at http://localhost:3000
+```
+
+### Building for production (SSG)
+
+```bash
+npm run build     # generates static HTML in ./dist for every route
+npm run preview   # preview the built output locally
+```
+
+The build produces a fully static `dist/` directory with one `index.html` per route (e.g. `dist/music/index.html`, `dist/projects/index.html`, …). Every HTML file ships with pre-rendered content and correct SEO tags — no JavaScript required for initial render.
+
+### Deployment
+
+Deployment is fully automated via the **Deploy Website Automatically** GitHub Actions workflow (`.github/workflows/deploy.yml`). On every push to `main` it:
+
+1. Runs `npm ci && npm run build`
+2. Uploads `./dist` as the Pages artifact
+3. Deploys to GitHub Pages
+
+The `public/CNAME` file points GitHub Pages to the custom domain `jray.me`.
+
+To trigger a manual re-deploy, push any commit to `main` or re-run the workflow from the **Actions** tab.
 
 ## 🔒 License
 **Copyright © 2026 Justin Tyler Ray. All Rights Reserved.**
