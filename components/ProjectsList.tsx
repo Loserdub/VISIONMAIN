@@ -1,6 +1,98 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 
+const projectsSchemaData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Creative Projects | Justin Ray - Hybrid Producer",
+  "description": "Explore Justin Ray's creative web apps: VISION SYNTH (polyphonic synthesizer), ChordCompose (MIDI sketchpad), FractalAudio (audio effects), IMAGESIZER, and J-DAW (browser-based DAW).",
+  "url": "https://jray.me/projects",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListOrder": "https://schema.org/ItemListUnordered",
+    "numberOfItems": 6,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "WebApplication",
+          "name": "Black Mirror",
+          "url": "https://jray.me/black-mirror.html",
+          "description": "Summon Your Digital Twin",
+          "operatingSystem": "Web",
+          "applicationCategory": "EntertainmentApplication"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "WebApplication",
+          "name": "VISION SYNTH",
+          "url": "https://loserdub.github.io/Subtractive/",
+          "description": "Desktop Polyphonic Synthesizer",
+          "operatingSystem": "Web",
+          "applicationCategory": "MultimediaApplication",
+          "sameAs": "https://github.com/loserdub/Subtractive"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "WebApplication",
+          "name": "ChordCompose",
+          "url": "https://loserdub.github.io/chordcreate/",
+          "description": "Chord Arranger / Idea sketch pad with exportable MIDI",
+          "operatingSystem": "Web",
+          "applicationCategory": "MultimediaApplication",
+          "sameAs": "https://github.com/loserdub/chordcreate"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "WebApplication",
+          "name": "FractalAudio",
+          "url": "https://loserdub.github.io/FractalAudio/",
+          "description": "Audio Processing & Effects",
+          "operatingSystem": "Web",
+          "applicationCategory": "MultimediaApplication",
+          "sameAs": "https://github.com/loserdub/FractalAudio"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "WebApplication",
+          "name": "IMAGESIZER",
+          "url": "https://loserdub.github.io/IMAGESIZER",
+          "description": "Image Resizing and Processing",
+          "operatingSystem": "Web",
+          "applicationCategory": "UtilitiesApplication",
+          "sameAs": "https://github.com/loserdub/IMAGESIZER"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "WebApplication",
+          "name": "J-DAW",
+          "url": "https://loserdub.github.io/jdaw/",
+          "description": "Browser-based Digital Audio Workstation",
+          "operatingSystem": "Web",
+          "applicationCategory": "MultimediaApplication",
+          "sameAs": "https://github.com/loserdub/jdaw"
+        }
+      }
+    ]
+  }
+};
+
 const ProjectsList: React.FC = () => {
   const [tooltip, setTooltip] = useState({ show: false, x: 0, y: 0, text: '' });
 
@@ -32,6 +124,10 @@ const ProjectsList: React.FC = () => {
         <meta name="twitter:title" content="Creative Projects | Justin Ray - Hybrid Producer" />
         <meta name="twitter:description" content="Explore Justin Ray's creative web apps: VISION SYNTH (polyphonic synthesizer), ChordCompose (MIDI sketchpad), FractalAudio (audio effects), IMAGESIZER, and J-DAW (browser-based DAW)." />
         <meta name="twitter:image" content="https://jray.me/favicon.png" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(projectsSchemaData) }}
+        />
       </Helmet>
     <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up w-full overflow-hidden">
       {/* Tooltip Portal */}
