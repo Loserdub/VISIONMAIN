@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import cycleDiagram from '../assets/images/cycle-diagram.webp';
+import cycleDiagram from '../assets/images/cyclediagram.jpg';
 
 const WhatIsHybrid: React.FC = () => {
   const scrollToArticles = () => {
