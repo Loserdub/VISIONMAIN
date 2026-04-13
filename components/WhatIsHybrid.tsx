@@ -432,18 +432,28 @@ const WhatIsHybrid: React.FC = () => {
 
                 <span className="text-white/50"> · </span>
 
-                <a href="/Suno101.html" target="_blank" rel="noreferrer">
+                {/* Suno 101 Link */}
+<a 
+  href="/Suno101.html" 
+  target="_blank" 
+  rel="noreferrer"
+  className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition"
+>
   Suno 101
 </a>
-                  {/* NEW: Fingerprint Link */}
-                <a 
-                  href="/fingerprint.html" 
-                  target="_blank" 
-                  rel="noreferrer"
-                  className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition"
-                >
-                  Watermarks in AI
-            </a>
+
+{/* Styled Separator Dot */}
+<span className="text-white/50 mx-2"> · </span>
+
+{/* NEW: Fingerprint Link */}
+<a 
+  href="/fingerprint.html" 
+  target="_blank" 
+  rel="noreferrer"
+  className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition"
+>
+  Watermarks in AI
+</a>
               </li>
             </ul>
           </div>
