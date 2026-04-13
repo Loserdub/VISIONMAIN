@@ -432,10 +432,9 @@ const WhatIsHybrid: React.FC = () => {
 
                 <span className="text-white/50"> · </span>
 
-                <a
-                  href="/Suno101.html"
-                  className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition"
-                >
+                <a href="/Suno101.html" target="_blank" rel="noreferrer">
+  Suno 101
+</a>
                   Suno 101
                 </a>
               </li>
