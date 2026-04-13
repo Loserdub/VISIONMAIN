@@ -3,11 +3,6 @@ import { Helmet } from 'react-helmet-async';
 import cycleDiagram from '../assets/images/cyclediagram.jpg';
 
 const WhatIsHybrid: React.FC = () => {
-  const scrollToArticles = () => {
-    const section = document.getElementById('more-topics');
-    section?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
-
   return (
     <>
       <Helmet>
@@ -21,15 +16,40 @@ const WhatIsHybrid: React.FC = () => {
 
       <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up">
         <div className="container mx-auto max-w-5xl">
-          <div className="mb-8">
-            <button
-              type="button"
-              onClick={scrollToArticles}
-              className="text-sm text-white/70 hover:text-white underline underline-offset-4 decoration-white/30 hover:decoration-white transition"
-              aria-label="See other articles"
-            >
-              See other articles
-            </button>
+          <div className="mb-8 rounded-sm border border-white/10 bg-zinc-900/40 p-8">
+            <h2 className="text-lg font-bold uppercase tracking-wider text-white">More Topics / Articles</h2>
+            <ul className="mt-4 space-y-3">
+              <li>
+                <a
+                  href="/futureofhybrid.html"
+                  className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition"
+                >
+                  Future of Hybrid
+                </a>
+
+                <span className="text-white/50"> · </span>
+
+                <a
+                  href="/Suno101.html"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition"
+                >
+                  Suno 101
+                </a>
+
+                <span className="text-white/50 mx-2"> · </span>
+
+                <a
+                  href="/fingerprint.html"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition"
+                >
+                  Watermarks in AI
+                </a>
+              </li>
+            </ul>
           </div>
 
           <article className="rounded-sm border border-white/10 bg-zinc-900/40 p-8 md:p-12">
@@ -416,47 +436,6 @@ const WhatIsHybrid: React.FC = () => {
                         
           </article>
 
-          <div
-            id="more-topics"
-            className="mt-12 rounded-sm border border-white/10 bg-zinc-900/40 p-8 scroll-mt-28"
-          >
-            <h2 className="text-lg font-bold uppercase tracking-wider text-white">More Topics / Articles</h2>
-            <ul className="mt-4 space-y-3">
-                           <li>
-                <a
-                  href="/futureofhybrid.html"
-                  className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition"
-                >
-                  Future of Hybrid
-                </a>
-
-                <span className="text-white/50"> · </span>
-
-                {/* Suno 101 Link */}
-<a 
-  href="/Suno101.html" 
-  target="_blank" 
-  rel="noreferrer"
-  className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition"
->
-  Suno 101
-</a>
-
-{/* Styled Separator Dot */}
-<span className="text-white/50 mx-2"> · </span>
-
-{/* NEW: Fingerprint Link */}
-<a 
-  href="/fingerprint.html" 
-  target="_blank" 
-  rel="noreferrer"
-  className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition"
->
-  Watermarks in AI
-</a>
-              </li>
-            </ul>
-          </div>
         </div>
       </section>
     </>
