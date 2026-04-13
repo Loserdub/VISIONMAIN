@@ -422,12 +422,21 @@ const WhatIsHybrid: React.FC = () => {
           >
             <h2 className="text-lg font-bold uppercase tracking-wider text-white">More Topics / Articles</h2>
             <ul className="mt-4 space-y-3">
-              <li>
+                           <li>
                 <a
                   href="/futureofhybrid.html"
                   className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition"
                 >
                   Future of Hybrid
+                </a>
+
+                <span className="text-white/50"> · </span>
+
+                <a
+                  href="/suno101.html"
+                  className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition"
+                >
+                  Suno 101
                 </a>
               </li>
             </ul>
