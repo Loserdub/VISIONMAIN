@@ -30,7 +30,7 @@ const projectsSchemaData = {
         "item": {
           "@type": "WebApplication",
           "name": "VISION SYNTH",
-          "url": "https://loserdub.github.io/Subtractive/",
+          "url": "https://midi-subtractive-synthesizer-548454922545.us-west1.run.app",
           "description": "Desktop Polyphonic Synthesizer",
           "operatingSystem": "Web",
           "applicationCategory": "MultimediaApplication",
@@ -247,7 +247,7 @@ const ProjectsList: React.FC = () => {
                         <h2 className="text-xl font-display font-bold text-white mb-2">VISION SYNTH</h2>
                         <p className="text-xs font-mono text-white/50 mb-4">It's Poly-FUN-ic !</p>
                         <a 
-                           href="https://loserdub.github.io/Subtractive/"
+                           href="https://midi-subtractive-synthesizer-548454922545.us-west1.run.app"
                            target="_blank"
                            rel="noopener noreferrer"
                            aria-label="Launch VISION SYNTH - Desktop Polyphonic Synthesizer"
