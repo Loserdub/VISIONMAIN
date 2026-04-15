@@ -45,45 +45,15 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Projects tab / cards -->
+  <!-- On-domain projects / pages -->
   <url>
     <loc>https://jray.me/black-mirror.html</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://midi-subtractive-synthesizer-548454922545.us-west1.run.app</loc>
-    <lastmod>2026-04-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://loserdub.github.io/chordcreate/</loc>
-    <lastmod>2026-04-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://loserdub.github.io/FractalAudio/</loc>
-    <lastmod>2026-04-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://loserdub.github.io/IMAGESIZER</loc>
-    <lastmod>2026-04-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://loserdub.github.io/jdaw/</loc>
-    <lastmod>2026-04-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-  </url>
 
-  <!-- What-Is-Hybrid tab / articles -->
+  <!-- What-Is-Hybrid tab / articles (on-domain) -->
   <url>
     <loc>https://jray.me/futureofhybrid.html</loc>
     <lastmod>2026-04-15</lastmod>
