@@ -10,9 +10,9 @@ import react from '@vitejs/plugin-react';
  */
 function hoistMetaTagsToHead(html: string): string {
   // 1. Extract per-page <title> from body root div
-  const bodyTitle = html.match(/<div id="root"[^>]*>(?:<link[^>]*>)*<title>([^<]*)<\/title>/)?.[1];
+  const bodyTitle = html.match(/<div id="root"[\s\S]*?<title[^>]*>([^<]*)<\/title>/)?.[1];
   if (bodyTitle) {
-    html = html.replace(/<title>[^<]*<\/title>/, `<title>${bodyTitle}</title>`);
+    html = html.replace(/<title[^>]*>[^<]*<\/title>/, `<title data-rh="true">${bodyTitle}</title>`);
   }
 
   // 2. Extract and replace <meta name="description">
@@ -20,7 +20,7 @@ function hoistMetaTagsToHead(html: string): string {
   if (bodyDescMatch) {
     html = html.replace(
       /<meta name="description" content="[^"]*"\s*\/?>/,
-      `<meta name="description" content="${bodyDescMatch[1]}">`
+      `<meta data-rh="true" name="description" content="${bodyDescMatch[1]}">`
     );
   }
 
@@ -34,7 +34,7 @@ function hoistMetaTagsToHead(html: string): string {
     // Remove all canonical tags (template fallback + Helmet-rendered body copy).
     html = html.replace(/<link rel="canonical" href="[^"]*"\s*\/?>/g, '');
     // Insert the page-specific canonical in <head>.
-    html = html.replace('</head>', `  <link rel="canonical" href="${pageCanonical}">\n  </head>`);
+    html = html.replace('</head>', `  <link data-rh="true" rel="canonical" href="${pageCanonical}">\n  </head>`);
   }
 
   // 4. Extract and replace OG meta tags
@@ -121,4 +121,3 @@ export default defineConfig(({ mode }) => {
       }
     };
 });
-
