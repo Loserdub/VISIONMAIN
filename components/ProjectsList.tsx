@@ -5,7 +5,7 @@ const projectsSchemaData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "Creative Projects | Justin Ray - Hybrid Producer",
-  "description": "Explore Justin Ray's creative web apps: developer",
+  "description": "Explore Justin Ray's creative web apps: r",
   "url": "https://jray.me/projects",
   "mainEntity": {
     "@type": "ItemList",
@@ -112,7 +112,7 @@ const ProjectsList: React.FC = () => {
     <>
       <Head>
         <title>Creative Projects | Justin Ray - Hybrid Producer</title>
-        <meta name="description" content="Explore Justin Ray's creative web apps: VISION SYNTH (polyphonic synthesizer), ChordCompose (MIDI sketchpad), FractalAudio (audio effects), IMAGESIZER, and J-DAW (browser-based DAW)." />
+        <meta name="description" content="Explore Justin Ray's creative web apps" />
         <link rel="canonical" href="https://jray.me/projects" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://jray.me/projects" />
