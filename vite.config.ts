@@ -9,30 +9,50 @@ import react from '@vitejs/plugin-react';
  * inline inside <div id="root">. This hook moves them from body to <head>.
  */
 function hoistMetaTagsToHead(html: string): string {
+  const escapeHtml = (value: string) =>
+    value
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+
+  const titleTagRe = /<title\b[^>]*>[\s\S]*?<\/title>/gi;
+  const descriptionMetaRe = /<meta\b(?=[^>]*\bname=["']description["'])[^>]*>/gi;
+  const canonicalLinkRe = /<link\b(?=[^>]*\brel=["']canonical["'])[^>]*>/gi;
+
+  const initialRootDivIdx = html.indexOf('<div id="root"');
+  if (initialRootDivIdx === -1) {
+    return html;
+  }
+  const bodyPart = html.slice(initialRootDivIdx);
+
   // 1. Extract per-page <title> from body root div
-  const bodyTitle = html.match(/<div id="root"[\s\S]*?<title[^>]*>([^<]*)<\/title>/)?.[1];
+  const bodyTitle = bodyPart.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1]?.trim();
   if (bodyTitle) {
-    html = html.replace(/<title[^>]*>[^<]*<\/title>/, `<title data-rh="true">${bodyTitle}</title>`);
+    const safeTitle = escapeHtml(bodyTitle);
+    html = html.replace(titleTagRe, '');
+    html = html.replace('</head>', `  <title data-rh="true">${safeTitle}</title>\n  </head>`);
   }
 
   // 2. Extract and replace <meta name="description">
-  const bodyDescMatch = html.match(/<div id="root"[^>]*>[\s\S]*?<meta name="description" content="([^"]*)"/);
+  const bodyDescMatch = bodyPart.match(/<meta\b(?=[^>]*\bname=(["'])description\1)[^>]*\bcontent=(["'])([\s\S]*?)\2[^>]*>/i);
   if (bodyDescMatch) {
-    html = html.replace(
-      /<meta name="description" content="[^"]*"\s*\/?>/,
-      `<meta data-rh="true" name="description" content="${bodyDescMatch[1]}">`
-    );
+    const safeDescription = escapeHtml(bodyDescMatch[3]);
+    html = html.replace(descriptionMetaRe, '');
+    html = html.replace('</head>', `  <meta data-rh="true" name="description" content="${safeDescription}">\n  </head>`);
   }
 
   // 3. Extract and hoist <link rel="canonical"> from body to <head>.
   // React 19 + react-helmet-async renders the tag inline in <div id="root">;
   // we remove every canonical from the document and re-insert the page-specific
   // one inside <head> so there is exactly one, correct canonical per page.
-  const bodyCanonicalMatch = html.match(/<div id="root"[\s\S]*?<link rel="canonical" href="([^"]*)"/);
+  const bodyCanonicalMatch = bodyPart.match(/<link\b(?=[^>]*\brel=(["'])canonical\1)[^>]*\bhref=(["'])([\s\S]*?)\2[^>]*>/i);
   if (bodyCanonicalMatch) {
-    const pageCanonical = bodyCanonicalMatch[1];
-    // Remove all canonical tags (template fallback + Helmet-rendered body copy).
-    html = html.replace(/<link rel="canonical" href="[^"]*"\s*\/?>/g, '');
+    const pageCanonical = escapeHtml(bodyCanonicalMatch[3]);
+    // Remove all canonical tags (template fallback + Helmet-rendered body copy),
+    // regardless of attribute order.
+    html = html.replace(canonicalLinkRe, '');
     // Insert the page-specific canonical in <head>.
     html = html.replace('</head>', `  <link data-rh="true" rel="canonical" href="${pageCanonical}">\n  </head>`);
   }
@@ -68,17 +88,17 @@ function hoistMetaTagsToHead(html: string): string {
   // React 19 renders <Helmet> tags inline in the component tree during SSG; they
   // have already been hoisted to <head> above, so strip them from the body to
   // avoid duplicate title/description/OG signals for crawlers.
-  const rootDivIdx = html.indexOf('<div id="root"');
-  if (rootDivIdx !== -1) {
-    const headPart = html.slice(0, rootDivIdx);
-    let bodyPart = html.slice(rootDivIdx);
-    bodyPart = bodyPart
-      .replace(/<title>[^<]*<\/title>/g, '')
-      .replace(/<meta name="description" content="[^"]*"\s*\/?>/g, '')
-      .replace(/<meta name="twitter:[^"]*" content="[^"]*"\s*\/?>/g, '')
-      .replace(/<meta property="og:[^"]*" content="[^"]*"\s*\/?>/g, '')
-      .replace(/<link rel="canonical" href="[^"]*"\s*\/?>/g, '');
-    html = headPart + bodyPart;
+  const currentRootDivIdx = html.indexOf('<div id="root"');
+  if (currentRootDivIdx !== -1) {
+    const headPart = html.slice(0, currentRootDivIdx);
+    let cleanedBodyPart = html.slice(currentRootDivIdx);
+    cleanedBodyPart = cleanedBodyPart
+      .replace(titleTagRe, '')
+      .replace(descriptionMetaRe, '')
+      .replace(/<meta\b(?=[^>]*\bname=(["'])twitter:[^"']+\1)[^>]*>/gi, '')
+      .replace(/<meta\b(?=[^>]*\bproperty=(["'])og:[^"']+\1)[^>]*>/gi, '')
+      .replace(canonicalLinkRe, '');
+    html = headPart + cleanedBodyPart;
   }
 
   return html;
