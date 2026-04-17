@@ -6,7 +6,7 @@ const Biography: React.FC = () => {
     <>
       <Helmet>
         <title>Biography | Justin Ray - Hybrid Music Producer</title>
-        <meta name="description" content="Justin Ray is a Hybrid Music Producer based in East Lansing, MI. Founder of r/hybridproduction, early Suno ecosystem contributor, and developer of custom audio tools. Discography: LoserDub, VISION, Le Vide, Flawed Future, Disarray." />
+        <meta name="description" content="Justin Ray is a Hybrid Music Producer based in East Lansing, MI. Founder of r/hybridproduction, music artist" />
         <link rel="canonical" href="https://jray.me/bio" />
         <meta property="og:type" content="profile" />
         <meta property="og:url" content="https://jray.me/bio" />
@@ -32,7 +32,6 @@ const Biography: React.FC = () => {
               "Creative Developer",
               "Artist"
             ],
-            "description": "Hybrid Producer and creative developer bridging the gap between raw human artistry and generative AI audio workflows.",
             "image": "https://jray.me/favicon.png",
             "knowsAbout": [
               "Hybrid Production",
