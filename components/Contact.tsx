@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Instagram, Send, Link as LinkIcon } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 
 const Contact: React.FC = () => {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
@@ -38,7 +38,7 @@ const Contact: React.FC = () => {
 
   return (
     <>
-      <Helmet>
+      <Head>
         <title>Contact | Justin Ray - Hybrid Music Producer</title>
         <meta name="description" content="Get in touch with Justin Ray for collaboration, booking, hybrid mixing services, or sharing audio stems. Connect via email, Instagram, TikTok, or LANDR Network." />
         <link rel="canonical" href="https://jray.me/contact" />
@@ -52,7 +52,7 @@ const Contact: React.FC = () => {
         <meta name="twitter:title" content="Contact | Justin Ray - Hybrid Music Producer" />
         <meta name="twitter:description" content="Get in touch with Justin Ray for collaboration, booking, hybrid mixing services, or sharing audio stems. Connect via email, Instagram, TikTok, or LANDR Network." />
         <meta name="twitter:image" content="https://jray.me/favicon.png" />
-      </Helmet>
+      </Head>
     <footer className="py-20 px-4 border-t border-white/10 bg-black relative z-10 animate-fade-in-up">
       {/* Tooltip Portal */}
       {tooltip.show && (

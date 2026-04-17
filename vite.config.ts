@@ -8,7 +8,10 @@ import react from '@vitejs/plugin-react';
  * to <head> in the browser, but during SSG the rendered appHTML contains them
  * inline inside <div id="root">. This hook moves them from body to <head>.
  */
-function hoistMetaTagsToHead(html: string): string {
+function hoistMetaTagsToHead(html: string, route: string): string {
+  const HOME_TITLE = 'Justin Ray | Creative Technologist & Hybrid Artist';
+  const HOME_DESCRIPTION = 'Justin Ray is a Hybrid Producer and software developer blending Generative AI with traditional engineering. Offering AI music mixing and vocal cleanup, while building innovative tools like in-browser DAWs, polyphonic synths, and web-based image editors.';
+  const isHomeRoute = route === '/';
   const escapeHtml = (value: string) =>
     value
       .replace(/&/g, '&amp;')
@@ -29,16 +32,18 @@ function hoistMetaTagsToHead(html: string): string {
 
   // 1. Extract per-page <title> from body root div
   const bodyTitle = bodyPart.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1]?.trim();
-  if (bodyTitle) {
-    const safeTitle = escapeHtml(bodyTitle);
+  const titleToUse = bodyTitle ?? (isHomeRoute ? HOME_TITLE : undefined);
+  if (titleToUse) {
+    const safeTitle = escapeHtml(titleToUse);
     html = html.replace(titleTagRe, '');
     html = html.replace('</head>', `  <title data-rh="true">${safeTitle}</title>\n  </head>`);
   }
 
   // 2. Extract and replace <meta name="description">
   const bodyDescMatch = bodyPart.match(/<meta\b(?=[^>]*\bname=(["'])description\1)[^>]*\bcontent=(["'])([\s\S]*?)\2[^>]*>/i);
-  if (bodyDescMatch) {
-    const safeDescription = escapeHtml(bodyDescMatch[3]);
+  const descriptionToUse = bodyDescMatch?.[3] ?? (isHomeRoute ? HOME_DESCRIPTION : undefined);
+  if (descriptionToUse) {
+    const safeDescription = escapeHtml(descriptionToUse);
     html = html.replace(descriptionMetaRe, '');
     html = html.replace('</head>', `  <meta data-rh="true" name="description" content="${safeDescription}">\n  </head>`);
   }
@@ -126,8 +131,8 @@ export default defineConfig(({ mode }) => {
           '/services',
           '/contact',
         ],
-        onPageRendered(_route, html) {
-          return hoistMetaTagsToHead(html);
+        onPageRendered(route, html) {
+          return hoistMetaTagsToHead(html, route);
         },
       },
       define: {

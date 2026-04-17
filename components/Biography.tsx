@@ -1,10 +1,10 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 
 const Biography: React.FC = () => {
   return (
     <>
-      <Helmet>
+      <Head>
         <title>Biography | Justin Ray - Hybrid Music Producer</title>
         <meta name="description" content="Justin Ray is a Hybrid Music Producer based in East Lansing, MI. Founder of r/hybridproduction, music artist" />
         <link rel="canonical" href="https://jray.me/bio" />
@@ -50,7 +50,7 @@ const Biography: React.FC = () => {
             ]
           }
         })}</script>
-      </Helmet>
+      </Head>
     <section className="py-24 px-4 sm:px-8 relative z-10 overflow-hidden animate-fade-in-up">
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
