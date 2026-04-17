@@ -5,7 +5,7 @@ const projectsSchemaData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "Creative Projects | Justin Ray - Hybrid Producer",
-  "description": "Explore Justin Ray's creative web apps: VISION SYNTH (polyphonic synthesizer), ChordCompose (MIDI sketchpad), FractalAudio (audio effects), IMAGESIZER, and J-DAW (browser-based DAW).",
+  "description": "Explore Justin Ray's creative web apps: developer",
   "url": "https://jray.me/projects",
   "mainEntity": {
     "@type": "ItemList",
