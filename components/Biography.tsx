@@ -10,7 +10,7 @@ const Biography: React.FC = () => {
         <link rel="canonical" href="https://jray.me/bio" />
         <meta property="og:type" content="profile" />
         <meta property="og:url" content="https://jray.me/bio" />
-        <meta property="og:title" content="Biography | Justin Ray - Hybrid Music Producer" />
+       
         <meta property="og:description" content="Justin Ray is a Hybrid Music Producer based in East Lansing, MI. Founder of r/hybridproduction, early Suno ecosystem contributor, and developer of custom audio tools." />
         <meta property="og:image" content="https://jray.me/favicon.png" />
         <meta name="twitter:card" content="summary" />
