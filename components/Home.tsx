@@ -49,7 +49,7 @@ const Home: React.FC = () => {
     <>
       <Helmet>
         <title>Justin Ray | Creative Technologist & Hybrid Artist</title>
-        <meta name="description" content="Justin Ray is a Hybrid Producer and software developer blending Generative AI with traditional engineering. creating music, while building innovative tools like in-browser DAWs, polyphonic synths, and more." />
+        <meta name="description" content="Justin Ray is a Hybrid Producer and software developer." />
         <link rel="canonical" href="https://jray.me/" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://jray.me/" />
