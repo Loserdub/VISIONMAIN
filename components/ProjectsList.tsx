@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 
 const projectsSchemaData = {
   "@context": "https://schema.org",
@@ -110,7 +110,7 @@ const ProjectsList: React.FC = () => {
 
   return (
     <>
-      <Helmet>
+      <Head>
         <title>Creative Projects | Justin Ray - Hybrid Producer</title>
         <meta name="description" content="Explore Justin Ray's creative web apps: VISION SYNTH (polyphonic synthesizer), ChordCompose (MIDI sketchpad), FractalAudio (audio effects), IMAGESIZER, and J-DAW (browser-based DAW)." />
         <link rel="canonical" href="https://jray.me/projects" />
@@ -128,7 +128,7 @@ const ProjectsList: React.FC = () => {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(projectsSchemaData) }}
         />
-      </Helmet>
+      </Head>
     <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up w-full overflow-hidden">
       {/* Tooltip Portal */}
       {tooltip.show && (

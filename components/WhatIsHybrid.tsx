@@ -1,18 +1,18 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { Head } from 'vite-react-ssg';
 import cycleDiagram from '../assets/images/cyclediagram.jpg';
 
 const WhatIsHybrid: React.FC = () => {
   return (
     <>
-      <Helmet>
+      <Head>
         <title>What Is Hybrid | Justin Ray</title>
         <meta
           name="description"
           content="Learn what Hybrid Production means and explore related articles including Future of Hybrid."
         />
         <link rel="canonical" href="https://jray.me/what-is-hybrid" />
-      </Helmet>
+      </Head>
 
       <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up">
         <div className="container mx-auto max-w-5xl">
