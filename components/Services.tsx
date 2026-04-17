@@ -33,7 +33,7 @@ const Services: React.FC<ServicesProps> = ({ onContactClick }) => {
     <>
       <Head>
         <title>Studio Services | Justin Ray - Hybrid Mixing & Audio Consultation</title>
-        <meta name="description" content="Professional hybrid mixing, audio review, and creative consultation services by Justin Ray. Starting at $50/track. Specializing in AI-generated music engineering and hybrid production workflows." />
+        <meta name="description" content="Professional AI-generated music engineering and hybrid production workflows." />
         <link rel="canonical" href="https://jray.me/services" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://jray.me/services" />
