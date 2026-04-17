@@ -12,7 +12,6 @@ const Biography: React.FC = () => {
         <meta property="og:url" content="https://jray.me/bio" />
         <meta property="og:image" content="https://jray.me/favicon.png" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:url" content="https://jray.me/bio" />
         <meta name="twitter:image" content="https://jray.me/favicon.png" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
@@ -38,7 +37,8 @@ const Biography: React.FC = () => {
               "Logic Pro X",
               "Prompt Design",
               "Spectral Splitting",
-              "Creative Software Development"
+              "Creative Software Development",
+              "East Lansing",
             ],
             "sameAs": [
               "https://open.spotify.com/artist/3VZelnnW9OR0DyR2qRn4Oq",
