@@ -13,7 +13,6 @@ const Biography: React.FC = () => {
         <meta property="og:image" content="https://jray.me/favicon.png" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:url" content="https://jray.me/bio" />
-        <meta name="twitter:title" content="Biography | Justin Ray - Hybrid Music Producer" />
         <meta name="twitter:image" content="https://jray.me/favicon.png" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
