@@ -16,7 +16,6 @@ const Biography: React.FC = () => {
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:url" content="https://jray.me/bio" />
         <meta name="twitter:title" content="Biography | Justin Ray - Hybrid Music Producer" />
-        <meta name="twitter:description" content="Justin Ray is a Hybrid Music Producer based in East Lansing, MI. Founder of r/hybridproduction, early Suno ecosystem contributor, and developer of custom audio tools." />
         <meta name="twitter:image" content="https://jray.me/favicon.png" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
