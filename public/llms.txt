@@ -1,0 +1,34 @@
+# Justin Ray
+
+> Creative technologist blending generative AI with traditional engineering for music and software.
+
+Justin Ray's website showcases a unique fusion of creative technology and engineering, focusing on generative AI applications in music production and software development. The site serves artists, musicians, and developers looking for innovative solutions that leverage AI. Key offerings include AI-powered music mixing and vocal cleanup, alongside custom-built tools like in-browser Digital Audio Workstations (DAWs), polyphonic synthesizers, and web-based image editors.
+
+This platform highlights a 'hybrid' approach, combining AI's generative capabilities with established engineering principles. Use cases range from enhancing audio production workflows with AI assistance to exploring the future of creative tools through novel software. The site acts as a portfolio, service offering, and thought leadership platform for Justin Ray's work at the intersection of art, music, and technology.
+
+## Core Services & Information
+
+- [Justin Ray | Creative Technologist & Hybrid Artist](https://jray.me/): Explore creative technology and hybrid art services offered by Justin Ray.
+- [AI Music Production Services](https://jray.me/music): Discover AI-powered music mixing and vocal cleanup services for artists.
+- [Services Offered](https://jray.me/services): View a comprehensive list of creative technology and AI services provided.
+- [About Justin Ray](https://jray.me/bio): Learn about the background and expertise of Justin Ray, the creative technologist.
+- [Contact Justin Ray](https://jray.me/contact): Get in touch with Justin Ray for inquiries and collaborations.
+
+## Projects & Tools
+
+- [Creative Technology Projects](https://jray.me/projects): Explore innovative software and AI-driven projects developed by Justin Ray.
+- [Black Mirror Project](https://jray.me/black-mirror.html): Discover the 'Black Mirror' project, showcasing generative AI applications.
+- [Fingerprint Tool](https://jray.me/fingerprint.html): Learn about the Fingerprint tool for creative technology applications.
+
+## Blog & Articles
+
+- [The Future of Hybrid Production](https://jray.me/futureofhybrid.html): Read insights on the evolving landscape of hybrid production techniques.
+- [Suno AI Music Generation 101](https://jray.me/Suno101.html): Understand the basics of AI music generation with Suno AI.
+
+## Concepts & Philosophy
+
+- [What is Hybrid Production?](https://jray.me/what-is-hybrid): Understand the concept and definition of hybrid production methods.
+
+---
+
+This file was generated for jray.me using the [LLMs.txt Generator Tool](https://llmrefs.com/tools/llms-txt-generator)
