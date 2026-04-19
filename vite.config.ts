@@ -10,7 +10,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
  */
 function hoistMetaTagsToHead(html: string, route: string): string {
   const HOME_TITLE = 'Justin Ray | Creative Technologist & Hybrid Artist';
-  const HOME_DESCRIPTION = 'Justin Ray is a Hybrid Producer and software developer blending Generative AI with traditional engineering.';
+  const HOME_DESCRIPTION = 'Justin Ray is a Hybrid Producer and Creative Technologist blending Generative AI with traditional engineering to build innovative audio and visual tools.';
   const isHomeRoute = route === '/';
   
   const escapeHtml = (value: string) =>
