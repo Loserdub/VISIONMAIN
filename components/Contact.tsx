@@ -116,16 +116,19 @@ const Contact: React.FC = () => {
                   </svg>
                 </a>
 
-                {/* Linktree / All Links */}
-                <a 
-                  href="#" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  aria-label="All Links (Linktree)"
-                  className="p-4 rounded-none border border-white/10 hover:border-white hover:bg-white hover:text-black transition-all duration-300 group"
-                >
-                  <LinkIcon size={20} />
-                </a>
+               {/* Linktree / All Links */}
+          <a 
+            href="https://trustnodelogic.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="Trust Node Logic"
+            className="p-4 rounded-none border border-white/10 hover:border-white hover:bg-white hover:text-black transition-all duration-300 group"
+            onMouseEnter={(e) => handleMouseEnter(e, "Trust Node Logic")}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+          >
+            <LinkIcon size={20} />
+          </a>
 
                 {/* Email */}
                 <a 
