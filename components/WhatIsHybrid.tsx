@@ -12,7 +12,6 @@ const WhatIsHybrid: React.FC = () => {
           content="Learn what Hybrid Production means and explore related articles including Future of Hybrid."
         />
         <link rel="canonical" href="https://jray.me/what-is-hybrid" />
-        <!-- Clarity tracking code for https://jray.me/ -->
 
       </Head>
 
