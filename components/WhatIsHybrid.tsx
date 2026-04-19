@@ -13,13 +13,7 @@ const WhatIsHybrid: React.FC = () => {
         />
         <link rel="canonical" href="https://jray.me/what-is-hybrid" />
         <!-- Clarity tracking code for https://jray.me/ -->
-<script>
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "wduyw7fkcn");
-</script>
+
       </Head>
 
       <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up">
