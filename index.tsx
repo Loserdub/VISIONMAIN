@@ -4,11 +4,11 @@ import { ViteReactSSG } from 'vite-react-ssg';
 import App from './App';
 import App from './App';
 import Home from './components/Home';
-import MusicList from './Music/MusicList'; // Fixed path
-import ProjectsList from './Projects/ProjectsList'; // Fixed path
-import Biography from './AboutMe/Biography'; // Fixed path
+import MusicList from './music/musicList'; // Fixed path
+import ProjectsList from './projects/projectsList'; // Fixed path
+import Biography from './aboutme/Biography'; // Fixed path
 import WhatIsHybrid from './components/WhatIsHybrid'; 
-import Services from './AboutMe/Services'; // Fixed path
+import Services from './aboutme/Services'; // Fixed path
 import Contact from './components/Contact';
 
 export const createRoot = ViteReactSSG({
