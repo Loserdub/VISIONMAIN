@@ -2,12 +2,13 @@ import React from 'react';
 import './assets/index.css';
 import { ViteReactSSG } from 'vite-react-ssg';
 import App from './App';
+import App from './App';
 import Home from './components/Home';
-import MusicList from './components/MusicList';
-import ProjectsList from './components/ProjectsList';
-import Biography from './components/Biography';
-import WhatIsHybrid from './components/WhatIsHybrid';
-import Services from './components/Services';
+import MusicList from './Music/MusicList'; // Fixed path
+import ProjectsList from './Projects/ProjectsList'; // Fixed path
+import Biography from './AboutMe/Biography'; // Fixed path
+import WhatIsHybrid from './components/WhatIsHybrid'; 
+import Services from './AboutMe/Services'; // Fixed path
 import Contact from './components/Contact';
 
 export const createRoot = ViteReactSSG({
