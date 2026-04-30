@@ -20,7 +20,7 @@ const WhatIsHybrid: React.FC = () => {
           <div className="mb-8 rounded-sm border border-white/10 bg-zinc-900/40 p-8">
             <h2 className="text-lg font-bold uppercase tracking-wider text-white">More Topics / Articles</h2>
             <ul className="mt-4 space-y-3">
-              <li>
+              <li className="flex flex-wrap items-center gap-y-2">
                 <a
                   href="/futureofhybrid.html"
                   className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition"
@@ -28,7 +28,7 @@ const WhatIsHybrid: React.FC = () => {
                   Future of Hybrid
                 </a>
 
-                <span className="text-white/50"> · </span>
+                <span className="text-white/50 mx-3">·</span>
 
                 <a
                   href="/Suno101.html"
@@ -39,7 +39,7 @@ const WhatIsHybrid: React.FC = () => {
                   Suno 101
                 </a>
 
-                <span className="text-white/50 mx-2"> · </span>
+                <span className="text-white/50 mx-3">·</span>
 
                 <a
                   href="/fingerprint.html"
@@ -48,6 +48,17 @@ const WhatIsHybrid: React.FC = () => {
                   className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition"
                 >
                   Watermarks in AI
+                </a>
+
+                <span className="text-white/50 mx-3">·</span>
+
+                <a
+                  href="/c2pa-music-provenance.html"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition"
+                >
+                  C2PA Dive
                 </a>
               </li>
             </ul>
