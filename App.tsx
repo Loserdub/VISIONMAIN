@@ -1,8 +1,10 @@
 import React, { useState, Suspense, useEffect } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
+import { Head } from 'vite-react-ssg';
 import OilBackground from './components/OilBackground';
 import { Menu, X, Disc } from 'lucide-react';
 import SoundCloudPlayer from './components/SoundCloudPlayer';
+import Footer from './components/Footer';
 
 // This fixes a React Router bug where changing pages doesn't scroll to the top
 const ScrollToTop = () => {
@@ -90,6 +92,11 @@ const Navigation = () => {
 const App: React.FC = () => {
   return (
     <div className="relative min-h-screen font-sans selection:bg-white selection:text-black flex flex-col text-white">
+      <Head>
+        <title>Justin Ray | Creative Technologist & Hybrid Artist</title>
+        <meta name="description" content="Justin Ray is a Hybrid Producer and Creative Technologist blending Generative AI with traditional engineering to build innovative audio and visual tools." />
+        <link rel="canonical" href="https://jray.me/" />
+      </Head>
       <ScrollToTop />
       <OilBackground />
       <Navigation />
@@ -105,6 +112,7 @@ const App: React.FC = () => {
           <Outlet />
         </Suspense>
       </main>
+      <Footer />
     </div>
   );
 };

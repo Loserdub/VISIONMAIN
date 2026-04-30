@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import FuzzyText from './FuzzyText';
+import { Head } from 'vite-react-ssg';
 import doodleImg from '../assets/images/doodle.jpg';
 
 const Home: React.FC = () => {
@@ -47,37 +47,40 @@ const Home: React.FC = () => {
   return (
     <>
       <section className="relative flex flex-col items-center px-4 py-32 sm:pt-40">
+        <Head>
+          <title>Home | Justin Ray - Creative Technologist & Hybrid Artist</title>
+          <meta name="description" content="Justin Ray is a Hybrid Producer and Creative Technologist blending Generative AI with traditional engineering to build innovative audio and visual tools." />
+          <link rel="canonical" href="https://jray.me/" />
+        </Head>
         {/* SEO: Hidden H1 for crawlers as the visual title is canvas-based */}
         <h1 className="sr-only">Hybrid Production | Justin Ray</h1>
 
       <div className="text-center z-10 space-y-4 max-w-5xl animate-fade-in-up flex flex-col items-center">
-        {/* Animated Title */}
+        {/* Title */}
         <div className="flex flex-col items-center leading-none">
-          <FuzzyText 
-            fontSize="clamp(3.5rem, 9vw, 9rem)"
-            fontWeight={800}
-            fontFamily="Syne, sans-serif"
-            color="#fff"
-            enableHover={true}
-            baseIntensity={0.15}
-            hoverIntensity={0.5}
-            className="mix-blend-overlay opacity-90 max-w-full"
+          <div 
+            style={{ 
+              fontSize: 'clamp(3.5rem, 9vw, 9rem)', 
+              fontFamily: '"DotGothic16", sans-serif',
+              fontWeight: 400,
+              color: '#fff',
+            }}
+            className="mix-blend-overlay opacity-90 max-w-full uppercase"
           >
             HYBRID
-          </FuzzyText>
+          </div>
           <div className="mt-4 sm:mt-8">
-            <FuzzyText 
-              fontSize="clamp(2.5rem, 6.5vw, 7rem)"
-              fontWeight={800}
-              fontFamily="Syne, sans-serif"
-              color="#fff"
-              enableHover={true}
-              baseIntensity={0.15}
-              hoverIntensity={0.5}
-              className="mix-blend-overlay opacity-90 max-w-full"
+            <div 
+              style={{ 
+                fontSize: 'clamp(2.5rem, 6.5vw, 7rem)', 
+                fontFamily: '"DotGothic16", sans-serif',
+                fontWeight: 400,
+                color: '#fff',
+              }}
+              className="mix-blend-overlay opacity-90 max-w-full uppercase"
             >
               PRODUCTION
-            </FuzzyText>
+            </div>
           </div>
         </div>
 
