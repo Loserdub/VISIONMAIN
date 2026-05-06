@@ -95,7 +95,6 @@ const App: React.FC = () => {
       <Head>
         <title>Justin Ray | Creative Technologist & Hybrid Artist</title>
         <meta name="description" content="Justin Ray is a Hybrid Producer and Creative Technologist blending Generative AI with traditional engineering to build innovative audio and visual tools." />
-        <link rel="canonical" href="https://jray.me/" />
       </Head>
       <ScrollToTop />
       <OilBackground />

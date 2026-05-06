@@ -5,8 +5,8 @@ const projectsSchemaData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "Creative Projects | Justin Ray - Hybrid Producer",
-  "description": "Explore Justin Ray's creative web apps: r",
-  "url": "https://jray.me/projects",
+  "description": "Explore audio and visual tools built by Justin Tyler Ray (JRAY) for the hybrid producer — synthesizers, MIDI composers, browser DAWs, and beyond.",
+  "url": "https://jray.me/projects/",
   "mainEntity": {
     "@type": "ItemList",
     "itemListOrder": "https://schema.org/ItemListUnordered",
@@ -112,15 +112,15 @@ const ProjectsList: React.FC = () => {
     <>
       <Head>
         <title>Creative Projects | Justin Ray - Hybrid Producer</title>
-        <meta name="description" content="Explore Justin Ray's creative web apps" />
-        <link rel="canonical" href="https://jray.me/projects" />
+        <meta name="description" content="Explore audio and visual tools built by Justin Tyler Ray (JRAY) for the hybrid producer — synthesizers, MIDI composers, browser DAWs, and beyond." />
+        <link rel="canonical" href="https://jray.me/projects/" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://jray.me/projects" />
+        <meta property="og:url" content="https://jray.me/projects/" />
         <meta property="og:title" content="Creative Projects | Justin Ray - Hybrid Producer" />
         <meta property="og:description" content="Explore Justin Ray's creative web apps: VISION SYNTH (polyphonic synthesizer), ChordCompose (MIDI sketchpad), FractalAudio (audio effects), IMAGESIZER, and J-DAW (browser-based DAW)." />
         <meta property="og:image" content="https://jray.me/favicon.png" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:url" content="https://jray.me/projects" />
+        <meta name="twitter:url" content="https://jray.me/projects/" />
         <meta name="twitter:title" content="Creative Projects | Justin Ray - Hybrid Producer" />
         <meta name="twitter:description" content="Explore Justin Ray's creative web apps: VISION SYNTH (polyphonic synthesizer), ChordCompose (MIDI sketchpad), FractalAudio (audio effects), IMAGESIZER, and J-DAW (browser-based DAW)." />
         <meta name="twitter:image" content="https://jray.me/favicon.png" />
