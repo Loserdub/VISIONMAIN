@@ -15,6 +15,18 @@ const ScrollToTop = () => {
   return null;
 };
 
+// Global redirect to enforce non-slash URLs
+const EnforceNoTrailingSlash = () => {
+  const location = useLocation();
+  useEffect(() => {
+    if (location.pathname.endsWith('/') && location.pathname !== '/') {
+      const newPath = location.pathname.slice(0, -1) + location.search + location.hash;
+      window.history.replaceState(null, '', newPath);
+    }
+  }, [location]);
+  return null;
+};
+
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
@@ -90,14 +102,18 @@ const Navigation = () => {
 };
 
 const App: React.FC = () => {
+  const location = useLocation();
+  const canonicalUrl = `https://jray.me${location.pathname === '/' ? '' : location.pathname.replace(/\/$/, '')}`;
+
   return (
     <div className="relative min-h-screen font-sans selection:bg-white selection:text-black flex flex-col text-white">
       <Head>
         <title>Justin Ray | Creative Technologist & Hybrid Artist</title>
         <meta name="description" content="Justin Ray is a Hybrid Producer and Creative Technologist blending Generative AI with traditional engineering to build innovative audio and visual tools." />
-        <link rel="canonical" href="https://jray.me/" />
+        <link rel="canonical" href={canonicalUrl} />
       </Head>
       <ScrollToTop />
+      <EnforceNoTrailingSlash />
       <OilBackground />
       <Navigation />
       <SoundCloudPlayer />
