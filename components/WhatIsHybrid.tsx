@@ -26,51 +26,16 @@ const WhatIsHybrid: React.FC = () => {
 
       <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up">
         <div className="container mx-auto max-w-5xl">
-          <div className="mb-8 rounded-sm border border-white/10 bg-zinc-900/40 p-8">
-            <h2 className="text-lg font-bold uppercase tracking-wider text-white">More Topics / Articles</h2>
-            <ul className="mt-4 space-y-3">
-              <li className="flex flex-wrap items-center gap-y-2">
-                <a
-                  href="/futureofhybrid.html"
-                  className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition"
-                >
-                  Future of Hybrid
-                </a>
-
-                <span className="text-white/50 mx-3">·</span>
-
-                <a
-                  href="/Suno101.html"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition"
-                >
-                  Suno 101
-                </a>
-
-                <span className="text-white/50 mx-3">·</span>
-
-                <a
-                  href="/fingerprint.html"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition"
-                >
-                  Watermarks in AI
-                </a>
-
-                <span className="text-white/50 mx-3">·</span>
-
-                <a
-                  href="/c2pa-music-provenance.html"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-white/80 hover:text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition"
-                >
-                  C2PA Dive
-                </a>
-              </li>
-            </ul>
+          <div className="mb-12 flex justify-start">
+            <a
+              href="#articles"
+              className="group inline-flex items-center text-sm font-bold uppercase tracking-widest text-white/70 transition-colors hover:text-white"
+            >
+              <span className="border-b border-white/20 pb-1 group-hover:border-white/60 transition-colors duration-300">
+                Field Notes / Articles
+              </span>
+              <span className="ml-3 text-white/40 group-hover:text-white/80 transition-colors duration-300">↓</span>
+            </a>
           </div>
 
           <article className="rounded-sm border border-white/10 bg-zinc-900/40 p-8 md:p-12">
@@ -456,6 +421,135 @@ const WhatIsHybrid: React.FC = () => {
             </div>
                         
           </article>
+
+          <section id="articles" className="mt-24 scroll-mt-28">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-white uppercase tracking-tight mb-8">
+              Articles
+            </h2>
+            <div className="border-t-2 border-white/20">
+              
+              {/* Item 01 */}
+              <a href="/trainingday.html" className="group flex flex-col md:flex-row md:items-center py-8 border-b border-white/10 hover:border-white/40 transition-colors duration-300">
+                <div className="flex md:items-center w-full md:w-auto flex-1 gap-6">
+                  <span className="text-xl font-display text-white/40 w-8 shrink-0">01</span>
+                  <div className="flex-1 pr-6">
+                    <h3 className="text-3xl md:text-4xl font-display font-bold text-white/90 group-hover:text-white transition-colors uppercase tracking-tight">Is uploading your music to AI generators safe?</h3>
+                    <p className="mt-2 text-white/60 group-hover:text-white/80 transition-colors md:text-lg">Should you upload a loop or a full song to Suno or Udio? The upload strategy, IP truth, and shaping AI music.</p>
+                  </div>
+                </div>
+                <div className="mt-6 md:mt-0 flex items-center justify-between md:justify-end md:w-56 shrink-0 pl-14 md:pl-0">
+                  <span className="text-sm font-bold tracking-widest text-white/40 uppercase md:mr-8">May 06, 2026</span>
+                  <span className="text-2xl text-white/30 group-hover:text-white transition-colors">→</span>
+                </div>
+              </a>
+
+              {/* Item 02 */}
+              <a href="/machinehumanhybrid.html" className="group flex flex-col md:flex-row md:items-center py-8 border-b border-white/10 hover:border-white/40 transition-colors duration-300">
+                <div className="flex md:items-center w-full md:w-auto flex-1 gap-6">
+                  <span className="text-xl font-display text-white/40 w-8 shrink-0">02</span>
+                  <div className="flex-1 pr-6">
+                    <h3 className="text-3xl md:text-4xl font-display font-bold text-white/90 group-hover:text-white transition-colors uppercase tracking-tight">Drawing the line, when is it your song?</h3>
+                    <p className="mt-2 text-white/60 group-hover:text-white/80 transition-colors md:text-lg">Where does an AI-generated song stop being AI? The line nobody in the industry has drawn yet, backed with law.</p>
+                  </div>
+                </div>
+                <div className="mt-6 md:mt-0 flex items-center justify-between md:justify-end md:w-56 shrink-0 pl-14 md:pl-0">
+                  <span className="text-sm font-bold tracking-widest text-white/40 uppercase md:mr-8">May 06, 2026</span>
+                  <span className="text-2xl text-white/30 group-hover:text-white transition-colors">→</span>
+                </div>
+              </a>
+
+              {/* Item 03 */}
+              <a href="/futureofhybrid.html" className="group flex flex-col md:flex-row md:items-center py-8 border-b border-white/10 hover:border-white/40 transition-colors duration-300">
+                <div className="flex md:items-center w-full md:w-auto flex-1 gap-6">
+                  <span className="text-xl font-display text-white/40 w-8 shrink-0">03</span>
+                  <div className="flex-1 pr-6">
+                    <h3 className="text-3xl md:text-4xl font-display font-bold text-white/90 group-hover:text-white transition-colors uppercase tracking-tight">Future of Hybrid</h3>
+                    <p className="mt-2 text-white/60 group-hover:text-white/80 transition-colors md:text-lg">A manifesto on the evolution of Hybrid Music Production, from Black Box AI models to Multi-Agent Orchestration.</p>
+                  </div>
+                </div>
+                <div className="mt-6 md:mt-0 flex items-center justify-between md:justify-end md:w-56 shrink-0 pl-14 md:pl-0">
+                  <span className="text-sm font-bold tracking-widest text-white/40 uppercase md:mr-8">Apr 28, 2026</span>
+                  <span className="text-2xl text-white/30 group-hover:text-white transition-colors">→</span>
+                </div>
+              </a>
+
+              {/* Item 04 */}
+              <a href="/Suno101.html" target="_blank" rel="noreferrer" className="group flex flex-col md:flex-row md:items-center py-8 border-b border-white/10 hover:border-white/40 transition-colors duration-300">
+                <div className="flex md:items-center w-full md:w-auto flex-1 gap-6">
+                  <span className="text-xl font-display text-white/40 w-8 shrink-0">04</span>
+                  <div className="flex-1 pr-6">
+                    <h3 className="text-3xl md:text-4xl font-display font-bold text-white/90 group-hover:text-white transition-colors uppercase tracking-tight">Suno 101</h3>
+                    <p className="mt-2 text-white/60 group-hover:text-white/80 transition-colors md:text-lg">A masterclass in transcending standard AI outputs using structural tags and psycho-acoustic manipulation.</p>
+                  </div>
+                </div>
+                <div className="mt-6 md:mt-0 flex items-center justify-between md:justify-end md:w-56 shrink-0 pl-14 md:pl-0">
+                  <span className="text-sm font-bold tracking-widest text-white/40 uppercase md:mr-8">Apr 20, 2026</span>
+                  <span className="text-2xl text-white/30 group-hover:text-white transition-colors">↗</span>
+                </div>
+              </a>
+
+              {/* Item 05 */}
+              <a href="/fingerprint.html" target="_blank" rel="noreferrer" className="group flex flex-col md:flex-row md:items-center py-8 border-b border-white/10 hover:border-white/40 transition-colors duration-300">
+                <div className="flex md:items-center w-full md:w-auto flex-1 gap-6">
+                  <span className="text-xl font-display text-white/40 w-8 shrink-0">05</span>
+                  <div className="flex-1 pr-6">
+                    <h3 className="text-3xl md:text-4xl font-display font-bold text-white/90 group-hover:text-white transition-colors uppercase tracking-tight">Watermarks in AI</h3>
+                    <p className="mt-2 text-white/60 group-hover:text-white/80 transition-colors md:text-lg">Explore the hidden technological cold war of AI audio steganography, digital watermarks, and ACRCloud detection.</p>
+                  </div>
+                </div>
+                <div className="mt-6 md:mt-0 flex items-center justify-between md:justify-end md:w-56 shrink-0 pl-14 md:pl-0">
+                  <span className="text-sm font-bold tracking-widest text-white/40 uppercase md:mr-8">Apr 15, 2026</span>
+                  <span className="text-2xl text-white/30 group-hover:text-white transition-colors">↗</span>
+                </div>
+              </a>
+
+              {/* Item 06 */}
+              <a href="/c2pa-music-provenance.html" target="_blank" rel="noreferrer" className="group flex flex-col md:flex-row md:items-center py-8 border-b border-white/10 hover:border-white/40 transition-colors duration-300">
+                <div className="flex md:items-center w-full md:w-auto flex-1 gap-6">
+                  <span className="text-xl font-display text-white/40 w-8 shrink-0">06</span>
+                  <div className="flex-1 pr-6">
+                    <h3 className="text-3xl md:text-4xl font-display font-bold text-white/90 group-hover:text-white transition-colors uppercase tracking-tight">C2PA Dive</h3>
+                    <p className="mt-2 text-white/60 group-hover:text-white/80 transition-colors md:text-lg">An intelligence report on C2PA, content credentials, and the future of music industry transparency.</p>
+                  </div>
+                </div>
+                <div className="mt-6 md:mt-0 flex items-center justify-between md:justify-end md:w-56 shrink-0 pl-14 md:pl-0">
+                  <span className="text-sm font-bold tracking-widest text-white/40 uppercase md:mr-8">Apr 02, 2026</span>
+                  <span className="text-2xl text-white/30 group-hover:text-white transition-colors">↗</span>
+                </div>
+              </a>
+
+              {/* Placeholder 07 */}
+              <div className="flex flex-col md:flex-row md:items-center py-8 border-b border-white/5 opacity-50 cursor-default">
+                <div className="flex md:items-center w-full md:w-auto flex-1 gap-6">
+                  <span className="text-xl font-display text-white/20 w-8 shrink-0">07</span>
+                  <div className="flex-1 pr-6">
+                    <h3 className="text-3xl md:text-4xl font-display font-bold text-white/40 uppercase tracking-tight">Locked</h3>
+                    <p className="mt-2 text-white/30 md:text-lg">Transmission pending. Data currently heavily redacted.</p>
+                  </div>
+                </div>
+                <div className="mt-6 md:mt-0 flex items-center justify-between md:justify-end md:w-56 shrink-0 pl-14 md:pl-0">
+                  <span className="text-sm font-bold tracking-widest text-white/20 uppercase md:mr-8">TBA</span>
+                  <span className="text-2xl text-white/10">→</span>
+                </div>
+              </div>
+
+              {/* Placeholder 08 */}
+              <div className="flex flex-col md:flex-row md:items-center py-8 border-b border-white/5 opacity-30 cursor-default">
+                <div className="flex md:items-center w-full md:w-auto flex-1 gap-6">
+                  <span className="text-xl font-display text-white/20 w-8 shrink-0">08</span>
+                  <div className="flex-1 pr-6">
+                    <h3 className="text-3xl md:text-4xl font-display font-bold text-white/40 uppercase tracking-tight">Locked</h3>
+                    <p className="mt-2 text-white/30 md:text-lg">Transmission pending.</p>
+                  </div>
+                </div>
+                <div className="mt-6 md:mt-0 flex items-center justify-between md:justify-end md:w-56 shrink-0 pl-14 md:pl-0">
+                  <span className="text-sm font-bold tracking-widest text-white/20 uppercase md:mr-8">TBA</span>
+                  <span className="text-2xl text-white/10">→</span>
+                </div>
+              </div>
+
+            </div>
+          </section>
 
         </div>
       </section>
