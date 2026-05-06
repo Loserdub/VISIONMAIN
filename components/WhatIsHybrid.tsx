@@ -11,8 +11,17 @@ const WhatIsHybrid: React.FC = () => {
           name="description"
           content="Learn what Hybrid Production means and explore related articles including Future of Hybrid."
         />
-        <link rel="canonical" href="https://jray.me/what-is-hybrid" />
-
+        <link rel="canonical" href="https://jray.me/what-is-hybrid/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://jray.me/what-is-hybrid/" />
+        <meta property="og:title" content="Hybrid Knowledge Base | Justin Ray" />
+        <meta property="og:description" content="The definitive Hybrid Production knowledge base by Justin Tyler Ray (JRAY). Explore frameworks, methodologies, and articles defining the third way in the post-AI music landscape." />
+        <meta property="og:image" content="https://jray.me/favicon.png" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:url" content="https://jray.me/what-is-hybrid/" />
+        <meta name="twitter:title" content="Hybrid Knowledge Base | Justin Ray" />
+        <meta name="twitter:description" content="The definitive Hybrid Production knowledge base by Justin Tyler Ray (JRAY). Explore frameworks, methodologies, and articles defining the third way in the post-AI music landscape." />
+        <meta name="twitter:image" content="https://jray.me/favicon.png" />
       </Head>
 
       <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up">
