@@ -7,11 +7,16 @@ const Biography: React.FC = () => {
       <Head>
         <title>Biography | Justin Ray - Hybrid Music Producer</title>
         <meta name="description" content="Justin Ray is a Hybrid Music Producer based in East Lansing, MI. Founder of r/hybridproduction, music artist" />
-        <link rel="canonical" href="https://jray.me/bio" />
+        <link rel="canonical" href="https://jray.me/bio/" />
         <meta property="og:type" content="profile" />
-        <meta property="og:url" content="https://jray.me/bio" />
+        <meta property="og:url" content="https://jray.me/bio/" />
+        <meta property="og:title" content="Biography | Justin Tyler Ray - Hybrid Music Producer" />
+        <meta property="og:description" content="Justin Tyler Ray (JRAY) is a Hybrid Music Producer and Creative Technologist based in East Lansing, MI — founder of r/hybridproduction, pioneer of hybrid AI and human music workflows." />
         <meta property="og:image" content="https://jray.me/favicon.png" />
         <meta name="twitter:card" content="summary" />
+        <meta name="twitter:url" content="https://jray.me/bio/" />
+        <meta name="twitter:title" content="Biography | Justin Tyler Ray - Hybrid Music Producer" />
+        <meta name="twitter:description" content="Justin Tyler Ray (JRAY) is a Hybrid Music Producer and Creative Technologist based in East Lansing, MI — founder of r/hybridproduction, pioneer of hybrid AI and human music workflows." />
         <meta name="twitter:image" content="https://jray.me/favicon.png" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
