@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Head } from 'vite-react-ssg';
+import { Link } from 'react-router-dom';
 import doodleImg from '../assets/images/doodle.jpg';
 
 const Home: React.FC = () => {
@@ -16,33 +17,12 @@ const Home: React.FC = () => {
     }
   };
 
-  const aliases = [
-    {
-      name: "loserdub",
-      desc: "The foundational alias. A space for raw, experimental bass music and genre-fluid explorations."
-    },
-    {
-      name: "VISION",
-      desc: "High-fidelity hybrid compositions. Pushing the boundaries of human and AI collaboration."
-    },
-    {
-      name: "flawed future",
-      desc: "Embracing the artifacts of the algorithmic void. Nostalgic yet fiercely forward-looking."
-    },
-    {
-      name: "le vide",
-      desc: "Ambient, textural, and cinematic. The space between the notes, sculpted for deep listening."
-    },
-    {
-      name: "disarray",
-      desc: "Organized chaos. High-energy structural sound design meant to shatter expectations."
-    }
+  const links = [
+    { label: 'Projects', path: '/projects' },
+    { label: 'Music', path: '/music' },
+    { label: 'What Is Hybrid', path: '/what-is-hybrid' },
+    { label: 'Contact', path: '/contact' }
   ];
-
-  const [currentAlias, setCurrentAlias] = useState(0);
-
-  const nextAlias = () => setCurrentAlias((prev) => (prev + 1) % aliases.length);
-  const prevAlias = () => setCurrentAlias((prev) => (prev - 1 + aliases.length) % aliases.length);
 
   return (
     <>
@@ -108,48 +88,22 @@ const Home: React.FC = () => {
         </p>
       </section>
 
-      {/* The Multiverse / Studio Model Section (Carousel) */}
+      {/* The Multiverse / Studio Model Section (Tiles) */}
       <section className="w-full max-w-5xl mx-auto z-20 animate-fade-in-up mt-24 px-4 text-center">
         <h2 className="text-sm font-bold tracking-[0.3em] text-slate-400 mb-6 uppercase">The Dissection</h2>
         <p className="text-xl font-light text-white/80 max-w-3xl mx-auto mb-12">
           A study in identity. Exploring the spectrum of sound through a lens of <span className="font-bold">Hybrid Production</span>.
         </p>
         
-        <div className="flex items-center justify-center gap-6 max-w-2xl mx-auto">
-          <button 
-            onClick={prevAlias}
-            className="p-3 text-white/40 hover:text-white transition-colors focus:outline-none"
-            aria-label="Previous alias"
-          >
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
-          </button>
-          
-          <div className="flex-1 bg-zinc-900/80 border border-white/10 p-10 hover:border-slate-500/50 transition-all duration-500 min-h-[220px] flex flex-col justify-center">
-            <h3 className="text-3xl font-display font-bold text-white mb-4 transition-colors">
-              {aliases[currentAlias].name}
-            </h3>
-            <p className="text-base text-white/60 leading-relaxed">
-              {aliases[currentAlias].desc}
-            </p>
-          </div>
-
-          <button 
-            onClick={nextAlias}
-            className="p-3 text-white/40 hover:text-white transition-colors focus:outline-none"
-            aria-label="Next alias"
-          >
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-          </button>
-        </div>
-        
-        <div className="flex justify-center gap-2 mt-8">
-          {aliases.map((_, idx) => (
-            <button 
-              key={idx} 
-              onClick={() => setCurrentAlias(idx)}
-              className={`w-2 h-2 rounded-full transition-colors ${idx === currentAlias ? 'bg-white' : 'bg-white/20'}`} 
-              aria-label={`Go to alias ${idx + 1}`}
-            />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          {links.map((link, idx) => (
+            <Link
+              key={idx}
+              to={link.path}
+              className="bg-zinc-900/80 border border-white/10 p-6 hover:border-slate-500/50 transition-all duration-500 flex flex-col justify-center text-center"
+            >
+              <h3 className="text-xl font-display font-bold text-white">{link.label}</h3>
+            </Link>
           ))}
         </div>
 
@@ -169,7 +123,7 @@ const Home: React.FC = () => {
       <div id="hybrid" className="w-full max-w-5xl mx-auto z-20 animate-fade-in-up mt-24 px-4" style={{ animationDelay: '0.3s' }}>
         <button 
             onClick={scrollToHybrid}
-            className="w-full text-left relative overflow-hidden rounded-sm border border-white/10 bg-zinc-900/40 backdrop-blur-md p-8 md:p-12 hover:bg-zinc-900/60 transition-colors duration-500 group cursor-pointer focus:outline-none focus:ring-1 focus:ring-slate-500"
+            className="w-full text-left relative overflow-hidden rounded-sm border border-white/10 bg-zinc-900/40 backdrop-blur-md p-8 md:p-12 hover:bg-zinc-900/60 transition-colors duration-500 group"
         >
             <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-slate-400 to-transparent"></div>
             
@@ -188,7 +142,7 @@ const Home: React.FC = () => {
                 </div>
                 <div className="space-y-6">
                     <p className="text-lg font-light text-white/80 leading-relaxed">
-                        It is the definitive workflow of the post-AI musical landscape. Rejecting the binary choice between "human" and "machine", it treats Generative AI as a high-fidelity instrument—a chaotic synthesizer capable of infinite texture.
+                        It is the definitive workflow of the post-AI musical landscape. Rejecting the binary choice between "human" and "machine", it treats Generative AI as a high-fidelity instrument in the producer's toolkit.
                     </p>
                     <p className="text-sm font-mono text-white/60">
                         The Hybrid Producer is an editor, a curator, and a sonic sculptor who mines the algorithmic void for gold, then refines it with traditional engineering.
@@ -210,14 +164,14 @@ const Home: React.FC = () => {
             <div className="flex-1 space-y-2">
                 <h3 className="text-sm font-bold text-white uppercase tracking-widest">Community</h3>
                 <p className="text-sm font-light text-white/60 leading-relaxed">
-                  <a href="https://www.reddit.com/r/hybridproduction/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors underline decoration-white/30 underline-offset-4 hover:decoration-white">
+                  <a href="https://www.reddit.com/r/hybridproduction/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors underline decoration-white/30 underline-offset-4">
                     Scaling the r/hybridproduction community
                   </a>
                 </p>
             </div>
             <div className="flex-1 space-y-2">
                 <h3 className="text-sm font-bold text-white uppercase tracking-widest">Innovation</h3>
-                <p className="text-sm font-light text-white/60 leading-relaxed">Refining workflows for the AI and even post-AI musical landscape. Utilizing todays tools to see tomorrows solutions</p>
+                <p className="text-sm font-light text-white/60 leading-relaxed">Refining workflows for the AI and even post-AI musical landscape. Utilizing todays tools to see tomorrows solutions.</p>
             </div>
         </div>
       </section>
@@ -247,7 +201,7 @@ const Home: React.FC = () => {
           className="group text-white/40 hover:text-[#FF0000] transition-all duration-300 transform hover:scale-110"
         >
           <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current" aria-hidden="true">
-             <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
           </svg>
         </a>
 
@@ -260,7 +214,7 @@ const Home: React.FC = () => {
           className="group text-white/40 hover:text-[#0077B5] transition-all duration-300 transform hover:scale-110"
         >
           <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current" aria-hidden="true">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
           </svg>
         </a>
 
