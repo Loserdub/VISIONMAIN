@@ -1,16 +1,19 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import SeoHead, { DEFAULT_SOCIAL_IMAGE, absoluteUrl } from './SeoHead';
 
 const Biography: React.FC = () => {
   return (
     <>
-      <Helmet>
-        <title>Biography | Justin Ray - Hybrid Music Producer</title>
-        <meta name="description" content="Justin Ray is a Hybrid Music Producer based in East Lansing, MI. Founder of r/hybridproduction, early Suno ecosystem contributor, and developer of custom audio tools. Discography: LoserDub, VISION, Le Vide, Flawed Future, Disarray." />
+      <SeoHead
+        title="Biography | Justin Ray - Hybrid Music Producer"
+        description="Justin Ray is a Hybrid Music Producer based in East Lansing, MI. Founder of r/hybridproduction, early Suno ecosystem contributor, and developer of custom audio tools. Discography: LoserDub, VISION, Le Vide, Flawed Future, Disarray."
+        path="/bio"
+        type="profile"
+      >
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ProfilePage",
-          "url": "https://jray.me/bio",
+          "url": absoluteUrl('/bio'),
           "mainEntity": {
             "@type": "Person",
             "name": "JRay",
@@ -22,7 +25,7 @@ const Biography: React.FC = () => {
               "Artist"
             ],
             "description": "Hybrid Producer and creative developer bridging the gap between raw human artistry and generative AI audio workflows.",
-            "image": "PLACEHOLDER_FOR_ABSOLUTE_IMAGE_URL",
+            "image": DEFAULT_SOCIAL_IMAGE,
             "knowsAbout": [
               "Hybrid Production",
               "Generative AI Audio",
@@ -44,7 +47,7 @@ const Biography: React.FC = () => {
             ]
           }
         })}</script>
-      </Helmet>
+      </SeoHead>
     <section className="py-24 px-4 sm:px-8 relative z-10 overflow-hidden animate-fade-in-up">
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">

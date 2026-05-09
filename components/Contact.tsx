@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Instagram, Send, Link as LinkIcon } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
+import SeoHead from './SeoHead';
 
 const Contact: React.FC = () => {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
@@ -38,10 +38,11 @@ const Contact: React.FC = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Contact | Justin Ray - Hybrid Music Producer</title>
-        <meta name="description" content="Get in touch with Justin Ray for collaboration, booking, hybrid mixing services, or sharing audio stems. Connect via email, Instagram, TikTok, or LANDR Network." />
-      </Helmet>
+      <SeoHead
+        title="Contact | Justin Ray - Hybrid Music Producer"
+        description="Get in touch with Justin Ray for collaboration, booking, hybrid mixing services, or sharing audio stems. Connect via email, Instagram, TikTok, or LANDR Network."
+        path="/contact"
+      />
     <footer className="py-20 px-4 border-t border-white/10 bg-black relative z-10 animate-fade-in-up">
       {/* Tooltip Portal */}
       {tooltip.show && (

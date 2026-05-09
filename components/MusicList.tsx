@@ -1,7 +1,7 @@
 import React from 'react';
 import { Project } from '../types';
 import { ExternalLink } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
+import SeoHead, { absoluteUrl } from './SeoHead';
 
 const PROJECTS: Project[] =[
   {
@@ -62,12 +62,12 @@ const MusicList: React.FC = () => {
     "@type": "CollectionPage",
     "headline": "Music | Justin Ray - Hybrid Producer",
     "description": "Explore Justin Ray's music projects: loserdub, VISION, le vide, flawed future, and disarray. Hybrid production blending AI and human creativity.",
-    "url": "https://jray.me/music",
+    "url": absoluteUrl('/music'),
     "mainEntity": {
       "@type": "Person",
       "name": "Justin Tyler Ray",
       "alternateName": "jray",
-      "url": "https://jray.me",
+      "url": absoluteUrl('/'),
       "jobTitle": "Hybrid Music Producer",
       "sameAs":[
         "https://reddit.com/r/hybridproduction",
@@ -91,16 +91,17 @@ const MusicList: React.FC = () => {
 
   return (
     <>
-     <Helmet>
-        <title>Music | Justin Ray - Hybrid Producer</title>
-        <meta name="description" content="Explore Justin Ray's music projects: loserdub, VISION, le vide, flawed future, and disarray. Hybrid production blending AI and human creativity." />
-        
+      <SeoHead
+        title="Music | Justin Ray - Hybrid Producer"
+        description="Explore Justin Ray's music projects: loserdub, VISION, le vide, flawed future, and disarray. Hybrid production blending AI and human creativity."
+        path="/music"
+      >
         {/* THE FIX: Correctly injecting raw JSON for SSG Snapshotters */}
         <script 
           type="application/ld+json" 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} 
         />
-      </Helmet>
+      </SeoHead>
       
       <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up w-full">
         <div className="container mx-auto max-w-6xl">

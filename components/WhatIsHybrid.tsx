@@ -1,26 +1,28 @@
 import React from 'react';
 import { Cpu, Fingerprint, Waves, ChevronRight, Zap, Lightbulb, Sliders } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
 import cycleDiagram from '../assets/images/cycle-diagram.webp';
+import SeoHead, { absoluteUrl } from './SeoHead';
 
 const WhatIsHybrid: React.FC = () => {
+  const articleImageUrl = new URL(cycleDiagram, 'https://jray.me').toString();
+
   // Structured Data (Schema) for SEO Authority & Entity Building
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "TechArticle",
-    "image": "https://jray.me/cycle-diagram.webp",
+    "image": articleImageUrl,
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://jray.me/"
+      "@id": absoluteUrl('/what-is-hybrid')
     },
     "headline": "What is Hybrid Production? | The Definitive Guide",
     "description": "Hybrid Production isn't about choosing between human and machine—it’s about the handshake between them. Foundations of music production for the future.",
-    "url": "https://jray.me/",
+    "url": absoluteUrl('/what-is-hybrid'),
     "author": {
       "@type": "Person",
       "name": "Justin Tyler Ray",
       "alternateName": "jray",
-      "url": "https://jray.me",
+      "url": absoluteUrl('/'),
       "sameAs":[
         "https://reddit.com/r/hybridproduction"
       ],
@@ -42,7 +44,7 @@ const WhatIsHybrid: React.FC = () => {
     "publisher": {
       "@type": "Organization",
       "name": "jray",
-      "url": "https://jray.me"
+      "url": absoluteUrl('/')
     },
     "about":[
       { "@type": "Thing", "name": "Hybrid Production" },
@@ -77,41 +79,44 @@ const WhatIsHybrid: React.FC = () => {
         "@type": "HowToStep",
         "name": "1. Set Up the Reconstruction Bus",
         "text": "Create a single unifying Bus track (the Hybrid Master). Then create three duplicate audio tracks of the raw AI generation (Low, Mid, High branches) and route them directly into the Reconstruction Bus.",
-        "url": "https://jray.me/what-is-hybrid#step-1"
+        "url": `${absoluteUrl('/what-is-hybrid')}#step-1`
       },
       {
         "@type": "HowToStep",
         "name": "2. Apply Isolation EQ",
         "text": "Place steep high-pass and low-pass filters on each branch. Low Band: 20Hz-200Hz. Mid Band: 200Hz-4kHz. High Band: 4kHz-20kHz.",
-        "url": "https://jray.me/what-is-hybrid#step-2"
+        "url": `${absoluteUrl('/what-is-hybrid')}#step-2`
       },
       {
         "@type": "HowToStep",
         "name": "3. Create the Mono Anchor",
         "text": "Collapse the isolated Low band into pure mono. This prevents phase cancellation and ensures maximum kinetic structural integrity for the sub-bass frequencies.",
-        "url": "https://jray.me/what-is-hybrid#step-3"
+        "url": `${absoluteUrl('/what-is-hybrid')}#step-3`
       },
       {
         "@type": "HowToStep",
         "name": "4. Route the Refinement Chain",
         "text": "Apply dedicated signal chains to each branch. Boost fundamental sub-harmonics on the Low Anchor, use dynamic resonance suppression on the Mid Band, and apply spatial wideners to the High Band.",
-        "url": "https://jray.me/what-is-hybrid#step-4"
+        "url": `${absoluteUrl('/what-is-hybrid')}#step-4`
       },
       {
         "@type": "HowToStep",
         "name": "5. Insert Final Limiter",
         "text": "Place a glue compressor and true-peak limiter on the final Reconstruction Bus to catch rogue dynamic peaks where frequency bands intersect.",
-        "url": "https://jray.me/what-is-hybrid#step-5"
+        "url": `${absoluteUrl('/what-is-hybrid')}#step-5`
       }
     ]
   };
 
   return (
     <>
-     <Helmet>
-        <title>What is Hybrid Production? | Justin Ray</title>
-        <meta name="description" content="Hybrid Production isn't about choosing between human and machine—it’s about the handshake between them. Learn Taxonomic Seeding and Spectral Splitting." />
-        
+      <SeoHead
+        title="What is Hybrid Production? | Justin Ray"
+        description="Hybrid Production isn't about choosing between human and machine—it’s about the handshake between them. Learn Taxonomic Seeding and Spectral Splitting."
+        path="/what-is-hybrid"
+        type="article"
+        image={articleImageUrl}
+      >
         {/* Inject TechArticle Schema */}
         <script 
           type="application/ld+json" 
@@ -123,7 +128,7 @@ const WhatIsHybrid: React.FC = () => {
           type="application/ld+json" 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} 
         />
-      </Helmet>
+      </SeoHead>
 
       <article className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up max-w-7xl mx-auto text-zinc-300">
         

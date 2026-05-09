@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import FuzzyText from './FuzzyText';
-import { Helmet } from 'react-helmet-async';
 import doodleImg from '../assets/images/doodle.jpg';
+import SeoHead from './SeoHead';
 
 const Home: React.FC = () => {
   const scrollToHybrid = () => {
@@ -47,10 +47,11 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Justin Ray | Creative Technologist & Hybrid Artist</title>
-        <meta name="description" content="Justin Ray is a Hybrid Producer and software developer blending Generative AI with traditional engineering. Offering AI music mixing and vocal cleanup, while building innovative tools like in-browser DAWs, polyphonic synths, and web-based image editors." />
-      </Helmet>
+      <SeoHead
+        title="Justin Ray | Creative Technologist & Hybrid Artist"
+        description="Justin Ray is a Hybrid Producer and software developer blending Generative AI with traditional engineering. Offering AI music mixing and vocal cleanup, while building innovative tools like in-browser DAWs, polyphonic synths, and web-based image editors."
+        path="/"
+      />
       <section className="relative flex flex-col items-center px-4 py-32 sm:pt-40">
         {/* SEO: Hidden H1 for crawlers as the visual title is canvas-based */}
         <h1 className="sr-only">Hybrid Production | Justin Ray</h1>

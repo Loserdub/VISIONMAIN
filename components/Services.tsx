@@ -1,7 +1,7 @@
 import React from 'react';
 import { Sliders, Headphones, Lightbulb, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SeoHead from './SeoHead';
 
 interface ServicesProps {
   onContactClick?: () => void;
@@ -31,10 +31,11 @@ const Services: React.FC<ServicesProps> = ({ onContactClick }) => {
 
   return (
     <>
-      <Helmet>
-        <title>Studio Services | Justin Ray - Hybrid Mixing & Audio Consultation</title>
-        <meta name="description" content="Professional hybrid mixing, audio review, and creative consultation services by Justin Ray. Starting at $50/track. Specializing in AI-generated music engineering and hybrid production workflows." />
-      </Helmet>
+      <SeoHead
+        title="Studio Services | Justin Ray - Hybrid Mixing & Audio Consultation"
+        description="Professional hybrid mixing, audio review, and creative consultation services by Justin Ray. Starting at $50/track. Specializing in AI-generated music engineering and hybrid production workflows."
+        path="/services"
+      />
     <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up max-w-7xl mx-auto">
       <div className="mb-20 text-center space-y-4">
         <h1 className="text-4xl sm:text-5xl font-display font-bold text-white uppercase tracking-tighter">

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import SeoHead from './SeoHead';
 
 const ProjectsList: React.FC = () => {
   const [tooltip, setTooltip] = useState({ show: false, x: 0, y: 0, text: '' });
@@ -18,10 +18,11 @@ const ProjectsList: React.FC = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Creative Projects | Justin Ray - Hybrid Producer</title>
-        <meta name="description" content="Explore Justin Ray's creative web apps: VISION SYNTH (polyphonic synthesizer), ChordCompose (MIDI sketchpad), FractalAudio (audio effects), IMAGESIZER, and J-DAW (browser-based DAW)." />
-      </Helmet>
+      <SeoHead
+        title="Creative Projects | Justin Ray - Hybrid Producer"
+        description="Explore Justin Ray's creative web apps: VISION SYNTH (polyphonic synthesizer), ChordCompose (MIDI sketchpad), FractalAudio (audio effects), IMAGESIZER, and J-DAW (browser-based DAW)."
+        path="/projects"
+      />
     <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up w-full overflow-hidden">
       {/* Tooltip Portal */}
       {tooltip.show && (
