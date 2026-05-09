@@ -5,11 +5,12 @@ import react from '@vitejs/plugin-react';
 const ROOT_MARKER = '<div id="root" data-server-rendered="true">';
 const APP_SHELL_MARKER = '<div class="relative min-h-screen';
 
-const hoistRootHeadTagsToDocumentHead = (html: string) => {
+const hoistRootHeadTagsToDocumentHead = (html: string, route: string) => {
   const rootIndex = html.indexOf(ROOT_MARKER);
   const appShellIndex = html.indexOf(APP_SHELL_MARKER, rootIndex);
 
   if (rootIndex === -1 || appShellIndex === -1) {
+    console.warn(`[vite-react-ssg] Could not hoist head tags for route "${route}" because the expected SSR markers were not found.`);
     return html;
   }
 
@@ -38,7 +39,7 @@ export default defineConfig(({ mode }) => {
       ssgOptions: {
         entry: '/index.tsx',
         dirStyle: 'nested',
-        onPageRendered: (_route, renderedHtml) => hoistRootHeadTagsToDocumentHead(renderedHtml),
+        onPageRendered: (route, renderedHtml) => hoistRootHeadTagsToDocumentHead(renderedHtml, route),
         includedRoutes: () => [
           '/',
           '/music',
