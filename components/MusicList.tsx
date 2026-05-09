@@ -3,7 +3,7 @@ import { Project } from '../types';
 import { ExternalLink } from 'lucide-react';
 import { Head } from 'vite-react-ssg';
 
-const SOUNDCLOUD_TRACKS_URL = "https%3A//soundcloud.com/visiontracks/tracks";
+const SOUNDCLOUD_TRACKS_URL = encodeURIComponent('https://soundcloud.com/visiontracks/tracks');
 const SOUNDCLOUD_PLAYER_SRC = `https://w.soundcloud.com/player/?url=${SOUNDCLOUD_TRACKS_URL}&color=%2394a3b8&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true`;
 
 const PROJECTS: Project[] =[
@@ -217,7 +217,6 @@ const MusicList: React.FC = () => {
                width="100%"
                height="460"
                scrolling="no"
-               allow="autoplay"
                loading="lazy"
                src={SOUNDCLOUD_PLAYER_SRC}
                className="w-full border border-white/10 rounded-sm bg-black/40"
