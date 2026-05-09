@@ -1,7 +1,9 @@
 import path from 'path';
+import { fileURLToPath } from 'url';
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT_MARKER = '<div id="root" data-server-rendered="true">';
 const APP_SHELL_MARKER = '<div class="relative min-h-screen';
 
