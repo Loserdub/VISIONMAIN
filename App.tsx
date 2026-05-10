@@ -3,7 +3,6 @@ import { Outlet, Link, useLocation } from 'react-router-dom';
 import { Head } from 'vite-react-ssg';
 import OilBackground from './components/OilBackground';
 import { Menu, X, Disc } from 'lucide-react';
-import SoundCloudPlayer from './components/SoundCloudPlayer';
 import Footer from './components/Footer';
 
 // This fixes a React Router bug where changing pages doesn't scroll to the top
@@ -116,7 +115,6 @@ const App: React.FC = () => {
       <EnforceNoTrailingSlash />
       <OilBackground />
       <Navigation />
-      <SoundCloudPlayer />
 
       {/* Main Content Area - Separate Pages */}
       <main className="flex-grow w-full pt-24 pb-12 flex flex-col" id="main-content">
