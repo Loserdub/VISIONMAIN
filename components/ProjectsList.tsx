@@ -416,13 +416,13 @@ const ProjectsList: React.FC = () => {
 
                     <div className="relative z-10 flex flex-col items-center gap-5">
                         <p
-                            className="text-lg font-display font-bold uppercase tracking-[0.35em] text-white sm:text-2xl"
+                            className="text-lg font-display font-bold uppercase tracking-[0.14em] text-white sm:text-2xl"
                             style={{ textShadow: '0 0 18px rgba(57,255,20,0.35)' }}
                         >
                             DOWNLOAD <span style={{ color: '#39ff14' }}>VOID 1.23 BETA</span> TODAY
                         </p>
                         <a
-                            href="https://github.com/Loserdub/VOID1.2/releases/tag/void_app/VOID1.23beta.exe"
+                            href="https://github.com/Loserdub/VOID1.2/releases/download/void_app/VOID1.23beta.exe"
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Download VOID 1.23 Beta"
