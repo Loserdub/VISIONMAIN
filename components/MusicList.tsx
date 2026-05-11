@@ -1,7 +1,6 @@
 import React from 'react';
 import { Project } from '../types';
 import { ExternalLink } from 'lucide-react';
-import { Head } from 'vite-react-ssg';
 
 const SOUNDCLOUD_TRACKS_URL = encodeURIComponent('https://soundcloud.com/visiontracks/tracks');
 const SOUNDCLOUD_PLAYER_SRC = `https://w.soundcloud.com/player/?url=${SOUNDCLOUD_TRACKS_URL}&color=%2394a3b8&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true`;
@@ -94,29 +93,6 @@ const MusicList: React.FC = () => {
 
   return (
     <>
-     <Head>
-        <title>Music | Justin Ray - Hybrid Producer</title>
-        <meta name="robots" content="index, follow" />
-        <meta name="description" content="Explore Justin Ray's music projects: loserdub, VISION, le vide, flawed future, and disarray. Hybrid production blending AI and human creativity." />
-        <link rel="canonical" href="https://jray.me/music/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://jray.me/music/" />
-        <meta property="og:title" content="Music | Justin Ray - Hybrid Producer" />
-        <meta property="og:description" content="Explore Justin Ray's music projects: loserdub, VISION, le vide, flawed future, and disarray. Hybrid production blending AI and human creativity." />
-        <meta property="og:image" content="https://jray.me/favicon.png" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:url" content="https://jray.me/music/" />
-        <meta name="twitter:title" content="Music | Justin Ray - Hybrid Producer" />
-        <meta name="twitter:description" content="Explore Justin Ray's music projects: loserdub, VISION, le vide, flawed future, and disarray. Hybrid production blending AI and human creativity." />
-        <meta name="twitter:image" content="https://jray.me/favicon.png" />
-        
-        {/* THE FIX: Correctly injecting raw JSON for SSG Snapshotters */}
-        <script 
-          type="application/ld+json" 
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} 
-        />
-      </Head>
-      
       <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up w-full">
         <div className="container mx-auto max-w-6xl">
            {/* Header */}

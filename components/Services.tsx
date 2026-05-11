@@ -1,6 +1,5 @@
 import React from 'react';
 import { Sliders, Headphones, Lightbulb, ArrowRight } from 'lucide-react';
-import { Head } from 'vite-react-ssg';
 
 interface ServicesProps {
   onContactClick?: () => void;
@@ -30,21 +29,6 @@ const Services: React.FC<ServicesProps> = ({ onContactClick }) => {
 
   return (
     <>
-      <Head>
-        <title>Justin Ray | Creative Consultation and Audio Cleanup</title>
-        <meta name="description" content="Professional AI-generated music engineering and hybrid production workflows." />
-        <link rel="canonical" href="https://jray.me/services/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://jray.me/services/" />
-        <meta property="og:title" content="Justin Ray | Creative Consultation and Audio Cleanup" />
-        <meta property="og:description" content="Professional hybrid mixing, audio review, and creative consultation services by Justin Ray." />
-        <meta property="og:image" content="https://jray.me/favicon.png" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:url" content="https://jray.me/services/" />
-        <meta name="twitter:title" content="Justin Ray | Creative Consultation and Audio Cleanup" />
-        <meta name="twitter:description" content="Professional hybrid mixing, audio review, and creative consultation services by Justin Ray. Starting at $50/track." />
-        <meta name="twitter:image" content="https://jray.me/favicon.png" />
-      </Head>
     <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up max-w-7xl mx-auto">
       <div className="mb-20 text-center space-y-4">
         <h1 className="text-4xl sm:text-5xl font-display font-bold text-white uppercase tracking-tighter">
