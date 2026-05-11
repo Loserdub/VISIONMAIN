@@ -53,12 +53,58 @@ const Contact: React.FC = () => {
         <meta name="twitter:title" content="Contact | Justin Ray - Hybrid Music Producer" />
         <meta name="twitter:description" content="Get in touch with Justin Ray for collaboration, booking, hybrid mixing services, or sharing audio stems. Connect via email, Instagram, TikTok, or LANDR Network." />
         <meta name="twitter:image" content="https://jray.me/favicon.png" />
+        <script type="application/ld+json">
+        {{
+          "@context": "https://schema.org",
+          "@graph": [
+            {{
+              "@type": "ContactPage",
+              "@id": "https://jray.me/contact/#contact-page",
+              "name": "Contact Justin Ray - Hybrid Music Producer",
+              "description": "Get in touch with Justin Ray for collaboration, booking, hybrid mixing services, or sharing audio stems. Connect via email, Instagram, TikTok, or LANDR Network.",
+              "url": "https://jray.me/contact/",
+              "mainEntity": {{
+                "@type": "Person",
+                "@id": "https://jray.me/#person",
+                "name": "Justin Tyler Ray",
+                "alternateName": ["JRAY", "Justin Ray"],
+                "url": "https://jray.me",
+                "email": "mailto:jray517@gmail.com",
+                "jobTitle": ["Hybrid Music Producer", "Creative Technologist", "Artist"],
+                "description": "Justin Tyler Ray is a multifaceted artist, and pioneering creator of the Hybrid Production methodology.",
+                "knowsAbout": [
+                  "Hybrid Music Production",
+                  "Hybrid AI Music",
+                  "Music Production",
+                  "Creative Design",
+                  "Audio Engineering"
+                ],
+                "sameAs": [
+                  "https://soundcloud.com/visiontracks",
+                  "https://www.youtube.com/@loserdub",
+                  "https://www.instagram.com/jray.me/",
+                  "https://open.spotify.com/artist/3VZelnnW9OR0DyR2qRn4Oq",
+                  "https://open.spotify.com/artist/6GGZwLOLxVxYGOcMry3NDi",
+                  "https://open.spotify.com/artist/42TmrCeIumkPRyTNOPP78t",
+                  "https://open.spotify.com/artist/3FNFzRyU0PCA2vjihWsg6y",
+                  "https://www.reddit.com/r/hybridproduction/"
+                ]
+              }},
+              "publisher": {{
+                "@type": "Organization",
+                "name": "JRAY.ME",
+                "url": "https://jray.me"
+              }}
+            }}
+          ]
+        }}
+        </script>
       </Head>
     <footer className="py-20 px-4 border-t border-white/10 bg-black relative z-10 animate-fade-in-up">
       {/* Tooltip Portal */}
       {tooltip.show && (
         <div 
-            className="fixed z-50 pointer-events-none px-3 py-2 bg-black/90 border border-white/20 backdrop-blur-md text-white text-[10px] font-mono tracking-wider uppercase rounded shadow-[0_0_15px_rgba(0,0,0,0.5)] whitespace-nowrap"
+            className="fixed z-50 pointer-events-none px-3 py-2 bg-black/90 border border-white/20 backdrop-blur-md text-white text-[10px] font-mono tracking-wider uppercase rounded shadow-[0_0_15px_rgba(148,163,184,0.3)]"
             style={{ 
                 left: tooltip.x + 15, 
                 top: tooltip.y + 15,
@@ -74,7 +120,7 @@ const Contact: React.FC = () => {
           {/* Contact Info & Socials */}
           <div className="space-y-10 flex flex-col justify-between">
             <div className="space-y-6">
-              <h2 className="text-3xl font-display font-bold uppercase tracking-widest text-white">Connect</h2>
+              <h1 className="text-3xl font-display font-bold uppercase tracking-widest text-white">Connect</h1>
               <p className="text-white/60 font-light max-w-md leading-relaxed">
                 Interested in collaboration, booking, or sharing audio stems? Send a transmission across the void. We monitor all frequencies.
               </p>
@@ -161,7 +207,7 @@ const Contact: React.FC = () => {
                         onChange={handleInputChange}
                         placeholder="NAME" 
                         required
-                        className="w-full bg-black/40 border border-white/10 p-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-slate-500/50 focus:bg-white/[0.02] transition-colors font-mono"
+                        className="w-full bg-black/40 border border-white/10 p-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-slate-500/50 focus:bg-white/[0.02] transition-all duration-300"
                     />
                   </div>
                   <div className="space-y-1">
@@ -173,7 +219,7 @@ const Contact: React.FC = () => {
                         onChange={handleInputChange}
                         placeholder="EMAIL" 
                         required
-                        className="w-full bg-black/40 border border-white/10 p-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-slate-500/50 focus:bg-white/[0.02] transition-colors font-mono"
+                        className="w-full bg-black/40 border border-white/10 p-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-slate-500/50 focus:bg-white/[0.02] transition-all duration-300"
                     />
                   </div>
                 </div>
@@ -187,7 +233,7 @@ const Contact: React.FC = () => {
                       onChange={handleInputChange}
                       placeholder="ENTER MESSAGE..." 
                       required
-                      className="w-full bg-black/40 border border-white/10 p-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-slate-500/50 focus:bg-white/[0.02] transition-colors font-mono resize-none"
+                      className="w-full bg-black/40 border border-white/10 p-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-slate-500/50 focus:bg-white/[0.02] transition-all duration-300"
                   />
                 </div>
               </div>
