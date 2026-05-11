@@ -93,6 +93,9 @@ const projectsSchemaData = {
   }
 };
 
+const voidAccentColor = '#39ff14';
+const voidAccentRgb = '57,255,20';
+
 const ProjectsList: React.FC = () => {
   const [tooltip, setTooltip] = useState({ show: false, x: 0, y: 0, text: '' });
 
@@ -397,8 +400,8 @@ const ProjectsList: React.FC = () => {
                     className="relative w-full max-w-3xl overflow-hidden border px-6 py-8 text-center sm:px-10"
                     style={{
                         background: '#0a0a0f',
-                        borderColor: 'rgba(57,255,20,0.35)',
-                        boxShadow: '0 0 28px rgba(57,255,20,0.12), inset 0 0 32px rgba(41,121,255,0.04)',
+                        borderColor: `rgba(${voidAccentRgb},0.35)`,
+                        boxShadow: `0 0 28px rgba(${voidAccentRgb},0.12), inset 0 0 32px rgba(41,121,255,0.04)`,
                     }}
                 >
                     <div
@@ -410,16 +413,16 @@ const ProjectsList: React.FC = () => {
                     <div
                         className="absolute inset-0 pointer-events-none"
                         style={{
-                            background: 'radial-gradient(circle at top, rgba(57,255,20,0.14), transparent 60%)',
+                            background: `radial-gradient(circle at top, rgba(${voidAccentRgb},0.14), transparent 60%)`,
                         }}
                     />
 
                     <div className="relative z-10 flex flex-col items-center gap-5">
                         <p
                             className="text-lg font-display font-bold uppercase tracking-[0.14em] text-white sm:text-2xl"
-                            style={{ textShadow: '0 0 18px rgba(57,255,20,0.35)' }}
+                            style={{ textShadow: `0 0 18px rgba(${voidAccentRgb},0.35)` }}
                         >
-                            DOWNLOAD <span style={{ color: '#39ff14' }}>VOID 1.23 BETA</span> TODAY
+                            DOWNLOAD <span style={{ color: voidAccentColor }}>VOID 1.23 BETA</span> TODAY
                         </p>
                         <a
                             href="https://github.com/Loserdub/VOID1.2/releases/download/void_app/VOID1.23beta.exe"
@@ -428,9 +431,9 @@ const ProjectsList: React.FC = () => {
                             aria-label="Download VOID 1.23 Beta"
                             className="inline-block px-8 py-3 text-xs font-mono uppercase tracking-[0.3em] text-white transition-all duration-300 hover:bg-white hover:text-black"
                             style={{
-                                border: '1px solid rgba(57,255,20,0.45)',
-                                background: 'rgba(57,255,20,0.1)',
-                                boxShadow: '0 0 18px rgba(57,255,20,0.16)',
+                                border: `1px solid rgba(${voidAccentRgb},0.45)`,
+                                background: `rgba(${voidAccentRgb},0.1)`,
+                                boxShadow: `0 0 18px rgba(${voidAccentRgb},0.16)`,
                             }}
                         >
                             Download
