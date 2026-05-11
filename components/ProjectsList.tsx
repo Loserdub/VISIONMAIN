@@ -112,6 +112,7 @@ const ProjectsList: React.FC = () => {
     <>
       <Head>
         <title>Creative Projects | Justin Ray - Hybrid Producer</title>
+        <meta name="robots" content="index, follow" />
         <meta name="description" content="Explore audio and visual tools built by Justin Tyler Ray (JRAY) for the hybrid producer — synthesizers, MIDI composers, browser DAWs, and beyond." />
         <link rel="canonical" href="https://jray.me/projects/" />
         <meta property="og:type" content="website" />

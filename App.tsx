@@ -1,5 +1,5 @@
 import React, { useState, Suspense, useEffect } from 'react';
-import { Outlet, Link, useLocation } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { Head } from 'vite-react-ssg';
 import OilBackground from './components/OilBackground';
 import { Menu, X, Disc } from 'lucide-react';
@@ -44,26 +44,26 @@ const Navigation = () => {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md py-4 border-b border-white/5">
         <div className="container mx-auto px-6 flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
+          <a href="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
             <Disc className="animate-spin-slow text-white" size={24} />
             <span className="text-lg font-bold tracking-widest uppercase text-white">JRAY.ME</span>
-          </Link>
+          </a>
           
           {/* Desktop Nav */}
           <nav className="hidden md:flex gap-8 text-xs font-medium tracking-widest uppercase text-white/70" aria-label="Main navigation">
             {navItems.map(item => {
               const isActive = location.pathname === item.path;
               return (
-                <Link 
+                <a 
                   key={item.path}
-                  to={item.path}
+                  href={item.path}
                   className={`hover:text-white transition-colors relative ${isActive ? 'text-white' : ''}`}
                 >
                   {item.label}
                   {isActive && (
                     <span className="absolute -bottom-1 left-0 right-0 h-[1px] bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
                   )}
-                </Link>
+                </a>
               );
             })}
           </nav>
@@ -82,15 +82,15 @@ const Navigation = () => {
             {navItems.map((item, index) => {
               const isActive = location.pathname === item.path;
               return (
-                <Link 
+                <a 
                   key={item.path}
-                  to={item.path}
+                  href={item.path}
                   onClick={() => setIsMenuOpen(false)}
                   className={`opacity-0 animate-fade-in-up hover:text-slate-300 transition-colors ${isActive ? 'text-white font-bold' : 'text-white/60'}`}
                   style={{ animationDelay: `${index * 150 + 100}ms` }}
                 >
                   {item.label}
-                </Link>
+                </a>
               );
             })}
            </nav>
@@ -118,13 +118,7 @@ const App: React.FC = () => {
 
       {/* Main Content Area - Separate Pages */}
       <main className="flex-grow w-full pt-24 pb-12 flex flex-col" id="main-content">
-        <Suspense fallback={
-          <div className="min-h-[60vh] w-full flex items-center justify-center">
-            <div className="text-white/20 font-mono text-xs tracking-widest animate-pulse uppercase">Loading Route...</div>
-          </div>
-        }>
           <Outlet />
-        </Suspense>
       </main>
       <Footer />
     </div>

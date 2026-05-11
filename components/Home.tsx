@@ -1,6 +1,5 @@
 import React from 'react';
 import { Head } from 'vite-react-ssg';
-import { Link } from 'react-router-dom';
 import doodleImg from '../assets/images/doodle.jpg';
 
 const Home: React.FC = () => {
@@ -97,13 +96,13 @@ const Home: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
           {links.map((link, idx) => (
-            <Link
+            <a
               key={idx}
-              to={link.path}
+              href={link.path}
               className="bg-zinc-900/80 border border-white/10 p-6 hover:border-slate-500/50 transition-all duration-500 flex flex-col justify-center text-center"
             >
               <h3 className="text-xl font-display font-bold text-white">{link.label}</h3>
-            </Link>
+            </a>
           ))}
         </div>
 

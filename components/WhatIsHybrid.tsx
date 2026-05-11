@@ -7,6 +7,7 @@ const WhatIsHybrid: React.FC = () => {
     <>
       <Head>
         <title>What Is Hybrid | Justin Ray</title>
+        <meta name="robots" content="index, follow" />
         <meta
           name="description"
           content="Learn what Hybrid Production means and explore related articles including Future of Hybrid."

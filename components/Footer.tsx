@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
 const Footer: React.FC = () => {
   return (
     <footer className="w-full bg-black/90 border-t border-white/5 py-8 mt-auto z-20 relative">
@@ -10,10 +8,10 @@ const Footer: React.FC = () => {
         </div>
 
         <nav className="flex gap-6 text-xs font-medium tracking-widest uppercase text-white/60">
-          <Link to="/" className="hover:text-white transition-colors">Home</Link>
-          <Link to="/what-is-hybrid" className="hover:text-white transition-colors">What Is Hybrid</Link>
-          <Link to="/projects" className="hover:text-white transition-colors">Projects</Link>
-          <Link to="/music" className="hover:text-white transition-colors">Music</Link>
+          <a href="/" className="hover:text-white transition-colors">Home</a>
+          <a href="/what-is-hybrid" className="hover:text-white transition-colors">What Is Hybrid</a>
+          <a href="/projects" className="hover:text-white transition-colors">Projects</a>
+          <a href="/music" className="hover:text-white transition-colors">Music</a>
         </nav>
       </div>
     </footer>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Sliders, Headphones, Lightbulb, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { Head } from 'vite-react-ssg';
 
 interface ServicesProps {
@@ -73,13 +72,13 @@ const Services: React.FC<ServicesProps> = ({ onContactClick }) => {
              
              <div className="relative z-10 mt-auto w-full pt-6 border-t border-white/5">
                 <span className="block text-xs font-mono text-white/40 mb-4">{service.price}</span>
-                <Link 
-                  to="/contact"
+                <a 
+                  href="/contact"
                   aria-label={`Inquire about ${service.title} services`}
                   className="w-full py-3 bg-white/5 hover:bg-white hover:text-black border border-white/10 transition-all duration-300 uppercase text-xs font-bold tracking-widest flex items-center justify-center gap-2"
                 >
                   Inquire <ArrowRight size={14} />
-                </Link>
+                </a>
              </div>
           </div>
         ))}

@@ -96,6 +96,7 @@ const MusicList: React.FC = () => {
     <>
      <Head>
         <title>Music | Justin Ray - Hybrid Producer</title>
+        <meta name="robots" content="index, follow" />
         <meta name="description" content="Explore Justin Ray's music projects: loserdub, VISION, le vide, flawed future, and disarray. Hybrid production blending AI and human creativity." />
         <link rel="canonical" href="https://jray.me/music/" />
         <meta property="og:type" content="website" />

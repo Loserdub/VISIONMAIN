@@ -40,6 +40,7 @@ const Contact: React.FC = () => {
     <>
       <Head>
         <title>Contact | Justin Ray - Hybrid Music Producer</title>
+        <meta name="robots" content="index, follow" />
         <meta name="description" content="Get in touch with Justin Ray for collaboration, booking, hybrid mixing services, or sharing audio stems. Connect via email, Instagram, TikTok, or LANDR Network." />
         <link rel="canonical" href="https://jray.me/contact/" />
         <meta property="og:type" content="website" />

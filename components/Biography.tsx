@@ -6,6 +6,7 @@ const Biography: React.FC = () => {
     <>
       <Head>
         <title>Biography | Justin Ray - Hybrid Music Producer</title>
+        <meta name="robots" content="index, follow" />
         <meta name="description" content="Justin Ray is a Hybrid Music Producer based in East Lansing, MI. Founder of r/hybridproduction, music artist" />
         <link rel="canonical" href="https://jray.me/bio/" />
         <meta property="og:type" content="profile" />
