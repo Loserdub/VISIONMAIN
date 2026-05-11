@@ -391,6 +391,53 @@ const ProjectsList: React.FC = () => {
                 </article>
 
             </div>
+
+            <div className="mt-12 flex justify-center">
+                <div
+                    className="relative w-full max-w-3xl overflow-hidden border px-6 py-8 text-center sm:px-10"
+                    style={{
+                        background: '#0a0a0f',
+                        borderColor: 'rgba(57,255,20,0.35)',
+                        boxShadow: '0 0 28px rgba(57,255,20,0.12), inset 0 0 32px rgba(41,121,255,0.04)',
+                    }}
+                >
+                    <div
+                        className="absolute inset-0 pointer-events-none"
+                        style={{
+                            background: 'repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,255,255,0.018) 2px,rgba(255,255,255,0.018) 4px)',
+                        }}
+                    />
+                    <div
+                        className="absolute inset-0 pointer-events-none"
+                        style={{
+                            background: 'radial-gradient(circle at top, rgba(57,255,20,0.14), transparent 60%)',
+                        }}
+                    />
+
+                    <div className="relative z-10 flex flex-col items-center gap-5">
+                        <p
+                            className="text-lg font-display font-bold uppercase tracking-[0.35em] text-white sm:text-2xl"
+                            style={{ textShadow: '0 0 18px rgba(57,255,20,0.35)' }}
+                        >
+                            DOWNLOAD <span style={{ color: '#39ff14' }}>VOID 1.23 BETA</span> TODAY
+                        </p>
+                        <a
+                            href="https://github.com/Loserdub/VOID1.2/releases/tag/void_app/VOID1.23beta.exe"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Download VOID 1.23 Beta"
+                            className="inline-block px-8 py-3 text-xs font-mono uppercase tracking-[0.3em] text-white transition-all duration-300 hover:bg-white hover:text-black"
+                            style={{
+                                border: '1px solid rgba(57,255,20,0.45)',
+                                background: 'rgba(57,255,20,0.1)',
+                                boxShadow: '0 0 18px rgba(57,255,20,0.16)',
+                            }}
+                        >
+                            Download
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
 
       </div>
