@@ -393,6 +393,43 @@ const ProjectsList: React.FC = () => {
             </div>
         </section>
 
+        <div className="mt-12 flex justify-center">
+          <div
+            className="w-full max-w-2xl border bg-zinc-900/90 px-6 py-8 text-center"
+            style={{
+              borderColor: 'rgba(57, 255, 20, 0.45)',
+              boxShadow: '0 0 20px rgba(57, 255, 20, 0.12), inset 0 0 24px rgba(255, 255, 255, 0.03)',
+            }}
+          >
+            <p
+              className="text-lg sm:text-xl font-display font-bold tracking-widest uppercase"
+              style={{
+                color: '#ffffff',
+                textShadow: '0 0 12px rgba(57, 255, 20, 0.35)',
+              }}
+            >
+              DOWNLOAD <span style={{ color: '#39ff14' }}>VOID 1.23 BETA</span> TODAY
+            </p>
+            <a
+              href="https://github.com/Loserdub/VOID1.2/releases/tag/void_app/VOID1.23beta.exe"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download VOID 1.23 beta Windows executable from GitHub releases"
+              className="mt-5 inline-block border px-6 py-2 text-sm font-mono tracking-widest uppercase transition-all duration-300 hover:bg-[rgba(57,255,20,0.22)] hover:shadow-[0_0_18px_rgba(57,255,20,0.35)]"
+              style={{
+                color: '#ffffff',
+                borderColor: 'rgba(57, 255, 20, 0.7)',
+                background: 'rgba(57, 255, 20, 0.12)',
+              }}
+            >
+              Download
+            </a>
+            <p className="mt-3 text-xs font-mono tracking-wide text-white/60">
+              Windows .exe hosted on GitHub Releases.
+            </p>
+          </div>
+        </div>
+
       </div>
     </section>
     </>
