@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Mail, Instagram, Send, Link as LinkIcon } from 'lucide-react';
-import { Head } from 'vite-react-ssg';
 
 const Contact: React.FC = () => {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
@@ -38,68 +37,6 @@ const Contact: React.FC = () => {
 
   return (
     <>
-      <Head>
-        <title>Contact | Justin Ray - Hybrid Music Producer</title>
-        <meta name="robots" content="index, follow" />
-        <meta name="description" content="Get in touch with Justin Ray for collaboration, booking, hybrid mixing services, or sharing audio stems. Connect via email, Instagram, TikTok, or LANDR Network." />
-        <link rel="canonical" href="https://jray.me/contact/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://jray.me/contact/" />
-        <meta property="og:title" content="Contact | Justin Ray - Hybrid Music Producer" />
-        <meta property="og:description" content="Get in touch with Justin Ray for collaboration, booking, hybrid mixing services, or sharing audio stems. Connect via email, Instagram, TikTok, or LANDR Network." />
-        <meta property="og:image" content="https://jray.me/favicon.png" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:url" content="https://jray.me/contact/" />
-        <meta name="twitter:title" content="Contact | Justin Ray - Hybrid Music Producer" />
-        <meta name="twitter:description" content="Get in touch with Justin Ray for collaboration, booking, hybrid mixing services, or sharing audio stems. Connect via email, Instagram, TikTok, or LANDR Network." />
-        <meta name="twitter:image" content="https://jray.me/favicon.png" />
-        <script type="application/ld+json">
-        {{
-          "@context": "https://schema.org",
-          "@graph": [
-            {{
-              "@type": "ContactPage",
-              "@id": "https://jray.me/contact/#contact-page",
-              "name": "Contact Justin Ray - Hybrid Music Producer",
-              "description": "Get in touch with Justin Ray for collaboration, booking, hybrid mixing services, or sharing audio stems. Connect via email, Instagram, TikTok, or LANDR Network.",
-              "url": "https://jray.me/contact/",
-              "mainEntity": {{
-                "@type": "Person",
-                "@id": "https://jray.me/#person",
-                "name": "Justin Tyler Ray",
-                "alternateName": ["JRAY", "Justin Ray"],
-                "url": "https://jray.me",
-                "email": "mailto:jray517@gmail.com",
-                "jobTitle": ["Hybrid Music Producer", "Creative Technologist", "Artist"],
-                "description": "Justin Tyler Ray is a multifaceted artist, and pioneering creator of the Hybrid Production methodology.",
-                "knowsAbout": [
-                  "Hybrid Music Production",
-                  "Hybrid AI Music",
-                  "Music Production",
-                  "Creative Design",
-                  "Audio Engineering"
-                ],
-                "sameAs": [
-                  "https://soundcloud.com/visiontracks",
-                  "https://www.youtube.com/@loserdub",
-                  "https://www.instagram.com/jray.me/",
-                  "https://open.spotify.com/artist/3VZelnnW9OR0DyR2qRn4Oq",
-                  "https://open.spotify.com/artist/6GGZwLOLxVxYGOcMry3NDi",
-                  "https://open.spotify.com/artist/42TmrCeIumkPRyTNOPP78t",
-                  "https://open.spotify.com/artist/3FNFzRyU0PCA2vjihWsg6y",
-                  "https://www.reddit.com/r/hybridproduction/"
-                ]
-              }},
-              "publisher": {{
-                "@type": "Organization",
-                "name": "JRAY.ME",
-                "url": "https://jray.me"
-              }}
-            }}
-          ]
-        }}
-        </script>
-      </Head>
     <footer className="py-20 px-4 border-t border-white/10 bg-black relative z-10 animate-fade-in-up">
       {/* Tooltip Portal */}
       {tooltip.show && (

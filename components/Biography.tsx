@@ -1,62 +1,8 @@
 import React from 'react';
-import { Head } from 'vite-react-ssg';
 
 const Biography: React.FC = () => {
   return (
     <>
-      <Head>
-        <title>Biography | Justin Ray - Hybrid Music Producer</title>
-        <meta name="robots" content="index, follow" />
-        <meta name="description" content="Justin Ray is a Hybrid Music Producer based in East Lansing, MI. Founder of r/hybridproduction, music artist" />
-        <link rel="canonical" href="https://jray.me/bio/" />
-        <meta property="og:type" content="profile" />
-        <meta property="og:url" content="https://jray.me/bio/" />
-        <meta property="og:title" content="Biography | Justin Tyler Ray - Hybrid Music Producer" />
-        <meta property="og:description" content="Justin Tyler Ray (JRAY) is a Hybrid Music Producer and Creative Technologist based in East Lansing, MI — founder of r/hybridproduction, pioneer of hybrid AI and human music workflows." />
-        <meta property="og:image" content="https://jray.me/favicon.png" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:url" content="https://jray.me/bio/" />
-        <meta name="twitter:title" content="Biography | Justin Tyler Ray - Hybrid Music Producer" />
-        <meta name="twitter:description" content="Justin Tyler Ray (JRAY) is a Hybrid Music Producer and Creative Technologist based in East Lansing, MI — founder of r/hybridproduction, pioneer of hybrid AI and human music workflows." />
-        <meta name="twitter:image" content="https://jray.me/favicon.png" />
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "ProfilePage",
-          "url": "https://jray.me/bio",
-          "mainEntity": {
-            "@type": "Person",
-            "name": "JRay",
-            "alternateName": ["Justin Ray", "Justin Tyler Ray"],
-            "jobTitle": [
-              "Hybrid Producer",
-              "Sound Engineer",
-              "Creative Developer",
-              "Artist"
-            ],
-            "image": "https://jray.me/favicon.png",
-            "knowsAbout": [
-              "Hybrid Production",
-              "Generative AI Audio",
-              "Sound Engineering",
-              "Music Production",
-              "Ableton Live",
-              "Logic Pro X",
-              "Prompt Design",
-              "Spectral Splitting",
-              "Creative Software Development",
-              "East Lansing",
-            ],
-            "sameAs": [
-              "https://open.spotify.com/artist/3VZelnnW9OR0DyR2qRn4Oq",
-              "https://www.linkedin.com/in/jray-me/",
-              "https://github.com/Loserdub",
-              "https://soundcloud.com/visiontracks/",
-              "https://www.youtube.com/@loserdub",
-              "https://www.reddit.com/r/hybridproduction/"
-            ]
-          }
-        })}</script>
-      </Head>
     <section className="py-24 px-4 sm:px-8 relative z-10 overflow-hidden animate-fade-in-up">
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">

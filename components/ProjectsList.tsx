@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Head } from 'vite-react-ssg';
 
 const projectsSchemaData = {
   "@context": "https://schema.org",
@@ -113,26 +112,6 @@ const ProjectsList: React.FC = () => {
 
   return (
     <>
-      <Head>
-        <title>Creative Projects | Justin Ray - Hybrid Producer</title>
-        <meta name="robots" content="index, follow" />
-        <meta name="description" content="Explore audio and visual tools built by Justin Tyler Ray (JRAY) for the hybrid producer — synthesizers, MIDI composers, browser DAWs, and beyond." />
-        <link rel="canonical" href="https://jray.me/projects/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://jray.me/projects/" />
-        <meta property="og:title" content="Creative Projects | Justin Ray - Hybrid Producer" />
-        <meta property="og:description" content="Explore Justin Ray's creative web apps: VISION SYNTH (polyphonic synthesizer), ChordCompose (MIDI sketchpad), FractalAudio (audio effects), IMAGESIZER, and J-DAW (browser-based DAW)." />
-        <meta property="og:image" content="https://jray.me/favicon.png" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:url" content="https://jray.me/projects/" />
-        <meta name="twitter:title" content="Creative Projects | Justin Ray - Hybrid Producer" />
-        <meta name="twitter:description" content="Explore Justin Ray's creative web apps: VISION SYNTH (polyphonic synthesizer), ChordCompose (MIDI sketchpad), FractalAudio (audio effects), IMAGESIZER, and J-DAW (browser-based DAW)." />
-        <meta name="twitter:image" content="https://jray.me/favicon.png" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(projectsSchemaData) }}
-        />
-      </Head>
     <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up w-full overflow-hidden">
       {/* Tooltip Portal */}
       {tooltip.show && (
