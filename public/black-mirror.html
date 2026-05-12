@@ -10,14 +10,14 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jray.me/black-mirror.html">
 <meta property="og:title" content="Black Mirror — Sound Design &amp; Digital Twin Portal | JRAY.ME">
-<meta property="og:description" content="A sound design and MIDI export portal by Justin Tyler Ray. Explore your digital twin — the sonic dialogue between human intention and algorithmic response.">
+<meta property="og:description" content="A sound design and MIDI export portal by Justin Tyler Ray. Explore your digital twin — the sonic dialogue between human intention and algorithmic respons[...]
 <meta property="og:image" content="https://jray.me/favicon.png">
 <meta property="og:site_name" content="JRAY.ME">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@TheInnerVision">
 <meta name="twitter:url" content="https://jray.me/black-mirror.html">
 <meta name="twitter:title" content="Black Mirror — Sound Design &amp; Digital Twin Portal | JRAY.ME">
-<meta name="twitter:description" content="A sound design and MIDI export portal by Justin Tyler Ray. Explore your digital twin — the sonic dialogue between human intention and algorithmic response.">
+<meta name="twitter:description" content="A sound design and MIDI export portal by Justin Tyler Ray. Explore your digital twin — the sonic dialogue between human intention and algorithmic respon[...]
 <meta name="twitter:image" content="https://jray.me/favicon.png">
 <script type="application/ld+json">
 {
@@ -618,6 +618,7 @@ select:focus { border-color: var(--gold); }
 </style>
 </head>
 <body>
+<h1>Black Mirror — Sound Design & Digital Twin Portal</h1>
 <div class="app">
   <div class="header">
     <div>
@@ -763,7 +764,7 @@ let respGrid  = Array.from({length:ROWS},()=>Array(COLS).fill(false));
 let playing=false, beat=0, intervalId=null;
 let audioCtx=null, reverbNode=null, masterGain=null;
 
-// ── AUDIO ENGINE ────────────────────────────────────────────────────────────
+// ── AUDIO ENGINE ───────────────────────────────────────────────────────────
 function getCtx(){
   if(!audioCtx){
     audioCtx = new (window.AudioContext||window.webkitAudioContext)();
@@ -868,7 +869,7 @@ function playNote(freq, startTime, stepDur, isResp){
   oscs.forEach(o=>{ o.start(startTime); o.stop(noteEnd+release+0.06); });
 }
 
-// ── RESPONSE MATH ────────────────────────────────────────────────────────────
+// ── RESPONSE MATH ──────────────────────────────────────────────────────────
 // The key upgrade: tension drives "harmonic distance" in response pitch selection.
 // At low tension: response picks the closest consonant interval partner.
 // At high tension: response picks maximally dissonant / chromatic intervals,
@@ -979,7 +980,7 @@ function buildResponse(tension){
   return resp;
 }
 
-// ── ANALYSIS ─────────────────────────────────────────────────────────────────
+// ── ANALYSIS ───────────────────────────────────────────────────────────────
 function analyzeAndRespond(){
   const tension = parseInt(document.getElementById('tension').value)/100;
   const flat = userGrid.flat();
@@ -998,416 +999,5 @@ function analyzeAndRespond(){
 
   const density = activeCount/(ROWS*COLS);
   let pitchCounts=Array(ROWS).fill(0), colCounts=Array(COLS).fill(0);
-  for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++) if(userGrid[r][c]){pitchCounts[r]++;colCounts[c]++;}
-  const pitchDist = pitchCounts.map(x=>x/activeCount);
-  const entropy = -pitchDist.reduce((s,p)=>p>0?s+p*Math.log2(p+1e-9):s,0)/Math.log2(ROWS);
-  let wCol=0; for(let c=0;c<COLS;c++) wCol+=colCounts[c]*c;
-  const cog = wCol/activeCount;
-  const cogLabel = cog<5?'front-heavy':cog>11?'back-heavy':'balanced';
-  const activePitches = pitchCounts.map((c,i)=>c>0?i:-1).filter(x=>x>=0);
-  let intTension=0;
-  const scale = SCALES[document.getElementById('scale').value];
-  for(let i=0;i<activePitches.length-1;i++){
-    const interval = Math.abs(activePitches[i]-activePitches[i+1]) % 12;
-    intTension += DISSONANCE[interval];
-  }
-  const normTension = activePitches.length>1?intTension/(activePitches.length-1):0;
-  const tensionLabel = normTension<0.3?'consonant':normTension<0.6?'modal':'dissonant';
 
-  document.getElementById('m-density').textContent=Math.round(density*100)+'%';
-  document.getElementById('m-entropy').textContent=entropy.toFixed(2);
-  document.getElementById('m-cog').textContent=cogLabel;
-  document.getElementById('m-itension').textContent=tensionLabel;
-
-  respGrid = buildResponse(tension);
-
-  const tags=[];
-  const tenLabel = tension<0.2?'mirror inversion':tension<0.45?'φ-retrograde':tension<0.7?'harmonic displacement':'chromatic atonality';
-  const tenCls = tension<0.45?'blue':tension<0.7?'amber':'red';
-  tags.push({t:tenLabel,c:tenCls});
-  if(tensionLabel==='dissonant') tags.push({t:'high dissonance input',c:'red'});
-  if(entropy>0.65) tags.push({t:'high entropy',c:'amber'});
-  if(density<0.1) tags.push({t:'sparse phrase',c:'gold'});
-  if(tension>0.7) tags.push({t:'tritone injection active',c:'red'});
-  document.getElementById('resp-tags').innerHTML=tags.map(t=>`<span class="tag ${t.c}">${t.t}</span>`).join('');
-
-  const rootName=document.getElementById('root').value;
-  const scaleName=document.getElementById('scale').value;
-  const eerieDesc = tension>0.7?' — chromatic drift and tritone ghosts destabilise the tonal centre':'';
-  document.getElementById('resp-desc').textContent=
-    `Strategy: ${tenLabel}${eerieDesc}. Input in ${rootName} ${scaleName} — ${tensionLabel}, ${Math.round(entropy*100)}% pitch entropy, ${cogLabel}.`;
-}
-
-// ── UI RENDERING ─────────────────────────────────────────────────────────────
-function buildSeqUI(id, grid, onCls){
-  const el=document.getElementById(id);
-  el.innerHTML='';
-  for(let r=0;r<ROWS;r++){
-    const row=document.createElement('div');
-    row.className='seq-row';
-    for(let c=0;c<COLS;c++){
-      const s=document.createElement('div');
-      s.className='step'+(grid[r][c]?' '+onCls:'');
-      s.dataset.r=r; s.dataset.c=c;
-      if(id==='user-seq') s.addEventListener('click',()=>{ userGrid[r][c]=!userGrid[r][c]; analyzeAndRespond(); refresh(); });
-      row.appendChild(s);
-    }
-    el.appendChild(row);
-  }
-}
-
-function refresh(){
-  buildSeqUI('user-seq',userGrid,'u-on');
-  buildSeqUI('resp-seq',respGrid,'r-on');
-  drawViz('user-viz',userGrid,'#2979ff');
-  drawViz('resp-viz',respGrid,'#e53935');
-}
-
-function drawViz(id,grid,color){
-  const canvas=document.getElementById(id);
-  const ctx=canvas.getContext('2d');
-  canvas.width=canvas.offsetWidth||400;
-  canvas.height=44;
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  const cw=canvas.width/COLS, ch=44/ROWS;
-  for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++){
-    if(grid[r][c]){
-      ctx.fillStyle=color;
-      ctx.globalAlpha=0.75;
-      ctx.beginPath();
-      ctx.roundRect(c*cw+1,r*ch+1,cw-2,ch-2,2);
-      ctx.fill();
-    }
-  }
-  ctx.globalAlpha=1;
-}
-
-function highlightStep(col,gridId,cls){
-  const el=document.getElementById(gridId);
-  if(!el) return;
-  el.querySelectorAll('.step').forEach(s=>{
-    s.classList.remove('u-play','r-play');
-    if(parseInt(s.dataset.c)===col) s.classList.add(cls);
-  });
-}
-
-// ── PLAYBACK ─────────────────────────────────────────────────────────────────
-function startPlay(){
-  const ctx=getCtx();
-  if(ctx.state==='suspended') ctx.resume();
-  const bpm=parseInt(document.getElementById('bpm').value);
-  const stepSec=(60/bpm)/4;
-  const delayBars=parseInt(document.getElementById('resp-delay').value);
-  const delayCols=delayBars*16;
-  const rootName=document.getElementById('root').value;
-  const scaleName=document.getElementById('scale').value;
-  beat=0;
-  intervalId=setInterval(()=>{
-    const col=beat%COLS;
-    const rBeat=beat-delayCols;
-    const rCol=rBeat>=0?rBeat%COLS:-1;
-    highlightStep(col,'user-seq','u-play');
-    if(rCol>=0) highlightStep(rCol,'resp-seq','r-play');
-    const now=ctx.currentTime;
-    for(let r=0;r<ROWS;r++){
-      if(userGrid[r][col]) playNote(getFreq(r,rootName,scaleName),now,stepSec,false);
-      if(rCol>=0&&respGrid[r][rCol]) playNote(getFreq(r,rootName,scaleName),now+0.006,stepSec,true);
-    }
-    beat++;
-  },stepSec*1000);
-}
-
-function stopPlay(){
-  clearInterval(intervalId);
-  document.querySelectorAll('.step').forEach(s=>s.classList.remove('u-play','r-play'));
-}
-
-// ── PUSH BACK ─────────────────────────────────────────────────────────────────
-// The machine's response grid fires a one-time chaotic mutation back onto
-// the user grid. Each active resp cell targets a nearby user cell using
-// a combination of: Lorenz-inspired drift, bitwise XOR scramble, and
-// a radial gravity pull toward the response's centre of mass.
-function pushBack(){
-  const btn = document.getElementById('btn-pushback');
-  btn.classList.remove('fired');
-  void btn.offsetWidth; // reflow to restart animation
-  btn.classList.add('fired');
-
-  // Calculate response centre of mass (row & col weighted average)
-  let totalR=0, totalC=0, respCount=0;
-  for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++){
-    if(respGrid[r][c]){ totalR+=r; totalC+=c; respCount++; }
-  }
-  if(respCount===0) return;
-  const cogR = totalR/respCount;
-  const cogC = totalC/respCount;
-
-  // Save original user grid for XOR comparison
-  const original = userGrid.map(row=>[...row]);
-  const newGrid = userGrid.map(row=>[...row]);
-
-  // Collect all active resp cells and apply chaos transforms
-  const phi = 1.618033988749895;
-  const mutations = [];
-
-  for(let r=0;r<ROWS;r++){
-    for(let c=0;c<COLS;c++){
-      if(!respGrid[r][c]) continue;
-
-      // 1. Lorenz-inspired: drift direction based on position relative to CoM
-      const driftR = (r - cogR) * 0.4 + Math.sin(c * 1.618) * 1.5;
-      const driftC = (c - cogC) * 0.4 + Math.cos(r * 2.399) * 2.5;
-
-      // 2. Golden-ratio phase twist
-      const phiTwistR = Math.floor(((r * phi) % 1) * ROWS);
-      const phiTwistC = Math.floor(((c * phi) % 1) * COLS);
-
-      // 3. Bitwise XOR scramble on packed coords
-      const packed = (r << 4) | c;
-      const xorSeed = (packed ^ 0b10110011) & 0xFF;
-      const xorR = (xorSeed >> 4) % ROWS;
-      const xorC = xorSeed & 0x0F;
-
-      // 4. Blend all three by tension value
-      const t = parseInt(document.getElementById('tension').value)/100;
-      const targetR = Math.round(
-        r*(1-t)*0.3 +
-        (r + driftR)*t*0.35 +
-        phiTwistR*0.2 +
-        xorR*t*0.15
-      );
-      const targetC = Math.round(
-        c*(1-t)*0.3 +
-        (c + driftC)*t*0.35 +
-        phiTwistC*0.2 +
-        xorC*t*0.15
-      );
-
-      const clampR = Math.max(0, Math.min(ROWS-1, Math.round(targetR)));
-      const clampC = Math.max(0, Math.min(COLS-1, Math.round(targetC)));
-
-      // Toggle — if user had it on, chaos can flip it off and vice versa
-      newGrid[clampR][clampC] = !original[clampR][clampC];
-      mutations.push({r: clampR, c: clampC});
-
-      // High tension: secondary scatter echo
-      if(t > 0.55){
-        const echoR = Math.max(0,Math.min(ROWS-1, ROWS-1-clampR));
-        const echoC = Math.max(0,Math.min(COLS-1, (clampC + Math.floor(t*7)+1) % COLS));
-        newGrid[echoR][echoC] = true;
-        mutations.push({r: echoR, c: echoC});
-      }
-    }
-  }
-
-  // Apply and rebuild UI
-  for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++) userGrid[r][c]=newGrid[r][c];
-
-  // Rebuild user grid UI then flash mutated cells with staggered animation
-  buildSeqUI('user-seq', userGrid, 'u-on');
-  drawViz('user-viz', userGrid, '#2979ff');
-
-  // Flash the mutated steps
-  const userEl = document.getElementById('user-seq');
-  mutations.forEach((m, i)=>{
-    setTimeout(()=>{
-      const steps = userEl.querySelectorAll('.step');
-      steps.forEach(s=>{
-        if(parseInt(s.dataset.r)===m.r && parseInt(s.dataset.c)===m.c){
-          s.classList.add('chaos-flash');
-          setTimeout(()=>s.classList.remove('chaos-flash'), 450);
-        }
-      });
-    }, i * 18);
-  });
-
-  // Re-run analysis on the mutated phrase after animation settles
-  setTimeout(()=>{ analyzeAndRespond(); refresh(); }, mutations.length*18 + 500);
-}
-
-// ── MIDI EXPORT ───────────────────────────────────────────────────────────────
-function gridToMidi(grid, rootName, scaleName, bpm){
-  // Build a minimal Type-0 MIDI file from scratch
-  const scale = SCALES[scaleName];
-  const rootIdx = ROOTS.indexOf(rootName);
-  const ticksPerBeat = 96;
-  const microsPerBeat = Math.round(60000000/bpm);
-  const stepTicks = ticksPerBeat/4; // 16th note
-
-  // Collect note events: {tick, type:'on'|'off', pitch, vel}
-  const events = [];
-  for(let c=0;c<COLS;c++){
-    for(let r=0;r<ROWS;r++){
-      if(!grid[r][c]) continue;
-      const noteIndex = ROWS-1-r;
-      const octave = 3 + Math.floor(noteIndex/scale.length);
-      const degree = noteIndex % scale.length;
-      const semitones = rootIdx + scale[degree] + octave*12;
-      const midiNote = semitones + 12; // shift to MIDI range
-      const clampedNote = Math.max(0,Math.min(127,midiNote));
-      const onTick = c*stepTicks;
-      const offTick = onTick + stepTicks - 2;
-      events.push({tick:onTick, type:'on', note:clampedNote, vel:90});
-      events.push({tick:offTick, type:'off', note:clampedNote, vel:0});
-    }
-  }
-  events.sort((a,b)=>a.tick-b.tick || (a.type==='off'?-1:1));
-
-  // Variable length quantity encoder
-  function vlq(val){
-    const bytes=[];
-    bytes.unshift(val&0x7f);
-    val>>=7;
-    while(val>0){ bytes.unshift((val&0x7f)|0x80); val>>=7; }
-    return bytes;
-  }
-
-  // Build track data
-  const trackData=[];
-  // Tempo meta event (delta=0)
-  trackData.push(...[0x00,0xff,0x51,0x03,(microsPerBeat>>16)&0xff,(microsPerBeat>>8)&0xff,microsPerBeat&0xff]);
-  // Time signature 4/4 (delta=0)
-  trackData.push(...[0x00,0xff,0x58,0x04,0x04,0x02,0x18,0x08]);
-
-  let lastTick=0;
-  for(const ev of events){
-    const delta=ev.tick-lastTick;
-    lastTick=ev.tick;
-    trackData.push(...vlq(delta));
-    if(ev.type==='on') trackData.push(0x90,ev.note,ev.vel);
-    else trackData.push(0x80,ev.note,ev.vel);
-  }
-  // End of track
-  trackData.push(0x00,0xff,0x2f,0x00);
-
-  // Build full MIDI file
-  function int32(n){ return [(n>>24)&0xff,(n>>16)&0xff,(n>>8)&0xff,n&0xff]; }
-  function int16(n){ return [(n>>8)&0xff,n&0xff]; }
-
-  const header=[0x4d,0x54,0x68,0x64,...int32(6),...int16(0),...int16(1),...int16(ticksPerBeat)];
-  const track=[0x4d,0x54,0x72,0x6b,...int32(trackData.length),...trackData];
-  const midiBytes=new Uint8Array([...header,...track]);
-
-  const blob=new Blob([midiBytes],{type:'audio/midi'});
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement('a');
-  a.href=url;
-  a.download=`black-mirror-${Date.now()}.mid`;
-  a.click();
-  URL.revokeObjectURL(url);
-}
-
-// ── MIDI IMPORT (drag & drop) ─────────────────────────────────────────────────
-function parseMidiDrop(file, targetGrid, isUser){
-  const reader=new FileReader();
-  reader.onload=e=>{
-    try{
-      const buf=new Uint8Array(e.target.result);
-      // Find track chunk, parse note-on events, map to grid
-      let pos=14; // skip header
-      if(pos+8>buf.length) return;
-      // skip 'MTrk' + length
-      pos+=8;
-      const grid=Array.from({length:ROWS},()=>Array(COLS).fill(false));
-      const noteOnTimes={};
-      let tick=0;
-      while(pos<buf.length){
-        // read delta
-        let delta=0, b;
-        do{ b=buf[pos++]; delta=(delta<<7)|(b&0x7f); } while(b&0x80);
-        tick+=delta;
-        const status=buf[pos++];
-        if(status===0xff){ const t=buf[pos++]; const l=buf[pos++]; pos+=l; continue; }
-        const chan=status&0x0f;
-        const type=status>>4;
-        if(type===0x9 || type===0x8){
-          const note=buf[pos++], vel=buf[pos++];
-          if(type===0x9&&vel>0){
-            noteOnTimes[note]={tick};
-            // Map to grid: col from tick, row from pitch
-            const col=Math.floor(tick/6)%COLS;
-            const row=ROWS-1-((note-36)%(ROWS));
-            if(row>=0&&row<ROWS) grid[Math.max(0,row)][col]=true;
-          }
-        } else if(type===0xa){ pos+=2; }
-        else if(type===0xb){ pos+=2; }
-        else if(type===0xc){ pos+=1; }
-        else if(type===0xd){ pos+=1; }
-        else if(type===0xe){ pos+=2; }
-      }
-      if(isUser){
-        for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++) userGrid[r][c]=grid[r][c];
-        analyzeAndRespond();
-      } else {
-        for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++) respGrid[r][c]=grid[r][c];
-      }
-      refresh();
-    }catch(err){ console.error('MIDI parse error',err); }
-  };
-  reader.readAsArrayBuffer(file);
-}
-
-// ── EVENT WIRING ──────────────────────────────────────────────────────────────
-document.getElementById('btn-play').addEventListener('click',()=>{
-  playing=!playing;
-  const btn=document.getElementById('btn-play');
-  if(playing){ btn.textContent='Silence'; btn.classList.add('on'); startPlay(); }
-  else { btn.textContent='Invoke'; btn.classList.remove('on'); stopPlay(); }
-});
-
-document.getElementById('btn-clear').addEventListener('click',()=>{
-  userGrid=Array.from({length:ROWS},()=>Array(COLS).fill(false));
-  respGrid=Array.from({length:ROWS},()=>Array(COLS).fill(false));
-  refresh();
-  document.getElementById('resp-tags').innerHTML='';
-  document.getElementById('resp-desc').textContent='Draw a pattern above. The twin is waiting.';
-  document.getElementById('m-density').textContent='0%';
-  document.getElementById('m-entropy').textContent='0.00';
-  document.getElementById('m-cog').textContent='—';
-  document.getElementById('m-itension').textContent='—';
-});
-
-document.getElementById('btn-rand').addEventListener('click',()=>{
-  userGrid=Array.from({length:ROWS},()=>Array.from({length:COLS},()=>Math.random()<0.2));
-  analyzeAndRespond(); refresh();
-});
-
-document.getElementById('bpm').addEventListener('input',function(){ document.getElementById('bpm-val').textContent=this.value; });
-document.getElementById('tension').addEventListener('input',function(){
-  document.getElementById('tension-val').textContent=this.value;
-  analyzeAndRespond(); refresh();
-});
-document.getElementById('verb').addEventListener('input',function(){ document.getElementById('verb-val').textContent=this.value; });
-document.getElementById('root').addEventListener('change',()=>{ analyzeAndRespond(); refresh(); });
-document.getElementById('scale').addEventListener('change',()=>{ analyzeAndRespond(); refresh(); });
-document.getElementById('voice').addEventListener('change',()=>{ analyzeAndRespond(); refresh(); });
-
-document.getElementById('export-user').addEventListener('click',()=>{
-  getCtx();
-  gridToMidi(userGrid,document.getElementById('root').value,document.getElementById('scale').value,parseInt(document.getElementById('bpm').value));
-});
-document.getElementById('export-resp').addEventListener('click',()=>{
-  getCtx();
-  gridToMidi(respGrid,document.getElementById('root').value,document.getElementById('scale').value,parseInt(document.getElementById('bpm').value));
-});
-document.getElementById('btn-pushback').addEventListener('click', pushBack);
-
-// Drag & drop on user panel
-const dropUser=document.getElementById('drop-user');
-['dragover','dragleave','drop'].forEach(ev=>{
-  dropUser.addEventListener(ev,e=>{
-    e.preventDefault();
-    if(ev==='dragover') dropUser.classList.add('dragover');
-    else if(ev==='dragleave') dropUser.classList.remove('dragover');
-    else{
-      dropUser.classList.remove('dragover');
-      const file=e.dataTransfer.files[0];
-      if(file) parseMidiDrop(file,userGrid,true);
-    }
-  });
-});
-
-refresh();
-</script>
-</body>
-</html>
+[...]
