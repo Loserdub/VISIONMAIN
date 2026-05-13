@@ -5,7 +5,7 @@ const Biography: React.FC = () => {
   return (
     <>
     <Head>
-      <title>Justin Ray | Bio</title>
+      <title>Justin Ray | Bio & About Me</title>
     </Head>
     <section className="py-24 px-4 sm:px-8 relative z-10 overflow-hidden animate-fade-in-up">
       <div className="container mx-auto max-w-6xl">
