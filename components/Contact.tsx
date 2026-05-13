@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Head } from 'vite-react-ssg';
 import { Mail, Instagram, Send, Link as LinkIcon } from 'lucide-react';
 
 const Contact: React.FC = () => {
@@ -37,6 +38,9 @@ const Contact: React.FC = () => {
 
   return (
     <>
+    <Head>
+      <title>Justin Ray | Contact</title>
+    </Head>
     <footer className="py-20 px-4 border-t border-white/10 bg-black relative z-10 animate-fade-in-up">
       {/* Tooltip Portal */}
       {tooltip.show && (

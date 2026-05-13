@@ -1,4 +1,5 @@
 import React from 'react';
+import { Head } from 'vite-react-ssg';
 import { Sliders, Headphones, Lightbulb, ArrowRight } from 'lucide-react';
 
 interface ServicesProps {
@@ -29,6 +30,9 @@ const Services: React.FC<ServicesProps> = ({ onContactClick }) => {
 
   return (
     <>
+    <Head>
+      <title>Justin Ray | Services</title>
+    </Head>
     <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up max-w-7xl mx-auto">
       <div className="mb-20 text-center space-y-4">
         <h1 className="text-4xl sm:text-5xl font-display font-bold text-white uppercase tracking-tighter">

@@ -30,6 +30,7 @@ const Home: React.FC = () => {
     <>
       <section className="relative flex flex-col items-center px-4 py-32 sm:pt-40">
         <Head>
+          <title>Justin Ray | Hybrid Production</title>
           <link rel="canonical" href={homeUrl} />
           <meta property="og:type" content="website" />
           <meta property="og:url" content={homeUrl} />
