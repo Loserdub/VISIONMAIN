@@ -1,8 +1,11 @@
 import React from 'react';
 import { Head } from 'vite-react-ssg';
 import doodleImg from '../assets/images/doodle.jpg';
+import { buildPageUrl } from '../seo';
 
 const Home: React.FC = () => {
+  const homeUrl = buildPageUrl('/');
+
   const scrollToHybrid = () => {
     const element = document.getElementById('hybrid');
     if (element) {
@@ -27,14 +30,14 @@ const Home: React.FC = () => {
     <>
       <section className="relative flex flex-col items-center px-4 py-32 sm:pt-40">
         <Head>
-          <link rel="canonical" href="https://jray.me/" />
+          <link rel="canonical" href={homeUrl} />
           <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://jray.me/" />
+          <meta property="og:url" content={homeUrl} />
           <meta property="og:title" content="Justin Ray | Creative Technologist & Hybrid Artist" />
           <meta property="og:description" content="Justin Ray is a Hybrid Producer and Creative Technologist blending Generative AI with traditional engineering to build innovative audio and visual tools." />
           <meta property="og:image" content="https://jray.me/favicon.png" />
           <meta name="twitter:card" content="summary" />
-          <meta name="twitter:url" content="https://jray.me/" />
+          <meta name="twitter:url" content={homeUrl} />
           <meta name="twitter:title" content="Justin Ray | Creative Technologist & Hybrid Artist" />
           <meta name="twitter:description" content="Justin Ray is a Hybrid Producer and Creative Technologist blending Generative AI with traditional engineering to build innovative audio and visual tools." />
           <meta name="twitter:image" content="https://jray.me/favicon.png" />

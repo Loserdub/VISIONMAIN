@@ -4,6 +4,7 @@ import { Head } from 'vite-react-ssg';
 import OilBackground from './components/OilBackground';
 import { Menu, X, Disc } from 'lucide-react';
 import Footer from './components/Footer';
+import { buildPageUrl } from './seo';
 
 // This fixes a React Router bug where changing pages doesn't scroll to the top
 const ScrollToTop = () => {
@@ -102,7 +103,7 @@ const Navigation = () => {
 
 const App: React.FC = () => {
   const location = useLocation();
-  const canonicalUrl = `https://jray.me${location.pathname === '/' ? '' : location.pathname.replace(/\/$/, '')}`;
+  const canonicalUrl = buildPageUrl(location.pathname);
 
   return (
     <div className="relative min-h-screen font-sans selection:bg-white selection:text-black flex flex-col text-white">
