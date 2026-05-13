@@ -39,7 +39,7 @@ const Contact: React.FC = () => {
   return (
     <>
     <Head>
-      <title>Justin Ray | Contact</title>
+      <title>Justin Ray | How to Reach Me</title>
     </Head>
     <footer className="py-20 px-4 border-t border-white/10 bg-black relative z-10 animate-fade-in-up">
       {/* Tooltip Portal */}
