@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Head } from 'vite-react-ssg';
 
 const projectsSchemaData = {
   "@context": "https://schema.org",
@@ -112,6 +113,9 @@ const ProjectsList: React.FC = () => {
 
   return (
     <>
+    <Head>
+      <title>Justin Ray | Projects</title>
+    </Head>
     <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up w-full overflow-hidden">
       {/* Tooltip Portal */}
       {tooltip.show && (

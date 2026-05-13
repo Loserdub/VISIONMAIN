@@ -1,4 +1,5 @@
 import React from 'react';
+import { Head } from 'vite-react-ssg';
 import { Project } from '../types';
 import { ExternalLink } from 'lucide-react';
 
@@ -93,6 +94,9 @@ const MusicList: React.FC = () => {
 
   return (
     <>
+      <Head>
+        <title>Justin Ray | Music</title>
+      </Head>
       <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up w-full">
         <div className="container mx-auto max-w-6xl">
            {/* Header */}

@@ -9,7 +9,7 @@ const WhatIsHybrid: React.FC = () => {
   return (
     <>
       <Head>
-        <title>What Is Hybrid | Justin Ray</title>
+        <title>Justin Ray | What Is Hybrid</title>
         <meta name="robots" content="index, follow" />
         <meta
           name="description"

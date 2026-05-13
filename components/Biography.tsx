@@ -1,8 +1,12 @@
 import React from 'react';
+import { Head } from 'vite-react-ssg';
 
 const Biography: React.FC = () => {
   return (
     <>
+    <Head>
+      <title>Justin Ray | Bio</title>
+    </Head>
     <section className="py-24 px-4 sm:px-8 relative z-10 overflow-hidden animate-fade-in-up">
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
