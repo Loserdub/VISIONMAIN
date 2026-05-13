@@ -1,7 +1,6 @@
-export const getSiteOrigin = () =>
-  typeof window !== 'undefined' ? window.location.origin : '';
+const BASE = 'https://jray.me';
 
-export const buildPageUrl = (pathname: string) => {
-  const normalizedPath = pathname === '/' ? '/' : pathname.replace(/\/$/, '');
-  return `${getSiteOrigin()}${normalizedPath}`;
+export const buildPageUrl = (pathname: string): string => {
+  const clean = pathname === '/' ? '' : pathname.replace(/\/$/, '');
+  return `${BASE}${clean}`;
 };
