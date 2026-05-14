@@ -108,6 +108,7 @@ const MusicList: React.FC = () => {
         <meta name="twitter:title" content="Music | Justin Ray — Hybrid Producer" />
         <meta name="twitter:description" content="Explore Justin Ray's music projects: loserdub, VISION, le vide, flawed future, and disarray. Hybrid production blending AI with human creativity." />
         <meta name="twitter:image" content="https://jray.me/favicon.png" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
       </Head>
       <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up w-full">
         <div className="container mx-auto max-w-6xl">

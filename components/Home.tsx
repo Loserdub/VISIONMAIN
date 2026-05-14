@@ -6,6 +6,27 @@ import { buildPageUrl } from '../seo';
 const Home: React.FC = () => {
   const homeUrl = buildPageUrl('/');
 
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Justin Tyler Ray",
+    "alternateName": ["jray", "Loserdub", "VISION"],
+    "url": "https://jray.me/",
+    "image": "https://jray.me/favicon.png",
+    "jobTitle": "Hybrid Music Producer & Creative Technologist",
+    "sameAs": [
+      "https://github.com/loserdub",
+      "https://reddit.com/r/hybridproduction"
+    ],
+    "knowsAbout": [
+      "Hybrid Music Production",
+      "Generative AI Audio",
+      "Audio Engineering",
+      "Software Engineering",
+      "Creative Coding"
+    ]
+  };
+
   const scrollToHybrid = () => {
     const element = document.getElementById('hybrid');
     if (element) {
@@ -42,6 +63,7 @@ const Home: React.FC = () => {
           <meta name="twitter:title" content="Justin Ray | Creative Technologist & Hybrid Artist" />
           <meta name="twitter:description" content="Justin Ray is a Hybrid Producer and Creative Technologist blending Generative AI with traditional engineering to build innovative audio and visual tools." />
           <meta name="twitter:image" content="https://jray.me/favicon.png" />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
         </Head>
         {/* SEO: Hidden H1 for crawlers as the visual title is canvas-based */}
         <h1 className="sr-only">Hybrid Production | Justin Ray</h1>

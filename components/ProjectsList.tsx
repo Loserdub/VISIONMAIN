@@ -127,6 +127,7 @@ const ProjectsList: React.FC = () => {
       <meta name="twitter:title" content="Projects | Justin Ray — Browser Audio Tools & Creative Apps" />
       <meta name="twitter:description" content="Explore browser-based audio tools and creative apps by Justin Ray: VISION SYNTH, ChordCompose, J-DAW, FractalAudio, Black Mirror, and more. Built for the hybrid producer." />
       <meta name="twitter:image" content="https://jray.me/favicon.png" />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(projectsSchemaData) }} />
     </Head>
     <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up w-full overflow-hidden">
       {/* Tooltip Portal */}
