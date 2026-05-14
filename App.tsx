@@ -108,7 +108,7 @@ const App: React.FC = () => {
   return (
     <div className="relative min-h-screen font-sans selection:bg-white selection:text-black flex flex-col text-white">
       <Head>
-        <meta name="description" content="Justin Ray is a Hybrid Producer and Creative Technologist blending Generative AI with traditional engineering to build innovative audio and visual tools." />
+        {/* Per-page SEO is handled in each route component */}
         <link rel="canonical" href={canonicalUrl} />
       </Head>
       <ScrollToTop />

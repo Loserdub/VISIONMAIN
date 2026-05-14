@@ -31,7 +31,19 @@ const Services: React.FC<ServicesProps> = ({ onContactClick }) => {
   return (
     <>
     <Head>
-      <title>Justin Ray | Services</title>
+      <title>Services | Justin Ray — Hybrid Mixing, Audio Review & Creative Consultation</title>
+      <meta name="description" content="Professional hybrid mixing, audio review, and creative consultation by Justin Ray. Elevate your AI-assisted or human productions with industry-standard engineering." />
+      <link rel="canonical" href="https://jray.me/services/" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://jray.me/services/" />
+      <meta property="og:title" content="Services | Justin Ray — Hybrid Mixing & Audio Review" />
+      <meta property="og:description" content="Professional hybrid mixing, audio review, and creative consultation by Justin Ray. Elevate your AI-assisted or human productions with industry-standard engineering." />
+      <meta property="og:image" content="https://jray.me/favicon.png" />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:url" content="https://jray.me/services/" />
+      <meta name="twitter:title" content="Services | Justin Ray — Hybrid Mixing & Audio Review" />
+      <meta name="twitter:description" content="Professional hybrid mixing, audio review, and creative consultation by Justin Ray. Elevate your AI-assisted or human productions with industry-standard engineering." />
+      <meta name="twitter:image" content="https://jray.me/favicon.png" />
     </Head>
     <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up max-w-7xl mx-auto">
       <div className="mb-20 text-center space-y-4">

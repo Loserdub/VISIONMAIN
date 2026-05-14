@@ -95,7 +95,19 @@ const MusicList: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Justin Ray | Music</title>
+        <title>Music | Justin Ray — Hybrid Producer</title>
+        <meta name="description" content="Explore Justin Ray's music projects: loserdub, VISION, le vide, flawed future, and disarray. Hybrid production blending AI with human creativity." />
+        <link rel="canonical" href="https://jray.me/music/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://jray.me/music/" />
+        <meta property="og:title" content="Music | Justin Ray — Hybrid Producer" />
+        <meta property="og:description" content="Explore Justin Ray's music projects: loserdub, VISION, le vide, flawed future, and disarray. Hybrid production blending AI with human creativity." />
+        <meta property="og:image" content="https://jray.me/favicon.png" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:url" content="https://jray.me/music/" />
+        <meta name="twitter:title" content="Music | Justin Ray — Hybrid Producer" />
+        <meta name="twitter:description" content="Explore Justin Ray's music projects: loserdub, VISION, le vide, flawed future, and disarray. Hybrid production blending AI with human creativity." />
+        <meta name="twitter:image" content="https://jray.me/favicon.png" />
       </Head>
       <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up w-full">
         <div className="container mx-auto max-w-6xl">

@@ -114,7 +114,19 @@ const ProjectsList: React.FC = () => {
   return (
     <>
     <Head>
-      <title>Justin Ray | Projects</title>
+      <title>Projects | Justin Ray — Browser Audio Tools & Creative Apps</title>
+      <meta name="description" content="Explore browser-based audio tools and creative apps by Justin Ray: VISION SYNTH, ChordCompose, J-DAW, FractalAudio, Black Mirror, and more. Built for the hybrid producer." />
+      <link rel="canonical" href="https://jray.me/projects/" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://jray.me/projects/" />
+      <meta property="og:title" content="Projects | Justin Ray — Browser Audio Tools & Creative Apps" />
+      <meta property="og:description" content="Explore browser-based audio tools and creative apps by Justin Ray: VISION SYNTH, ChordCompose, J-DAW, FractalAudio, Black Mirror, and more. Built for the hybrid producer." />
+      <meta property="og:image" content="https://jray.me/favicon.png" />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:url" content="https://jray.me/projects/" />
+      <meta name="twitter:title" content="Projects | Justin Ray — Browser Audio Tools & Creative Apps" />
+      <meta name="twitter:description" content="Explore browser-based audio tools and creative apps by Justin Ray: VISION SYNTH, ChordCompose, J-DAW, FractalAudio, Black Mirror, and more. Built for the hybrid producer." />
+      <meta name="twitter:image" content="https://jray.me/favicon.png" />
     </Head>
     <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up w-full overflow-hidden">
       {/* Tooltip Portal */}

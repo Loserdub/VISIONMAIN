@@ -39,7 +39,19 @@ const Contact: React.FC = () => {
   return (
     <>
     <Head>
-      <title>Justin Ray | How to Reach Me</title>
+      <title>Contact | Justin Ray — Collaboration, Booking & Creative Inquiries</title>
+      <meta name="description" content="Get in touch with Justin Ray for music collaboration, hybrid mixing services, booking, or creative tech inquiries. Send a transmission." />
+      <link rel="canonical" href="https://jray.me/contact/" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://jray.me/contact/" />
+      <meta property="og:title" content="Contact | Justin Ray — Collaboration & Booking" />
+      <meta property="og:description" content="Get in touch with Justin Ray for music collaboration, hybrid mixing services, booking, or creative tech inquiries. Send a transmission." />
+      <meta property="og:image" content="https://jray.me/favicon.png" />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:url" content="https://jray.me/contact/" />
+      <meta name="twitter:title" content="Contact | Justin Ray — Collaboration & Booking" />
+      <meta name="twitter:description" content="Get in touch with Justin Ray for music collaboration, hybrid mixing services, booking, or creative tech inquiries. Send a transmission." />
+      <meta name="twitter:image" content="https://jray.me/favicon.png" />
     </Head>
     <footer className="py-20 px-4 border-t border-white/10 bg-black relative z-10 animate-fade-in-up">
       {/* Tooltip Portal */}

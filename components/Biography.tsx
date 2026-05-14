@@ -5,7 +5,19 @@ const Biography: React.FC = () => {
   return (
     <>
     <Head>
-      <title>Justin Ray | Bio & About Me</title>
+      <title>Bio | Justin Ray — Hybrid Music Producer & Creative Developer</title>
+      <meta name="description" content="Meet Justin Tyler Ray: hybrid music producer, creative developer, and founder of r/HybridProduction. From human songwriting to AI audio engineering in East Lansing, MI." />
+      <link rel="canonical" href="https://jray.me/bio/" />
+      <meta property="og:type" content="profile" />
+      <meta property="og:url" content="https://jray.me/bio/" />
+      <meta property="og:title" content="Bio | Justin Ray — Hybrid Music Producer" />
+      <meta property="og:description" content="Meet Justin Tyler Ray: hybrid music producer, creative developer, and founder of r/HybridProduction. From human songwriting to AI audio engineering in East Lansing, MI." />
+      <meta property="og:image" content="https://jray.me/favicon.png" />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:url" content="https://jray.me/bio/" />
+      <meta name="twitter:title" content="Bio | Justin Ray — Hybrid Music Producer" />
+      <meta name="twitter:description" content="Meet Justin Tyler Ray: hybrid music producer, creative developer, and founder of r/HybridProduction. From human songwriting to AI audio engineering in East Lansing, MI." />
+      <meta name="twitter:image" content="https://jray.me/favicon.png" />
     </Head>
     <section className="py-24 px-4 sm:px-8 relative z-10 overflow-hidden animate-fade-in-up">
       <div className="container mx-auto max-w-6xl">
