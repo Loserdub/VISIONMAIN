@@ -69,6 +69,25 @@ const Home: React.FC = () => {
         <h1 className="sr-only">Hybrid Production | Justin Ray</h1>
 
       <div className="text-center z-10 space-y-4 max-w-5xl animate-fade-in-up flex flex-col items-center">
+        {/* Feature Button: Music Industry Forecast */}
+        <div className="mb-6 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+          <a 
+            href="/musicindustryforecast.html" 
+            className="group relative inline-flex items-center justify-center px-8 py-3 overflow-visible rounded-sm bg-zinc-900/60 backdrop-blur-sm border border-white/20 hover:border-white/80 transition-all duration-500 shadow-[0_0_20px_rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+          >
+            {/* Corner Badge */}
+            <div className="absolute -top-2 -right-2 z-20 bg-white text-black text-[9px] font-bold tracking-widest uppercase px-2 py-0.5 shadow-[0_0_10px_rgba(255,255,255,0.3)]">
+              NEW!
+            </div>
+            
+            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out overflow-hidden rounded-sm"></div>
+            <span className="relative z-10 flex flex-col items-center text-center">
+              <span className="text-sm sm:text-base font-bold tracking-[0.15em] text-white uppercase">The Liquidity of Sound</span>
+              <span className="text-[9px] sm:text-[10px] font-light tracking-[0.2em] text-white/60 mt-1 uppercase">2026-2031 Music Industry Forecast</span>
+            </span>
+          </a>
+        </div>
+
         {/* Title */}
         <div className="flex flex-col items-center leading-none">
           <div 
@@ -100,27 +119,12 @@ const Home: React.FC = () => {
         <p className="text-lg sm:text-2xl font-light text-white/60 tracking-[0.2em] uppercase max-w-3xl mx-auto mt-4">
           Creative Technologist & Hybrid Artist
         </p>
-
-        {/* Feature Button: Music Industry Forecast */}
-        <div className="mt-10 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          <a 
-            href="/musicindustryforecast.html" 
-            className="group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden rounded-sm bg-zinc-900/60 backdrop-blur-sm border border-white/20 hover:border-white/80 transition-all duration-500 shadow-[0_0_20px_rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
-          >
-            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
-            <span className="relative z-10 flex flex-col items-center text-center">
-              <span className="text-xs font-mono tracking-[0.2em] text-slate-400 mb-1.5 uppercase">New Intelligence Report</span>
-              <span className="text-sm sm:text-base font-bold tracking-[0.15em] text-white uppercase">The Liquidity of Sound</span>
-              <span className="text-[10px] sm:text-xs font-light tracking-[0.2em] text-white/60 mt-1.5 uppercase">2026-2031 Music Industry Forecast</span>
-            </span>
-          </a>
-        </div>
       </div>
 
       {/* Philosophy / Manifesto Section */}
       <section className="w-full max-w-4xl mx-auto z-20 animate-fade-in-up mt-24 px-4 text-center">
         <h2 className="text-sm font-bold tracking-[0.3em] text-slate-400 mb-6 uppercase">The Philosophy</h2>
-        <p className="text-2xl sm:text-4xl md:text-5xl font-light leading-tight text-white/90 font-sans">
+        <p className="text-xl sm:text-3xl md:text-4xl font-light leading-tight text-white/90 font-sans">
           "While others argue over black or white - pure human or pure AI - all or nothing - the future exists in the <span className="text-transparent bg-clip-text bg-gradient-to-tr from-gray-500 via-gray-100 to-gray-500 font-bold">grey</span>. Hybrid production is the search for the soul inside the algorithm."
         </p>
         <p className="text-lg sm:text-xl font-light text-white/60 mt-8 max-w-3xl mx-auto">
