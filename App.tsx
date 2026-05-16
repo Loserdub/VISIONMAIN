@@ -1,4 +1,4 @@
-import React, { useState, Suspense, useEffect } from 'react';
+import React, { Suspense } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Head } from 'vite-react-ssg';
 import OilBackground from './components/OilBackground';
@@ -6,29 +6,8 @@ import { Menu, X, Disc } from 'lucide-react';
 import Footer from './components/Footer';
 import { buildPageUrl } from './seo';
 
-// This fixes a React Router bug where changing pages doesn't scroll to the top
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  return null;
-};
-
-// Global redirect to enforce non-slash URLs
-const EnforceNoTrailingSlash = () => {
-  const location = useLocation();
-  useEffect(() => {
-    if (location.pathname.endsWith('/') && location.pathname !== '/') {
-      const newPath = location.pathname.slice(0, -1) + location.search + location.hash;
-      window.history.replaceState(null, '', newPath);
-    }
-  }, [location]);
-  return null;
-};
 
 const Navigation = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
   const navItems = [
@@ -45,7 +24,7 @@ const Navigation = () => {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md py-4 border-b border-white/5">
         <div className="container mx-auto px-6 flex justify-between items-center">
-          <a href="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
+          <a href="/" className="flex items-center gap-2">
             <Disc className="animate-spin-slow text-white" size={24} />
             <span className="text-lg font-bold tracking-widest uppercase text-white">JRAY.ME</span>
           </a>
@@ -70,33 +49,34 @@ const Navigation = () => {
           </nav>
 
           {/* Mobile Menu Toggle */}
-          <button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}>
-            {isMenuOpen ? <X /> : <Menu />}
-          </button>
+          <input type="checkbox" id="mobile-menu-toggle" className="peer hidden" />
+          <label htmlFor="mobile-menu-toggle" className="md:hidden text-white cursor-pointer peer-checked:hidden block" aria-label="Open menu">
+            <Menu />
+          </label>
+          <label htmlFor="mobile-menu-toggle" className="md:hidden text-white cursor-pointer peer-checked:block hidden" aria-label="Close menu">
+            <X />
+          </label>
+
+          {/* Mobile Nav Overlay */}
+          <div className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl items-center justify-center animate-fade-in hidden peer-checked:flex">
+             <nav className="flex flex-col gap-8 text-center text-2xl font-light tracking-widest uppercase" aria-label="Mobile navigation">
+              {navItems.map((item, index) => {
+                const isActive = location.pathname === item.path;
+                return (
+                  <a 
+                    key={item.path}
+                    href={item.path}
+                    className={`opacity-0 animate-fade-in-up hover:text-slate-300 transition-colors ${isActive ? 'text-white font-bold' : 'text-white/60'}`}
+                    style={{ animationDelay: `${index * 150 + 100}ms` }}
+                  >
+                    {item.label}
+                  </a>
+                );
+              })}
+             </nav>
+          </div>
         </div>
       </header>
-
-      {/* Mobile Nav Overlay */}
-      {isMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl flex items-center justify-center animate-fade-in">
-           <nav className="flex flex-col gap-8 text-center text-2xl font-light tracking-widest uppercase" aria-label="Mobile navigation">
-            {navItems.map((item, index) => {
-              const isActive = location.pathname === item.path;
-              return (
-                <a 
-                  key={item.path}
-                  href={item.path}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`opacity-0 animate-fade-in-up hover:text-slate-300 transition-colors ${isActive ? 'text-white font-bold' : 'text-white/60'}`}
-                  style={{ animationDelay: `${index * 150 + 100}ms` }}
-                >
-                  {item.label}
-                </a>
-              );
-            })}
-           </nav>
-        </div>
-      )}
     </>
   );
 };
@@ -111,8 +91,6 @@ const App: React.FC = () => {
         {/* Per-page SEO is handled in each route component */}
         <link rel="canonical" href={canonicalUrl} />
       </Head>
-      <ScrollToTop />
-      <EnforceNoTrailingSlash />
       <OilBackground />
       <Navigation />
 

@@ -3,38 +3,7 @@ import { Head } from 'vite-react-ssg';
 import { Mail, Instagram, Send, Link as LinkIcon } from 'lucide-react';
 
 const Contact: React.FC = () => {
-  const [formState, setFormState] = useState({ name: '', email: '', message: '' });
-  const [tooltip, setTooltip] = useState({ show: false, x: 0, y: 0, text: '' });
 
-  const handleMouseEnter = (e: React.MouseEvent, text: string) => {
-    setTooltip({ show: true, x: e.clientX, y: e.clientY, text });
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    setTooltip(prev => ({ ...prev, x: e.clientX, y: e.clientY }));
-  };
-
-  const handleMouseLeave = () => {
-    setTooltip(prev => ({ ...prev, show: false }));
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormState({ ...formState, [e.target.name]: e.target.value });
-  };
-
-  const handleSendTransmission = (e: React.FormEvent) => {
-    e.preventDefault();
-    const { name, email, message } = formState;
-    
-    // Identity -> Subject
-    // Frequency -> Return Email (Included in body)
-    // Transmission -> Body
-    
-    const subject = name;
-    const body = `${message}\n\n---\nReturn Frequency: ${email}`;
-    
-    window.location.href = `mailto:jray517@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  };
 
   return (
     <>
@@ -54,18 +23,6 @@ const Contact: React.FC = () => {
       <meta name="twitter:image" content="https://jray.me/favicon.png" />
     </Head>
     <footer className="py-20 px-4 border-t border-white/10 bg-black relative z-10 animate-fade-in-up">
-      {/* Tooltip Portal */}
-      {tooltip.show && (
-        <div 
-            className="fixed z-50 pointer-events-none px-3 py-2 bg-black/90 border border-white/20 backdrop-blur-md text-white text-[10px] font-mono tracking-wider uppercase rounded shadow-[0_0_15px_rgba(148,163,184,0.3)]"
-            style={{ 
-                left: tooltip.x + 15, 
-                top: tooltip.y + 15,
-            }}
-        >
-            {tooltip.text}
-        </div>
-      )}
 
       <div className="container mx-auto max-w-6xl">
         <div className="grid md:grid-cols-2 gap-16 mb-24">
@@ -96,10 +53,7 @@ const Contact: React.FC = () => {
                   target="_blank" 
                   rel="noopener noreferrer" 
                   aria-label="TikTok Profile"
-                  className="p-4 rounded-none border border-white/10 hover:border-white hover:bg-white hover:text-black transition-all duration-300 group"
-                  onMouseEnter={(e) => handleMouseEnter(e, "Tik-Tok Profile")}
-                  onMouseMove={handleMouseMove}
-                  onMouseLeave={handleMouseLeave}
+                  className="p-4 rounded-none border border-white/10 hover:border-white hover:bg-white hover:text-black transition-all duration-300 group relative"
                 >
                   <svg 
                     width="20" 
@@ -114,6 +68,9 @@ const Contact: React.FC = () => {
                   >
                     <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
                   </svg>
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300 px-3 py-2 bg-black/90 border border-white/20 backdrop-blur-md text-white text-[10px] font-mono tracking-wider uppercase rounded shadow-[0_0_15px_rgba(148,163,184,0.3)] whitespace-nowrap z-50">
+                    Tik-Tok Profile
+                  </div>
                 </a>
 
                {/* Linktree / All Links */}
@@ -122,24 +79,24 @@ const Contact: React.FC = () => {
             target="_blank" 
             rel="noopener noreferrer" 
             aria-label="Trust Node Logic"
-            className="p-4 rounded-none border border-white/10 hover:border-white hover:bg-white hover:text-black transition-all duration-300 group"
-            onMouseEnter={(e) => handleMouseEnter(e, "Trust Node Logic")}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
+            className="p-4 rounded-none border border-white/10 hover:border-white hover:bg-white hover:text-black transition-all duration-300 group relative"
           >
             <LinkIcon size={20} />
+            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300 px-3 py-2 bg-black/90 border border-white/20 backdrop-blur-md text-white text-[10px] font-mono tracking-wider uppercase rounded shadow-[0_0_15px_rgba(148,163,184,0.3)] whitespace-nowrap z-50">
+              Trust Node Logic
+            </div>
           </a>
 
                 {/* Email */}
                 <a 
                   href="mailto:jray517@gmail.com" 
                   aria-label="Send Email"
-                  className="p-4 rounded-none border border-white/10 hover:border-white hover:bg-white hover:text-black transition-all duration-300 group"
-                  onMouseEnter={(e) => handleMouseEnter(e, "Email Me")}
-                  onMouseMove={handleMouseMove}
-                  onMouseLeave={handleMouseLeave}
+                  className="p-4 rounded-none border border-white/10 hover:border-white hover:bg-white hover:text-black transition-all duration-300 group relative"
                 >
                   <Mail size={20} />
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300 px-3 py-2 bg-black/90 border border-white/20 backdrop-blur-md text-white text-[10px] font-mono tracking-wider uppercase rounded shadow-[0_0_15px_rgba(148,163,184,0.3)] whitespace-nowrap z-50">
+                    Email Me
+                  </div>
                 </a>
               </div>
             </div>
@@ -148,16 +105,14 @@ const Contact: React.FC = () => {
           {/* Contact Form */}
           <div className="relative">
             <div className="absolute -inset-1 bg-gradient-to-b from-slate-900/20 to-transparent blur-xl -z-10" />
-            <form className="space-y-6 p-8 bg-white/[0.02] border border-white/5 backdrop-blur-sm" onSubmit={handleSendTransmission}>
+            <form className="space-y-6 p-8 bg-white/[0.02] border border-white/5 backdrop-blur-sm" action="mailto:jray517@gmail.com" method="GET" encType="text/plain">
               <div className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1">
                     <label className="text-[10px] uppercase tracking-widest text-white/40 ml-1">Identity</label>
                     <input 
                         type="text" 
-                        name="name"
-                        value={formState.name}
-                        onChange={handleInputChange}
+                        name="subject"
                         placeholder="NAME" 
                         required
                         className="w-full bg-black/40 border border-white/10 p-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-slate-500/50 focus:bg-white/[0.02] transition-all duration-300"
@@ -168,10 +123,7 @@ const Contact: React.FC = () => {
                     <input 
                         type="email" 
                         name="email"
-                        value={formState.email}
-                        onChange={handleInputChange}
                         placeholder="EMAIL" 
-                        required
                         className="w-full bg-black/40 border border-white/10 p-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-slate-500/50 focus:bg-white/[0.02] transition-all duration-300"
                     />
                   </div>
@@ -181,9 +133,7 @@ const Contact: React.FC = () => {
                   <label className="text-[10px] uppercase tracking-widest text-white/40 ml-1">Transmission</label>
                   <textarea 
                       rows={4} 
-                      name="message"
-                      value={formState.message}
-                      onChange={handleInputChange}
+                      name="body"
                       placeholder="ENTER MESSAGE..." 
                       required
                       className="w-full bg-black/40 border border-white/10 p-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-slate-500/50 focus:bg-white/[0.02] transition-all duration-300"

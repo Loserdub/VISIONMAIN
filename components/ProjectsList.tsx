@@ -97,20 +97,6 @@ const voidAccentColor = '#39ff14';
 const voidAccentRgb = '57,255,20';
 
 const ProjectsList: React.FC = () => {
-  const [tooltip, setTooltip] = useState({ show: false, x: 0, y: 0, text: '' });
-
-  const handleMouseEnter = (e: React.MouseEvent, text: string) => {
-    setTooltip({ show: true, x: e.clientX, y: e.clientY, text });
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    setTooltip(prev => ({ ...prev, x: e.clientX, y: e.clientY }));
-  };
-
-  const handleMouseLeave = () => {
-    setTooltip(prev => ({ ...prev, show: false }));
-  };
-
   return (
     <>
     <Head>
@@ -130,18 +116,6 @@ const ProjectsList: React.FC = () => {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(projectsSchemaData) }} />
     </Head>
     <section className="py-24 px-4 sm:px-8 relative z-10 animate-fade-in-up w-full overflow-hidden">
-      {/* Tooltip Portal */}
-      {tooltip.show && (
-        <div 
-            className="fixed z-50 pointer-events-none px-3 py-2 bg-black/90 border border-white/20 backdrop-blur-md text-white text-[10px] font-mono tracking-wider uppercase rounded shadow-[0_0_15px_rgba(0,0,0,0.5)] whitespace-nowrap"
-            style={{ 
-                left: tooltip.x + 15, 
-                top: tooltip.y + 15,
-            }}
-        >
-            {tooltip.text}
-        </div>
-      )}
 
       <div className="container mx-auto max-w-[95vw] xl:max-w-7xl">
 
@@ -205,26 +179,18 @@ const ProjectsList: React.FC = () => {
                         <a
                             href="/black-mirror.html"
                             aria-label="Launch Black Mirror - Summon Your Digital Twin"
-                            className="inline-block px-6 py-2 text-[10px] tracking-widest uppercase transition-all duration-300"
+                            className="inline-block px-6 py-2 text-[10px] tracking-widest uppercase transition-all duration-300 relative group/link"
                             style={{
                                 color: 'rgba(201,168,76,0.9)',
                                 background: 'rgba(20,20,32,0.55)',
                                 border: '1px solid rgba(201,168,76,0.35)',
                                 borderRadius: '4px',
                             }}
-                            onMouseEnter={(e) => {
-                                (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(201,168,76,0.7)';
-                                (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 0 18px rgba(41,121,255,0.2),0 0 18px rgba(229,57,53,0.15)';
-                                handleMouseEnter(e, "Summon Your Digital Twin");
-                            }}
-                            onMouseMove={handleMouseMove}
-                            onMouseLeave={(e) => {
-                                (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(201,168,76,0.35)';
-                                (e.currentTarget as HTMLAnchorElement).style.boxShadow = '';
-                                handleMouseLeave();
-                            }}
                         >
                             Live
+                            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 opacity-0 group-hover/link:opacity-100 pointer-events-none transition-opacity duration-300 px-3 py-2 bg-black/90 border border-white/20 backdrop-blur-md text-white text-[10px] font-mono tracking-wider uppercase rounded shadow-[0_0_15px_rgba(0,0,0,0.5)] whitespace-nowrap z-50">
+                                Summon Your Digital Twin
+                            </div>
                         </a>
                     </div>
                 </article>
@@ -251,12 +217,12 @@ const ProjectsList: React.FC = () => {
                            target="_blank"
                            rel="noopener noreferrer"
                            aria-label="Launch VISION SYNTH - Desktop Polyphonic Synthesizer"
-                           className="inline-block px-6 py-2 border border-white/10 hover:border-white hover:bg-white hover:text-black text-[10px] tracking-widest uppercase text-white/60 hover:text-black transition-all duration-300"
-                           onMouseEnter={(e) => handleMouseEnter(e, "Desktop Polyphonic Synthesizer")}
-                           onMouseMove={handleMouseMove}
-                           onMouseLeave={handleMouseLeave}
+                           className="inline-block px-6 py-2 border border-white/10 hover:border-white hover:bg-white hover:text-black text-[10px] tracking-widest uppercase text-white/60 hover:text-black transition-all duration-300 relative group/link"
                         >
                            Launch
+                           <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 opacity-0 group-hover/link:opacity-100 pointer-events-none transition-opacity duration-300 px-3 py-2 bg-black/90 border border-white/20 backdrop-blur-md text-white text-[10px] font-mono tracking-wider uppercase rounded shadow-[0_0_15px_rgba(0,0,0,0.5)] whitespace-nowrap z-50">
+                                Desktop Polyphonic Synthesizer
+                            </div>
                         </a>
                     </div>
                 </article>
@@ -283,12 +249,12 @@ const ProjectsList: React.FC = () => {
                            target="_blank"
                            rel="noopener noreferrer"
                            aria-label="Launch ChordCompose - MIDI Chord Idea Sketchpad"
-                           className="inline-block px-6 py-2 border border-white/10 hover:border-white hover:bg-white hover:text-black text-[10px] tracking-widest uppercase text-white/60 hover:text-black transition-all duration-300"
-                           onMouseEnter={(e) => handleMouseEnter(e, "MIDI Idea Sketchpad")}
-                           onMouseMove={handleMouseMove}
-                           onMouseLeave={handleMouseLeave}
+                           className="inline-block px-6 py-2 border border-white/10 hover:border-white hover:bg-white hover:text-black text-[10px] tracking-widest uppercase text-white/60 hover:text-black transition-all duration-300 relative group/link"
                         >
                            Launch
+                           <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 opacity-0 group-hover/link:opacity-100 pointer-events-none transition-opacity duration-300 px-3 py-2 bg-black/90 border border-white/20 backdrop-blur-md text-white text-[10px] font-mono tracking-wider uppercase rounded shadow-[0_0_15px_rgba(0,0,0,0.5)] whitespace-nowrap z-50">
+                                MIDI Idea Sketchpad
+                            </div>
                         </a>
                     </div>
                 </article>
@@ -315,12 +281,12 @@ const ProjectsList: React.FC = () => {
                            target="_blank"
                            rel="noopener noreferrer"
                            aria-label="Launch FractalAudio - Audio Processing and Effects"
-                           className="inline-block px-6 py-2 border border-white/10 hover:border-white hover:bg-white hover:text-black text-[10px] tracking-widest uppercase text-white/60 hover:text-black transition-all duration-300"
-                           onMouseEnter={(e) => handleMouseEnter(e, "FractalAudio Project")}
-                           onMouseMove={handleMouseMove}
-                           onMouseLeave={handleMouseLeave}
+                           className="inline-block px-6 py-2 border border-white/10 hover:border-white hover:bg-white hover:text-black text-[10px] tracking-widest uppercase text-white/60 hover:text-black transition-all duration-300 relative group/link"
                         >
                            Launch
+                           <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 opacity-0 group-hover/link:opacity-100 pointer-events-none transition-opacity duration-300 px-3 py-2 bg-black/90 border border-white/20 backdrop-blur-md text-white text-[10px] font-mono tracking-wider uppercase rounded shadow-[0_0_15px_rgba(0,0,0,0.5)] whitespace-nowrap z-50">
+                                FractalAudio Project
+                            </div>
                         </a>
                     </div>
                 </article>
@@ -347,12 +313,12 @@ const ProjectsList: React.FC = () => {
                            target="_blank"
                            rel="noopener noreferrer"
                            aria-label="Launch IMAGESIZER - Image Resizing Utility"
-                           className="inline-block px-6 py-2 border border-white/10 hover:border-white hover:bg-white hover:text-black text-[10px] tracking-widest uppercase text-white/60 hover:text-black transition-all duration-300"
-                           onMouseEnter={(e) => handleMouseEnter(e, "IMAGESIZER Utility")}
-                           onMouseMove={handleMouseMove}
-                           onMouseLeave={handleMouseLeave}
+                           className="inline-block px-6 py-2 border border-white/10 hover:border-white hover:bg-white hover:text-black text-[10px] tracking-widest uppercase text-white/60 hover:text-black transition-all duration-300 relative group/link"
                         >
                            Launch
+                           <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 opacity-0 group-hover/link:opacity-100 pointer-events-none transition-opacity duration-300 px-3 py-2 bg-black/90 border border-white/20 backdrop-blur-md text-white text-[10px] font-mono tracking-wider uppercase rounded shadow-[0_0_15px_rgba(0,0,0,0.5)] whitespace-nowrap z-50">
+                                IMAGESIZER Utility
+                            </div>
                         </a>
                     </div>
                 </article>
@@ -379,12 +345,12 @@ const ProjectsList: React.FC = () => {
                            target="_blank"
                            rel="noopener noreferrer"
                            aria-label="Launch J-DAW - Browser-based Digital Audio Workstation"
-                           className="inline-block px-6 py-2 border border-white/10 hover:border-white hover:bg-white hover:text-black text-[10px] tracking-widest uppercase text-white/60 hover:text-black transition-all duration-300"
-                           onMouseEnter={(e) => handleMouseEnter(e, "Browser-based DAW")}
-                           onMouseMove={handleMouseMove}
-                           onMouseLeave={handleMouseLeave}
+                           className="inline-block px-6 py-2 border border-white/10 hover:border-white hover:bg-white hover:text-black text-[10px] tracking-widest uppercase text-white/60 hover:text-black transition-all duration-300 relative group/link"
                         >
                            Launch
+                           <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 opacity-0 group-hover/link:opacity-100 pointer-events-none transition-opacity duration-300 px-3 py-2 bg-black/90 border border-white/20 backdrop-blur-md text-white text-[10px] font-mono tracking-wider uppercase rounded shadow-[0_0_15px_rgba(0,0,0,0.5)] whitespace-nowrap z-50">
+                                Browser-based DAW
+                            </div>
                         </a>
                     </div>
                 </article>
