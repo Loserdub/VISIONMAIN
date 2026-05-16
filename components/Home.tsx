@@ -100,6 +100,21 @@ const Home: React.FC = () => {
         <p className="text-lg sm:text-2xl font-light text-white/60 tracking-[0.2em] uppercase max-w-3xl mx-auto mt-4">
           Creative Technologist & Hybrid Artist
         </p>
+
+        {/* Feature Button: Music Industry Forecast */}
+        <div className="mt-10 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <a 
+            href="/musicindustryforecast.html" 
+            className="group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden rounded-sm bg-zinc-900/60 backdrop-blur-sm border border-white/20 hover:border-white/80 transition-all duration-500 shadow-[0_0_20px_rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+          >
+            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
+            <span className="relative z-10 flex flex-col items-center text-center">
+              <span className="text-xs font-mono tracking-[0.2em] text-slate-400 mb-1.5 uppercase">New Intelligence Report</span>
+              <span className="text-sm sm:text-base font-bold tracking-[0.15em] text-white uppercase">The Liquidity of Sound</span>
+              <span className="text-[10px] sm:text-xs font-light tracking-[0.2em] text-white/60 mt-1.5 uppercase">2026-2031 Music Industry Forecast</span>
+            </span>
+          </a>
+        </div>
       </div>
 
       {/* Philosophy / Manifesto Section */}
