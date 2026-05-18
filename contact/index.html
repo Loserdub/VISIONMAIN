@@ -158,7 +158,20 @@
       }
     </style>
     
-    <link rel="stylesheet" crossorigin="" href="../assets/app-CPTCPCOv.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Space Grotesk', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+              display: ['Syne', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+              mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+            },
+          },
+        },
+      }
+    </script>
   </head>
   <body class="bg-black text-white antialiased overflow-x-hidden">
     <div id="root" data-server-rendered="true"><div class="relative min-h-screen font-sans selection:bg-white selection:text-black flex flex-col text-white"><div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-[#050505]"><div class="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] opacity-60 oil-bg-animate" style="background:radial-gradient(circle at 50% 50%, rgba(30, 41, 59, 0.6), transparent 50%),
