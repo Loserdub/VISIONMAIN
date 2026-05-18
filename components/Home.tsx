@@ -49,7 +49,37 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <section className="relative flex flex-col items-center px-4 py-32 sm:pt-40">
+      {/* Featured article buttons — directly beneath the header */}
+      <div className="w-full flex flex-col items-center gap-4 px-4 pt-8 pb-6 animate-fade-in-up">
+        {/* Button 1: The Liquidity of Sound */}
+        <a
+          href="/musicindustryforecast.html"
+          className="group relative inline-flex items-center justify-center px-8 py-3 overflow-visible rounded-sm bg-zinc-900/60 backdrop-blur-sm border border-white/20 hover:border-white/80 transition-all duration-500 shadow-[0_0_20px_rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] w-full max-w-lg"
+        >
+          <div className="absolute -top-2 -right-2 z-20 bg-white text-black text-[9px] font-bold tracking-widest uppercase px-2 py-0.5 shadow-[0_0_10px_rgba(255,255,255,0.3)]">
+            NEW!
+          </div>
+          <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out overflow-hidden rounded-sm"></div>
+          <span className="relative z-10 flex flex-col items-center text-center">
+            <span className="text-sm sm:text-base font-bold tracking-[0.15em] text-white uppercase">The Liquidity of Sound</span>
+            <span className="text-[9px] sm:text-[10px] font-light tracking-[0.2em] text-white/60 mt-1 uppercase">2026–2031 Music Industry Forecast</span>
+          </span>
+        </a>
+
+        {/* Button 2: The Autonomous Virtual Studio */}
+        <a
+          href="/agentichybridproduction.html"
+          className="group relative inline-flex items-center justify-center px-8 py-3 overflow-visible rounded-sm bg-zinc-900/60 backdrop-blur-sm border border-white/20 hover:border-white/80 transition-all duration-500 shadow-[0_0_20px_rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] w-full max-w-lg"
+        >
+          <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out overflow-hidden rounded-sm"></div>
+          <span className="relative z-10 flex flex-col items-center text-center">
+            <span className="text-sm sm:text-base font-bold tracking-[0.15em] text-white uppercase">The Autonomous Virtual Studio</span>
+            <span className="text-[9px] sm:text-[10px] font-light tracking-[0.2em] text-white/60 mt-1 uppercase">Multi-Agent DAWs &amp; Latent Space Interpolation</span>
+          </span>
+        </a>
+      </div>
+
+      <section className="relative flex flex-col items-center px-4 py-12 sm:pt-20">
         <Head>
           <title>Justin Ray | Hybrid Production</title>
           <link rel="canonical" href={homeUrl} />
@@ -69,25 +99,6 @@ const Home: React.FC = () => {
         <h1 className="sr-only">Hybrid Production | Justin Ray</h1>
 
       <div className="text-center z-10 space-y-4 max-w-5xl animate-fade-in-up flex flex-col items-center">
-        {/* Feature Button: Music Industry Forecast */}
-        <div className="mb-6 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-          <a 
-            href="/musicindustryforecast.html" 
-            className="group relative inline-flex items-center justify-center px-8 py-3 overflow-visible rounded-sm bg-zinc-900/60 backdrop-blur-sm border border-white/20 hover:border-white/80 transition-all duration-500 shadow-[0_0_20px_rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
-          >
-            {/* Corner Badge */}
-            <div className="absolute -top-2 -right-2 z-20 bg-white text-black text-[9px] font-bold tracking-widest uppercase px-2 py-0.5 shadow-[0_0_10px_rgba(255,255,255,0.3)]">
-              NEW!
-            </div>
-            
-            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out overflow-hidden rounded-sm"></div>
-            <span className="relative z-10 flex flex-col items-center text-center">
-              <span className="text-sm sm:text-base font-bold tracking-[0.15em] text-white uppercase">The Liquidity of Sound</span>
-              <span className="text-[9px] sm:text-[10px] font-light tracking-[0.2em] text-white/60 mt-1 uppercase">2026-2031 Music Industry Forecast</span>
-            </span>
-          </a>
-        </div>
-
         {/* Title */}
         <div className="flex flex-col items-center leading-none">
           <div 
