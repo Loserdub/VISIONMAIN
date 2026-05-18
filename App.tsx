@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useState, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Head } from 'vite-react-ssg';
 import OilBackground from './components/OilBackground';
@@ -9,6 +9,12 @@ import { buildPageUrl } from './seo';
 
 const Navigation = () => {
   const location = useLocation();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Close mobile menu whenever the route changes
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location.pathname]);
 
   const navItems = [
     { label: 'Home', path: '/' },
@@ -49,34 +55,39 @@ const Navigation = () => {
           </nav>
 
           {/* Mobile Menu Toggle */}
-          <input type="checkbox" id="mobile-menu-toggle" className="peer hidden" />
-          <label htmlFor="mobile-menu-toggle" className="md:hidden text-white cursor-pointer peer-checked:hidden block" aria-label="Open menu">
-            <Menu />
-          </label>
-          <label htmlFor="mobile-menu-toggle" className="md:hidden text-white cursor-pointer peer-checked:block hidden" aria-label="Close menu">
-            <X />
-          </label>
-
-          {/* Mobile Nav Overlay */}
-          <div className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl items-center justify-center animate-fade-in hidden peer-checked:flex">
-             <nav className="flex flex-col gap-8 text-center text-2xl font-light tracking-widest uppercase" aria-label="Mobile navigation">
-              {navItems.map((item, index) => {
-                const isActive = location.pathname === item.path;
-                return (
-                  <a 
-                    key={item.path}
-                    href={item.path}
-                    className={`opacity-0 animate-fade-in-up hover:text-slate-300 transition-colors ${isActive ? 'text-white font-bold' : 'text-white/60'}`}
-                    style={{ animationDelay: `${index * 150 + 100}ms` }}
-                  >
-                    {item.label}
-                  </a>
-                );
-              })}
-             </nav>
-          </div>
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden text-white cursor-pointer"
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileMenuOpen}
+          >
+            {mobileMenuOpen ? <X /> : <Menu />}
+          </button>
         </div>
       </header>
+
+      {/* Mobile Nav Overlay — rendered outside <header> so it isn't clipped by the
+          header's backdrop-filter, which creates a containing block for fixed children
+          in Chromium-based browsers. */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl flex items-center justify-center animate-fade-in">
+          <nav className="flex flex-col gap-8 text-center text-2xl font-light tracking-widest uppercase" aria-label="Mobile navigation">
+            {navItems.map((item, index) => {
+              const isActive = location.pathname === item.path;
+              return (
+                <a 
+                  key={item.path}
+                  href={item.path}
+                  className={`opacity-0 animate-fade-in-up hover:text-slate-300 transition-colors ${isActive ? 'text-white font-bold' : 'text-white/60'}`}
+                  style={{ animationDelay: `${index * 150 + 100}ms` }}
+                >
+                  {item.label}
+                </a>
+              );
+            })}
+          </nav>
+        </div>
+      )}
     </>
   );
 };
