@@ -1,0 +1,16 @@
+{
+  "index.tsx": {
+    "file": "index.mjs",
+    "name": "index",
+    "src": "index.tsx",
+    "isEntry": true,
+    "assets": [
+      "assets/doodle-CBs5MByj.jpg",
+      "assets/cyclediagram-CdE74cGA.jpg"
+    ]
+  },
+  "style.css": {
+    "file": "assets/style-l6_31RJU.css",
+    "src": "style.css"
+  }
+}
