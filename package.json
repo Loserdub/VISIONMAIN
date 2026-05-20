@@ -1,0 +1,13 @@
+{
+  "name": "visionmain",
+  "version": "1.0.0",
+  "description": "Static site for jray.me",
+  "private": true,
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./input.css -o ./style.css --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "tailwindcss": "^4.3.0"
+  }
+}
