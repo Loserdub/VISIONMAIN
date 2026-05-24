@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-<link rel="stylesheet" href="https://jray.me/style.css">
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <link rel="stylesheet" href="./style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Autonomous Virtual Studio: Multi-Agent DAW Guide | JRAY</title>
   <meta name="description" content="Is the autonomous virtual studio real? JRAY maps the science, feasibility, and step-by-step implementation of multi-agent DAW control" />
@@ -653,12 +654,12 @@
 <body>
 
 <nav>
-  <a href="https://jray.me/index.html" class="logo">JRAY<span>.</span>ME</a>
-  <a href="https://jray.me/index.html">Home</a>
-  <a href="https://jray.me/music.html">Music</a>
-  <a href="https://jray.me/projects.html">Projects</a>
-  <a href="https://jray.me/what-is-hybrid.html">What Is Hybrid</a>
-  <a href="https://jray.me/contact.html">Contact</a>
+  <a href="./index.html" class="logo">JRAY<span>.</span>ME</a>
+  <a href="./index.html">Home</a>
+  <a href="./music.html">Music</a>
+  <a href="./projects.html">Projects</a>
+  <a href="./what-is-hybrid.html">What Is Hybrid</a>
+  <a href="./contact.html">Contact</a>
 </nav>
 
 <header class="hero">
@@ -713,7 +714,7 @@
 
   <div class="intel teal">
     <div class="intel-label">// Related Reading</div>
-    <p>New to the Hybrid Production methodology? Start with <a href="https://jray.me/what-is-hybrid.html" rel="related">What Is Hybrid Production</a> &mdash; the foundational framework that contextualises why tools like the autonomous virtual studio matter for working producers. For the economic forces driving this shift, read <a href="https://jray.me/musicindustryforecast.html" rel="related">The Liquid Economy of Sound</a>.</p>
+    <p>New to the Hybrid Production methodology? Start with <a href="./what-is-hybrid.html" rel="related">What Is Hybrid Production</a> &mdash; the foundational framework that contextualises why tools like the autonomous virtual studio matter for working producers. For the economic forces driving this shift, read <a href="./musicindustryforecast.html" rel="related">The Liquid Economy of Sound</a>.</p>
   </div>
 
   <div class="section-header" id="feasibility">
@@ -818,7 +819,7 @@
 
   <p>By deploying an MCP Server built on Python remote scripts, the DAW's entire internal API is exposed to the AI agents. The Orchestrator issues natural language commands; the MCP server translates them into OSC messages and Python API calls. A thread-safe, queue-based architecture ensures no race conditions or application crashes during parallel agent operation.</p>
 
-  <p style="font-family:var(--mono);font-size:11px;letter-spacing:0.08em;color:var(--text);border-left:2px solid var(--border-hi);padding-left:16px;">See also: <a href="https://jray.me/c2pa-music-provenance.html" rel="related">C2PA Music Provenance</a> &mdash; how the same MCP-driven file infrastructure applies to cryptographic audio provenance and rights attribution.</p>
+  <p style="font-family:var(--mono);font-size:11px;letter-spacing:0.08em;color:var(--text);border-left:2px solid var(--border-hi);padding-left:16px;">See also: <a href="./c2pa-music-provenance.html" rel="related">C2PA Music Provenance</a> &mdash; how the same MCP-driven file infrastructure applies to cryptographic audio provenance and rights attribution.</p>
 
   <div class="section-header" id="latent">
     <div class="section-num">// 04</div>
@@ -838,7 +839,7 @@
 
   <p>The formula: given latent vectors z_A and z_B, any intermediate state z_alpha can be computed as z_A + alpha(z_B &minus; z_A), where alpha traverses from 0 to 1. Each intermediate vector is decoded by the neural decoder to generate a completely new waveform bridging the two source materials. If Generation A is a piano melody and Generation B is a brass arrangement, the interpolated bridge synthesizes an intermediate timbre &mdash; progressively morphing the harmonic structure from one state to the other.</p>
 
-  <p style="font-family:var(--mono);font-size:11px;letter-spacing:0.08em;color:var(--text);border-left:2px solid var(--border-hi);padding-left:16px;">The Suno song combiner &mdash; a direct implementation of this SLERP architecture &mdash; is one of the active projects at <a href="https://jray.me/projects.html" rel="related">jray.me/projects</a>.</p>
+  <p style="font-family:var(--mono);font-size:11px;letter-spacing:0.08em;color:var(--text);border-left:2px solid var(--border-hi);padding-left:16px;">The Suno song combiner &mdash; a direct implementation of this SLERP architecture &mdash; is one of the active projects at <a href="./projects.html" rel="related">jray.me/projects</a>.</p>
 
   <div class="section-header" id="comping-vs-latent">
     <div class="section-num">// 05</div>
@@ -1027,19 +1028,19 @@ model.<span class="fn">set_target_bandwidth</span>(<span class="nm">6.0</span>)
   <div class="author-block">
     <div class="author-label">// About the Author</div>
     <h4>Justin Tyler Ray (JRAY)</h4>
-    <p>Creative Technologist and pioneer of the Hybrid Production methodology. Creative artist under <a href="https://jray.me/music.html" rel="me">loserdub</a>, <a href="https://jray.me/music.html" rel="me">VISION</a>, Le Vide, Disarray, and Flawed Future &mdash; whose interest in AI began after being an early access tester for Google's original MusicLM. Founder of <a href="https://www.reddit.com/r/hybridproduction/" rel="me">r/hybridproduction</a>, consultant to several music tech companies, and creator of <a href="https://jray.me/projects.html" rel="me">v&#248;id</a> audio slicer. Interested in what comes next. &middot; <a href="https://jray.me/index.html">jray.me</a> &middot; <a href="https://linkedin.com/in/jray-me/">LinkedIn</a></p>
+    <p>Creative Technologist and pioneer of the Hybrid Production methodology. Creative artist under <a href="./music.html" rel="me">loserdub</a>, <a href="./music.html" rel="me">VISION</a>, Le Vide, Disarray, and Flawed Future &mdash; whose interest in AI began after being an early access tester for Google's original MusicLM. Founder of <a href="https://www.reddit.com/r/hybridproduction/" rel="me">r/hybridproduction</a>, consultant to several music tech companies, and creator of <a href="./projects.html" rel="me">v&#248;id</a> audio slicer. Interested in what comes next. &middot; <a href="./index.html">jray.me</a> &middot; <a href="https://linkedin.com/in/jray-me/">LinkedIn</a></p>
   </div>
 
   <div class="return-buttons">
-    <a href="https://jray.me/index.html" class="btn btn-primary">&larr; Return to jray.me</a>
-    <a href="https://jray.me/what-is-hybrid.html" class="btn btn-secondary">What Is Hybrid Production</a>
-    <a href="https://jray.me/musicindustryforecast.html" class="btn btn-secondary">Liquid Economy of Sound</a>
+    <a href="./index.html" class="btn btn-primary">&larr; Return to jray.me</a>
+    <a href="./what-is-hybrid.html" class="btn btn-secondary">What Is Hybrid Production</a>
+    <a href="./musicindustryforecast.html" class="btn btn-secondary">Liquid Economy of Sound</a>
   </div>
 
 </main>
 
 <footer>
-  <p>&copy; 2026 Justin Tyler Ray (JRAY) &middot; <a href="https://jray.me/index.html">jray.me</a> &middot; <a href="https://jray.me/what-is-hybrid.html">What Is Hybrid</a> &middot; <a href="https://jray.me/projects.html">Projects</a> &middot; <a href="https://jray.me/musicindustryforecast.html">Liquid Economy</a> &middot; <a href="https://jray.me/c2pa-music-provenance.html">C2PA Provenance</a></p>
+  <p>&copy; 2026 Justin Tyler Ray (JRAY) &middot; <a href="./index.html">jray.me</a> &middot; <a href="./what-is-hybrid.html">What Is Hybrid</a> &middot; <a href="./projects.html">Projects</a> &middot; <a href="./musicindustryforecast.html">Liquid Economy</a> &middot; <a href="./c2pa-music-provenance.html">C2PA Provenance</a></p>
 </footer>
 
 </body>
