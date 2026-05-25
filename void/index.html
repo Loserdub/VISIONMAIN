@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VØID 1.2</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      }
+      body {
+        margin: 0;
+        background: #060606;
+        color: #f5f5f5;
+      }
+      .screen {
+        position: fixed;
+        inset: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 20;
+        background: rgba(0, 0, 0, 0.96);
+        padding: 24px;
+      }
+      .screen.active {
+        display: flex;
+      }
+      .panel {
+        width: min(460px, 100%);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        background: #0f0f0f;
+        padding: 24px;
+        text-align: center;
+      }
+      .logo {
+        margin: 0 0 12px;
+        letter-spacing: 0.24em;
+      }
+      .subtle {
+        color: #b4b4b4;
+      }
+      #trial-banner {
+        display: none;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 10px;
+        z-index: 25;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        font-size: 12px;
+      }
+      #app-shell {
+        display: none;
+        min-height: 100vh;
+      }
+      .cta {
+        display: inline-block;
+        margin-top: 12px;
+        padding: 10px 16px;
+        border-radius: 999px;
+        color: #050505;
+        background: #ffffff;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .text-link {
+        display: inline-block;
+        margin-top: 12px;
+        color: #d0d0d0;
+        text-decoration: underline;
+        background: none;
+        border: 0;
+        cursor: pointer;
+        font: inherit;
+      }
+      .toggle-row {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        margin: 12px 0;
+      }
+      .toggle-row button {
+        background: transparent;
+        color: #f5f5f5;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 999px;
+        padding: 6px 14px;
+        cursor: pointer;
+      }
+      #clerk-auth-slot {
+        min-height: 280px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="trial-banner" aria-live="polite"></div>
+
+    <div id="app-shell">
+      <main id="app-root">
+        <!-- Existing VOID 1.2 app UI mounts/renders here -->
+      </main>
+    </div>
+
+    <section id="auth-gate" class="screen active" aria-live="polite">
+      <div class="panel">
+        <h1 class="logo">VØID</h1>
+        <p class="subtle">Sign in or create an account to continue</p>
+        <div class="toggle-row">
+          <button id="show-sign-in" type="button">Sign in</button>
+          <button id="show-sign-up" type="button">Sign up</button>
+        </div>
+        <div id="clerk-auth-slot"></div>
+      </div>
+    </section>
+
+    <section id="paywall-gate" class="screen" aria-live="polite">
+      <div class="panel">
+        <h1 class="logo">VØID</h1>
+        <p>Your free trial has ended</p>
+        <a
+          class="cta"
+          href="https://buy.stripe.com/STRIPE_LINK_PLACEHOLDER"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Upgrade to continue — $[PRICE_PLACEHOLDER]/mo</a
+        >
+        <button id="switch-account" class="text-link" type="button">
+          Sign in with a different account
+        </button>
+      </div>
+    </section>
+
+    <script>
+      window.VITE_CLERK_PUBLISHABLE_KEY =
+        'pk_test_ZGlyZWN0LWdvcGhlci0zMi5jbGVyay5hY2NvdW50cy5kZXYk';
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"></script>
+    <script type="module">
+      import {
+        resolveAccess,
+        getCachedUserId,
+        clearCachedUserId,
+      } from './auth.js';
+
+      const authGate = document.getElementById('auth-gate');
+      const paywallGate = document.getElementById('paywall-gate');
+      const appShell = document.getElementById('app-shell');
+      const trialBanner = document.getElementById('trial-banner');
+      const authSlot = document.getElementById('clerk-auth-slot');
+      const signInToggle = document.getElementById('show-sign-in');
+      const signUpToggle = document.getElementById('show-sign-up');
+      const switchAccount = document.getElementById('switch-account');
+
+      function showGate(target) {
+        authGate.classList.toggle('active', target === 'auth');
+        paywallGate.classList.toggle('active', target === 'paywall');
+        appShell.style.display = target === 'app' ? 'block' : 'none';
+      }
+
+      function showTrialBanner(daysLeft) {
+        trialBanner.textContent = `${daysLeft} day${daysLeft === 1 ? '' : 's'} left in trial`;
+        trialBanner.style.display = 'block';
+      }
+
+      function hideTrialBanner() {
+        trialBanner.style.display = 'none';
+      }
+
+      function mountAuth(mode) {
+        authSlot.innerHTML = '';
+        if (mode === 'signup') {
+          window.Clerk?.mountSignUp(authSlot);
+          return;
+        }
+        window.Clerk?.mountSignIn(authSlot);
+      }
+
+      async function evaluate(clerkUserId) {
+        const access = await resolveAccess(clerkUserId);
+        if (access.allowApp) {
+          showGate('app');
+          if (!access.subscribed) {
+            showTrialBanner(access.trial.daysLeft);
+          } else {
+            hideTrialBanner();
+          }
+          return;
+        }
+        hideTrialBanner();
+        showGate('paywall');
+      }
+
+      async function boot() {
+        showGate('auth');
+        signInToggle.addEventListener('click', () => mountAuth('signin'));
+        signUpToggle.addEventListener('click', () => mountAuth('signup'));
+        switchAccount.addEventListener('click', async () => {
+          try {
+            if (window.Clerk?.session) {
+              await window.Clerk.signOut();
+            }
+          } finally {
+            clearCachedUserId();
+            showGate('auth');
+            mountAuth('signin');
+          }
+        });
+
+        try {
+          await window.Clerk.load({
+            publishableKey:
+              window.VITE_CLERK_PUBLISHABLE_KEY || 'CLERK_PUBLISHABLE_KEY',
+          });
+        } catch {
+          const cachedUserId = getCachedUserId();
+          if (cachedUserId) {
+            await evaluate(cachedUserId);
+            return;
+          }
+          mountAuth('signin');
+          return;
+        }
+
+        const user = window.Clerk.user;
+        if (!user) {
+          mountAuth('signin');
+          window.Clerk.addListener(({ user: nextUser }) => {
+            if (nextUser) {
+              evaluate(nextUser.id);
+            }
+          });
+          return;
+        }
+
+        await evaluate(user.id);
+      }
+
+      boot();
+    </script>
+  </body>
+</html>
