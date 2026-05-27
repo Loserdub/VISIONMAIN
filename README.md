@@ -33,38 +33,35 @@ To cement semantic authority across search engines, knowledge panels, and the br
 ## 🚀 Tech Stack & Deployment
 
 * **Domain:** `jray.me`
-* **Framework:** [Vite](https://vitejs.dev/) + [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
-* **SSG:** [`vite-react-ssg`](https://github.com/Daydreamer-riri/vite-react-ssg) — pre-renders every route to static HTML at build time
-* **Routing:** React Router v6 (client-side hydration after the static HTML is served)
-* **Styling:** Tailwind CSS v3
+* **Architecture:** Static HTML pages + shared CSS
+* **Styling:** Tailwind CSS v4
 * **Hosting:** GitHub Pages with a custom domain (`jray.me`)
-* **CI/CD:** GitHub Actions — builds and deploys automatically on every push to `main`
+* **CI/CD:** GitHub Actions — deploys the repository root on every push to `main`
 
 ### Running locally
 
 ```bash
-npm install       # install dependencies
-npm run dev       # start dev server at http://localhost:3000
+npm install         # install dependencies
+npm run build:css   # rebuild ./style.css from ./input.css
 ```
 
-### Building for production (SSG)
+### Building styles
 
 ```bash
-npm run build     # generates static HTML in ./dist for every route
-npm run preview   # preview the built output locally
+npm run build:css
 ```
 
-The build produces a fully static `dist/` directory with one `index.html` per route (e.g. `dist/music/index.html`, `dist/projects/index.html`, …). Every HTML file ships with pre-rendered content and correct SEO tags — no JavaScript required for initial render.
+Pages are committed as static HTML at the repository root and served directly by GitHub Pages.
 
 ### Deployment
 
 Deployment is fully automated via the **Deploy Website Automatically** GitHub Actions workflow (`.github/workflows/deploy.yml`). On every push to `main` it:
 
-1. Runs `npm ci && npm run build`
-2. Uploads `./dist` as the Pages artifact
+1. Checks out the repository
+2. Uploads `.` (repository root) as the Pages artifact
 3. Deploys to GitHub Pages
 
-The `public/CNAME` file points GitHub Pages to the custom domain `jray.me`.
+The `CNAME` file in the repository root points GitHub Pages to the custom domain `jray.me`.
 
 To trigger a manual re-deploy, push any commit to `main` or re-run the workflow from the **Actions** tab.
 
