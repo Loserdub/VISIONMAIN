@@ -2,3 +2,4 @@ Sitemap: https://jray.me/sitemap.xml
 
 User-agent: *
 Allow: /
+Disallow: /void/

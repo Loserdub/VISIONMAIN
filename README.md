@@ -58,13 +58,13 @@ The build produces a fully static `dist/` directory with one `index.html` per ro
 
 ### Deployment
 
-Deployment is fully automated via the **Deploy Website Automatically** GitHub Actions workflow (`.github/workflows/deploy.yml`). On every push to `main` it:
+Deployment is fully automated via the **Deploy to GitHub Pages** workflow (`.github/workflows/deploy.yml`). On every push to `main` it:
 
-1. Runs `npm ci && npm run build`
-2. Uploads `./dist` as the Pages artifact
-3. Deploys to GitHub Pages
+1. Checks out the repository
+2. Uploads the repository root (`.`) as the Pages artifact
+3. Deploys that artifact to GitHub Pages
 
-The `public/CNAME` file points GitHub Pages to the custom domain `jray.me`.
+The repository-root `CNAME` file points GitHub Pages to the custom domain `jray.me`.
 
 To trigger a manual re-deploy, push any commit to `main` or re-run the workflow from the **Actions** tab.
 
