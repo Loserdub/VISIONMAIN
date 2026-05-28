@@ -1,78 +1,62 @@
-# jray.me | Hybrid Production & Artist Portfolio
+# VISIONMAIN — jray.me (Hybrid Production)
 
-[![Website](https://img.shields.io/badge/Entity-jray.me-blue?style=for-the-badge)](https://jray.me)
-[![Field](https://img.shields.io/badge/Field-Hybrid_Production-black?style=for-the-badge)](#)
-[![License](https://img.shields.io/badge/License-All_Rights_Reserved-red?style=for-the-badge)](#)
-[![Authority](https://img.shields.io/badge/Authority-Hybrid_Production-gold?style=for-the-badge)](#)
+Static website source for **jray.me** — the public hub for Justin Ray (JRAY) and the Hybrid Production / hybrid AI music work.
 
-Welcome to the repository for **jray.me**, the central digital hub and authoritative entity source for Hybrid Production (Music).
+- Live site: https://jray.me
+- Hosting: GitHub Pages (this repo is deployed as-is)
 
-## 🌐 Overview
+## What this repo is (current build)
 
-This repository hosts the front-end architecture designed to establish a definitive semantic footprint for **Hybrid Production**—the discipline of combining human artistry with advanced technical and AI tools. Beyond serving as a standard portfolio, this site acts as the canonical anchor point for multiple artist profiles, discographies, and audio-visual projects under a unified creator identity. Includes side projects, such as in browser daw, fractal audio visualizer, image liquify, and so much more
+This repository is a **plain static site** (mostly HTML + CSS) that is published directly to GitHub Pages. There’s no React/Vite build in the current version — the site is served from the repository root.
 
-## 🎧 Associated Artist Profiles & Projects
+Key pages are implemented as standalone HTML documents (for example: `index.html`, `music.html`, `projects.html`, `services.html`, `contact.html`, and additional research/essay pages).
 
-This site serves as the primary entity resolution node for the following active musical projects:
+## Tech
 
-* **JRAY** – Primary producer alias and central identity
-* **loserdub**
-* **V I S I O N**
-* **le vide**
-* **flawed future**
-* **disarray**
+- **HTML / CSS** (Tailwind CSS output is committed as `style.css`)
+- **Tailwind CLI** for building/minifying CSS
+- **GitHub Actions** for Pages deployment
 
-## 🕸️ Entity Authority & SEO Architecture
+## Local development
 
-To cement semantic authority across search engines, knowledge panels, and the broader semantic web, this site is hyper-optimized using **JSON-LD structured data**.
-
-* **Identity Resolution:** Utilizes `Person` and `MusicGroup` schemas to explicitly define the relationships between Justin Tyler Ray, the JRAY alias, and all associated sub-projects.
-* **Concept Anchoring:** Strategically maps the coined term "Hybrid Production (Music)" through interconnected data layers, supporting external canonical sources (such as Wikipedia).
-* **Music Production Metadata:** Ensures all embedded tracks, stems, and production credits are machine-readable to establish clear ownership and contribution graphs.
-
-## 🚀 Tech Stack & Deployment
-
-* **Domain:** `jray.me`
-* **Framework:** [Vite](https://vitejs.dev/) + [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
-* **SSG:** [`vite-react-ssg`](https://github.com/Daydreamer-riri/vite-react-ssg) — pre-renders every route to static HTML at build time
-* **Routing:** React Router v6 (client-side hydration after the static HTML is served)
-* **Styling:** Tailwind CSS v3
-* **Hosting:** GitHub Pages with a custom domain (`jray.me`)
-* **CI/CD:** GitHub Actions — builds and deploys automatically on every push to `main`
-
-### Running locally
+Because it’s a static site, you can open `index.html` directly in a browser. For best results (and to avoid module / CORS issues in some browsers), run a tiny local server:
 
 ```bash
-npm install       # install dependencies
-npm run dev       # start dev server at http://localhost:3000
+# Option A: Python
+python -m http.server 3000
+
+# Option B: Node
+npx serve .
 ```
 
-### Building for production (SSG)
+Then visit:
+
+- http://localhost:3000
+
+## CSS workflow (Tailwind)
+
+The repo includes a minimal Tailwind CLI setup.
 
 ```bash
-npm run build     # generates static HTML in ./dist for every route
-npm run preview   # preview the built output locally
+npm install
+npm run build:css
 ```
 
-The build produces a fully static `dist/` directory with one `index.html` per route (e.g. `dist/music/index.html`, `dist/projects/index.html`, …). Every HTML file ships with pre-rendered content and correct SEO tags — no JavaScript required for initial render.
+- Input: `input.css`
+- Output: `style.css` (minified)
 
-### Deployment
+## Deployment
 
-Deployment is fully automated via the **Deploy to GitHub Pages** workflow (`.github/workflows/deploy.yml`). On every push to `main` it:
+Deployment is automated via GitHub Actions using `.github/workflows/deploy.yml`.
 
-1. Checks out the repository
-2. Uploads the repository root (`.`) as the Pages artifact
-3. Deploys that artifact to GitHub Pages
+On every push to the `main` branch, the workflow uploads the repository root (`.`) as the Pages artifact and deploys it.
 
-The repository-root `CNAME` file points GitHub Pages to the custom domain `jray.me`.
+Custom domain configuration is stored in `CNAME`.
 
-To trigger a manual re-deploy, push any commit to `main` or re-run the workflow from the **Actions** tab.
+## Entity / SEO notes
 
-## 🔒 License
+The homepage includes structured data (`application/ld+json`) to help define the entity graph for Justin Ray / JRAY and related project aliases.
+
+## License
+
 **Copyright © 2026 Justin Tyler Ray. All Rights Reserved.**
-
----
-### 🔗 Canonical Links
-- **Official Entity Home:** [jray.me](https://jray.me)
-- **Primary Identity:** [Justin Tyler Ray (JRAY)](https://jray.me)
-- **Methodology:** [Hybrid Production](https://jray.me)
