@@ -9,14 +9,14 @@ This platform highlights a 'hybrid' approach, combining AI's generative capabili
 ## Core Services & Information
 
 - [Justin Ray | Creative Technologist & Hybrid Artist](https://jray.me/): Explore creative technology and hybrid art services offered by Justin Ray.
-- [AI Music Production Services](https://jray.me/music): Discover AI-powered music mixing and vocal cleanup services for artists.
-- [Services Offered](https://jray.me/services): View a comprehensive list of creative technology and AI services provided.
-- [About Justin Ray](https://jray.me/bio): Learn about the background and expertise of Justin Ray, the creative technologist.
-- [Contact Justin Ray](https://jray.me/contact): Get in touch with Justin Ray for inquiries and collaborations.
+- [AI Music Production Services](https://jray.me/music.html): Discover AI-powered music mixing and vocal cleanup services for artists.
+- [Services Offered](https://jray.me/services.html): View a comprehensive list of creative technology and AI services provided.
+- [About Justin Ray](https://jray.me/bio.html): Learn about the background and expertise of Justin Ray, the creative technologist.
+- [Contact Justin Ray](https://jray.me/contact.html): Get in touch with Justin Ray for inquiries and collaborations.
 
 ## Projects & Tools
 
-- [Creative Technology Projects](https://jray.me/projects): Explore innovative software and AI-driven projects developed by Justin Ray.
+- [Creative Technology Projects](https://jray.me/projects.html): Explore innovative software and AI-driven projects developed by Justin Ray.
 - [Black Mirror Project](https://jray.me/black-mirror.html): Discover the 'Black Mirror' project, showcasing generative AI applications.
 - [Fingerprint Tool](https://jray.me/fingerprint.html): Learn about the Fingerprint tool for creative technology applications.
 
@@ -27,7 +27,7 @@ This platform highlights a 'hybrid' approach, combining AI's generative capabili
 
 ## Concepts & Philosophy
 
-- [What is Hybrid Production?](https://jray.me/what-is-hybrid): Understand the concept and definition of hybrid production methods.
+- [What is Hybrid Production?](https://jray.me/what-is-hybrid.html): Understand the concept and definition of hybrid production methods.
 
 ---
 
