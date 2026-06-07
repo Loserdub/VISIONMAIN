@@ -343,6 +343,26 @@
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: var(--surface3); border-radius: 3px; }
 
+  /* lane select */
+  .lane-select {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    cursor: pointer;
+    outline: none;
+    transition: all 0.15s;
+    flex-shrink: 0;
+  }
+  .lane-select:hover {
+    border-color: var(--border-hover);
+    color: var(--text);
+  }
+
   /* svg icons inline */
   .i { display: inline-flex; align-items: center; justify-content: center; }
 </style>
@@ -382,7 +402,15 @@
         <div class="section-label">master</div>
         <div class="section-count" id="master-count">0 segs</div>
         <div class="section-line"></div>
+        <button class="icon-btn accent" onclick="magicMix()" title="auto generate remix" style="font-size:11px; width:auto; padding:0 8px;">✨ magic mix</button>
         <button class="icon-btn accent" onclick="clearMaster()" title="clear master" style="font-size:11px;">✕ clear</button>
+      </div>
+
+      <!-- master settings -->
+      <div style="display: flex; align-items: center; justify-content: flex-end; gap: 12px; margin-bottom: 8px; font-family: var(--font-mono); font-size: 11px;">
+        <span style="color: var(--text-muted); font-size: 9px; letter-spacing: 0.08em;">CROSSFADE:</span>
+        <input type="range" id="xfade-slider" min="0.0" max="3.0" step="0.1" value="0.5" style="width: 80px; accent-color: var(--accent); cursor: pointer;" oninput="updateXfadeVal(this.value)">
+        <span id="xfade-val" style="color: var(--accent); min-width: 28px;">0.5s</span>
       </div>
 
       <div class="master-timeline" id="master-timeline"
@@ -444,9 +472,78 @@ const waveformRO = new ResizeObserver(entries => {
   });
 });
 
+let masterLimiter = null;
+let laneGains = {};
+let lowFilter = null;
+let midLowCut = null;
+let midHighCut = null;
+let highFilter = null;
+
 function getCtx() {
-  if (!audioCtx || audioCtx.state === 'closed') audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  if (!audioCtx || audioCtx.state === 'closed') {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    audioCtx = ctx;
+
+    // Create limiter to prevent clipping
+    masterLimiter = ctx.createDynamicsCompressor();
+    masterLimiter.threshold.setValueAtTime(-3, ctx.currentTime);
+    masterLimiter.ratio.setValueAtTime(12, ctx.currentTime);
+    masterLimiter.attack.setValueAtTime(0.003, ctx.currentTime);
+    masterLimiter.release.setValueAtTime(0.1, ctx.currentTime);
+    masterLimiter.connect(ctx.destination);
+
+    // Create lane gains
+    laneGains = {
+      low: ctx.createGain(),
+      mid: ctx.createGain(),
+      high: ctx.createGain(),
+      master: ctx.createGain()
+    };
+    Object.values(laneGains).forEach(g => g.connect(masterLimiter));
+
+    // Crossover filters
+    // LOW lane: lowpass at 250Hz
+    lowFilter = ctx.createBiquadFilter();
+    lowFilter.type = 'lowpass';
+    lowFilter.frequency.value = 250;
+    lowFilter.Q.value = 0.7;
+    lowFilter.connect(laneGains.low);
+
+    // HIGH lane: highpass at 2500Hz
+    highFilter = ctx.createBiquadFilter();
+    highFilter.type = 'highpass';
+    highFilter.frequency.value = 2500;
+    highFilter.Q.value = 0.7;
+    highFilter.connect(laneGains.high);
+
+    // MID lane: bandpass 250Hz to 2500Hz
+    midLowCut = ctx.createBiquadFilter();
+    midLowCut.type = 'highpass';
+    midLowCut.frequency.value = 250;
+    midLowCut.Q.value = 0.7;
+
+    midHighCut = ctx.createBiquadFilter();
+    midHighCut.type = 'lowpass';
+    midHighCut.frequency.value = 2500;
+    midHighCut.Q.value = 0.7;
+
+    midLowCut.connect(midHighCut);
+    midHighCut.connect(laneGains.mid);
+  }
   return audioCtx;
+}
+
+function connectToLane(node, lane) {
+  getCtx();
+  if (lane === 'low') {
+    node.connect(lowFilter);
+  } else if (lane === 'mid') {
+    node.connect(midLowCut);
+  } else if (lane === 'high') {
+    node.connect(highFilter);
+  } else {
+    node.connect(laneGains.master);
+  }
 }
 
 // upload
@@ -474,7 +571,7 @@ function detectSegments(buffer, color) {
   const dur = buffer.duration;
 
   // Very short clips — single segment
-  if (dur < 10) return [{ id: uid(), start: 0, end: dur, label: 'full', color }];
+  if (dur < 10) return [{ id: uid(), start: 0, end: dur, label: 'full', color, lane: 'master' }];
 
   const hop = Math.floor(sr * 0.05); // 50ms frames
   const numFrames = Math.floor(data.length / hop);
@@ -540,7 +637,7 @@ function detectSegments(buffer, color) {
     const start = m * 0.05, end = Math.min(merged[i + 1] * 0.05, dur);
     let eSum = 0, eCount = 0;
     for (let f = m; f < Math.min(merged[i + 1], numFrames); f++) { eSum += sm[f]; eCount++; }
-    return { id: uid(), start, end, color, _e: eCount ? eSum / eCount : 0 };
+    return { id: uid(), start, end, color, lane: 'master', _e: eCount ? eSum / eCount : 0 };
   });
 
   // Assign labels from energy rank + position
@@ -578,6 +675,18 @@ function renderTracks() {
   tracks.forEach((track, ti) => {
     const card = document.createElement('div');
     card.className = 'track-card';
+    
+    let laneSelects = '';
+    track.segments.forEach(seg => {
+      laneSelects += `
+        <select class="lane-select" onchange="updateSegmentLane('${track.id}', '${seg.id}', this.value)" title="Choose output routing lane for ${seg.label}">
+          <option value="master" ${seg.lane === 'master' || !seg.lane ? 'selected' : ''}>${seg.label} → full</option>
+          <option value="high" ${seg.lane === 'high' ? 'selected' : ''}>${seg.label} → highs</option>
+          <option value="mid" ${seg.lane === 'mid' ? 'selected' : ''}>${seg.label} → mids</option>
+          <option value="low" ${seg.lane === 'low' ? 'selected' : ''}>${seg.label} → lows</option>
+        </select>`;
+    });
+
     card.innerHTML = `
       <div class="track-card-head">
         <div class="track-dot" style="background:${track.color.border}"></div>
@@ -590,6 +699,10 @@ function renderTracks() {
       <div class="waveform-wrap" id="wf-${track.id}">
         <canvas class="waveform-canvas" id="cv-${track.id}"></canvas>
         <div class="segment-overlay" id="ov-${track.id}"></div>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px; padding:6px 14px; border-top:1px solid var(--border); overflow-x:auto;">
+        <span style="font-family:var(--font-mono); font-size:9px; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.1em; flex-shrink:0;">lane routing:</span>
+        ${laneSelects}
       </div>`;
     list.appendChild(card);
     requestAnimationFrame(() => {
@@ -724,7 +837,20 @@ function startCutDrag(e, track, cutIdx) {
     // Bust cached energy so suggestions recalculate correctly
     delete seg._cachedE;
     delete nextSeg._cachedE;
+
+    // Update matching segments in master timeline
+    masterSegments.forEach(ms => {
+      if (ms.id === seg.id) {
+        ms.start = seg.start;
+        ms.end = seg.end;
+      } else if (ms.id === nextSeg.id) {
+        ms.start = nextSeg.start;
+        ms.end = nextSeg.end;
+      }
+    });
+
     drawSegmentOverlay(track);
+    renderMaster();
   };
 
   document.addEventListener('mousemove', onMove);
@@ -759,7 +885,7 @@ async function playSegmentPreview(track, seg, div) {
   if(ctx.state==='suspended') await ctx.resume();
   const src=ctx.createBufferSource();
   src.buffer=track.buffer;
-  src.connect(ctx.destination);
+  connectToLane(src, seg.lane || 'master');
   const dur=seg.end-seg.start;
   src.start(0, seg.start, dur);
   div.classList.add('playing');
@@ -781,7 +907,7 @@ async function previewTrack(ti) {
   const track=tracks[ti];
   const src=ctx.createBufferSource();
   src.buffer=track.buffer;
-  src.connect(ctx.destination);
+  connectToLane(src, 'master');
   src.start(0, 0, track.duration); // play full track
   setTrackTransport(track.id, true);
   previewToken = { source: src, trackId: track.id, segDiv: null };
@@ -797,6 +923,20 @@ function stopTrackPreview(tid) {
   stopAllPreviews();
 }
 
+function updateSegmentLane(trackId, segId, newLane) {
+  const track = tracks.find(t => t.id === trackId);
+  if (track) {
+    const seg = track.segments.find(s => s.id === segId);
+    if (seg) {
+      seg.lane = newLane;
+      masterSegments.forEach(ms => {
+        if (ms.id === segId) ms.lane = newLane;
+      });
+      renderMaster();
+    }
+  }
+}
+
 function removeTrack(ti) {
   stopAllPreviews();
   const removed = tracks[ti];
@@ -809,21 +949,49 @@ function removeTrack(ti) {
 }
 
 // master drag/drop
-// master drag/drop
 function onMasterDragOver(e) { e.preventDefault(); e.dataTransfer.dropEffect='copy'; document.getElementById('master-timeline').classList.add('drag-over'); }
 function onMasterDragLeave(e) { if(!e.currentTarget.contains(e.relatedTarget)) document.getElementById('master-timeline').classList.remove('drag-over'); }
 function onMasterDrop(e) {
   e.preventDefault();
   document.getElementById('master-timeline').classList.remove('drag-over');
+  
+  let reorderData = null;
+  try { reorderData = JSON.parse(e.dataTransfer.getData('application/json')); } catch(err) {}
+  
+  const timeline = document.getElementById('master-timeline');
+  const rect = timeline.getBoundingClientRect();
+  const x = e.clientX - rect.left + timeline.scrollLeft;
+  
+  let insertIdx = masterSegments.length;
+  let curX = 0;
+  for (let i = 0; i < masterSegments.length; i++) {
+    const el = document.getElementById('mseg-' + i);
+    if (el) {
+      if (x < curX + el.offsetWidth / 2) { insertIdx = i; break; }
+      curX += el.offsetWidth + 3; // 3px gap
+    }
+  }
+
+  if (reorderData && reorderData.type === 'reorder') {
+    const dragIdx = reorderData.index;
+    if (dragIdx === insertIdx || dragIdx === insertIdx - 1) return;
+    const [movedSeg] = masterSegments.splice(dragIdx, 1);
+    if (insertIdx > dragIdx) insertIdx--;
+    masterSegments.splice(insertIdx, 0, movedSeg);
+    renderMaster();
+    updateSuggestions();
+    return;
+  }
+  
   if (!dragData) return;
-  masterSegments.push({...dragData.seg, masterId:uid(), trackId:dragData.trackId, trackName:dragData.trackName, buffer:dragData.buffer});
+  masterSegments.splice(insertIdx, 0, {...dragData.seg, masterId:uid(), trackId:dragData.trackId, trackName:dragData.trackName, buffer:dragData.buffer});
   renderMaster();
   updateSuggestions();
 }
 
 function renderMaster() {
   const tl=document.getElementById('master-timeline');
-  const totalDur=masterSegments.reduce((a,s)=>a+(s.end-s.start),0);
+  const totalDur = masterSegments.length ? getTimelineParams().totalDur : 0;
   document.getElementById('master-count').textContent=masterSegments.length+' segs';
   document.getElementById('total-time').textContent=fmtTime(totalDur);
   document.getElementById('play-btn').disabled=masterSegments.length===0;
@@ -840,11 +1008,20 @@ function renderMaster() {
     const div=document.createElement('div');
     div.className='master-seg';
     div.id='mseg-'+i;
+    div.draggable=true;
+    div.addEventListener('dragstart', e => {
+      e.dataTransfer.effectAllowed = 'move';
+      e.dataTransfer.setData('application/json', JSON.stringify({ type: 'reorder', index: i }));
+      e.stopPropagation();
+    });
     div.style.cssText=`background:${ms.color.bg};border-left-color:${ms.color.border};color:${ms.color.text};flex-grow:${grow}`;
+    const laneLabels = { low: 'lows', mid: 'mids', high: 'highs', master: 'full' };
+    const laneText = ms.lane && ms.lane !== 'master' ? `<span style="font-family:var(--font-mono); font-size:8px; text-transform:uppercase; opacity:0.4; margin-top:2px;">[${laneLabels[ms.lane]}]</span>` : '';
     div.innerHTML=`
       <span class="master-seg-lbl">${ms.label}</span>
       <span class="master-seg-src">${ms.trackName}</span>
       <span class="master-seg-dur">${fmtTime(dur)}</span>
+      ${laneText}
       <button class="seg-remove" onclick="removeMasterSeg(${i})">✕</button>`;
     tl.appendChild(div);
   });
@@ -967,6 +1144,81 @@ function updateSuggestions() {
 }
 function clearMaster() { stopPlayback(); masterSegments=[]; renderMaster(); updateSuggestions(); }
 
+let XFADE = 0.5; // default to 0.5s crossfade
+
+function updateXfadeVal(val) {
+  XFADE = parseFloat(val);
+  document.getElementById('xfade-val').textContent = XFADE.toFixed(1) + 's';
+  renderMaster();
+}
+
+function getTimelineParams() {
+  let dur = 0;
+  const starts = [];
+  const overlaps = [];
+  
+  masterSegments.forEach((ms, i) => {
+    starts.push(dur);
+    const msDur = ms.end - ms.start;
+    dur += msDur;
+    
+    if (i < masterSegments.length - 1) {
+      const nextMs = masterSegments[i + 1];
+      const nextDur = nextMs.end - nextMs.start;
+      const overlap = Math.min(XFADE, msDur / 2, nextDur / 2);
+      overlaps.push(overlap);
+      dur -= overlap;
+    }
+  });
+  return { totalDur: dur, starts, overlaps };
+}
+
+function makeFadeInCurve(length) {
+  const curve = new Float32Array(length);
+  for (let i = 0; i < length; i++) {
+    curve[i] = Math.sin((Math.PI / 2) * (i / (length - 1)));
+  }
+  return curve;
+}
+
+function makeFadeOutCurve(length) {
+  const curve = new Float32Array(length);
+  for (let i = 0; i < length; i++) {
+    curve[i] = Math.cos((Math.PI / 2) * (i / (length - 1)));
+  }
+  return curve;
+}
+
+function magicMix() {
+  if (!tracks.length) { alert('Load some tracks first!'); return; }
+  stopPlayback();
+  masterSegments = [];
+  const structure = ['intro', 'verse A', 'chorus', 'verse B', 'bridge', 'drop', 'outro'];
+  let lastTrackId = null;
+  structure.forEach(targetLabel => {
+    let candidates = [];
+    tracks.forEach(t => t.segments.forEach(seg => {
+      if (seg.label === targetLabel) candidates.push({ track: t, seg });
+    }));
+    if (!candidates.length) {
+      tracks.forEach(t => candidates.push(...t.segments.map(seg => ({ track: t, seg }))));
+    }
+    candidates.forEach(c => {
+      c.score = Math.random() * 10;
+      if (c.track.id !== lastTrackId) c.score += 20;
+      if (c.seg.label === targetLabel) c.score += 50;
+    });
+    candidates.sort((a,b) => b.score - a.score);
+    const chosen = candidates[0];
+    if (chosen) {
+      masterSegments.push({...chosen.seg, masterId:uid(), trackId:chosen.track.id, trackName:chosen.track.name, buffer:chosen.track.buffer});
+      lastTrackId = chosen.track.id;
+    }
+  });
+  renderMaster();
+  updateSuggestions();
+}
+
 // playback
 async function togglePlay() {
   if (isPlaying) { pausePlayback(); return; }
@@ -981,25 +1233,72 @@ async function startPlayback() {
   document.getElementById('play-btn').textContent='⏸';
   document.getElementById('play-btn').classList.add('active');
   scheduledSources=[];
-  const totalDur=masterSegments.reduce((a,s)=>a+(s.end-s.start),0);
+  const { totalDur, starts, overlaps } = getTimelineParams();
   const startOffset=playbackOffset;
   const wallStart=performance.now()/1000;
-  let t=0;
-  masterSegments.forEach(ms => {
+  
+  masterSegments.forEach((ms, i) => {
     const dur=ms.end-ms.start;
-    if(!ms.buffer) { t+=dur; return; }
+    const t = starts[i];
+    if(!ms.buffer) return;
+    
     const src=ctx.createBufferSource();
     src.buffer=ms.buffer;
-    src.connect(ctx.destination);
+    
+    const gainNode = ctx.createGain();
+    src.connect(gainNode);
+    connectToLane(gainNode, ms.lane || 'master');
+    
     const scheduleDelay=t-startOffset;
+    const startTime = ctx.currentTime + Math.max(0, scheduleDelay);
+    const fadeInDur = i > 0 ? overlaps[i - 1] : 0;
+    const fadeOutDur = i < masterSegments.length - 1 ? overlaps[i] : 0;
+    
     if(scheduleDelay>=0){
-      src.start(ctx.currentTime+scheduleDelay, ms.start, dur);
+      if (fadeInDur > 0) {
+        gainNode.gain.setValueAtTime(0, startTime);
+        gainNode.gain.setValueCurveAtTime(makeFadeInCurve(32), startTime, fadeInDur);
+      } else {
+        gainNode.gain.setValueAtTime(1, startTime);
+      }
+      
+      if (fadeOutDur > 0) {
+        gainNode.gain.setValueAtTime(1, startTime + dur - fadeOutDur);
+        gainNode.gain.setValueCurveAtTime(makeFadeOutCurve(32), startTime + dur - fadeOutDur, fadeOutDur);
+      }
+      
+      src.start(startTime, ms.start, dur);
     } else {
       const alreadyElapsed=-scheduleDelay;
-      if(alreadyElapsed<dur) src.start(ctx.currentTime, ms.start+alreadyElapsed, dur-alreadyElapsed);
+      if(alreadyElapsed<dur){
+        const remainingDur=dur-alreadyElapsed;
+        
+        if (fadeInDur > 0 && alreadyElapsed < fadeInDur) {
+          const startGain = Math.sin((Math.PI / 2) * (alreadyElapsed / fadeInDur));
+          gainNode.gain.setValueAtTime(startGain, ctx.currentTime);
+          gainNode.gain.linearRampToValueAtTime(1.0, ctx.currentTime + (fadeInDur - alreadyElapsed));
+        } else {
+          gainNode.gain.setValueAtTime(1.0, ctx.currentTime);
+        }
+        
+        if (fadeOutDur > 0) {
+          const fadeOutStartOffset = dur - fadeOutDur;
+          if (alreadyElapsed < fadeOutStartOffset) {
+            const futureFadeOutTime = ctx.currentTime + (fadeOutStartOffset - alreadyElapsed);
+            gainNode.gain.setValueAtTime(1.0, futureFadeOutTime);
+            gainNode.gain.setValueCurveAtTime(makeFadeOutCurve(32), futureFadeOutTime, fadeOutDur);
+          } else {
+            const fadeOutElapsed = alreadyElapsed - fadeOutStartOffset;
+            const startGain = Math.cos((Math.PI / 2) * (fadeOutElapsed / fadeOutDur));
+            gainNode.gain.setValueAtTime(startGain, ctx.currentTime);
+            gainNode.gain.linearRampToValueAtTime(0.0, ctx.currentTime + remainingDur);
+          }
+        }
+        
+        src.start(ctx.currentTime, ms.start+alreadyElapsed, remainingDur);
+      }
     }
-    scheduledSources.push(src);
-    t+=dur;
+    scheduledSources.push({ src, gainNode });
   });
   function tick() {
     if(!isPlaying) return;
@@ -1008,11 +1307,11 @@ async function startPlayback() {
     const pct=Math.min(elapsed/totalDur,1)*100;
     document.getElementById('progress-fill').style.width=pct+'%';
     document.getElementById('time-display').textContent=fmtTime(Math.min(elapsed,totalDur));
-    let cursor=0, activeIdx=-1;
+    let activeIdx=-1;
     for(let i=0;i<masterSegments.length;i++){
-      const d=masterSegments[i].end-masterSegments[i].start;
-      if(elapsed>=cursor && elapsed<cursor+d){ activeIdx=i; break; }
-      cursor+=d;
+      const t = starts[i];
+      const d = masterSegments[i].end-masterSegments[i].start;
+      if(elapsed>=t && elapsed<t+d){ activeIdx=i; break; }
     }
     masterSegments.forEach((_,i)=>{
       const el=document.getElementById('mseg-'+i);
@@ -1033,9 +1332,34 @@ function pausePlayback() {
   document.getElementById('play-btn').textContent='▶';
   document.getElementById('play-btn').classList.remove('active');
   if(animFrame) cancelAnimationFrame(animFrame);
-  scheduledSources.forEach(s=>{ try{s.stop();}catch(e){} });
+  scheduledSources.forEach(s=>{ try{s.src.stop();}catch(e){} });
   scheduledSources=[];
   clearActiveHighlight();
+}
+
+function stopPlayback() {
+  isPlaying=false;
+  playbackOffset=0;
+  document.getElementById('play-btn').textContent='▶';
+  document.getElementById('play-btn').classList.remove('active');
+  if(animFrame) cancelAnimationFrame(animFrame);
+  scheduledSources.forEach(s=>{ try{s.src.stop();}catch(e){} });
+  scheduledSources=[];
+  document.getElementById('progress-fill').style.width='0%';
+  document.getElementById('time-display').textContent='0:00';
+  clearActiveHighlight();
+}
+
+function seekTo(e) {
+  const track=document.getElementById('progress-track');
+  const pct=Math.max(0, Math.min(1, e.offsetX/track.clientWidth));
+  const totalDur = masterSegments.length ? getTimelineParams().totalDur : 0;
+  const wasPlaying=isPlaying;
+  if(wasPlaying) pausePlayback();
+  playbackOffset=pct*totalDur;
+  document.getElementById('progress-fill').style.width=(pct*100)+'%';
+  document.getElementById('time-display').textContent=fmtTime(playbackOffset);
+  if(wasPlaying) startPlayback();
 }
 
 // export
@@ -1045,18 +1369,93 @@ async function exportMix() {
   btn.textContent='⏳ rendering...'; btn.disabled=true;
   try {
     const sr=44100;
-    const totalDur=masterSegments.reduce((a,s)=>a+(s.end-s.start),0);
+    const { totalDur, starts, overlaps } = getTimelineParams();
     const offCtx=new OfflineAudioContext(2,Math.ceil(totalDur*sr),sr);
-    let t=0;
-    for(const ms of masterSegments) {
+    
+    // Create offline limiter
+    const offLimiter = offCtx.createDynamicsCompressor();
+    offLimiter.threshold.setValueAtTime(-3, offCtx.currentTime);
+    offLimiter.ratio.setValueAtTime(12, offCtx.currentTime);
+    offLimiter.attack.setValueAtTime(0.003, offCtx.currentTime);
+    offLimiter.release.setValueAtTime(0.1, offCtx.currentTime);
+    offLimiter.connect(offCtx.destination);
+    
+    // Create offline lane gains
+    const offLaneGains = {
+      low: offCtx.createGain(),
+      mid: offCtx.createGain(),
+      high: offCtx.createGain(),
+      master: offCtx.createGain()
+    };
+    Object.values(offLaneGains).forEach(g => g.connect(offLimiter));
+    
+    // Create offline crossover filters
+    const offLowFilter = offCtx.createBiquadFilter();
+    offLowFilter.type = 'lowpass';
+    offLowFilter.frequency.value = 250;
+    offLowFilter.Q.value = 0.7;
+    offLowFilter.connect(offLaneGains.low);
+    
+    const offHighFilter = offCtx.createBiquadFilter();
+    offHighFilter.type = 'highpass';
+    offHighFilter.frequency.value = 2500;
+    offHighFilter.Q.value = 0.7;
+    offHighFilter.connect(offLaneGains.high);
+    
+    const offMidLowCut = offCtx.createBiquadFilter();
+    offMidLowCut.type = 'highpass';
+    offMidLowCut.frequency.value = 250;
+    offMidLowCut.Q.value = 0.7;
+    
+    const offMidHighCut = offCtx.createBiquadFilter();
+    offMidHighCut.type = 'lowpass';
+    offMidHighCut.frequency.value = 2500;
+    offMidHighCut.Q.value = 0.7;
+    
+    offMidLowCut.connect(offMidHighCut);
+    offMidHighCut.connect(offLaneGains.mid);
+
+    masterSegments.forEach((ms, i) => {
       const dur=ms.end-ms.start;
-      if(!ms.buffer) { t+=dur; continue; }
+      const t = starts[i];
+      if(!ms.buffer) return;
+      
       const src=offCtx.createBufferSource();
       src.buffer=ms.buffer;
-      src.connect(offCtx.destination);
+      
+      const gainNode = offCtx.createGain();
+      src.connect(gainNode);
+      
+      // Connect to the appropriate offline lane
+      const lane = ms.lane || 'master';
+      if (lane === 'low') {
+        gainNode.connect(offLowFilter);
+      } else if (lane === 'mid') {
+        gainNode.connect(offMidLowCut);
+      } else if (lane === 'high') {
+        gainNode.connect(offHighFilter);
+      } else {
+        gainNode.connect(offLaneGains.master);
+      }
+      
+      const fadeInDur = i > 0 ? overlaps[i - 1] : 0;
+      const fadeOutDur = i < masterSegments.length - 1 ? overlaps[i] : 0;
+      
+      if (fadeInDur > 0) {
+        gainNode.gain.setValueAtTime(0, t);
+        gainNode.gain.setValueCurveAtTime(makeFadeInCurve(32), t, fadeInDur);
+      } else {
+        gainNode.gain.setValueAtTime(1, t);
+      }
+      
+      if (fadeOutDur > 0) {
+        gainNode.gain.setValueAtTime(1, t + dur - fadeOutDur);
+        gainNode.gain.setValueCurveAtTime(makeFadeOutCurve(32), t + dur - fadeOutDur, fadeOutDur);
+      }
+      
       src.start(t, ms.start, dur);
-      t+=dur;
-    }
+    });
+    
     const rendered=await offCtx.startRendering();
     const wav=audioBufferToWav(rendered);
     const blob=new Blob([wav],{type:'audio/wav'});
@@ -1065,31 +1464,6 @@ async function exportMix() {
     URL.revokeObjectURL(url);
   } catch(e) { alert('Export failed: '+e.message); }
   btn.textContent='⬇ export wav'; btn.disabled=false;
-}
-
-function stopPlayback() {
-  isPlaying=false;
-  playbackOffset=0;
-  document.getElementById('play-btn').textContent='▶';
-  document.getElementById('play-btn').classList.remove('active');
-  if(animFrame) cancelAnimationFrame(animFrame);
-  scheduledSources.forEach(s=>{ try{s.stop();}catch(e){} });
-  scheduledSources=[];
-  document.getElementById('progress-fill').style.width='0%';
-  document.getElementById('time-display').textContent='0:00';
-  clearActiveHighlight();
-}
-
-function seekTo(e) {
-  const track=document.getElementById('progress-track');
-  const pct=e.offsetX/track.clientWidth;
-  const totalDur=masterSegments.reduce((a,s)=>a+(s.end-s.start),0);
-  const wasPlaying=isPlaying;
-  if(wasPlaying) pausePlayback();
-  playbackOffset=pct*totalDur;
-  document.getElementById('progress-fill').style.width=(pct*100)+'%';
-  document.getElementById('time-display').textContent=fmtTime(playbackOffset);
-  if(wasPlaying) startPlayback();
 }
 
 function audioBufferToWav(buffer) {
