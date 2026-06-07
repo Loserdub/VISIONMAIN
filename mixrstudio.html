@@ -3,7 +3,147 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Song Mixer</title>
+<link rel="icon" type="image/png" href="./favicon.png">
+
+<!-- ── SEO ─────────────────────────────────────────────────────── -->
+<title>MIXR Studio — Browser-Native Audio Segment Mixer | jray.me</title>
+<meta name="description" content="MIXR Studio is a free, browser-native audio segment mixer for hybrid music producers. Load tracks, auto-detect sections, drag-arrange segments on a master timeline, and export a rendered WAV — no install required. By JRAY.">
+<meta name="author" content="Justin Ray (JRAY)">
+<meta name="keywords" content="audio segment mixer, song section mixer, browser DAW, hybrid music production, AI music tool, waveform editor, stem arranger, music producer tools, JRAY, jray.me">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jray.me/mixrstudio.html">
+
+<!-- Open Graph -->
+<meta property="og:type"        content="website">
+<meta property="og:url"         content="https://jray.me/mixrstudio.html">
+<meta property="og:title"       content="MIXR Studio — Browser-Native Audio Segment Mixer">
+<meta property="og:description" content="Load tracks, auto-detect sections, drag-arrange segments on a master timeline, and export WAV — all in the browser. Free tool by JRAY.">
+<meta property="og:site_name"   content="jray.me">
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card"        content="summary">
+<meta name="twitter:title"       content="MIXR Studio by JRAY">
+<meta name="twitter:description" content="Browser-native audio segment mixer for hybrid producers. Auto section detection, drag timeline, WAV export. No install.">
+<meta name="twitter:site"        content="@jray">
+
+<!-- ── JSON-LD ──────────────────────────────────────────────────── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://jray.me/mixrstudio.html",
+      "name": "MIXR Studio",
+      "alternateName": "MIXR",
+      "description": "A browser-native audio segment mixer for hybrid music production. Load tracks, auto-detect song sections using spectral analysis, drag-arrange segments on a master timeline, and export a rendered WAV — no install required.",
+      "url": "https://jray.me/mixrstudio.html",
+      "applicationCategory": "MultimediaApplication",
+      "applicationSubCategory": "Music Production",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires Web Audio API (Chrome, Firefox, Safari, Edge)",
+      "version": "1.2",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Adaptive spectral-flux section detection",
+        "Waveform visualization",
+        "Draggable cut-point editing",
+        "Drag-and-drop segment arrangement",
+        "Master timeline mixer",
+        "AI-powered next-segment suggestions",
+        "WAV export via OfflineAudioContext",
+        "Zero install — runs entirely in the browser"
+      ],
+      "keywords": "audio mixer, song segment mixer, music production, hybrid production, AI music, waveform editor, stem arranger, browser DAW, section detection",
+      "inLanguage": "en-US",
+      "datePublished": "2025-01-01",
+      "dateModified": "2026-06-07",
+      "creator":   { "@id": "https://jray.me/#person" },
+      "author":    { "@id": "https://jray.me/#person" },
+      "publisher": { "@id": "https://jray.me/#person" },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://jray.me/mixrstudio.html"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://jray.me/#person",
+      "name": "Justin Ray",
+      "additionalName": "Justin Tyler Ray",
+      "alternateName": [
+        "JRAY",
+        "loserdub",
+        "VISION",
+        "Flawed Future",
+        "le vide",
+        "disarray"
+      ],
+      "url": "https://jray.me",
+      "image": "https://jray.me/favicon.png",
+      "email": "mailto:loserdub@gmail.com",
+      "jobTitle": [
+        "Music Producer",
+        "Artist",
+        "Creative Technologist",
+        "Hybrid Music Producer",
+        "Creator of the Hybrid AI Music Movement"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "East Lansing",
+        "addressRegion": "MI",
+        "addressCountry": "US"
+      },
+      "memberOf": [
+        { "@type": "MusicGroup", "name": "loserdub" },
+        { "@type": "MusicGroup", "name": "VISION" },
+        { "@type": "MusicGroup", "name": "Flawed Future" }
+      ],
+      "description": "Justin Tyler Ray is a multifaceted artist, and pioneering creator of the Hybrid Production methodology.",
+      "knowsAbout": [
+        "Hybrid Music Production",
+        "AI Music Generation",
+        "Web Audio API",
+        "Music Technology",
+        "Stem Splitting",
+        "Browser-Native Audio Tools",
+        "Agentic Music Workflows",
+        "Creative Technology",
+        "Creative Design",
+        "Audio Engineering"
+      ],
+      "sameAs": [
+        "https://soundcloud.com/visiontracks",
+        "https://www.youtube.com/@loserdub",
+        "https://www.linkedin.com/in/jray-me/",
+        "https://x.com/TheInnerVision",
+        "https://www.instagram.com/jray.me/",
+        "https://open.spotify.com/artist/3VZelnnW9OR0DyR2qRn4Oq",
+        "https://open.spotify.com/artist/6GGZwLOLxVxYGOcMry3NDi",
+        "https://open.spotify.com/artist/42TmrCeIumkPRyTNOPP78t",
+        "https://open.spotify.com/artist/3FNFzRyU0PCA2vjihWsg6y",
+        "https://www.reddit.com/r/hybridproduction/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://jray.me/#website",
+      "name": "jray.me",
+      "url": "https://jray.me",
+      "description": "Creative technology, hybrid music production, and browser-native audio tools by Justin Ray (JRAY).",
+      "author": { "@id": "https://jray.me/#person" },
+      "inLanguage": "en-US"
+    }
+  ]
+}
+</script>
+
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap');
 
@@ -78,7 +218,7 @@
   .icon-btn:hover { border-color: var(--border-hover); color: var(--text); background: var(--surface2); }
   .icon-btn.accent:hover { border-color: var(--accent); color: var(--accent); }
 
-  .waveform-wrap { position: relative; height: 72px; cursor: default; }
+  .waveform-wrap { position: relative; height: 72px; cursor: default; user-select: none; }
   .waveform-canvas { display: block; width: 100%; height: 100%; }
   .segment-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
   .seg-region {
@@ -90,6 +230,40 @@
   .seg-region:hover { opacity: 0.5; }
   .seg-region.dragging { opacity: 0.7; cursor: grabbing; }
   .seg-region.playing { opacity: 0.65; }
+
+  /* cut handles — draggable segment boundary markers */
+  .cut-handle {
+    position: absolute; top: 0; height: 100%;
+    width: 18px; margin-left: -9px;
+    cursor: ew-resize; z-index: 10;
+    display: flex; justify-content: center; align-items: flex-start;
+    padding-top: 4px; pointer-events: all;
+  }
+  .cut-handle::before {
+    content: ''; position: absolute; top: 0; bottom: 0;
+    left: 50%; transform: translateX(-50%);
+    width: 2px; background: var(--accent); opacity: 0.45;
+    pointer-events: none; transition: opacity 0.15s;
+  }
+  .cut-handle::after {
+    content: ''; width: 10px; height: 10px; border-radius: 50%;
+    background: var(--accent); border: 2px solid var(--bg);
+    flex-shrink: 0; opacity: 0.55; pointer-events: none;
+    transition: opacity 0.15s, transform 0.15s;
+    position: relative; z-index: 1;
+  }
+  .cut-handle:hover::before, .cut-handle.cut-dragging::before { opacity: 1; }
+  .cut-handle:hover::after,  .cut-handle.cut-dragging::after  { opacity: 1; transform: scale(1.25); }
+  .cut-time {
+    font-family: var(--font-mono); font-size: 8px; color: var(--accent);
+    background: rgba(0,0,0,0.85); border: 1px solid var(--accent-border);
+    border-radius: 3px; padding: 1px 4px; white-space: nowrap;
+    pointer-events: none; opacity: 0; transition: opacity 0.12s;
+    position: absolute; top: 16px; left: 50%; transform: translateX(-50%);
+    z-index: 2; user-select: none;
+  }
+  .cut-handle:hover .cut-time, .cut-handle.cut-dragging .cut-time { opacity: 1; }
+  .segment-overlay.cut-dragging { cursor: ew-resize !important; }
   .seg-lbl {
     font-family: var(--font-mono); font-size: 9px; font-weight: 700;
     letter-spacing: 0.04em; text-transform: uppercase; pointer-events: none;
@@ -178,7 +352,7 @@
   <header>
     <div class="logo-dot"></div>
     <div class="logo">MIXR</div>
-    <div class="header-sub">ai song segment mixer v0.1</div>
+    <div class="header-sub">ai song segment mixer v1.2</div>
   </header>
 
   <main>
@@ -236,7 +410,7 @@
   </main>
 
   <footer>
-    <div class="hint-text">click segment to preview · drag segment → master · hover master seg to remove</div>
+    <div class="hint-text">click seg to preview · drag seg → master · drag cut handles to trim · space to play</div>
     <button class="export-btn" id="export-btn" onclick="exportMix()" disabled>⬇ export wav</button>
   </footer>
 </div>
@@ -260,6 +434,15 @@ let playbackStartedAt = 0;
 let playbackOffset = 0;
 let animFrame = null;
 let scheduledSources = [];
+
+// Redraw waveforms when track card width changes (window resize etc.)
+const waveformRO = new ResizeObserver(entries => {
+  entries.forEach(entry => {
+    const trackId = entry.target.id.replace('wf-', '');
+    const track = tracks.find(t => t.id === trackId);
+    if (track) requestAnimationFrame(() => { drawWaveform(track); drawSegmentOverlay(track); });
+  });
+});
 
 function getCtx() {
   if (!audioCtx || audioCtx.state === 'closed') audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -289,31 +472,102 @@ function detectSegments(buffer, color) {
   const data = buffer.getChannelData(0);
   const sr = buffer.sampleRate;
   const dur = buffer.duration;
-  const ws = Math.floor(sr * 0.05);
-  const energies = [];
-  for (let i=0; i<data.length; i+=ws) {
-    let e=0; for (let j=i; j<Math.min(i+ws,data.length); j++) e+=data[j]*data[j];
-    energies.push(e/ws);
+
+  // Very short clips — single segment
+  if (dur < 10) return [{ id: uid(), start: 0, end: dur, label: 'full', color }];
+
+  const hop = Math.floor(sr * 0.05); // 50ms frames
+  const numFrames = Math.floor(data.length / hop);
+
+  // RMS energy per frame
+  const rms = new Float32Array(numFrames);
+  for (let i = 0; i < numFrames; i++) {
+    let sum = 0;
+    const s = i * hop, e = Math.min(s + hop, data.length);
+    for (let j = s; j < e; j++) sum += data[j] * data[j];
+    rms[i] = Math.sqrt(sum / (e - s));
   }
-  const maxE = Math.max(...energies,1e-9);
-  const sm = energies.map((_,i) => { let s=0,c=0; for(let k=Math.max(0,i-3);k<=Math.min(energies.length-1,i+3);k++){s+=energies[k];c++;} return s/c; });
-  const minSamples = Math.floor(4/0.05);
-  const cuts=[0]; let lastCut=0;
-  for (let i=4; i<sm.length-4; i++) {
-    if (i-lastCut<minSamples) continue;
-    const prev=sm.slice(Math.max(0,i-4),i).reduce((a,b)=>a+b,0)/4;
-    const next=sm.slice(i,Math.min(sm.length,i+4)).reduce((a,b)=>a+b,0)/4;
-    if (Math.abs(next-prev)/maxE > 0.07) { cuts.push(i); lastCut=i; }
+
+  // Smooth with ±9 frame window (~900ms each side)
+  const W = 9;
+  const sm = new Float32Array(numFrames);
+  for (let i = 0; i < numFrames; i++) {
+    let s = 0, c = 0;
+    for (let k = Math.max(0, i - W); k <= Math.min(numFrames - 1, i + W); k++) { s += rms[k]; c++; }
+    sm[i] = s / c;
   }
-  cuts.push(sm.length-1);
-  const merged=[cuts[0]];
-  for (let i=1;i<cuts.length;i++) if((cuts[i]-merged[merged.length-1])*0.05>=4) merged.push(cuts[i]);
-  if (merged[merged.length-1]!==sm.length-1) merged.push(sm.length-1);
-  const labels=['intro','verse A','pre','chorus','verse B','bridge','outro','hook','drop','outro'];
-  return merged.slice(0,-1).map((m,i) => ({
-    id: uid(), start: m*0.05, end: Math.min(merged[i+1]*0.05, dur),
-    label: labels[i] || `seg ${i+1}`, color
-  }));
+
+  // Spectral flux = abs first derivative of smoothed energy
+  const flux = new Float32Array(numFrames);
+  for (let i = 1; i < numFrames; i++) flux[i] = Math.abs(sm[i] - sm[i - 1]);
+
+  // Adaptive threshold: mean + 1.5 * std (avoids fixed magic number)
+  let mean = 0;
+  for (let i = 0; i < numFrames; i++) mean += flux[i];
+  mean /= numFrames;
+  let variance = 0;
+  for (let i = 0; i < numFrames; i++) variance += (flux[i] - mean) ** 2;
+  const thresh = mean + 1.5 * Math.sqrt(variance / numFrames);
+
+  // Min segment: 8 seconds
+  const minFrames = Math.ceil(8 / 0.05);
+  const cuts = [0];
+  let lastCut = 0;
+
+  for (let i = minFrames; i < numFrames - minFrames; i++) {
+    if (i - lastCut < minFrames) continue;
+    if (flux[i] <= thresh) continue;
+    // Only accept local maxima within ±10 frames — prevents burst of cuts
+    let isMax = true;
+    for (let k = Math.max(1, i - 10); k <= Math.min(numFrames - 1, i + 10); k++) {
+      if (k !== i && flux[k] >= flux[i]) { isMax = false; break; }
+    }
+    if (!isMax) continue;
+    cuts.push(i);
+    lastCut = i;
+  }
+  cuts.push(numFrames - 1);
+
+  // Merge any remaining cuts still too close
+  const merged = [cuts[0]];
+  for (let i = 1; i < cuts.length; i++) {
+    if ((cuts[i] - merged[merged.length - 1]) * 0.05 >= 8) merged.push(cuts[i]);
+  }
+  if (merged[merged.length - 1] !== numFrames - 1) merged.push(numFrames - 1);
+
+  // Build segments + attach avg energy for label assignment
+  const segs = merged.slice(0, -1).map((m, i) => {
+    const start = m * 0.05, end = Math.min(merged[i + 1] * 0.05, dur);
+    let eSum = 0, eCount = 0;
+    for (let f = m; f < Math.min(merged[i + 1], numFrames); f++) { eSum += sm[f]; eCount++; }
+    return { id: uid(), start, end, color, _e: eCount ? eSum / eCount : 0 };
+  });
+
+  // Assign labels from energy rank + position
+  const n = segs.length;
+  const ranked = segs.map((s, i) => ({ e: s._e, i })).sort((a, b) => b.e - a.e);
+  const highSet = new Set(ranked.slice(0, Math.ceil(n * 0.3)).map(r => r.i));
+  const lowSet  = new Set(ranked.slice(Math.floor(n * 0.65)).map(r => r.i));
+
+  let chorusCount = 0, verseCount = 0;
+  segs.forEach((seg, i) => {
+    const isFirst = i === 0, isLast = i === n - 1;
+    const isHigh = highSet.has(i), isLow = lowSet.has(i);
+    const prevHigh = i > 0 && highSet.has(i - 1);
+    const nextHigh = i < n - 1 && highSet.has(i + 1);
+    let label;
+    if      (isFirst)  label = isHigh ? 'verse A' : 'intro';
+    else if (isLast)   label = 'outro';
+    else if (isHigh) { chorusCount++; label = chorusCount === 1 ? 'chorus' : chorusCount === 2 ? 'hook' : 'drop'; }
+    else if (isLow)    label = prevHigh ? 'bridge' : (i <= 1 ? 'intro' : 'breakdown');
+    else if (nextHigh) label = 'pre';
+    else             { verseCount++; label = verseCount === 1 ? 'verse A' : 'verse B'; }
+    seg.label = label;
+    seg._cachedE = seg._e; // persisted for fast segEnergy() lookups
+    delete seg._e;
+  });
+
+  return segs;
 }
 
 function renderTracks() {
@@ -338,13 +592,19 @@ function renderTracks() {
         <div class="segment-overlay" id="ov-${track.id}"></div>
       </div>`;
     list.appendChild(card);
-    requestAnimationFrame(() => { drawWaveform(track); drawSegmentOverlay(track); });
+    requestAnimationFrame(() => {
+      drawWaveform(track);
+      drawSegmentOverlay(track);
+      const wf = document.getElementById('wf-' + track.id);
+      if (wf) waveformRO.observe(wf);
+    });
   });
 }
 
 function drawWaveform(track) {
   const cv = document.getElementById('cv-'+track.id);
   if (!cv) return;
+  cv.draggable = false; // prevent browser hijacking drag events on canvas
   const wrap = cv.parentElement;
   cv.width = wrap.clientWidth; cv.height = wrap.clientHeight;
   const ctx = cv.getContext('2d');
@@ -362,33 +622,113 @@ function drawWaveform(track) {
 function drawSegmentOverlay(track) {
   const ov = document.getElementById('ov-'+track.id);
   if (!ov) return;
-  ov.innerHTML='';
+  ov.innerHTML = '';
+
+  // Segment regions
   track.segments.forEach(seg => {
-    const lp=(seg.start/track.duration)*100;
-    const wp=((seg.end-seg.start)/track.duration)*100;
-    const div=document.createElement('div');
-    div.className='seg-region';
-    div.dataset.segId=seg.id;
-    div.style.cssText=`left:${lp}%;width:${wp}%;background:${seg.color.border};border-color:${seg.color.border}`;
-    div.innerHTML=`<span class="seg-lbl">${seg.label}</span>`;
-    div.title=`${seg.label}: ${fmtTime(seg.start)}–${fmtTime(seg.end)} · click to play · drag to master`;
-    div.draggable=true;
-    let didDrag=false;
+    const lp = (seg.start / track.duration) * 100;
+    const wp = ((seg.end - seg.start) / track.duration) * 100;
+    const div = document.createElement('div');
+    div.className = 'seg-region';
+    div.dataset.segId = seg.id;
+    div.style.cssText = `left:${lp}%;width:${wp}%;background:${seg.color.border};border-color:${seg.color.border}`;
+    div.innerHTML = `<span class="seg-lbl">${seg.label}</span>`;
+    div.title = `${seg.label}: ${fmtTime(seg.start)}–${fmtTime(seg.end)} · click to play · drag to master`;
+    div.draggable = true;
+    let didDrag = false;
     div.addEventListener('dragstart', e => {
-      didDrag=true;
+      didDrag = true;
       div.classList.add('dragging');
-      dragData={trackId:track.id, trackName:track.name, seg, buffer:track.buffer};
-      e.dataTransfer.effectAllowed='copy';
+      dragData = { trackId: track.id, trackName: track.name, seg, buffer: track.buffer };
+      e.dataTransfer.effectAllowed = 'copy';
       e.dataTransfer.setData('text/plain', seg.id);
     });
-    div.addEventListener('dragend', ()=>div.classList.remove('dragging'));
+    div.addEventListener('dragend', () => div.classList.remove('dragging'));
     div.addEventListener('click', e => {
-      if (didDrag) { didDrag=false; return; }
+      if (didDrag) { didDrag = false; return; }
       e.stopPropagation();
       playSegmentPreview(track, seg, div);
     });
     ov.appendChild(div);
   });
+
+  // Draggable cut handles — one per internal boundary
+  for (let i = 0; i < track.segments.length - 1; i++) {
+    const pct = (track.segments[i].end / track.duration) * 100;
+    const handle = document.createElement('div');
+    handle.className = 'cut-handle';
+    handle.dataset.cutIdx = i;
+    handle.style.left = pct + '%';
+    const timeSpan = document.createElement('span');
+    timeSpan.className = 'cut-time';
+    timeSpan.textContent = fmtTime(track.segments[i].end);
+    handle.appendChild(timeSpan);
+    handle.addEventListener('mousedown', e => {
+      e.stopPropagation();
+      e.preventDefault();
+      startCutDrag(e, track, i);
+    });
+    ov.appendChild(handle);
+  }
+}
+
+function startCutDrag(e, track, cutIdx) {
+  const ov = document.getElementById('ov-' + track.id);
+  if (!ov) return;
+  const seg     = track.segments[cutIdx];
+  const nextSeg = track.segments[cutIdx + 1];
+  const minGap  = 2; // seconds — each side gets at least this much
+
+  const handleEl = ov.querySelector('[data-cut-idx="' + cutIdx + '"]');
+  const segEl    = ov.querySelector('[data-seg-id="' + seg.id + '"]');
+  const nextEl   = ov.querySelector('[data-seg-id="' + nextSeg.id + '"]');
+  const timeSpan = handleEl ? handleEl.querySelector('.cut-time') : null;
+
+  if (handleEl) handleEl.classList.add('cut-dragging');
+  ov.classList.add('cut-dragging');
+
+  const minPct = ((seg.start     + minGap) / track.duration) * 100;
+  const maxPct = ((nextSeg.end   - minGap) / track.duration) * 100;
+  if (minPct >= maxPct) { ov.classList.remove('cut-dragging'); return; } // segments too short
+
+  const onMove = ev => {
+    const rect = ov.getBoundingClientRect();
+    let pct = Math.max(0, Math.min(100, ((ev.clientX - rect.left) / rect.width) * 100));
+    pct = Math.max(minPct, Math.min(maxPct, pct));
+    const newTime = (pct / 100) * track.duration;
+
+    seg.end       = newTime;
+    nextSeg.start = newTime;
+
+    // Update positions in-place — no full redraw during drag
+    if (segEl) {
+      const lp = (seg.start / track.duration) * 100;
+      const wp = ((seg.end - seg.start) / track.duration) * 100;
+      segEl.style.left  = lp + '%';
+      segEl.style.width = wp + '%';
+    }
+    if (nextEl) {
+      const lp = (nextSeg.start / track.duration) * 100;
+      const wp = ((nextSeg.end - nextSeg.start) / track.duration) * 100;
+      nextEl.style.left  = lp + '%';
+      nextEl.style.width = wp + '%';
+    }
+    if (handleEl) handleEl.style.left = pct + '%';
+    if (timeSpan)  timeSpan.textContent = fmtTime(newTime);
+  };
+
+  const onUp = () => {
+    document.removeEventListener('mousemove', onMove);
+    document.removeEventListener('mouseup',   onUp);
+    ov.classList.remove('cut-dragging');
+    // Bust cached energy so suggestions recalculate correctly
+    delete seg._cachedE;
+    delete nextSeg._cachedE;
+    drawSegmentOverlay(track);
+  };
+
+  document.addEventListener('mousemove', onMove);
+  document.addEventListener('mouseup',   onUp);
 }
 
 // ── PREVIEW STATE ─────────────────────────────────────────────
@@ -457,8 +797,18 @@ function stopTrackPreview(tid) {
   stopAllPreviews();
 }
 
-function removeTrack(ti) { stopAllPreviews(); tracks.splice(ti,1); renderTracks(); }
+function removeTrack(ti) {
+  stopAllPreviews();
+  const removed = tracks[ti];
+  tracks.splice(ti, 1);
+  // Remove any master segments sourced from this track
+  const before = masterSegments.length;
+  masterSegments = masterSegments.filter(ms => ms.trackId !== removed.id);
+  renderTracks();
+  if (masterSegments.length !== before) { renderMaster(); updateSuggestions(); }
+}
 
+// master drag/drop
 // master drag/drop
 function onMasterDragOver(e) { e.preventDefault(); e.dataTransfer.dropEffect='copy'; document.getElementById('master-timeline').classList.add('drag-over'); }
 function onMasterDragLeave(e) { if(!e.currentTarget.contains(e.relatedTarget)) document.getElementById('master-timeline').classList.remove('drag-over'); }
@@ -466,7 +816,7 @@ function onMasterDrop(e) {
   e.preventDefault();
   document.getElementById('master-timeline').classList.remove('drag-over');
   if (!dragData) return;
-  masterSegments.push({...dragData.seg, masterId:uid(), trackName:dragData.trackName, buffer:dragData.buffer});
+  masterSegments.push({...dragData.seg, masterId:uid(), trackId:dragData.trackId, trackName:dragData.trackName, buffer:dragData.buffer});
   renderMaster();
   updateSuggestions();
 }
@@ -520,7 +870,9 @@ const SECTION_FLOW = {
 };
 
 function segEnergy(seg) {
-  // rough RMS of the segment from its track buffer
+  // Return cached value when available (set during detectSegments)
+  if (seg._cachedE !== undefined) return seg._cachedE;
+  // Fallback: scan audio buffer (used for master segments copied from source segs)
   const track = tracks.find(t => t.segments.some(s => s.id === seg.id));
   if (!track) return 0.5;
   const data = track.buffer.getChannelData(0);
@@ -531,7 +883,9 @@ function segEnergy(seg) {
   const step = Math.max(1, Math.floor((end - start) / 500));
   let count = 0;
   for (let i = start; i < end; i += step) { sum += data[i] * data[i]; count++; }
-  return count > 0 ? Math.sqrt(sum / count) : 0;
+  const result = count > 0 ? Math.sqrt(sum / count) : 0;
+  seg._cachedE = result; // cache for subsequent calls
+  return result;
 }
 
 function updateSuggestions() {
@@ -684,31 +1038,6 @@ function pausePlayback() {
   clearActiveHighlight();
 }
 
-function stopPlayback() {
-  isPlaying=false;
-  playbackOffset=0;
-  document.getElementById('play-btn').textContent='▶';
-  document.getElementById('play-btn').classList.remove('active');
-  if(animFrame) cancelAnimationFrame(animFrame);
-  scheduledSources.forEach(s=>{ try{s.stop();}catch(e){} });
-  scheduledSources=[];
-  document.getElementById('progress-fill').style.width='0%';
-  document.getElementById('time-display').textContent='0:00';
-  clearActiveHighlight();
-}
-
-function seekTo(e) {
-  const track=document.getElementById('progress-track');
-  const pct=e.offsetX/track.clientWidth;
-  const totalDur=masterSegments.reduce((a,s)=>a+(s.end-s.start),0);
-  const wasPlaying=isPlaying;
-  if(wasPlaying) pausePlayback();
-  playbackOffset=pct*totalDur;
-  document.getElementById('progress-fill').style.width=(pct*100)+'%';
-  document.getElementById('time-display').textContent=fmtTime(playbackOffset);
-  if(wasPlaying) startPlayback();
-}
-
 // export
 async function exportMix() {
   if(!masterSegments.length) return;
@@ -738,6 +1067,31 @@ async function exportMix() {
   btn.textContent='⬇ export wav'; btn.disabled=false;
 }
 
+function stopPlayback() {
+  isPlaying=false;
+  playbackOffset=0;
+  document.getElementById('play-btn').textContent='▶';
+  document.getElementById('play-btn').classList.remove('active');
+  if(animFrame) cancelAnimationFrame(animFrame);
+  scheduledSources.forEach(s=>{ try{s.stop();}catch(e){} });
+  scheduledSources=[];
+  document.getElementById('progress-fill').style.width='0%';
+  document.getElementById('time-display').textContent='0:00';
+  clearActiveHighlight();
+}
+
+function seekTo(e) {
+  const track=document.getElementById('progress-track');
+  const pct=e.offsetX/track.clientWidth;
+  const totalDur=masterSegments.reduce((a,s)=>a+(s.end-s.start),0);
+  const wasPlaying=isPlaying;
+  if(wasPlaying) pausePlayback();
+  playbackOffset=pct*totalDur;
+  document.getElementById('progress-fill').style.width=(pct*100)+'%';
+  document.getElementById('time-display').textContent=fmtTime(playbackOffset);
+  if(wasPlaying) startPlayback();
+}
+
 function audioBufferToWav(buffer) {
   const numCh=buffer.numberOfChannels, sr=buffer.sampleRate, len=buffer.length;
   const out=new ArrayBuffer(44+len*numCh*2), view=new DataView(out);
@@ -759,6 +1113,13 @@ function audioBufferToWav(buffer) {
 
 function fmtTime(s) { const m=Math.floor(s/60); return m+':'+(Math.floor(s%60)+'').padStart(2,'0'); }
 function uid() { return Math.random().toString(36).slice(2); }
+
+// ── KEYBOARD SHORTCUTS ─────────────────────────────────────────
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  if (e.code === 'Space')  { e.preventDefault(); if (masterSegments.length) togglePlay(); }
+  if (e.code === 'Escape') { stopPlayback(); }
+});
 </script>
 </body>
 </html>
