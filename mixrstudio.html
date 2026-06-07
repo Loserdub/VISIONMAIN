@@ -365,6 +365,39 @@
 
   /* svg icons inline */
   .i { display: inline-flex; align-items: center; justify-content: center; }
+
+  .nav-link {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: all 0.15s;
+    border: 1px solid transparent;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+  .nav-link:hover {
+    color: var(--accent);
+    border-color: var(--accent-border);
+    background: var(--accent-dim);
+  }
+  
+  .footer-copyright {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    margin-left: 10px;
+  }
+  .footer-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.15s;
+    border-bottom: 1px solid transparent;
+  }
+  .footer-link:hover {
+    color: var(--text-muted);
+    border-color: var(--text-dim);
+  }
 </style>
 </head>
 <body>
@@ -372,6 +405,10 @@
   <header>
     <div class="logo-dot"></div>
     <div class="logo">MIXR</div>
+    <div style="display: flex; gap: 8px; margin-left: 20px;">
+      <a href="https://jray.me" class="nav-link">jray.me</a>
+      <a href="https://www.reddit.com/r/hybridproduction" target="_blank" rel="noopener" class="nav-link">r/hybridproduction</a>
+    </div>
     <div class="header-sub">ai song segment mixer v1.2</div>
   </header>
 
@@ -439,6 +476,9 @@
 
   <footer>
     <div class="hint-text">click seg to preview · drag seg → master · drag cut handles to trim · space to play</div>
+    <div class="footer-copyright">
+      © 2026 <a href="https://jray.me" class="footer-link">jray.me</a> · All Rights Reserved
+    </div>
     <button class="export-btn" id="export-btn" onclick="exportMix()" disabled>⬇ export wav</button>
   </footer>
 </div>
