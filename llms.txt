@@ -24,6 +24,7 @@ This platform highlights a 'hybrid' approach, combining AI's generative capabili
 
 - [The Future of Hybrid Production](https://jray.me/futureofhybrid.html): Read insights on the evolving landscape of hybrid production techniques.
 - [Suno AI Music Generation 101](https://jray.me/Suno101.html): Understand the basics of AI music generation with Suno AI.
+- [The Liquid Ear: Liquid Neural Networks and Audio Production](https://jray.me/liquidears.html): Explore how liquid neural networks could reshape real-time mixing, mastering, and hybrid audio workflows.
 
 ## Concepts & Philosophy
 
