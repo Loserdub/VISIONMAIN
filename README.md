@@ -51,7 +51,7 @@ Deployment is automated via GitHub Actions using `.github/workflows/deploy.yml`.
 
 On every push to the `main` branch, the workflow uploads the repository root (`.`) as the Pages artifact and deploys it.
 
-Custom domain configuration is stored in `CNAME`.
+This temporary setup uses the default GitHub Pages project URL (`https://loserdub.github.io/VISIONMAIN/`) with no custom `CNAME` file.
 
 ## Entity / SEO notes
 
