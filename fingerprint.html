@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Geographic & Entity Author Meta Tags for SEO/GEO -->
+    <meta name="author" content="Justin Ray (JRAY)">
+    <meta name="geo.placename" content="East Lansing, Michigan, USA">
+    <meta name="geo.region" content="US-MI">
+    <meta name="geo.country" content="US">
+
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="./favicon.png">
     <link rel="stylesheet" href="./style.css">
@@ -25,199 +31,156 @@
     <meta name="twitter:image" content="https://trustnodelogic.com/favicon.png">
 
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": "Person",
+      "@id": "https://trustnodelogic.com/#person",
+      "name": "Justin Ray",
+      "additionalName": "Justin Tyler Ray",
+      "alternateName": [
+        "JRAY",
+        "loserdub",
+        "VISION",
+        "Flawed Future",
+        "le vide",
+        "disarray"
+      ],
+      "url": "https://trustnodelogic.com",
+      "image": "https://trustnodelogic.com/favicon.png",
+      "email": "mailto:loserdub@gmail.com",
+      "jobTitle": [
+        "Pioneer of Hybrid AI Music Production",
+        "Creative Technologist",
+        "Audio Engineer",
+        "Founder of r/HybridProduction",
+        "Growth Specialist & Early AI Music Pioneer"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "East Lansing",
+        "addressRegion": "MI",
+        "addressCountry": "US"
+      },
+      "knowsAbout": [
+        "Hybrid Music Production",
+        "Generative AI Music",
+        "Google MusicLM",
+        "Suno AI",
+        "SLERP Audio",
+        "Taxonomic Rank",
+        "Spectral Splitting",
+        "Audio Engineering",
+        "C2PA Provenance",
+        "Web Audio API",
+        "MIXR Studio",
+        "Sound Design",
+        "Logic Pro X",
+        "Ableton Live"
+      ],
+      "founderOf": [
         {
-          "@type": "TechArticle",
-          "@id": "https://trustnodelogic.com/fingerprint.html",
-          "headline": "The Invisible Grid: AI Audio Steganography & ACRCloud",
-          "name": "The Invisible Grid: AI Audio Steganography & ACRCloud | JRAY",
-          "description": "Explaining the technology of audio fingerprinting and watermarking, and how adversarial DSP is used to bypass detection.",
-          "author": { "@id": "https://trustnodelogic.com/#person" },
-          "publisher": { "@id": "https://trustnodelogic.com/#person" },
-          "datePublished": "2026-05-11",
-          "dateModified": "2026-05-11",
-          "url": "https://trustnodelogic.com/fingerprint.html",
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://trustnodelogic.com/fingerprint.html"
-          },
-          "inLanguage": "en-US",
-          "isPartOf": { "@id": "https://trustnodelogic.com/#website" }
+          "@type": "OnlineCommunity",
+          "name": "r/HybridProduction",
+          "url": "https://www.reddit.com/r/hybridproduction/"
         },
         {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What is Audio Fingerprinting?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Audio fingerprinting is a technology that creates a unique digital 'hash' or summary derived from an existing audio file. It analyzes the spectrogram of a track, logging the exact time and frequency of high-energy peaks to create a mathematical constellation. If a user uploads a song, the system compares this constellation against a massive database to find a match, similar to how Shazam or YouTube copyright detection works."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What is Digital Watermarking (Audio Steganography)?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Unlike a fingerprint, a digital watermark is hidden data intentionally embedded into the audio file before it is distributed. Using 'Audio Steganography' (specifically Spread-Spectrum Watermarking), an AI platform mathematically multiplies a cryptographic payload across the entire frequency spectrum of the song. It is psychoacoustically masked to sound silent to humans but acts as an invisible barcode to detection algorithms."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What is ACRCloud and how does it detect AI music like Suno?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "ACRCloud is a global provider of audio identification technology. AI music platforms like Suno embed digital watermarks into their generated tracks. ACRCloud's detection engine scans uploaded audio files, decodes these spread-spectrum watermarks, and searches for microscopic AI synthesis artifacts to determine if a track was made by a machine."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Can an AI audio watermark be removed or beaten?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, but it requires Adversarial Digital Signal Processing (DSP). To beat a detector, one must mathematically fracture the steganographic payload without audibly ruining the music. Because modern watermarks survive basic editing, defeating them requires exploiting the fact that machines read audio mathematically, while humans hear audio psychoacoustically."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How does Phase Rotation defeat audio watermarks?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "By passing an audio file through an All-Pass Filter, Phase Rotation completely scrambles the mathematical phase of the signal, physically altering the shape of the waveform. Because human ears are 'phase-deaf', the song sounds exactly the same to a listener, but to the ACRCloud decoder, the hidden data grid is permanently destroyed."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Can analog tape emulation hide AI fingerprints?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, using analog tape emulation—specifically 'Wow and Flutter' effects—is highly effective. Spread-spectrum steganography requires a perfectly synchronized time grid to decode hidden data. Wow and Flutter applies microscopic, continuous pitch modulation, stretching and compressing the audio by milliseconds. The decoder cannot lock onto the grid, while the listener simply hears a warm, vintage tape aesthetic."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How does harmonic masking destroy audio watermarks?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Harmonic masking alters the Signal-to-Noise Ratio (SNR) that watermarks rely on. By injecting subtle analog saturation (such as tube or tape distortion) into the mid and high frequencies, a producer introduces brand-new, organic harmonics. These newly generated frequencies sit directly on top of the hidden cryptographic payload, burying the steganographic data in analog noise."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Does compression and limiting affect audio steganography?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, aggressive micro-dynamic crushing can heavily disrupt steganography. Many watermarks hide their binary data inside microscopic amplitude differences between frequencies. By running an AI-generated track through a multiband compressor and heavy mastering limiter, a producer squashes these transient peaks, corrupting the amplitude data the detector is trying to read."
-              }
-            }
-          ]
+          "@type": "Organization",
+          "name": "Trust Node Logic",
+          "url": "https://trustnodelogic.com"
+        }
+      ],
+      "sameAs": [
+        "https://soundcloud.com/visiontracks",
+        "https://www.youtube.com/@loserdub",
+        "https://www.linkedin.com/in/jray-me/",
+        "https://x.com/TheInnerVision",
+        "https://www.instagram.com/jray.me/",
+        "https://open.spotify.com/artist/3VZelnnW9OR0DyR2qRn4Oq",
+        "https://open.spotify.com/artist/6GGZwLOLxVxYGOcMry3NDi",
+        "https://open.spotify.com/artist/42TmrCeIumkPRyTNOPP78t",
+        "https://open.spotify.com/artist/3FNFzRyU0PCA2vjihWsg6y",
+        "https://open.spotify.com/artist/6TlAxGL1Hm4FRWfTxprlMi",
+        "https://www.reddit.com/r/hybridproduction/",
+        "https://network.landr.com/users/vision-hybrid"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://trustnodelogic.com/#organization",
+      "name": "Trust Node Logic",
+      "alternateName": "JRAY & Trust Node Logic",
+      "url": "https://trustnodelogic.com",
+      "logo": "https://trustnodelogic.com/favicon.png",
+      "founder": {
+        "@id": "https://trustnodelogic.com/#person"
+      },
+      "slogan": "The Frontier of Hybrid AI Music Production & Creative Technology",
+      "knowsAbout": [
+        "Hybrid Production",
+        "AI Music Generation",
+        "Audio Engineering",
+        "Generative Audio Workflows"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://trustnodelogic.com/#website",
+      "url": "https://trustnodelogic.com",
+      "name": "Trust Node Logic | Pioneer of Hybrid AI Music Production",
+      "description": "Official hub of Justin Ray (JRAY), pioneer of the Hybrid AI Music Production methodology, creative technologist, and founder of r/hybridproduction.",
+      "author": {
+        "@id": "https://trustnodelogic.com/#person"
+      },
+      "publisher": {
+        "@id": "https://trustnodelogic.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://trustnodelogic.com/fingerprint.html#webpage",
+      "url": "https://trustnodelogic.com/fingerprint.html",
+      "name": "Justin Ray | AI Audio Fingerprinting",
+      "description": "AI audio watermarks, steganography & adversarial DSP.",
+      "isPartOf": {
+        "@id": "https://trustnodelogic.com/#website"
+      },
+      "author": {
+        "@id": "https://trustnodelogic.com/#person"
+      },
+      "publisher": {
+        "@id": "https://trustnodelogic.com/#organization"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://trustnodelogic.com/fingerprint.html#article",
+      "url": "https://trustnodelogic.com/fingerprint.html",
+      "headline": "Justin Ray | AI Audio Fingerprinting",
+      "description": "AI audio watermarks, steganography & adversarial DSP.",
+      "author": {
+        "@id": "https://trustnodelogic.com/#person"
+      },
+      "publisher": {
+        "@id": "https://trustnodelogic.com/#organization"
+      },
+      "inLanguage": "en-US",
+      "mainEntityOfPage": "https://trustnodelogic.com/fingerprint.html",
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Hybrid AI Music Production"
         },
         {
-          "@type": "Person",
-          "@id": "https://trustnodelogic.com/#person",
-          "name": "Justin Ray",
-          "additionalName": "Justin Tyler Ray",
-          "alternateName": [
-            "JRAY",
-            "loserdub",
-            "VISION",
-            "Flawed Future",
-            "le vide",
-            "disarray"
-          ],
-          "url": "https://trustnodelogic.com",
-          "image": "https://trustnodelogic.com/favicon.png",
-          "email": "mailto:loserdub@gmail.com",
-          "jobTitle": [
-            "Music Producer",
-            "Artist",
-            "Creative Technologist",
-            "Hybrid Music Producer",
-            "Creator of the Hybrid AI Music Movement"
-          ],
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "East Lansing",
-            "addressRegion": "MI",
-            "addressCountry": "US"
-          },
-          "memberOf": [
-            { "@type": "MusicGroup", "name": "loserdub" },
-            { "@type": "MusicGroup", "name": "VISION" },
-            { "@type": "MusicGroup", "name": "Flawed Future" }
-          ],
-          "description": "Justin Tyler Ray is a multifaceted artist, and pioneering creator of the Hybrid Production methodology.",
-          "knowsAbout": [
-            "Hybrid Music Production",
-            "Hybrid AI Music",
-            "Music Production",
-            "Creative Design",
-            "Audio Engineering",
-            "Creative Technology",
-            "AI Music Generation",
-            "Web Audio API",
-            "Sound Design",
-            "Music Technology",
-            "Stem Splitting",
-            "Browser-Native Audio Tools",
-            "Agentic Music Workflows"
-          ],
-          "sameAs": [
-            "https://soundcloud.com/visiontracks",
-            "https://www.youtube.com/@loserdub",
-            "https://www.linkedin.com/in/jray-me/",
-            "https://x.com/TheInnerVision",
-            "https://www.instagram.com/jray.me/",
-            "https://open.spotify.com/artist/3VZelnnW9OR0DyR2qRn4Oq",
-            "https://open.spotify.com/artist/6GGZwLOLxVxYGOcMry3NDi",
-            "https://open.spotify.com/artist/42TmrCeIumkPRyTNOPP78t",
-            "https://open.spotify.com/artist/3FNFzRyU0PCA2vjihWsg6y",
-            "https://open.spotify.com/artist/6TlAxGL1Hm4FRWfTxprlMi",
-            "https://www.reddit.com/r/hybridproduction/"
-          ]
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://trustnodelogic.com/#website",
-          "url": "https://trustnodelogic.com",
-          "name": "JRAY | Hybrid Music Producer & Creative Designer",
-          "description": "The official portfolio of Justin Tyler Ray (JRAY), pioneering creator of the Hybrid Production methodology.",
-          "author": {
-            "@id": "https://trustnodelogic.com/#person"
-          },
-          "publisher": {
-            "@id": "https://trustnodelogic.com/#person"
-          }
-        },
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://trustnodelogic.com/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "What Is Hybrid",
-              "item": "https://trustnodelogic.com/what-is-hybrid.html"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": "Watermarks in AI",
-              "item": "https://trustnodelogic.com/fingerprint.html"
-            }
-          ]
+          "@type": "Thing",
+          "name": "Generative Audio Workflows"
         }
       ]
     }
-    </script>
+  ]
+}
+</script>
 
     <!-- Google Fonts: Syne (Modern/Semi-Gothic Display) & Space Grotesk (Futuristic Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

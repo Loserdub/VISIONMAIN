@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Geographic & Entity Author Meta Tags for SEO/GEO -->
+    <meta name="author" content="Justin Ray (JRAY)">
+    <meta name="geo.placename" content="East Lansing, Michigan, USA">
+    <meta name="geo.region" content="US-MI">
+    <meta name="geo.country" content="US">
+
 <meta charset="UTF-8">
 <link rel="icon" type="image/png" href="./favicon.png">
 <link rel="stylesheet" href="./style.css">
@@ -25,28 +31,6 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebApplication",
-      "@id": "https://trustnodelogic.com/black-mirror.html",
-      "name": "Black Mirror — Sound Design & Digital Twin Portal",
-      "description": "A sound design and MIDI export portal by Justin Tyler Ray. Explore your digital twin — the sonic dialogue between human intention and algorithmic response.",
-      "url": "https://trustnodelogic.com/black-mirror.html",
-      "author": { "@id": "https://trustnodelogic.com/#person" },
-      "creator": { "@id": "https://trustnodelogic.com/#person" },
-      "publisher": { "@id": "https://trustnodelogic.com/#person" },
-      "applicationCategory": "EntertainmentApplication",
-      "operatingSystem": "Web",
-      "isAccessibleForFree": true,
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://trustnodelogic.com/black-mirror.html"
-      }
-    },
-    {
       "@type": "Person",
       "@id": "https://trustnodelogic.com/#person",
       "name": "Justin Ray",
@@ -63,11 +47,11 @@
       "image": "https://trustnodelogic.com/favicon.png",
       "email": "mailto:loserdub@gmail.com",
       "jobTitle": [
-        "Music Producer",
-        "Artist",
+        "Pioneer of Hybrid AI Music Production",
         "Creative Technologist",
-        "Hybrid Music Producer",
-        "Creator of the Hybrid AI Music Movement"
+        "Audio Engineer",
+        "Founder of r/HybridProduction",
+        "Growth Specialist & Early AI Music Pioneer"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -75,26 +59,33 @@
         "addressRegion": "MI",
         "addressCountry": "US"
       },
-      "memberOf": [
-        { "@type": "MusicGroup", "name": "loserdub" },
-        { "@type": "MusicGroup", "name": "VISION" },
-        { "@type": "MusicGroup", "name": "Flawed Future" }
-      ],
-      "description": "Justin Tyler Ray is a multifaceted artist, and pioneering creator of the Hybrid Production methodology.",
       "knowsAbout": [
         "Hybrid Music Production",
-        "Hybrid AI Music",
-        "Music Production",
-        "Creative Design",
+        "Generative AI Music",
+        "Google MusicLM",
+        "Suno AI",
+        "SLERP Audio",
+        "Taxonomic Rank",
+        "Spectral Splitting",
         "Audio Engineering",
-        "Creative Technology",
-        "AI Music Generation",
+        "C2PA Provenance",
         "Web Audio API",
+        "MIXR Studio",
         "Sound Design",
-        "Music Technology",
-        "Stem Splitting",
-        "Browser-Native Audio Tools",
-        "Agentic Music Workflows"
+        "Logic Pro X",
+        "Ableton Live"
+      ],
+      "founderOf": [
+        {
+          "@type": "OnlineCommunity",
+          "name": "r/HybridProduction",
+          "url": "https://www.reddit.com/r/hybridproduction/"
+        },
+        {
+          "@type": "Organization",
+          "name": "Trust Node Logic",
+          "url": "https://trustnodelogic.com"
+        }
       ],
       "sameAs": [
         "https://soundcloud.com/visiontracks",
@@ -107,42 +98,79 @@
         "https://open.spotify.com/artist/42TmrCeIumkPRyTNOPP78t",
         "https://open.spotify.com/artist/3FNFzRyU0PCA2vjihWsg6y",
         "https://open.spotify.com/artist/6TlAxGL1Hm4FRWfTxprlMi",
-        "https://www.reddit.com/r/hybridproduction/"
+        "https://www.reddit.com/r/hybridproduction/",
+        "https://network.landr.com/users/vision-hybrid"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://trustnodelogic.com/#organization",
+      "name": "Trust Node Logic",
+      "alternateName": "JRAY & Trust Node Logic",
+      "url": "https://trustnodelogic.com",
+      "logo": "https://trustnodelogic.com/favicon.png",
+      "founder": {
+        "@id": "https://trustnodelogic.com/#person"
+      },
+      "slogan": "The Frontier of Hybrid AI Music Production & Creative Technology",
+      "knowsAbout": [
+        "Hybrid Production",
+        "AI Music Generation",
+        "Audio Engineering",
+        "Generative Audio Workflows"
       ]
     },
     {
       "@type": "WebSite",
       "@id": "https://trustnodelogic.com/#website",
       "url": "https://trustnodelogic.com",
-      "name": "JRAY | Hybrid Music Producer & Creative Designer",
-      "description": "The official portfolio of Justin Tyler Ray (JRAY), pioneering creator of the Hybrid Production methodology.",
+      "name": "Trust Node Logic | Pioneer of Hybrid AI Music Production",
+      "description": "Official hub of Justin Ray (JRAY), pioneer of the Hybrid AI Music Production methodology, creative technologist, and founder of r/hybridproduction.",
       "author": {
         "@id": "https://trustnodelogic.com/#person"
       },
       "publisher": {
-        "@id": "https://trustnodelogic.com/#person"
+        "@id": "https://trustnodelogic.com/#organization"
       }
     },
     {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
+      "@type": "WebPage",
+      "@id": "https://trustnodelogic.com/black-mirror.html#webpage",
+      "url": "https://trustnodelogic.com/black-mirror.html",
+      "name": "Justin Ray | Black Mirror",
+      "description": "Sound design & MIDI portal \u2014 meet your digital twin.",
+      "isPartOf": {
+        "@id": "https://trustnodelogic.com/#website"
+      },
+      "author": {
+        "@id": "https://trustnodelogic.com/#person"
+      },
+      "publisher": {
+        "@id": "https://trustnodelogic.com/#organization"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://trustnodelogic.com/black-mirror.html#article",
+      "url": "https://trustnodelogic.com/black-mirror.html",
+      "headline": "Justin Ray | Black Mirror",
+      "description": "Sound design & MIDI portal \u2014 meet your digital twin.",
+      "author": {
+        "@id": "https://trustnodelogic.com/#person"
+      },
+      "publisher": {
+        "@id": "https://trustnodelogic.com/#organization"
+      },
+      "inLanguage": "en-US",
+      "mainEntityOfPage": "https://trustnodelogic.com/black-mirror.html",
+      "about": [
         {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://trustnodelogic.com/"
+          "@type": "Thing",
+          "name": "Hybrid AI Music Production"
         },
         {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Projects",
-          "item": "https://trustnodelogic.com/projects.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Black Mirror",
-          "item": "https://trustnodelogic.com/black-mirror.html"
+          "@type": "Thing",
+          "name": "Generative Audio Workflows"
         }
       ]
     }

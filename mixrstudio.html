@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Geographic & Entity Author Meta Tags for SEO/GEO -->
+    <meta name="author" content="Justin Ray (JRAY)">
+    <meta name="geo.placename" content="East Lansing, Michigan, USA">
+    <meta name="geo.region" content="US-MI">
+    <meta name="geo.country" content="US">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="./favicon.png">
@@ -32,46 +38,6 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebApplication",
-      "@id": "https://trustnodelogic.com/mixrstudio.html",
-      "name": "MIXR Studio",
-      "alternateName": "MIXR",
-      "description": "A browser-native audio segment mixer for hybrid music production. Load tracks, auto-detect song sections using spectral analysis, drag-arrange segments on a master timeline, and export a rendered WAV — no install required.",
-      "url": "https://trustnodelogic.com/mixrstudio.html",
-      "applicationCategory": "MultimediaApplication",
-      "applicationSubCategory": "Music Production",
-      "operatingSystem": "Any",
-      "browserRequirements": "Requires Web Audio API (Chrome, Firefox, Safari, Edge)",
-      "version": "1.2",
-      "isAccessibleForFree": true,
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "featureList": [
-        "Adaptive spectral-flux section detection",
-        "Waveform visualization",
-        "Draggable cut-point editing",
-        "Drag-and-drop segment arrangement",
-        "Master timeline mixer",
-        "AI-powered next-segment suggestions",
-        "WAV export via OfflineAudioContext",
-        "Zero install — runs entirely in the browser"
-      ],
-      "keywords": "audio mixer, song segment mixer, music production, hybrid production, AI music, waveform editor, stem arranger, browser DAW, section detection",
-      "inLanguage": "en-US",
-      "datePublished": "2025-01-01",
-      "dateModified": "2026-06-07",
-      "creator":   { "@id": "https://trustnodelogic.com/#person" },
-      "author":    { "@id": "https://trustnodelogic.com/#person" },
-      "publisher": { "@id": "https://trustnodelogic.com/#person" },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://trustnodelogic.com/mixrstudio.html"
-      }
-    },
-    {
       "@type": "Person",
       "@id": "https://trustnodelogic.com/#person",
       "name": "Justin Ray",
@@ -88,11 +54,11 @@
       "image": "https://trustnodelogic.com/favicon.png",
       "email": "mailto:loserdub@gmail.com",
       "jobTitle": [
-        "Music Producer",
-        "Artist",
+        "Pioneer of Hybrid AI Music Production",
         "Creative Technologist",
-        "Hybrid Music Producer",
-        "Creator of the Hybrid AI Music Movement"
+        "Audio Engineer",
+        "Founder of r/HybridProduction",
+        "Growth Specialist & Early AI Music Pioneer"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -100,26 +66,33 @@
         "addressRegion": "MI",
         "addressCountry": "US"
       },
-      "memberOf": [
-        { "@type": "MusicGroup", "name": "loserdub" },
-        { "@type": "MusicGroup", "name": "VISION" },
-        { "@type": "MusicGroup", "name": "Flawed Future" }
-      ],
-      "description": "Justin Tyler Ray is a multifaceted artist, and pioneering creator of the Hybrid Production methodology.",
       "knowsAbout": [
         "Hybrid Music Production",
-        "Hybrid AI Music",
-        "Music Production",
-        "Creative Design",
+        "Generative AI Music",
+        "Google MusicLM",
+        "Suno AI",
+        "SLERP Audio",
+        "Taxonomic Rank",
+        "Spectral Splitting",
         "Audio Engineering",
-        "Creative Technology",
-        "AI Music Generation",
+        "C2PA Provenance",
         "Web Audio API",
+        "MIXR Studio",
         "Sound Design",
-        "Music Technology",
-        "Stem Splitting",
-        "Browser-Native Audio Tools",
-        "Agentic Music Workflows"
+        "Logic Pro X",
+        "Ableton Live"
+      ],
+      "founderOf": [
+        {
+          "@type": "OnlineCommunity",
+          "name": "r/HybridProduction",
+          "url": "https://www.reddit.com/r/hybridproduction/"
+        },
+        {
+          "@type": "Organization",
+          "name": "Trust Node Logic",
+          "url": "https://trustnodelogic.com"
+        }
       ],
       "sameAs": [
         "https://soundcloud.com/visiontracks",
@@ -132,20 +105,97 @@
         "https://open.spotify.com/artist/42TmrCeIumkPRyTNOPP78t",
         "https://open.spotify.com/artist/3FNFzRyU0PCA2vjihWsg6y",
         "https://open.spotify.com/artist/6TlAxGL1Hm4FRWfTxprlMi",
-        "https://www.reddit.com/r/hybridproduction/"
+        "https://www.reddit.com/r/hybridproduction/",
+        "https://network.landr.com/users/vision-hybrid"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://trustnodelogic.com/#organization",
+      "name": "Trust Node Logic",
+      "alternateName": "JRAY & Trust Node Logic",
+      "url": "https://trustnodelogic.com",
+      "logo": "https://trustnodelogic.com/favicon.png",
+      "founder": {
+        "@id": "https://trustnodelogic.com/#person"
+      },
+      "slogan": "The Frontier of Hybrid AI Music Production & Creative Technology",
+      "knowsAbout": [
+        "Hybrid Production",
+        "AI Music Generation",
+        "Audio Engineering",
+        "Generative Audio Workflows"
       ]
     },
     {
       "@type": "WebSite",
       "@id": "https://trustnodelogic.com/#website",
-      "name": "Trust Node Logic",
       "url": "https://trustnodelogic.com",
-      "description": "Creative technology, hybrid music production, and browser-native audio tools by Justin Ray (JRAY).",
-      "publisher": {
+      "name": "Trust Node Logic | Pioneer of Hybrid AI Music Production",
+      "description": "Official hub of Justin Ray (JRAY), pioneer of the Hybrid AI Music Production methodology, creative technologist, and founder of r/hybridproduction.",
+      "author": {
         "@id": "https://trustnodelogic.com/#person"
       },
-      "author": { "@id": "https://trustnodelogic.com/#person" },
-      "inLanguage": "en-US"
+      "publisher": {
+        "@id": "https://trustnodelogic.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://trustnodelogic.com/mixrstudio.html#webpage",
+      "url": "https://trustnodelogic.com/mixrstudio.html",
+      "name": "MIXR Studio \u2014 Browser-Native Audio Segment Mixer | JRAY",
+      "description": "MIXR Studio is a free, browser-native audio segment mixer for hybrid music producers. Load tracks, auto-detect sections, drag-arrange segments on a master timeline, and export a rendered WAV \u2014 no install required. By JRAY.",
+      "isPartOf": {
+        "@id": "https://trustnodelogic.com/#website"
+      },
+      "author": {
+        "@id": "https://trustnodelogic.com/#person"
+      },
+      "publisher": {
+        "@id": "https://trustnodelogic.com/#organization"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://trustnodelogic.com/mixrstudio.html#article",
+      "url": "https://trustnodelogic.com/mixrstudio.html",
+      "headline": "MIXR Studio \u2014 Browser-Native Audio Segment Mixer | JRAY",
+      "description": "MIXR Studio is a free, browser-native audio segment mixer for hybrid music producers. Load tracks, auto-detect sections, drag-arrange segments on a master timeline, and export a rendered WAV \u2014 no install required. By JRAY.",
+      "author": {
+        "@id": "https://trustnodelogic.com/#person"
+      },
+      "publisher": {
+        "@id": "https://trustnodelogic.com/#organization"
+      },
+      "inLanguage": "en-US",
+      "mainEntityOfPage": "https://trustnodelogic.com/mixrstudio.html",
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Hybrid AI Music Production"
+        },
+        {
+          "@type": "Thing",
+          "name": "Generative Audio Workflows"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://trustnodelogic.com/mixrstudio.html#application",
+      "name": "MIXR Studio",
+      "operatingSystem": "Web Browser",
+      "applicationCategory": "MultimediaApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@id": "https://trustnodelogic.com/#person"
+      },
+      "description": "Browser-native audio segment mixer and mastering environment for hybrid music production."
     }
   ]
 }

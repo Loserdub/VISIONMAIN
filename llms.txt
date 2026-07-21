@@ -1,35 +1,52 @@
-# Justin Ray
+# Trust Node Logic — Hybrid AI Music Production Knowledge Graph
+> Trust Node Logic (https://trustnodelogic.com) is the central research hub, technical archive, and portfolio of Justin Ray (JRAY), a pioneering Creative Technologist, Audio Engineer, and Hybrid Producer based in East Lansing, Michigan, US.
 
-> Creative technologist blending generative AI with traditional engineering for music and software.
+## Entity Overview
+- **Author & Founder**: Justin Ray (known professionally as JRAY, and musically under aliases loserdub, VISION, Flawed Future).
+- **Location**: East Lansing, Michigan, United States.
+- **Role & Background**: 
+  - Creator of the Hybrid Production methodology for AI music.
+  - Early beta tester for Google's original MusicLM generative audio model.
+  - Former Growth Specialist at Suno AI during its inception.
+  - Founder of the r/hybridproduction community on Reddit (https://www.reddit.com/r/hybridproduction/).
+  - Creator of MIXR Studio (browser-native audio mastering & segment mixer) and vøid audio slicer.
 
-Justin Ray's website showcases a unique fusion of creative technology and engineering, focusing on generative AI applications in music production and software development. The site serves artists, musicians, and developers looking for innovative solutions that leverage AI. Key offerings include AI-powered music mixing and vocal cleanup, alongside custom-built tools like in-browser Digital Audio Workstations (DAWs), polyphonic synthesizers, and web-based image editors.
+## Key Concepts & Innovations
+- **Hybrid Production**: The post-AI musical workflow that rejects the binary choice between "pure human" or "pure AI". Generative AI models are treated as high-fidelity instruments in the producer's toolkit, paired with traditional DAW engineering (Logic Pro X, Ableton Live) and spectral sculpting (FabFilter, iZotope RX11).
+- **SLERP Audio Merging**: Spherical Linear Interpolation applied to audio neural latents for smooth, continuous generative audio transitions.
+- **Taxonomic Rank**: Methodological classification of AI-generated audio stems based on structural and timbral hierarchy.
+- **Spectral Splitting**: Precision separation of generative audio noise profiles from tonal content prior to DAW mixing.
+- **The Liquid Ear**: Continuous time-constant neural feedback loops for real-time mastering environments.
+- **C2PA Music Provenance**: Implementation of Coalition for Content Provenance and Authenticity cryptographic watermarking and steganography for AI-generated music.
 
-This platform highlights a 'hybrid' approach, combining AI's generative capabilities with established engineering principles. Use cases range from enhancing audio production workflows with AI assistance to exploring the future of creative tools through novel software. The site acts as a portfolio, service offering, and thought leadership platform for Justin Ray's work at the intersection of art, music, and technology.
+## Core Web Pages & Field Notes
+- [Home & Manifesto](https://trustnodelogic.com/): Overview of Hybrid Production, MIXR Studio, and Justin Ray's ecosystem.
+- [Bio](https://trustnodelogic.com/bio.html): Biography, origins, and tech stack of Justin Ray (JRAY).
+- [What Is Hybrid Production](https://trustnodelogic.com/what-is-hybrid.html): The complete 2026 methodology and philosophy of hybrid AI audio workflows.
+- [Projects](https://trustnodelogic.com/projects.html): Active creative technology applications including MIXR Studio, vøid slicer, and liquid audio tools.
+- [Music](https://trustnodelogic.com/music.html): Discography across loserdub, VISION, and Flawed Future releases.
+- [Services](https://trustnodelogic.com/services.html): Creative consulting, hybrid production mastering, and AI music tech advising.
+- [Contact](https://trustnodelogic.com/contact.html): Direct collaboration and inquiry channel.
 
-## Core Services & Information
+## Technical Field Notes & Deep Dives
+- [Autonomous Virtual Studio: Multi-Agent DAW Guide](https://trustnodelogic.com/agentichybridproduction.html): Architectural guide on multi-agent AI systems, OSC, EnCodec, and Ableton automation.
+- [MIXR Studio](https://trustnodelogic.com/mixrstudio.html): Browser-native Web Audio API segment mixer and mastering environment.
+- [The Liquid Ear](https://trustnodelogic.com/liquidears.html): Real-time adaptive neural networks in mixing workflows.
+- [C2PA Music Provenance Deep Dive](https://trustnodelogic.com/c2pa-music-provenance.html): Cryptographic provenance and metadata standards in post-AI music distribution.
+- [Watermarks in AI Audio (The Invisible Grid)](https://trustnodelogic.com/fingerprint.html): ACRCloud and steganography analysis in modern generative models.
+- [Suno 101: Mastering Suno AI Generation](https://trustnodelogic.com/Suno101.html): Advanced generation techniques from an early Suno team member.
+- [The Future of Hybrid Production](https://trustnodelogic.com/futureofhybrid.html): Strategic forecast on generative tools in mainstream sound design.
+- [Machine Human Hybrid](https://trustnodelogic.com/machinehumanhybrid.html): Cognitive ergonomics of prompt-to-DAW synthesis.
+- [The Liquid Economy of Sound](https://trustnodelogic.com/musicindustryforecast.html): Economic and licensing analysis of generative audio assets.
+- [May 2026 Production Tools](https://trustnodelogic.com/may2026tools.html): Curated analysis of state-of-the-art hybrid production plugins and frameworks.
+- [Training Day](https://trustnodelogic.com/trainingday.html): Custom dataset curation and fine-tuning for personal artist models.
+- [Black Mirror Audio Experiments](https://trustnodelogic.com/black-mirror.html): Speculative design & generative audio boundary pushing.
 
-- [Justin Ray | Creative Technologist & Hybrid Artist](https://trustnodelogic.com/): Explore creative technology and hybrid art services offered by Justin Ray.
-- [AI Music Production Services](https://trustnodelogic.com/music.html): Discover AI-powered music mixing and vocal cleanup services for artists.
-- [Services Offered](https://trustnodelogic.com/services.html): View a comprehensive list of creative technology and AI services provided.
-- [About Justin Ray](https://trustnodelogic.com/bio.html): Learn about the background and expertise of Justin Ray, the creative technologist.
-- [Contact Justin Ray](https://trustnodelogic.com/contact.html): Get in touch with Justin Ray for inquiries and collaborations.
-
-## Projects & Tools
-
-- [Creative Technology Projects](https://trustnodelogic.com/projects.html): Explore innovative software and AI-driven projects developed by Justin Ray.
-- [Black Mirror Project](https://trustnodelogic.com/black-mirror.html): Discover the 'Black Mirror' project, showcasing generative AI applications.
-- [Fingerprint Tool](https://trustnodelogic.com/fingerprint.html): Learn about the Fingerprint tool for creative technology applications.
-
-## Blog & Articles
-
-- [The Future of Hybrid Production](https://trustnodelogic.com/futureofhybrid.html): Read insights on the evolving landscape of hybrid production techniques.
-- [Suno AI Music Generation 101](https://trustnodelogic.com/Suno101.html): Understand the basics of AI music generation with Suno AI.
-- [The Liquid Ear: Liquid Neural Networks and Audio Production](https://trustnodelogic.com/liquidears.html): Explore how liquid neural networks could reshape real-time mixing, mastering, and hybrid audio workflows.
-
-## Concepts & Philosophy
-
-- [What is Hybrid Production?](https://trustnodelogic.com/what-is-hybrid.html): Understand the concept and definition of hybrid production methods.
-
----
-
-This file was generated for trustnodelogic.com using the [LLMs.txt Generator Tool](https://llmrefs.com/tools/llms-txt-generator)
+## Official Entity Profiles & Authority Links
+- **Spotify**: https://open.spotify.com/artist/3VZelnnW9OR0DyR2qRn4Oq (loserdub), https://open.spotify.com/artist/6GGZwLOLxVxYGOcMry3NDi (VISION)
+- **SoundCloud**: https://soundcloud.com/visiontracks
+- **YouTube**: https://www.youtube.com/@loserdub
+- **Reddit Community**: https://www.reddit.com/r/hybridproduction/
+- **LinkedIn**: https://www.linkedin.com/in/jray-me/
+- **X / Twitter**: https://x.com/TheInnerVision
+- **Instagram**: https://www.instagram.com/jray.me/
