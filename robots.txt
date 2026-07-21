@@ -1,4 +1,4 @@
-Sitemap: https://jray.me/sitemap.xml
+Sitemap: https://trustnodelogic.com/sitemap.xml
 
 User-agent: *
 Allow: /

@@ -1,7 +1,7 @@
 {
   "name": "visionmain",
   "version": "1.0.0",
-  "description": "Static site for jray.me",
+  "description": "Static site for trustnodelogic.com",
   "private": true,
   "scripts": {
     "build:css": "npx tailwindcss -i ./input.css -o ./style.css --minify"

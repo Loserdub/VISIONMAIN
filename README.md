@@ -1,8 +1,8 @@
-# VISIONMAIN — jray.me (Hybrid Production)
+# VISIONMAIN — trustnodelogic.com (Hybrid Production)
 
-Static website source for **jray.me** — the public hub for Justin Ray (JRAY) and the Hybrid Production / hybrid AI music work.
+Static website source for **trustnodelogic.com** — the public hub for Justin Ray (JRAY) and the Hybrid Production / hybrid AI music work.
 
-- Live site: https://jray.me
+- Live site: https://trustnodelogic.com
 - Hosting: GitHub Pages (this repo is deployed as-is)
 
 ## What this repo is (current build)

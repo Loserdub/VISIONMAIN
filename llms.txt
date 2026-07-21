@@ -8,28 +8,28 @@ This platform highlights a 'hybrid' approach, combining AI's generative capabili
 
 ## Core Services & Information
 
-- [Justin Ray | Creative Technologist & Hybrid Artist](https://jray.me/): Explore creative technology and hybrid art services offered by Justin Ray.
-- [AI Music Production Services](https://jray.me/music.html): Discover AI-powered music mixing and vocal cleanup services for artists.
-- [Services Offered](https://jray.me/services.html): View a comprehensive list of creative technology and AI services provided.
-- [About Justin Ray](https://jray.me/bio.html): Learn about the background and expertise of Justin Ray, the creative technologist.
-- [Contact Justin Ray](https://jray.me/contact.html): Get in touch with Justin Ray for inquiries and collaborations.
+- [Justin Ray | Creative Technologist & Hybrid Artist](https://trustnodelogic.com/): Explore creative technology and hybrid art services offered by Justin Ray.
+- [AI Music Production Services](https://trustnodelogic.com/music.html): Discover AI-powered music mixing and vocal cleanup services for artists.
+- [Services Offered](https://trustnodelogic.com/services.html): View a comprehensive list of creative technology and AI services provided.
+- [About Justin Ray](https://trustnodelogic.com/bio.html): Learn about the background and expertise of Justin Ray, the creative technologist.
+- [Contact Justin Ray](https://trustnodelogic.com/contact.html): Get in touch with Justin Ray for inquiries and collaborations.
 
 ## Projects & Tools
 
-- [Creative Technology Projects](https://jray.me/projects.html): Explore innovative software and AI-driven projects developed by Justin Ray.
-- [Black Mirror Project](https://jray.me/black-mirror.html): Discover the 'Black Mirror' project, showcasing generative AI applications.
-- [Fingerprint Tool](https://jray.me/fingerprint.html): Learn about the Fingerprint tool for creative technology applications.
+- [Creative Technology Projects](https://trustnodelogic.com/projects.html): Explore innovative software and AI-driven projects developed by Justin Ray.
+- [Black Mirror Project](https://trustnodelogic.com/black-mirror.html): Discover the 'Black Mirror' project, showcasing generative AI applications.
+- [Fingerprint Tool](https://trustnodelogic.com/fingerprint.html): Learn about the Fingerprint tool for creative technology applications.
 
 ## Blog & Articles
 
-- [The Future of Hybrid Production](https://jray.me/futureofhybrid.html): Read insights on the evolving landscape of hybrid production techniques.
-- [Suno AI Music Generation 101](https://jray.me/Suno101.html): Understand the basics of AI music generation with Suno AI.
-- [The Liquid Ear: Liquid Neural Networks and Audio Production](https://jray.me/liquidears.html): Explore how liquid neural networks could reshape real-time mixing, mastering, and hybrid audio workflows.
+- [The Future of Hybrid Production](https://trustnodelogic.com/futureofhybrid.html): Read insights on the evolving landscape of hybrid production techniques.
+- [Suno AI Music Generation 101](https://trustnodelogic.com/Suno101.html): Understand the basics of AI music generation with Suno AI.
+- [The Liquid Ear: Liquid Neural Networks and Audio Production](https://trustnodelogic.com/liquidears.html): Explore how liquid neural networks could reshape real-time mixing, mastering, and hybrid audio workflows.
 
 ## Concepts & Philosophy
 
-- [What is Hybrid Production?](https://jray.me/what-is-hybrid.html): Understand the concept and definition of hybrid production methods.
+- [What is Hybrid Production?](https://trustnodelogic.com/what-is-hybrid.html): Understand the concept and definition of hybrid production methods.
 
 ---
 
-This file was generated for jray.me using the [LLMs.txt Generator Tool](https://llmrefs.com/tools/llms-txt-generator)
+This file was generated for trustnodelogic.com using the [LLMs.txt Generator Tool](https://llmrefs.com/tools/llms-txt-generator)
