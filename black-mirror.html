@@ -743,8 +743,25 @@ select:focus { border-color: var(--gold); }
   100% { background: var(--user); box-shadow: 0 0 6px var(--user-glow); }
 }
 </style>
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="AI LLM Knowledge Graph Manifest">
 </head>
 <body>
+
+<!-- Top Navigation Overlay for Black Mirror -->
+<header style="position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(5,5,8,0.85);backdrop-filter:blur(10px);padding:12px 24px;border-bottom:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:space-between;font-family:'Share Tech Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;">
+  <a href="./projects.html" style="color:#e8e8f0;text-decoration:none;display:flex;align-items:center;gap:8px;transition:opacity 0.3s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
+    <span>←</span> <span>Back to Projects &amp; Lab</span>
+  </a>
+  <nav style="display:flex;gap:20px;">
+    <a href="/" style="color:rgba(232,232,240,0.6);text-decoration:none;">Home</a>
+    <a href="./music.html" style="color:rgba(232,232,240,0.6);text-decoration:none;">Music</a>
+    <a href="./projects.html" style="color:#ffffff;text-decoration:none;">Projects</a>
+    <a href="./bio.html" style="color:rgba(232,232,240,0.6);text-decoration:none;">Bio</a>
+    <a href="./contact.html" style="color:rgba(232,232,240,0.6);text-decoration:none;">Contact</a>
+  </nav>
+</header>
+
 <div class="app">
   <div class="header">
     <div>
