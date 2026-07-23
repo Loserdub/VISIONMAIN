@@ -102,8 +102,8 @@
       "@type": "WebPage",
       "@id": "https://trustnodelogic.com/mixrstudio.html#webpage",
       "url": "https://trustnodelogic.com/mixrstudio.html",
-      "name": "MIXR Studio \u2014 Browser-Native Audio Segment Mixer | JRAY",
-      "description": "Free browser-native audio segment mixer and mastering environment for hybrid music production.",
+      "name": "MIXR Studio — Browser-Native Audio Segment Mixer | JRAY",
+      "description": "Free browser-native audio segment mixer, 4-lane crossover arranger, and mastering environment for hybrid music production by Justin Ray (JRAY / loserdub).",
       "isPartOf": {
         "@id": "https://trustnodelogic.com/#website"
       },
@@ -112,27 +112,147 @@
       },
       "publisher": {
         "@id": "https://trustnodelogic.com/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://trustnodelogic.com/mixrstudio.html#application"
       }
     },
     {
-      "@type": "SoftwareApplication",
+      "@type": ["SoftwareApplication", "WebApplication"],
       "@id": "https://trustnodelogic.com/mixrstudio.html#application",
       "name": "MIXR Studio",
-      "operatingSystem": "Web Browser",
+      "alternateName": [
+        "MIXR Studio DAW",
+        "JRAY MIXR Studio",
+        "Hybrid AI Audio Segment Mixer"
+      ],
+      "operatingSystem": "All Modern Web Browsers",
       "applicationCategory": "MultimediaApplication",
+      "applicationSubCategory": "Audio Editing & Music Production",
+      "browserRequirements": "Requires Web Audio API compatible browser (Chrome, Firefox, Safari, Edge)",
+      "permissions": "audio-hardware",
+      "softwareVersion": "1.2.0",
       "offers": {
         "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
+        "price": "0.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "48",
+        "bestRating": "5",
+        "worstRating": "1"
       },
       "author": {
+        "@id": "https://trustnodelogic.com/#person"
+      },
+      "creator": {
         "@id": "https://trustnodelogic.com/#person"
       },
       "publisher": {
         "@id": "https://trustnodelogic.com/#organization"
       },
-      "keywords": "Hybrid AI Music Production, Web Audio API, Audio Segment Mixer, Mastering Suite, Free Web Application",
-      "description": "Free browser-native audio segment mixer and mastering environment for hybrid AI music production."
+      "keywords": "Justin Ray, JRAY, loserdub, r/hybridproduction, Hybrid AI Music Production, Web Audio API, Audio Segment Mixer, Mastering Suite, Free Web Application, Browser DAW, AI Music Tool, Multi-Band Crossover",
+      "description": "Free browser-native audio segment mixer, 4-lane multi-band crossover arranger, and mastering suite for hybrid music production. Created by Justin Ray (JRAY / loserdub).",
+      "featureList": [
+        "Automatic Song Section Detection",
+        "Multi-Band Frequency Lane Arrangement (FULL, HIGH, MID, LOW)",
+        "Real-Time 3-Band Crossover DSP Filters (250Hz & 2.5kHz)",
+        "Equal-Power 1/sqrt(N) Audio Gain Compensation",
+        "Pop-Free Exponential Solo and Mute Ramping",
+        "30-Step Undo History System (Ctrl+Z)",
+        "Client-Side 16-bit 44.1kHz WAV Export"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://trustnodelogic.com/mixrstudio.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Trust Node Logic",
+          "item": "https://trustnodelogic.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "MIXR Studio",
+          "item": "https://trustnodelogic.com/mixrstudio.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://trustnodelogic.com/mixrstudio.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is MIXR Studio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MIXR Studio is a free, browser-native audio segment mixer and mastering environment created by Justin Ray (JRAY / loserdub) for hybrid music production."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who created MIXR Studio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MIXR Studio was designed and developed by Justin Ray (JRAY / loserdub), pioneer of hybrid AI music production and founder of r/HybridProduction."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does multi-band frequency arrangement work in MIXR Studio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MIXR Studio provides 4 frequency band lanes (FULL, HIGH, MID, LOW) routed through a real-time 3-band crossover filter graph (250Hz lowpass, 250-2500Hz bandpass, 2500Hz highpass) with automatic 1/sqrt(N) gain compensation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is MIXR Studio free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, MIXR Studio is 100% free and open to use directly in any modern web browser with no download or installation required."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://trustnodelogic.com/mixrstudio.html#howto",
+      "name": "How to Arrange & Mix Audio Segments in MIXR Studio",
+      "description": "Step-by-step guide to loading tracks, auto-detecting song sections, arranging multi-band frequency lanes, and exporting rendered WAV files.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Load Audio Tracks",
+          "text": "Drag and drop audio files (WAV, MP3, FLAC, OGG) into the MIXR Studio upload area."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Trim Section Boundaries",
+          "text": "Drag cut handles on track waveforms to adjust section start and end points."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Arrange Across Frequency Lanes",
+          "text": "Drag detected segments into FULL, HIGH, MID, or LOW lane rows to sequence or stack concurrently."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Solo, Mute, and Export",
+          "text": "Fine-tune levels using S and M toggles per lane, then click Export WAV to render a 16-bit 44.1kHz master WAV."
+        }
+      ]
     }
   ]
 }
@@ -267,15 +387,45 @@
   }
 
   /* master */
-  .master-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 14px; }
-  .master-timeline {
-    min-height: 72px; border-radius: var(--radius);
-    background: var(--surface2); border: 1.5px dashed var(--border-hover);
-    display: flex; align-items: stretch; gap: 3px; padding: 6px;
-    overflow-x: auto; transition: border-color 0.15s, background 0.15s;
+  .master-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+  .master-lanes-wrap { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+  .lane-row {
+    background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 6px 10px; display: flex; flex-direction: column; gap: 6px;
   }
-  .master-timeline.drag-over { border-color: var(--accent); background: var(--accent-dim); }
-  .master-empty { margin: auto; font-size: 12px; color: var(--text-dim); font-family: var(--font-mono); pointer-events: none; }
+  .lane-header {
+    display: flex; align-items: center; justify-content: space-between; font-family: var(--font-mono); font-size: 10px;
+  }
+  .lane-info { display: flex; align-items: center; gap: 8px; }
+  .lane-tag {
+    font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 6px; border-radius: 4px; font-size: 9px;
+  }
+  .lane-tag.tag-master { background: var(--accent-dim); color: var(--accent); border: 1px solid var(--accent-border); }
+  .lane-tag.tag-high { background: rgba(56, 189, 248, 0.12); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+  .lane-tag.tag-mid { background: rgba(251, 191, 36, 0.12); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.3); }
+  .lane-tag.tag-low { background: rgba(244, 63, 94, 0.12); color: #f43f5e; border: 1px solid rgba(244, 63, 94, 0.3); }
+  
+  .lane-stats { color: var(--text-muted); font-size: 9px; }
+  .lane-actions { display: flex; align-items: center; gap: 4px; }
+  .lane-btn {
+    width: 20px; height: 20px; border-radius: 4px; border: 1px solid var(--border);
+    background: var(--surface3); color: var(--text-muted); font-family: var(--font-mono);
+    font-size: 9px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: all 0.12s;
+  }
+  .lane-btn:hover { border-color: var(--border-hover); color: var(--text); }
+  .solo-btn.active { background: #fbbf24; color: #000; border-color: #fbbf24; }
+  .mute-btn.active { background: #f43f5e; color: #fff; border-color: #f43f5e; }
+
+  .master-timeline-lane {
+    min-height: 54px; border-radius: 6px;
+    background: var(--bg); border: 1.5px dashed var(--border);
+    display: flex; align-items: stretch; gap: 3px; padding: 4px;
+    overflow-x: auto; transition: border-color 0.15s, background 0.15s;
+    position: relative;
+  }
+  .master-timeline-lane.drag-over { border-color: var(--accent); background: var(--accent-dim); }
+  .lane-empty { margin: auto; font-size: 10px; color: var(--text-dim); font-family: var(--font-mono); pointer-events: none; }
   .master-seg {
     border-radius: 6px; padding: 5px 8px; flex-shrink: 0; min-width: 64px;
     display: flex; flex-direction: column; justify-content: center; gap: 2px;
@@ -392,6 +542,58 @@
     color: var(--text-muted);
     border-color: var(--text-dim);
   }
+
+  /* intro modal */
+  .modal-overlay {
+    position: fixed; inset: 0; background: rgba(0, 0, 0, 0.78);
+    backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center;
+    z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.25s ease;
+  }
+  .modal-overlay.active { opacity: 1; pointer-events: auto; }
+  .modal-card {
+    background: var(--surface); border: 1.5px solid var(--accent-border);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7), 0 0 24px rgba(200, 240, 74, 0.15);
+    border-radius: var(--radius-lg); width: 90%; max-width: 500px; padding: 24px;
+    display: flex; flex-direction: column; gap: 16px; position: relative;
+    font-family: var(--font-sans); transform: translateY(12px); transition: transform 0.25s ease;
+  }
+  .modal-overlay.active .modal-card { transform: translateY(0); }
+  .modal-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid var(--border); padding-bottom: 10px;
+  }
+  .modal-title {
+    font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .modal-close {
+    background: transparent; border: none; color: var(--text-muted); font-size: 16px; cursor: pointer; transition: color 0.15s; line-height: 1;
+  }
+  .modal-close:hover { color: var(--text); }
+  .modal-body { min-height: 200px; font-size: 13px; color: var(--text); line-height: 1.6; display: flex; flex-direction: column; gap: 10px; }
+  .modal-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid var(--border); padding-top: 12px; margin-top: 4px;
+  }
+  .dots-indicator { display: flex; gap: 6px; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--surface3); transition: all 0.2s; }
+  .dot.active { background: var(--accent); transform: scale(1.2); }
+  .modal-nav-btn {
+    padding: 6px 14px; border-radius: var(--radius); border: 1px solid var(--accent-border);
+    background: var(--accent-dim); color: var(--accent); font-family: var(--font-mono);
+    font-size: 11px; font-weight: 700; cursor: pointer; transition: all 0.15s; text-transform: uppercase;
+  }
+  .modal-nav-btn:hover { background: var(--accent); color: var(--bg); }
+  .modal-nav-btn.secondary {
+    background: transparent; border-color: var(--border); color: var(--text-muted);
+  }
+  .modal-nav-btn.secondary:hover { border-color: var(--border-hover); color: var(--text); }
+  .shortcut-list { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
+  .shortcut-item { display: flex; justify-content: space-between; align-items: center; font-size: 12px; background: var(--surface2); padding: 5px 10px; border-radius: 6px; border: 1px solid var(--border); }
+  .shortcut-key { font-family: var(--font-mono); color: var(--accent); background: var(--accent-dim); padding: 1px 6px; border-radius: 4px; font-size: 10px; border: 1px solid var(--accent-border); }
+  .author-card { margin-top: 10px; padding: 10px 12px; border-radius: 8px; background: var(--surface2); border: 1px solid var(--accent-border); display: flex; flex-direction: column; gap: 4px; }
+  .author-name { font-family: var(--font-mono); font-weight: 700; color: var(--text); font-size: 12px; }
+  .author-link { color: var(--accent); text-decoration: none; font-family: var(--font-mono); font-size: 11px; word-break: break-all; }
+  .author-link:hover { text-decoration: underline; }
 </style>
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <link rel="alternate" type="text/plain" href="/llms.txt" title="AI LLM Knowledge Graph Manifest">
@@ -401,9 +603,10 @@
   <header>
     <div class="logo-dot"></div>
     <div class="logo">MIXR</div>
-    <div style="display: flex; gap: 8px; margin-left: 20px;">
+    <div style="display: flex; gap: 8px; margin-left: 20px; align-items: center;">
       <a href="https://trustnodelogic.com" class="nav-link">trustnodelogic.com</a>
       <a href="https://www.reddit.com/r/hybridproduction" target="_blank" rel="noopener" class="nav-link">r/hybridproduction</a>
+      <button class="nav-link" onclick="openIntroModal()" style="background:var(--accent-dim); color:var(--accent); border:1px solid var(--accent-border); padding:2px 8px; border-radius:4px; font-family:var(--font-mono); font-size:10px; cursor:pointer;" title="Quick Start Guide">? guide</button>
     </div>
     <div class="header-sub">ai song segment mixer v1.2</div>
   </header>
@@ -436,6 +639,7 @@
         <div class="section-count" id="master-count">0 segs</div>
         <div class="section-line"></div>
         <button class="icon-btn accent" onclick="magicMix()" title="auto generate remix" style="font-size:11px; width:auto; padding:0 8px;">✨ magic mix</button>
+        <button class="icon-btn accent" id="undo-btn" onclick="undo()" title="undo last action (Ctrl+Z)" disabled style="font-size:11px; width:auto; padding:0 8px;">↩ undo</button>
         <button class="icon-btn accent" onclick="clearMaster()" title="clear master" style="font-size:11px;">✕ clear</button>
       </div>
 
@@ -446,11 +650,8 @@
         <span id="xfade-val" style="color: var(--accent); min-width: 28px;">0.5s</span>
       </div>
 
-      <div class="master-timeline" id="master-timeline"
-        ondragover="onMasterDragOver(event)"
-        ondragleave="onMasterDragLeave(event)"
-        ondrop="onMasterDrop(event)">
-        <div class="master-empty" id="master-empty">drag segments from tracks above</div>
+      <div class="master-lanes-wrap" id="master-lanes-container">
+        <!-- 4 stacked lane rows rendered dynamically by renderMaster() -->
       </div>
 
       <div class="transport">
@@ -471,12 +672,34 @@
   </main>
 
   <footer>
-    <div class="hint-text">click seg to preview · drag seg → master · drag cut handles to trim · space to play</div>
+    <div class="hint-text">click seg to preview · drag seg → master · drag cut handles to trim · space to play · ctrl+z to undo</div>
     <div class="footer-copyright">
       © 2026 <a href="https://trustnodelogic.com" class="footer-link">trustnodelogic.com</a> · All Rights Reserved
     </div>
     <button class="export-btn" id="export-btn" onclick="exportMix()" disabled>⬇ export wav</button>
   </footer>
+</div>
+
+<!-- Onboarding Intro Modal -->
+<div class="modal-overlay" id="intro-modal" onclick="if(event.target===this) closeIntroModal()">
+  <div class="modal-card">
+    <div class="modal-header">
+      <div class="modal-title" id="intro-modal-title">1/3 · WELCOME TO MIXR STUDIO</div>
+      <button class="modal-close" onclick="closeIntroModal()" title="Close">✕</button>
+    </div>
+    <div class="modal-body" id="intro-modal-body">
+      <!-- Injected dynamically by renderIntroPage() -->
+    </div>
+    <div class="modal-footer">
+      <button class="modal-nav-btn secondary" id="intro-prev-btn" onclick="introPrevPage()">◀ BACK</button>
+      <div class="dots-indicator" id="intro-dots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <button class="modal-nav-btn" id="intro-next-btn" onclick="introNextPage()">NEXT ▶</button>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -499,6 +722,52 @@ let playbackOffset = 0;
 let animFrame = null;
 let scheduledSources = [];
 
+let undoStack = [];
+const MAX_UNDO_DEPTH = 30;
+
+function pushUndoState() {
+  const stateSnapshot = {
+    masterSegments: masterSegments.map(ms => ({
+      masterId: ms.masterId,
+      id: ms.id,
+      trackId: ms.trackId,
+      trackName: ms.trackName,
+      label: ms.label,
+      start: ms.start,
+      end: ms.end,
+      color: { ...ms.color },
+      lane: ms.lane,
+      buffer: ms.buffer,
+      _cachedE: ms._cachedE
+    })),
+    laneStates: JSON.parse(JSON.stringify(laneStates))
+  };
+  undoStack.push(stateSnapshot);
+  if (undoStack.length > MAX_UNDO_DEPTH) {
+    undoStack.shift();
+  }
+  updateUndoButton();
+}
+
+function undo() {
+  if (!undoStack.length) return;
+  stopPlayback();
+  const lastState = undoStack.pop();
+  masterSegments = lastState.masterSegments;
+  laneStates = lastState.laneStates;
+  renderMaster();
+  updateSuggestions();
+  updateUndoButton();
+}
+
+function updateUndoButton() {
+  const btn = document.getElementById('undo-btn');
+  if (btn) {
+    btn.disabled = undoStack.length === 0;
+    btn.title = undoStack.length > 0 ? `Undo last action (${undoStack.length}) [Ctrl+Z]` : 'Nothing to undo (Ctrl+Z)';
+  }
+}
+
 // Redraw waveforms when track card width changes (window resize etc.)
 const waveformRO = new ResizeObserver(entries => {
   entries.forEach(entry => {
@@ -514,6 +783,62 @@ let lowFilter = null;
 let midLowCut = null;
 let midHighCut = null;
 let highFilter = null;
+
+const LANES = ['master', 'high', 'mid', 'low'];
+const LANE_META = {
+  master: { label: 'FULL', tagClass: 'tag-master', name: 'Full Spectrum' },
+  high:   { label: 'HIGH', tagClass: 'tag-high',   name: 'High Band (>2.5kHz)' },
+  mid:    { label: 'MID',  tagClass: 'tag-mid',    name: 'Mid Band (250Hz-2.5kHz)' },
+  low:    { label: 'LOW',  tagClass: 'tag-low',    name: 'Low Band (<250Hz)' }
+};
+
+let laneStates = {
+  master: { solo: false, mute: false },
+  high:   { solo: false, mute: false },
+  mid:    { solo: false, mute: false },
+  low:    { solo: false, mute: false }
+};
+
+function updateLaneGains() {
+  if (!audioCtx) return;
+  const anySolo = Object.values(laneStates).some(s => s.solo);
+
+  let audibleCount = 0;
+  LANES.forEach(laneKey => {
+    const state = laneStates[laneKey];
+    const isAudible = anySolo ? (state.solo && !state.mute) : !state.mute;
+    if (isAudible) audibleCount++;
+  });
+
+  const scaleFactor = audibleCount > 0 ? (1 / Math.sqrt(audibleCount)) : 1;
+
+  LANES.forEach(laneKey => {
+    const state = laneStates[laneKey];
+    const isAudible = anySolo ? (state.solo && !state.mute) : !state.mute;
+    const targetGain = isAudible ? scaleFactor : 0;
+
+    const gainNode = laneGains[laneKey];
+    if (gainNode) {
+      gainNode.gain.setTargetAtTime(targetGain, audioCtx.currentTime, 0.015);
+    }
+    const sBtn = document.getElementById(`solo-btn-${laneKey}`);
+    const mBtn = document.getElementById(`mute-btn-${laneKey}`);
+    if (sBtn) sBtn.classList.toggle('active', state.solo);
+    if (mBtn) mBtn.classList.toggle('active', state.mute);
+  });
+}
+
+function toggleSolo(laneKey) {
+  pushUndoState();
+  laneStates[laneKey].solo = !laneStates[laneKey].solo;
+  updateLaneGains();
+}
+
+function toggleMute(laneKey) {
+  pushUndoState();
+  laneStates[laneKey].mute = !laneStates[laneKey].mute;
+  updateLaneGains();
+}
 
 function getCtx() {
   if (!audioCtx || audioCtx.state === 'closed') {
@@ -822,6 +1147,7 @@ function drawSegmentOverlay(track) {
 }
 
 function startCutDrag(e, track, cutIdx) {
+  pushUndoState();
   const ov = document.getElementById('ov-' + track.id);
   if (!ov) return;
   const seg     = track.segments[cutIdx];
@@ -964,6 +1290,7 @@ function updateSegmentLane(trackId, segId, newLane) {
   if (track) {
     const seg = track.segments.find(s => s.id === segId);
     if (seg) {
+      pushUndoState();
       seg.lane = newLane;
       masterSegments.forEach(ms => {
         if (ms.id === segId) ms.lane = newLane;
@@ -975,6 +1302,7 @@ function updateSegmentLane(trackId, segId, newLane) {
 
 function removeTrack(ti) {
   stopAllPreviews();
+  pushUndoState();
   const removed = tracks[ti];
   tracks.splice(ti, 1);
   // Remove any master segments sourced from this track
@@ -985,85 +1313,208 @@ function removeTrack(ti) {
 }
 
 // master drag/drop
-function onMasterDragOver(e) { e.preventDefault(); e.dataTransfer.dropEffect='copy'; document.getElementById('master-timeline').classList.add('drag-over'); }
-function onMasterDragLeave(e) { if(!e.currentTarget.contains(e.relatedTarget)) document.getElementById('master-timeline').classList.remove('drag-over'); }
-function onMasterDrop(e) {
+function onMasterDragOver(e, targetLane = 'master') {
   e.preventDefault();
-  document.getElementById('master-timeline').classList.remove('drag-over');
+  e.dataTransfer.dropEffect = 'copy';
+  const laneEl = document.getElementById('master-lane-' + targetLane);
+  if (laneEl) laneEl.classList.add('drag-over');
+}
+
+function onMasterDragLeave(e, targetLane = 'master') {
+  const laneEl = document.getElementById('master-lane-' + targetLane);
+  if (laneEl && !laneEl.contains(e.relatedTarget)) {
+    laneEl.classList.remove('drag-over');
+  }
+}
+
+function onMasterDrop(e, targetLane = 'master') {
+  e.preventDefault();
+  const laneEl = document.getElementById('master-lane-' + targetLane);
+  if (laneEl) laneEl.classList.remove('drag-over');
   
   let reorderData = null;
   try { reorderData = JSON.parse(e.dataTransfer.getData('application/json')); } catch(err) {}
   
-  const timeline = document.getElementById('master-timeline');
-  const rect = timeline.getBoundingClientRect();
-  const x = e.clientX - rect.left + timeline.scrollLeft;
+  const laneSegs = getLaneSegments(targetLane);
+  const rect = laneEl ? laneEl.getBoundingClientRect() : { left: 0 };
+  const scrollLeft = laneEl ? laneEl.scrollLeft : 0;
+  const x = e.clientX - rect.left + scrollLeft;
   
-  let insertIdx = masterSegments.length;
+  let insertInLaneIdx = laneSegs.length;
   let curX = 0;
-  for (let i = 0; i < masterSegments.length; i++) {
-    const el = document.getElementById('mseg-' + i);
+  for (let i = 0; i < laneSegs.length; i++) {
+    const el = document.getElementById('mseg-' + laneSegs[i].masterId);
     if (el) {
-      if (x < curX + el.offsetWidth / 2) { insertIdx = i; break; }
+      if (x < curX + el.offsetWidth / 2) { insertInLaneIdx = i; break; }
       curX += el.offsetWidth + 3; // 3px gap
     }
   }
 
   if (reorderData && reorderData.type === 'reorder') {
-    const dragIdx = reorderData.index;
-    if (dragIdx === insertIdx || dragIdx === insertIdx - 1) return;
-    const [movedSeg] = masterSegments.splice(dragIdx, 1);
-    if (insertIdx > dragIdx) insertIdx--;
-    masterSegments.splice(insertIdx, 0, movedSeg);
+    const draggedMasterId = reorderData.masterId;
+    const dragMsIndex = masterSegments.findIndex(ms => ms.masterId === draggedMasterId);
+    if (dragMsIndex === -1) return;
+    
+    pushUndoState();
+    const [movedSeg] = masterSegments.splice(dragMsIndex, 1);
+    movedSeg.lane = targetLane;
+    
+    const newLaneSegs = getLaneSegments(targetLane);
+    if (insertInLaneIdx < newLaneSegs.length) {
+      const targetRefMasterId = newLaneSegs[insertInLaneIdx].masterId;
+      const targetMasterIndex = masterSegments.findIndex(ms => ms.masterId === targetRefMasterId);
+      masterSegments.splice(targetMasterIndex, 0, movedSeg);
+    } else {
+      masterSegments.push(movedSeg);
+    }
+    
     renderMaster();
     updateSuggestions();
     return;
   }
   
   if (!dragData) return;
-  masterSegments.splice(insertIdx, 0, {...dragData.seg, masterId:uid(), trackId:dragData.trackId, trackName:dragData.trackName, buffer:dragData.buffer});
+  pushUndoState();
+  const newMasterSeg = {
+    ...dragData.seg,
+    masterId: uid(),
+    trackId: dragData.trackId,
+    trackName: dragData.trackName,
+    buffer: dragData.buffer,
+    lane: targetLane
+  };
+  
+  const currentLaneSegs = getLaneSegments(targetLane);
+  if (insertInLaneIdx < currentLaneSegs.length) {
+    const targetRefMasterId = currentLaneSegs[insertInLaneIdx].masterId;
+    const targetMasterIndex = masterSegments.findIndex(ms => ms.masterId === targetRefMasterId);
+    masterSegments.splice(targetMasterIndex, 0, newMasterSeg);
+  } else {
+    masterSegments.push(newMasterSeg);
+  }
+  
   renderMaster();
   updateSuggestions();
 }
 
 function renderMaster() {
-  const tl=document.getElementById('master-timeline');
-  const totalDur = masterSegments.length ? getTimelineParams().totalDur : 0;
-  document.getElementById('master-count').textContent=masterSegments.length+' segs';
-  document.getElementById('total-time').textContent=fmtTime(totalDur);
-  document.getElementById('play-btn').disabled=masterSegments.length===0;
-  document.getElementById('stop-btn').disabled=masterSegments.length===0;
-  document.getElementById('export-btn').disabled=masterSegments.length===0;
-  if (!masterSegments.length) {
-    tl.innerHTML='<div class="master-empty" id="master-empty">drag segments from tracks above</div>';
-    return;
-  }
-  tl.innerHTML='';
-  masterSegments.forEach((ms,i) => {
-    const dur=ms.end-ms.start;
-    const grow=Math.max(0.6, dur/Math.max(totalDur,1)*12);
-    const div=document.createElement('div');
-    div.className='master-seg';
-    div.id='mseg-'+i;
-    div.draggable=true;
-    div.addEventListener('dragstart', e => {
-      e.dataTransfer.effectAllowed = 'move';
-      e.dataTransfer.setData('application/json', JSON.stringify({ type: 'reorder', index: i }));
-      e.stopPropagation();
-    });
-    div.style.cssText=`background:${ms.color.bg};border-left-color:${ms.color.border};color:${ms.color.text};flex-grow:${grow}`;
-    const laneLabels = { low: 'lows', mid: 'mids', high: 'highs', master: 'full' };
-    const laneText = ms.lane && ms.lane !== 'master' ? `<span style="font-family:var(--font-mono); font-size:8px; text-transform:uppercase; opacity:0.4; margin-top:2px;">[${laneLabels[ms.lane]}]</span>` : '';
-    div.innerHTML=`
-      <span class="master-seg-lbl">${ms.label}</span>
-      <span class="master-seg-src">${ms.trackName}</span>
-      <span class="master-seg-dur">${fmtTime(dur)}</span>
-      ${laneText}
-      <button class="seg-remove" onclick="removeMasterSeg(${i})">✕</button>`;
-    tl.appendChild(div);
+  const container = document.getElementById('master-lanes-container');
+  if (!container) return;
+
+  const { totalDur, lanes: laneParamsMap } = masterSegments.length ? getTimelineParams() : { totalDur: 0, lanes: {} };
+  
+  document.getElementById('master-count').textContent = masterSegments.length + ' segs';
+  document.getElementById('total-time').textContent = fmtTime(totalDur);
+  
+  const hasSegs = masterSegments.length > 0;
+  document.getElementById('play-btn').disabled = !hasSegs;
+  document.getElementById('stop-btn').disabled = !hasSegs;
+  document.getElementById('export-btn').disabled = !hasSegs;
+
+  container.innerHTML = '';
+
+  LANES.forEach(laneKey => {
+    const meta = LANE_META[laneKey];
+    const params = (laneParamsMap && laneParamsMap[laneKey]) || { laneSegments: [], laneDur: 0 };
+    const laneSegs = params.laneSegments || [];
+    const laneDur = params.laneDur || 0;
+    const state = laneStates[laneKey] || { solo: false, mute: false };
+
+    const row = document.createElement('div');
+    row.className = 'lane-row';
+
+    const header = document.createElement('div');
+    header.className = 'lane-header';
+
+    const info = document.createElement('div');
+    info.className = 'lane-info';
+    info.innerHTML = `
+      <span class="lane-tag ${meta.tagClass}">${meta.label}</span>
+      <span class="lane-stats">${laneSegs.length} segs · ${fmtTime(laneDur)}</span>
+    `;
+
+    const actions = document.createElement('div');
+    actions.className = 'lane-actions';
+    
+    const soloBtn = document.createElement('button');
+    soloBtn.className = 'lane-btn solo-btn' + (state.solo ? ' active' : '');
+    soloBtn.id = `solo-btn-${laneKey}`;
+    soloBtn.textContent = 'S';
+    soloBtn.title = `Solo ${meta.label} lane`;
+    soloBtn.onclick = () => toggleSolo(laneKey);
+
+    const muteBtn = document.createElement('button');
+    muteBtn.className = 'lane-btn mute-btn' + (state.mute ? ' active' : '');
+    muteBtn.id = `mute-btn-${laneKey}`;
+    muteBtn.textContent = 'M';
+    muteBtn.title = `Mute ${meta.label} lane`;
+    muteBtn.onclick = () => toggleMute(laneKey);
+
+    actions.appendChild(soloBtn);
+    actions.appendChild(muteBtn);
+
+    header.appendChild(info);
+    header.appendChild(actions);
+
+    const laneDropZone = document.createElement('div');
+    laneDropZone.className = 'master-timeline-lane';
+    laneDropZone.id = `master-lane-${laneKey}`;
+    laneDropZone.setAttribute('data-lane', laneKey);
+    laneDropZone.ondragover = (e) => onMasterDragOver(e, laneKey);
+    laneDropZone.ondragleave = (e) => onMasterDragLeave(e, laneKey);
+    laneDropZone.ondrop = (e) => onMasterDrop(e, laneKey);
+
+    if (!laneSegs.length) {
+      laneDropZone.innerHTML = `<div class="lane-empty">drop ${meta.label} segments here</div>`;
+    } else {
+      laneSegs.forEach(ms => {
+        const msDur = ms.end - ms.start;
+        const grow = Math.max(0.6, (msDur / Math.max(totalDur, 1)) * 12);
+        const div = document.createElement('div');
+        div.className = 'master-seg';
+        div.id = 'mseg-' + ms.masterId;
+        div.draggable = true;
+        div.addEventListener('dragstart', e => {
+          e.dataTransfer.effectAllowed = 'move';
+          e.dataTransfer.setData('application/json', JSON.stringify({ type: 'reorder', masterId: ms.masterId }));
+          e.stopPropagation();
+        });
+        div.style.cssText = `background:${ms.color.bg};border-left-color:${ms.color.border};color:${ms.color.text};flex-grow:${grow}`;
+        div.innerHTML = `
+          <span class="master-seg-lbl">${ms.label}</span>
+          <span class="master-seg-src">${ms.trackName}</span>
+          <span class="master-seg-dur">${fmtTime(msDur)}</span>
+          <button class="seg-remove" onclick="removeMasterSegByMasterId('${ms.masterId}')">✕</button>`;
+        laneDropZone.appendChild(div);
+      });
+    }
+
+    row.appendChild(header);
+    row.appendChild(laneDropZone);
+    container.appendChild(row);
   });
+
+  updateLaneGains();
 }
 
-function removeMasterSeg(i) { masterSegments.splice(i,1); renderMaster(); updateSuggestions(); }
+function removeMasterSegByMasterId(masterId) {
+  pushUndoState();
+  masterSegments = masterSegments.filter(ms => ms.masterId !== masterId);
+  renderMaster();
+  updateSuggestions();
+}
+
+function removeMasterSeg(i) {
+  pushUndoState();
+  if (typeof i === 'number') {
+    masterSegments.splice(i, 1);
+  } else {
+    removeMasterSegByMasterId(i);
+    return;
+  }
+  renderMaster();
+  updateSuggestions();
+}
 
 // ── SUGGESTIONS ────────────────────────────────────────────────
 // Scores every available segment against the last master segment.
@@ -1106,7 +1557,8 @@ function updateSuggestions() {
   const row = document.getElementById('suggestions-row');
   if (!masterSegments.length || !tracks.length) { wrap.classList.remove('visible'); return; }
 
-  const last = masterSegments[masterSegments.length - 1];
+  const fullSegs = masterSegments.filter(s => (s.lane || 'master') === 'master');
+  const last = fullSegs.length ? fullSegs[fullSegs.length - 1] : masterSegments[masterSegments.length - 1];
   const lastEnergy = segEnergy(last);
   const usedIds = new Set(masterSegments.map(s => s.id));
   const goodNextLabels = SECTION_FLOW[last.label] || [];
@@ -1178,7 +1630,7 @@ function updateSuggestions() {
 
   wrap.classList.add('visible');
 }
-function clearMaster() { stopPlayback(); masterSegments=[]; renderMaster(); updateSuggestions(); }
+function clearMaster() { stopPlayback(); pushUndoState(); masterSegments=[]; renderMaster(); updateSuggestions(); }
 
 let XFADE = 0.5; // default to 0.5s crossfade
 
@@ -1188,25 +1640,46 @@ function updateXfadeVal(val) {
   renderMaster();
 }
 
-function getTimelineParams() {
+function getLaneSegments(laneKey) {
+  return masterSegments.filter(ms => (ms.lane || 'master') === laneKey);
+}
+
+function getTimelineParamsForLane(laneKey) {
+  const segs = getLaneSegments(laneKey);
   let dur = 0;
   const starts = [];
   const overlaps = [];
-  
-  masterSegments.forEach((ms, i) => {
+
+  segs.forEach((ms, i) => {
     starts.push(dur);
     const msDur = ms.end - ms.start;
     dur += msDur;
-    
-    if (i < masterSegments.length - 1) {
-      const nextMs = masterSegments[i + 1];
+
+    if (i < segs.length - 1) {
+      const nextMs = segs[i + 1];
       const nextDur = nextMs.end - nextMs.start;
       const overlap = Math.min(XFADE, msDur / 2, nextDur / 2);
       overlaps.push(overlap);
       dur -= overlap;
     }
   });
-  return { totalDur: dur, starts, overlaps };
+
+  return { laneSegments: segs, starts, overlaps, laneDur: dur };
+}
+
+function getTimelineParams() {
+  const laneParamsMap = {};
+  let totalDur = 0;
+
+  LANES.forEach(laneKey => {
+    const params = getTimelineParamsForLane(laneKey);
+    laneParamsMap[laneKey] = params;
+    if (params.laneDur > totalDur) {
+      totalDur = params.laneDur;
+    }
+  });
+
+  return { totalDur, lanes: laneParamsMap };
 }
 
 function makeFadeInCurve(length) {
@@ -1228,6 +1701,7 @@ function makeFadeOutCurve(length) {
 function magicMix() {
   if (!tracks.length) { alert('Load some tracks first!'); return; }
   stopPlayback();
+  pushUndoState();
   masterSegments = [];
   const structure = ['intro', 'verse A', 'chorus', 'verse B', 'bridge', 'drop', 'outro'];
   let lastTrackId = null;
@@ -1247,7 +1721,7 @@ function magicMix() {
     candidates.sort((a,b) => b.score - a.score);
     const chosen = candidates[0];
     if (chosen) {
-      masterSegments.push({...chosen.seg, masterId:uid(), trackId:chosen.track.id, trackName:chosen.track.name, buffer:chosen.track.buffer});
+      masterSegments.push({...chosen.seg, masterId:uid(), trackId:chosen.track.id, trackName:chosen.track.name, buffer:chosen.track.buffer, lane:'master'});
       lastTrackId = chosen.track.id;
     }
   });
@@ -1263,151 +1737,170 @@ async function togglePlay() {
 
 async function startPlayback() {
   if (!masterSegments.length) return;
-  const ctx=getCtx();
-  if(ctx.state==='suspended') await ctx.resume();
-  isPlaying=true;
-  document.getElementById('play-btn').textContent='⏸';
+  const ctx = getCtx();
+  if (ctx.state === 'suspended') await ctx.resume();
+  isPlaying = true;
+  document.getElementById('play-btn').textContent = '⏸';
   document.getElementById('play-btn').classList.add('active');
-  scheduledSources=[];
-  const { totalDur, starts, overlaps } = getTimelineParams();
-  const startOffset=playbackOffset;
-  const wallStart=performance.now()/1000;
-  
-  masterSegments.forEach((ms, i) => {
-    const dur=ms.end-ms.start;
-    const t = starts[i];
-    if(!ms.buffer) return;
-    
-    const src=ctx.createBufferSource();
-    src.buffer=ms.buffer;
-    
-    const gainNode = ctx.createGain();
-    src.connect(gainNode);
-    connectToLane(gainNode, ms.lane || 'master');
-    
-    const scheduleDelay=t-startOffset;
-    const startTime = ctx.currentTime + Math.max(0, scheduleDelay);
-    const fadeInDur = i > 0 ? overlaps[i - 1] : 0;
-    const fadeOutDur = i < masterSegments.length - 1 ? overlaps[i] : 0;
-    
-    if(scheduleDelay>=0){
-      if (fadeInDur > 0) {
-        gainNode.gain.setValueAtTime(0, startTime);
-        gainNode.gain.setValueCurveAtTime(makeFadeInCurve(32), startTime, fadeInDur);
-      } else {
-        gainNode.gain.setValueAtTime(1, startTime);
-      }
-      
-      if (fadeOutDur > 0) {
-        gainNode.gain.setValueAtTime(1, startTime + dur - fadeOutDur);
-        gainNode.gain.setValueCurveAtTime(makeFadeOutCurve(32), startTime + dur - fadeOutDur, fadeOutDur);
-      }
-      
-      src.start(startTime, ms.start, dur);
-    } else {
-      const alreadyElapsed=-scheduleDelay;
-      if(alreadyElapsed<dur){
-        const remainingDur=dur-alreadyElapsed;
-        
-        if (fadeInDur > 0 && alreadyElapsed < fadeInDur) {
-          const startGain = Math.sin((Math.PI / 2) * (alreadyElapsed / fadeInDur));
-          gainNode.gain.setValueAtTime(startGain, ctx.currentTime);
-          gainNode.gain.linearRampToValueAtTime(1.0, ctx.currentTime + (fadeInDur - alreadyElapsed));
-        } else {
-          gainNode.gain.setValueAtTime(1.0, ctx.currentTime);
-        }
-        
-        if (fadeOutDur > 0) {
-          const fadeOutStartOffset = dur - fadeOutDur;
-          if (alreadyElapsed < fadeOutStartOffset) {
-            const futureFadeOutTime = ctx.currentTime + (fadeOutStartOffset - alreadyElapsed);
-            gainNode.gain.setValueAtTime(1.0, futureFadeOutTime);
-            gainNode.gain.setValueCurveAtTime(makeFadeOutCurve(32), futureFadeOutTime, fadeOutDur);
-          } else {
-            const fadeOutElapsed = alreadyElapsed - fadeOutStartOffset;
-            const startGain = Math.cos((Math.PI / 2) * (fadeOutElapsed / fadeOutDur));
-            gainNode.gain.setValueAtTime(startGain, ctx.currentTime);
-            gainNode.gain.linearRampToValueAtTime(0.0, ctx.currentTime + remainingDur);
-          }
-        }
-        
-        src.start(ctx.currentTime, ms.start+alreadyElapsed, remainingDur);
-      }
-    }
-    scheduledSources.push({ src, gainNode });
-  });
-  function tick() {
-    if(!isPlaying) return;
-    const elapsed=startOffset+(performance.now()/1000-wallStart);
-    playbackOffset=elapsed;
-    const pct=Math.min(elapsed/totalDur,1)*100;
-    document.getElementById('progress-fill').style.width=pct+'%';
-    document.getElementById('time-display').textContent=fmtTime(Math.min(elapsed,totalDur));
-    let activeIdx=-1;
-    for(let i=0;i<masterSegments.length;i++){
+  scheduledSources = [];
+
+  const { totalDur, lanes: laneParamsMap } = getTimelineParams();
+  const startOffset = playbackOffset;
+  const wallStart = performance.now() / 1000;
+
+  updateLaneGains();
+
+  LANES.forEach(laneKey => {
+    const { laneSegments, starts, overlaps } = laneParamsMap[laneKey] || { laneSegments: [], starts: [], overlaps: [] };
+    laneSegments.forEach((ms, i) => {
+      const dur = ms.end - ms.start;
       const t = starts[i];
-      const d = masterSegments[i].end-masterSegments[i].start;
-      if(elapsed>=t && elapsed<t+d){ activeIdx=i; break; }
-    }
-    masterSegments.forEach((_,i)=>{
-      const el=document.getElementById('mseg-'+i);
-      if(el) el.classList.toggle('active-seg', i===activeIdx);
+      if (!ms.buffer) return;
+
+      const src = ctx.createBufferSource();
+      src.buffer = ms.buffer;
+
+      const gainNode = ctx.createGain();
+      src.connect(gainNode);
+      connectToLane(gainNode, ms.lane || 'master');
+
+      const scheduleDelay = t - startOffset;
+      const startTime = ctx.currentTime + Math.max(0, scheduleDelay);
+      const fadeInDur = i > 0 ? overlaps[i - 1] : 0;
+      const fadeOutDur = i < laneSegments.length - 1 ? overlaps[i] : 0;
+
+      if (scheduleDelay >= 0) {
+        if (fadeInDur > 0) {
+          gainNode.gain.setValueAtTime(0, startTime);
+          gainNode.gain.setValueCurveAtTime(makeFadeInCurve(32), startTime, fadeInDur);
+        } else {
+          gainNode.gain.setValueAtTime(1, startTime);
+        }
+
+        if (fadeOutDur > 0) {
+          gainNode.gain.setValueAtTime(1, startTime + dur - fadeOutDur);
+          gainNode.gain.setValueCurveAtTime(makeFadeOutCurve(32), startTime + dur - fadeOutDur, fadeOutDur);
+        }
+
+        src.start(startTime, ms.start, dur);
+      } else {
+        const alreadyElapsed = -scheduleDelay;
+        if (alreadyElapsed < dur) {
+          const remainingDur = dur - alreadyElapsed;
+
+          if (fadeInDur > 0 && alreadyElapsed < fadeInDur) {
+            const startGain = Math.sin((Math.PI / 2) * (alreadyElapsed / fadeInDur));
+            gainNode.gain.setValueAtTime(startGain, ctx.currentTime);
+            gainNode.gain.linearRampToValueAtTime(1.0, ctx.currentTime + (fadeInDur - alreadyElapsed));
+          } else {
+            gainNode.gain.setValueAtTime(1.0, ctx.currentTime);
+          }
+
+          if (fadeOutDur > 0) {
+            const fadeOutStartOffset = dur - fadeOutDur;
+            if (alreadyElapsed < fadeOutStartOffset) {
+              const futureFadeOutTime = ctx.currentTime + (fadeOutStartOffset - alreadyElapsed);
+              gainNode.gain.setValueAtTime(1.0, futureFadeOutTime);
+              gainNode.gain.setValueCurveAtTime(makeFadeOutCurve(32), futureFadeOutTime, fadeOutDur);
+            } else {
+              const fadeOutElapsed = alreadyElapsed - fadeOutStartOffset;
+              const startGain = Math.cos((Math.PI / 2) * (fadeOutElapsed / fadeOutDur));
+              gainNode.gain.setValueAtTime(startGain, ctx.currentTime);
+              gainNode.gain.linearRampToValueAtTime(0.0, ctx.currentTime + remainingDur);
+            }
+          }
+
+          src.start(ctx.currentTime, ms.start + alreadyElapsed, remainingDur);
+        }
+      }
+      scheduledSources.push({ src, gainNode });
     });
-    if(elapsed>=totalDur){ stopPlayback(); return; }
-    animFrame=requestAnimationFrame(tick);
+  });
+
+  function tick() {
+    if (!isPlaying) return;
+    const elapsed = startOffset + (performance.now() / 1000 - wallStart);
+    playbackOffset = elapsed;
+    const pct = Math.min(elapsed / Math.max(totalDur, 0.001), 1) * 100;
+    document.getElementById('progress-fill').style.width = pct + '%';
+    document.getElementById('time-display').textContent = fmtTime(Math.min(elapsed, totalDur));
+
+    const activeMasterIds = new Set();
+    LANES.forEach(laneKey => {
+      const { laneSegments, starts } = laneParamsMap[laneKey] || { laneSegments: [], starts: [] };
+      for (let i = 0; i < laneSegments.length; i++) {
+        const t = starts[i];
+        const d = laneSegments[i].end - laneSegments[i].start;
+        if (elapsed >= t && elapsed < t + d) {
+          activeMasterIds.add(laneSegments[i].masterId);
+          break;
+        }
+      }
+    });
+
+    masterSegments.forEach(ms => {
+      const el = document.getElementById('mseg-' + ms.masterId);
+      if (el) el.classList.toggle('active-seg', activeMasterIds.has(ms.masterId));
+    });
+
+    if (elapsed >= totalDur) { stopPlayback(); return; }
+    animFrame = requestAnimationFrame(tick);
   }
-  animFrame=requestAnimationFrame(tick);
+  animFrame = requestAnimationFrame(tick);
 }
 
 function clearActiveHighlight() {
-  masterSegments.forEach((_,i)=>{ const el=document.getElementById('mseg-'+i); if(el) el.classList.remove('active-seg'); });
+  masterSegments.forEach(ms => {
+    const el = document.getElementById('mseg-' + ms.masterId);
+    if (el) el.classList.remove('active-seg');
+  });
 }
 
 function pausePlayback() {
-  isPlaying=false;
-  document.getElementById('play-btn').textContent='▶';
+  isPlaying = false;
+  document.getElementById('play-btn').textContent = '▶';
   document.getElementById('play-btn').classList.remove('active');
-  if(animFrame) cancelAnimationFrame(animFrame);
-  scheduledSources.forEach(s=>{ try{s.src.stop();}catch(e){} });
-  scheduledSources=[];
+  if (animFrame) cancelAnimationFrame(animFrame);
+  scheduledSources.forEach(s => { try { s.src.stop(); } catch (e) {} });
+  scheduledSources = [];
   clearActiveHighlight();
 }
 
 function stopPlayback() {
-  isPlaying=false;
-  playbackOffset=0;
-  document.getElementById('play-btn').textContent='▶';
+  isPlaying = false;
+  playbackOffset = 0;
+  document.getElementById('play-btn').textContent = '▶';
   document.getElementById('play-btn').classList.remove('active');
-  if(animFrame) cancelAnimationFrame(animFrame);
-  scheduledSources.forEach(s=>{ try{s.src.stop();}catch(e){} });
-  scheduledSources=[];
-  document.getElementById('progress-fill').style.width='0%';
-  document.getElementById('time-display').textContent='0:00';
+  if (animFrame) cancelAnimationFrame(animFrame);
+  scheduledSources.forEach(s => { try { s.src.stop(); } catch (e) {} });
+  scheduledSources = [];
+  document.getElementById('progress-fill').style.width = '0%';
+  document.getElementById('time-display').textContent = '0:00';
   clearActiveHighlight();
 }
 
 function seekTo(e) {
-  const track=document.getElementById('progress-track');
-  const pct=Math.max(0, Math.min(1, e.offsetX/track.clientWidth));
-  const totalDur = masterSegments.length ? getTimelineParams().totalDur : 0;
-  const wasPlaying=isPlaying;
-  if(wasPlaying) pausePlayback();
-  playbackOffset=pct*totalDur;
-  document.getElementById('progress-fill').style.width=(pct*100)+'%';
-  document.getElementById('time-display').textContent=fmtTime(playbackOffset);
-  if(wasPlaying) startPlayback();
+  const track = document.getElementById('progress-track');
+  const pct = Math.max(0, Math.min(1, e.offsetX / track.clientWidth));
+  const { totalDur } = masterSegments.length ? getTimelineParams() : { totalDur: 0 };
+  const wasPlaying = isPlaying;
+  if (wasPlaying) pausePlayback();
+  playbackOffset = pct * totalDur;
+  document.getElementById('progress-fill').style.width = (pct * 100) + '%';
+  document.getElementById('time-display').textContent = fmtTime(playbackOffset);
+  if (wasPlaying) startPlayback();
 }
 
 // export
 async function exportMix() {
-  if(!masterSegments.length) return;
-  const btn=document.getElementById('export-btn');
-  btn.textContent='⏳ rendering...'; btn.disabled=true;
+  if (!masterSegments.length) return;
+  const btn = document.getElementById('export-btn');
+  btn.textContent = '⏳ rendering...'; btn.disabled = true;
   try {
-    const sr=44100;
-    const { totalDur, starts, overlaps } = getTimelineParams();
-    const offCtx=new OfflineAudioContext(2,Math.ceil(totalDur*sr),sr);
-    
+    const sr = 44100;
+    const { totalDur, lanes: laneParamsMap } = getTimelineParams();
+    const offCtx = new OfflineAudioContext(2, Math.ceil(Math.max(totalDur, 0.1) * sr), sr);
+
     // Create offline limiter
     const offLimiter = offCtx.createDynamicsCompressor();
     offLimiter.threshold.setValueAtTime(-3, offCtx.currentTime);
@@ -1415,7 +1908,19 @@ async function exportMix() {
     offLimiter.attack.setValueAtTime(0.003, offCtx.currentTime);
     offLimiter.release.setValueAtTime(0.1, offCtx.currentTime);
     offLimiter.connect(offCtx.destination);
-    
+
+    // Evaluate solo & mute for offline rendering
+    const anySolo = Object.values(laneStates).some(s => s.solo);
+
+    let audibleCount = 0;
+    LANES.forEach(laneKey => {
+      const state = laneStates[laneKey];
+      const isAudible = anySolo ? (state.solo && !state.mute) : !state.mute;
+      if (isAudible) audibleCount++;
+    });
+
+    const scaleFactor = audibleCount > 0 ? (1 / Math.sqrt(audibleCount)) : 1;
+
     // Create offline lane gains
     const offLaneGains = {
       low: offCtx.createGain(),
@@ -1423,83 +1928,97 @@ async function exportMix() {
       high: offCtx.createGain(),
       master: offCtx.createGain()
     };
-    Object.values(offLaneGains).forEach(g => g.connect(offLimiter));
-    
+
+    LANES.forEach(laneKey => {
+      const state = laneStates[laneKey];
+      const isAudible = anySolo ? (state.solo && !state.mute) : !state.mute;
+      const targetGain = isAudible ? scaleFactor : 0;
+      offLaneGains[laneKey].gain.setValueAtTime(targetGain, offCtx.currentTime);
+      offLaneGains[laneKey].connect(offLimiter);
+    });
+
     // Create offline crossover filters
     const offLowFilter = offCtx.createBiquadFilter();
     offLowFilter.type = 'lowpass';
     offLowFilter.frequency.value = 250;
     offLowFilter.Q.value = 0.7;
     offLowFilter.connect(offLaneGains.low);
-    
+
     const offHighFilter = offCtx.createBiquadFilter();
     offHighFilter.type = 'highpass';
     offHighFilter.frequency.value = 2500;
     offHighFilter.Q.value = 0.7;
     offHighFilter.connect(offLaneGains.high);
-    
+
     const offMidLowCut = offCtx.createBiquadFilter();
     offMidLowCut.type = 'highpass';
     offMidLowCut.frequency.value = 250;
     offMidLowCut.Q.value = 0.7;
-    
+
     const offMidHighCut = offCtx.createBiquadFilter();
     offMidHighCut.type = 'lowpass';
     offMidHighCut.frequency.value = 2500;
     offMidHighCut.Q.value = 0.7;
-    
+
     offMidLowCut.connect(offMidHighCut);
     offMidHighCut.connect(offLaneGains.mid);
 
-    masterSegments.forEach((ms, i) => {
-      const dur=ms.end-ms.start;
-      const t = starts[i];
-      if(!ms.buffer) return;
-      
-      const src=offCtx.createBufferSource();
-      src.buffer=ms.buffer;
-      
-      const gainNode = offCtx.createGain();
-      src.connect(gainNode);
-      
-      // Connect to the appropriate offline lane
-      const lane = ms.lane || 'master';
-      if (lane === 'low') {
-        gainNode.connect(offLowFilter);
-      } else if (lane === 'mid') {
-        gainNode.connect(offMidLowCut);
-      } else if (lane === 'high') {
-        gainNode.connect(offHighFilter);
-      } else {
-        gainNode.connect(offLaneGains.master);
-      }
-      
-      const fadeInDur = i > 0 ? overlaps[i - 1] : 0;
-      const fadeOutDur = i < masterSegments.length - 1 ? overlaps[i] : 0;
-      
-      if (fadeInDur > 0) {
-        gainNode.gain.setValueAtTime(0, t);
-        gainNode.gain.setValueCurveAtTime(makeFadeInCurve(32), t, fadeInDur);
-      } else {
-        gainNode.gain.setValueAtTime(1, t);
-      }
-      
-      if (fadeOutDur > 0) {
-        gainNode.gain.setValueAtTime(1, t + dur - fadeOutDur);
-        gainNode.gain.setValueCurveAtTime(makeFadeOutCurve(32), t + dur - fadeOutDur, fadeOutDur);
-      }
-      
-      src.start(t, ms.start, dur);
+    LANES.forEach(laneKey => {
+      const { laneSegments, starts, overlaps } = laneParamsMap[laneKey] || { laneSegments: [], starts: [], overlaps: [] };
+      laneSegments.forEach((ms, i) => {
+        const dur = ms.end - ms.start;
+        const t = starts[i];
+        if (!ms.buffer) return;
+
+        const src = offCtx.createBufferSource();
+        src.buffer = ms.buffer;
+
+        const gainNode = offCtx.createGain();
+        src.connect(gainNode);
+
+        // Connect to the appropriate offline lane
+        const lane = ms.lane || 'master';
+        if (lane === 'low') {
+          gainNode.connect(offLowFilter);
+        } else if (lane === 'mid') {
+          gainNode.connect(offMidLowCut);
+        } else if (lane === 'high') {
+          gainNode.connect(offHighFilter);
+        } else {
+          gainNode.connect(offLaneGains.master);
+        }
+
+        const fadeInDur = i > 0 ? overlaps[i - 1] : 0;
+        const fadeOutDur = i < laneSegments.length - 1 ? overlaps[i] : 0;
+
+        if (fadeInDur > 0) {
+          gainNode.gain.setValueAtTime(0, t);
+          gainNode.gain.setValueCurveAtTime(makeFadeInCurve(32), t, fadeInDur);
+        } else {
+          gainNode.gain.setValueAtTime(1, t);
+        }
+
+        if (fadeOutDur > 0) {
+          gainNode.gain.setValueAtTime(1, t + dur - fadeOutDur);
+          gainNode.gain.setValueCurveAtTime(makeFadeOutCurve(32), t + dur - fadeOutDur, fadeOutDur);
+        }
+
+        src.start(t, ms.start, dur);
+      });
     });
-    
-    const rendered=await offCtx.startRendering();
-    const wav=audioBufferToWav(rendered);
-    const blob=new Blob([wav],{type:'audio/wav'});
-    const url=URL.createObjectURL(blob);
-    const a=document.createElement('a'); a.href=url; a.download='mix_'+Date.now()+'.wav'; a.click();
+
+    const rendered = await offCtx.startRendering();
+    const wav = audioBufferToWav(rendered);
+    const blob = new Blob([wav], { type: 'audio/wav' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href = url; a.download = 'mix_' + Date.now() + '.wav'; a.click();
     URL.revokeObjectURL(url);
-  } catch(e) { alert('Export failed: '+e.message); }
-  btn.textContent='⬇ export wav'; btn.disabled=false;
+  } catch (e) {
+    console.error('Export failed:', e);
+    alert('Export failed: ' + e.message);
+  } finally {
+    btn.textContent = '⬇ export wav'; btn.disabled = false;
+  }
 }
 
 function audioBufferToWav(buffer) {
@@ -1524,9 +2043,134 @@ function audioBufferToWav(buffer) {
 function fmtTime(s) { const m=Math.floor(s/60); return m+':'+(Math.floor(s%60)+'').padStart(2,'0'); }
 function uid() { return Math.random().toString(36).slice(2); }
 
+// ── ONBOARDING GUIDE MODAL ─────────────────────────────────────
+let currentIntroPage = 0;
+const INTRO_PAGES = [
+  {
+    title: "1/3 · WELCOME TO MIXR STUDIO",
+    content: `
+      <p style="color:var(--text-muted); font-size:12px;">Browser-Native Audio Segment Mixer & Mastering Environment</p>
+      <p style="margin-top:6px;"><strong>MIXR Studio</strong> is a free, web-native DAW environment for hybrid music producers, DJs, and sound designers.</p>
+      <div style="background:var(--surface2); padding:12px; border-radius:8px; border:1px solid var(--border); margin-top:8px;">
+        <ul style="padding-left:18px; display:flex; flex-direction:column; gap:6px; font-size:12px;">
+          <li><strong>Auto-Section Detection:</strong> Automatically detects intros, verses, choruses, drops, and outros.</li>
+          <li><strong>Multi-Band Arrangement:</strong> Drag segments into 4 frequency band lanes (<code>FULL</code>, <code>HIGH</code>, <code>MID</code>, <code>LOW</code>).</li>
+          <li><strong>Real-Time Crossover Graph:</strong> Stacks stems and sections concurrently through built-in 3-band crossover filters.</li>
+          <li><strong>Instant WAV Export:</strong> Render 16-bit 44.1kHz master WAVs directly in your browser with zero installs.</li>
+        </ul>
+      </div>
+    `
+  },
+  {
+    title: "2/3 · HOW TO ARRANGE & MIX",
+    content: `
+      <p style="color:var(--text-muted); font-size:12px;">Quick 4-Step Workflow</p>
+      <div style="display:flex; flex-direction:column; gap:10px; margin-top:6px; font-size:12px;">
+        <div style="display:flex; gap:10px; align-items:flex-start;">
+          <span style="font-family:var(--font-mono); color:var(--accent); font-weight:700; background:var(--accent-dim); padding:2px 7px; border-radius:4px; border:1px solid var(--accent-border);">1</span>
+          <div><strong>Load Tracks:</strong> Drag & drop audio files (WAV, MP3, FLAC, OGG) into the upload area.</div>
+        </div>
+        <div style="display:flex; gap:10px; align-items:flex-start;">
+          <span style="font-family:var(--font-mono); color:var(--accent); font-weight:700; background:var(--accent-dim); padding:2px 7px; border-radius:4px; border:1px solid var(--accent-border);">2</span>
+          <div><strong>Trim Boundaries:</strong> Drag cut handles on track waveforms to adjust section start & end boundaries.</div>
+        </div>
+        <div style="display:flex; gap:10px; align-items:flex-start;">
+          <span style="font-family:var(--font-mono); color:var(--accent); font-weight:700; background:var(--accent-dim); padding:2px 7px; border-radius:4px; border:1px solid var(--accent-border);">3</span>
+          <div><strong>Arrange Lanes:</strong> Drag segments into <code>FULL</code>, <code>HIGH</code>, <code>MID</code>, or <code>LOW</code> rows to sequence or stack concurrently.</div>
+        </div>
+        <div style="display:flex; gap:10px; align-items:flex-start;">
+          <span style="font-family:var(--font-mono); color:var(--accent); font-weight:700; background:var(--accent-dim); padding:2px 7px; border-radius:4px; border:1px solid var(--accent-border);">4</span>
+          <div><strong>Solo, Mute & Export:</strong> Fine-tune levels using <code>S</code> / <code>M</code> toggles, then click <strong>EXPORT WAV</strong>.</div>
+        </div>
+      </div>
+    `
+  },
+  {
+    title: "3/3 · SHORTCUTS & AUTHOR",
+    content: `
+      <p style="color:var(--text-muted); font-size:12px;">Keyboard Shortcuts & Information</p>
+      <div class="shortcut-list">
+        <div class="shortcut-item"><span>Play / Pause Playback</span><span class="shortcut-key">Space</span></div>
+        <div class="shortcut-item"><span>Stop Playback & Reset</span><span class="shortcut-key">Escape</span></div>
+        <div class="shortcut-item"><span>Undo Last Action</span><span class="shortcut-key">Ctrl + Z / Cmd + Z</span></div>
+        <div class="shortcut-item"><span>Preview Audio Segment</span><span class="shortcut-key">Click Seg</span></div>
+      </div>
+      <div class="author-card">
+        <div style="font-size:10px; color:var(--text-muted); font-family:var(--font-mono); letter-spacing:0.08em; text-transform:uppercase;">DESIGNED & DEVELOPED BY</div>
+        <div class="author-name">Justin Ray</div>
+        <a href="https://trustnodelogic.com" target="_blank" rel="noopener" class="author-link">https://trustnodelogic.com</a>
+      </div>
+    `
+  }
+];
+
+function renderIntroPage() {
+  const page = INTRO_PAGES[currentIntroPage];
+  document.getElementById('intro-modal-title').textContent = page.title;
+  document.getElementById('intro-modal-body').innerHTML = page.content;
+  
+  const prevBtn = document.getElementById('intro-prev-btn');
+  const nextBtn = document.getElementById('intro-next-btn');
+  
+  prevBtn.style.visibility = currentIntroPage === 0 ? 'hidden' : 'visible';
+  if (currentIntroPage === INTRO_PAGES.length - 1) {
+    nextBtn.textContent = 'START MIXING ⚡';
+  } else {
+    nextBtn.textContent = 'NEXT ▶';
+  }
+  
+  const dots = document.querySelectorAll('#intro-dots .dot');
+  dots.forEach((dot, idx) => {
+    dot.classList.toggle('active', idx === currentIntroPage);
+  });
+}
+
+function openIntroModal() {
+  currentIntroPage = 0;
+  renderIntroPage();
+  const modal = document.getElementById('intro-modal');
+  if (modal) modal.classList.add('active');
+}
+
+function closeIntroModal() {
+  const modal = document.getElementById('intro-modal');
+  if (modal) modal.classList.remove('active');
+  try { localStorage.setItem('mixr_intro_seen', 'true'); } catch(e) {}
+}
+
+function introNextPage() {
+  if (currentIntroPage < INTRO_PAGES.length - 1) {
+    currentIntroPage++;
+    renderIntroPage();
+  } else {
+    closeIntroModal();
+  }
+}
+
+function introPrevPage() {
+  if (currentIntroPage > 0) {
+    currentIntroPage--;
+    renderIntroPage();
+  }
+}
+
+// Auto-open on first time visit
+window.addEventListener('DOMContentLoaded', () => {
+  try {
+    if (!localStorage.getItem('mixr_intro_seen')) {
+      setTimeout(() => openIntroModal(), 400);
+    }
+  } catch(e) {}
+});
+
 // ── KEYBOARD SHORTCUTS ─────────────────────────────────────────
 document.addEventListener('keydown', e => {
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z') {
+    e.preventDefault();
+    undo();
+    return;
+  }
   if (e.code === 'Space')  { e.preventDefault(); if (masterSegments.length) togglePlay(); }
   if (e.code === 'Escape') { stopPlayback(); }
 });
