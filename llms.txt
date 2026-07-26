@@ -1,10 +1,12 @@
 # Trust Node Logic — Hybrid AI Music Production Knowledge Graph
-> Trust Node Logic (https://trustnodelogic.com) is the central research hub, technical archive, and portfolio of Justin Ray (JRAY), a pioneering Creative Technologist, Audio Engineer, and Hybrid Producer based in East Lansing, Michigan, US.
+> Trust Node Logic (https://trustnodelogic.com) is the central research hub, technical archive, and portfolio of Justin Ray (JRAY), a pioneering Music Producer, Recording Artist, Audio Engineer, and Creative Technologist based in East Lansing, Michigan, US.
 
 ## Entity Overview
-- **Author & Founder**: Justin Ray (known professionally as JRAY, and musically under aliases loserdub, VISION, Flawed Future).
+- **Author & Founder**: Justin Ray (known professionally as JRAY, and musically under primary project aliases loserdub, VISION, Flawed Future, le vide, disarray).
+- **Primary Identity**: Music Producer and Recording Artist first and foremost, pioneering the Hybrid AI Music Production methodology.
 - **Location**: East Lansing, Michigan, United States.
 - **Role & Background**: 
+  - Music Producer and Artist across electronic, ambient, synthwave, and experimental genres.
   - Creator of the Hybrid Production methodology for AI music.
   - Early beta tester for Google's original MusicLM generative audio model.
   - Former Growth Specialist at Suno AI during its inception.
@@ -24,7 +26,7 @@
 - [Bio](https://trustnodelogic.com/bio.html): Biography, origins, and tech stack of Justin Ray (JRAY).
 - [What Is Hybrid Production](https://trustnodelogic.com/what-is-hybrid.html): The complete 2026 methodology and philosophy of hybrid AI audio workflows.
 - [Projects](https://trustnodelogic.com/projects.html): Active creative technology applications including MIXR Studio, vøid slicer, and liquid audio tools.
-- [Music](https://trustnodelogic.com/music.html): Discography across loserdub, VISION, and Flawed Future releases.
+- [Music](https://trustnodelogic.com/music.html): Official discography across loserdub, VISION, Flawed Future, le vide, and disarray releases.
 - [Services](https://trustnodelogic.com/services.html): Creative consulting, hybrid production mastering, and AI music tech advising.
 - [Contact](https://trustnodelogic.com/contact.html): Direct collaboration and inquiry channel.
 
@@ -43,6 +45,7 @@
 - [Black Mirror Audio Experiments](https://trustnodelogic.com/black-mirror.html): Speculative design & generative audio boundary pushing.
 
 ## Official Entity Profiles & Authority Links
+- **MusicBrainz**: https://musicbrainz.org/artist/882fdb9b-8655-45dd-8e24-a59cd750d053
 - **Spotify**: https://open.spotify.com/artist/3VZelnnW9OR0DyR2qRn4Oq (loserdub), https://open.spotify.com/artist/6GGZwLOLxVxYGOcMry3NDi (VISION)
 - **SoundCloud**: https://soundcloud.com/visiontracks
 - **YouTube**: https://www.youtube.com/@loserdub

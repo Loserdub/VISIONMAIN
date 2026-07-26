@@ -16,8 +16,7 @@
 
 
     <!-- Structured Data for SEO -->
- <script type="application/ld+json">
-{
+ <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -37,11 +36,12 @@
       "image": "https://trustnodelogic.com/favicon.png",
       "email": "mailto:loserdub@gmail.com",
       "jobTitle": [
+        "Music Producer",
+        "Music Artist",
         "Pioneer of Hybrid AI Music Production",
-        "Creative Technologist",
         "Audio Engineer",
-        "Founder of r/HybridProduction",
-        "Growth Specialist & Early AI Music Pioneer"
+        "Creative Technologist",
+        "Founder of r/HybridProduction"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -50,16 +50,18 @@
         "addressCountry": "US"
       },
       "knowsAbout": [
-        "Hybrid Music Production",
-        "Generative AI Music",
+        { "@type": "DefinedTerm", "name": "Hybrid Music Production", "description": "Workflow integrating Generative AI audio models with traditional DAW engineering and live instrumentation." },
+        { "@type": "DefinedTerm", "name": "Generative Artificial Intelligence", "sameAs": "https://en.wikipedia.org/wiki/Generative_artificial_intelligence" },
+        { "@type": "DefinedTerm", "name": "Web Audio API", "sameAs": "https://en.wikipedia.org/wiki/Web_Audio_API" },
+        { "@type": "DefinedTerm", "name": "Audio Engineering", "sameAs": "https://en.wikipedia.org/wiki/Audio_engineering" },
+        { "@type": "DefinedTerm", "name": "Digital Audio Workstation", "sameAs": "https://en.wikipedia.org/wiki/Digital_audio_workstation" },
+        { "@type": "DefinedTerm", "name": "C2PA Provenance", "sameAs": "https://c2pa.org/" },
         "Google MusicLM",
         "Suno AI",
+        "Udio",
         "SLERP Audio",
         "Taxonomic Rank",
         "Spectral Splitting",
-        "Audio Engineering",
-        "C2PA Provenance",
-        "Web Audio API",
         "MIXR Studio",
         "Sound Design",
         "Logic Pro X",
@@ -78,6 +80,7 @@
         }
       ],
       "sameAs": [
+        "https://musicbrainz.org/artist/882fdb9b-8655-45dd-8e24-a59cd750d053",
         "https://soundcloud.com/visiontracks",
         "https://www.youtube.com/@loserdub",
         "https://www.linkedin.com/in/jray-me/",
@@ -126,13 +129,16 @@
       }
     },
     {
-      "@type": "WebPage",
+      "@type": "ContactPage",
       "@id": "https://trustnodelogic.com/contact.html#webpage",
       "url": "https://trustnodelogic.com/contact.html",
-      "name": "Contact | Justin Ray \u2014 Collaboration, Booking & Creative Inquiries",
-      "description": "Collaboration, booking & creative tech inquiries.",
+      "name": "Contact | Justin Ray — Collaboration, Booking & Creative Inquiries",
+      "description": "Direct contact channel for Justin Ray (JRAY / loserdub) for hybrid music mastering, technology consulting, keynotes, and audio engineering inquiries.",
       "isPartOf": {
         "@id": "https://trustnodelogic.com/#website"
+      },
+      "mainEntity": {
+        "@id": "https://trustnodelogic.com/#person"
       },
       "author": {
         "@id": "https://trustnodelogic.com/#person"
@@ -140,6 +146,24 @@
       "publisher": {
         "@id": "https://trustnodelogic.com/#organization"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://trustnodelogic.com/contact.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://trustnodelogic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contact",
+          "item": "https://trustnodelogic.com/contact.html"
+        }
+      ]
     }
   ]
 }

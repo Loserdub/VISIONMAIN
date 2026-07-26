@@ -46,11 +46,12 @@
       "image": "https://trustnodelogic.com/favicon.png",
       "email": "mailto:loserdub@gmail.com",
       "jobTitle": [
+        "Music Producer",
+        "Music Artist",
         "Pioneer of Hybrid AI Music Production",
-        "Creative Technologist",
         "Audio Engineer",
-        "Founder of r/HybridProduction",
-        "Growth Specialist & Early AI Music Pioneer"
+        "Creative Technologist",
+        "Founder of r/HybridProduction"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -59,16 +60,18 @@
         "addressCountry": "US"
       },
       "knowsAbout": [
-        "Hybrid Music Production",
-        "Generative AI Music",
+        { "@type": "DefinedTerm", "name": "Hybrid Music Production", "description": "Workflow integrating Generative AI audio models with traditional DAW engineering and live instrumentation." },
+        { "@type": "DefinedTerm", "name": "Generative Artificial Intelligence", "sameAs": "https://en.wikipedia.org/wiki/Generative_artificial_intelligence" },
+        { "@type": "DefinedTerm", "name": "Web Audio API", "sameAs": "https://en.wikipedia.org/wiki/Web_Audio_API" },
+        { "@type": "DefinedTerm", "name": "Audio Engineering", "sameAs": "https://en.wikipedia.org/wiki/Audio_engineering" },
+        { "@type": "DefinedTerm", "name": "Digital Audio Workstation", "sameAs": "https://en.wikipedia.org/wiki/Digital_audio_workstation" },
+        { "@type": "DefinedTerm", "name": "C2PA Provenance", "sameAs": "https://c2pa.org/" },
         "Google MusicLM",
         "Suno AI",
+        "Udio",
         "SLERP Audio",
         "Taxonomic Rank",
         "Spectral Splitting",
-        "Audio Engineering",
-        "C2PA Provenance",
-        "Web Audio API",
         "MIXR Studio",
         "Sound Design",
         "Logic Pro X",
@@ -87,6 +90,7 @@
         }
       ],
       "sameAs": [
+        "https://musicbrainz.org/artist/882fdb9b-8655-45dd-8e24-a59cd750d053",
         "https://soundcloud.com/visiontracks",
         "https://www.youtube.com/@loserdub",
         "https://www.linkedin.com/in/jray-me/",
@@ -149,6 +153,18 @@
       "publisher": {
         "@id": "https://trustnodelogic.com/#organization"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://trustnodelogic.com/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://trustnodelogic.com/"
+        }
+      ]
     }
   ]
 }
@@ -243,6 +259,7 @@
     <link rel="prefetch" href="./fingerprint.html">
     <link rel="prefetch" href="./may2026tools.html">
     <link rel="prefetch" href="./lastnewgenre.html">
+    <link rel="prefetch" href="./promptingthemachine.html">
       <link rel="alternate" type="text/plain" href="/llms.txt" title="AI LLM Knowledge Graph Manifest">
 </head>
   <body class="bg-black text-white antialiased overflow-x-hidden">    <div id="root"><div class="relative min-h-screen font-sans selection:bg-white selection:text-black flex flex-col text-white"><div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-[#050505]"><div class="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] opacity-60 oil-bg-animate" style="background:radial-gradient(circle at 50% 50%, rgba(30, 41, 59, 0.6), transparent 50%),
@@ -278,13 +295,13 @@
           <span class="text-[9px] sm:text-[10px] font-light tracking-[0.2em] text-white/60 mt-1 uppercase">The Free Hybrid Mastering Suite</span>
         </span>
       </a>
-<!-- The Last New Genre Featured Button -->
-      <a href="./lastnewgenre.html" class="group relative inline-flex items-center justify-center px-8 py-3 overflow-visible rounded-sm bg-zinc-900/60 backdrop-blur-sm border border-emerald-500/30 hover:border-emerald-400/80 transition-all duration-500 shadow-[0_0_20px_rgba(52,211,153,0.08)] hover:shadow-[0_0_30px_rgba(52,211,153,0.2)]">
+<!-- Prompting the Machine Featured Button -->
+      <a href="./promptingthemachine.html" class="group relative inline-flex items-center justify-center px-8 py-3 overflow-visible rounded-sm bg-zinc-900/60 backdrop-blur-sm border border-emerald-500/30 hover:border-emerald-400/80 transition-all duration-500 shadow-[0_0_20px_rgba(52,211,153,0.08)] hover:shadow-[0_0_30px_rgba(52,211,153,0.2)]">
         <div class="absolute -top-2 -right-2 z-20 bg-emerald-400 text-black text-[9px] font-bold tracking-widest uppercase px-2 py-0.5 shadow-[0_0_10px_rgba(52,211,153,0.4)]">NEW • ARTICLE</div>
         <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-emerald-500/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out overflow-hidden rounded-sm"></div>
         <span class="relative z-10 flex flex-col items-center text-center">
-          <span class="text-sm sm:text-base font-bold tracking-[0.15em] text-white uppercase">THE LAST NEW GENRE</span>
-          <span class="text-[9px] sm:text-[10px] font-light tracking-[0.2em] text-emerald-300/80 mt-1 uppercase">Field Notes • SoundCloud Rap &amp; Algorithmic Taste</span>
+          <span class="text-sm sm:text-base font-bold tracking-[0.15em] text-white uppercase">PROMPTING THE MACHINE</span>
+          <span class="text-[9px] sm:text-[10px] font-light tracking-[0.2em] text-emerald-300/80 mt-1 uppercase">Field Notes • AI Music &amp; Prompt Engineering</span>
         </span>
       </a>
     </div>
@@ -328,23 +345,23 @@
   <section class="w-full max-w-5xl mx-auto z-20 animate-fade-in-up mt-24 px-4 text-center border-t border-white/10 pt-16" style="animation-delay:0.4s">
     <h2 class="text-xs font-mono tracking-[0.2em] text-white/40 mb-10 uppercase">Latest Field Notes</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+      <a href="./promptingthemachine.html" class="group block p-8 border border-white/10 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-white/30 transition-all duration-500 rounded-sm relative overflow-hidden">
+        <div class="absolute -right-6 -top-6 w-24 h-24 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-400/20 transition-colors duration-500"></div>
+        <span class="text-[10px] font-mono tracking-widest text-white/40 uppercase block mb-3">Jul 26, 2026</span>
+        <h3 class="text-sm font-bold text-white uppercase tracking-widest mb-3 group-hover:text-slate-300 transition-colors">Prompting the Machine</h3>
+        <p class="text-xs font-light text-white/60 leading-relaxed">How Suno, Udio, and the current wave of AI music tools actually turn a sentence into a song — and what that means for the words you choose.</p>
+      </a>
+      <a href="./lastnewgenre.html" class="group block p-8 border border-white/10 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-white/30 transition-all duration-500 rounded-sm relative overflow-hidden">
+        <div class="absolute -right-6 -top-6 w-24 h-24 bg-cyan-500/10 rounded-full blur-2xl group-hover:bg-cyan-400/20 transition-colors duration-500"></div>
+        <span class="text-[10px] font-mono tracking-widest text-white/40 uppercase block mb-3">Jul 21, 2026</span>
+        <h3 class="text-sm font-bold text-white uppercase tracking-widest mb-3 group-hover:text-slate-300 transition-colors">The Last New Genre</h3>
+        <p class="text-xs font-light text-white/60 leading-relaxed">SoundCloud rap, COVID, and why 2019 was the last time a mass audience agreed a genre was genuinely new.</p>
+      </a>
       <a href="./liquidears.html" class="group block p-8 border border-white/10 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-white/30 transition-all duration-500 rounded-sm relative overflow-hidden">
         <div class="absolute -right-6 -top-6 w-24 h-24 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-400/20 transition-colors duration-500"></div>
         <span class="text-[10px] font-mono tracking-widest text-white/40 uppercase block mb-3">Jul 04, 2026</span>
         <h3 class="text-sm font-bold text-white uppercase tracking-widest mb-3 group-hover:text-slate-300 transition-colors">The Liquid Ear</h3>
         <p class="text-xs font-light text-white/60 leading-relaxed">Adaptive neural networks and continuous time-constant architectures in real-time mixing and mastering workflows.</p>
-      </a>
-      <a href="./agentichybridproduction.html" class="group block p-8 border border-white/10 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-white/30 transition-all duration-500 rounded-sm relative overflow-hidden">
-        <div class="absolute -right-6 -top-6 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-400/20 transition-colors duration-500"></div>
-        <span class="text-[10px] font-mono tracking-widest text-white/40 uppercase block mb-3">May 17, 2026</span>
-        <h3 class="text-sm font-bold text-white uppercase tracking-widest mb-3 group-hover:text-slate-300 transition-colors">The Autonomous Virtual Studio</h3>
-        <p class="text-xs font-light text-white/60 leading-relaxed">Multi-agent DAW control, latent space interpolation, and SLERP-based audio merging.</p>
-      </a>
-      <a href="./musicindustryforecast.html" class="group block p-8 border border-white/10 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-white/30 transition-all duration-500 rounded-sm relative overflow-hidden">
-        <div class="absolute -right-6 -top-6 w-24 h-24 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-400/20 transition-colors duration-500"></div>
-        <span class="text-[10px] font-mono tracking-widest text-white/40 uppercase block mb-3">May 11, 2026</span>
-        <h3 class="text-sm font-bold text-white uppercase tracking-widest mb-3 group-hover:text-slate-300 transition-colors">The Liquidity of Sound</h3>
-        <p class="text-xs font-light text-white/60 leading-relaxed">2026-2031 forecast on continuous generative audio streams and modular music economies.</p>
       </a>
     </div>
     <div class="mt-12">
@@ -379,7 +396,7 @@
     <a href="https://youtube.com/@loserdub" target="_blank" rel="noopener noreferrer" aria-label="Visit Justin Ray's YouTube Channel" class="group text-white/40 hover:text-[#FF0000] transition-all duration-300 transform hover:scale-110">
       <svg viewBox="0 0 24 24" class="w-8 h-8 fill-current" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
     </a>
-    <a href="https://www.linkedin.com/in/justin-ray-277b8548/" target="_blank" rel="noopener noreferrer" aria-label="Connect with Justin Ray on LinkedIn" class="group text-white/40 hover:text-[#0077B5] transition-all duration-300 transform hover:scale-110">
+    <a href="https://www.linkedin.com/in/jray-me/" target="_blank" rel="noopener noreferrer" aria-label="Connect with Justin Ray on LinkedIn" class="group text-white/40 hover:text-[#0077B5] transition-all duration-300 transform hover:scale-110">
       <svg viewBox="0 0 24 24" class="w-8 h-8 fill-current" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
     </a>
     <a href="https://network.landr.com/users/vision-hybrid" target="_blank" rel="noopener noreferrer" aria-label="Justin Ray on LANDR Network" class="group text-white/40 hover:text-[#00E6CB] transition-all duration-300 transform hover:scale-110">

@@ -16,8 +16,7 @@
 
 
     <!-- Structured Data for SEO -->
- <script type="application/ld+json">
-{
+ <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -37,11 +36,12 @@
       "image": "https://trustnodelogic.com/favicon.png",
       "email": "mailto:loserdub@gmail.com",
       "jobTitle": [
+        "Music Producer",
+        "Music Artist",
         "Pioneer of Hybrid AI Music Production",
-        "Creative Technologist",
         "Audio Engineer",
-        "Founder of r/HybridProduction",
-        "Growth Specialist & Early AI Music Pioneer"
+        "Creative Technologist",
+        "Founder of r/HybridProduction"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -50,16 +50,18 @@
         "addressCountry": "US"
       },
       "knowsAbout": [
-        "Hybrid Music Production",
-        "Generative AI Music",
+        { "@type": "DefinedTerm", "name": "Hybrid Music Production", "description": "Workflow integrating Generative AI audio models with traditional DAW engineering and live instrumentation." },
+        { "@type": "DefinedTerm", "name": "Generative Artificial Intelligence", "sameAs": "https://en.wikipedia.org/wiki/Generative_artificial_intelligence" },
+        { "@type": "DefinedTerm", "name": "Web Audio API", "sameAs": "https://en.wikipedia.org/wiki/Web_Audio_API" },
+        { "@type": "DefinedTerm", "name": "Audio Engineering", "sameAs": "https://en.wikipedia.org/wiki/Audio_engineering" },
+        { "@type": "DefinedTerm", "name": "Digital Audio Workstation", "sameAs": "https://en.wikipedia.org/wiki/Digital_audio_workstation" },
+        { "@type": "DefinedTerm", "name": "C2PA Provenance", "sameAs": "https://c2pa.org/" },
         "Google MusicLM",
         "Suno AI",
+        "Udio",
         "SLERP Audio",
         "Taxonomic Rank",
         "Spectral Splitting",
-        "Audio Engineering",
-        "C2PA Provenance",
-        "Web Audio API",
         "MIXR Studio",
         "Sound Design",
         "Logic Pro X",
@@ -78,6 +80,7 @@
         }
       ],
       "sameAs": [
+        "https://musicbrainz.org/artist/882fdb9b-8655-45dd-8e24-a59cd750d053",
         "https://soundcloud.com/visiontracks",
         "https://www.youtube.com/@loserdub",
         "https://www.linkedin.com/in/jray-me/",
@@ -142,7 +145,7 @@
       },
       "mainEntity": {
         "@type": "ItemList",
-        "name": "Hybrid Production Apps & Research Articles",
+        "name": "Featured Software Applications & Research Projects",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -489,7 +492,7 @@
               <div class="flex items-center justify-between mb-8 border-b border-white/10 pb-4">
                 <div class="flex items-center gap-3">
                   <h2 class="text-xl sm:text-2xl font-display font-bold text-white uppercase tracking-wider">Articles &amp; Essays</h2>
-                  <span class="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-white/10 border border-white/10 text-white/70">11 DEEP DIVES</span>
+                  <span class="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-white/10 border border-white/10 text-white/70">12 DEEP DIVES</span>
                 </div>
                 <span class="hidden sm:block text-xs font-mono text-white/40 tracking-widest">RESEARCH ARCHIVE</span>
               </div>
@@ -497,19 +500,38 @@
               <!-- Sleek Minimalist Dark Grid -->
               <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Card: The Last New Genre -->
-                <a href="./lastnewgenre.html" class="group relative block bg-zinc-950/40 backdrop-blur-md border border-emerald-500/30 hover:border-emerald-400/80 hover:shadow-[0_0_25px_rgba(52,211,153,0.15)] rounded-xl p-8 transition-all duration-500 overflow-hidden flex flex-col justify-between min-h-[270px]">
+                <!-- Card: Prompting the Machine -->
+                <a href="./promptingthemachine.html" class="group relative block bg-zinc-950/40 backdrop-blur-md border border-emerald-500/30 hover:border-emerald-400/80 hover:shadow-[0_0_25px_rgba(52,211,153,0.15)] rounded-xl p-8 transition-all duration-500 overflow-hidden flex flex-col justify-between min-h-[270px]">
                   <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
                   <div class="relative z-10 flex flex-col h-full justify-between">
                     <div>
                       <div class="flex items-center justify-between mb-4">
-                        <span class="text-[9px] font-mono tracking-widest text-emerald-400 uppercase px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">NEW • GENRE EVOLUTION</span>
+                        <span class="text-[9px] font-mono tracking-widest text-emerald-400 uppercase px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">NEW • PROMPT ENGINEERING</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-emerald-400/50 group-hover:text-emerald-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                       </div>
-                      <h2 class="text-xl font-display font-bold text-white mb-3 tracking-wide uppercase group-hover:text-emerald-200 transition-colors">The Last New Genre</h2>
-                      <p class="text-xs font-sans text-white/50 group-hover:text-white/70 transition-colors leading-relaxed font-light mb-6">SoundCloud rap, COVID, and why 2019 was the last time a mass audience agreed a music genre was genuinely new.</p>
+                      <h2 class="text-xl font-display font-bold text-white mb-3 tracking-wide uppercase group-hover:text-emerald-200 transition-colors">Prompting the Machine</h2>
+                      <p class="text-xs font-sans text-white/50 group-hover:text-white/70 transition-colors leading-relaxed font-light mb-6">How Suno, Udio, and AI music tools turn a sentence into a song — and what that means for prompt engineering.</p>
                     </div>
                     <div class="flex items-center justify-between text-[9px] font-mono tracking-widest uppercase text-emerald-300/80 group-hover:text-white transition-colors mt-auto border-t border-white/5 pt-4">
+                      <span>Read Article</span>
+                      <span class="text-white/30">13 MIN READ</span>
+                    </div>
+                  </div>
+                </a>
+
+                <!-- Card: The Last New Genre -->
+                <a href="./lastnewgenre.html" class="group relative block bg-zinc-950/40 backdrop-blur-md border border-white/10 hover:border-white/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.05)] rounded-xl p-8 transition-all duration-500 overflow-hidden flex flex-col justify-between min-h-[270px]">
+                  <div class="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                  <div class="relative z-10 flex flex-col h-full justify-between">
+                    <div>
+                      <div class="flex items-center justify-between mb-4">
+                        <span class="text-[9px] font-mono tracking-widest text-white/40 uppercase px-2 py-0.5 rounded bg-white/5 border border-white/5">GENRE EVOLUTION</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-white/30 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                      </div>
+                      <h2 class="text-xl font-display font-bold text-white mb-3 tracking-wide uppercase group-hover:text-slate-200 transition-colors">The Last New Genre</h2>
+                      <p class="text-xs font-sans text-white/50 group-hover:text-white/70 transition-colors leading-relaxed font-light mb-6">SoundCloud rap, COVID, and why 2019 was the last time a mass audience agreed a music genre was genuinely new.</p>
+                    </div>
+                    <div class="flex items-center justify-between text-[9px] font-mono tracking-widest uppercase text-white/60 group-hover:text-white transition-colors mt-auto border-t border-white/5 pt-4">
                       <span>Read Article</span>
                       <span class="text-white/30">14 MIN READ</span>
                     </div>
