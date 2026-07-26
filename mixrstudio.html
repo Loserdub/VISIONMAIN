@@ -594,6 +594,31 @@
   .author-name { font-family: var(--font-mono); font-weight: 700; color: var(--text); font-size: 12px; }
   .author-link { color: var(--accent); text-decoration: none; font-family: var(--font-mono); font-size: 11px; word-break: break-all; }
   .author-link:hover { text-decoration: underline; }
+  /* vu meter */
+  .vu-meter-wrap {
+    display: flex; flex-direction: column; gap: 2px;
+    width: 44px; height: 16px; background: var(--bg);
+    border: 1px solid var(--border); border-radius: 4px;
+    padding: 3px; justify-content: center; flex-shrink: 0;
+    transition: opacity 0.2s;
+  }
+  .vu-meter-wrap.disabled { display: none; }
+  .vu-bar {
+    height: 3px; background: var(--surface3);
+    border-radius: 1px; overflow: hidden; position: relative;
+  }
+  .vu-fill {
+    height: 100%; width: 0%;
+    background: linear-gradient(to right, var(--accent) 65%, #fbbf24 85%, #f43f5e 100%);
+    transition: width 0.05s linear;
+  }
+
+  .master-seg.selected-seg {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+    box-shadow: 0 0 10px rgba(200, 240, 74, 0.4);
+    opacity: 1 !important;
+  }
 </style>
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <link rel="alternate" type="text/plain" href="/llms.txt" title="AI LLM Knowledge Graph Manifest">
@@ -645,6 +670,8 @@
 
       <!-- master settings -->
       <div style="display: flex; align-items: center; justify-content: flex-end; gap: 12px; margin-bottom: 8px; font-family: var(--font-mono); font-size: 11px;">
+        <span style="color: var(--text-muted); font-size: 9px; letter-spacing: 0.08em;">VU METER:</span>
+        <button id="vu-toggle-btn" class="lane-btn active" onclick="toggleVuMeter()" style="width: auto; padding: 2px 6px; font-size: 9px;" title="Toggle Peak VU Meter">ON</button>
         <span style="color: var(--text-muted); font-size: 9px; letter-spacing: 0.08em;">CROSSFADE:</span>
         <input type="range" id="xfade-slider" min="0.0" max="3.0" step="0.1" value="0.5" style="width: 80px; accent-color: var(--accent); cursor: pointer;" oninput="updateXfadeVal(this.value)">
         <span id="xfade-val" style="color: var(--accent); min-width: 28px;">0.5s</span>
@@ -662,6 +689,10 @@
           <div class="progress-fill" id="progress-fill"></div>
         </div>
         <div class="total-time" id="total-time">0:00</div>
+        <div id="vu-meter-wrap" class="vu-meter-wrap" title="Output Peak VU Level Meter">
+          <div class="vu-bar"><div class="vu-fill" id="vu-fill-l"></div></div>
+          <div class="vu-bar"><div class="vu-fill" id="vu-fill-r"></div></div>
+        </div>
       </div>
 
       <div class="suggestions-wrap" id="suggestions-wrap">
@@ -672,7 +703,7 @@
   </main>
 
   <footer>
-    <div class="hint-text">click seg to preview · drag seg → master · drag cut handles to trim · space to play · ctrl+z to undo</div>
+    <div class="hint-text">click seg to preview/select · drag seg → master · drag cut handles to trim · space play · del/backspace remove · ctrl+z undo · ctrl+e export</div>
     <div class="footer-copyright">
       © 2026 <a href="https://trustnodelogic.com" class="footer-link">trustnodelogic.com</a> · All Rights Reserved
     </div>
@@ -840,6 +871,36 @@ function toggleMute(laneKey) {
   updateLaneGains();
 }
 
+let analyserNode = null;
+let vuDataArray = null;
+let isVuEnabled = true;
+
+function toggleVuMeter() {
+  isVuEnabled = !isVuEnabled;
+  try { localStorage.setItem('mixr_vu_enabled', isVuEnabled ? 'true' : 'false'); } catch(e) {}
+  updateVuMeterUI();
+}
+
+function updateVuMeterUI() {
+  const btn = document.getElementById('vu-toggle-btn');
+  const wrap = document.getElementById('vu-meter-wrap');
+  if (btn) {
+    btn.textContent = isVuEnabled ? 'ON' : 'OFF';
+    btn.classList.toggle('active', isVuEnabled);
+  }
+  if (wrap) {
+    wrap.classList.toggle('disabled', !isVuEnabled);
+  }
+  if (!isVuEnabled) resetVuMeter();
+}
+
+function resetVuMeter() {
+  const fillL = document.getElementById('vu-fill-l');
+  const fillR = document.getElementById('vu-fill-r');
+  if (fillL) fillL.style.width = '0%';
+  if (fillR) fillR.style.width = '0%';
+}
+
 function getCtx() {
   if (!audioCtx || audioCtx.state === 'closed') {
     const ctx = new (window.AudioContext || window.webkitAudioContext)();
@@ -851,7 +912,14 @@ function getCtx() {
     masterLimiter.ratio.setValueAtTime(12, ctx.currentTime);
     masterLimiter.attack.setValueAtTime(0.003, ctx.currentTime);
     masterLimiter.release.setValueAtTime(0.1, ctx.currentTime);
-    masterLimiter.connect(ctx.destination);
+
+    // Create AnalyserNode for Output Peak VU Meter
+    analyserNode = ctx.createAnalyser();
+    analyserNode.fftSize = 256;
+    vuDataArray = new Uint8Array(analyserNode.frequencyBinCount);
+
+    masterLimiter.connect(analyserNode);
+    analyserNode.connect(ctx.destination);
 
     // Create lane gains
     laneGains = {
@@ -1147,12 +1215,16 @@ function drawSegmentOverlay(track) {
 }
 
 function startCutDrag(e, track, cutIdx) {
-  pushUndoState();
   const ov = document.getElementById('ov-' + track.id);
   if (!ov) return;
   const seg     = track.segments[cutIdx];
   const nextSeg = track.segments[cutIdx + 1];
   const minGap  = 2; // seconds — each side gets at least this much
+
+  const initialSegStart = seg.start;
+  const initialSegEnd = seg.end;
+  const initialNextSegStart = nextSeg.start;
+  const initialNextSegEnd = nextSeg.end;
 
   const handleEl = ov.querySelector('[data-cut-idx="' + cutIdx + '"]');
   const segEl    = ov.querySelector('[data-seg-id="' + seg.id + '"]');
@@ -1196,6 +1268,18 @@ function startCutDrag(e, track, cutIdx) {
     document.removeEventListener('mousemove', onMove);
     document.removeEventListener('mouseup',   onUp);
     ov.classList.remove('cut-dragging');
+
+    const changed = (seg.start !== initialSegStart || seg.end !== initialSegEnd || nextSeg.start !== initialNextSegStart || nextSeg.end !== initialNextSegEnd);
+    if (changed) {
+      const curEnd = seg.end;
+      const curNextStart = nextSeg.start;
+      seg.end = initialSegEnd;
+      nextSeg.start = initialNextSegStart;
+      pushUndoState();
+      seg.end = curEnd;
+      nextSeg.start = curNextStart;
+    }
+
     // Bust cached energy so suggestions recalculate correctly
     delete seg._cachedE;
     delete nextSeg._cachedE;
@@ -1226,7 +1310,7 @@ let previewToken = null; // { source, trackId, segDiv }
 function stopAllPreviews() {
   if (!previewToken) return;
   const { source, trackId, segDiv } = previewToken;
-  try { source.stop(); } catch(e) {}
+  try { source.stop(); source.disconnect(); } catch(e) {}
   source.onended = null; // prevent stale callback firing
   if (segDiv) segDiv.classList.remove('playing');
   setTrackTransport(trackId, false);
@@ -1254,6 +1338,7 @@ async function playSegmentPreview(track, seg, div) {
   setTrackTransport(track.id, true);
   previewToken = { source: src, trackId: track.id, segDiv: div };
   src.onended=()=>{
+    try { src.disconnect(); } catch(e) {}
     if (previewToken && previewToken.source === src) {
       div.classList.remove('playing');
       setTrackTransport(track.id, false);
@@ -1274,6 +1359,7 @@ async function previewTrack(ti) {
   setTrackTransport(track.id, true);
   previewToken = { source: src, trackId: track.id, segDiv: null };
   src.onended=()=>{
+    try { src.disconnect(); } catch(e) {}
     if (previewToken && previewToken.source === src) {
       setTrackTransport(track.id, false);
       previewToken = null;
@@ -1397,6 +1483,20 @@ function onMasterDrop(e, targetLane = 'master') {
   updateSuggestions();
 }
 
+let selectedMasterId = null;
+
+function selectMasterSeg(masterId) {
+  selectedMasterId = (selectedMasterId === masterId) ? null : masterId;
+  updateMasterSegSelection();
+}
+
+function updateMasterSegSelection() {
+  masterSegments.forEach(ms => {
+    const el = document.getElementById('mseg-' + ms.masterId);
+    if (el) el.classList.toggle('selected-seg', ms.masterId === selectedMasterId);
+  });
+}
+
 function renderMaster() {
   const container = document.getElementById('master-lanes-container');
   if (!container) return;
@@ -1471,7 +1571,7 @@ function renderMaster() {
         const msDur = ms.end - ms.start;
         const grow = Math.max(0.6, (msDur / Math.max(totalDur, 1)) * 12);
         const div = document.createElement('div');
-        div.className = 'master-seg';
+        div.className = 'master-seg' + (ms.masterId === selectedMasterId ? ' selected-seg' : '');
         div.id = 'mseg-' + ms.masterId;
         div.draggable = true;
         div.addEventListener('dragstart', e => {
@@ -1479,6 +1579,10 @@ function renderMaster() {
           e.dataTransfer.setData('application/json', JSON.stringify({ type: 'reorder', masterId: ms.masterId }));
           e.stopPropagation();
         });
+        div.onclick = (e) => {
+          if (e.target.classList.contains('seg-remove')) return;
+          selectMasterSeg(ms.masterId);
+        };
         div.style.cssText = `background:${ms.color.bg};border-left-color:${ms.color.border};color:${ms.color.text};flex-grow:${grow}`;
         div.innerHTML = `
           <span class="master-seg-lbl">${ms.label}</span>
@@ -1499,6 +1603,7 @@ function renderMaster() {
 
 function removeMasterSegByMasterId(masterId) {
   pushUndoState();
+  if (selectedMasterId === masterId) selectedMasterId = null;
   masterSegments = masterSegments.filter(ms => ms.masterId !== masterId);
   renderMaster();
   updateSuggestions();
@@ -1843,6 +1948,20 @@ async function startPlayback() {
       if (el) el.classList.toggle('active-seg', activeMasterIds.has(ms.masterId));
     });
 
+    if (isVuEnabled && analyserNode && vuDataArray) {
+      analyserNode.getByteTimeDomainData(vuDataArray);
+      let max = 0;
+      for (let i = 0; i < vuDataArray.length; i++) {
+        const val = Math.abs(vuDataArray[i] - 128);
+        if (val > max) max = val;
+      }
+      const normLevel = Math.min(100, (max / 128) * 100 * 1.4);
+      const fillL = document.getElementById('vu-fill-l');
+      const fillR = document.getElementById('vu-fill-r');
+      if (fillL) fillL.style.width = normLevel + '%';
+      if (fillR) fillR.style.width = Math.max(0, normLevel - 3) + '%';
+    }
+
     if (elapsed >= totalDur) { stopPlayback(); return; }
     animFrame = requestAnimationFrame(tick);
   }
@@ -1861,9 +1980,12 @@ function pausePlayback() {
   document.getElementById('play-btn').textContent = '▶';
   document.getElementById('play-btn').classList.remove('active');
   if (animFrame) cancelAnimationFrame(animFrame);
-  scheduledSources.forEach(s => { try { s.src.stop(); } catch (e) {} });
+  scheduledSources.forEach(s => {
+    try { s.src.stop(); s.src.disconnect(); s.gainNode.disconnect(); } catch (e) {}
+  });
   scheduledSources = [];
   clearActiveHighlight();
+  resetVuMeter();
 }
 
 function stopPlayback() {
@@ -1872,11 +1994,14 @@ function stopPlayback() {
   document.getElementById('play-btn').textContent = '▶';
   document.getElementById('play-btn').classList.remove('active');
   if (animFrame) cancelAnimationFrame(animFrame);
-  scheduledSources.forEach(s => { try { s.src.stop(); } catch (e) {} });
+  scheduledSources.forEach(s => {
+    try { s.src.stop(); s.src.disconnect(); s.gainNode.disconnect(); } catch (e) {}
+  });
   scheduledSources = [];
   document.getElementById('progress-fill').style.width = '0%';
   document.getElementById('time-display').textContent = '0:00';
   clearActiveHighlight();
+  resetVuMeter();
 }
 
 function seekTo(e) {
@@ -2047,7 +2172,7 @@ function uid() { return Math.random().toString(36).slice(2); }
 let currentIntroPage = 0;
 const INTRO_PAGES = [
   {
-    title: "1/3 · WELCOME TO MIXR STUDIO",
+    title: "1/4 · WELCOME TO MIXR STUDIO",
     content: `
       <p style="color:var(--text-muted); font-size:12px;">Browser-Native Audio Segment Mixer & Mastering Environment</p>
       <p style="margin-top:6px;"><strong>MIXR Studio</strong> is a free, web-native DAW environment for hybrid music producers, DJs, and sound designers.</p>
@@ -2062,7 +2187,7 @@ const INTRO_PAGES = [
     `
   },
   {
-    title: "2/3 · HOW TO ARRANGE & MIX",
+    title: "2/4 · HOW TO ARRANGE & MIX",
     content: `
       <p style="color:var(--text-muted); font-size:12px;">Quick 4-Step Workflow</p>
       <div style="display:flex; flex-direction:column; gap:10px; margin-top:6px; font-size:12px;">
@@ -2086,14 +2211,37 @@ const INTRO_PAGES = [
     `
   },
   {
-    title: "3/3 · SHORTCUTS & AUTHOR",
+    title: "3/4 · ADVANCED DSP & AI TOOLS",
+    content: `
+      <p style="color:var(--text-muted); font-size:12px;">Crossover Filters, Equal Power & Peak VU Meter</p>
+      <div style="display:flex; flex-direction:column; gap:8px; margin-top:6px; font-size:12px;">
+        <div style="background:var(--surface2); padding:10px; border-radius:6px; border:1px solid var(--border);">
+          <strong>3-Band Crossover Filters:</strong> Automatic 250Hz lowpass, 250Hz–2.5kHz bandpass, and 2.5kHz highpass isolation graph with 1/&radic;N equal-power gain scaling.
+        </div>
+        <div style="background:var(--surface2); padding:10px; border-radius:6px; border:1px solid var(--border);">
+          <strong>Crossfade Slider:</strong> Adjust equal-power sine/cosine crossfades (0.0s to 3.0s) between timeline segments.
+        </div>
+        <div style="background:var(--surface2); padding:10px; border-radius:6px; border:1px solid var(--border);">
+          <strong>AI Recommendations & Magic Mix:</strong> Automated segment transition scoring and one-click full song remix generator.
+        </div>
+        <div style="background:var(--surface2); padding:10px; border-radius:6px; border:1px solid var(--border);">
+          <strong>Output Peak VU Meter:</strong> Real-time dual LED level meter located in the transport controls (toggleable via VU button).
+        </div>
+      </div>
+    `
+  },
+  {
+    title: "4/4 · KEYBOARD SHORTCUTS & AUTHOR",
     content: `
       <p style="color:var(--text-muted); font-size:12px;">Keyboard Shortcuts & Information</p>
       <div class="shortcut-list">
         <div class="shortcut-item"><span>Play / Pause Playback</span><span class="shortcut-key">Space</span></div>
         <div class="shortcut-item"><span>Stop Playback & Reset</span><span class="shortcut-key">Escape</span></div>
+        <div class="shortcut-item"><span>Delete Selected Master Segment</span><span class="shortcut-key">Delete / Backspace</span></div>
         <div class="shortcut-item"><span>Undo Last Action</span><span class="shortcut-key">Ctrl + Z / Cmd + Z</span></div>
-        <div class="shortcut-item"><span>Preview Audio Segment</span><span class="shortcut-key">Click Seg</span></div>
+        <div class="shortcut-item"><span>Export Rendered WAV Master</span><span class="shortcut-key">Ctrl + E / Cmd + E</span></div>
+        <div class="shortcut-item"><span>Preview Audio Segment</span><span class="shortcut-key">Click Segment</span></div>
+        <div class="shortcut-item"><span>Select Master Segment</span><span class="shortcut-key">Click Master Seg</span></div>
       </div>
       <div class="author-card">
         <div style="font-size:10px; color:var(--text-muted); font-family:var(--font-mono); letter-spacing:0.08em; text-transform:uppercase;">DESIGNED & DEVELOPED BY</div>
@@ -2119,10 +2267,12 @@ function renderIntroPage() {
     nextBtn.textContent = 'NEXT ▶';
   }
   
-  const dots = document.querySelectorAll('#intro-dots .dot');
-  dots.forEach((dot, idx) => {
-    dot.classList.toggle('active', idx === currentIntroPage);
-  });
+  const dotsContainer = document.getElementById('intro-dots');
+  if (dotsContainer) {
+    dotsContainer.innerHTML = INTRO_PAGES.map((_, idx) => 
+      `<div class="dot ${idx === currentIntroPage ? 'active' : ''}"></div>`
+    ).join('');
+  }
 }
 
 function openIntroModal() {
@@ -2154,8 +2304,14 @@ function introPrevPage() {
   }
 }
 
-// Auto-open on first time visit
+// Auto-open on first time visit + restore VU preference
 window.addEventListener('DOMContentLoaded', () => {
+  try {
+    const storedVu = localStorage.getItem('mixr_vu_enabled');
+    if (storedVu !== null) isVuEnabled = storedVu === 'true';
+  } catch(e) {}
+  updateVuMeterUI();
+
   try {
     if (!localStorage.getItem('mixr_intro_seen')) {
       setTimeout(() => openIntroModal(), 400);
@@ -2165,14 +2321,36 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // ── KEYBOARD SHORTCUTS ─────────────────────────────────────────
 document.addEventListener('keydown', e => {
-  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
+  
   if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z') {
     e.preventDefault();
     undo();
     return;
   }
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'e') {
+    e.preventDefault();
+    if (masterSegments.length && !document.getElementById('export-btn').disabled) {
+      exportMix();
+    }
+    return;
+  }
+  if (e.key === 'Delete' || e.key === 'Backspace') {
+    if (selectedMasterId) {
+      e.preventDefault();
+      removeMasterSegByMasterId(selectedMasterId);
+      return;
+    }
+  }
   if (e.code === 'Space')  { e.preventDefault(); if (masterSegments.length) togglePlay(); }
-  if (e.code === 'Escape') { stopPlayback(); }
+  if (e.code === 'Escape') {
+    stopPlayback();
+    if (selectedMasterId) {
+      selectedMasterId = null;
+      updateMasterSegSelection();
+    }
+    closeIntroModal();
+  }
 });
 </script>
 </body>
