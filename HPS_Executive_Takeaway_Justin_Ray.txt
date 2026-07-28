@@ -1,0 +1,60 @@
+HYBRID PRODUCTION STANDARD (HPS-1.0)
+EXECUTIVE TAKEAWAY & INDUSTRY IMPLEMENTATION GUIDE
+
+Author: Justin Ray
+Contact: justin@trustnodelogic.com
+Website: https://trustnodelogic.com
+Date: August 2, 2026 EU AI Act Article 50 Implementation
+
+====================================================================
+1. WHY HPS MATTERS NOW
+====================================================================
+On August 2, 2026, Article 50 of the EU AI Act mandates machine-readable
+disclosure of synthetic audio. Flat "AI vs. Human" checkboxes fail modern
+creators and platforms. HPS-1.0 provides a 5-axis process classification
+and cryptographic verification layer that integrates seamlessly into existing
+distributor DDEX ERN 4.3 pipelines.
+
+====================================================================
+2. THE FIVE PRODUCTION AXES
+====================================================================
+Each track is scored as H (Human), A (AI), or H+A (Hybrid/Co-Creative):
+
+1. Origination: Melody, chords, lyric concept, structural seed.
+2. Performance: Vocal execution, physical instrument, MIDI tracking.
+3. Curation & Arrangement: Chopping, stem selection, sequencing.
+4. Sound Source: Physical instrument/vocal vs. AI synth model.
+5. Post-Production: Mixing, EQ, mastering assist plugins.
+
+====================================================================
+3. THE THREE TIERS & HYBRID GRADIENT
+====================================================================
+- Tier H (Human Production): Human origination & performance. AI confined to post utility.
+- Tier X1 (Human-Led Hybrid): Human composition/vocal; AI used for texture/mastering.
+- Tier X2 (Co-Creative Hybrid): Human and AI collaborate on writing or vocals.
+- Tier X3 (AI-Led Hybrid): AI stem/seed; human substantially reworks & re-performs.
+- Tier X4 (Curated Hybrid): AI composition; human selects and lightly edits.
+- Tier A (AI Production): AI origination & performance; prompt-only output.
+
+====================================================================
+4. DISTRIBUTOR INTEGRATION (DDEX ERN 4.3)
+====================================================================
+- Zero-Build Ingest: HPS maps 1-to-1 into DDEX ERN 4.3 ArtificialIntelligenceDetails.
+- Raw PCM Essence Hash: Hashes raw audio essence (raw_audio_essence SHA-256),
+  making verification tamper-evident across metadata header changes.
+- Cryptographic Proof: Ed25519 signed manifest (hps_manifest.json).
+
+====================================================================
+5. DSP PROGRESSIVE BADGING MODEL (SPOTIFY / APPLE MUSIC)
+====================================================================
+- Tier A: [Synthetic Audio] badge (EU Article 50 compliant).
+- Tier X1/X2: Quiet UI integration inside existing "Song Credits" popups.
+- Tier H: Optional [Verified Human] trust mark.
+
+====================================================================
+6. CONTACT & PARTNERSHIPS
+====================================================================
+For technical pilots, distributor partnerships, or media inquiries:
+Author: Justin Ray
+Email: justin@trustnodelogic.com
+Website: https://trustnodelogic.com

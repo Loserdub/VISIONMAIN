@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Geographic & Entity Author Meta Tags for SEO/GEO -->
+    <meta name="author" content="Justin Ray (JRAY)">
+    <meta name="geo.placename" content="East Lansing, Michigan, USA">
+    <meta name="geo.region" content="US-MI">
+    <meta name="geo.country" content="US">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Hybrid Production Standard (HPS-1.0) — Technical Specification & Executive Takeaway | TrustNodeLogic</title>
+<meta name="description" content="The definitive specification and verification system for AI, hybrid, and human music production. Timed to EU AI Act Article 50 (August 2, 2026). Authored by Justin Ray (justin@trustnodelogic.com).">
+<meta name="keywords" content="Hybrid Production Standard, HPS-1.0, EU AI Act Article 50, DDEX ERN 4.3, ArtificialIntelligenceDetails, AI Music Disclosure, Process Classification, Justin Ray, JRAY, loserdub, Trust Node Logic">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://trustnodelogic.com/hybridproductionstandard.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://trustnodelogic.com/hybridproductionstandard.html">
+<meta property="og:title" content="The Hybrid Production Standard (HPS-1.0) — Technical Specification & Executive Takeaway">
+<meta property="og:description" content="The definitive 5-axis process classification and cryptographic verification layer for AI, hybrid, and human music production. Timed for EU AI Act Article 50.">
+<meta property="og:site_name" content="Trust Node Logic">
+<meta property="og:image" content="https://trustnodelogic.com/assets/images/hps-social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Hybrid Production Standard (HPS-1.0)">
+<meta name="twitter:description" content="5-axis process classification and DDEX ERN 4.3 metadata mapping for hybrid AI music.">
+<meta name="twitter:site" content="@TheInnerVision">
+<meta name="twitter:image" content="https://trustnodelogic.com/assets/images/hps-social-card.png">
+
+<!-- Structured Data / Master JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://trustnodelogic.com/#person",
+      "name": "Justin Ray",
+      "additionalName": "Justin Tyler Ray",
+      "alternateName": [
+        "JRAY",
+        "loserdub",
+        "VISION",
+        "Flawed Future",
+        "le vide",
+        "disarray"
+      ],
+      "url": "https://trustnodelogic.com",
+      "image": "https://trustnodelogic.com/favicon.png",
+      "email": "mailto:justin@trustnodelogic.com",
+      "jobTitle": [
+        "Pioneer of Hybrid AI Music Production",
+        "Creative Technologist",
+        "Audio Engineer",
+        "Founder of r/HybridProduction"
+      ],
+      "sameAs": [
+        "https://musicbrainz.org/artist/882fdb9b-8655-45dd-8e24-a59cd750d053",
+        "https://soundcloud.com/visiontracks",
+        "https://soundcloud.com/loserdub",
+        "https://www.youtube.com/@loserdub",
+        "https://www.linkedin.com/in/jray-me/",
+        "https://x.com/TheInnerVision",
+        "https://www.instagram.com/jray.me/",
+        "https://open.spotify.com/artist/3VZelnnW9OR0DyR2qRn4Oq",
+        "https://open.spotify.com/artist/6GGZwLOLxVxYGOcMry3NDi",
+        "https://open.spotify.com/artist/42TmrCeIumkPRyTNOPP78t",
+        "https://open.spotify.com/artist/3FNFzRyU0PCA2vjihWsg6y",
+        "https://open.spotify.com/artist/6TlAxGL1Hm4FRWfTxprlMi",
+        "https://www.reddit.com/r/hybridproduction/",
+        "https://network.landr.com/users/vision-hybrid",
+        "https://github.com/loserdub"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://trustnodelogic.com/#organization",
+      "name": "Trust Node Logic",
+      "url": "https://trustnodelogic.com",
+      "logo": "https://trustnodelogic.com/favicon.png",
+      "founder": {
+        "@id": "https://trustnodelogic.com/#person"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://trustnodelogic.com/#website",
+      "url": "https://trustnodelogic.com",
+      "name": "Trust Node Logic | Pioneer of Hybrid AI Music Production",
+      "author": {
+        "@id": "https://trustnodelogic.com/#person"
+      },
+      "publisher": {
+        "@id": "https://trustnodelogic.com/#organization"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://trustnodelogic.com/hybridproductionstandard.html#article",
+      "url": "https://trustnodelogic.com/hybridproductionstandard.html",
+      "name": "The Hybrid Production Standard (HPS-1.0) — Technical Specification & Executive Takeaway",
+      "headline": "The Hybrid Production Standard (HPS-1.0) — Technical Specification & Executive Takeaway",
+      "description": "The definitive 5-axis process classification, DDEX ERN 4.3 mapping, and cryptographic verification system for AI, hybrid, and human music production. Timed for EU AI Act Article 50 compliance.",
+      "datePublished": "2026-08-02",
+      "dateModified": "2026-07-28",
+      "author": {
+        "@id": "https://trustnodelogic.com/#person"
+      },
+      "publisher": {
+        "@id": "https://trustnodelogic.com/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://trustnodelogic.com/#website"
+      },
+      "inLanguage": "en-US",
+      "keywords": [
+        "Hybrid Production Standard",
+        "HPS-1.0",
+        "EU AI Act Article 50",
+        "DDEX ERN 4.3",
+        "ArtificialIntelligenceDetails",
+        "AI Music Disclosure",
+        "Process Classification",
+        "Justin Ray",
+        "Trust Node Logic"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://trustnodelogic.com/hybridproductionstandard.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Trust Node Logic",
+          "item": "https://trustnodelogic.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Hybrid Production Standard (HPS-1.0)",
+          "item": "https://trustnodelogic.com/hybridproductionstandard.html"
+        }
+      ]
+    }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Datatype:wght@400;500;600;700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#090a0f;
+    --panel:rgba(15, 16, 22, 0.85);
+    --panel-solid:#11121a;
+    --panel-2:#171824;
+    --border:#222434;
+    --border-soft:#181926;
+    --text:#f4f5f8;
+    --muted:#9ba1b4;
+    --muted-dim:#5b6075;
+    --human:#38bdf8;
+    --human-dim:rgba(56, 189, 248, 0.15);
+    --ai:#c084fc;
+    --ai-dim:rgba(192, 132, 252, 0.15);
+    --amber:#fbbf24;
+    --emerald:#34d399;
+    --cyan:#38bdf8;
+    --radius:10px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+  body{
+    margin:0;
+    background:
+      radial-gradient(circle at 50% -5%, rgba(56, 189, 248, 0.05), transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(192, 132, 252, 0.03), transparent 40%),
+      var(--bg);
+    color:var(--text);
+    font-family:'Zilla Slab', Georgia, serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:rgba(56,189,248,0.25); color:#fff;}
+  a{color:inherit; text-decoration:none;}
+  h1,h2,h3,h4,.display{
+    font-family:'Bebas Neue', sans-serif;
+    font-weight:400;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    margin:0;
+  }
+  .mono{font-family:'Datatype', 'JetBrains Mono', ui-monospace, monospace;}
+  .wrap{max-width:920px; margin:0 auto; padding:0 24px;}
+  .wrap-wide{max-width:1160px; margin:0 auto; padding:0 24px;}
+
+  /* ---------- nav ---------- */
+  nav{
+    padding:16px 0;
+    border-bottom:1px solid var(--border-soft);
+    position:sticky; top:0; z-index:1000;
+    background:rgba(9,10,15,0.92);
+    backdrop-filter:blur(16px);
+  }
+  nav .wrap-wide{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
+  .brand{
+    font-family:'Datatype', 'JetBrains Mono', monospace;
+    font-size:13px;
+    letter-spacing:0.06em;
+    color:var(--muted);
+    display:flex; align-items:center; gap:8px;
+  }
+  .brand strong{color:var(--text); font-weight:600;}
+  .brand .dot{width:6px; height:6px; border-radius:50%; background:var(--cyan);}
+  .nav-links{display:flex; gap:20px; font-family:'Datatype', 'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.03em;}
+  .nav-links a{color:var(--muted); transition:color .15s ease;}
+  .nav-links a:hover{color:var(--text);}
+  .nav-badge{
+    font-family:'Datatype', 'JetBrains Mono', monospace;
+    font-size:11.5px;
+    padding:4px 12px;
+    border-radius:6px;
+    background:rgba(56,189,248,0.08);
+    border:1px solid rgba(56,189,248,0.3);
+    color:var(--cyan);
+  }
+
+  /* ---------- hero ---------- */
+  header.hero{
+    padding:88px 0 72px;
+    border-bottom:1px solid var(--border-soft);
+  }
+  .eyebrow{
+    font-family:'Datatype', 'JetBrains Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--cyan);
+    display:flex; align-items:center; gap:10px;
+    margin-bottom:22px;
+  }
+  .eyebrow::before{
+    content:'';
+    width:20px; height:1px;
+    background:var(--cyan);
+  }
+  h1.title{
+    font-size:clamp(48px, 7vw, 84px);
+    line-height:0.98;
+    margin-bottom:24px;
+    font-weight:400;
+    letter-spacing:0.04em;
+  }
+  h1.title em{
+    font-style:italic;
+    color:var(--text);
+    text-decoration:underline;
+    text-decoration-color:rgba(56, 189, 248, 0.4);
+    text-underline-offset:8px;
+    text-decoration-thickness:2px;
+  }
+  .lede{
+    font-size:20px;
+    color:var(--muted);
+    max-width:760px;
+    margin-bottom:38px;
+    line-height:1.65;
+    font-weight:400;
+  }
+  .hero-author{
+    font-family:'Datatype', 'JetBrains Mono', monospace;
+    font-size:13px;
+    color:var(--text);
+    margin-bottom:28px;
+    display:flex; align-items:center; gap:12px;
+  }
+  .hero-author span{color:var(--muted-dim);}
+  .hero-badges{display:flex; flex-wrap:wrap; gap:8px;}
+  .pill{
+    font-family:'Datatype', 'JetBrains Mono', monospace;
+    font-size:12px;
+    padding:6px 12px;
+    border:1px solid var(--border);
+    border-radius:6px;
+    color:var(--muted);
+    background:var(--panel-solid);
+  }
+
+  /* ---------- generic section ---------- */
+  section{padding:84px 0;}
+  section.bordered{border-bottom:1px solid var(--border-soft);}
+  .kicker{
+    font-family:'Datatype', 'JetBrains Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--muted-dim);
+    margin-bottom:14px;
+  }
+  h2.section-title{
+    font-size:clamp(34px, 4.5vw, 54px);
+    line-height:1.02;
+    margin-bottom:24px;
+    max-width:760px;
+    letter-spacing:0.04em;
+  }
+  p{color:var(--muted); margin:0 0 16px;}
+
+  /* ---------- 3 perspectives grid ---------- */
+  .perspectives-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+    margin-top:36px;
+  }
+  @media (max-width: 860px){ .perspectives-grid{grid-template-columns:1fr;} }
+  .p-card{
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    background:var(--panel-solid);
+    padding:28px 24px;
+    position:relative;
+    overflow:hidden;
+  }
+  .p-card::before{
+    content:'';
+    position:absolute; top:0; left:0; right:0; height:2px;
+  }
+  .p-card.artist::before{background:var(--human);}
+  .p-card.distributor::before{background:var(--emerald);}
+  .p-card.dsp::before{background:var(--ai);}
+  .p-card .role-tag{
+    font-family:'Datatype', 'JetBrains Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    margin-bottom:12px;
+  }
+  .p-card.artist .role-tag{color:var(--human);}
+  .p-card.distributor .role-tag{color:var(--emerald);}
+  .p-card.dsp .role-tag{color:var(--ai);}
+  .p-card h3{font-size:24px; margin-bottom:10px; color:var(--text); letter-spacing:0.04em;}
+  .p-card p{font-size:15px; margin:0;}
+
+  /* ---------- compare grid ---------- */
+  .compare{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--border);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    overflow:hidden;
+    margin-top:32px;
+  }
+  .compare > div{
+    background:var(--panel-solid);
+    padding:28px 26px;
+  }
+  .compare .label{
+    font-family:'Datatype', 'JetBrains Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--muted-dim);
+    margin-bottom:10px;
+  }
+  .compare .badge{
+    display:inline-block;
+    font-family:'Datatype', 'JetBrains Mono', monospace;
+    font-size:12px;
+    padding:4px 10px;
+    border-radius:6px;
+    background:var(--panel-2);
+    border:1px solid var(--border-soft);
+    color:var(--muted);
+    margin-top:14px;
+  }
+  @media (max-width: 680px){ .compare{grid-template-columns:1fr;} }
+
+  /* ---------- principle ---------- */
+  .principle-box{
+    margin-top:34px;
+    padding:36px 32px;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    background:var(--panel-solid);
+    text-align:center;
+  }
+  .principle-box .display{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:clamp(26px,3.5vw,38px);
+    letter-spacing:0.05em;
+    line-height:1.2;
+  }
+  .principle-box .display .h{color:var(--human);}
+  .principle-box .display .a{color:var(--ai);}
+
+  /* ---------- builder ---------- */
+  .builder{
+    border:1px solid var(--border);
+    border-radius:14px;
+    background:var(--panel-solid);
+    overflow:hidden;
+    box-shadow:0 16px 32px rgba(0,0,0,0.3);
+  }
+  .builder-head{
+    padding:26px 30px 18px;
+    border-bottom:1px solid var(--border-soft);
+    display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; align-items:flex-end;
+  }
+  .builder-head h3{font-size:26px; letter-spacing:0.04em;}
+  .builder-actions{display:flex; gap:10px;}
+  .btn-ghost{
+    font-family:'Datatype', 'JetBrains Mono', monospace;
+    font-size:12px;
+    padding:8px 14px;
+    border:1px solid var(--border);
+    border-radius:6px;
+    background:transparent;
+    color:var(--muted);
+    cursor:pointer;
+    transition:all .15s ease;
+  }
+  .btn-ghost:hover{border-color:var(--human); color:var(--text);}
+
+  .axes-grid{
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:1px;
+    background:var(--border-soft);
+  }
+  @media (max-width: 920px){ .axes-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width: 540px){ .axes-grid{grid-template-columns:1fr;} }
+
+  .axis-card{
+    background:var(--panel-solid);
+    padding:22px 20px 24px;
+  }
+  .axis-num{
+    font-family:'Datatype', 'JetBrains Mono', monospace;
+    font-size:11.5px;
+    color:var(--muted-dim);
+    margin-bottom:8px;
+  }
+  .axis-name{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:22px;
+    letter-spacing:0.04em;
+    margin-bottom:6px;
+  }
+  .axis-q{
+    font-size:13px;
+    color:var(--muted);
+    min-height:54px;
+    margin-bottom:16px;
+  }
+  .axis-toggle{
+    display:flex;
+    border:1px solid var(--border);
+    border-radius:6px;
+    overflow:hidden;
+  }
+  .axis-toggle button{
+    flex:1;
+    background:var(--panel-2);
+    border:none;
+    color:var(--muted);
+    font-family:'Datatype', 'JetBrains Mono', monospace;
+    font-size:12.5px;
+    padding:10px 0;
+    cursor:pointer;
+    border-right:1px solid var(--border);
+    transition:all .15s ease;
+  }
+  .axis-toggle button:last-child{border-right:none;}
+  .axis-toggle button.active[data-v="H"]{background:var(--human); color:#08090f; font-weight:700;}
+  .axis-toggle button.active[data-v="HA"]{background:var(--text); color:#08090f; font-weight:700;}
+  .axis-toggle button.active[data-v="A"]{background:var(--ai); color:#08090f; font-weight:700;}
+  .axis-toggle button:hover:not(.active){color:var(--text);}
+
+  .builder-result{
+    padding:32px;
+    display:grid;
+    grid-template-columns:1fr 1.2fr;
+    gap:32px;
+  }
+  @media (max-width: 880px){ .builder-result{grid-template-columns:1fr;} }
+
+  .tier-readout .tier-badge{
+    display:inline-flex;
+    align-items:baseline;
+    gap:10px;
+    font-family:'Datatype', 'JetBrains Mono', monospace;
+    font-size:14px;
+    padding:10px 18px;
+    border-radius:8px;
+    border:1px solid var(--border);
+    background:var(--panel-2);
+    margin-bottom:18px;
+  }
+  .tier-readout .tier-badge .tier-code{
+    font-size:24px;
+    font-weight:700;
+  }
+  .tier-readout .tier-name{
+    font-size:18px;
+    color:var(--text);
+    margin-bottom:8px;
+    font-weight:600;
+  }
+  .tier-readout .tier-desc{
+    font-size:14.5px;
+    color:var(--muted);
+  }
+  .tag-line{
+    margin-top:18px;
+    font-family:'Datatype', 'JetBrains Mono', monospace;
+    font-size:12.5px;
+    color:var(--muted);
+    padding:14px;
+    background:var(--panel-2);
+    border-radius:6px;
+    border:1px solid var(--border-soft);
+    word-break:break-word;
+  }
+
+  /* Code Tabs */
+  .code-tabs{
+    display:flex;
+    gap:6px;
+    margin-bottom:12px;
+    border-bottom:1px solid var(--border-soft);
+    padding-bottom:8px;
+    overflow-x:auto;
+  }
+  .code-tab{
+    font-family:'Datatype', 'JetBrains Mono', monospace;
+    font-size:11.5px;
+    background:transparent;
+    border:none;
+    color:var(--muted-dim);
+    cursor:pointer;
+    padding:5px 10px;
+    border-radius:6px;
+    white-space:nowrap;
+  }
+  .code-tab.active{
+    color:var(--text);
+    background:var(--panel-2);
+    font-weight:600;
+  }
+
+  .manifest-preview{
+    font-family:'Datatype', 'JetBrains Mono', monospace;
+    font-size:12.5px;
+    background:#07080c;
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:18px;
+    color:#a3accd;
+    white-space:pre-wrap;
+    overflow-x:auto;
+    line-height:1.65;
+    max-height:320px;
+  }
+  .manifest-preview .k{color:var(--human);}
+  .manifest-preview .v{color:var(--text);}
+
+  .export-btns{
+    display:flex;
+    gap:10px;
+    margin-top:14px;
+    flex-wrap:wrap;
+  }
+  .btn-sm{
+    font-family:'Datatype', 'JetBrains Mono', monospace;
+    font-size:12px;
+    padding:8px 14px;
+    border-radius:6px;
+    border:1px solid var(--border);
+    background:var(--panel-2);
+    color:var(--text);
+    cursor:pointer;
+    transition:all .15s ease;
+  }
+  .btn-sm:hover{border-color:var(--human);}
+  .btn-highlight{
+    background:#f4f5f8;
+    color:#090a0f;
+    font-weight:600;
+    border:1px solid #ffffff;
+  }
+  .btn-highlight:hover{
+    background:#e2e8f0;
+  }
+
+  /* ---------- tiers ---------- */
+  .tiers{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+    margin-top:34px;
+  }
+  @media (max-width: 820px){ .tiers{grid-template-columns:1fr;} }
+  .tier-card{
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    background:var(--panel-solid);
+    padding:26px 24px;
+  }
+  .tier-card .swatch{
+    width:32px; height:4px; border-radius:2px; margin-bottom:18px;
+  }
+  .tier-card.h .swatch{background:var(--human);}
+  .tier-card.x .swatch{background:var(--text);}
+  .tier-card.a .swatch{background:var(--ai);}
+  .tier-card h4{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:26px;
+    letter-spacing:0.04em;
+    margin-bottom:8px;
+  }
+  .tier-card p{font-size:15px; margin-bottom:14px;}
+  .subscale{
+    margin-top:14px;
+    padding-top:14px;
+    border-top:1px solid var(--border-soft);
+  }
+  .subscale div{
+    font-size:14px;
+    color:var(--muted);
+    margin-bottom:8px;
+  }
+  .subscale span{
+    font-family:'Datatype', 'JetBrains Mono', monospace;
+    color:var(--text);
+    font-weight:600;
+  }
+
+  /* ---------- technical spec grid ---------- */
+  .spec-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-top:32px;
+  }
+  @media (max-width: 760px){ .spec-grid{grid-template-columns:1fr;} }
+  .spec-card{
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    background:var(--panel-solid);
+    padding:24px;
+  }
+  .spec-card h4{font-size:22px; margin-bottom:10px; color:var(--text); letter-spacing:0.04em;}
+  .spec-card p{font-size:15px; margin-bottom:12px; color:var(--muted);}
+
+  /* ---------- article 50 table ---------- */
+  .a50-table{
+    margin-top:32px;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .a50-row{
+    display:grid;
+    grid-template-columns:1.2fr 1.4fr 1.4fr;
+    border-bottom:1px solid var(--border-soft);
+  }
+  .a50-row:last-child{border-bottom:none;}
+  .a50-row > div{padding:18px 20px; font-size:15px;}
+  .a50-row.head > div{
+    background:var(--panel-2);
+    font-family:'Datatype', 'JetBrains Mono', monospace;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--muted-dim);
+  }
+  .a50-row:not(.head) > div:first-child{color:var(--text); font-weight:600;}
+  .a50-row:not(.head) > div{color:var(--muted); border-left:1px solid var(--border-soft);}
+  .a50-row:not(.head) > div:first-child{border-left:none;}
+
+  /* ---------- distributor pitch roadmap ---------- */
+  .roadmap-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:18px;
+    margin-top:32px;
+  }
+  @media (max-width: 820px){ .roadmap-grid{grid-template-columns:1fr;} }
+  .roadmap-card{
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:24px;
+    background:var(--panel-solid);
+  }
+  .roadmap-card .phase-num{
+    font-family:'Datatype', 'JetBrains Mono', monospace;
+    font-size:11.5px;
+    color:var(--emerald);
+    margin-bottom:10px;
+    letter-spacing:0.08em;
+  }
+  .roadmap-card h4{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:24px;
+    letter-spacing:0.04em;
+    margin-bottom:8px;
+  }
+
+  /* ---------- cta / footer ---------- */
+  .cta{
+    text-align:center;
+    padding:96px 0;
+  }
+  .cta h2{font-size:clamp(36px,5vw,56px); margin-bottom:18px; letter-spacing:0.04em;}
+  .cta p{max-width:580px; margin:0 auto 34px; color:var(--muted);}
+  .cta-buttons{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+  .btn-primary{
+    font-family:'Datatype', 'JetBrains Mono', monospace;
+    font-size:13px;
+    padding:12px 24px;
+    border-radius:8px;
+    background:#f4f5f8;
+    color:#090a0f;
+    font-weight:600;
+    text-decoration:none;
+    border:1px solid #ffffff;
+    cursor:pointer;
+    transition:all .15s ease;
+  }
+  .btn-primary:hover{
+    background:#e2e8f0;
+  }
+  .btn-secondary{
+    font-family:'Datatype', 'JetBrains Mono', monospace;
+    font-size:13px;
+    padding:12px 24px;
+    border-radius:8px;
+    border:1px solid var(--border);
+    color:var(--text);
+    text-decoration:none;
+    background:var(--panel-solid);
+    transition:all .15s ease;
+  }
+  .btn-secondary:hover{
+    border-color:var(--muted);
+    background:var(--panel-2);
+  }
+  footer{
+    border-top:1px solid var(--border-soft);
+    padding:44px 0;
+    background:#07080c;
+  }
+  footer .wrap-wide{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;
+  }
+  footer .contact-info{
+    font-family:'Datatype', 'JetBrains Mono', monospace;
+    font-size:12.5px;
+    color:var(--muted);
+  }
+  footer .contact-info strong{color:var(--text);}
+  footer .contact-info a{color:var(--cyan); text-decoration:underline;}
+  footer .footer-btns{display:flex; gap:12px;}
+
+  /* reveal animation */
+  .reveal{
+    opacity:0;
+    transform:translateY(16px);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  .reveal.in{opacity:1; transform:translateY(0);}
+</style>
+
+</head>
+<body>
+
+<nav>
+  <div class="wrap-wide">
+    <a class="brand" href="https://trustnodelogic.com">
+      <span class="dot"></span><strong>TrustNodeLogic</strong> <span style="opacity:.4">/</span> HPS-1.0 Flagship
+    </a>
+    <div class="nav-links">
+      <a href="#manifesto">Manifesto</a>
+      <a href="#perspectives">Stakeholders</a>
+      <a href="#standard">The 5 Axes</a>
+      <a href="#builder">Live Builder</a>
+      <a href="#distributors">Distributors</a>
+      <a href="#dsps">DSPs</a>
+      <a href="#legal">EU AI Act</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <button class="btn-sm btn-highlight" id="btn-nav-takeaway">Download Takeaway Guide</button>
+      <span class="nav-badge">EU AI Act Aug 2, 2026 Ready</span>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">The Bible of Hybrid Production · HPS-1.0</div>
+    <h1 class="title">The standard that ends the <em>"AI vs. Human"</em> culture war.</h1>
+    <p class="lede">On August 2, 2026, Article 50 of the EU AI Act enforces synthetic content transparency. Binary checkboxes fail modern creators, distributors, and streaming platforms. HPS-1.0 introduces a transparent, 5-axis process classification and cryptographic provenance layer — built to bring nuance, legal compliance, and order to modern music production.</p>
+    
+    <div style="display:flex; gap:12px; margin-bottom:32px; flex-wrap:wrap;">
+      <button class="btn-primary" id="btn-hero-takeaway">Download Executive Takeaway Guide (.txt)</button>
+      <a class="btn-secondary" href="#builder">Launch 5-Axis Live Builder</a>
+    </div>
+
+    <div class="hero-author">
+      <span>Authored by</span> <strong>Justin Ray</strong> &nbsp;·&nbsp; <span>Contact:</span> <a href="mailto:justin@trustnodelogic.com" style="color:var(--cyan); text-decoration:underline;">justin@trustnodelogic.com</a>
+    </div>
+    <div class="hero-badges">
+      <span class="pill">Classify Process, Not Tools</span>
+      <span class="pill">5 Production Axes</span>
+      <span class="pill">3 Tiers & 4 Hybrid Sub-Scales</span>
+      <span class="pill">DDEX ERN 4.3 XML Export</span>
+      <span class="pill">C2PA JUMBF Compatible</span>
+      <span class="pill">Ed25519 Cryptographic Proof</span>
+    </div>
+  </div>
+</header>
+
+<section class="bordered reveal" id="perspectives">
+  <div class="wrap-wide">
+    <div class="kicker">Three Essential Stakeholders</div>
+    <h2 class="section-title">Built for Artists, Distributors, & Platforms Alike</h2>
+    <p style="max-width:680px;">HPS bridges the divide between independent creators, distributor ingest pipelines, and global streaming platforms.</p>
+    <div class="perspectives-grid">
+      <div class="p-card artist">
+        <div class="role-tag">For Artists & Advocates</div>
+        <h3>Elevating Human Craftsmanship</h3>
+        <p>Provides positive proof of human composition and tracking. Protects independent creators from false AI takedowns while giving hybrid artists a proud, transparent label.</p>
+      </div>
+      <div class="p-card distributor">
+        <div class="role-tag">For Distributors (DistroKid, FUGA, Believe)</div>
+        <h3>Zero-Friction Fraud Defense</h3>
+        <p>Replaces unverified checkboxes with tamper-evident audio essence hashes (`raw_audio_essence`). Maps 1-to-1 into existing DDEX ERN 4.3 delivery feeds.</p>
+      </div>
+      <div class="p-card dsp">
+        <div class="role-tag">For DSPs (Spotify, Apple, YouTube)</div>
+        <h3>Audit-Ready Legal Compliance</h3>
+        <p>Fully satisfies EU AI Act Article 50 disclosure mandates. Surfaces clear Transparency Badges (`[HPS-X1]`) and credits without flattening creative context.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bordered reveal" id="manifesto">
+  <div class="wrap">
+    <div class="kicker">The Industry Gap</div>
+    <h2 class="section-title">Binary labels collapse process into a single bit.</h2>
+    <p>A single "Was AI used?" checkbox creates two major failure modes across the industry today:</p>
+    <div class="compare">
+      <div>
+        <div class="label">Failure Mode A — Over-Flagging</div>
+        <p>A songwriter tracks acoustic drums and vocals live, then runs an AI mastering plugin. They receive the exact same binary "AI" flag as a 10-second prompt generator.</p>
+        <span class="badge">Penalizes standard studio tools</span>
+      </div>
+      <div>
+        <div class="label">Failure Mode B — Erasure of Craft</div>
+        <p>A producer spends 40 hours re-pitching, re-arranging, stem-separating, and re-performing an AI vocal seed. They are forced to hide their process or get branded as automated junk.</p>
+        <span class="badge">Erases human artistry</span>
+      </div>
+    </div>
+    <div class="principle-box">
+      <div class="display">HPS does not ask <span class="a">"did you use AI."</span> It evaluates who made the creative decisions at each stage &#8212; <span class="h">classifying the process, not the tool.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="bordered reveal" id="standard">
+  <div class="wrap">
+    <div class="kicker">Core Standard</div>
+    <h2 class="section-title">The Five Axes of Music Production</h2>
+    <p style="max-width:680px;">Every work is scored across five core production stages as <strong>H</strong> (Human), <strong>A</strong> (AI), or <strong>H+A</strong> (Hybrid / Co-Creative):</p>
+
+    <div style="margin-top:28px; border:1px solid var(--border); border-radius:var(--radius); overflow:hidden;">
+      <div style="display:grid; grid-template-columns:1fr 1.5fr 2fr; background:var(--panel-2); padding:14px 20px; font-family:'JetBrains Mono', monospace; font-size:11.5px; text-transform:uppercase; color:var(--muted-dim); border-bottom:1px solid var(--border-soft);">
+        <div>Axis</div><div>Production Stage</div><div>Key Question</div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1.5fr 2fr; padding:16px 20px; border-bottom:1px solid var(--border-soft); font-size:14px;">
+        <div style="color:var(--human); font-weight:600;">01. Origination</div><div>Composition & Writing</div><div style="color:var(--muted);">Where did the core idea come from — melody, chords, lyrics, or structural seed?</div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1.5fr 2fr; padding:16px 20px; border-bottom:1px solid var(--border-soft); font-size:14px;">
+        <div style="color:var(--human); font-weight:600;">02. Performance</div><div>Tracking & Vocal Execution</div><div style="color:var(--muted);">Who performed the final vocal, instrument, or MIDI performance in the master?</div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1.5fr 2fr; padding:16px 20px; border-bottom:1px solid var(--border-soft); font-size:14px;">
+        <div style="color:var(--human); font-weight:600;">03. Curation</div><div>Editing & Arrangement</div><div style="color:var(--muted);">Who selected, chopped, re-arranged, and sequenced stems into the final structure?</div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1.5fr 2fr; padding:16px 20px; border-bottom:1px solid var(--border-soft); font-size:14px;">
+        <div style="color:var(--human); font-weight:600;">04. Sound Source</div><div>Timbre & Synthesis</div><div style="color:var(--muted);">Is the raw audio source a physical instrument/voice, or an AI synth model?</div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1.5fr 2fr; padding:16px 20px; font-size:14px;">
+        <div style="color:var(--human); font-weight:600;">05. Post-Production</div><div>Mixing & Mastering</div><div style="color:var(--muted);">Who executed mixing, equalization, dynamic processing, and final mastering?</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bordered reveal" id="builder">
+  <div class="wrap-wide">
+    <div class="kicker">Live Interactive Engine</div>
+    <h2 class="section-title">5-Axis Tag Builder & Multi-Format Exporter</h2>
+    <p style="max-width:680px;">Toggle values for each axis below. Generate canonical JSON manifests, DDEX ERN 4.3 XML snippets, C2PA assertions, and CLI commands instantly.</p>
+
+    <div class="builder" style="margin-top:32px;">
+      <div class="builder-head">
+        <h3>HPS Live Tag Builder</h3>
+        <div class="builder-actions">
+          <button class="btn-ghost" id="load-example">Load Worked Example</button>
+          <button class="btn-ghost" id="reset-builder">Reset</button>
+        </div>
+      </div>
+
+      <div class="axes-grid" id="axes-grid"></div>
+
+      <div class="builder-result">
+        <div class="tier-readout">
+          <div class="tier-badge" id="tier-badge">
+            <span>HPS</span><span class="tier-code" id="tier-code">X1</span>
+          </div>
+          <div class="tier-name" id="tier-name">Human-Led Hybrid</div>
+          <div class="tier-desc" id="tier-desc">Human origination and performance. AI confined to sound design, texture, or mastering.</div>
+          <div class="tag-line" id="tag-line">HPS: X1 [Origination: H, Performance: H, Curation: H, Sound: H, Post: H]</div>
+        </div>
+        <div>
+          <div class="code-tabs">
+            <button class="code-tab active" id="tab-json">JSON Manifest</button>
+            <button class="code-tab" id="tab-xml">DDEX ERN 4.3 XML</button>
+            <button class="code-tab" id="tab-c2pa">C2PA JUMBF</button>
+            <button class="code-tab" id="tab-cli">HPS CLI Command</button>
+          </div>
+          <div class="manifest-preview" id="manifest-preview"></div>
+          <div class="export-btns">
+            <button class="btn-sm" id="btn-copy-tag">Copy HPS Tag</button>
+            <button class="btn-sm" id="btn-download-json">Download Manifest (.json)</button>
+            <button class="btn-sm" id="btn-download-xml">Download DDEX (.xml)</button>
+            <button class="btn-sm btn-highlight" id="btn-download-takeaway">Download Executive Takeaway Doc</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bordered reveal">
+  <div class="wrap">
+    <div class="kicker">Classification Matrix</div>
+    <h2 class="section-title">Three Tiers. The Hybrid Gradient is the Point.</h2>
+    <div class="tiers">
+      <div class="tier-card h">
+        <div class="swatch"></div>
+        <h4>Tier H — Human</h4>
+        <p>Origination and performance are both human. Minimum 4 of 5 axes human. AI, if present, is restricted to post utility or corrective plugins.</p>
+      </div>
+      <div class="tier-card x">
+        <div class="swatch"></div>
+        <h4>Tier X — Hybrid</h4>
+        <p>Primary human creative authorship on origination or performance with AI contribution on complementary axes.</p>
+        <div class="subscale">
+          <div><span>X1</span> &nbsp;Human-Led &#8212; AI used for texture, sound design, or mastering only</div>
+          <div><span>X2</span> &nbsp;Co-Creative &#8212; Human & AI co-compose/sing; human retains edit control</div>
+          <div><span>X3</span> &nbsp;AI-Led &#8212; AI origination/synth; human substantially re-arranges & transforms</div>
+          <div><span>X4</span> &nbsp;Curated &#8212; AI origination/performance; human selects and lightly edits</div>
+        </div>
+      </div>
+      <div class="tier-card a">
+        <div class="swatch"></div>
+        <h4>Tier A — AI</h4>
+        <p>Origination and performance are both AI-generated. Human input limited to text prompting and selection without structural rework.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bordered reveal" id="distributors">
+  <div class="wrap-wide">
+    <div class="kicker">Distributor Portal</div>
+    <h2 class="section-title">Zero-Friction Ingest & Fraud Protection for Distributors</h2>
+    <p style="max-width:680px;">Distributors (DistroKid, TuneCore, FUGA, Believe) can adopt HPS in three seamless phases without rebuilding ingestion pipelines.</p>
+    <div class="roadmap-grid">
+      <div class="roadmap-card">
+        <div class="phase-num">PHASE 1 · ZERO BUILD</div>
+        <h4>Structured 5-Axis Self-Report</h4>
+        <p>Replace flat AI checkboxes in upload forms with 5-axis dropdowns. Automatically maps directly to standard DDEX ERN 4.3 XML AI fields.</p>
+      </div>
+      <div class="roadmap-card">
+        <div class="phase-num">PHASE 2 · OPTIONAL PROOF</div>
+        <h4>Cryptographic Essence Signing</h4>
+        <p>Artists generate Ed25519-signed `hps_manifest.json` via HPS CLI or DAW plugin. Ingestion server verifies raw PCM SHA-256 hash on drop.</p>
+      </div>
+      <div class="roadmap-card">
+        <div class="phase-num">PHASE 3 · AUTOMATED PIPELINE</div>
+        <h4>Verified Source of Truth</h4>
+        <p>Signed manifest populates all release delivery metadata. Surfaces verified `[HPS-X1]` badges directly on streaming partner UIs.</p>
+      </div>
+    </div>
+
+    <div class="spec-grid">
+      <div class="spec-card">
+        <h4>Raw PCM Essence Hashing (`raw_audio_essence`)</h4>
+        <p>HPS hashes decoded PCM audio samples, ignoring container headers. If ID3 tags are altered or format converted, the essence hash remains valid. If audio samples are edited, the hash invalidates automatically.</p>
+      </div>
+      <div class="spec-card">
+        <h4>Distributor Verification API Spec</h4>
+        <p><code class="mono">POST https://api.trustnodelogic.com/v1/verify</code></p>
+        <p>Submits file or manifest. Returns boolean verification, essence hash match status, and Ed25519 signature validity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bordered reveal" id="dsps">
+  <div class="wrap">
+    <div class="kicker">DSP Specification</div>
+    <h2 class="section-title">DSP Badging & Metadata Guidelines (Spotify, Apple Music)</h2>
+    <p>HPS specifies how streaming platforms display transparency badges and credits without cluttering UI design:</p>
+    <div style="background:var(--panel-solid); border:1px solid var(--border); border-radius:var(--radius); padding:28px; margin-top:24px;">
+      <h4 style="font-size:18px; margin-bottom:14px;">UI Badging Standards</h4>
+      <div style="display:flex; flex-wrap:wrap; gap:12px; font-family:'JetBrains Mono', monospace; font-size:13px;">
+        <span style="padding:6px 12px; border-radius:6px; border:1px solid var(--human); color:var(--human); background:var(--human-dim);">[HPS-H] Human Produced</span>
+        <span style="padding:6px 12px; border-radius:6px; border:1px solid var(--amber); color:var(--amber); background:rgba(251,191,36,0.1);">[HPS-X1] Human-Led Hybrid</span>
+        <span style="padding:6px 12px; border-radius:6px; border:1px solid var(--ai); color:var(--ai); background:var(--ai-dim);">[HPS-X2] Co-Creative Hybrid</span>
+        <span style="padding:6px 12px; border-radius:6px; border:1px solid var(--ai); color:var(--ai); background:var(--ai-dim);">[HPS-A] Synthetic AI</span>
+      </div>
+      <p style="margin-top:16px; font-size:14px; color:var(--muted);">Clicking any badge reveals full 5-axis process credits (e.g., Vocals: Human, Master: AI Assist, Composition: Human).</p>
+    </div>
+  </div>
+</section>
+
+<section class="bordered reveal" id="legal">
+  <div class="wrap">
+    <div class="kicker">Regulatory Compliance</div>
+    <h2 class="section-title">EU AI Act Article 50 Legal Compliance Matrix</h2>
+    <div class="a50-table">
+      <div class="a50-row head"><div>EU Provision</div><div>Article 50 Binary Mandate</div><div>HPS-1.0 Technical Standard</div></div>
+      <div class="a50-row"><div>Article 50(2) Provider Marking</div><div>Machine-readable flag for synthetic audio.</div><div>Full Tier A & X4 cryptographic manifest integration.</div></div>
+      <div class="a50-row"><div>Article 50(4) Deployer Disclosure</div><div>Disclose artificially generated/manipulated content.</div><div>Granular 5-axis role breakdown (e.g., AI vocal vs AI master).</div></div>
+      <div class="a50-row"><div>Article 50 Exemptions</div><div>Artistic/Creative assistance exemptions.</div><div>Tier H & X1 provide verifiable positive proof of human craft.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta reveal">
+  <div class="wrap">
+    <h2>Integrate HPS on TrustNodeLogic.com</h2>
+    <p>HPS-1.0 is an open, versioned specification dated for the August 2, 2026 EU AI Act deadline. Pilot Phase 1 with zero infrastructure build.</p>
+    <div class="cta-buttons">
+      <a class="btn-primary" href="mailto:justin@trustnodelogic.com">Contact Justin Ray</a>
+      <a class="btn-secondary" href="https://trustnodelogic.com" target="_blank" rel="noopener">Visit TrustNodeLogic.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap-wide">
+    <div class="contact-info">
+      <strong>TrustNodeLogic</strong> &nbsp;·&nbsp; Authored by <strong>Justin Ray</strong><br>
+      Direct Email: <a href="mailto:justin@trustnodelogic.com">justin@trustnodelogic.com</a> &nbsp;·&nbsp; Web: <a href="https://trustnodelogic.com" target="_blank">trustnodelogic.com</a>
+    </div>
+    <div class="footer-btns">
+      <a class="btn-sm btn-highlight" href="https://trustnodelogic.com" style="display:inline-block; text-decoration:none;">TrustNodeLogic.com (Home)</a>
+      <button class="btn-sm" id="btn-footer-takeaway">Download Takeaway Guide</button>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const AXES = [
+    { key:'origination', num:'01', name:'Origination', q:'Where did the core idea come from — melody, chords, lyrical concept, sound design seed?' },
+    { key:'performance',  num:'02', name:'Performance',  q:'Who "played" the final audio — instrument, vocal, MIDI performance?' },
+    { key:'curation',     num:'03', name:'Curation', q:'Who selected, edited, and sequenced material into final structure?' },
+    { key:'sound',        num:'04', name:'Sound Source', q:'Is the timbre from a human-played/sung source, or AI-synthesized?' },
+    { key:'post',         num:'05', name:'Post-Production', q:'Who made mixing, mastering, and effects decisions?' },
+  ];
+
+  const DEFAULT_STATE = { origination:'H', performance:'H', curation:'H', sound:'H', post:'H' };
+  const EXAMPLE_STATE = { origination:'H', performance:'HA', curation:'H', sound:'HA', post:'HA' };
+  let state = Object.assign({}, DEFAULT_STATE);
+  let activeTab = 'json';
+
+  const grid = document.getElementById('axes-grid');
+  AXES.forEach(axis => {
+    const card = document.createElement('div');
+    card.className = 'axis-card';
+    card.innerHTML = `
+      <div class="axis-num">${axis.num}</div>
+      <div class="axis-name">${axis.name}</div>
+      <div class="axis-q">${axis.q}</div>
+      <div class="axis-toggle" data-axis="${axis.key}">
+        <button data-v="H">H</button>
+        <button data-v="HA">H+A</button>
+        <button data-v="A">A</button>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+
+  function labelFor(v){ return v === 'HA' ? 'H+A' : v; }
+
+  function classify(s){
+    const vals = AXES.map(a => s[a.key]);
+    const hCount = vals.filter(v => v === 'H').length;
+    const o = s.origination, p = s.performance, c = s.curation;
+
+    if (o === 'H' && p === 'H' && hCount >= 4) {
+      return { tier:'H', code:'H', name:'Human Production',
+        desc:'Origination and performance are both human. AI confined to post-production utility tools.' };
+    }
+    if (o === 'A' && p === 'A') {
+      if (c === 'H' || c === 'HA') {
+        return { tier:'X', code:'X4', name:'Curated Hybrid',
+          desc:'AI origination and performance. Human selects, edits, and lightly modifies, without structural rework.' };
+      }
+      return { tier:'A', code:'A', name:'AI Production',
+        desc:'Origination and performance are both AI. Human involvement limited to prompting and selection.' };
+    }
+    if (o === 'H' && p === 'H') {
+      return { tier:'X', code:'X1', name:'Human-Led Hybrid',
+        desc:'Human origination and performance. AI used for sound design, texture layers, or mastering only.' };
+    }
+    if (o === 'HA' || p === 'HA') {
+      return { tier:'X', code:'X2', name:'Co-Creative Hybrid',
+        desc:'Human and AI both contribute at origination or performance stage. Human retains final editorial control.' };
+    }
+    return { tier:'X', code:'X3', name:'AI-Led Hybrid',
+      desc:'AI origination or performance. Human substantially reworks, re-performs, or recontextualizes output.' };
+  }
+
+  function generateXML(res){
+    const isAI = res.tier === 'H' ? 'false' : 'true';
+    return `&lt;SoundRecordingDetailsByTerritory&gt;
+  &lt;TerritoryCode&gt;Worldwide&lt;/TerritoryCode&gt;
+  &lt;ArtificialIntelligenceDetails&gt;
+    &lt;IsArtificialIntelligenceUsed&gt;${isAI}&lt;/IsArtificialIntelligenceUsed&gt;
+    &lt;UsageType&gt;HPS_${res.code}&lt;/UsageType&gt;
+  &lt;/ArtificialIntelligenceDetails&gt;
+  &lt;HPSClassificationBlock xmlns="http://hps-standard.org/ns/ddex/v1"&gt;
+    &lt;Tier&gt;${res.code}&lt;/Tier&gt;
+    &lt;Axes&gt;
+      &lt;Origination&gt;${labelFor(state.origination)}&lt;/Origination&gt;
+      &lt;Performance&gt;${labelFor(state.performance)}&lt;/Performance&gt;
+      &lt;Curation&gt;${labelFor(state.curation)}&lt;/Curation&gt;
+      &lt;SoundSource&gt;${labelFor(state.sound)}&lt;/SoundSource&gt;
+      &lt;PostProduction&gt;${labelFor(state.post)}&lt;/PostProduction&gt;
+    &lt;/Axes&gt;
+    &lt;ContentHashValue&gt;e3b0c44298fc1c149afbf4c8996fb924...&lt;/ContentHashValue&gt;
+  &lt;/HPSClassificationBlock&gt;
+&lt;/SoundRecordingDetailsByTerritory&gt;`;
+  }
+
+  function generateC2PA(res){
+    return `{
+  <span class="k">"title"</span>: <span class="v">"C2PA HPS Assertion"</span>,
+  <span class="k">"label"</span>: <span class="v">"org.hps.provenance"</span>,
+  <span class="k">"data"</span>: {
+    <span class="k">"hps_tier"</span>: <span class="v">"${res.code}"</span>,
+    <span class="k">"axes"</span>: {
+      <span class="k">"origination"</span>: <span class="v">"${labelFor(state.origination)}"</span>,
+      <span class="k">"performance"</span>: <span class="v">"${labelFor(state.performance)}"</span>,
+      <span class="k">"curation"</span>: <span class="v">"${labelFor(state.curation)}"</span>,
+      <span class="k">"sound_source"</span>: <span class="v">"${labelFor(state.sound)}"</span>,
+      <span class="k">"post_production"</span>: <span class="v">"${labelFor(state.post)}"</span>
+    }
+  }
+}`;
+  }
+
+  function generateCLI(res){
+    return `python hps_cli.py tag audio_master.wav \\
+  --origination ${state.origination} \\
+  --performance ${state.performance} \\
+  --curation ${state.curation} \\
+  --sound ${state.sound} \\
+  --post ${state.post} \\
+  --artist "Artist Name"`;
+  }
+
+  function downloadTakeawayDoc(){
+    const text = `HYBRID PRODUCTION STANDARD (HPS-1.0)
+EXECUTIVE TAKEAWAY & INDUSTRY IMPLEMENTATION GUIDE
+
+Author: Justin Ray
+Contact: justin@trustnodelogic.com
+Website: https://trustnodelogic.com
+Date: August 2, 2026 EU AI Act Article 50 Implementation
+
+====================================================================
+1. WHY HPS MATTERS NOW
+====================================================================
+On August 2, 2026, Article 50 of the EU AI Act mandates machine-readable
+disclosure of synthetic audio. Flat "AI vs. Human" checkboxes fail modern
+creators and platforms. HPS-1.0 provides a 5-axis process classification
+and cryptographic verification layer that integrates seamlessly into existing
+distributor DDEX ERN 4.3 pipelines.
+
+====================================================================
+2. THE FIVE PRODUCTION AXES
+====================================================================
+Each track is scored as H (Human), A (AI), or H+A (Hybrid/Co-Creative):
+
+1. Origination: Melody, chords, lyric concept, structural seed.
+2. Performance: Vocal execution, physical instrument, MIDI tracking.
+3. Curation & Arrangement: Chopping, stem selection, sequencing.
+4. Sound Source: Physical instrument/vocal vs. AI synth model.
+5. Post-Production: Mixing, EQ, mastering assist plugins.
+
+====================================================================
+3. THE THREE TIERS & HYBRID GRADIENT
+====================================================================
+- Tier H (Human Production): Human origination & performance. AI confined to post utility.
+- Tier X1 (Human-Led Hybrid): Human composition/vocal; AI used for texture/mastering.
+- Tier X2 (Co-Creative Hybrid): Human and AI collaborate on writing or vocals.
+- Tier X3 (AI-Led Hybrid): AI stem/seed; human substantially reworks & re-performs.
+- Tier X4 (Curated Hybrid): AI composition; human selects and lightly edits.
+- Tier A (AI Production): AI origination & performance; prompt-only output.
+
+====================================================================
+4. DISTRIBUTOR INTEGRATION (DDEX ERN 4.3)
+====================================================================
+- Zero-Build Ingest: HPS maps 1-to-1 into DDEX ERN 4.3 ArtificialIntelligenceDetails.
+- Raw PCM Essence Hash: Hashes raw audio essence (raw_audio_essence SHA-256),
+  making verification tamper-evident across metadata header changes.
+- Cryptographic Proof: Ed25519 signed manifest (hps_manifest.json).
+
+====================================================================
+5. DSP PROGRESSIVE BADGING MODEL (SPOTIFY / APPLE MUSIC)
+====================================================================
+- Tier A: [Synthetic Audio] badge (EU Article 50 compliant).
+- Tier X1/X2: Quiet UI integration inside existing "Song Credits" popups.
+- Tier H: Optional [Verified Human] trust mark.
+
+For partnerships, technical pilots, or media inquiries:
+Contact Justin Ray — justin@trustnodelogic.com
+Visit: https://trustnodelogic.com
+`;
+    const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `HPS_Executive_Takeaway_Justin_Ray.txt`;
+    a.click();
+  }
+
+  function render(){
+    document.querySelectorAll('.axis-toggle').forEach(t => {
+      const key = t.dataset.axis;
+      t.querySelectorAll('button').forEach(b => {
+        b.classList.toggle('active', b.dataset.v === state[key]);
+      });
+    });
+
+    const result = classify(state);
+    document.getElementById('tier-code').textContent = result.code;
+    document.getElementById('tier-name').textContent = result.name;
+    document.getElementById('tier-desc').textContent = result.desc;
+
+    const tag = `HPS: ${result.code} [${AXES.map(a => `${a.name}: ${labelFor(state[a.key])}`).join(', ')}]`;
+    document.getElementById('tag-line').textContent = tag;
+
+    const badge = document.getElementById('tier-badge');
+    if (result.tier === 'H') badge.style.borderColor = 'var(--human)';
+    else if (result.tier === 'A') badge.style.borderColor = 'var(--ai)';
+    else badge.style.borderColor = 'var(--border)';
+
+    const mp = document.getElementById('manifest-preview');
+    if (activeTab === 'json') {
+      mp.innerHTML =
+`{
+  <span class="k">"hps_version"</span>: <span class="v">"0.1"</span>,
+  <span class="k">"tier"</span>: <span class="v">"${result.code}"</span>,
+  <span class="k">"axes"</span>: {
+    <span class="k">"origination"</span>: <span class="v">"${labelFor(state.origination)}"</span>,
+    <span class="k">"performance"</span>: <span class="v">"${labelFor(state.performance)}"</span>,
+    <span class="k">"curation"</span>: <span class="v">"${labelFor(state.curation)}"</span>,
+    <span class="k">"sound_source"</span>: <span class="v">"${labelFor(state.sound)}"</span>,
+    <span class="k">"post_production"</span>: <span class="v">"${labelFor(state.post)}"</span>
+  },
+  <span class="k">"content_hash"</span>: { <span class="k">"scope"</span>: <span class="v">"raw_audio_essence"</span> },
+  <span class="k">"signature"</span>: { <span class="k">"algorithm"</span>: <span class="v">"ed25519"</span> }
+}`;
+    } else if (activeTab === 'xml') {
+      mp.innerHTML = generateXML(result);
+    } else if (activeTab === 'c2pa') {
+      mp.innerHTML = generateC2PA(result);
+    } else if (activeTab === 'cli') {
+      mp.innerHTML = generateCLI(result);
+    }
+  }
+
+  grid.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-v]');
+    if (!btn) return;
+    const key = btn.closest('.axis-toggle').dataset.axis;
+    state[key] = btn.dataset.v;
+    render();
+  });
+
+  const tabBtns = [
+    { id:'tab-json', key:'json' },
+    { id:'tab-xml', key:'xml' },
+    { id:'tab-c2pa', key:'c2pa' },
+    { id:'tab-cli', key:'cli' }
+  ];
+
+  tabBtns.forEach(t => {
+    document.getElementById(t.id).addEventListener('click', () => {
+      activeTab = t.key;
+      tabBtns.forEach(x => document.getElementById(x.id).classList.toggle('active', x.key === activeTab));
+      render();
+    });
+  });
+
+  document.getElementById('btn-copy-tag').addEventListener('click', () => {
+    const tag = document.getElementById('tag-line').textContent;
+    navigator.clipboard.writeText(tag).then(() => {
+      const btn = document.getElementById('btn-copy-tag');
+      const orig = btn.textContent;
+      btn.textContent = 'Copied Tag!';
+      setTimeout(() => btn.textContent = orig, 1500);
+    });
+  });
+
+  document.getElementById('btn-download-json').addEventListener('click', () => {
+    const result = classify(state);
+    const manifest = {
+      hps_version: "0.1",
+      tier: result.code,
+      axes: {
+        origination: labelFor(state.origination),
+        performance: labelFor(state.performance),
+        curation: labelFor(state.curation),
+        sound_source: labelFor(state.sound),
+        post_production: labelFor(state.post)
+      },
+      timestamp: new Date().toISOString()
+    };
+    const blob = new Blob([JSON.stringify(manifest, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `hps_manifest_${result.code}.json`;
+    a.click();
+  });
+
+  document.getElementById('btn-download-xml').addEventListener('click', () => {
+    const result = classify(state);
+    const xmlRaw = `<?xml version="1.0" encoding="UTF-8"?>
+<SoundRecordingDetailsByTerritory>
+  <TerritoryCode>Worldwide</TerritoryCode>
+  <ArtificialIntelligenceDetails>
+    <IsArtificialIntelligenceUsed>${result.tier === 'H' ? 'false' : 'true'}</IsArtificialIntelligenceUsed>
+    <UsageType>HPS_${result.code}</UsageType>
+  </ArtificialIntelligenceDetails>
+  <HPSClassificationBlock xmlns="http://hps-standard.org/ns/ddex/v1">
+    <Tier>${result.code}</Tier>
+    <Axes>
+      <Origination>${labelFor(state.origination)}</Origination>
+      <Performance>${labelFor(state.performance)}</Performance>
+      <Curation>${labelFor(state.curation)}</Curation>
+      <SoundSource>${labelFor(state.sound)}</SoundSource>
+      <PostProduction>${labelFor(state.post)}</PostProduction>
+    </Axes>
+  </HPSClassificationBlock>
+</SoundRecordingDetailsByTerritory>`;
+    const blob = new Blob([xmlRaw], { type: 'application/xml' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `hps_ddex_${result.code}.xml`;
+    a.click();
+  });
+
+  ['btn-download-takeaway', 'btn-footer-takeaway', 'btn-hero-takeaway', 'btn-nav-takeaway'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('click', downloadTakeawayDoc);
+  });
+
+  document.getElementById('load-example').addEventListener('click', () => {
+    state = Object.assign({}, EXAMPLE_STATE);
+    render();
+  });
+  document.getElementById('reset-builder').addEventListener('click', () => {
+    state = Object.assign({}, DEFAULT_STATE);
+    render();
+  });
+
+  render();
+
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+})();
+</script>
+</body>
+</html>
