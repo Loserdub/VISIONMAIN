@@ -38,226 +38,63 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Person",
-      "@id": "https://trustnodelogic.com/#person",
-      "name": "Justin Ray",
-      "additionalName": "Justin Tyler Ray",
-      "alternateName": [
-        "JRAY",
-        "loserdub",
-        "VISION",
-        "Flawed Future",
-        "le vide",
-        "disarray"
+      "@type": [
+        "SoftwareApplication",
+        "WebApplication"
       ],
-      "url": "https://trustnodelogic.com",
-      "image": "https://trustnodelogic.com/favicon.png",
-      "email": "mailto:loserdub@gmail.com",
-      "jobTitle": [
-        "Pioneer of Hybrid AI Music Production",
-        "Creative Technologist",
-        "Audio Engineer",
-        "Founder of r/HybridProduction"
-      ],
-      "sameAs": [
-        "https://musicbrainz.org/artist/882fdb9b-8655-45dd-8e24-a59cd750d053",
-        "https://github.com/loserdub",
-        "https://soundcloud.com/loserdub",
-        "https://soundcloud.com/visiontracks",
-        "https://www.youtube.com/@loserdub",
-        "https://www.linkedin.com/in/jray-me/",
-        "https://x.com/TheInnerVision",
-        "https://www.instagram.com/jray.me/",
-        "https://open.spotify.com/artist/3VZelnnW9OR0DyR2qRn4Oq",
-        "https://open.spotify.com/artist/6GGZwLOLxVxYGOcMry3NDi",
-        "https://open.spotify.com/artist/42TmrCeIumkPRyTNOPP78t",
-        "https://open.spotify.com/artist/3FNFzRyU0PCA2vjihWsg6y",
-        "https://open.spotify.com/artist/6TlAxGL1Hm4FRWfTxprlMi",
-        "https://www.reddit.com/r/hybridproduction/",
-        "https://network.landr.com/users/vision-hybrid"
-      ]
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://trustnodelogic.com/#organization",
-      "name": "Trust Node Logic",
-      "url": "https://trustnodelogic.com",
-      "logo": "https://trustnodelogic.com/favicon.png",
-      "founder": {
-        "@id": "https://trustnodelogic.com/#person"
-      }
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://trustnodelogic.com/#website",
-      "url": "https://trustnodelogic.com",
-      "name": "Trust Node Logic | Pioneer of Hybrid AI Music Production",
+      "@id": "https://trustnodelogic.com/mixrstudio.html#softwareapplication",
+      "name": "MIXR Studio",
+      "url": "https://trustnodelogic.com/mixrstudio.html",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "All Web Browsers (Chrome, Firefox, Safari, Edge)",
+      "browserRequirements": "Requires HTML5 Web Audio API & AudioContext support",
+      "description": "Free, browser-native audio segment mixer & mastering environment for hybrid music producers. Features automated song section detection, 3-band crossover filtering (Low, Mid, High), drag-and-drop timeline sequencing, equal-power crossfading, real-time peak VU metering, and 16-bit/44.1kHz master WAV export.",
       "author": {
         "@id": "https://trustnodelogic.com/#person"
       },
       "publisher": {
         "@id": "https://trustnodelogic.com/#organization"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://trustnodelogic.com/mixrstudio.html#webpage",
-      "url": "https://trustnodelogic.com/mixrstudio.html",
-      "name": "MIXR Studio — Browser-Native Audio Segment Mixer | JRAY",
-      "description": "Free browser-native audio segment mixer, 4-lane crossover arranger, and mastering environment for hybrid music production by Justin Ray (JRAY / loserdub).",
+      },
       "isPartOf": {
         "@id": "https://trustnodelogic.com/#website"
       },
-      "author": {
-        "@id": "https://trustnodelogic.com/#person"
-      },
-      "publisher": {
-        "@id": "https://trustnodelogic.com/#organization"
-      },
-      "mainEntity": {
-        "@id": "https://trustnodelogic.com/mixrstudio.html#application"
-      }
-    },
-    {
-      "@type": ["SoftwareApplication", "WebApplication"],
-      "@id": "https://trustnodelogic.com/mixrstudio.html#application",
-      "name": "MIXR Studio",
-      "alternateName": [
-        "MIXR Studio DAW",
-        "JRAY MIXR Studio",
-        "Hybrid AI Audio Segment Mixer"
-      ],
-      "operatingSystem": "All Modern Web Browsers",
-      "applicationCategory": "MultimediaApplication",
-      "applicationSubCategory": "Audio Editing & Music Production",
-      "browserRequirements": "Requires Web Audio API compatible browser (Chrome, Firefox, Safari, Edge)",
-      "permissions": "audio-hardware",
-      "softwareVersion": "1.2.0",
       "offers": {
         "@type": "Offer",
         "price": "0.00",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock"
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "ratingCount": "48",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "author": {
-        "@id": "https://trustnodelogic.com/#person"
-      },
-      "creator": {
-        "@id": "https://trustnodelogic.com/#person"
-      },
-      "publisher": {
-        "@id": "https://trustnodelogic.com/#organization"
-      },
-      "keywords": "Justin Ray, JRAY, loserdub, r/hybridproduction, Hybrid AI Music Production, Web Audio API, Audio Segment Mixer, Mastering Suite, Free Web Application, Browser DAW, AI Music Tool, Multi-Band Crossover",
-      "description": "Free browser-native audio segment mixer, 4-lane multi-band crossover arranger, and mastering suite for hybrid music production. Created by Justin Ray (JRAY / loserdub).",
       "featureList": [
-        "Automatic Song Section Detection",
-        "Multi-Band Frequency Lane Arrangement (FULL, HIGH, MID, LOW)",
-        "Real-Time 3-Band Crossover DSP Filters (250Hz & 2.5kHz)",
-        "Equal-Power 1/sqrt(N) Audio Gain Compensation",
-        "Pop-Free Exponential Solo and Mute Ramping",
-        "30-Step Undo History System (Ctrl+Z)",
-        "Client-Side 16-bit 44.1kHz WAV Export"
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://trustnodelogic.com/mixrstudio.html#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Trust Node Logic",
-          "item": "https://trustnodelogic.com"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "MIXR Studio",
-          "item": "https://trustnodelogic.com/mixrstudio.html"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://trustnodelogic.com/mixrstudio.html#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is MIXR Studio?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "MIXR Studio is a free, browser-native audio segment mixer and mastering environment created by Justin Ray (JRAY / loserdub) for hybrid music production."
+        "Automatic Song Section & Energy Rank Detection",
+        "3-Band Crossover Filter Graph (250Hz Lowpass, 250Hz\u20132.5kHz Bandpass, 2.5kHz Highpass)",
+        "Multi-Band Stem & Segment Routing (FULL, HIGH, MID, LOW)",
+        "Equal-Power Sine/Cosine Crossfading (0.0s to 3.0s)",
+        "Real-Time Peak VU Level Metering",
+        "Browser-Native 16-bit 44.1kHz Master WAV Rendering",
+        "One-Click Magic Mix Automated Remix Generator"
+      ],
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "@id": "https://trustnodelogic.com/mixrstudio.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://trustnodelogic.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "MIXR Studio",
+            "item": "https://trustnodelogic.com/mixrstudio.html"
           }
-        },
-        {
-          "@type": "Question",
-          "name": "Who created MIXR Studio?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "MIXR Studio was designed and developed by Justin Ray (JRAY / loserdub), pioneer of hybrid AI music production and founder of r/HybridProduction."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does multi-band frequency arrangement work in MIXR Studio?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "MIXR Studio provides 4 frequency band lanes (FULL, HIGH, MID, LOW) routed through a real-time 3-band crossover filter graph (250Hz lowpass, 250-2500Hz bandpass, 2500Hz highpass) with automatic 1/sqrt(N) gain compensation."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is MIXR Studio free to use?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, MIXR Studio is 100% free and open to use directly in any modern web browser with no download or installation required."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "HowTo",
-      "@id": "https://trustnodelogic.com/mixrstudio.html#howto",
-      "name": "How to Arrange & Mix Audio Segments in MIXR Studio",
-      "description": "Step-by-step guide to loading tracks, auto-detecting song sections, arranging multi-band frequency lanes, and exporting rendered WAV files.",
-      "step": [
-        {
-          "@type": "HowToStep",
-          "position": 1,
-          "name": "Load Audio Tracks",
-          "text": "Drag and drop audio files (WAV, MP3, FLAC, OGG) into the MIXR Studio upload area."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 2,
-          "name": "Trim Section Boundaries",
-          "text": "Drag cut handles on track waveforms to adjust section start and end points."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 3,
-          "name": "Arrange Across Frequency Lanes",
-          "text": "Drag detected segments into FULL, HIGH, MID, or LOW lane rows to sequence or stack concurrently."
-        },
-        {
-          "@type": "HowToStep",
-          "position": 4,
-          "name": "Solo, Mute, and Export",
-          "text": "Fine-tune levels using S and M toggles per lane, then click Export WAV to render a 16-bit 44.1kHz master WAV."
-        }
-      ]
+        ]
+      }
     }
   ]
 }
-</script>
+    </script>
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap');

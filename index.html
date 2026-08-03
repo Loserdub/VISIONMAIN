@@ -9,248 +9,322 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Justin Ray | Hybrid Production / Artist</title>
+    <title>Justin Ray | Hybrid Production / Artist — Trust Node Logic</title>
     <link rel="canonical" href="https://trustnodelogic.com/">
     
     <meta property="og:url" content="https://trustnodelogic.com">
     <meta property="og:image" content="https://trustnodelogic.com/favicon.png">
     <meta name="twitter:url" content="https://trustnodelogic.com">
     <meta name="twitter:image" content="https://trustnodelogic.com/favicon.png">
-    <meta name="description" content="Hybrid production hub of artist & technologist JRAY." />
-    <meta name="keywords" content="Creative Technology, Suno producer, artist, creative ai technology, cutting edge ai, hybrid production, music apps, web based daw, loserdub">
-    <meta name="author" content="Justin Ray">
+    <meta name="description" content="Official hub of Justin Ray (JRAY / loserdub), pioneer of Hybrid AI Music Production, creator of MIXR Studio, and founder of r/hybridproduction." />
+    <meta name="keywords" content="Justin Ray, JRAY, loserdub, Hybrid Music Production, Generative AI Music, Suno, Udio, MIXR Studio, r/hybridproduction, Creative Technologist, Audio Engineering, East Lansing Michigan">
     <meta name="robots" content="index, follow">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <link rel="stylesheet" href="./style.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['"Space Grotesk"', 'sans-serif'],
+              sans: ['Inter', 'sans-serif'],
+              mono: ['"IBM Plex Mono"', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
 
-
-<!-- Structured Data for SEO -->
- <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
+    <!-- Structured Data / Master JSON-LD -->
+    <script type="application/ld+json">
     {
-      "@type": "Person",
-      "@id": "https://trustnodelogic.com/#person",
-      "name": "Justin Ray",
-      "additionalName": "Justin Tyler Ray",
-      "alternateName": [
-        "JRAY",
-        "loserdub",
-        "VISION",
-        "Flawed Future",
-        "le vide",
-        "disarray"
-      ],
-      "url": "https://trustnodelogic.com",
-      "image": "https://trustnodelogic.com/favicon.png",
-      "email": "mailto:loserdub@gmail.com",
-      "jobTitle": [
-        "Music Producer",
-        "Music Artist",
-        "Pioneer of Hybrid AI Music Production",
-        "Audio Engineer",
-        "Creative Technologist",
-        "Founder of r/HybridProduction"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "East Lansing",
-        "addressRegion": "MI",
-        "addressCountry": "US"
-      },
-      "knowsAbout": [
-        { "@type": "DefinedTerm", "name": "Hybrid Music Production", "description": "Workflow integrating Generative AI audio models with traditional DAW engineering and live instrumentation." },
-        { "@type": "DefinedTerm", "name": "Generative Artificial Intelligence", "sameAs": "https://en.wikipedia.org/wiki/Generative_artificial_intelligence" },
-        { "@type": "DefinedTerm", "name": "Web Audio API", "sameAs": "https://en.wikipedia.org/wiki/Web_Audio_API" },
-        { "@type": "DefinedTerm", "name": "Audio Engineering", "sameAs": "https://en.wikipedia.org/wiki/Audio_engineering" },
-        { "@type": "DefinedTerm", "name": "Digital Audio Workstation", "sameAs": "https://en.wikipedia.org/wiki/Digital_audio_workstation" },
-        { "@type": "DefinedTerm", "name": "C2PA Provenance", "sameAs": "https://c2pa.org/" },
-        "Google MusicLM",
-        "Suno AI",
-        "Udio",
-        "SLERP Audio",
-        "Taxonomic Rank",
-        "Spectral Splitting",
-        "MIXR Studio",
-        "Sound Design",
-        "Logic Pro X",
-        "Ableton Live"
-      ],
-      "founderOf": [
+      "@context": "https://schema.org",
+      "@graph": [
         {
-          "@type": "OnlineCommunity",
-          "name": "r/HybridProduction",
-          "url": "https://www.reddit.com/r/hybridproduction/"
+          "@type": "Person",
+          "@id": "https://trustnodelogic.com/#person",
+          "name": "Justin Ray",
+          "additionalName": "Justin Tyler Ray",
+          "alternateName": [
+            "JRAY",
+            "loserdub",
+            "VISION",
+            "Flawed Future",
+            "le vide",
+            "disarray"
+          ],
+          "url": "https://trustnodelogic.com",
+          "image": "https://trustnodelogic.com/favicon.png",
+          "email": "mailto:justin@trustnodelogic.com",
+          "jobTitle": [
+            "Music Producer",
+            "Music Artist",
+            "Pioneer of Hybrid AI Music Production",
+            "Audio Engineer",
+            "Creative Technologist"
+          ],
+          "mainEntityOfPage": { "@id": "https://trustnodelogic.com/#webpage" },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "East Lansing",
+            "addressRegion": "MI",
+            "addressCountry": "US"
+          },
+          "knowsAbout": [
+            "Hybrid Music Production",
+            "Generative Artificial Intelligence",
+            "Web Audio API",
+            "Audio Engineering",
+            "Digital Audio Workstation",
+            "C2PA Provenance",
+            "Google MusicLM",
+            "Suno AI",
+            "Udio",
+            "SLERP Audio",
+            "Hybrid Production Standard",
+            "HPS-1.0",
+            "EU AI Act Article 50",
+            "DDEX ERN 4.3",
+            "Spectral Splitting",
+            "MIXR Studio",
+            "Sound Design",
+            "Logic Pro X",
+            "Ableton Live"
+          ],
+          "memberOf": [
+            { "@id": "https://trustnodelogic.com/#organization" },
+            { "@id": "https://www.reddit.com/r/hybridproduction/#organization" }
+          ],
+          "sameAs": [
+            "https://musicbrainz.org/artist/882fdb9b-8655-45dd-8e24-a59cd750d053",
+            "https://soundcloud.com/visiontracks",
+            "https://soundcloud.com/loserdub",
+            "https://www.youtube.com/@loserdub",
+            "https://www.linkedin.com/in/jray-me/",
+            "https://x.com/TheInnerVision",
+            "https://www.instagram.com/jray.me/",
+            "https://open.spotify.com/artist/3VZelnnW9OR0DyR2qRn4Oq",
+            "https://open.spotify.com/artist/6GGZwLOLxVxYGOcMry3NDi",
+            "https://open.spotify.com/artist/42TmrCeIumkPRyTNOPP78t",
+            "https://open.spotify.com/artist/3FNFzRyU0PCA2vjihWsg6y",
+            "https://open.spotify.com/artist/6TlAxGL1Hm4FRWfTxprlMi",
+            "https://www.reddit.com/r/hybridproduction/",
+            "https://network.landr.com/users/vision-hybrid",
+            "https://github.com/loserdub"
+          ]
         },
         {
           "@type": "Organization",
+          "@id": "https://trustnodelogic.com/#organization",
           "name": "Trust Node Logic",
-          "url": "https://trustnodelogic.com"
-        }
-      ],
-      "sameAs": [
-        "https://musicbrainz.org/artist/882fdb9b-8655-45dd-8e24-a59cd750d053",
-        "https://soundcloud.com/visiontracks",
-        "https://www.youtube.com/@loserdub",
-        "https://www.linkedin.com/in/jray-me/",
-        "https://x.com/TheInnerVision",
-        "https://www.instagram.com/jray.me/",
-        "https://open.spotify.com/artist/3VZelnnW9OR0DyR2qRn4Oq",
-        "https://open.spotify.com/artist/6GGZwLOLxVxYGOcMry3NDi",
-        "https://open.spotify.com/artist/42TmrCeIumkPRyTNOPP78t",
-        "https://open.spotify.com/artist/3FNFzRyU0PCA2vjihWsg6y",
-        "https://open.spotify.com/artist/6TlAxGL1Hm4FRWfTxprlMi",
-        "https://www.reddit.com/r/hybridproduction/",
-        "https://network.landr.com/users/vision-hybrid",
-        "https://github.com/loserdub",
-        "https://soundcloud.com/loserdub"
-      ]
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://trustnodelogic.com/#organization",
-      "name": "Trust Node Logic",
-      "alternateName": "JRAY & Trust Node Logic",
-      "url": "https://trustnodelogic.com",
-      "logo": "https://trustnodelogic.com/favicon.png",
-      "founder": {
-        "@id": "https://trustnodelogic.com/#person"
-      },
-      "slogan": "The Frontier of Hybrid AI Music Production & Creative Technology",
-      "knowsAbout": [
-        "Hybrid Production",
-        "AI Music Generation",
-        "Audio Engineering",
-        "Generative Audio Workflows"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://trustnodelogic.com/#website",
-      "url": "https://trustnodelogic.com",
-      "name": "Trust Node Logic | Pioneer of Hybrid AI Music Production",
-      "description": "Official hub of Justin Ray (JRAY), pioneer of the Hybrid AI Music Production methodology, creative technologist, and founder of r/hybridproduction.",
-      "author": {
-        "@id": "https://trustnodelogic.com/#person"
-      },
-      "publisher": {
-        "@id": "https://trustnodelogic.com/#organization"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://trustnodelogic.com/#webpage",
-      "url": "https://trustnodelogic.com/",
-      "name": "Justin Ray | Hybrid Production / Artist",
-      "description": "Hybrid production hub of artist & technologist JRAY.",
-      "isPartOf": {
-        "@id": "https://trustnodelogic.com/#website"
-      },
-      "author": {
-        "@id": "https://trustnodelogic.com/#person"
-      },
-      "publisher": {
-        "@id": "https://trustnodelogic.com/#organization"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://trustnodelogic.com/#breadcrumb",
-      "itemListElement": [
+          "alternateName": "JRAY & Trust Node Logic",
+          "url": "https://trustnodelogic.com",
+          "logo": "https://trustnodelogic.com/favicon.png",
+          "founder": {
+            "@id": "https://trustnodelogic.com/#person"
+          },
+          "slogan": "The Frontier of Hybrid AI Music Production & Creative Technology",
+          "knowsAbout": [
+            "Hybrid Production",
+            "AI Music Generation",
+            "Audio Engineering",
+            "Generative Audio Workflows",
+            "HPS-1.0 Metadata Verification"
+          ]
+        },
         {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://trustnodelogic.com/"
+          "@type": "Organization",
+          "@id": "https://www.reddit.com/r/hybridproduction/#organization",
+          "name": "r/HybridProduction",
+          "url": "https://www.reddit.com/r/hybridproduction/",
+          "description": "The definitive online community for Hybrid Music Production.",
+          "founder": {
+            "@id": "https://trustnodelogic.com/#person"
+          },
+          "sameAs": "https://www.reddit.com/r/hybridproduction/"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://trustnodelogic.com/#website",
+          "url": "https://trustnodelogic.com",
+          "name": "Trust Node Logic | Pioneer of Hybrid AI Music Production",
+          "description": "Official hub of Justin Ray (JRAY / loserdub), pioneer of the Hybrid AI Music Production methodology, creative technologist, and founder of r/hybridproduction.",
+          "author": {
+            "@id": "https://trustnodelogic.com/#person"
+          },
+          "publisher": {
+            "@id": "https://trustnodelogic.com/#organization"
+          }
+        },
+        {
+          "@type": "CreativeWork",
+          "@id": "https://trustnodelogic.com/hybridproductionstandard.html#creativework",
+          "name": "Hybrid Production Standard (HPS-1.0)",
+          "url": "https://trustnodelogic.com/hybridproductionstandard.html",
+          "creator": { "@id": "https://trustnodelogic.com/#person" }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://trustnodelogic.com/mixrstudio.html#softwareapplication",
+          "name": "MIXR Studio",
+          "url": "https://trustnodelogic.com/mixrstudio.html",
+          "applicationCategory": "MusicApplication",
+          "operatingSystem": "Web",
+          "creator": { "@id": "https://trustnodelogic.com/#person" }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://trustnodelogic.com/#webpage",
+          "url": "https://trustnodelogic.com/",
+          "name": "Justin Ray | Hybrid Production / Artist — Trust Node Logic",
+          "description": "Official hub of Justin Ray (JRAY / loserdub), pioneer of Hybrid AI Music Production, creator of MIXR Studio, and author of HPS-1.0.",
+          "isPartOf": {
+            "@id": "https://trustnodelogic.com/#website"
+          },
+          "about": [
+            { "@id": "https://trustnodelogic.com/#person" },
+            { "@id": "https://trustnodelogic.com/#organization" },
+            { "@id": "https://www.reddit.com/r/hybridproduction/#organization" }
+          ],
+          "hasPart": [
+            { "@type": "WebPage", "name": "Music", "url": "https://trustnodelogic.com/music.html" },
+            { "@type": "WebPage", "name": "Projects", "url": "https://trustnodelogic.com/projects.html" },
+            { "@type": "WebPage", "name": "Bio", "url": "https://trustnodelogic.com/bio.html" },
+            { "@type": "WebPage", "name": "What Is Hybrid Production", "url": "https://trustnodelogic.com/what-is-hybrid.html" },
+            { "@type": "WebPage", "name": "Services", "url": "https://trustnodelogic.com/services.html" },
+            { "@type": "WebPage", "name": "Contact", "url": "https://trustnodelogic.com/contact.html" },
+            { "@type": "WebPage", "name": "Hybrid Production Standard (HPS-1.0)", "url": "https://trustnodelogic.com/hybridproductionstandard.html" },
+            { "@type": "WebPage", "name": "MIXR Studio", "url": "https://trustnodelogic.com/mixrstudio.html" },
+            { "@type": "WebPage", "name": "Prompting the Machine", "url": "https://trustnodelogic.com/promptingthemachine.html" },
+            { "@type": "WebPage", "name": "The Last New Genre", "url": "https://trustnodelogic.com/lastnewgenre.html" },
+            { "@type": "WebPage", "name": "The Liquid Ear", "url": "https://trustnodelogic.com/liquidears.html" },
+            { "@type": "WebPage", "name": "Suno 101", "url": "https://trustnodelogic.com/Suno101.html" },
+            { "@type": "WebPage", "name": "Future of Hybrid", "url": "https://trustnodelogic.com/futureofhybrid.html" },
+            { "@type": "WebPage", "name": "Machine Human Hybrid", "url": "https://trustnodelogic.com/machinehumanhybrid.html" },
+            { "@type": "WebPage", "name": "C2PA Music Provenance", "url": "https://trustnodelogic.com/c2pa-music-provenance.html" },
+            { "@type": "WebPage", "name": "Acoustic Fingerprinting", "url": "https://trustnodelogic.com/fingerprint.html" },
+            { "@type": "WebPage", "name": "May 2026 Ecosystem", "url": "https://trustnodelogic.com/may2026tools.html" }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://trustnodelogic.com/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://trustnodelogic.com/"
+            }
+          ]
         }
       ]
     }
-  ]
-}
-</script>
+    </script>
     
-    <!-- Favicon: White Waveform on Chip -->
- <link rel="icon" type="image/png" href="./favicon.png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./favicon.png">
 
+    <!-- Modern Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Syne:wght@400;700;800&amp;family=Zen+Dots&amp;family=Codystar&amp;family=DotGothic16&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Syne:wght@400;700;800&amp;family=Zen+Dots&amp;family=Codystar&amp;family=DotGothic16&amp;display=swap" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
+      /* Tactile Machine Custom Styling */
+      :root {
+        --bg: #090a0d;
+        --accent-acid: #a3e635; /* Acid Green */
+        --accent-acid-soft: rgba(163, 230, 53, 0.12);
+        --hairline: rgba(255, 255, 255, 0.12);
+        --hairline-bright: rgba(255, 255, 255, 0.25);
+        --text-offwhite: #f2f2f0;
+      }
+
       /* Custom Scrollbar */
       ::-webkit-scrollbar {
-        width: 8px;
+        width: 6px;
       }
       ::-webkit-scrollbar-track {
-        background: #0f0f0f; 
+        background: #090a0d; 
       }
       ::-webkit-scrollbar-thumb {
-        background: #333; 
-        border-radius: 4px;
+        background: #22252e; 
+        border-radius: 2px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #555; 
-      }
-      
-      /* Oil Paint Animation Keyframes */
-      @keyframes drift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-      }
-      
-      .oil-bg-animate {
-        background-size: 200% 200%;
-        animation: drift 20s ease infinite;
+        background: var(--accent-acid); 
       }
 
-      /* Animation Utilities */
-      @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-      
-      .animate-fade-in-up {
-        animation: fadeInUp 0.8s ease-out forwards;
-      }
-
-      @keyframes slideInRight {
-        from { transform: translateX(100%); opacity: 0; }
-        to { transform: translateX(0); opacity: 1; }
+      /* Tactile Grain Overlay */
+      .tactile-grain {
+        pointer-events: none;
+        position: fixed;
+        inset: 0;
+        z-index: 99;
+        opacity: 0.045;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
       }
 
-      .animate-slide-in-right {
-        animation: slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      /* Hairline Brutalist Cards */
+      .hairline-card {
+        background-color: rgba(13, 14, 19, 0.75);
+        border: 1px solid var(--hairline);
+        transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+      }
+      .hairline-card:hover {
+        border-color: rgba(163, 230, 53, 0.5);
+        background-color: rgba(17, 19, 26, 0.9);
       }
 
-      @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+      /* Bento Grid Layout */
+      .bento-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+      @media (min-width: 768px) {
+        .bento-grid {
+          grid-template-columns: repeat(12, 1fr);
+        }
+        .bento-card-large {
+          grid-column: span 12;
+        }
+        .bento-card-half {
+          grid-column: span 6;
+        }
+        .bento-card-third {
+          grid-column: span 4;
+        }
       }
 
-      .animate-fade-in {
-        animation: fadeIn 0.5s ease-out forwards;
+      /* Kinetic Type Scroll Effect */
+      @keyframes floatPulse {
+        0%, 100% { opacity: 0.9; transform: translateY(0); }
+        50% { opacity: 1; transform: translateY(-2px); }
       }
-
-      .text-stroke {
-        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
-        color: transparent;
+      .glow-acid {
+        text-shadow: 0 0 25px rgba(163, 230, 53, 0.35);
       }
       
       .animate-spin-slow {
-        animation: spin 8s linear infinite;
-      }
-      
-      .bg-grid-pattern {
-        background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-        background-size: 30px 30px;
+        animation: spin 10s linear infinite;
       }
     </style>
     
-    <!-- Prefetch un-indexed articles to improve crawler discovery -->
+    <!-- Prefetch articles -->
+    <link rel="prefetch" href="./music.html">
+    <link rel="prefetch" href="./projects.html">
+    <link rel="prefetch" href="./bio.html">
+    <link rel="prefetch" href="./what-is-hybrid.html">
+    <link rel="prefetch" href="./services.html">
+    <link rel="prefetch" href="./contact.html">
+    <link rel="prefetch" href="./hybridproductionstandard.html">
+    <link rel="prefetch" href="./mixrstudio.html">
+    <link rel="prefetch" href="./promptingthemachine.html">
+    <link rel="prefetch" href="./lastnewgenre.html">
     <link rel="prefetch" href="./liquidears.html">
     <link rel="prefetch" href="./Suno101.html">
     <link rel="prefetch" href="./futureofhybrid.html">
@@ -258,185 +332,349 @@
     <link rel="prefetch" href="./c2pa-music-provenance.html">
     <link rel="prefetch" href="./fingerprint.html">
     <link rel="prefetch" href="./may2026tools.html">
-    <link rel="prefetch" href="./lastnewgenre.html">
-    <link rel="prefetch" href="./promptingthemachine.html">
-      <link rel="alternate" type="text/plain" href="/llms.txt" title="AI LLM Knowledge Graph Manifest">
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="AI LLM Knowledge Graph Manifest">
 </head>
-  <body class="bg-black text-white antialiased overflow-x-hidden">    <div id="root"><div class="relative min-h-screen font-sans selection:bg-white selection:text-black flex flex-col text-white"><div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-[#050505]"><div class="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] opacity-60 oil-bg-animate" style="background:radial-gradient(circle at 50% 50%, rgba(30, 41, 59, 0.6), transparent 50%),
-            radial-gradient(circle at 80% 20%, rgba(51, 65, 85, 0.4), transparent 40%),
-            radial-gradient(circle at 20% 80%, rgba(15, 23, 42, 0.5), transparent 40%),
-            linear-gradient(45deg, #0a0a0a, #111111, #0f172a);filter:blur(60px);transform:translateZ(0);will-change:transform"></div><div class="absolute inset-0 opacity-[0.07] mix-blend-overlay" style="background-image:url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E&quot;)"></div></div><header class="fixed top-0 left-0 right-0 z-50 bg-black/80 md:backdrop-blur-md py-4 border-b border-white/5"><div class="container mx-auto px-6 flex justify-between items-center"><a href="/" class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-disc animate-spin-slow text-white" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="2"></circle></svg><span class="text-lg font-bold tracking-widest uppercase text-white">JRAY.ME</span></a><nav class="hidden md:flex gap-8 text-xs font-medium tracking-widest uppercase text-white/70" aria-label="Main navigation"><a href="/" class="hover:text-white transition-colors relative text-white">Home<span class="absolute -bottom-1 left-0 right-0 h-[1px] bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]"></span></a><a href="./music.html" class="hover:text-white transition-colors relative ">Music</a><a href="./projects.html" class="hover:text-white transition-colors relative ">Projects</a><a href="./bio.html" class="hover:text-white transition-colors relative ">Bio</a><a href="./what-is-hybrid.html" class="hover:text-white transition-colors relative ">What Is Hybrid</a><a href="./services.html" class="hover:text-white transition-colors relative ">Services</a><a href="./contact.html" class="hover:text-white transition-colors relative ">Contact</a></nav><input type="checkbox" id="mobile-menu-toggle" class="peer hidden"><label for="mobile-menu-toggle" class="md:hidden text-white cursor-pointer peer-checked:hidden block" aria-label="Open menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></label><label for="mobile-menu-toggle" class="md:hidden text-white cursor-pointer peer-checked:block hidden fixed top-6 right-6 z-50" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></label><div class="fixed inset-0 z-40 bg-zinc-950/98 backdrop-blur-2xl flex flex-col items-center justify-start overflow-y-auto pt-32 pb-12 w-full h-full animate-fade-in hidden peer-checked:flex"><nav class="flex flex-col gap-8 text-center text-2xl font-light tracking-widest uppercase py-4" aria-label="Mobile navigation"><a href="/" class="hover:text-slate-300 transition-colors text-white font-bold">Home</a><a href="./music.html" class="hover:text-slate-300 transition-colors text-white/60">Music</a><a href="./projects.html" class="hover:text-slate-300 transition-colors text-white/60">Projects</a><a href="./bio.html" class="hover:text-slate-300 transition-colors text-white/60">Bio</a><a href="./what-is-hybrid.html" class="hover:text-slate-300 transition-colors text-white/60">What Is Hybrid</a><a href="./services.html" class="hover:text-slate-300 transition-colors text-white/60">Services</a><a href="./contact.html" class="hover:text-slate-300 transition-colors text-white/60">Contact</a></nav></div></div></header><main class="flex-grow w-full pt-24 pb-12 flex flex-col" id="main-content">
-  <!-- 1. Hero Section -->
-  <section class="relative flex flex-col items-center px-4 pt-16 pb-10 sm:pt-24">
-    <h1 class="text-center z-10 space-y-4 max-w-5xl animate-fade-in-up flex flex-col items-center">
-      <div class="flex flex-col items-center leading-none">
-        <div style="font-size:clamp(3.5rem, 9vw, 9rem);font-family:'DotGothic16', sans-serif;font-weight:400;color:#fff" class="mix-blend-overlay opacity-90 max-w-full uppercase">HYBRID</div>
-        <div class="mt-4 sm:mt-8">
-          <div style="font-size:clamp(2.5rem, 6.5vw, 7rem);font-family:'DotGothic16', sans-serif;font-weight:400;color:#fff" class="mix-blend-overlay opacity-90 max-w-full uppercase">PRODUCTION</div>
-        </div>
-      </div>
-      <span class="block text-lg sm:text-2xl font-light text-white/60 tracking-[0.2em] uppercase max-w-3xl mx-auto mt-4">Creative Technologist &amp; Hybrid Artist</span>
-    </h1>
-
-    <!-- Rebrand Announcement Bullet Point -->
-    <div class="z-10 mt-6 animate-fade-in-up flex items-center justify-center" style="animation-delay:0.1s">
-      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-zinc-900/80 border border-white/15 text-xs sm:text-sm font-mono tracking-widest text-slate-300 backdrop-blur-md shadow-lg">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span>jray.me is now <strong class="text-white font-semibold">trustnodelogic.com</strong></span>
-      </div>
-    </div>
-
-    <div class="flex flex-col items-center w-full max-w-4xl mt-10 animate-fade-in-up" style="animation-delay:0.2s">
-      <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
-        <a href="./mixrstudio.html" class="group relative flex-1 inline-flex items-center justify-center px-8 py-3 overflow-visible rounded-sm bg-zinc-900/60 backdrop-blur-sm border border-white/20 hover:border-white/80 transition-all duration-500 shadow-[0_0_20px_rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]">
-          <div class="absolute -top-2 -right-2 z-20 bg-white text-black text-[9px] font-bold tracking-widest uppercase px-2 py-0.5 shadow-[0_0_10px_rgba(255,255,255,0.3)]">NEW!</div>
-          <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out overflow-hidden rounded-sm"></div>
-          <span class="relative z-10 flex flex-col items-center text-center">
-            <span class="text-sm sm:text-base font-bold tracking-[0.15em] text-white uppercase">MIXR STUDIO</span>
-            <span class="text-[9px] sm:text-[10px] font-light tracking-[0.2em] text-white/60 mt-1 uppercase">The Free Hybrid Mastering Suite</span>
-          </span>
-        </a>
-        <a href="./promptingthemachine.html" class="group relative flex-1 inline-flex items-center justify-center px-8 py-3 overflow-visible rounded-sm bg-zinc-900/60 backdrop-blur-sm border border-emerald-500/30 hover:border-emerald-400/80 transition-all duration-500 shadow-[0_0_20px_rgba(52,211,153,0.08)] hover:shadow-[0_0_30px_rgba(52,211,153,0.2)]">
-          <div class="absolute -top-2 -right-2 z-20 bg-emerald-400 text-black text-[9px] font-bold tracking-widest uppercase px-2 py-0.5 shadow-[0_0_10px_rgba(52,211,153,0.4)]">NEW • ARTICLE</div>
-          <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-emerald-500/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out overflow-hidden rounded-sm"></div>
-          <span class="relative z-10 flex flex-col items-center text-center">
-            <span class="text-sm sm:text-base font-bold tracking-[0.15em] text-white uppercase">PROMPTING THE MACHINE</span>
-            <span class="text-[9px] sm:text-[10px] font-light tracking-[0.2em] text-emerald-300/80 mt-1 uppercase">Field Notes • AI Music &amp; Prompt Engineering</span>
-          </span>
-        </a>
-      </div>
-
-      <!-- HPS-1.0 Featured Standard Button (Wider, same height, sitting underneath) -->
-      <a href="./hybridproductionstandard.html" class="group relative w-full mt-4 inline-flex items-center justify-center px-8 py-3 overflow-visible rounded-sm bg-zinc-900/60 backdrop-blur-sm border border-sky-400/40 hover:border-sky-300/90 transition-all duration-500 shadow-[0_0_20px_rgba(56,189,248,0.1)] hover:shadow-[0_0_30px_rgba(56,189,248,0.25)]">
-        <div class="absolute -top-2 -right-2 z-20 bg-sky-400 text-black text-[9px] font-bold tracking-widest uppercase px-2 py-0.5 shadow-[0_0_10px_rgba(56,189,248,0.4)]">NEW • SPECIFICATION</div>
-        <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-sky-400/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out overflow-hidden rounded-sm"></div>
-        <span class="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-3 text-center">
-          <span class="text-sm sm:text-base font-bold tracking-[0.15em] text-white uppercase">HYBRID PRODUCTION STANDARD (HPS-1.0)</span>
-          <span class="hidden sm:inline text-white/30">•</span>
-          <span class="text-[9px] sm:text-[10px] font-light tracking-[0.2em] text-sky-300/90 uppercase">5-Axis Classification &amp; DDEX ERN 4.3 Mapping</span>
-        </span>
-      </a>
-    </div>
-  </section>
-
-  <!-- 2. Value Proposition (Philosophy + What is Hybrid) -->
-  <section class="w-full max-w-5xl mx-auto z-20 animate-fade-in-up mt-6 px-4" style="animation-delay:0.3s">
-    <div class="relative overflow-hidden rounded-sm border border-white/10 bg-zinc-900/40 backdrop-blur-md p-8 md:p-12 transition-colors duration-500 group">
-      <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-slate-400 to-transparent"></div>
-      <div class="absolute -right-20 -top-20 w-64 h-64 bg-slate-800/20 rounded-full blur-[100px] pointer-events-none group-hover:bg-slate-700/30 transition-colors duration-700"></div>
-
-      
-      <div class="grid md:grid-cols-[1fr_2fr] gap-8 items-start relative z-10">
-        <div>
-          <h2 class="text-2xl md:text-3xl font-display font-bold text-white uppercase tracking-tighter leading-none mb-4">What is <br><span class="text-slate-300">Hybrid</span><br>Production?</h2>
-          <div class="w-12 h-[1px] bg-white/20 my-4 group-hover:w-24 transition-all duration-500"></div>
-          <p class="text-xs font-mono text-white/40 tracking-widest uppercase">The Third Way</p>
-        </div>
-        <div class="space-y-6">
-          <p class="text-xl sm:text-2xl font-light leading-tight text-white/90 font-sans italic border-l-2 border-white/20 pl-6">
-            "While others argue over black or white - pure human or pure AI - all or nothing - the future exists in the <span class="text-transparent bg-clip-text bg-gradient-to-tr from-gray-500 via-gray-100 to-gray-500 font-bold not-italic">grey</span>. Hybrid production is the search for the soul inside the algorithm."
-          </p>
-          <p class="text-lg font-light text-white/80 leading-relaxed">
-            It is the definitive workflow of the post-AI musical landscape. Rejecting the binary choice between "human" and "machine", it treats Generative AI as a high-fidelity instrument in the producer's toolkit.
-          </p>
-          <p class="text-sm font-mono text-white/60">
-            The Hybrid Producer is an editor, a curator, and a sonic sculptor who mines the algorithmic void for gold, then refines it with traditional engineering.
-          </p>
-          <p class="text-sm font-light text-white/60 mt-4">
-            As a <span class="text-white font-medium">creative developer</span> and artist, I don't just use the tools — I build them. Custom in-browser audio environments, AI-driven feedback, sample creation, bespoke workflows.
-          </p>
-          <div class="pt-4">
-            <a href="./what-is-hybrid.html" class="inline-flex items-center text-[10px] font-mono tracking-widest text-white uppercase hover:text-slate-300 transition-colors border border-white/20 px-6 py-2 rounded-sm bg-white/5 hover:bg-white/10">Read The Full Manifesto →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. Latest Field Notes (Articles) -->
-  <section class="w-full max-w-5xl mx-auto z-20 animate-fade-in-up mt-24 px-4 text-center border-t border-white/10 pt-16" style="animation-delay:0.4s">
-    <h2 class="text-xs font-mono tracking-[0.2em] text-white/40 mb-10 uppercase">Latest Field Notes</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-      <a href="./promptingthemachine.html" class="group block p-8 border border-white/10 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-white/30 transition-all duration-500 rounded-sm relative overflow-hidden">
-        <div class="absolute -right-6 -top-6 w-24 h-24 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-400/20 transition-colors duration-500"></div>
-        <span class="text-[10px] font-mono tracking-widest text-white/40 uppercase block mb-3">Jul 26, 2026</span>
-        <h3 class="text-sm font-bold text-white uppercase tracking-widest mb-3 group-hover:text-slate-300 transition-colors">Prompting the Machine</h3>
-        <p class="text-xs font-light text-white/60 leading-relaxed">How Suno, Udio, and the current wave of AI music tools actually turn a sentence into a song — and what that means for the words you choose.</p>
-      </a>
-      <a href="./lastnewgenre.html" class="group block p-8 border border-white/10 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-white/30 transition-all duration-500 rounded-sm relative overflow-hidden">
-        <div class="absolute -right-6 -top-6 w-24 h-24 bg-cyan-500/10 rounded-full blur-2xl group-hover:bg-cyan-400/20 transition-colors duration-500"></div>
-        <span class="text-[10px] font-mono tracking-widest text-white/40 uppercase block mb-3">Jul 21, 2026</span>
-        <h3 class="text-sm font-bold text-white uppercase tracking-widest mb-3 group-hover:text-slate-300 transition-colors">The Last New Genre</h3>
-        <p class="text-xs font-light text-white/60 leading-relaxed">SoundCloud rap, COVID, and why 2019 was the last time a mass audience agreed a genre was genuinely new.</p>
-      </a>
-      <a href="./liquidears.html" class="group block p-8 border border-white/10 bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-white/30 transition-all duration-500 rounded-sm relative overflow-hidden">
-        <div class="absolute -right-6 -top-6 w-24 h-24 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-400/20 transition-colors duration-500"></div>
-        <span class="text-[10px] font-mono tracking-widest text-white/40 uppercase block mb-3">Jul 04, 2026</span>
-        <h3 class="text-sm font-bold text-white uppercase tracking-widest mb-3 group-hover:text-slate-300 transition-colors">The Liquid Ear</h3>
-        <p class="text-xs font-light text-white/60 leading-relaxed">Adaptive neural networks and continuous time-constant architectures in real-time mixing and mastering workflows.</p>
-      </a>
-    </div>
-    <div class="mt-12">
-      <a href="./what-is-hybrid.html" class="inline-block text-[10px] font-mono tracking-widest text-white/40 uppercase hover:text-white transition-colors underline decoration-white/20 underline-offset-4">View All Field Notes →</a>
-    </div>
-  </section>
-
-  <!-- 4. Currently Building & Community -->
-  <section class="w-full max-w-4xl mx-auto z-20 animate-fade-in-up mt-24 px-4 text-center border-t border-white/10 pt-16" style="animation-delay:0.5s">
-    <h2 class="text-xs font-mono tracking-[0.2em] text-white/40 mb-8 uppercase">Currently Building</h2>
-    <div class="flex flex-col md:flex-row justify-center items-start gap-8 md:gap-12 text-left md:text-center">
-      <div class="flex-1 space-y-2">
-        <h3 class="text-sm font-bold text-white uppercase tracking-widest">Music</h3>
-        <p class="text-sm font-light text-white/60 leading-relaxed">Identifying systems to improve generative music fidelity, pioneering new ways to blend the grey.</p>
-      </div>
-      <div class="flex-1 space-y-2">
-        <h3 class="text-sm font-bold text-white uppercase tracking-widest">Community</h3>
-        <p class="text-sm font-light text-white/60 leading-relaxed"><a href="https://www.reddit.com/r/hybridproduction/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors underline decoration-white/30 underline-offset-4">Scaling the r/hybridproduction community</a></p>
-      </div>
-      <div class="flex-1 space-y-2">
-        <h3 class="text-sm font-bold text-white uppercase tracking-widest">Innovation</h3>
-        <p class="text-sm font-light text-white/60 leading-relaxed">Refining workflows for the AI and even post-AI musical landscape. Utilizing todays tools to see tomorrows solutions.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. Socials -->
-  <section class="flex justify-center items-center gap-8 sm:gap-12 mt-20 mb-20 z-20 animate-fade-in-up" style="animation-delay:0.6s" aria-label="Social media links">
-    <a href="https://x.com/TheInnerVision" target="_blank" rel="noopener noreferrer" aria-label="Follow Justin Ray on X (Twitter)" class="group text-white/40 hover:text-white transition-all duration-300 transform hover:scale-110">
-      <svg viewBox="0 0 24 24" class="w-8 h-8 fill-current" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
-    </a>
-    <a href="https://youtube.com/@loserdub" target="_blank" rel="noopener noreferrer" aria-label="Visit Justin Ray's YouTube Channel" class="group text-white/40 hover:text-[#FF0000] transition-all duration-300 transform hover:scale-110">
-      <svg viewBox="0 0 24 24" class="w-8 h-8 fill-current" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
-    </a>
-    <a href="https://www.linkedin.com/in/jray-me/" target="_blank" rel="noopener noreferrer" aria-label="Connect with Justin Ray on LinkedIn" class="group text-white/40 hover:text-[#0077B5] transition-all duration-300 transform hover:scale-110">
-      <svg viewBox="0 0 24 24" class="w-8 h-8 fill-current" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
-    </a>
-    <a href="https://network.landr.com/users/vision-hybrid" target="_blank" rel="noopener noreferrer" aria-label="Justin Ray on LANDR Network" class="group text-white/40 hover:text-[#00E6CB] transition-all duration-300 transform hover:scale-110">
-      <svg viewBox="0 0 24 24" class="w-8 h-8 fill-current" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"></path></svg><span class="sr-only">LANDR</span>
-    </a>
-  </section>
-</main><footer class="w-full bg-black/90 border-t border-white/5 py-8 mt-auto z-20 relative"><div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6"><div class="text-white/40 text-xs font-mono tracking-widest uppercase text-center md:text-left">© 2026 Justin Ray. All Rights Reserved.</div><nav class="flex gap-6 text-xs font-medium tracking-widest uppercase text-white/60"><a href="/" class="hover:text-white transition-colors">Home</a><a href="./what-is-hybrid.html" class="hover:text-white transition-colors">What Is Hybrid</a><a href="./projects.html" class="hover:text-white transition-colors">Projects</a><a href="./music.html" class="hover:text-white transition-colors">Music</a></nav></div></footer><div class="w-full text-center py-2 opacity-20 hover:opacity-100 transition-opacity z-20 relative bg-black/90"><a href="./sitemap.xml" class="text-[8px] font-mono text-white tracking-widest uppercase">Sitemap</a></div></div></div>
-
+<body class="bg-[#090a0d] text-[#f2f2f0] antialiased overflow-x-hidden selection:bg-lime-400 selection:text-black font-sans">
     
-    <!-- Global SVG Filters for Effects - OPTIMIZED -->
-    <!-- Reduced octaves in feTurbulence significantly improves rendering performance on low-end devices -->
-    <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-      <defs>
-        <filter id="oil-paint">
-          <!-- Reduced octaves from 5 to 2 for performance -->
-          <feTurbulence type="turbulence" baseFrequency="0.006" numOctaves="2" result="turbulence"></feTurbulence>
-          <!-- Adjusted scale slightly to compensate for lower detail -->
-          <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="25" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
-          <!-- Removed feGaussianBlur to save a pass; turbulence provides enough distortion -->
-          <feColorMatrix type="saturate" values="1.3"></feColorMatrix>
-        </filter>
-        <filter id="noise">
-           <!-- Reduced octaves from 3 to 1 for background noise -->
-           <feTurbulence type="fractalNoise" baseFrequency="0.80" numOctaves="1" stitchTiles="stitch"></feTurbulence>
-        </filter>
-      </defs>
-    </svg>
+    <!-- Tactile Noise/Grain Overlay -->
+    <div class="tactile-grain"></div>
 
+    <div id="root">
+      <div class="relative min-h-screen flex flex-col">
+        
+        <!-- Ambient Radial Background Layer -->
+        <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-[#07080b]">
+          <div class="absolute top-[-40%] left-[-30%] w-[160%] h-[160%] opacity-40" style="background: radial-gradient(circle at 40% 40%, rgba(163, 230, 53, 0.06), transparent 50%), radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.05), transparent 45%), radial-gradient(circle at 20% 80%, rgba(192, 132, 252, 0.04), transparent 45%); filter: blur(70px);"></div>
+        </div>
 
+        <!-- Hairline Navigation Header -->
+        <header class="fixed top-0 left-0 right-0 z-50 bg-[#090a0d]/90 backdrop-blur-md border-b border-white/10 py-4">
+          <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-2.5 group h-8 overflow-hidden w-[200px]">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-disc animate-spin-slow text-lime-400 group-hover:text-white transition-colors flex-shrink-0 z-10 bg-transparent"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+  <div class="relative h-full flex items-center w-full ml-1">
+    <span class="absolute inset-0 flex items-center text-sm font-mono tracking-[0.1em] sm:tracking-[0.15em] uppercase font-semibold text-white transition-transform duration-500 transform group-hover:-translate-y-full">TRUSTNODELOGIC</span>
+    <span class="absolute inset-0 flex items-center text-sm font-mono tracking-[0.2em] sm:tracking-[0.25em] uppercase font-semibold text-lime-400 transition-transform duration-500 transform translate-y-full group-hover:translate-y-0">JRAY.ME</span>
+  </div>
+</a>
 
-</body></html> 
+            <nav class="hidden md:flex gap-7 text-xs font-mono tracking-widest uppercase text-white/70" aria-label="Main navigation">
+              <a href="/" class="text-lime-400 font-semibold relative">Home<span class="absolute -bottom-1 left-0 right-0 h-[1px] bg-lime-400 shadow-[0_0_8px_rgba(163,230,53,0.8)]"></span></a>
+              <a href="./music.html" class="hover:text-white transition-colors">Music</a>
+              <a href="./projects.html" class="hover:text-white transition-colors">Projects</a>
+              <a href="./bio.html" class="hover:text-white transition-colors">Bio</a>
+              <a href="./what-is-hybrid.html" class="hover:text-white transition-colors">What Is Hybrid</a>
+              <a href="./services.html" class="hover:text-white transition-colors">Services</a>
+              <a href="./contact.html" class="hover:text-white transition-colors">Contact</a>
+            </nav>
+
+            <input type="checkbox" id="mobile-menu-toggle" class="peer hidden">
+            <label for="mobile-menu-toggle" class="md:hidden text-white cursor-pointer peer-checked:hidden block" aria-label="Open menu">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
+            </label>
+            <label for="mobile-menu-toggle" class="md:hidden text-white cursor-pointer peer-checked:block hidden fixed top-6 right-6 z-50" aria-label="Close menu">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+            </label>
+            <div class="fixed inset-0 z-40 bg-[#090a0d]/98 backdrop-blur-2xl flex flex-col items-center justify-start overflow-y-auto pt-32 pb-12 w-full h-full hidden peer-checked:flex">
+              <nav class="flex flex-col gap-8 text-center text-xl font-mono tracking-widest uppercase py-4" aria-label="Mobile navigation">
+                <a href="/" class="text-lime-400 font-bold">Home</a>
+                <a href="./music.html" class="hover:text-lime-400 text-white/70 transition-colors">Music</a>
+                <a href="./projects.html" class="hover:text-lime-400 text-white/70 transition-colors">Projects</a>
+                <a href="./bio.html" class="hover:text-lime-400 text-white/70 transition-colors">Bio</a>
+                <a href="./what-is-hybrid.html" class="hover:text-lime-400 text-white/70 transition-colors">What Is Hybrid</a>
+                <a href="./services.html" class="hover:text-lime-400 text-white/70 transition-colors">Services</a>
+                <a href="./contact.html" class="hover:text-lime-400 text-white/70 transition-colors">Contact</a>
+              </nav>
+            </div>
+          </div>
+        </header>
+
+        <!-- Main Content Stream -->
+        <main class="flex-grow w-full pt-28 pb-16 flex flex-col" id="main-content">
+          
+          <!-- 1. Hero Section (Tactile Machine Aesthetics + Manifesto Headline) -->
+          <section class="relative flex flex-col items-center px-6 pt-12 pb-16 max-w-6xl mx-auto text-center">
+            
+            <!-- Eyebrow Tag -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-900/90 border border-lime-400/30 text-[11px] font-mono tracking-[0.18em] text-lime-400 mb-8 backdrop-blur-sm shadow-[0_0_15px_rgba(163,230,53,0.12)]">
+              <span class="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse"></span>
+              <span>JUSTIN RAY (JRAY) · HYBRID PRODUCTION · CREATIVE TECHNOLOGIST</span>
+            </div>
+
+            <!-- Main Manifesto Headline -->
+            <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-extrabold tracking-tight text-white leading-[0.98] uppercase max-w-5xl">
+              THE FUTURE EXISTS IN THE <span class="text-transparent bg-clip-text bg-gradient-to-r from-zinc-400 via-slate-200 to-zinc-400">GREY.</span>
+            </h1>
+
+            <!-- Subtitle / Positioning -->
+            <p class="mt-8 text-base sm:text-xl font-light text-white/75 max-w-3xl leading-relaxed tracking-wide">
+              Rejecting the binary of pure-human vs. pure-AI music. Generative AI models are high-fidelity instruments in the producer’s toolkit — not a replacement for human intent.
+            </p>
+
+            <!-- Demoted Rebrand One-Liner Notice -->
+            <div class="mt-6 flex items-center justify-center text-[11px] font-mono tracking-widest text-white/40">
+              <span>Formerly <strong class="text-white/60">jray.me</strong> — now canonical at <strong class="text-lime-400/90">trustnodelogic.com</strong></span>
+            </div>
+
+            <!-- Announcement Action Cards Row (MIXR Studio, Prompting the Machine, HPS-1.0) -->
+            <div class="flex flex-col items-center w-full max-w-4xl mt-12">
+              <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+                
+                <!-- MIXR Studio Pill -->
+                <a href="./mixrstudio.html" class="group relative flex-1 inline-flex items-center justify-center px-6 py-4 rounded-sm bg-zinc-950/80 border border-white/15 hover:border-white/60 transition-all duration-300 shadow-[0_0_20px_rgba(0,0,0,0.4)] overflow-hidden">
+                  <div class="absolute -top-2 -right-2 z-20 bg-white text-black text-[9px] font-mono font-bold tracking-widest uppercase px-2 py-0.5 rounded-sm">TOOL</div>
+                  <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
+                  <span class="relative z-10 flex flex-col items-center text-center">
+                    <span class="text-sm font-mono font-bold tracking-widest text-white uppercase group-hover:text-lime-400 transition-colors">MIXR STUDIO</span>
+                    <span class="text-[10px] font-mono text-white/50 mt-1 uppercase">Free Browser Audio Mastering Suite</span>
+                  </span>
+                </a>
+
+                <!-- Prompting the Machine Pill -->
+                <a href="./promptingthemachine.html" class="group relative flex-1 inline-flex items-center justify-center px-6 py-4 rounded-sm bg-zinc-950/80 border border-lime-400/30 hover:border-lime-400/80 transition-all duration-300 shadow-[0_0_20px_rgba(163,230,53,0.06)] overflow-hidden">
+                  <div class="absolute -top-2 -right-2 z-20 bg-lime-400 text-black text-[9px] font-mono font-bold tracking-widest uppercase px-2 py-0.5 rounded-sm">ARTICLE</div>
+                  <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-lime-400/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
+                  <span class="relative z-10 flex flex-col items-center text-center">
+                    <span class="text-sm font-mono font-bold tracking-widest text-white uppercase group-hover:text-lime-400 transition-colors">PROMPTING THE MACHINE</span>
+                    <span class="text-[10px] font-mono text-lime-400/80 mt-1 uppercase">Field Notes · Prompt Engineering Machinery</span>
+                  </span>
+                </a>
+
+              </div>
+
+              <!-- HPS-1.0 Wide Featured Standard Button -->
+              <a href="./hybridproductionstandard.html" class="group relative w-full mt-4 inline-flex items-center justify-center px-8 py-4 rounded-sm bg-zinc-950/90 border border-sky-400/40 hover:border-sky-300/90 transition-all duration-300 shadow-[0_0_25px_rgba(56,189,248,0.08)] overflow-hidden">
+                <div class="absolute -top-2 -right-2 z-20 bg-sky-400 text-black text-[9px] font-mono font-bold tracking-widest uppercase px-2 py-0.5 rounded-sm">HPS-1.0 SPEC</div>
+                <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-sky-400/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
+                <span class="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
+                  <span class="text-sm font-mono font-bold tracking-widest text-white uppercase group-hover:text-sky-300 transition-colors">HYBRID PRODUCTION STANDARD (HPS-1.0)</span>
+                  <span class="hidden sm:inline text-white/30">•</span>
+                  <span class="text-[10px] font-mono text-sky-300/90 uppercase tracking-widest">5-Axis Classification &amp; DDEX ERN 4.3 Mapping</span>
+                </span>
+              </a>
+            </div>
+
+          </section>
+
+          <!-- 2. Manifesto Pull-Quote Block (Breathing Room + High Impact) -->
+          <section class="w-full max-w-5xl mx-auto px-6 py-16 my-8 border-y border-white/10 bg-zinc-950/40 relative">
+            <div class="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-lime-400 via-emerald-400 to-transparent"></div>
+            
+            <div class="max-w-4xl mx-auto space-y-8">
+              <span class="text-[11px] font-mono tracking-[0.2em] text-lime-400 uppercase block">THE HYBRID MANIFESTO</span>
+              
+              <blockquote class="text-2xl sm:text-4xl font-light leading-snug text-white/95 italic border-l-2 border-white/15 pl-6 sm:pl-8">
+                “While others argue over black or white — pure human or pure AI — all or nothing — the future exists in the <span class="text-transparent bg-clip-text bg-gradient-to-r from-zinc-300 via-slate-200 to-zinc-400 font-normal not-italic">grey</span>. Hybrid production is the search for the soul inside the algorithm.”
+              </blockquote>
+
+              <p class="text-base sm:text-lg text-white/70 font-light leading-relaxed">
+                It is the definitive workflow of the post-AI musical landscape. The Hybrid Producer is an editor, a curator, and a sonic sculptor who mines the algorithmic void for raw material, then shapes it with live instrumentation, analog hardware, and traditional DAW engineering.
+              </p>
+
+              <div class="pt-4">
+                <a href="./what-is-hybrid.html" class="inline-flex items-center gap-3 px-7 py-3 rounded-sm border border-white/20 hover:border-lime-400 bg-white/5 hover:bg-lime-400/10 text-xs font-mono tracking-widest text-white hover:text-lime-400 transition-all duration-300 backdrop-blur-sm">
+                  <span>READ THE FULL MANIFESTO</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <!-- 3. Explore Grid (Replacing "Currently Building") -->
+          <section class="w-full max-w-5xl mx-auto px-6 py-16 border-b border-white/10">
+            <div class="mb-10 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] font-mono tracking-[0.2em] text-lime-400 uppercase block mb-1">SITE TOPOLOGY</span>
+                <h2 class="text-2xl sm:text-3xl font-display font-bold uppercase tracking-tight text-white">EXPLORE THE GRAPH</h2>
+              </div>
+            </div>
+
+            <!-- Fancy Glassmorphic Bento Grid (6 Main Pages) -->
+            <div class="bento-grid">
+              
+              <!-- Card 1: Music -->
+              <a href="./music.html" class="bento-card-third hairline-card p-8 relative group overflow-hidden rounded-lg">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-lime-400/10 rounded-full blur-3xl pointer-events-none group-hover:bg-lime-400/20 transition-colors"></div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="text-[10px] font-mono text-lime-400 px-2 py-0.5 border border-lime-400/30 rounded-sm uppercase tracking-widest">MUSIC</span>
+                </div>
+                <h3 class="text-lg font-display font-bold text-white uppercase tracking-wider mb-3 group-hover:text-lime-300 transition-colors">DISCOGRAPHY</h3>
+                <p class="text-xs text-white/65 font-light leading-relaxed mb-6">
+                  Generative audio, latent SLERP merging, custom architectures, and releases.
+                </p>
+              </a>
+
+              <!-- Card 2: Projects -->
+              <a href="./projects.html" class="bento-card-third hairline-card p-8 relative group overflow-hidden rounded-lg">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-sky-400/10 rounded-full blur-3xl pointer-events-none group-hover:bg-sky-400/20 transition-colors"></div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="text-[10px] font-mono text-sky-400 px-2 py-0.5 border border-sky-400/30 rounded-sm uppercase tracking-widest">DEV</span>
+                </div>
+                <h3 class="text-lg font-display font-bold text-white uppercase tracking-wider mb-3 group-hover:text-sky-300 transition-colors">PROJECTS</h3>
+                <p class="text-xs text-white/65 font-light leading-relaxed mb-6">
+                  Technical portfolio of browser-native audio tooling and custom DSP applications.
+                </p>
+              </a>
+
+              <!-- Card 3: Bio -->
+              <a href="./bio.html" class="bento-card-third hairline-card p-8 relative group overflow-hidden rounded-lg">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-400/10 rounded-full blur-3xl pointer-events-none group-hover:bg-emerald-400/20 transition-colors"></div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="text-[10px] font-mono text-emerald-400 px-2 py-0.5 border border-emerald-400/30 rounded-sm uppercase tracking-widest">ABOUT</span>
+                </div>
+                <h3 class="text-lg font-display font-bold text-white uppercase tracking-wider mb-3 group-hover:text-emerald-300 transition-colors">BIO / IDENTITY</h3>
+                <p class="text-xs text-white/65 font-light leading-relaxed mb-6">
+                  Mission, technical background, and the artist aliases driving the hybrid methodology.
+                </p>
+              </a>
+
+              <!-- Card 4: What Is Hybrid -->
+              <a href="./what-is-hybrid.html" class="bento-card-third hairline-card p-8 relative group overflow-hidden rounded-lg">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-purple-400/10 rounded-full blur-3xl pointer-events-none group-hover:bg-purple-400/20 transition-colors"></div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="text-[10px] font-mono text-purple-400 px-2 py-0.5 border border-purple-400/30 rounded-sm uppercase tracking-widest">THEORY</span>
+                </div>
+                <h3 class="text-lg font-display font-bold text-white uppercase tracking-wider mb-3 group-hover:text-purple-300 transition-colors">WHAT IS HYBRID</h3>
+                <p class="text-xs text-white/65 font-light leading-relaxed mb-6">
+                  The definitive manifesto on Hybrid Music Production and treating generative engines as high-fidelity instruments.
+                </p>
+              </a>
+
+              <!-- Card 5: Services -->
+              <a href="./services.html" class="bento-card-third hairline-card p-8 relative group overflow-hidden rounded-lg">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-amber-400/10 rounded-full blur-3xl pointer-events-none group-hover:bg-amber-400/20 transition-colors"></div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="text-[10px] font-mono text-amber-400 px-2 py-0.5 border border-amber-400/30 rounded-sm uppercase tracking-widest">ENGAGE</span>
+                </div>
+                <h3 class="text-lg font-display font-bold text-white uppercase tracking-wider mb-3 group-hover:text-amber-300 transition-colors">SERVICES</h3>
+                <p class="text-xs text-white/65 font-light leading-relaxed mb-6">
+                  Consulting, mixing, and hybrid mastering workflows bridging algorithmic generation with analog audio.
+                </p>
+              </a>
+
+              <!-- Card 6: Contact -->
+              <a href="./contact.html" class="bento-card-third hairline-card p-8 relative group overflow-hidden rounded-lg">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-rose-400/10 rounded-full blur-3xl pointer-events-none group-hover:bg-rose-400/20 transition-colors"></div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="text-[10px] font-mono text-rose-400 px-2 py-0.5 border border-rose-400/30 rounded-sm uppercase tracking-widest">COMM</span>
+                </div>
+                <h3 class="text-lg font-display font-bold text-white uppercase tracking-wider mb-3 group-hover:text-rose-300 transition-colors">CONTACT</h3>
+                <p class="text-xs text-white/65 font-light leading-relaxed mb-6">
+                  Direct channels for inquiries, collaborations, and community building.
+                </p>
+              </a>
+
+            </div>
+          </section>
+
+          <!-- 4. Latest Field Notes (Top 3 Credible Articles) -->
+          <section class="w-full max-w-5xl mx-auto px-6 py-16 border-b border-white/10">
+            <div class="mb-10 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] font-mono tracking-[0.2em] text-lime-400 uppercase block mb-1">FIELD RESEARCH &amp; ANALYSIS</span>
+                <h2 class="text-2xl sm:text-3xl font-display font-bold uppercase tracking-tight text-white">LATEST FIELD NOTES</h2>
+              </div>
+              <a href="./what-is-hybrid.html" class="text-xs font-mono text-white/50 hover:text-lime-400 transition-colors hidden sm:block">VIEW ALL ARTICLES →</a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              
+              <!-- Article 1 -->
+              <a href="./promptingthemachine.html" class="hairline-card p-7 group flex flex-col justify-between rounded-lg">
+                <div>
+                  <div class="flex items-center justify-between text-[10px] font-mono text-lime-400 mb-3">
+                    <span>JUL 26, 2026</span>
+                    <span class="text-white/30">PROMPT ENG</span>
+                  </div>
+                  <h3 class="text-base font-bold text-white uppercase tracking-wide mb-3 group-hover:text-lime-400 transition-colors">PROMPTING THE MACHINE</h3>
+                  <p class="text-xs text-white/65 font-light leading-relaxed mb-4">
+                    How Suno, Udio, and the current wave of AI music tools turn a sentence into a song — how text encoders parse prompts, slider mechanics, and next-gen tools.
+                  </p>
+                </div>
+                <span class="text-[11px] font-mono text-white/40 group-hover:text-white transition-colors">READ ARTICLE →</span>
+              </a>
+
+              <!-- Article 2 -->
+              <a href="./lastnewgenre.html" class="hairline-card p-7 group flex flex-col justify-between rounded-lg">
+                <div>
+                  <div class="flex items-center justify-between text-[10px] font-mono text-cyan-400 mb-3">
+                    <span>JUL 21, 2026</span>
+                    <span class="text-white/30">CULTURE</span>
+                  </div>
+                  <h3 class="text-base font-bold text-white uppercase tracking-wide mb-3 group-hover:text-cyan-300 transition-colors">THE LAST NEW GENRE</h3>
+                  <p class="text-xs text-white/65 font-light leading-relaxed mb-4">
+                    SoundCloud rap in 2019, COVID, and why algorithmic curation flattens cultural taste toward the familiar.
+                  </p>
+                </div>
+                <span class="text-[11px] font-mono text-white/40 group-hover:text-white transition-colors">READ ARTICLE →</span>
+              </a>
+
+              <!-- Article 3 -->
+              <a href="./liquidears.html" class="hairline-card p-7 group flex flex-col justify-between rounded-lg">
+                <div>
+                  <div class="flex items-center justify-between text-[10px] font-mono text-purple-400 mb-3">
+                    <span>JUL 04, 2026</span>
+                    <span class="text-white/30">NEURAL ARCH</span>
+                  </div>
+                  <h3 class="text-base font-bold text-white uppercase tracking-wide mb-3 group-hover:text-purple-300 transition-colors">THE LIQUID EAR</h3>
+                  <p class="text-xs text-white/65 font-light leading-relaxed mb-4">
+                    Liquid neural networks trade frozen weights for continuous adaptation in real-time adaptive mixing and mastering environments.
+                  </p>
+                </div>
+                <span class="text-[11px] font-mono text-white/40 group-hover:text-white transition-colors">READ ARTICLE →</span>
+              </a>
+
+            </div>
+
+            <div class="mt-10 text-center sm:hidden">
+              <a href="./what-is-hybrid.html" class="text-xs font-mono text-lime-400 hover:underline">VIEW ALL FIELD NOTES →</a>
+            </div>
+          </section>
+
+          <!-- 5. Social Presence & Network -->
+          <section class="w-full max-w-5xl mx-auto px-6 py-16 text-center">
+            <span class="text-[11px] font-mono tracking-[0.2em] text-white/40 uppercase block mb-8">CONNECT &amp; FOLLOW</span>
+            
+            <div class="flex flex-wrap justify-center items-center gap-6 sm:gap-10">
+              <a href="https://x.com/TheInnerVision" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" class="hairline-card px-6 py-3 flex items-center gap-3 text-white/70 hover:text-white hover:border-lime-400/50 transition-all duration-300">
+                <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+                <span class="text-xs font-mono tracking-widest">X / TWITTER</span>
+              </a>
+
+              <a href="https://youtube.com/@loserdub" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="hairline-card px-6 py-3 flex items-center gap-3 text-white/70 hover:text-white hover:border-red-500/50 transition-all duration-300">
+                <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
+                <span class="text-xs font-mono tracking-widest">YOUTUBE</span>
+              </a>
+
+              <a href="https://www.linkedin.com/in/jray-me/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="hairline-card px-6 py-3 flex items-center gap-3 text-white/70 hover:text-white hover:border-sky-400/50 transition-all duration-300">
+                <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+                <span class="text-xs font-mono tracking-widest">LINKEDIN</span>
+              </a>
+
+              <a href="https://network.landr.com/users/vision-hybrid" target="_blank" rel="noopener noreferrer" aria-label="LANDR Network" class="hairline-card px-6 py-3 flex items-center gap-3 text-white/70 hover:text-white hover:border-emerald-400/50 transition-all duration-300">
+                <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"></path></svg>
+                <span class="text-xs font-mono tracking-widest">LANDR</span>
+              </a>
+            </div>
+          </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="w-full bg-[#090a0d] border-t border-white/10 py-8 mt-auto z-20 relative">
+          <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-white/40 text-xs font-mono tracking-widest uppercase text-center md:text-left">© 2026 Justin Ray (JRAY). All Rights Reserved.</div>
+            <nav class="flex gap-6 text-xs font-mono tracking-widest uppercase text-white/60">
+              <a href="/" class="text-lime-400 font-semibold">Home</a>
+              <a href="./what-is-hybrid.html" class="hover:text-white transition-colors">What Is Hybrid</a>
+              <a href="./projects.html" class="hover:text-white transition-colors">Projects</a>
+              <a href="./music.html" class="hover:text-white transition-colors">Music</a>
+              <a href="./sitemap.xml" class="hover:text-white transition-colors">Sitemap</a>
+            </nav>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+</body>
+</html>
