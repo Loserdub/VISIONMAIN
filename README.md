@@ -7,7 +7,7 @@ Static website source for **trustnodelogic.com** — the public hub for Justin R
 
 ## What this repo is (current build)
 
-This repository is a **plain static site** (mostly HTML + CSS) that is published directly to GitHub Pages. There’s no React/Vite build in the current version — the site is served from the repository root.
+This repository is a **plain static site** (mostly HTML + CSS) that is published directly to GitHub Pages. There’s no React/Vite build in the current version — the site is served from the repo root.
 
 Key pages are implemented as standalone HTML documents (for example: `index.html`, `music.html`, `projects.html`, `services.html`, `contact.html`, and additional research/essay pages).
 
