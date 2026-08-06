@@ -1,0 +1,17 @@
+{
+  "auto-schema-and-sitemap": {
+    "enabled": true,
+    "PostToolUse": [
+      {
+        "matcher": "write_to_file|replace_file_content|multi_replace_file_content",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python .agents/scripts/sync_schema_sitemap.py",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

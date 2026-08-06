@@ -197,6 +197,7 @@
             { "@type": "WebPage", "name": "Contact", "url": "https://trustnodelogic.com/contact.html" },
             { "@type": "WebPage", "name": "Hybrid Production Standard (HPS-1.0)", "url": "https://trustnodelogic.com/hybridproductionstandard.html" },
             { "@type": "WebPage", "name": "MIXR Studio", "url": "https://trustnodelogic.com/mixrstudio.html" },
+            { "@type": "WebPage", "name": "The Architecture of the Three-Minute Song", "url": "https://trustnodelogic.com/songstructure.html" },
             { "@type": "WebPage", "name": "Prompting the Machine", "url": "https://trustnodelogic.com/promptingthemachine.html" },
             { "@type": "WebPage", "name": "The Last New Genre", "url": "https://trustnodelogic.com/lastnewgenre.html" },
             { "@type": "WebPage", "name": "The Liquid Ear", "url": "https://trustnodelogic.com/liquidears.html" },
@@ -323,6 +324,7 @@
     <link rel="prefetch" href="./contact.html">
     <link rel="prefetch" href="./hybridproductionstandard.html">
     <link rel="prefetch" href="./mixrstudio.html">
+    <link rel="prefetch" href="./songstructure.html">
     <link rel="prefetch" href="./promptingthemachine.html">
     <link rel="prefetch" href="./lastnewgenre.html">
     <link rel="prefetch" href="./liquidears.html">
@@ -575,69 +577,255 @@
             </div>
           </section>
 
-          <!-- 4. Latest Field Notes (Top 3 Credible Articles) -->
+          <!-- 4. Rotating Field Notes Carousel (All 13 Articles) -->
           <section class="w-full max-w-5xl mx-auto px-6 py-16 border-b border-white/10">
-            <div class="mb-10 flex items-center justify-between">
+            <div class="mb-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
                 <span class="text-[11px] font-mono tracking-[0.2em] text-lime-400 uppercase block mb-1">FIELD RESEARCH &amp; ANALYSIS</span>
-                <h2 class="text-2xl sm:text-3xl font-display font-bold uppercase tracking-tight text-white">LATEST FIELD NOTES</h2>
+                <h2 class="text-2xl sm:text-3xl font-display font-bold uppercase tracking-tight text-white">FIELD NOTES</h2>
               </div>
-              <a href="./what-is-hybrid.html" class="text-xs font-mono text-white/50 hover:text-lime-400 transition-colors hidden sm:block">VIEW ALL ARTICLES →</a>
+              <div class="flex items-center gap-3">
+                <div class="flex items-center gap-1.5 bg-zinc-900/80 border border-white/10 rounded-lg p-1.5 backdrop-blur-md">
+                  <button id="fn-prev-btn" onclick="rotateFieldNotes(-1)" class="px-2 py-1 text-xs font-mono text-white/60 hover:text-lime-400 hover:bg-white/5 rounded transition-all" aria-label="Previous Field Notes">←</button>
+                  <span id="fn-indicator" class="text-[10px] font-mono text-white/40 px-2 min-w-[70px] text-center">1–3 of 13</span>
+                  <button id="fn-next-btn" onclick="rotateFieldNotes(1)" class="px-2 py-1 text-xs font-mono text-white/60 hover:text-lime-400 hover:bg-white/5 rounded transition-all" aria-label="Next Field Notes">→</button>
+                  <button id="fn-auto-btn" onclick="toggleAutoRotate()" class="px-2 py-1 text-[10px] font-mono text-lime-400/80 hover:text-lime-300 hover:bg-lime-500/10 rounded transition-all flex items-center gap-1" title="Toggle Auto Rotation">
+                    <span class="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse" id="fn-pulse-dot"></span> ROTATE
+                  </button>
+                </div>
+                <a href="./what-is-hybrid.html" class="text-xs font-mono text-white/50 hover:text-lime-400 transition-colors hidden sm:block">VIEW ALL (13) →</a>
+              </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-              
-              <!-- Article 1 -->
-              <a href="./promptingthemachine.html" class="hairline-card p-7 group flex flex-col justify-between rounded-lg">
-                <div>
-                  <div class="flex items-center justify-between text-[10px] font-mono text-lime-400 mb-3">
-                    <span>JUL 26, 2026</span>
-                    <span class="text-white/30">PROMPT ENG</span>
-                  </div>
-                  <h3 class="text-base font-bold text-white uppercase tracking-wide mb-3 group-hover:text-lime-400 transition-colors">PROMPTING THE MACHINE</h3>
-                  <p class="text-xs text-white/65 font-light leading-relaxed mb-4">
-                    How Suno, Udio, and the current wave of AI music tools turn a sentence into a song — how text encoders parse prompts, slider mechanics, and next-gen tools.
-                  </p>
-                </div>
-                <span class="text-[11px] font-mono text-white/40 group-hover:text-white transition-colors">READ ARTICLE →</span>
-              </a>
-
-              <!-- Article 2 -->
-              <a href="./lastnewgenre.html" class="hairline-card p-7 group flex flex-col justify-between rounded-lg">
-                <div>
-                  <div class="flex items-center justify-between text-[10px] font-mono text-cyan-400 mb-3">
-                    <span>JUL 21, 2026</span>
-                    <span class="text-white/30">CULTURE</span>
-                  </div>
-                  <h3 class="text-base font-bold text-white uppercase tracking-wide mb-3 group-hover:text-cyan-300 transition-colors">THE LAST NEW GENRE</h3>
-                  <p class="text-xs text-white/65 font-light leading-relaxed mb-4">
-                    SoundCloud rap in 2019, COVID, and why algorithmic curation flattens cultural taste toward the familiar.
-                  </p>
-                </div>
-                <span class="text-[11px] font-mono text-white/40 group-hover:text-white transition-colors">READ ARTICLE →</span>
-              </a>
-
-              <!-- Article 3 -->
-              <a href="./liquidears.html" class="hairline-card p-7 group flex flex-col justify-between rounded-lg">
-                <div>
-                  <div class="flex items-center justify-between text-[10px] font-mono text-purple-400 mb-3">
-                    <span>JUL 04, 2026</span>
-                    <span class="text-white/30">NEURAL ARCH</span>
-                  </div>
-                  <h3 class="text-base font-bold text-white uppercase tracking-wide mb-3 group-hover:text-purple-300 transition-colors">THE LIQUID EAR</h3>
-                  <p class="text-xs text-white/65 font-light leading-relaxed mb-4">
-                    Liquid neural networks trade frozen weights for continuous adaptation in real-time adaptive mixing and mastering environments.
-                  </p>
-                </div>
-                <span class="text-[11px] font-mono text-white/40 group-hover:text-white transition-colors">READ ARTICLE →</span>
-              </a>
-
+            <div id="field-notes-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 transition-opacity duration-300">
+              <!-- Dynamically populated by JS rotation engine -->
             </div>
 
-            <div class="mt-10 text-center sm:hidden">
-              <a href="./what-is-hybrid.html" class="text-xs font-mono text-lime-400 hover:underline">VIEW ALL FIELD NOTES →</a>
+            <div class="mt-8 flex items-center justify-between sm:hidden">
+              <a href="./what-is-hybrid.html" class="text-xs font-mono text-lime-400 hover:underline">VIEW ALL FIELD NOTES (13) →</a>
             </div>
           </section>
+
+          <script>
+            const ALL_FIELD_NOTES = [
+              {
+                title: "THE ARCHITECTURE OF THE THREE-MINUTE SONG",
+                date: "AUG 06, 2026",
+                category: "STRUCTURAL ANALYSIS",
+                desc: "How verse-chorus-bridge songwriting built for CDs and downloads gave way to front-loaded, algorithm-tuned arrangements built for streaming.",
+                url: "./songstructure.html",
+                color: "text-lime-400",
+                hoverColor: "group-hover:text-lime-400",
+                readTime: "12 MIN READ"
+              },
+              {
+                title: "PROMPTING THE MACHINE",
+                date: "JUL 26, 2026",
+                category: "PROMPT ENG",
+                desc: "How Suno, Udio, and the current wave of AI music tools turn a sentence into a song — how text encoders parse prompts, slider mechanics, and next-gen tools.",
+                url: "./promptingthemachine.html",
+                color: "text-cyan-400",
+                hoverColor: "group-hover:text-cyan-300",
+                readTime: "13 MIN READ"
+              },
+              {
+                title: "THE LAST NEW GENRE",
+                date: "JUL 21, 2026",
+                category: "CULTURE",
+                desc: "SoundCloud rap in 2019, COVID, and why algorithmic curation flattens cultural taste toward the familiar.",
+                url: "./lastnewgenre.html",
+                color: "text-purple-400",
+                hoverColor: "group-hover:text-purple-300",
+                readTime: "11 MIN READ"
+              },
+              {
+                title: "THE LIQUID EAR",
+                date: "JUL 04, 2026",
+                category: "NEURAL ARCH",
+                desc: "Liquid neural networks trade frozen weights for continuous adaptation in real-time adaptive mixing and mastering environments.",
+                url: "./liquidears.html",
+                color: "text-emerald-400",
+                hoverColor: "group-hover:text-emerald-300",
+                readTime: "10 MIN READ"
+              },
+              {
+                title: "THE AUTONOMOUS VIRTUAL STUDIO",
+                date: "MAY 17, 2026",
+                category: "MULTI-AGENT",
+                desc: "Multi-agent DAW control, latent space interpolation, and SLERP-based audio merging. A comprehensive guide on science and feasibility.",
+                url: "./agentichybridproduction.html",
+                color: "text-sky-400",
+                hoverColor: "group-hover:text-sky-300",
+                readTime: "15 MIN READ"
+              },
+              {
+                title: "LIQUID ECONOMY OF SOUND",
+                date: "MAY 16, 2026",
+                category: "FORECAST",
+                desc: "AI is bifurcating the music economy. An in-depth forecast on continuous generative audio streams and modular licensing models (2026–2031).",
+                url: "./musicindustryforecast.html",
+                color: "text-amber-400",
+                hoverColor: "group-hover:text-amber-300",
+                readTime: "14 MIN READ"
+              },
+              {
+                title: "MAY 2026 PRODUCTION TOOLS",
+                date: "MAY 11, 2026",
+                category: "ECOSYSTEM",
+                desc: "A field report and curated analysis of state-of-the-art hybrid production plugins, frameworks, and Suno Studio.",
+                url: "./may2026tools.html",
+                color: "text-teal-400",
+                hoverColor: "group-hover:text-teal-300",
+                readTime: "9 MIN READ"
+              },
+              {
+                title: "IS UPLOADING YOUR MUSIC STEALING?",
+                date: "MAY 06, 2026",
+                category: "COPYRIGHT & IP",
+                desc: "Should you upload a loop or full song to Suno or Udio? The upload strategy, IP truths, and legal realities artists need.",
+                url: "./trainingday.html",
+                color: "text-rose-400",
+                hoverColor: "group-hover:text-rose-300",
+                readTime: "12 MIN READ"
+              },
+              {
+                title: "DRAWING THE LINE: WHEN IS IT YOUR SONG?",
+                date: "MAY 06, 2026",
+                category: "PHILOSOPHY",
+                desc: "Where does an AI-generated song stop being AI? The line nobody in the industry has drawn… until now.",
+                url: "./machinehumanhybrid.html",
+                color: "text-indigo-400",
+                hoverColor: "group-hover:text-indigo-300",
+                readTime: "10 MIN READ"
+              },
+              {
+                title: "FUTURE OF HYBRID MANIFESTO",
+                date: "APR 28, 2026",
+                category: "MANIFESTO",
+                desc: "A manifesto on the evolution of Hybrid Music Production, from Black Box AI models to Multi-Agent Orchestration.",
+                url: "./futureofhybrid.html",
+                color: "text-fuchsia-400",
+                hoverColor: "group-hover:text-fuchsia-300",
+                readTime: "11 MIN READ"
+              },
+              {
+                title: "SUNO 101 MASTERCLASS",
+                date: "APR 20, 2026",
+                category: "PROMPT GUIDE",
+                desc: "A masterclass in transcending standard AI outputs using structural tags and psycho-acoustic architecture.",
+                url: "./Suno101.html",
+                color: "text-orange-400",
+                hoverColor: "group-hover:text-orange-300",
+                readTime: "14 MIN READ"
+              },
+              {
+                title: "WATERMARKS IN AI AUDIO",
+                date: "APR 15, 2026",
+                category: "STEGANOGRAPHY",
+                desc: "Explore the hidden technological cold war of AI audio steganography, digital watermarking, and machine listening systems.",
+                url: "./fingerprint.html",
+                color: "text-blue-400",
+                hoverColor: "group-hover:text-blue-300",
+                readTime: "12 MIN READ"
+              },
+              {
+                title: "C2PA MUSIC PROVENANCE",
+                date: "APR 02, 2026",
+                category: "PROVENANCE",
+                desc: "An intelligence report on C2PA, content credentials, and the future of music industry chain-of-custody.",
+                url: "./c2pa-music-provenance.html",
+                color: "text-violet-400",
+                hoverColor: "group-hover:text-violet-300",
+                readTime: "13 MIN READ"
+              }
+            ];
+
+            let currentFnIndex = 0;
+            let autoRotateTimer = null;
+            let isAutoRotating = true;
+
+            function renderFieldNotes() {
+              const grid = document.getElementById('field-notes-grid');
+              const indicator = document.getElementById('fn-indicator');
+              if (!grid) return;
+
+              grid.classList.add('opacity-0');
+
+              setTimeout(() => {
+                let cardsHtml = '';
+                const total = ALL_FIELD_NOTES.length;
+                for (let i = 0; i < 3; i++) {
+                  const itemIndex = (currentFnIndex + i) % total;
+                  const note = ALL_FIELD_NOTES[itemIndex];
+                  cardsHtml += `
+                    <a href="${note.url}" class="hairline-card p-7 group flex flex-col justify-between rounded-lg transition-all duration-300 hover:scale-[1.02]">
+                      <div>
+                        <div class="flex items-center justify-between text-[10px] font-mono ${note.color} mb-3">
+                          <span>${note.date}</span>
+                          <span class="text-white/30">${note.category}</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white uppercase tracking-wide mb-3 ${note.hoverColor} transition-colors">${note.title}</h3>
+                        <p class="text-xs text-white/65 font-light leading-relaxed mb-4">
+                          ${note.desc}
+                        </p>
+                      </div>
+                      <div class="flex items-center justify-between text-[11px] font-mono border-t border-white/5 pt-3 mt-auto">
+                        <span class="text-white/40 group-hover:text-white transition-colors">READ ARTICLE →</span>
+                        <span class="text-white/20 text-[9px]">${note.readTime}</span>
+                      </div>
+                    </a>
+                  `;
+                }
+
+                grid.innerHTML = cardsHtml;
+                if (indicator) {
+                  const start = currentFnIndex + 1;
+                  const end = Math.min(currentFnIndex + 3, total);
+                  indicator.textContent = `${start}–${end} of ${total}`;
+                }
+                grid.classList.remove('opacity-0');
+              }, 200);
+            }
+
+            function rotateFieldNotes(dir = 1) {
+              const total = ALL_FIELD_NOTES.length;
+              currentFnIndex = (currentFnIndex + dir * 3 + total) % total;
+              renderFieldNotes();
+            }
+
+            function toggleAutoRotate() {
+              isAutoRotating = !isAutoRotating;
+              const dot = document.getElementById('fn-pulse-dot');
+              if (isAutoRotating) {
+                if (dot) dot.className = "w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse";
+                startAutoRotate();
+              } else {
+                if (dot) dot.className = "w-1.5 h-1.5 rounded-full bg-white/30";
+                stopAutoRotate();
+              }
+            }
+
+            function startAutoRotate() {
+              stopAutoRotate();
+              autoRotateTimer = setInterval(() => {
+                rotateFieldNotes(1);
+              }, 7000);
+            }
+
+            function stopAutoRotate() {
+              if (autoRotateTimer) clearInterval(autoRotateTimer);
+            }
+
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', () => {
+                renderFieldNotes();
+                startAutoRotate();
+              });
+            } else {
+              renderFieldNotes();
+              startAutoRotate();
+            }
+          </script>
 
           <!-- 5. Social Presence & Network -->
           <section class="w-full max-w-5xl mx-auto px-6 py-16 text-center">
