@@ -754,6 +754,7 @@
               setTimeout(() => {
                 let cardsHtml = '';
                 const total = ALL_FIELD_NOTES.length;
+                for (let i = 0; i < 3; i++) {
                   const itemIndex = (currentFnIndex + i) % total;
                   const note = ALL_FIELD_NOTES[itemIndex];
                   const isNewCard = note.isNew || itemIndex === 0;
