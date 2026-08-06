@@ -598,7 +598,61 @@
             </div>
 
             <div id="field-notes-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 transition-opacity duration-300">
-              <!-- Dynamically populated by JS rotation engine -->
+              
+              <!-- Article 1: The Architecture of the Three-Minute Song -->
+              <a href="./songstructure.html" class="border border-emerald-500/40 shadow-[0_0_20px_rgba(52,211,153,0.15)] bg-zinc-950/60 p-7 group flex flex-col justify-between rounded-lg transition-all duration-300 hover:scale-[1.02]">
+                <div>
+                  <div class="flex items-center justify-between text-[10px] font-mono text-lime-400 mb-3">
+                    <span>AUG 06, 2026</span>
+                    <span class="text-[9px] font-mono tracking-widest text-emerald-400 uppercase px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 font-bold">NEW • STRUCTURAL ANALYSIS</span>
+                  </div>
+                  <h3 class="text-base font-bold text-white uppercase tracking-wide mb-3 group-hover:text-lime-400 transition-colors">THE ARCHITECTURE OF THE THREE-MINUTE SONG</h3>
+                  <p class="text-xs text-white/65 font-light leading-relaxed mb-4">
+                    How verse-chorus-bridge songwriting built for CDs and downloads gave way to front-loaded, algorithm-tuned arrangements built for streaming.
+                  </p>
+                </div>
+                <div class="flex items-center justify-between text-[11px] font-mono border-t border-white/5 pt-3 mt-auto">
+                  <span class="text-emerald-300 group-hover:text-white transition-colors">READ ARTICLE →</span>
+                  <span class="text-white/20 text-[9px]">12 MIN READ</span>
+                </div>
+              </a>
+
+              <!-- Article 2: Prompting the Machine -->
+              <a href="./promptingthemachine.html" class="hairline-card p-7 group flex flex-col justify-between rounded-lg transition-all duration-300 hover:scale-[1.02]">
+                <div>
+                  <div class="flex items-center justify-between text-[10px] font-mono text-cyan-400 mb-3">
+                    <span>JUL 26, 2026</span>
+                    <span class="text-white/30">PROMPT ENG</span>
+                  </div>
+                  <h3 class="text-base font-bold text-white uppercase tracking-wide mb-3 group-hover:text-cyan-300 transition-colors">PROMPTING THE MACHINE</h3>
+                  <p class="text-xs text-white/65 font-light leading-relaxed mb-4">
+                    How Suno, Udio, and the current wave of AI music tools turn a sentence into a song — how text encoders parse prompts, slider mechanics, and next-gen tools.
+                  </p>
+                </div>
+                <div class="flex items-center justify-between text-[11px] font-mono border-t border-white/5 pt-3 mt-auto">
+                  <span class="text-white/40 group-hover:text-white transition-colors">READ ARTICLE →</span>
+                  <span class="text-white/20 text-[9px]">13 MIN READ</span>
+                </div>
+              </a>
+
+              <!-- Article 3: The Last New Genre -->
+              <a href="./lastnewgenre.html" class="hairline-card p-7 group flex flex-col justify-between rounded-lg transition-all duration-300 hover:scale-[1.02]">
+                <div>
+                  <div class="flex items-center justify-between text-[10px] font-mono text-purple-400 mb-3">
+                    <span>JUL 21, 2026</span>
+                    <span class="text-white/30">CULTURE</span>
+                  </div>
+                  <h3 class="text-base font-bold text-white uppercase tracking-wide mb-3 group-hover:text-purple-300 transition-colors">THE LAST NEW GENRE</h3>
+                  <p class="text-xs text-white/65 font-light leading-relaxed mb-4">
+                    SoundCloud rap in 2019, COVID, and why algorithmic curation flattens cultural taste toward the familiar.
+                  </p>
+                </div>
+                <div class="flex items-center justify-between text-[11px] font-mono border-t border-white/5 pt-3 mt-auto">
+                  <span class="text-white/40 group-hover:text-white transition-colors">READ ARTICLE →</span>
+                  <span class="text-white/20 text-[9px]">11 MIN READ</span>
+                </div>
+              </a>
+
             </div>
 
             <div class="mt-8 flex items-center justify-between sm:hidden">
@@ -616,7 +670,8 @@
                 url: "./songstructure.html",
                 color: "text-lime-400",
                 hoverColor: "group-hover:text-lime-400",
-                readTime: "12 MIN READ"
+                readTime: "12 MIN READ",
+                isNew: true
               },
               {
                 title: "PROMPTING THE MACHINE",
@@ -757,7 +812,7 @@
                 for (let i = 0; i < 3; i++) {
                   const itemIndex = (currentFnIndex + i) % total;
                   const note = ALL_FIELD_NOTES[itemIndex];
-                  const isNewCard = note.isNew || itemIndex === 0;
+                  const isNewCard = !!note.isNew;
                   const borderClass = isNewCard ? "border border-emerald-500/40 shadow-[0_0_20px_rgba(52,211,153,0.15)] bg-zinc-950/60" : "hairline-card";
                   const badgeHtml = isNewCard 
                     ? `<span class="text-[9px] font-mono tracking-widest text-emerald-400 uppercase px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 font-bold">NEW • ${note.category}</span>`
