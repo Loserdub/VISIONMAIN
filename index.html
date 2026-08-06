@@ -754,15 +754,20 @@
               setTimeout(() => {
                 let cardsHtml = '';
                 const total = ALL_FIELD_NOTES.length;
-                for (let i = 0; i < 3; i++) {
                   const itemIndex = (currentFnIndex + i) % total;
                   const note = ALL_FIELD_NOTES[itemIndex];
+                  const isNewCard = note.isNew || itemIndex === 0;
+                  const borderClass = isNewCard ? "border border-emerald-500/40 shadow-[0_0_20px_rgba(52,211,153,0.15)] bg-zinc-950/60" : "hairline-card";
+                  const badgeHtml = isNewCard 
+                    ? `<span class="text-[9px] font-mono tracking-widest text-emerald-400 uppercase px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 font-bold">NEW • ${note.category}</span>`
+                    : `<span class="text-white/30">${note.category}</span>`;
+
                   cardsHtml += `
-                    <a href="${note.url}" class="hairline-card p-7 group flex flex-col justify-between rounded-lg transition-all duration-300 hover:scale-[1.02]">
+                    <a href="${note.url}" class="${borderClass} p-7 group flex flex-col justify-between rounded-lg transition-all duration-300 hover:scale-[1.02]">
                       <div>
                         <div class="flex items-center justify-between text-[10px] font-mono ${note.color} mb-3">
                           <span>${note.date}</span>
-                          <span class="text-white/30">${note.category}</span>
+                          ${badgeHtml}
                         </div>
                         <h3 class="text-base font-bold text-white uppercase tracking-wide mb-3 ${note.hoverColor} transition-colors">${note.title}</h3>
                         <p class="text-xs text-white/65 font-light leading-relaxed mb-4">
@@ -770,7 +775,7 @@
                         </p>
                       </div>
                       <div class="flex items-center justify-between text-[11px] font-mono border-t border-white/5 pt-3 mt-auto">
-                        <span class="text-white/40 group-hover:text-white transition-colors">READ ARTICLE →</span>
+                        <span class="${isNewCard ? 'text-emerald-300 group-hover:text-white' : 'text-white/40 group-hover:text-white'} transition-colors">READ ARTICLE →</span>
                         <span class="text-white/20 text-[9px]">${note.readTime}</span>
                       </div>
                     </a>

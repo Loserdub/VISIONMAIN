@@ -5,6 +5,7 @@ Sync Schema & Sitemap Hook Script for Antigravity Workspace.
 Automatically scans any newly added or modified HTML page, dynamically determines
 its schema entity type (TechArticle, SoftwareApplication, ProfilePage, ContactPage,
 CollectionPage, or WebPage), injects/updates an optimized connected JSON-LD @graph,
+registers new articles into index.html's rotating Field Notes array,
 and keeps sitemap.xml perfectly synchronized.
 """
 
@@ -65,19 +66,9 @@ def inspect_root_landing_page(index_path):
     return base_url, org_name, site_title, author_name
 
 def detect_page_type(file_name, content, title_text, headline, description):
-    """
-    Scans the HTML file markup, meta tags, and contents to classify page type:
-    - TechArticle / Article
-    - SoftwareApplication
-    - ProfilePage
-    - ContactPage
-    - CollectionPage
-    - WebPage (Fallback)
-    """
     if file_name == "index.html":
         return "WebPage"
 
-    # 1. Existing JSON-LD @type hint
     json_ld_match = re.search(r'<script\s+type="application/ld\+json">(.*?)</script>', content, re.DOTALL | re.IGNORECASE)
     if json_ld_match:
         try:
@@ -90,29 +81,23 @@ def detect_page_type(file_name, content, title_text, headline, description):
         except Exception:
             pass
 
-    # 2. Meta tags signals
     if re.search(r'<meta\s+property="og:type"\s+content="article"', content, re.IGNORECASE) or 'property="article:section"' in content:
         return "TechArticle"
 
-    # 3. Web App / SoftwareApplication signals
     app_files = ["mixrstudio.html", "subtractive.html", "jdaw.html", "slicer.html", "imagesizer.html", "chordcompose.html"]
     app_keywords = ["mixer", "synth", "slicer", "mastering suite", "audio app", "web app", "daw"]
     if file_name.lower() in app_files or any(kw in title_text.lower() for kw in app_keywords) or "<canvas" in content.lower() or "AudioContext" in content:
         return "SoftwareApplication"
 
-    # 4. Profile / Bio page
     if file_name == "bio.html" or "biography" in title_text.lower() or "bio" in headline.lower():
         return "ProfilePage"
 
-    # 5. Contact page
     if file_name == "contact.html" or "contact" in title_text.lower():
         return "ContactPage"
 
-    # 6. Collection / Portfolio pages
     if file_name in ["music.html", "projects.html"] or any(kw in title_text.lower() for kw in ["discography", "portfolio", "archive", "projects"]):
         return "CollectionPage"
 
-    # 7. Editorial Article / Field Notes signals
     article_files = [
         "songstructure.html", "promptingthemachine.html", "lastnewgenre.html",
         "liquidears.html", "agentichybridproduction.html", "musicindustryforecast.html",
@@ -137,7 +122,6 @@ def analyze_target_html(target_path, base_url):
 
     file_name = os.path.basename(target_path)
 
-    # 1. Canonical URL
     canonical_match = re.search(
         r'<link\s+rel="canonical"\s+href="([^"]+)"', content, re.IGNORECASE
     )
@@ -149,7 +133,6 @@ def analyze_target_html(target_path, base_url):
         else:
             canonical_url = f"{base_url}/{file_name}"
 
-    # 2. Title
     title_match = re.search(r'<title>(.*?)</title>', content, re.IGNORECASE)
     if title_match:
         title_text = title_match.group(1).strip()
@@ -158,20 +141,17 @@ def analyze_target_html(target_path, base_url):
         title_text = file_name.replace(".html", "").replace("-", " ").title()
         headline = title_text
 
-    # 3. Meta Description
     desc_match = re.search(
         r'<meta\s+name="description"\s+content="([^"]+)"', content, re.IGNORECASE
     )
     description = desc_match.group(1).strip() if desc_match else headline
 
-    # 4. H1
     h1_match = re.search(r'<h1[^>]*>(.*?)</h1>', content, re.IGNORECASE | re.DOTALL)
     if h1_match:
         clean_h1 = re.sub(r'<[^>]+>', '', h1_match.group(1)).strip()
         if clean_h1:
             headline = clean_h1
 
-    # 5. Dynamically detect page schema type
     page_type = detect_page_type(file_name, content, title_text, headline, description)
 
     return content, canonical_url, title_text, headline, description, page_type
@@ -183,7 +163,6 @@ def build_json_ld_graph(base_url, org_name, site_title, author_name, canonical_u
 
     graph = []
 
-    # 1. Main Entity based on page classification
     if page_type == "TechArticle":
         article_entity = {
             "@type": "TechArticle",
@@ -247,7 +226,6 @@ def build_json_ld_graph(base_url, org_name, site_title, author_name, canonical_u
         }
         graph.append(webpage_entity)
 
-    # 2. WebSite entity
     graph.append({
         "@type": "WebSite",
         "@id": website_id,
@@ -258,7 +236,6 @@ def build_json_ld_graph(base_url, org_name, site_title, author_name, canonical_u
         }
     })
 
-    # 3. Organization entity
     graph.append({
         "@type": "Organization",
         "@id": org_id,
@@ -270,7 +247,6 @@ def build_json_ld_graph(base_url, org_name, site_title, author_name, canonical_u
         }
     })
 
-    # 4. Person entity with complete job titles
     graph.append({
         "@type": "Person",
         "@id": person_id,
@@ -299,7 +275,6 @@ def build_json_ld_graph(base_url, org_name, site_title, author_name, canonical_u
         ]
     })
 
-    # 5. BreadcrumbList entity
     if file_name != "index.html":
         parent_name = "Field Notes" if page_type == "TechArticle" else ("Apps & Tools" if page_type == "SoftwareApplication" else "Home")
         parent_url = f"{base_url}/what-is-hybrid.html" if page_type == "TechArticle" else (f"{base_url}/projects.html" if page_type == "SoftwareApplication" else f"{base_url}/")
@@ -353,6 +328,44 @@ def update_html_file(target_path, content, json_ld_data):
     if updated_content != content:
         with open(target_path, "w", encoding="utf-8") as f:
             f.write(updated_content)
+
+def sync_index_field_notes(index_path, headline, description, page_type, file_name):
+    if page_type != "TechArticle" or file_name in ["index.html", "sitemap.html"] or not os.path.exists(index_path):
+        return
+
+    try:
+        with open(index_path, "r", encoding="utf-8") as f:
+            index_content = f.read()
+
+        rel_url = f"./{file_name}"
+        if rel_url in index_content:
+            return  # Already registered
+
+        today_str = datetime.now().strftime("%b %d, %Y").upper()
+        clean_title = headline.upper().replace('"', '\\"')
+        clean_desc = description.replace('"', '\\"')
+
+        new_entry_js = f"""              {{
+                title: "{clean_title}",
+                date: "{today_str}",
+                category: "FIELD NOTES",
+                desc: "{clean_desc}",
+                url: "{rel_url}",
+                color: "text-emerald-400",
+                hoverColor: "group-hover:text-emerald-300",
+                readTime: "10 MIN READ",
+                isNew: true
+              }},"""
+
+        if "const ALL_FIELD_NOTES = [" in index_content:
+            updated_content = index_content.replace(
+                "const ALL_FIELD_NOTES = [",
+                f"const ALL_FIELD_NOTES = [\n{new_entry_js}"
+            )
+            with open(index_path, "w", encoding="utf-8") as f:
+                f.write(updated_content)
+    except Exception:
+        pass
 
 def update_sitemap_xml(sitemap_path, canonical_url):
     today_str = datetime.now().strftime("%Y-%m-%d")
@@ -439,6 +452,7 @@ def main():
     )
 
     update_html_file(target_path, content, json_ld_data)
+    sync_index_field_notes(index_path, headline, description, page_type, file_name)
     update_sitemap_xml(sitemap_path, canonical_url)
 
 if __name__ == "__main__":
