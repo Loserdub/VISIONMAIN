@@ -1,0 +1,1906 @@
+[
+  {
+    "file": "404.html",
+    "script_count": 1,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://trustnodelogic.com/404.html#webpage",
+            "url": "https://trustnodelogic.com/404.html",
+            "name": "404 - Page Not Found | Trust Node Logic",
+            "description": "Page not found.",
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://trustnodelogic.com/404.html#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://trustnodelogic.com/404.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustnodelogic.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "404 Page Not Found",
+                "item": "https://trustnodelogic.com/404.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "file": "Suno101.html",
+    "script_count": 1,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://trustnodelogic.com/Suno101.html#webpage",
+            "url": "https://trustnodelogic.com/Suno101.html",
+            "name": "Suno 101: Mastering Suno AI Generation | Justin Ray",
+            "description": "Advanced AI generation techniques from an early Suno team member.",
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://trustnodelogic.com/Suno101.html#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "mainEntity": {
+              "@id": "https://trustnodelogic.com/Suno101.html#article"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://trustnodelogic.com/Suno101.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustnodelogic.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Suno 101",
+                "item": "https://trustnodelogic.com/Suno101.html"
+              }
+            ]
+          },
+          {
+            "@type": "TechArticle",
+            "@id": "https://trustnodelogic.com/Suno101.html#article",
+            "headline": "Suno 101: Mastering Suno AI Generation",
+            "description": "Advanced AI generation techniques from an early Suno team member.",
+            "url": "https://trustnodelogic.com/Suno101.html",
+            "mainEntityOfPage": {
+              "@id": "https://trustnodelogic.com/Suno101.html#webpage"
+            },
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "author": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "publisher": {
+              "@id": "https://trustnodelogic.com/#organization"
+            },
+            "datePublished": "2026-07-21",
+            "dateModified": "2026-07-21",
+            "image": "https://trustnodelogic.com/favicon.png",
+            "inLanguage": "en-US"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "file": "agentichybridproduction.html",
+    "script_count": 1,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://trustnodelogic.com/agentichybridproduction.html#webpage",
+            "url": "https://trustnodelogic.com/agentichybridproduction.html",
+            "name": "Autonomous Virtual Studio: Multi-Agent DAW Guide | Trust Node Logic",
+            "description": "Architectural guide on multi-agent AI systems, OSC, EnCodec, and Ableton automation.",
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://trustnodelogic.com/agentichybridproduction.html#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "mainEntity": {
+              "@id": "https://trustnodelogic.com/agentichybridproduction.html#article"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://trustnodelogic.com/agentichybridproduction.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustnodelogic.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Agentic Hybrid Production",
+                "item": "https://trustnodelogic.com/agentichybridproduction.html"
+              }
+            ]
+          },
+          {
+            "@type": "TechArticle",
+            "@id": "https://trustnodelogic.com/agentichybridproduction.html#article",
+            "headline": "Autonomous Virtual Studio: Multi-Agent DAW Guide",
+            "description": "Architectural guide on multi-agent AI systems, OSC, EnCodec, and Ableton automation.",
+            "url": "https://trustnodelogic.com/agentichybridproduction.html",
+            "mainEntityOfPage": {
+              "@id": "https://trustnodelogic.com/agentichybridproduction.html#webpage"
+            },
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "author": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "publisher": {
+              "@id": "https://trustnodelogic.com/#organization"
+            },
+            "datePublished": "2026-07-21",
+            "dateModified": "2026-07-21",
+            "image": "https://trustnodelogic.com/favicon.png",
+            "inLanguage": "en-US"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "file": "bio.html",
+    "script_count": 1,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ProfilePage",
+            "@id": "https://trustnodelogic.com/bio.html#webpage",
+            "url": "https://trustnodelogic.com/bio.html",
+            "name": "Bio | Justin Ray \u2014 Music Producer, Artist & Pioneer of Hybrid Production",
+            "description": "Official bio of Justin Ray (JRAY / loserdub / VISION / Flawed Future / le vide / disarray) \u2014 Music Producer, Recording Artist, and pioneer of Hybrid AI Music Production.",
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://trustnodelogic.com/bio.html#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "mainEntity": {
+              "@id": "https://trustnodelogic.com/#person"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://trustnodelogic.com/bio.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustnodelogic.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Bio",
+                "item": "https://trustnodelogic.com/bio.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "file": "black-mirror.html",
+    "script_count": 1,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://trustnodelogic.com/black-mirror.html#webpage",
+            "url": "https://trustnodelogic.com/black-mirror.html",
+            "name": "Justin Ray | Black Mirror",
+            "description": "Sound design & MIDI portal \u2014 meet your digital twin.",
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://trustnodelogic.com/black-mirror.html#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "mainEntity": {
+              "@id": "https://trustnodelogic.com/black-mirror.html#softwareapplication"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://trustnodelogic.com/black-mirror.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustnodelogic.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Projects",
+                "item": "https://trustnodelogic.com/projects.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Black Mirror",
+                "item": "https://trustnodelogic.com/black-mirror.html"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "SoftwareApplication",
+              "WebApplication"
+            ],
+            "@id": "https://trustnodelogic.com/black-mirror.html#softwareapplication",
+            "name": "Black Mirror Sound Design Portal",
+            "url": "https://trustnodelogic.com/black-mirror.html",
+            "applicationCategory": "MusicApplication",
+            "operatingSystem": "Web",
+            "author": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "publisher": {
+              "@id": "https://trustnodelogic.com/#organization"
+            },
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "mainEntityOfPage": {
+              "@id": "https://trustnodelogic.com/black-mirror.html#webpage"
+            },
+            "image": "https://trustnodelogic.com/favicon.png"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "file": "c2pa-music-provenance.html",
+    "script_count": 1,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://trustnodelogic.com/c2pa-music-provenance.html#webpage",
+            "url": "https://trustnodelogic.com/c2pa-music-provenance.html",
+            "name": "Justin Ray | C2PA Music Provenance",
+            "description": "C2PA, content credentials & music transparency in post-AI music distribution.",
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://trustnodelogic.com/c2pa-music-provenance.html#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "mainEntity": {
+              "@id": "https://trustnodelogic.com/c2pa-music-provenance.html#article"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://trustnodelogic.com/c2pa-music-provenance.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustnodelogic.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "C2PA Provenance",
+                "item": "https://trustnodelogic.com/c2pa-music-provenance.html"
+              }
+            ]
+          },
+          {
+            "@type": "TechArticle",
+            "@id": "https://trustnodelogic.com/c2pa-music-provenance.html#article",
+            "headline": "C2PA Music Provenance Deep Dive",
+            "description": "C2PA, content credentials & music transparency in post-AI music distribution.",
+            "url": "https://trustnodelogic.com/c2pa-music-provenance.html",
+            "mainEntityOfPage": {
+              "@id": "https://trustnodelogic.com/c2pa-music-provenance.html#webpage"
+            },
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "author": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "publisher": {
+              "@id": "https://trustnodelogic.com/#organization"
+            },
+            "datePublished": "2026-07-21",
+            "dateModified": "2026-07-21",
+            "image": "https://trustnodelogic.com/favicon.png",
+            "inLanguage": "en-US"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "file": "contact.html",
+    "script_count": 1,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ContactPage",
+            "@id": "https://trustnodelogic.com/contact.html#webpage",
+            "url": "https://trustnodelogic.com/contact.html",
+            "name": "Contact | Justin Ray \u2014 Collaboration, Booking & Creative Inquiries",
+            "description": "Collaboration, booking & creative tech inquiries.",
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://trustnodelogic.com/contact.html#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://trustnodelogic.com/contact.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustnodelogic.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Contact",
+                "item": "https://trustnodelogic.com/contact.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "file": "fingerprint.html",
+    "script_count": 1,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://trustnodelogic.com/fingerprint.html#webpage",
+            "url": "https://trustnodelogic.com/fingerprint.html",
+            "name": "Justin Ray | AI Audio Fingerprinting",
+            "description": "AI audio watermarks, steganography & adversarial DSP.",
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://trustnodelogic.com/fingerprint.html#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "mainEntity": {
+              "@id": "https://trustnodelogic.com/fingerprint.html#article"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://trustnodelogic.com/fingerprint.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustnodelogic.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "AI Audio Fingerprinting",
+                "item": "https://trustnodelogic.com/fingerprint.html"
+              }
+            ]
+          },
+          {
+            "@type": "TechArticle",
+            "@id": "https://trustnodelogic.com/fingerprint.html#article",
+            "headline": "Watermarks in AI Audio (The Invisible Grid)",
+            "description": "AI audio watermarks, steganography & adversarial DSP.",
+            "url": "https://trustnodelogic.com/fingerprint.html",
+            "mainEntityOfPage": {
+              "@id": "https://trustnodelogic.com/fingerprint.html#webpage"
+            },
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "author": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "publisher": {
+              "@id": "https://trustnodelogic.com/#organization"
+            },
+            "datePublished": "2026-07-21",
+            "dateModified": "2026-07-21",
+            "image": "https://trustnodelogic.com/favicon.png",
+            "inLanguage": "en-US"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "file": "futureofhybrid.html",
+    "script_count": 1,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://trustnodelogic.com/futureofhybrid.html#webpage",
+            "url": "https://trustnodelogic.com/futureofhybrid.html",
+            "name": "Justin Ray | Future of Hybrid",
+            "description": "Strategic forecast on generative tools in mainstream sound design.",
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://trustnodelogic.com/futureofhybrid.html#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "mainEntity": {
+              "@id": "https://trustnodelogic.com/futureofhybrid.html#article"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://trustnodelogic.com/futureofhybrid.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustnodelogic.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Future of Hybrid",
+                "item": "https://trustnodelogic.com/futureofhybrid.html"
+              }
+            ]
+          },
+          {
+            "@type": "Article",
+            "@id": "https://trustnodelogic.com/futureofhybrid.html#article",
+            "headline": "The Future of Hybrid Production",
+            "description": "Strategic forecast on generative tools in mainstream sound design.",
+            "url": "https://trustnodelogic.com/futureofhybrid.html",
+            "mainEntityOfPage": {
+              "@id": "https://trustnodelogic.com/futureofhybrid.html#webpage"
+            },
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "author": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "publisher": {
+              "@id": "https://trustnodelogic.com/#organization"
+            },
+            "datePublished": "2026-07-21",
+            "dateModified": "2026-07-21",
+            "image": "https://trustnodelogic.com/favicon.png",
+            "inLanguage": "en-US"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "file": "hp2026.html",
+    "script_count": 1,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://trustnodelogic.com/hp2026.html#webpage",
+            "url": "https://trustnodelogic.com/hp2026.html",
+            "name": "The Trust Signal Chain: AI, Hybrid Production, and the Industry in 2026 | TrustNodeLogic",
+            "description": "Courts, the EU AI Act, DDEX disclosure, streaming platforms, and the Grammys all ruled on AI music in 2026. None of them ruled human or AI. A TrustNodeLogic field note on what actually happened.",
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://trustnodelogic.com/hp2026.html#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "mainEntity": {
+              "@id": "https://trustnodelogic.com/hp2026.html#article"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://trustnodelogic.com/hp2026.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustnodelogic.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "The Trust Signal Chain",
+                "item": "https://trustnodelogic.com/hp2026.html"
+              }
+            ]
+          },
+          {
+            "@type": "TechArticle",
+            "@id": "https://trustnodelogic.com/hp2026.html#article",
+            "headline": "The Trust Signal Chain: AI, Hybrid Production, and the Industry in 2026",
+            "description": "Courts, the EU AI Act, DDEX disclosure, streaming platforms, and the Grammys all ruled on AI music in 2026. None of them ruled human or AI. A TrustNodeLogic field note on what actually happened.",
+            "url": "https://trustnodelogic.com/hp2026.html",
+            "mainEntityOfPage": {
+              "@id": "https://trustnodelogic.com/hp2026.html#webpage"
+            },
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "author": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "publisher": {
+              "@id": "https://trustnodelogic.com/#organization"
+            },
+            "datePublished": "2026-08-09",
+            "dateModified": "2026-08-09",
+            "image": "https://trustnodelogic.com/favicon.png",
+            "inLanguage": "en-US"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "file": "hybridproductionstandard.html",
+    "script_count": 1,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://trustnodelogic.com/hybridproductionstandard.html#webpage",
+            "url": "https://trustnodelogic.com/hybridproductionstandard.html",
+            "name": "The Hybrid Production Standard (HPS-1.0) \u2014 Technical Specification & Executive Takeaway | TrustNodeLogic",
+            "description": "The definitive specification and verification system for AI, hybrid, and human music production. Timed to EU AI Act Article 50 (August 2, 2026). Authored by Justin Ray.",
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://trustnodelogic.com/hybridproductionstandard.html#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "mainEntity": {
+              "@id": "https://trustnodelogic.com/hybridproductionstandard.html#article"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://trustnodelogic.com/hybridproductionstandard.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustnodelogic.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Hybrid Production Standard",
+                "item": "https://trustnodelogic.com/hybridproductionstandard.html"
+              }
+            ]
+          },
+          {
+            "@type": "TechArticle",
+            "@id": "https://trustnodelogic.com/hybridproductionstandard.html#article",
+            "headline": "The Hybrid Production Standard (HPS-1.0)",
+            "description": "The definitive specification and verification system for AI, hybrid, and human music production. Timed to EU AI Act Article 50 (August 2, 2026). Authored by Justin Ray.",
+            "url": "https://trustnodelogic.com/hybridproductionstandard.html",
+            "mainEntityOfPage": {
+              "@id": "https://trustnodelogic.com/hybridproductionstandard.html#webpage"
+            },
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "author": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "publisher": {
+              "@id": "https://trustnodelogic.com/#organization"
+            },
+            "datePublished": "2026-07-28",
+            "dateModified": "2026-07-28",
+            "image": "https://trustnodelogic.com/assets/images/hps-card.png",
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "CreativeWork",
+            "@id": "https://trustnodelogic.com/hybridproductionstandard.html#creativework",
+            "name": "Hybrid Production Standard (HPS-1.0)",
+            "url": "https://trustnodelogic.com/hybridproductionstandard.html",
+            "creator": {
+              "@id": "https://trustnodelogic.com/#person"
+            }
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "file": "index.html",
+    "script_count": 1,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://trustnodelogic.com/#person",
+            "name": "Justin Ray",
+            "additionalName": "Justin Tyler Ray",
+            "alternateName": [
+              "JRAY",
+              "loserdub",
+              "VISION",
+              "Flawed Future",
+              "le vide",
+              "disarray"
+            ],
+            "url": "https://trustnodelogic.com",
+            "image": "https://trustnodelogic.com/favicon.png",
+            "email": "mailto:justin@trustnodelogic.com",
+            "jobTitle": [
+              "Music Producer",
+              "Music Artist",
+              "Pioneer of Hybrid AI Music Production",
+              "Audio Engineer",
+              "Creative Technologist"
+            ],
+            "mainEntityOfPage": {
+              "@id": "https://trustnodelogic.com/#webpage"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "East Lansing",
+              "addressRegion": "MI",
+              "addressCountry": "US"
+            },
+            "knowsAbout": [
+              "Hybrid Music Production",
+              "Generative Artificial Intelligence",
+              "Web Audio API",
+              "Audio Engineering",
+              "Digital Audio Workstation",
+              "C2PA Provenance",
+              "Google MusicLM",
+              "Suno AI",
+              "Udio",
+              "SLERP Audio",
+              "Hybrid Production Standard",
+              "HPS-1.0",
+              "EU AI Act Article 50",
+              "DDEX ERN 4.3",
+              "Spectral Splitting",
+              "MIXR Studio",
+              "Sound Design",
+              "Logic Pro X",
+              "Ableton Live"
+            ],
+            "memberOf": [
+              {
+                "@id": "https://trustnodelogic.com/#organization"
+              },
+              {
+                "@id": "https://www.reddit.com/r/hybridproduction/#organization"
+              }
+            ],
+            "sameAs": [
+              "https://musicbrainz.org/artist/882fdb9b-8655-45dd-8e24-a59cd750d053",
+              "https://soundcloud.com/visiontracks",
+              "https://soundcloud.com/loserdub",
+              "https://www.youtube.com/@loserdub",
+              "https://www.linkedin.com/in/jray-me/",
+              "https://x.com/TheInnerVision",
+              "https://www.instagram.com/jray.me/",
+              "https://open.spotify.com/artist/3VZelnnW9OR0DyR2qRn4Oq",
+              "https://open.spotify.com/artist/6GGZwLOLxVxYGOcMry3NDi",
+              "https://open.spotify.com/artist/42TmrCeIumkPRyTNOPP78t",
+              "https://open.spotify.com/artist/3FNFzRyU0PCA2vjihWsg6y",
+              "https://open.spotify.com/artist/6TlAxGL1Hm4FRWfTxprlMi",
+              "https://www.reddit.com/r/hybridproduction/",
+              "https://network.landr.com/users/vision-hybrid",
+              "https://github.com/loserdub"
+            ]
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://trustnodelogic.com/#organization",
+            "name": "Trust Node Logic",
+            "alternateName": "JRAY & Trust Node Logic",
+            "url": "https://trustnodelogic.com",
+            "logo": "https://trustnodelogic.com/favicon.png",
+            "founder": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "slogan": "The Frontier of Hybrid AI Music Production & Creative Technology",
+            "knowsAbout": [
+              "Hybrid Production",
+              "AI Music Generation",
+              "Audio Engineering",
+              "Generative Audio Workflows",
+              "HPS-1.0 Metadata Verification"
+            ]
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://www.reddit.com/r/hybridproduction/#organization",
+            "name": "r/HybridProduction",
+            "url": "https://www.reddit.com/r/hybridproduction/",
+            "description": "The definitive online community for Hybrid Music Production.",
+            "founder": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "sameAs": "https://www.reddit.com/r/hybridproduction/"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://trustnodelogic.com/#website",
+            "url": "https://trustnodelogic.com",
+            "name": "Trust Node Logic | Pioneer of Hybrid AI Music Production",
+            "description": "Official hub of Justin Ray (JRAY / loserdub), pioneer of the Hybrid AI Music Production methodology, creative technologist, and founder of r/hybridproduction.",
+            "author": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "publisher": {
+              "@id": "https://trustnodelogic.com/#organization"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://trustnodelogic.com/#webpage",
+            "url": "https://trustnodelogic.com/",
+            "name": "Justin Ray | Hybrid Production / Artist \u2014 Trust Node Logic",
+            "description": "Official hub of Justin Ray (JRAY / loserdub), pioneer of Hybrid AI Music Production, creator of MIXR Studio, and author of HPS-1.0.",
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "about": [
+              {
+                "@id": "https://trustnodelogic.com/#person"
+              },
+              {
+                "@id": "https://trustnodelogic.com/#organization"
+              },
+              {
+                "@id": "https://www.reddit.com/r/hybridproduction/#organization"
+              }
+            ],
+            "breadcrumb": {
+              "@id": "https://trustnodelogic.com/#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "hasPart": [
+              {
+                "@type": "WebPage",
+                "name": "Music",
+                "url": "https://trustnodelogic.com/music.html"
+              },
+              {
+                "@type": "WebPage",
+                "name": "Projects",
+                "url": "https://trustnodelogic.com/projects.html"
+              },
+              {
+                "@type": "WebPage",
+                "name": "Bio",
+                "url": "https://trustnodelogic.com/bio.html"
+              },
+              {
+                "@type": "WebPage",
+                "name": "What Is Hybrid Production",
+                "url": "https://trustnodelogic.com/what-is-hybrid.html"
+              },
+              {
+                "@type": "WebPage",
+                "name": "Services",
+                "url": "https://trustnodelogic.com/services.html"
+              },
+              {
+                "@type": "WebPage",
+                "name": "Contact",
+                "url": "https://trustnodelogic.com/contact.html"
+              },
+              {
+                "@type": "WebPage",
+                "name": "Hybrid Production Standard (HPS-1.0)",
+                "url": "https://trustnodelogic.com/hybridproductionstandard.html"
+              },
+              {
+                "@type": "WebPage",
+                "name": "MIXR Studio",
+                "url": "https://trustnodelogic.com/mixrstudio.html"
+              },
+              {
+                "@type": "WebPage",
+                "name": "The Trust Signal Chain (2026)",
+                "url": "https://trustnodelogic.com/hp2026.html"
+              }
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://trustnodelogic.com/#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustnodelogic.com/"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "file": "lastnewgenre.html",
+    "script_count": 1,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://trustnodelogic.com/lastnewgenre.html#webpage",
+            "url": "https://trustnodelogic.com/lastnewgenre.html",
+            "name": "The Last New Genre: SoundCloud Rap, COVID, and the Algorithm's Taste for the Familiar",
+            "description": "Why SoundCloud rap in 2019 is the last genre a mass audience agreed was genuinely new, what COVID actually broke, and why the same flattening shows up in dating apps and online outrage.",
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://trustnodelogic.com/lastnewgenre.html#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "mainEntity": {
+              "@id": "https://trustnodelogic.com/lastnewgenre.html#article"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://trustnodelogic.com/lastnewgenre.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustnodelogic.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "The Last New Genre",
+                "item": "https://trustnodelogic.com/lastnewgenre.html"
+              }
+            ]
+          },
+          {
+            "@type": "Article",
+            "@id": "https://trustnodelogic.com/lastnewgenre.html#article",
+            "headline": "The Last New Genre: SoundCloud Rap, COVID, and the Algorithm's Taste for the Familiar",
+            "description": "Why SoundCloud rap in 2019 is the last genre a mass audience agreed was genuinely new, what COVID actually broke, and why the same flattening shows up in dating apps and online outrage.",
+            "url": "https://trustnodelogic.com/lastnewgenre.html",
+            "mainEntityOfPage": {
+              "@id": "https://trustnodelogic.com/lastnewgenre.html#webpage"
+            },
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "author": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "publisher": {
+              "@id": "https://trustnodelogic.com/#organization"
+            },
+            "datePublished": "2026-07-21",
+            "dateModified": "2026-07-21",
+            "image": "https://trustnodelogic.com/favicon.png",
+            "inLanguage": "en-US"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "file": "liquidears.html",
+    "script_count": 1,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://trustnodelogic.com/liquidears.html#webpage",
+            "url": "https://trustnodelogic.com/liquidears.html",
+            "name": "Liquid Neural Networks in Audio Production | The Adaptive Alternative to Frozen Models",
+            "description": "Liquid neural networks trade frozen weights for continuous adaptation. Here's what that architecture could mean for real-time mixing, mastering, and hybrid audio workflows.",
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://trustnodelogic.com/liquidears.html#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "mainEntity": {
+              "@id": "https://trustnodelogic.com/liquidears.html#article"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://trustnodelogic.com/liquidears.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustnodelogic.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "The Liquid Ear",
+                "item": "https://trustnodelogic.com/liquidears.html"
+              }
+            ]
+          },
+          {
+            "@type": "TechArticle",
+            "@id": "https://trustnodelogic.com/liquidears.html#article",
+            "headline": "Liquid Neural Networks in Audio Production",
+            "description": "Liquid neural networks trade frozen weights for continuous adaptation. Here's what that architecture could mean for real-time mixing, mastering, and hybrid audio workflows.",
+            "url": "https://trustnodelogic.com/liquidears.html",
+            "mainEntityOfPage": {
+              "@id": "https://trustnodelogic.com/liquidears.html#webpage"
+            },
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "author": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "publisher": {
+              "@id": "https://trustnodelogic.com/#organization"
+            },
+            "datePublished": "2026-07-21",
+            "dateModified": "2026-07-21",
+            "image": "https://trustnodelogic.com/favicon.png",
+            "inLanguage": "en-US"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "file": "machinehumanhybrid.html",
+    "script_count": 1,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://trustnodelogic.com/machinehumanhybrid.html#webpage",
+            "url": "https://trustnodelogic.com/machinehumanhybrid.html",
+            "name": "Justin Ray | Human Machine Hybrid",
+            "description": "Cognitive ergonomics of prompt-to-DAW synthesis.",
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://trustnodelogic.com/machinehumanhybrid.html#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "mainEntity": {
+              "@id": "https://trustnodelogic.com/machinehumanhybrid.html#article"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://trustnodelogic.com/machinehumanhybrid.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustnodelogic.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Machine Human Hybrid",
+                "item": "https://trustnodelogic.com/machinehumanhybrid.html"
+              }
+            ]
+          },
+          {
+            "@type": "Article",
+            "@id": "https://trustnodelogic.com/machinehumanhybrid.html#article",
+            "headline": "Machine Human Hybrid",
+            "description": "Cognitive ergonomics of prompt-to-DAW synthesis.",
+            "url": "https://trustnodelogic.com/machinehumanhybrid.html",
+            "mainEntityOfPage": {
+              "@id": "https://trustnodelogic.com/machinehumanhybrid.html#webpage"
+            },
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "author": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "publisher": {
+              "@id": "https://trustnodelogic.com/#organization"
+            },
+            "datePublished": "2026-05-06",
+            "dateModified": "2026-05-06",
+            "image": "https://trustnodelogic.com/favicon.png",
+            "inLanguage": "en-US"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "file": "may2026tools.html",
+    "script_count": 1,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://trustnodelogic.com/may2026tools.html#webpage",
+            "url": "https://trustnodelogic.com/may2026tools.html",
+            "name": "Justin Ray | Hybrid Music Tools",
+            "description": "2026 field report: Suno Studio, Splice & iZotope RX.",
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://trustnodelogic.com/may2026tools.html#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "mainEntity": {
+              "@id": "https://trustnodelogic.com/may2026tools.html#article"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://trustnodelogic.com/may2026tools.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustnodelogic.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "May 2026 Tools",
+                "item": "https://trustnodelogic.com/may2026tools.html"
+              }
+            ]
+          },
+          {
+            "@type": "TechArticle",
+            "@id": "https://trustnodelogic.com/may2026tools.html#article",
+            "headline": "May 2026 Production Tools Field Report",
+            "description": "2026 field report: Suno Studio, Splice & iZotope RX.",
+            "url": "https://trustnodelogic.com/may2026tools.html",
+            "mainEntityOfPage": {
+              "@id": "https://trustnodelogic.com/may2026tools.html#webpage"
+            },
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "author": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "publisher": {
+              "@id": "https://trustnodelogic.com/#organization"
+            },
+            "datePublished": "2026-05-11",
+            "dateModified": "2026-05-11",
+            "image": "https://trustnodelogic.com/favicon.png",
+            "inLanguage": "en-US"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "file": "mixrstudio.html",
+    "script_count": 1,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://trustnodelogic.com/mixrstudio.html#webpage",
+            "url": "https://trustnodelogic.com/mixrstudio.html",
+            "name": "MIXR Studio \u2014 Browser-Native Audio Segment Mixer | JRAY",
+            "description": "MIXR Studio is a free, browser-native audio segment mixer for hybrid music producers. Load tracks, auto-detect sections, drag-arrange segments on a master timeline, and export a rendered WAV \u2014 no install required. By JRAY.",
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://trustnodelogic.com/mixrstudio.html#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "mainEntity": {
+              "@id": "https://trustnodelogic.com/mixrstudio.html#softwareapplication"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://trustnodelogic.com/mixrstudio.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustnodelogic.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Projects",
+                "item": "https://trustnodelogic.com/projects.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "MIXR Studio",
+                "item": "https://trustnodelogic.com/mixrstudio.html"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "SoftwareApplication",
+              "WebApplication"
+            ],
+            "@id": "https://trustnodelogic.com/mixrstudio.html#softwareapplication",
+            "name": "MIXR Studio",
+            "url": "https://trustnodelogic.com/mixrstudio.html",
+            "applicationCategory": "MusicApplication",
+            "operatingSystem": "Web",
+            "author": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "publisher": {
+              "@id": "https://trustnodelogic.com/#organization"
+            },
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "mainEntityOfPage": {
+              "@id": "https://trustnodelogic.com/mixrstudio.html#webpage"
+            },
+            "image": "https://trustnodelogic.com/favicon.png"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "file": "music.html",
+    "script_count": 1,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://trustnodelogic.com/music.html#webpage",
+            "url": "https://trustnodelogic.com/music.html",
+            "name": "Music | Justin Ray \u2014 Hybrid Producer",
+            "description": "loserdub, VISION, le vide \u2014 AI-human hybrid music.",
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://trustnodelogic.com/music.html#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://trustnodelogic.com/music.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustnodelogic.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Music",
+                "item": "https://trustnodelogic.com/music.html"
+              }
+            ]
+          },
+          {
+            "@type": "MusicGroup",
+            "@id": "https://trustnodelogic.com/music.html#loserdub",
+            "name": "loserdub",
+            "founder": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "url": "https://trustnodelogic.com/music.html"
+          },
+          {
+            "@type": "MusicGroup",
+            "@id": "https://trustnodelogic.com/music.html#VISION",
+            "name": "VISION",
+            "founder": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "url": "https://trustnodelogic.com/music.html"
+          },
+          {
+            "@type": "MusicGroup",
+            "@id": "https://trustnodelogic.com/music.html#levide",
+            "name": "le vide",
+            "founder": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "url": "https://trustnodelogic.com/music.html"
+          },
+          {
+            "@type": "MusicGroup",
+            "@id": "https://trustnodelogic.com/music.html#flawedfuture",
+            "name": "Flawed Future",
+            "founder": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "url": "https://trustnodelogic.com/music.html"
+          },
+          {
+            "@type": "MusicGroup",
+            "@id": "https://trustnodelogic.com/music.html#disarray",
+            "name": "disarray",
+            "founder": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "url": "https://trustnodelogic.com/music.html"
+          },
+          {
+            "@type": "AudioObject",
+            "@id": "https://trustnodelogic.com/music.html#soundcloud-embed",
+            "name": "JRAY & loserdub SoundCloud Discography Player",
+            "embedUrl": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/3268884"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "file": "musicindustryforecast.html",
+    "script_count": 1,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://trustnodelogic.com/musicindustryforecast.html#webpage",
+            "url": "https://trustnodelogic.com/musicindustryforecast.html",
+            "name": "Liquid Economy of Sound: AI Music Forecast (2026\u20132031) | JRAY",
+            "description": "Economic and licensing analysis of generative audio assets.",
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://trustnodelogic.com/musicindustryforecast.html#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "mainEntity": {
+              "@id": "https://trustnodelogic.com/musicindustryforecast.html#article"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://trustnodelogic.com/musicindustryforecast.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustnodelogic.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Music Industry Forecast",
+                "item": "https://trustnodelogic.com/musicindustryforecast.html"
+              }
+            ]
+          },
+          {
+            "@type": "TechArticle",
+            "@id": "https://trustnodelogic.com/musicindustryforecast.html#article",
+            "headline": "The Liquid Economy of Sound: AI Music Forecast (2026\u20132031)",
+            "description": "Economic and licensing analysis of generative audio assets.",
+            "url": "https://trustnodelogic.com/musicindustryforecast.html",
+            "mainEntityOfPage": {
+              "@id": "https://trustnodelogic.com/musicindustryforecast.html#webpage"
+            },
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "author": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "publisher": {
+              "@id": "https://trustnodelogic.com/#organization"
+            },
+            "datePublished": "2026-05-16",
+            "dateModified": "2026-05-16",
+            "image": "https://trustnodelogic.com/favicon.png",
+            "inLanguage": "en-US"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "file": "projects.html",
+    "script_count": 1,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "CollectionPage",
+            "@id": "https://trustnodelogic.com/projects.html#webpage",
+            "url": "https://trustnodelogic.com/projects.html",
+            "name": "Projects | Justin Ray \u2014 Browser Audio Tools & Creative Apps",
+            "description": "Browser audio tools & creative apps by JRAY.",
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://trustnodelogic.com/projects.html#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://trustnodelogic.com/projects.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustnodelogic.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Projects",
+                "item": "https://trustnodelogic.com/projects.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "file": "promptingthemachine.html",
+    "script_count": 1,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://trustnodelogic.com/promptingthemachine.html#webpage",
+            "url": "https://trustnodelogic.com/promptingthemachine.html",
+            "name": "Prompting the Machine: How AI Music Actually Hears You",
+            "description": "A field guide to how Suno, Udio, and the current wave of AI music tools turn a sentence into a song \u2014 how prompts are read, what the sliders actually do, and who's building the next generation of tools.",
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://trustnodelogic.com/promptingthemachine.html#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "mainEntity": {
+              "@id": "https://trustnodelogic.com/promptingthemachine.html#article"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://trustnodelogic.com/promptingthemachine.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustnodelogic.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Prompting the Machine",
+                "item": "https://trustnodelogic.com/promptingthemachine.html"
+              }
+            ]
+          },
+          {
+            "@type": "TechArticle",
+            "@id": "https://trustnodelogic.com/promptingthemachine.html#article",
+            "headline": "Prompting the Machine: How AI Music Actually Hears You",
+            "description": "A field guide to how Suno, Udio, and the current wave of AI music tools turn a sentence into a song \u2014 how prompts are read, what the sliders actually do, and who's building the next generation of tools.",
+            "url": "https://trustnodelogic.com/promptingthemachine.html",
+            "mainEntityOfPage": {
+              "@id": "https://trustnodelogic.com/promptingthemachine.html#webpage"
+            },
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "author": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "publisher": {
+              "@id": "https://trustnodelogic.com/#organization"
+            },
+            "datePublished": "2026-07-26",
+            "dateModified": "2026-07-26",
+            "image": "https://trustnodelogic.com/assets/images/machine-promptcard.png",
+            "inLanguage": "en-US"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "file": "services.html",
+    "script_count": 1,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://trustnodelogic.com/services.html#webpage",
+            "url": "https://trustnodelogic.com/services.html",
+            "name": "Services | Hybrid Mixing & Creative Consultation | JRAY",
+            "description": "Hybrid mixing, audio review & creative consults.",
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://trustnodelogic.com/services.html#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://trustnodelogic.com/services.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustnodelogic.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://trustnodelogic.com/services.html"
+              }
+            ]
+          },
+          {
+            "@type": "Service",
+            "@id": "https://trustnodelogic.com/services.html#service-mixing",
+            "name": "Hybrid Music Production & Mixing",
+            "description": "Integration of generative AI audio stems with traditional DAW mixing and mastering.",
+            "provider": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "areaServed": "Global",
+            "serviceType": "Audio Engineering"
+          },
+          {
+            "@type": "Service",
+            "@id": "https://trustnodelogic.com/services.html#service-review",
+            "name": "Track Review & AI Audio Diagnostics",
+            "description": "Detailed spectral analysis, stem evaluation, and structural feedback for hybrid tracks.",
+            "provider": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "areaServed": "Global",
+            "serviceType": "Audio Diagnostics"
+          },
+          {
+            "@type": "Service",
+            "@id": "https://trustnodelogic.com/services.html#service-consulting",
+            "name": "AI Music Tech Advisory & Workflow Consulting",
+            "description": "Strategic consultation for platforms, studios, and developers building generative audio tools.",
+            "provider": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "areaServed": "Global",
+            "serviceType": "Technology Consulting"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "file": "songstructure.html",
+    "script_count": 1,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://trustnodelogic.com/songstructure.html#webpage",
+            "url": "https://trustnodelogic.com/songstructure.html",
+            "name": "The Architecture of the Three-Minute Song: Song Structure in the Streaming Era | Trust Node Logic",
+            "description": "A structural analysis of how popular song arrangement changed between the CD/download era (2000-2018) and the algorithmic streaming era (2019-present), with interactive data on runtime compression, bridge elimination, and stream economics.",
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://trustnodelogic.com/songstructure.html#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "mainEntity": {
+              "@id": "https://trustnodelogic.com/songstructure.html#article"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://trustnodelogic.com/songstructure.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustnodelogic.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Song Structure Analysis",
+                "item": "https://trustnodelogic.com/songstructure.html"
+              }
+            ]
+          },
+          {
+            "@type": "TechArticle",
+            "@id": "https://trustnodelogic.com/songstructure.html#article",
+            "headline": "The Architecture of the Three-Minute Song: Song Structure in the Streaming Era",
+            "description": "A structural analysis of how popular song arrangement changed between the CD/download era (2000-2018) and the algorithmic streaming era (2019-present), with interactive data on runtime compression, bridge elimination, and stream economics.",
+            "url": "https://trustnodelogic.com/songstructure.html",
+            "mainEntityOfPage": {
+              "@id": "https://trustnodelogic.com/songstructure.html#webpage"
+            },
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "author": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "publisher": {
+              "@id": "https://trustnodelogic.com/#organization"
+            },
+            "datePublished": "2026-08-06",
+            "dateModified": "2026-08-06",
+            "image": "https://trustnodelogic.com/assets/songstructure-card.png",
+            "inLanguage": "en-US"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "file": "trainingday.html",
+    "script_count": 1,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://trustnodelogic.com/trainingday.html#webpage",
+            "url": "https://trustnodelogic.com/trainingday.html",
+            "name": "Justin Ray | AI Music Uploads",
+            "description": "Custom dataset curation and fine-tuning for personal artist models.",
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://trustnodelogic.com/trainingday.html#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "mainEntity": {
+              "@id": "https://trustnodelogic.com/trainingday.html#article"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://trustnodelogic.com/trainingday.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustnodelogic.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Training Day",
+                "item": "https://trustnodelogic.com/trainingday.html"
+              }
+            ]
+          },
+          {
+            "@type": "Article",
+            "@id": "https://trustnodelogic.com/trainingday.html#article",
+            "headline": "Training Day: Custom Dataset Curation",
+            "description": "Custom dataset curation and fine-tuning for personal artist models.",
+            "url": "https://trustnodelogic.com/trainingday.html",
+            "mainEntityOfPage": {
+              "@id": "https://trustnodelogic.com/trainingday.html#webpage"
+            },
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "author": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "publisher": {
+              "@id": "https://trustnodelogic.com/#organization"
+            },
+            "datePublished": "2026-05-06",
+            "dateModified": "2026-05-06",
+            "image": "https://trustnodelogic.com/favicon.png",
+            "inLanguage": "en-US"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "file": "void/index.html",
+    "script_count": 1,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://trustnodelogic.com/void/#webpage",
+            "url": "https://trustnodelogic.com/void/",
+            "name": "V\u00d8ID 1.2 \u2014 Browser-Native Audio Slicer | JRAY",
+            "description": "V\u00d8ID 1.2 is a browser-native audio segment slicer and sound manipulation tool.",
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://trustnodelogic.com/void/#breadcrumb"
+            },
+            "inLanguage": "en-US",
+            "mainEntity": {
+              "@id": "https://trustnodelogic.com/void/#softwareapplication"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://trustnodelogic.com/void/#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustnodelogic.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Projects",
+                "item": "https://trustnodelogic.com/projects.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "V\u00d8ID Audio Slicer",
+                "item": "https://trustnodelogic.com/void/"
+              }
+            ]
+          },
+          {
+            "@type": [
+              "SoftwareApplication",
+              "WebApplication"
+            ],
+            "@id": "https://trustnodelogic.com/void/#softwareapplication",
+            "name": "V\u00d8ID Audio Slicer",
+            "url": "https://trustnodelogic.com/void/",
+            "applicationCategory": "MusicApplication",
+            "operatingSystem": "Web",
+            "author": {
+              "@id": "https://trustnodelogic.com/#person"
+            },
+            "publisher": {
+              "@id": "https://trustnodelogic.com/#organization"
+            },
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "mainEntityOfPage": {
+              "@id": "https://trustnodelogic.com/void/#webpage"
+            },
+            "image": "https://trustnodelogic.com/favicon.png"
+          }
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "file": "what-is-hybrid.html",
+    "script_count": 1,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://trustnodelogic.com/what-is-hybrid.html#webpage",
+            "url": "https://trustnodelogic.com/what-is-hybrid.html",
+            "name": "Justin Ray | What Is Hybrid",
+            "description": "What hybrid production means for modern creators.",
+            "isPartOf": {
+              "@id": "https://trustnodelogic.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://trustnodelogic.com/what-is-hybrid.html#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://trustnodelogic.com/what-is-hybrid.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustnodelogic.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "What Is Hybrid",
+                "item": "https://trustnodelogic.com/what-is-hybrid.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "errors": []
+  }
+]

@@ -31,6 +31,7 @@
 - [Contact](https://trustnodelogic.com/contact.html): Direct collaboration and inquiry channel.
 
 - [Hybrid Production Standard (HPS-1.0)](https://trustnodelogic.com/hybridproductionstandard.html): Official 5-axis process classification, DDEX ERN 4.3 metadata mapping, and EU AI Act Article 50 compliance standard.
+- [The Trust Signal Chain: AI, Hybrid Production, and the Industry in 2026](https://trustnodelogic.com/hp2026.html): Analysis of court rulings, EU AI Act Article 50, DDEX metadata, and platform policies in 2026.
 - [The Architecture of the Three-Minute Song: Song Structure in the Streaming Era](https://trustnodelogic.com/songstructure.html): Structural analysis of pop song arrangement evolution from the CD/download era (2000-2018) to the algorithmic streaming era (2019-present).
 - [Prompting the Machine: How AI Music Actually Hears You](https://trustnodelogic.com/promptingthemachine.html): Field guide to Suno/Udio text-to-music models, prompt parsing, sliders, and next-gen tools.
 - [The Last New Genre: SoundCloud Rap, COVID, and the Algorithm's Taste for the Familiar](https://trustnodelogic.com/lastnewgenre.html): Analysis of genre evolution, cultural flattening, and algorithmic curation.

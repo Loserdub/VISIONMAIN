@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Trust Signal Chain: AI, Hybrid Production, and the Industry in 2026 | TrustNodeLogic</title>
+<meta name="description" content="Courts, the EU AI Act, DDEX disclosure, streaming platforms, and the Grammys all ruled on AI music in 2026. None of them ruled human or AI. A TrustNodeLogic field note on what actually happened.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="TrustNodeLogic">
+<link rel="canonical" href="https://trustnodelogic.com/hp2026.html">
+
+<meta property="og:title" content="The Trust Signal Chain: AI, Hybrid Production, and the Industry in 2026">
+<meta property="og:description" content="Human or AI was never the question. 2026 made it how much, and who can prove it. A field note from TrustNodeLogic.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://trustnodelogic.com/assets/images/hp2026-card.png">
+<meta property="og:url" content="https://trustnodelogic.com/hp2026.html">
+<meta property="og:site_name" content="TrustNodeLogic">
+<meta property="article:published_time" content="2026-08-09">
+<meta property="article:section" content="Field Notes">
+<meta property="article:tag" content="AI Music">
+<meta property="article:tag" content="Hybrid Production">
+<meta property="article:tag" content="Music Industry">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://trustnodelogic.com/assets/images/hp2026-card.png">
+<meta name="twitter:title" content="The Trust Signal Chain: AI, Hybrid Production, and the Industry in 2026">
+<meta name="twitter:description" content="Human or AI was never the question. 2026 made it how much, and who can prove it.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+
+
+<style>
+
+  :root{
+    --bg:            #0a0b10;
+    --bg-raised:     #10121c;
+    --bg-raised-2:   #14172380;
+    --border:        rgba(255,255,255,0.09);
+    --border-strong: rgba(255,255,255,0.18);
+    --text-primary:  #e9eaf1;
+    --text-dim:      #9aa0b6;
+    --text-faint:    #565c72;
+    --teal:          #3fe7c5;
+    --teal-dim:      rgba(63,231,197,0.13);
+    --teal-ink:      #06120f;
+    --amber:         #f2b84e;
+    --amber-dim:     rgba(242,184,78,0.13);
+    --serif: 'Playfair Display', Georgia, serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+    --measure: 680px;
+    --wide: 860px;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html{ background:var(--bg); scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text-primary);
+    font-family:var(--mono);
+    font-size:16px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    position:relative;
+  }
+
+  ::selection{ background:var(--teal-dim); color:var(--text-primary); }
+
+  a{ color:var(--teal); text-decoration:none; }
+  a:hover{ text-decoration:underline; text-underline-offset:3px; }
+
+  :focus-visible{
+    outline:2px solid var(--teal);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  em, i{ font-family:var(--serif); font-style:italic; }
+
+  /* ---------- background texture ---------- */
+  .bg-texture{
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    background-image:
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.028) 0px, rgba(255,255,255,0.028) 1px, transparent 1px, transparent 46px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.022) 0px, rgba(255,255,255,0.022) 1px, transparent 1px, transparent 46px);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 90%);
+            mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 90%);
+    opacity:0.7;
+  }
+  .bg-scan{
+    position:fixed; left:0; right:0; height:140px; z-index:0; pointer-events:none;
+    background:linear-gradient(180deg, transparent, rgba(63,231,197,0.05), transparent);
+    animation:scan 16s linear infinite;
+  }
+  @keyframes scan{
+    0%{ transform:translateY(-140px); }
+    100%{ transform:translateY(100vh); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .bg-scan{ animation:none; opacity:0; }
+  }
+
+  main, header, footer{ position:relative; z-index:1; }
+
+  /* ---------- layout helpers ---------- */
+  .measure{ max-width:var(--measure); margin:0 auto; padding-left:24px; padding-right:24px; }
+  .wide{ max-width:var(--wide); margin:0 auto; padding-left:24px; padding-right:24px; }
+
+  .hairline{ border-top:1px solid var(--border); margin:0 auto; }
+
+  /* ---------- header ---------- */
+  .site-header{
+    display:flex; align-items:center; justify-content:space-between;
+    max-width:var(--wide); margin:0 auto;
+    padding:28px 24px;
+  }
+  .wordmark{
+    font-family:var(--mono); font-weight:700; font-size:13px;
+    letter-spacing:0.14em; color:var(--text-primary);
+  }
+  .wordmark:hover{ color:var(--teal); text-decoration:none; }
+  .header-tag{
+    font-size:11px; letter-spacing:0.14em; color:var(--text-faint);
+  }
+
+  /* ---------- eyebrow ---------- */
+  .eyebrow{
+    display:flex; align-items:center; gap:9px;
+    font-size:12px; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--text-dim); font-weight:500;
+    margin:0 0 18px;
+    font-family:var(--mono); font-style:normal;
+  }
+  .eyebrow .dot{
+    width:6px; height:6px; border-radius:50%;
+    background:var(--teal);
+    flex:none;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{ padding:56px 24px 64px; }
+  .hero h1{
+    font-family:var(--serif); font-weight:600; font-style:normal;
+    font-size:clamp(2rem, 5.4vw, 3.1rem);
+    line-height:1.18;
+    margin:0 0 24px;
+    color:var(--text-primary);
+    letter-spacing:-0.01em;
+  }
+  .hero h1 em{
+    display:block;
+    color:var(--amber);
+    font-weight:400;
+    margin-top:6px;
+  }
+  .dek{
+    font-size:15.5px; line-height:1.8; color:var(--text-dim);
+    max-width:58ch; margin:0 0 28px;
+  }
+  .meta-line{
+    font-size:11.5px; letter-spacing:0.1em; color:var(--text-faint);
+    text-transform:uppercase;
+  }
+
+  /* ---------- premise strip ---------- */
+  .premise-strip{
+    display:grid; grid-template-columns:repeat(3,1fr);
+    padding:44px 24px;
+  }
+  .premise-strip{ margin:0 auto; }
+  .premise-item{
+    margin:0; padding:4px 22px;
+    border-left:1px solid var(--border);
+  }
+  .premise-item:first-child{ border-left:none; padding-left:0; }
+  .premise-num{
+    font-family:var(--serif); font-style:italic; font-weight:600;
+    font-size:1.9rem; color:var(--teal);
+    display:block; margin:0 0 10px;
+    line-height:1;
+  }
+  .premise-item dd{
+    margin:0; font-size:13px; line-height:1.65; color:var(--text-dim);
+  }
+
+  @media (max-width:700px){
+    .premise-strip{ grid-template-columns:1fr; gap:26px; }
+    .premise-item{ border-left:none; padding-left:0; border-top:1px solid var(--border); padding-top:20px; }
+    .premise-item:first-child{ border-top:none; padding-top:0; }
+  }
+
+  /* ---------- content sections ---------- */
+  .content-section{ padding:64px 24px; }
+  .content-section h2{
+    font-family:var(--serif); font-weight:600; font-style:normal;
+    font-size:clamp(1.5rem, 3.4vw, 2.05rem);
+    line-height:1.28;
+    margin:0 0 26px;
+    color:var(--text-primary);
+  }
+  .content-section h2 em{ color:var(--amber); font-weight:400; }
+  .content-section p{
+    font-size:15px; line-height:1.85; color:var(--text-dim);
+    margin:0 0 20px;
+  }
+  .content-section p:last-child{ margin-bottom:0; }
+  .content-section p.intro{
+    color:var(--text-primary); font-size:15.5px;
+  }
+  .content-section strong{ color:var(--text-primary); font-weight:600; }
+
+  /* ---------- signal chain ---------- */
+  .chain{ list-style:none; margin:36px 0 0; padding:0; }
+  .chain-stage{
+    display:grid; grid-template-columns:64px 1fr; gap:22px;
+    padding:26px 0;
+    border-top:1px solid var(--border);
+  }
+  .chain-stage:first-child{ border-top:none; padding-top:0; }
+  .stage-num{
+    font-family:var(--serif); font-style:italic; font-weight:600;
+    font-size:1.7rem; color:var(--text-faint);
+    line-height:1.4;
+  }
+  .stage-label{
+    display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+    font-size:13.5px; font-weight:700; letter-spacing:0.06em;
+    color:var(--text-primary); margin:0 0 10px;
+    font-family:var(--mono); font-style:normal;
+  }
+  .stage-tag{
+    font-size:11px; font-weight:400; letter-spacing:0.04em;
+    color:var(--text-faint); text-transform:lowercase;
+    font-style:italic; font-family:var(--serif);
+  }
+  .stage-body p{ font-size:14.5px; line-height:1.8; color:var(--text-dim); margin:0; }
+
+  @media (max-width:700px){
+    .chain-stage{ grid-template-columns:1fr; gap:8px; }
+  }
+
+  /* ---------- classifier tool ---------- */
+  .classifier-tool{
+    margin-top:34px;
+    border:1px solid var(--border);
+    background:linear-gradient(180deg, var(--bg-raised), var(--bg));
+    border-radius:4px;
+    padding:8px;
+  }
+  .axis-list{ padding:22px 22px 6px; }
+  fieldset.axis-row{
+    padding:18px 0; margin:0; border:none; border-top:1px solid var(--border);
+    min-width:0;
+    display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+  }
+  fieldset.axis-row:first-of-type{ border-top:none; }
+  legend.axis-info{ padding:0; margin:0; float:none; width:auto; min-width:190px; }
+  .axis-name{ display:block; font-size:12.5px; font-weight:700; letter-spacing:0.08em; color:var(--text-primary); }
+  .axis-hint{ display:block; font-size:11.5px; color:var(--text-faint); margin-top:3px; }
+  .seg{
+    display:inline-flex; border:1px solid var(--border); border-radius:3px; overflow:hidden;
+  }
+  .seg-option{ position:relative; display:block; cursor:pointer; }
+  .seg-option input[type="radio"]{
+    position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+    overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+  }
+  .seg-option span{
+    display:block; font-family:var(--mono); font-size:11.5px; font-weight:700; letter-spacing:0.06em;
+    background:transparent; color:var(--text-faint);
+    padding:9px 14px; cursor:pointer;
+    border-right:1px solid var(--border);
+    transition:background 0.15s ease, color 0.15s ease;
+  }
+  .seg-option:last-child span{ border-right:none; }
+  .seg-option:hover span{ color:var(--text-primary); background:rgba(255,255,255,0.04); }
+  .seg-option input:focus-visible + span{ outline:2px solid var(--teal); outline-offset:-2px; }
+  .seg-option.is-checked[data-state="human"] span{ background:rgba(255,255,255,0.10); color:var(--text-primary); }
+  .seg-option.is-checked[data-state="hybrid"] span{ background:var(--amber-dim); color:var(--amber); }
+  .seg-option.is-checked[data-state="ai"] span{ background:var(--teal-dim); color:var(--teal); }
+
+  .chain-visual{
+    display:flex; align-items:center; justify-content:center; gap:0;
+    padding:30px 22px 6px;
+  }
+  .chain-node-wrap{ display:flex; align-items:center; }
+  .chain-node{
+    width:15px; height:15px; border-radius:50%;
+    border:2px solid var(--text-faint);
+    background:var(--bg);
+    transition:background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    flex:none;
+  }
+  .chain-node.hybrid{ border-color:var(--amber); background:var(--amber); box-shadow:0 0 10px rgba(242,184,78,0.5); }
+  .chain-node.ai{ border-color:var(--teal); background:var(--teal); box-shadow:0 0 10px rgba(63,231,197,0.5); }
+  .chain-wire{
+    width:clamp(18px, 5vw, 46px); height:1px; background:var(--border-strong); flex:none;
+  }
+
+  .result-panel{
+    margin-top:8px; padding:24px 22px 26px;
+    border-top:1px solid var(--border);
+  }
+  .result-list{ margin:0; }
+  .result-row{
+    display:flex; align-items:baseline; justify-content:space-between; gap:16px;
+    padding:8px 0; flex-wrap:wrap;
+  }
+  .result-label{ margin:0; font-size:11px; letter-spacing:0.12em; color:var(--text-faint); text-transform:uppercase; }
+  .result-value{ margin:0; font-size:13.5px; font-weight:700; letter-spacing:0.05em; color:var(--text-primary); }
+  .node-badge{ color:var(--teal); }
+  .node-desc{ margin-top:14px; font-size:13.5px; line-height:1.8; color:var(--text-dim); }
+  .tool-caption{
+    font-size:11.5px; color:var(--text-faint); margin-top:16px; font-style:italic; font-family:var(--serif);
+  }
+
+  @media (max-width:560px){
+    .axis-row{ flex-direction:column; align-items:flex-start; gap:12px; }
+    .chain-visual{ flex-wrap:wrap; row-gap:10px; }
+  }
+
+  /* ---------- practice list ---------- */
+  .practice-list{
+    list-style:none; margin:0; padding:0;
+  }
+  .practice-list li{
+    position:relative; padding:18px 0 18px 26px;
+    border-top:1px solid var(--border);
+    font-size:15px; line-height:1.8; color:var(--text-dim);
+  }
+  .practice-list li:first-child{ border-top:none; }
+  .practice-list li::before{
+    content:"→"; position:absolute; left:0; top:18px; color:var(--teal);
+  }
+
+  /* ---------- closing ---------- */
+  .closing .pull-quote{
+    font-family:var(--serif); font-style:italic; font-size:clamp(1.2rem,2.6vw,1.5rem);
+    line-height:1.5; color:var(--text-primary);
+    margin:34px 0; padding-left:22px; border-left:2px solid var(--teal);
+  }
+  .cta-row{
+    margin-top:34px; display:flex; align-items:center; gap:22px; flex-wrap:wrap;
+  }
+  .btn-cta{
+    display:inline-block;
+    background:var(--teal); color:var(--teal-ink);
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:0.08em;
+    padding:15px 24px; border-radius:3px;
+    text-decoration:none;
+    transition:transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    box-shadow:0 0 0 rgba(63,231,197,0);
+  }
+  .btn-cta:hover{
+    text-decoration:none; background:#5cf0d3;
+    box-shadow:0 6px 24px rgba(63,231,197,0.25);
+    transform:translateY(-1px);
+  }
+  .btn-cta:active{ transform:translateY(0px); }
+  .link-quiet{ font-size:12.5px; color:var(--text-dim); letter-spacing:0.02em; }
+  .link-quiet:hover{ color:var(--teal); }
+
+  /* ---------- sources ---------- */
+  .sources{ padding:56px 24px 40px; }
+  .sources-list{ list-style:none; margin:0; padding:0; columns:1; }
+  .sources-list li{
+    padding:11px 0; border-top:1px solid var(--border);
+    font-size:12.5px; color:var(--text-faint);
+  }
+  .sources-list li:first-child{ border-top:none; }
+  .sources-list a{ color:var(--text-dim); }
+  .sources-list a:hover{ color:var(--teal); }
+
+  /* ---------- footer ---------- */
+  .site-footer{
+    padding:32px 24px 56px; text-align:center;
+    font-size:11px; letter-spacing:0.08em; color:var(--text-faint);
+    text-transform:uppercase;
+  }
+
+  @media (max-width:700px){
+    .hero{ padding-top:40px; }
+    .content-section{ padding:48px 24px; }
+  }
+</style>
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://trustnodelogic.com/hp2026.html#webpage",
+      "url": "https://trustnodelogic.com/hp2026.html",
+      "name": "The Trust Signal Chain: AI, Hybrid Production, and the Industry in 2026 | TrustNodeLogic",
+      "description": "Courts, the EU AI Act, DDEX disclosure, streaming platforms, and the Grammys all ruled on AI music in 2026. None of them ruled human or AI. A TrustNodeLogic field note on what actually happened.",
+      "isPartOf": {
+        "@id": "https://trustnodelogic.com/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://trustnodelogic.com/hp2026.html#breadcrumb"
+      },
+      "inLanguage": "en-US",
+      "mainEntity": {
+        "@id": "https://trustnodelogic.com/hp2026.html#article"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://trustnodelogic.com/hp2026.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://trustnodelogic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "The Trust Signal Chain",
+          "item": "https://trustnodelogic.com/hp2026.html"
+        }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://trustnodelogic.com/hp2026.html#article",
+      "headline": "The Trust Signal Chain: AI, Hybrid Production, and the Industry in 2026",
+      "description": "Courts, the EU AI Act, DDEX disclosure, streaming platforms, and the Grammys all ruled on AI music in 2026. None of them ruled human or AI. A TrustNodeLogic field note on what actually happened.",
+      "url": "https://trustnodelogic.com/hp2026.html",
+      "mainEntityOfPage": {
+        "@id": "https://trustnodelogic.com/hp2026.html#webpage"
+      },
+      "isPartOf": {
+        "@id": "https://trustnodelogic.com/#website"
+      },
+      "author": {
+        "@id": "https://trustnodelogic.com/#person"
+      },
+      "publisher": {
+        "@id": "https://trustnodelogic.com/#organization"
+      },
+      "datePublished": "2026-08-09",
+      "dateModified": "2026-08-09",
+      "image": "https://trustnodelogic.com/assets/images/hp2026-card.png",
+      "inLanguage": "en-US"
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+
+<div class="bg-texture" aria-hidden="true"></div>
+<div class="bg-scan" aria-hidden="true"></div>
+
+<header class="site-header">
+  <a class="wordmark" href="https://trustnodelogic.com">TRUSTNODELOGIC</a>
+  <span class="header-tag">FIELD NOTES</span>
+</header>
+
+<main>
+<article>
+
+  <section class="hero measure" aria-labelledby="hero-title">
+    <div class="eyebrow"><span class="dot" aria-hidden="true"></span>FIELD NOTES · AI &amp; THE INDUSTRY</div>
+    <h1 id="hero-title">Human or AI was never the question.<em>Now it's how much, and who can prove it.</em></h1>
+    <p class="dek">In the last twelve months, a German court, an EU regulation, a metadata standard, three streaming platforms, and the Recording Academy all ruled on AI in music. None of them ruled AI music in or out. They ruled on process: how much a human actually did, and whether that can be shown. That's what the hybrid production thesis looks like once it becomes policy.</p>
+    <div class="meta-line">TrustNodeLogic · <time datetime="2026-08-09">August 2026</time> · 9 min read</div>
+  </section>
+
+  <div class="hairline wide"></div>
+
+  <section class="premise-strip wide" aria-label="Key figures">
+    <dl class="premise-item">
+      <dt class="premise-num">44%</dt>
+      <dd>of everything uploaded to Deezer every day is AI generated. Roughly 1 to 3% of what actually gets streamed is.</dd>
+    </dl>
+    <dl class="premise-item">
+      <dt class="premise-num">Aug 2</dt>
+      <dd>Article 50 of the EU AI Act made AI disclosure the law on August 2, 2026. Verifying that disclosure is still nobody's job.</dd>
+    </dl>
+    <dl class="premise-item">
+      <dt class="premise-num">+19</dt>
+      <dd>points: how much more musicians trust AI production tools compared to how much listeners trust AI output. The gap is the actual story.</dd>
+    </dl>
+  </section>
+
+  <div class="hairline wide"></div>
+
+  <section class="content-section measure" id="courts" aria-labelledby="courts-title">
+    <div class="eyebrow"><span class="dot" aria-hidden="true"></span>COURTS AND CONTRACTS</div>
+    <h2 id="courts-title">The binary died in a Munich courtroom</h2>
+    <p>On July 31, 2026, the Munich Regional Court ruled against Suno in a case brought by GEMA, Germany's music rights society. The court found Suno liable on four counts: training on copyrighted works in the United States, memorizing those works inside the model itself, offering the model to the public, and generating outputs that echoed songs like "Rasputin" and "Mambo No. 5" closely enough to count as infringement. It also asserted German jurisdiction over training that happened entirely on US soil, reasoning that a collecting society can reach conduct with effects inside Germany. Suno says it's evaluating an appeal.</p>
+    <p>That ruling landed inside a wider settlement pattern. Warner closed its cases against both Suno and Udio last November and is now building a licensed generation platform on the back of those deals. Universal settled with Udio in October and has its own "walled garden" platform planned, one where AI output can't leave the site. Sony is still suing Udio in New York, with discovery running into late August. Universal and Sony are still suing Suno in Massachusetts, where the fair use ruling the industry expected this summer has been pushed to spring 2027.</p>
+    <p>None of this says AI generated music is illegal. It says training on an unlicensed catalog is a liability, and the way through is licensing, not scraping. That's a process distinction, not a taste distinction, and it's the same one the Recording Academy already made. Grammy eligible work can include AI, as long as a human's contribution to the writing or the performance is <strong>meaningful and more than incidental</strong>. Full synthesis with no credited human hand: ineligible, in court and at the Grammys, for close to the same reason.</p>
+  </section>
+
+  <div class="hairline wide"></div>
+
+  <section class="content-section measure" id="disclosure" aria-labelledby="disclosure-title">
+    <div class="eyebrow"><span class="dot" aria-hidden="true"></span>DISCLOSURE</div>
+    <h2 id="disclosure-title">A checkbox is not a signature</h2>
+    <p>Since April 2026, Spotify has shown AI credits inside the app, built on a DDEX standard that splits disclosure into five separate fields: AI vocals, AI instrumentation, AI composition, AI post production, AI lyrics. It's a real improvement on a blind AI-or-not toggle. A track with a human vocal over an AI generated bed and a fully human mix can say exactly that, instead of getting lumped in with a one-click prompt.</p>
+    <p>In July, RIAA and IFPI backed a joint voluntary labeling push riding the same pipe: the DDEX ERN schema that already carries every other credit through the supply chain. Both organizations framed it as hybrid friendly on purpose. Artists who want to use AI in the process should be able to, as long as it's disclosed.</p>
+    <p>Here's what nobody's fixed yet. That field is self reported. If a distributor leaves it blank, by accident or on purpose, no tag travels downstream and no platform catches it automatically. Reporting has put the artist royalties lost every year to fraud actors exploiting exactly that gap at somewhere around <strong>two billion dollars</strong>. Deezer's own detection numbers show the scale: something like 44% of everything uploaded to the platform daily, on the order of 75,000 tracks, is AI generated. Only 1 to 3% of actual streams are AI tracks, and Deezer flags roughly 85% of those as fraudulent activity rather than real listening.</p>
+    <p>Disclosure metadata tells you what a label claims. It was never built to tell you what's actually true. That's a different job, and it needs a different tool.</p>
+  </section>
+
+  <div class="hairline wide"></div>
+
+  <section class="content-section wide" id="signal-chain" aria-labelledby="chain-title">
+    <div class="eyebrow"><span class="dot" aria-hidden="true"></span>INFRASTRUCTURE</div>
+    <h2 id="chain-title">The trust signal chain</h2>
+    <p class="intro">Think of the last year as gain staging for an entire industry. Every stage only works if the one before it is clean. Get the input wrong and nothing downstream fixes it.</p>
+
+    <ol class="chain">
+      <li class="chain-stage">
+        <div class="stage-num" aria-hidden="true">01</div>
+        <div class="stage-body">
+          <h3 class="stage-label">DISCLOSURE <span class="stage-tag">input gain</span></h3>
+          <p>The DDEX ERN metadata field. A label or distributor states what role AI played, across five categories, at the point of release. Voluntary today, self reported, and the weak link: a blank field produces silence, not a red flag.</p>
+        </div>
+      </li>
+      <li class="chain-stage">
+        <div class="stage-num" aria-hidden="true">02</div>
+        <div class="stage-body">
+          <h3 class="stage-label">MARKING <span class="stage-tag">line-level insert</span></h3>
+          <p>Article 50 of the EU AI Act, live since August 2, 2026. Generative AI providers now have to embed a machine readable watermark in synthetic output. Tools already on the market before August 2 get until December 2 to comply. Anything launched after August 2 doesn't get the grace period.</p>
+        </div>
+      </li>
+      <li class="chain-stage">
+        <div class="stage-num" aria-hidden="true">03</div>
+        <div class="stage-body">
+          <h3 class="stage-label">ATTESTATION <span class="stage-tag">tamper evidence</span></h3>
+          <p>Watermarks can be scrubbed. Metadata can be edited or stripped on re-upload. The EU's own Code of Practice recommends combining marking with cryptographically signed provenance, the same logic behind C2PA, the content credentials standard now backed by more than 6,000 members including Google, Meta, Sony, and OpenAI. A signed manifest doesn't just claim a file's history. It proves the file hasn't changed since that claim was made.</p>
+        </div>
+      </li>
+      <li class="chain-stage">
+        <div class="stage-num" aria-hidden="true">04</div>
+        <div class="stage-body">
+          <h3 class="stage-label">ENFORCEMENT <span class="stage-tag">the mix bus</span></h3>
+          <p>Where platforms act on whatever signal actually reached them. TIDAL stopped paying royalties on fully AI generated tracks in mid July. Spotify has pulled 75 million spam uploads and tightened its rules on unauthorized voice cloning. Enforcement is only as good as what's detectable by the time it hits the bus.</p>
+        </div>
+      </li>
+      <li class="chain-stage">
+        <div class="stage-num" aria-hidden="true">05</div>
+        <div class="stage-body">
+          <h3 class="stage-label">RECOGNITION <span class="stage-tag">mastering &amp; release</span></h3>
+          <p>The GEMA ruling and the Grammy rules both sit here. Different rooms, same question: how much did a human actually do, and can that be shown. That used to be a philosophical question. In 2026 it became a line item.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <div class="hairline wide"></div>
+
+  <section class="content-section wide" id="classifier" aria-labelledby="classifier-title">
+    <div class="eyebrow"><span class="dot" aria-hidden="true"></span>TRY IT</div>
+    <h2 id="classifier-title">Where does your process actually sit?</h2>
+    <p class="intro">Run a session through the same five stages a track actually passes through. This is a simplified version of the tier logic behind classification tools like the DAW Attestation Engine, not a replacement for one. It'll show you roughly where you land.</p>
+
+    <div class="classifier-tool">
+      <div class="axis-list" id="axis-list">
+
+        <fieldset class="axis-row">
+          <legend class="axis-info">
+            <span class="axis-name">COMPOSITION</span>
+            <span class="axis-hint">melody, harmony, chord choices</span>
+          </legend>
+          <div class="seg">
+            <label class="seg-option is-checked" data-state="human">
+              <input type="radio" name="axis-composition" value="human" checked>
+              <span>H · HUMAN</span>
+            </label>
+            <label class="seg-option" data-state="hybrid">
+              <input type="radio" name="axis-composition" value="hybrid">
+              <span>X · HYBRID</span>
+            </label>
+            <label class="seg-option" data-state="ai">
+              <input type="radio" name="axis-composition" value="ai">
+              <span>A · AI</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="axis-row">
+          <legend class="axis-info">
+            <span class="axis-name">PERFORMANCE / SOURCE</span>
+            <span class="axis-hint">vocals &amp; instruments, played vs generated</span>
+          </legend>
+          <div class="seg">
+            <label class="seg-option" data-state="human">
+              <input type="radio" name="axis-performance" value="human">
+              <span>H · HUMAN</span>
+            </label>
+            <label class="seg-option is-checked" data-state="hybrid">
+              <input type="radio" name="axis-performance" value="hybrid" checked>
+              <span>X · HYBRID</span>
+            </label>
+            <label class="seg-option" data-state="ai">
+              <input type="radio" name="axis-performance" value="ai">
+              <span>A · AI</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="axis-row">
+          <legend class="axis-info">
+            <span class="axis-name">ARRANGEMENT &amp; EDIT</span>
+            <span class="axis-hint">structure, comping, edit decisions</span>
+          </legend>
+          <div class="seg">
+            <label class="seg-option is-checked" data-state="human">
+              <input type="radio" name="axis-arrangement" value="human" checked>
+              <span>H · HUMAN</span>
+            </label>
+            <label class="seg-option" data-state="hybrid">
+              <input type="radio" name="axis-arrangement" value="hybrid">
+              <span>X · HYBRID</span>
+            </label>
+            <label class="seg-option" data-state="ai">
+              <input type="radio" name="axis-arrangement" value="ai">
+              <span>A · AI</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="axis-row">
+          <legend class="axis-info">
+            <span class="axis-name">MIXING</span>
+            <span class="axis-hint">balance, effects, spatial choices</span>
+          </legend>
+          <div class="seg">
+            <label class="seg-option" data-state="human">
+              <input type="radio" name="axis-mixing" value="human">
+              <span>H · HUMAN</span>
+            </label>
+            <label class="seg-option is-checked" data-state="hybrid">
+              <input type="radio" name="axis-mixing" value="hybrid" checked>
+              <span>X · HYBRID</span>
+            </label>
+            <label class="seg-option" data-state="ai">
+              <input type="radio" name="axis-mixing" value="ai">
+              <span>A · AI</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="axis-row">
+          <legend class="axis-info">
+            <span class="axis-name">MASTERING</span>
+            <span class="axis-hint">final tonal and loudness polish</span>
+          </legend>
+          <div class="seg">
+            <label class="seg-option" data-state="human">
+              <input type="radio" name="axis-mastering" value="human">
+              <span>H · HUMAN</span>
+            </label>
+            <label class="seg-option" data-state="hybrid">
+              <input type="radio" name="axis-mastering" value="hybrid">
+              <span>X · HYBRID</span>
+            </label>
+            <label class="seg-option is-checked" data-state="ai">
+              <input type="radio" name="axis-mastering" value="ai" checked>
+              <span>A · AI</span>
+            </label>
+          </div>
+        </fieldset>
+
+      </div>
+
+      <div class="chain-visual" id="chain-visual" aria-hidden="true">
+        <div class="chain-node-wrap"><div class="chain-node" id="node-composition"></div></div>
+        <div class="chain-wire"></div>
+        <div class="chain-node-wrap"><div class="chain-node hybrid" id="node-performance"></div></div>
+        <div class="chain-wire"></div>
+        <div class="chain-node-wrap"><div class="chain-node" id="node-arrangement"></div></div>
+        <div class="chain-wire"></div>
+        <div class="chain-node-wrap"><div class="chain-node hybrid" id="node-mixing"></div></div>
+        <div class="chain-wire"></div>
+        <div class="chain-node-wrap"><div class="chain-node ai" id="node-mastering"></div></div>
+      </div>
+
+      <div class="result-panel" aria-live="polite">
+        <dl class="result-list">
+          <div class="result-row">
+            <dt class="result-label">Tier code</dt>
+            <dd class="result-value" id="tier-code">H · X · H · X · A</dd>
+          </div>
+          <div class="result-row">
+            <dt class="result-label">Classification</dt>
+            <dd class="result-value node-badge" id="node-label">NODE B · HYBRID</dd>
+          </div>
+        </dl>
+        <p class="node-desc" id="node-desc">Human authorship and AI generation both shape the finished track. This is where most working producers already live, and it&rsquo;s exactly the zone DDEX&rsquo;s five-field disclosure and Article 50&rsquo;s marking rules were built for.</p>
+      </div>
+    </div>
+    <p class="tool-caption">Illustrative only. Nothing here touches your files, and nothing is saved or sent anywhere.</p>
+  </section>
+
+  <div class="hairline wide"></div>
+
+  <section class="content-section measure" id="audience" aria-labelledby="audience-title">
+    <div class="eyebrow"><span class="dot" aria-hidden="true"></span>AUDIENCE</div>
+    <h2 id="audience-title">What listeners actually reward</h2>
+    <p>Producers got here first. Luminate's 2026 midyear data has 54% of working musicians reporting a positive view of AI production tools, against 35% of the general public: a 19 point gap. Musicians are also three times more likely to use AI to edit or remix existing material than non-musicians are. The people doing the work adopted the tools years before the people arguing about them online.</p>
+    <p>Listeners haven't followed at the same pace. Luminate's attitude tracking shows overall comfort with disclosed AI generated music getting worse, not better: net -13% in May 2025 to net -20% by that November, with the steepest drop among Gen Z and Gen Alpha. And despite the upload volume, no AI assisted track cracked the global Top 250 in the first half of 2026. The highest charting one landed at 282.</p>
+    <p>The clearest single data point might be Monet, an AI R&amp;B project that reached Billboard's Adult R&amp;B and Gospel charts and pulled more than 7 million weekly streams at launch in September 2025. By March 2026, that number had fallen under 3 million. Novelty spikes. Fandom doesn't build around a voice nobody's actually singing with.</p>
+    <p>Put it together and the picture isn't "listeners hate AI." It's listeners don't reward ambiguity, and they reward it even less once they find out after the fact. Disclosed, provable, human anchored hybrid work is the version of this with a shelf life. Undisclosed full synthesis is a spike, not a career.</p>
+  </section>
+
+  <div class="hairline wide"></div>
+
+  <section class="content-section measure" id="practice" aria-labelledby="practice-title">
+    <div class="eyebrow"><span class="dot" aria-hidden="true"></span>PRACTICE</div>
+    <h2 id="practice-title">What this means if you're making records right now</h2>
+    <ul class="practice-list">
+      <li>Label your process honestly, even while the DDEX field is still voluntary. The version of this that isn't voluntary is closer than a full back-catalog re-tag is fun.</li>
+      <li>Being outside the EU doesn't opt you out. Article 50 targets providers and professional deployers, but streaming doesn't respect borders, and audience facing disclosure duties can reach independent releases with EU listeners.</li>
+      <li>A metadata checkbox isn't proof, and it wasn't built to survive a re-encode or a platform strip. If your royalties or your credibility depend on someone believing your disclosure, that's a cryptographic problem now, not a paperwork one.</li>
+      <li>Full synthesis isn't where the volume or the money is heading. Deezer's own numbers make that plain. Hybrid work you can actually stand behind is the lane that survives contact with a real audience.</li>
+      <li>Courts are now willing to hold AI providers liable for their training data, not just the person who typed the prompt. That changes which tools are safe to build a catalog on, and it makes reading a settlement worth your time before your next release.</li>
+    </ul>
+  </section>
+
+  <div class="hairline wide"></div>
+
+  <section class="content-section measure closing" id="close" aria-labelledby="close-title">
+    <div class="eyebrow"><span class="dot" aria-hidden="true"></span>THE SHORT VERSION</div>
+    <h2 id="close-title">Hybrid was never a compromise. <em>It was the forecast.</em></h2>
+    <p>Hybrid production started as a description of how records actually get made: some human, some machine, mixed on purpose. In 2026, a Munich court, the EU AI Act, the DDEX standard, three streaming platforms, and the Recording Academy converged on the same structure without coordinating with each other. Not was it AI. How much, disclosed how, and provable how. That's not a compromise position anymore. That's the compliance requirement, the eligibility rule, and the thing still standing after the novelty spikes fade.</p>
+    <p class="pull-quote">The future of this industry was never going to be human versus machine. It was always going to be who can show their work.</p>
+    <div class="cta-row">
+      <a class="btn-cta" href="https://trustnodelogic.web.app" target="_blank" rel="noopener">EXPLORE THE DAW ATTESTATION ENGINE →</a>
+      <a class="link-quiet" href="https://github.com/Loserdub/hps-attestation-engine" target="_blank" rel="noopener">View the HPS-1.0 spec on GitHub</a>
+    </div>
+  </section>
+
+  <div class="hairline wide"></div>
+
+  <section class="sources wide" aria-labelledby="sources-title">
+    <h2 class="eyebrow" id="sources-title">Sources</h2>
+    <ul class="sources-list">
+      <li><a href="https://www.twobirds.com/en/insights/2026/germany/munich-district-court-rules-on-ai-generated-music-gema-v-suno" target="_blank" rel="noopener">Bird &amp; Bird: Munich District Court rules on GEMA v Suno</a></li>
+      <li><a href="https://variety.com/2026/digital/news/suno-loses-ai-lawsuit-gema-1236825010/" target="_blank" rel="noopener">Variety: Suno loses landmark AI lawsuit to GEMA</a></li>
+      <li><a href="https://www.chartlex.com/blog/business/music-industry-ai-lawsuits-tracker-2026" target="_blank" rel="noopener">Chartlex: Music industry AI lawsuits tracker, 2026</a></li>
+      <li><a href="https://compliancehub.wiki/eu-ai-act-marking-labelling-code-of-practice-article-50-2026/" target="_blank" rel="noopener">ComplianceHub.Wiki: EU AI Act Article 50, marking and labelling</a></li>
+      <li><a href="https://www.techtimes.com/articles/320433/20260714/streaming-platforms-back-ai-music-labels-fraud-actors-exploit-self-reporting-gap.htm" target="_blank" rel="noopener">Tech Times: Streaming platforms back AI music labels as fraud exploits the self-reporting gap</a></li>
+      <li><a href="https://weraveyou.com/2026/07/the-uncomfortable-truth-about-ai-music-biggest-year-yet/" target="_blank" rel="noopener">We Rave You: The uncomfortable truth about AI music's biggest year yet</a></li>
+      <li><a href="https://www.aimusicpreneur.com/ai-music-news/luminate-2026-midyear-report-8-key-music-stats/" target="_blank" rel="noopener">AI Musicpreneur: Luminate 2026 midyear report, 8 key music stats</a></li>
+      <li><a href="https://www.npr.org/2026/05/02/nx-s1-5804489/music-listeners-dislike-ai-music-study" target="_blank" rel="noopener">NPR: AI music is flooding streaming platforms, but listeners like it less</a></li>
+      <li><a href="https://c2paviewer.com/articles/what-is-c2pa" target="_blank" rel="noopener">C2PA Viewer: What is C2PA, content provenance explained</a></li>
+    </ul>
+  </section>
+
+</article>
+</main>
+
+<footer class="site-footer">
+  © 2026 TrustNodeLogic · Hybrid Production Standard HPS-1.0
+</footer>
+
+<script>
+(function(){
+  // Axis order drives tier-code order and the score calculation.
+  // The markup for each axis already exists in the page (see #axis-list);
+  // this script only reads its current state and reacts to changes.
+  var AXIS_ORDER = ['composition','performance','arrangement','mixing','mastering'];
+
+  var STATE_META = {
+    human:  { letter:'H', points:0 },
+    hybrid: { letter:'X', points:1 },
+    ai:     { letter:'A', points:2 }
+  };
+
+  var axisListEl = document.getElementById('axis-list');
+  var tierCodeEl = document.getElementById('tier-code');
+  var nodeLabelEl = document.getElementById('node-label');
+  var nodeDescEl = document.getElementById('node-desc');
+
+  if(!axisListEl) return;
+
+  function currentState(){
+    var state = {};
+    AXIS_ORDER.forEach(function(key){
+      var checked = axisListEl.querySelector('input[name="axis-' + key + '"]:checked');
+      state[key] = checked ? checked.value : 'human';
+    });
+    return state;
+  }
+
+  function render(){
+    var state = currentState();
+
+    // sync visual highlight on the segmented labels
+    axisListEl.querySelectorAll('.seg-option').forEach(function(label){
+      var input = label.querySelector('input');
+      label.classList.toggle('is-checked', input.checked);
+    });
+
+    // sync the chain visual dots
+    AXIS_ORDER.forEach(function(key){
+      var node = document.getElementById('node-' + key);
+      if(node){ node.className = 'chain-node' + (state[key] !== 'human' ? ' ' + state[key] : ''); }
+    });
+
+    // tier code
+    var tier = AXIS_ORDER.map(function(key){ return STATE_META[state[key]].letter; }).join(' \u00B7 ');
+    if(tierCodeEl){ tierCodeEl.textContent = tier; }
+
+    // score and classification
+    var score = AXIS_ORDER.reduce(function(sum, key){ return sum + STATE_META[state[key]].points; }, 0);
+
+    var node, desc;
+    if(score <= 2){
+      node = 'NODE A \u00B7 HUMAN-ANCHORED';
+      desc = 'AI, if it\u2019s present at all, is supporting the human decisions instead of replacing them. Lightest regulatory footprint: minimal marking exposure, straightforward Grammy eligibility, easy DDEX disclosure.';
+    } else if(score <= 7){
+      node = 'NODE B \u00B7 HYBRID';
+      desc = 'Human authorship and AI generation both shape the finished track. This is where most working producers already live, and it\u2019s exactly the zone DDEX\u2019s five-field disclosure and Article 50\u2019s marking rules were built for.';
+    } else {
+      node = 'NODE C \u00B7 AI-PRIMARY';
+      desc = 'Most of the signal chain is machine-generated. Article 50 marking and DDEX disclosure aren\u2019t optional here, and without a clearly credited human authorship stage, this is Grammy-ineligible outright.';
+    }
+    if(nodeLabelEl){ nodeLabelEl.textContent = node; }
+    if(nodeDescEl){ nodeDescEl.textContent = desc; }
+  }
+
+  axisListEl.querySelectorAll('input[type="radio"]').forEach(function(input){
+    input.addEventListener('change', render);
+  });
+
+  render();
+})();
+</script>
+
+</body>
+</html>

@@ -1,22 +1,6 @@
 <!DOCTYPE html><html lang="en"><head>
-    <!-- Geographic & Entity Author Meta Tags for SEO/GEO -->
-    <meta name="author" content="Justin Ray (JRAY)">
-    <meta name="geo.placename" content="East Lansing, Michigan, USA">
-    <meta name="geo.region" content="US-MI">
-    <meta name="geo.country" content="US">
-<title>Services | Hybrid Mixing & Creative Consultation | JRAY</title><meta name="description" content="Hybrid mixing, audio review & creative consults."><meta property="og:url" content="https://trustnodelogic.com/services.html"><meta property="og:image" content="https://trustnodelogic.com/favicon.png"><meta name="twitter:url" content="https://trustnodelogic.com/services.html"><meta name="twitter:image" content="https://trustnodelogic.com/favicon.png"><link rel="canonical" href="https://trustnodelogic.com/services.html">
-        
-    <meta charset="UTF-8">
-<link rel="stylesheet" href="./style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Creative Technology, Suno audio editor, artist, polyphonic web synth, cutting edge ai, hybrid production, AI vocal cleanup, web based photoshop tool">
-    <meta name="author" content="Justin Ray">
-    <meta name="robots" content="index, follow">
-    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-
-
-    <!-- Structured Data for SEO -->
- <script type="application/ld+json">
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
@@ -25,59 +9,65 @@
       "@id": "https://trustnodelogic.com/services.html#webpage",
       "url": "https://trustnodelogic.com/services.html",
       "name": "Services | Hybrid Mixing & Creative Consultation | JRAY",
+      "description": "Hybrid mixing, audio review & creative consults.",
       "isPartOf": {
         "@id": "https://trustnodelogic.com/#website"
       },
-      "provider": {
-        "@id": "https://trustnodelogic.com/#person"
-      },
       "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://trustnodelogic.com/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Services",
-            "item": "https://trustnodelogic.com/services.html"
-          }
-        ]
-      }
+        "@id": "https://trustnodelogic.com/services.html#breadcrumb"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://trustnodelogic.com/services.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://trustnodelogic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://trustnodelogic.com/services.html"
+        }
+      ]
     },
     {
       "@type": "Service",
-      "name": "Hybrid Mixing",
-      "description": "Blending analog warmth with digital precision. Treating generative stems as raw material, applying spectral repair and dynamic processing.",
+      "@id": "https://trustnodelogic.com/services.html#service-mixing",
+      "name": "Hybrid Music Production & Mixing",
+      "description": "Integration of generative AI audio stems with traditional DAW mixing and mastering.",
       "provider": {
         "@id": "https://trustnodelogic.com/#person"
       },
-      "offers": {
-        "@type": "Offer",
-        "price": "50.00",
-        "priceCurrency": "USD",
-        "description": "Starting price"
-      }
+      "areaServed": "Global",
+      "serviceType": "Audio Engineering"
     },
     {
       "@type": "Service",
-      "name": "Audio Review",
-      "description": "Detailed feedback on compositions and generative audio productions covering arrangement, sound design, and mix balance.",
+      "@id": "https://trustnodelogic.com/services.html#service-review",
+      "name": "Track Review & AI Audio Diagnostics",
+      "description": "Detailed spectral analysis, stem evaluation, and structural feedback for hybrid tracks.",
       "provider": {
         "@id": "https://trustnodelogic.com/#person"
-      }
+      },
+      "areaServed": "Global",
+      "serviceType": "Audio Diagnostics"
     },
     {
       "@type": "Service",
-      "name": "Creative Consultation",
-      "description": "Guidance on integrating generative AI tools into creative audio workflows without losing artistic identity.",
+      "@id": "https://trustnodelogic.com/services.html#service-consulting",
+      "name": "AI Music Tech Advisory & Workflow Consulting",
+      "description": "Strategic consultation for platforms, studios, and developers building generative audio tools.",
       "provider": {
         "@id": "https://trustnodelogic.com/#person"
-      }
+      },
+      "areaServed": "Global",
+      "serviceType": "Technology Consulting"
     }
   ]
 }
