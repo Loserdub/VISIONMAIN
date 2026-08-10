@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Denominator Problem: Music Supply, Charts, and Income in 2026 | Trust Node Logic</title>
+<meta name="description" content="106,000 tracks a day, a Billboard rulebook rewritten because old songs would not leave the chart, and artists who still cannot clear minimum wage from streaming. A data-first look at how those facts connect, and where AI actually fits in.">
+<meta name="author" content="Justin Tyler Ray (JRAY)">
+<link rel="canonical" href="https://trustnodelogic.com/saturation.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Denominator Problem">
+<meta property="og:description" content="106,000 tracks a day. A rewritten Billboard rulebook. Artists who still can't clear minimum wage. Here's how those facts are actually one fact.">
+<meta property="og:url" content="https://trustnodelogic.com/saturation.html">
+<meta property="og:site_name" content="Trust Node Logic">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://trustnodelogic.com/assets/images/denominatorproblem-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Denominator Problem: Field Notes by JRAY">
+<meta property="article:published_time" content="2026-08-08">
+<meta property="article:author" content="Justin Ray">
+<meta property="article:section" content="Field Notes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Denominator Problem">
+<meta name="twitter:description" content="106,000 tracks a day. A rewritten Billboard rulebook. Artists who still can't clear minimum wage. Here's how those facts are actually one fact.">
+<meta name="twitter:image" content="https://trustnodelogic.com/assets/images/denominatorproblem-card.png">
+<meta name="twitter:creator" content="@TheInnerVision">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Denominator Problem: Music Supply, Charts, and Income in 2026",
+  "description": "106,000 tracks a day, a Billboard rulebook rewritten because old songs would not leave the chart, and artists who still cannot clear minimum wage from streaming.",
+  "image": ["https://trustnodelogic.com/assets/images/denominatorproblem-card.png"],
+  "datePublished": "2026-08-08",
+  "dateModified": "2026-08-08",
+  "inLanguage": "en-US",
+  "author": {
+    "@type": "Person",
+    "name": "Justin Tyler Ray",
+    "alternateName": "JRAY",
+    "url": "https://trustnodelogic.com/bio.html",
+    "sameAs": [
+      "https://x.com/TheInnerVision",
+      "https://github.com/Loserdub",
+      "https://www.reddit.com/r/hybridproduction",
+      "https://www.linkedin.com/in/jray-me/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Trust Node Logic",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://trustnodelogic.com/favicon.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://trustnodelogic.com/saturation.html"
+  },
+  "articleSection": "Field Notes",
+  "keywords": "music streaming statistics, Billboard charts, Luminate data, AI generated music, artist streaming income, music industry 2026"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://trustnodelogic.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Field Notes", "item": "https://trustnodelogic.com/what-is-hybrid.html"},
+    {"@type": "ListItem", "position": 3, "name": "The Denominator Problem", "item": "https://trustnodelogic.com/saturation.html"}
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0b12;
+    --bg-panel:#0f111a;
+    --bg-panel-2:#141726;
+    --border:rgba(255,255,255,0.09);
+    --border-strong:rgba(255,255,255,0.18);
+    --text-1:#e7e8ef;
+    --text-2:#98a0b3;
+    --text-3:#5a5d72;
+    --accent:#52c7ff;
+    --accent-dim:rgba(82,199,255,0.12);
+    --highlight:#ff9d4d;
+    --highlight-dim:rgba(255,157,77,0.12);
+    --alert:#ff6b6b;
+    --alert-dim:rgba(255,107,107,0.12);
+    --serif:'Playfair Display',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,'SF Mono',Consolas,monospace;
+    --measure:680px;
+    --wide:860px;
+  }
+  *{box-sizing:border-box;}
+  html{background:var(--bg);}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text-1);
+    font-family:var(--mono);
+    font-size:16px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,0.045) 1px, transparent 0);
+    background-size:24px 24px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important; animation:none !important; scroll-behavior:auto !important;}
+  }
+  a{color:var(--accent); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible{
+    outline:2px solid var(--accent); outline-offset:3px;
+  }
+  ::selection{background:var(--accent-dim); color:var(--text-1);}
+
+  .page{max-width:var(--wide); margin:0 auto; padding:0 24px;}
+  .prose{max-width:var(--measure); margin-left:auto; margin-right:auto;}
+  .wide{max-width:var(--wide); margin-left:auto; margin-right:auto;}
+
+  /* ---------- header / nav ---------- */
+  header.site-header{
+    position:sticky; top:0; z-index:20;
+    background:rgba(10,11,18,0.86);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav-row{
+    max-width:var(--wide); margin:0 auto; padding:16px 24px;
+    display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  }
+  .logo{
+    font-weight:700; letter-spacing:0.06em; font-size:13px; color:var(--text-1);
+  }
+  .logo span{color:var(--text-3);}
+  nav.links{display:flex; gap:22px; flex-wrap:wrap;}
+  nav.links a{
+    font-size:12.5px; color:var(--text-2); letter-spacing:0.04em; text-transform:uppercase;
+  }
+  nav.links a:hover{color:var(--accent); text-decoration:none;}
+
+  .breadcrumb{
+    max-width:var(--wide); margin:28px auto 0; padding:0 24px;
+    font-size:12.5px; color:var(--text-3); letter-spacing:0.02em;
+  }
+  .breadcrumb a{color:var(--text-2);}
+  .breadcrumb a:hover{color:var(--accent);}
+
+  /* ---------- eyebrow ---------- */
+  .eyebrow{
+    display:flex; align-items:center; gap:9px;
+    font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--text-2); font-weight:600; margin:0 0 18px;
+  }
+  .eyebrow::before{
+    content:''; width:6px; height:6px; border-radius:50%;
+    background:var(--highlight); flex-shrink:0;
+  }
+  .eyebrow.alt::before{background:var(--accent);}
+
+  /* ---------- hero ---------- */
+  .hero{
+    max-width:var(--wide); margin:0 auto; padding:56px 24px 0;
+    position:relative;
+  }
+  .hero::before{
+    content:''; position:absolute; top:-40px; left:50%; width:640px; height:340px;
+    transform:translateX(-50%);
+    background:radial-gradient(ellipse at center, rgba(255,157,77,0.10), rgba(82,199,255,0.06) 45%, transparent 72%);
+    pointer-events:none; z-index:-1;
+  }
+  h1{
+    font-family:var(--serif); font-weight:700; font-size:clamp(2.1rem,5.2vw,3.3rem);
+    line-height:1.14; margin:0 0 22px; max-width:var(--measure); color:var(--text-1);
+  }
+  h1 em, .ital{font-style:italic; color:var(--highlight); font-weight:600;}
+  .lede{
+    font-size:17px; color:var(--text-2); max-width:var(--measure); margin:0 0 26px; line-height:1.75;
+  }
+  .byline{
+    font-size:13px; color:var(--text-3); max-width:var(--measure); margin:0 0 40px;
+    border-top:1px solid var(--border); padding-top:16px;
+  }
+  .byline b{color:var(--text-2); font-weight:600;}
+
+  /* ---------- premise strip ---------- */
+  .premise{
+    display:grid; grid-template-columns:1fr 1fr 1fr; gap:0;
+    border-top:1px solid var(--border-strong); border-bottom:1px solid var(--border-strong);
+    margin:0 0 56px;
+  }
+  .premise .cell{
+    padding:26px 22px; border-left:1px solid var(--border);
+  }
+  .premise .cell:first-child{border-left:none;}
+  .premise .num{
+    font-family:var(--mono); font-weight:700; font-size:clamp(1.7rem,3.4vw,2.3rem);
+    color:var(--highlight); font-variant-numeric:tabular-nums; margin-bottom:8px; letter-spacing:-0.01em;
+  }
+  .premise .cap{font-size:13px; color:var(--text-2); line-height:1.5;}
+
+  /* ---------- sections ---------- */
+  section.block{ margin:0 0 60px; }
+  .section-tag{
+    font-family:var(--mono); font-size:12.5px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--text-3); margin-bottom:10px; max-width:var(--measure); margin-left:auto; margin-right:auto;
+  }
+  .section-tag b{color:var(--highlight); font-weight:700;}
+  h2{
+    font-family:var(--serif); font-weight:600; font-size:clamp(1.5rem,3vw,2.05rem);
+    line-height:1.25; margin:0 0 22px; color:var(--text-1); max-width:var(--measure); margin-left:auto; margin-right:auto;
+  }
+  h2 em{font-style:italic; color:var(--highlight);}
+  .divider{
+    border:none; border-top:1px solid var(--border); margin:0 0 56px;
+  }
+  p{margin:0 0 20px; color:var(--text-1);}
+  .prose p{max-width:var(--measure);}
+  strong{color:var(--text-1); font-weight:600;}
+  .dim{color:var(--text-2);}
+
+  /* ---------- callouts ---------- */
+  .callout{
+    border-left:3px solid var(--accent); background:var(--bg-panel);
+    padding:18px 22px; margin:28px 0; border-radius:2px;
+  }
+  .callout.highlight{border-left-color:var(--highlight);}
+  .callout.alert{border-left-color:var(--alert);}
+  .callout .ctag{
+    font-size:11.5px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700;
+    color:var(--accent); margin-bottom:8px; display:block;
+  }
+  .callout.highlight .ctag{color:var(--highlight);}
+  .callout.alert .ctag{color:var(--alert);}
+  .callout p{margin:0; color:var(--text-2); font-size:15px;}
+  .callout p:not(:last-child){margin-bottom:10px;}
+
+  /* ---------- bar charts ---------- */
+  .barchart{margin:32px 0 8px;}
+  .barchart .cap{font-size:12.5px; color:var(--text-3); letter-spacing:0.06em; text-transform:uppercase; margin-bottom:16px;}
+  .bar-row{display:flex; align-items:center; gap:14px; margin-bottom:12px;}
+  .bar-row .yr{width:44px; flex-shrink:0; font-size:13px; color:var(--text-2);}
+  .bar-track{
+    flex:1; height:30px; background:var(--bg-panel); border:1px solid var(--border); border-radius:2px; overflow:hidden;
+  }
+  .bar-fill{height:100%; background:linear-gradient(90deg, var(--accent), rgba(82,199,255,0.55));}
+  .bar-row .val{width:110px; text-align:right; font-size:13.5px; color:var(--text-1); font-variant-numeric:tabular-nums; flex-shrink:0;}
+
+  /* ---------- tables ---------- */
+  table{width:100%; border-collapse:collapse; margin:28px 0; font-size:14.5px;}
+  th,td{padding:11px 14px; border-bottom:1px solid var(--border); text-align:left; vertical-align:top;}
+  th{
+    font-size:11.5px; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-3); font-weight:600;
+  }
+  td{color:var(--text-2);}
+  td.num, th.num{text-align:right; font-variant-numeric:tabular-nums;}
+  td strong{color:var(--text-1);}
+
+  /* ---------- tool panel ---------- */
+  .tool{
+    border:1px solid var(--border-strong); background:var(--bg-panel);
+    border-radius:6px; padding:32px; margin:32px 0 8px;
+  }
+  .tool .toolhead{font-size:12.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-3); margin-bottom:22px;}
+  .slider-group{margin-bottom:24px;}
+  .slider-label{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px; gap:10px;}
+  .slider-label span.name{font-size:14px; color:var(--text-1);}
+  .slider-label span.val{
+    font-size:13px; color:var(--accent); background:var(--accent-dim); padding:3px 10px; border-radius:3px;
+    font-variant-numeric:tabular-nums; white-space:nowrap;
+  }
+  input[type=range]{
+    width:100%; height:4px; -webkit-appearance:none; appearance:none;
+    background:var(--border-strong); border-radius:2px; outline:none; margin:6px 0;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none; width:16px; height:16px; border-radius:50%;
+    background:var(--accent); border:2px solid #04121a; cursor:pointer;
+    box-shadow:0 0 0 3px rgba(82,199,255,0.18);
+  }
+  input[type=range]::-moz-range-thumb{
+    width:16px; height:16px; border-radius:50%; background:var(--accent); border:2px solid #04121a; cursor:pointer;
+  }
+  .tool-output{
+    display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border);
+    border:1px solid var(--border); border-radius:4px; margin-top:26px; overflow:hidden;
+  }
+  .tool-output .stat{background:var(--bg-panel-2); padding:20px;}
+  .tool-output .stat .n{
+    font-size:clamp(1.3rem,2.6vw,1.7rem); font-weight:700; color:var(--highlight);
+    font-variant-numeric:tabular-nums; margin-bottom:6px;
+  }
+  .tool-output .stat .l{font-size:12.5px; color:var(--text-2); line-height:1.5;}
+  .tool-note{font-size:13px; color:var(--text-3); margin-top:18px; line-height:1.6;}
+
+  /* ---------- FAQ ---------- */
+  details{border-bottom:1px solid var(--border); padding:18px 0;}
+  details:first-of-type{border-top:1px solid var(--border-strong);}
+  summary{
+    cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px;
+    font-family:var(--serif); font-style:italic; font-size:17px; color:var(--text-1); font-weight:500;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{
+    content:'+'; font-family:var(--mono); font-style:normal; font-size:18px; color:var(--text-2); flex-shrink:0;
+  }
+  details[open] summary::after{content:'\2212';}
+  details p{margin:14px 0 0; color:var(--text-2); font-size:14.5px; max-width:var(--measure);}
+
+  /* ---------- sources ---------- */
+  .sources li{
+    list-style:none; border-bottom:1px solid var(--border); padding:16px 0;
+  }
+  .sources{padding:0; margin:20px 0;}
+  .sources a{font-size:14.5px; font-weight:600;}
+  .sources .desc{font-size:13.5px; color:var(--text-3); margin-top:6px; line-height:1.6;}
+  .fine{font-size:12.5px; color:var(--text-3); line-height:1.7; margin-top:22px;}
+
+  /* ---------- author bio ---------- */
+  .bio{
+    display:flex; gap:20px; align-items:flex-start; border-top:1px solid var(--border-strong);
+    padding-top:32px; margin-top:8px;
+  }
+  .bio .mono-box{
+    width:52px; height:52px; flex-shrink:0; border:1px solid var(--border-strong); border-radius:4px;
+    display:flex; align-items:center; justify-content:center; font-weight:700; color:var(--highlight); font-size:15px;
+  }
+  .bio h3{font-family:var(--serif); font-style:italic; font-weight:600; font-size:19px; margin:0 0 6px; color:var(--text-1);}
+  .bio p{font-size:13.5px; color:var(--text-2); margin:0 0 10px; max-width:none;}
+  .bio .biolinks a{font-size:12.5px; margin-right:16px; color:var(--accent);}
+
+  /* ---------- related ---------- */
+  .related-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px; margin:24px 0 0;}
+  .card{
+    border:1px solid var(--border); border-radius:4px; padding:20px; transition:border-color .15s ease;
+  }
+  .card:hover{border-color:var(--border-strong);}
+  .card .kicker{font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:10px;}
+  .card h4{font-family:var(--serif); font-weight:600; font-size:16.5px; margin:0 0 8px; color:var(--text-1); line-height:1.3;}
+  .card p{font-size:13px; color:var(--text-3); margin:0;}
+  .card a{color:inherit; text-decoration:none;}
+  .card a:hover h4{color:var(--accent);}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#04121a;
+    font-weight:700; font-size:13.5px; padding:11px 20px; border-radius:4px; text-decoration:none;
+    transition:filter .15s ease, transform .15s ease;
+  }
+  .btn:hover{filter:brightness(1.1); text-decoration:none; transform:translateY(-1px);}
+
+  /* ---------- footer ---------- */
+  footer{border-top:1px solid var(--border); margin-top:80px; padding:36px 0 60px;}
+  .footer-row{
+    max-width:var(--wide); margin:0 auto; padding:0 24px;
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;
+  }
+  .footer-links{display:flex; gap:18px; flex-wrap:wrap;}
+  .footer-links a{font-size:12px; color:var(--text-3); text-transform:uppercase; letter-spacing:0.04em;}
+  .footer-links a:hover{color:var(--accent);}
+  .copyright{font-size:12px; color:var(--text-3);}
+
+  @media (max-width:720px){
+    .premise{grid-template-columns:1fr;}
+    .premise .cell{border-left:none; border-top:1px solid var(--border);}
+    .premise .cell:first-child{border-top:none;}
+    .tool-output{grid-template-columns:1fr;}
+    .related-grid{grid-template-columns:1fr;}
+    nav.links{display:none;}
+    .bio{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-row">
+    <a class="logo" href="https://trustnodelogic.com/">TRUST<span>NODE</span>LOGIC</a>
+    <nav class="links">
+      <a href="https://trustnodelogic.com/">Home</a>
+      <a href="https://trustnodelogic.com/music.html">Music</a>
+      <a href="https://trustnodelogic.com/projects.html">Projects</a>
+      <a href="https://trustnodelogic.com/bio.html">Bio</a>
+      <a href="https://trustnodelogic.com/what-is-hybrid.html">What Is Hybrid</a>
+      <a href="https://trustnodelogic.com/services.html">Services</a>
+      <a href="https://trustnodelogic.com/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <a href="https://trustnodelogic.com/">Home</a> / <a href="https://trustnodelogic.com/what-is-hybrid.html">Field Notes</a> / The Denominator Problem
+</div>
+
+<main>
+  <div class="hero">
+    <p class="eyebrow">Field Notes &middot; Market Analysis</p>
+    <h1>The <em>Denominator</em> Problem</h1>
+    <p class="lede">Streaming added 106,000 new tracks a day in 2025. Billboard just rewrote its own rulebook because last year's hits would not leave the chart. The average artist still can't clear minimum wage from streams alone. These read like three separate complaints. They're actually one piece of math, and AI is a smaller part of it than the headlines suggest.</p>
+    <p class="byline"><b>By JRAY</b> (Justin Tyler Ray) &middot; East Lansing, MI &middot; Trust Node Logic &middot; Aug 8, 2026 &middot; ~14 min read</p>
+  </div>
+
+  <div class="page">
+    <div class="prose">
+      <p>Every year the music business produces a stat that sounds fake until you check the source. This year it's 106,000. That's how many new tracks landed on streaming services every single day in 2025, according to Luminate, the data company that also builds the Billboard charts. Meanwhile Billboard tightened its own chart rules in October because too many hits from a full year earlier refused to leave the top ten. And the person actually making the music still can't clear minimum wage from the platform that's supposedly democratizing access to an audience.</p>
+      <p>Three numbers. They look unrelated until you set them next to a fourth: how people are actually spending their listening hours. Once you do that, the connection stops looking like a coincidence and starts looking like arithmetic. AI shows up in this story too, but as a supply-side variable, not the root cause. That's the last section, not the first.</p>
+    </div>
+
+    <div class="premise">
+      <div class="cell">
+        <div class="num">106,000</div>
+        <div class="cap">new tracks uploaded to streaming services every day in 2025, per Luminate. Up 7% from 99,000 a day in 2024.</div>
+      </div>
+      <div class="cell">
+        <div class="num">43%</div>
+        <div class="cap">of 2025 U.S. on-demand audio streams came from music released in the last five years. The rest is catalog.</div>
+      </div>
+      <div class="cell">
+        <div class="num">&lt;1%</div>
+        <div class="cap">of artists on Spotify clear $10,000 a year from streaming royalties alone.</div>
+      </div>
+    </div>
+
+    <!-- 01 -->
+    <section class="block">
+      <div class="section-tag"><b>01</b> / The Upload Rate</div>
+      <h2>Supply, With No Ceiling</h2>
+      <div class="prose">
+        <p>Start with supply, because it's the only number in this story that's growing without anything holding it back.</p>
+        <p>Luminate counted <strong>106,000 new tracks</strong> delivered to streaming services every day in 2025. That's up 7% from 99,000 a day in 2024, which was itself a small dip from 103,000 a day in 2023. The rate isn't a smooth escalator. It dipped once, then jumped harder than the dip. By the close of 2025, streaming services were holding 253 million individual tracks, identified by ISRC, up from 202 million at the end of 2024 and 184 million at the end of 2023.</p>
+      </div>
+
+      <div class="wide">
+        <div class="barchart">
+          <div class="cap">New tracks delivered per day</div>
+          <div class="bar-row"><div class="yr">2023</div><div class="bar-track"><div class="bar-fill" style="width:97%"></div></div><div class="val">103,000</div></div>
+          <div class="bar-row"><div class="yr">2024</div><div class="bar-track"><div class="bar-fill" style="width:93%"></div></div><div class="val">99,000</div></div>
+          <div class="bar-row"><div class="yr">2025</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="val">106,000</div></div>
+        </div>
+        <div class="barchart">
+          <div class="cap">Total tracks in existence, year end</div>
+          <div class="bar-row"><div class="yr">2023</div><div class="bar-track"><div class="bar-fill" style="width:73%"></div></div><div class="val">184.0M</div></div>
+          <div class="bar-row"><div class="yr">2024</div><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div><div class="val">202.0M</div></div>
+          <div class="bar-row"><div class="yr">2025</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="val">253.0M</div></div>
+        </div>
+      </div>
+
+      <div class="prose">
+        <p>Most of that pool goes unheard. Of the 253 million tracks that existed at the end of 2025, <strong>88% (about 224 million)</strong> were streamed 1,000 times or fewer for the entire year. Nearly half, 120.5 million tracks, landed at 10 streams or fewer. Flip to the other axis, measured by volume instead of track count, and songs sitting between 1 million and 50 million streams account for <strong>49.4% of all global listening</strong>: the actual backbone of the industry. At the very top, only 29 tracks worldwide crossed 1 billion streams in 2025, two fewer than in 2024.</p>
+      </div>
+
+      <div class="callout">
+        <span class="ctag">Field Note</span>
+        <p>None of this flood is coming from major labels. Luminate's breakdown puts independent artists and distributors behind 96.2% of daily uploads, with majors responsible for the remaining 3.8%. And even 253 million is likely an undercount: that figure only tracks files with a registered ISRC, so the real number sitting on servers is almost certainly higher.</p>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- 02 -->
+    <section class="block">
+      <div class="section-tag"><b>02</b> / What Actually Charts</div>
+      <h2>The Rulebook Billboard Had to Rewrite</h2>
+      <div class="prose">
+        <p>Now the demand side, or at least the part of it visible enough to rank.</p>
+        <p>If new supply were actually turning into new listening, the charts would look like a rotating door. They don't. Luminate's 2025 year-end numbers show that only <strong>43% of U.S. on-demand audio streams</strong> came from music released in the previous five years, 2021 through 2025. The other 57% went to something older. A year earlier, Luminate's separate current-versus-catalog measure, which draws the line at 18 months instead of five years, put catalog's share of total U.S. album consumption at <strong>73.3%</strong>, up from 72.7% in 2023. Different thresholds, same direction: the older your definition of "new," the smaller its share keeps getting.</p>
+      </div>
+
+      <div class="wide">
+        <table>
+          <thead><tr><th>Metric</th><th class="num">Earlier Year</th><th class="num">Later Year</th><th>Source Definition</th></tr></thead>
+          <tbody>
+            <tr><td>Catalog share of total U.S. album consumption</td><td class="num">72.7% (2023)</td><td class="num"><strong>73.3% (2024)</strong></td><td>Catalog = 18+ months old</td></tr>
+            <tr><td>Share of U.S. streams from recent music</td><td class="num">n/a</td><td class="num"><strong>43% (2025)</strong></td><td>"Recent" = released 2021&ndash;2025</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="prose">
+        <p>Billboard felt this directly enough to change its own rulebook. Through most of 2025, the loudest chart story wasn't a new song. It was old ones that wouldn't leave. Hits from Benson Boone, Shaboozey, and Teddy Swims that first climbed the top ten in 2024 were still sitting there a full year later, alongside a fresh wave of catalog songs from Coldplay, Lorde, and Charli XCX pulled back into rotation by streaming and short-form video.</p>
+        <p>Effective with the Hot 100 dated October 25, 2025, Billboard shortened the thresholds that push a descending song into recurrent status. The old rule dropped a song once it fell below No. 25 for 52 weeks or below No. 50 for 20 weeks. The new rule adds two earlier checkpoints: below No. 5 after 78 weeks, below No. 10 after 52 weeks, on top of the existing No. 25/26-week and No. 50/20-week triggers. Billboard's own explanation cites a multi-year analysis of song trajectories. A simpler read: the weekly snapshot of what's new had started to look more like a leaderboard of what already won, and somebody had to reset the clock.</p>
+      </div>
+
+      <div class="callout highlight">
+        <span class="ctag">Reality Check</span>
+        <p>This isn't new for 2025. The Weeknd's "Die for You" took six years to reach No. 1, arriving there in 2023 off a remix push. Miguel's "Sure Thing," originally from the early 2010s, hit No. 1 on the Pop Airplay chart that same year, more than a decade after release. The mechanism that rewards a proven, already-loved song over an unproven new one was working years before generative AI had any real footprint in mainstream listening.</p>
+        <p>It also isn't a one-way ratchet. A single year of massive superstar releases, a new Taylor Swift or Bad Bunny album, can temporarily push new music's share back up. But the year-over-year stream data keeps landing on the same side of the line regardless of any one year's headlines.</p>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- 03 -->
+    <section class="block">
+      <div class="section-tag"><b>03</b> / How People Are Actually Listening</div>
+      <h2>Discovery and Consumption Are the Same Action Now</h2>
+      <div class="prose">
+        <p>The chart data only makes sense once you look at how listening itself happens.</p>
+        <p>IFPI's global listener survey puts the average person at <strong>20.7 hours of music a week</strong>, spread across seven or more distinct methods. Audio streaming is the single largest slice at 32% of listening time, with video platforms like YouTube and TikTok close behind at 31%. Most of that time isn't spent actively choosing a track. It's spent inside a playlist, a radio mix, or a feed that somebody, or something, already assembled. For a growing share of listeners, discovering a song and consuming it have become the same action.</p>
+        <p>Discovery itself is now almost entirely mediated. Short-form video in particular has turned into a pipeline that runs backward as often as forward: Luminate reported that 36% of U.S. rock fans discovered new music through short-form video in 2025, and a large share of what that pipeline surfaces is a decades-old song getting a second life through a fifteen-second clip, not a fresh release.</p>
+        <p>This is the actual mechanism behind Section 02's numbers. A recommendation system optimizing for completion rate and watch time has no reason to favor an unproven new track over a song it already knows keeps people listening. Familiarity is a measurable engagement signal. Novelty is a guess. Every system involved defaults to the safer bet, and the safer bet is almost always something that already charted once before.</p>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- 04 -->
+    <section class="block">
+      <div class="section-tag"><b>04</b> / What a Stream Is Actually Worth</div>
+      <h2>The Income Math</h2>
+      <div class="prose">
+        <p>Put supply, charts, and listening habits together and the income numbers stop being surprising.</p>
+        <p>Spotify pays out somewhere between $0.003 and $0.005 per stream, averaging close to <strong>$0.004</strong> once country, subscription tier, and that month's total pool are factored in. At that rate, an artist needs roughly 3.75 million streams a year, about 312,000 a month, just to clear the U.S. federal minimum-wage equivalent of $15,080. <strong>Fewer than 1% of artists on Spotify</strong> clear $10,000 a year from streaming royalties alone.</p>
+        <p>That doesn't mean the money isn't real. In 2024, independent artists and labels collectively earned more than $5 billion from Spotify, close to half of everything the platform paid out that year, and more than 71,000 artists cleared $10,000 or more. The money exists. It's just distributed the same way the streams are: concentrated at the top of an enormous, mostly silent pool, with the vast majority of the 253 million tracks from Section 01 earning close to nothing.</p>
+      </div>
+
+      <div class="callout">
+        <span class="ctag">Field Note</span>
+        <p>Gross payout figures also overstate what actually lands in an account. A distributor commonly takes 15&ndash;30%, and a manager another 15&ndash;20% of gross, before any of it reaches the artist directly. The per-stream rate is the ceiling, not the take-home.</p>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- 05 -->
+    <section class="block">
+      <div class="section-tag"><b>05</b> / The Signature Tool</div>
+      <h2>The Attention Split</h2>
+      <div class="prose">
+        <p>Here's the mechanism in one dial. Global on-demand audio streaming produced roughly 5.1 trillion streams in 2025, close to 14 billion a day. If every one of those streams were divided perfectly evenly across every track that exists, this is what a single track would earn. Drag the sliders. This isn't a prediction. It's the floor a genuinely fair division would produce, which the real distribution doesn't come close to.</p>
+      </div>
+
+      <div class="wide">
+        <div class="tool">
+          <div class="toolhead">Even-Split Simulator &middot; ~14B global streams / day held constant</div>
+
+          <div class="slider-group">
+            <div class="slider-label"><span class="name">New tracks uploaded today</span><span class="val" id="v-new">106,000 / day</span></div>
+            <input type="range" id="s-new" min="20000" max="200000" step="1000" value="106000">
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label"><span class="name">Total tracks currently in the pool</span><span class="val" id="v-total">253,000,000</span></div>
+            <input type="range" id="s-total" min="100000000" max="400000000" step="1000000" value="253000000">
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label"><span class="name">Average payout per stream</span><span class="val" id="v-rate">$0.0040</span></div>
+            <input type="range" id="s-rate" min="0.002" max="0.006" step="0.0005" value="0.004">
+          </div>
+
+          <div class="tool-output">
+            <div class="stat"><div class="n" id="o-daily">$0.221 / day</div><div class="l">even-split daily royalty per track</div></div>
+            <div class="stat"><div class="n" id="o-annual">$80.79 / yr</div><div class="l">even-split annual royalty per track</div></div>
+            <div class="stat"><div class="n" id="o-streams">55.3 streams</div><div class="l">even-split streams per track, per day</div></div>
+            <div class="stat"><div class="n" id="o-years">6.5 years</div><div class="l">for uploads at this pace to match today's whole pool</div></div>
+          </div>
+          <p class="tool-note">At the defaults, an even split hands every track about $80.79 a year, roughly 20,198 streams. Luminate's real numbers show 88% of tracks landing under 1,000 streams for the entire year. Actual attention isn't just scarce. It's roughly twenty times more concentrated than a fair split would even predict.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- 06 -->
+    <section class="block">
+      <div class="section-tag"><b>06</b> / Synthesis</div>
+      <h2>What Actually Connects These Numbers</h2>
+      <div class="prose">
+        <p>Four numbers, one mechanism. Supply is growing at 7% a year with no ceiling in sight, because uploading a track costs almost nothing and nobody is required to listen to it. Attention isn't growing anywhere near that fast. People still have 24 hours in a day, and IFPI's own multi-year tracking shows listening hours climbing in small single digits, not double digits. A royalty pool funded by subscriptions and ad revenue grows on a similarly modest curve. Divide a slow-growing pool by a fast-growing denominator and the per-track number can only move one direction.</p>
+        <p>That mechanical fact feeds the chart behavior directly. When most new tracks are close to a statistical guarantee of underperforming, every actor with a choice, a playlist editor, a recommendation model, a casual listener with limited time, rationally leans harder on what's already proven itself. That's not a conspiracy against new music. It's what happens when the cost of a wrong bet rises and the number of bets on the table explodes at the same time. Catalog doesn't win because it's better. It wins because it's already a known quantity in a market drowning in unknowns.</p>
+        <p>None of this requires generative AI to explain it. The mechanism was visible in Billboard's own catalog data years before Suno or Udio had any real listener footprint. Which is exactly why AI gets its own section instead of getting blamed for the whole story.</p>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- 07 -->
+    <section class="block">
+      <div class="section-tag"><b>07</b> / On a Side Note</div>
+      <h2>The <em>AI</em> Variable</h2>
+      <div class="prose">
+        <p>AI music belongs in this piece. It just doesn't belong at the center of it.</p>
+        <p>Deezer, the only major platform that publicly tags AI-generated uploads, reported receiving roughly <strong>75,000 fully AI-generated tracks a day</strong> by April 2026, about 44% of everything uploaded that day. That's up from 50,000 tracks a day, 34% of uploads, just five months earlier in November 2025. Whatever fraction of Section 01's 106,000-a-day figure you want to credit to generative tools, it's large and growing fast. That's a real, measurable supply-side effect.</p>
+        <p>What it isn't, by the same disclosure, is a demand-side effect of similar size. Deezer's data shows AI-tagged tracks accounting for only 1&ndash;3% of actual streams on the platform, and the company flags 85% of whatever plays those tracks do get as fraudulent activity, demonetized rather than paid out. UMG's chief executive used his year-end memo to warn that a business model rewarding raw stream volume, regardless of who or what generated it, was encouraging the flood rather than filtering it. Spotify says it removed more than 75 million spam tracks over the course of the year.</p>
+        <p>Put plainly: right now, generative AI is a denominator problem, not a chart problem. It makes Section 01's number bigger and Section 05's math worse, without meaningfully changing what people actually choose to play. The catalog dominance in Section 02 predates the generative-music boom by years. What AI does add is pressure on the payout side. Every fraudulent or unheard AI track sitting in the pool gives platforms one more reason to raise minimum-play thresholds and tighten monetization rules, and those rules apply to every small, legitimate artist in the pool right alongside the noise. AI isn't stealing the spotlight from new human artists. It's raising the cost of being visible at all, for everyone.</p>
+      </div>
+
+      <div class="callout alert">
+        <span class="ctag">Signal</span>
+        <p>44% of daily uploads, 1&ndash;3% of daily streams, 85% of those streams flagged as fraud. That gap between how much of the pool AI fills and how little of the listening it earns is the whole story in three numbers.</p>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- 08 -->
+    <section class="block">
+      <div class="section-tag"><b>08</b> / Outlook</div>
+      <h2>What This Actually Means</h2>
+      <div class="prose">
+        <p>None of this is an argument that new music is dying, or that people have stopped caring about it. Streaming volume is still growing. Live music is growing faster. People are listening to more music, in more ways, than at any point on record. What's dead, or close to it, is the idea that releasing more often, by itself, is a viable path to being heard.</p>
+        <p>The math in Section 05 isn't going to reverse on its own. Barring a structural change in payout thresholds or a genuine shift in how attention gets allocated, the honest forecast is more concentration, not less, especially as the cost of generating another track keeps falling toward zero. That doesn't mean quitting. It means treating a stream count as a discovery signal instead of an income plan, and building whatever direct relationship with an actual audience a denominator this large can't touch.</p>
+        <p>I went deeper on where that value is actually moving, superfans, live, B2B licensing, in <a href="https://trustnodelogic.com/musicindustryforecast.html">The Liquid Economy of Sound</a>, if the strategic side of this is what you came here for.</p>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- FAQ -->
+    <section class="block">
+      <div class="section-tag">Quick Questions</div>
+      <h2>Before You Go</h2>
+      <div class="prose">
+        <details open>
+          <summary>Is AI the reason old songs are dominating the charts?</summary>
+          <p>No. Catalog's rising share of streams and Billboard's recurrent-hit problem both predate generative AI's real presence in mainstream listening by years. The mechanism is algorithmic risk-aversion and listener habit, not synthetic competition. AI adds volume to the supply side; it doesn't explain why people keep choosing familiar songs.</p>
+        </details>
+        <details>
+          <summary>Doesn't more competition mean the best music naturally rises to the top?</summary>
+          <p>Only if the system sorting that competition is optimizing for quality. Most of the systems involved, streaming recommendation engines, short-form video algorithms, are optimizing for completion rate and watch time instead. Those metrics reward proven engagement, not merit, which is exactly why familiar catalog keeps winning over unproven new work.</p>
+        </details>
+        <details>
+          <summary>Should independent artists just stop releasing new music?</summary>
+          <p>No, but treating upload frequency alone as a growth strategy is a losing bet against this math. What tends to actually work is building a direct relationship with a small, real audience: live shows, a mailing list, merch, sync, anything that doesn't route entirely through a denominator this large.</p>
+        </details>
+        <details>
+          <summary>Will this get better or worse?</summary>
+          <p>Worse, on the current trajectory. Nothing about payout pool growth, attention growth, or upload cost is trending toward less concentration. Generative tools lowering the cost of adding supply toward zero only accelerates the same math.</p>
+        </details>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Sources -->
+    <section class="block">
+      <div class="section-tag">Sources</div>
+      <h2>Sources &amp; Further Reading</h2>
+      <div class="prose">
+        <ul class="sources">
+          <li>
+            <a href="https://www.musicbusinessworldwide.com/quarter-of-a-billion-tracks-now-sit-on-music-streaming-services-where-does-it-end/">Music Business Worldwide: "Quarter of a billion tracks now sit on streaming services"</a>
+            <div class="desc">Source for daily upload rates 2023&ndash;2025, the 96.2%/3.8% independent-versus-major upload split, and the UMG year-end memo on AI slop.</div>
+          </li>
+          <li>
+            <a href="https://musically.com/2026/01/15/5-1tn-annual-music-streams-but-120-5m-tracks-had-10-or-fewer/">Music Ally: coverage of Luminate's 2025 Year-End Music Report</a>
+            <div class="desc">Source for total 2025 streams, total tracks in existence, and the track-count distribution across streaming tiers.</div>
+          </li>
+          <li>
+            <a href="https://www.aol.com/articles/music-streams-hit-5-trillion-140007692.html">AP News: "Music streams hit 5 trillion in 2025"</a>
+            <div class="desc">Source for the 43% figure on U.S. streams from music released in the last five years.</div>
+          </li>
+          <li>
+            <a href="https://www.musicbusinessworldwide.com/global-audio-streams-jumped-14-in-2024-to-4-8-trillion-as-pop-music-was-the-fastest-growing-genre-in-the-us/">Music Business Worldwide: Luminate 2024 Year-End Report coverage</a>
+            <div class="desc">Source for the 72.7%/73.3% catalog share of total U.S. album consumption.</div>
+          </li>
+          <li>
+            <a href="https://billboard.substack.com/p/older-hits-will-now-drop-off-the">Billboard: "Older Hits Will Now Drop Off the Hot 100 Faster"</a>
+            <div class="desc">Source for the October 2025 Hot 100 recurrent-rule changes and thresholds.</div>
+          </li>
+          <li>
+            <a href="https://www.billboard.com/lists/best-songs-2025-so-far/addison-rae-headphones-on">Billboard: "Trending on Billboard," mid-2025</a>
+            <div class="desc">Source for 2024 hits lingering into 2025's top ten and the year's resurgent catalog entries.</div>
+          </li>
+          <li>
+            <a href="https://ca.billboard.com/music/features/catalog-chart-hits-struggling-1235703667/">Billboard: "Catalog Hits Were Soaring on the Charts"</a>
+            <div class="desc">Source for the "Die for You" and "Sure Thing" catalog chart histories.</div>
+          </li>
+          <li>
+            <a href="https://newsroom-deezer.com/2026/04/ai-generated-tracks-represent-44-of-new-uploaded-music/">Deezer Newsroom: "AI-generated tracks now represent 44% of all new uploaded music"</a>
+            <div class="desc">Source for the daily AI-upload figures, the 1&ndash;3% share of streams, and the 85% fraud-detection rate.</div>
+          </li>
+          <li>
+            <a href="https://www.ifpi.org/resources/">IFPI: Engaging with Music / Global Music Report</a>
+            <div class="desc">Source for weekly listening hours, method-of-listening shares, and algorithm-driven discovery trends.</div>
+          </li>
+        </ul>
+        <p class="fine">Per-stream payout figures ($0.003&ndash;$0.005, averaging near $0.004) and the independent-artist Spotify earnings figures are a synthesis of publicly published royalty explainers current as of mid-2026, since Spotify does not publish an official flat per-stream rate. Treat them as directional, not exact. The Attention Split tool above is a simplified model built for illustration: it assumes a perfectly even division of streams that does not exist in reality, by design, to make the actual concentration visible by contrast.</p>
+      </div>
+    </section>
+
+    <div class="prose">
+      <div class="bio">
+        <div class="mono-box">JR</div>
+        <div>
+          <h3>Justin Tyler Ray &middot; JRAY</h3>
+          <p>Creative technologist and hybrid production pioneer based in East Lansing, Michigan. Founder of r/hybridproduction, the community mapping the middle ground of the AI/no-AI production debate.</p>
+          <div class="biolinks">
+            <a href="https://trustnodelogic.com/">trustnodelogic.com</a>
+            <a href="https://github.com/Loserdub">GitHub</a>
+            <a href="https://www.reddit.com/r/hybridproduction">r/hybridproduction</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="prose" style="margin-top:48px;">
+      <div class="section-tag">Continue Reading Field Notes</div>
+      <div class="related-grid">
+        <a href="https://trustnodelogic.com/musicindustryforecast.html">
+          <div class="card">
+            <div class="kicker">Forecast</div>
+            <h4>The Liquid Economy of Sound &rarr;</h4>
+            <p>A 2026&ndash;2031 forecast on where value actually concentrates as digital music approaches zero marginal cost.</p>
+          </div>
+        </a>
+        <a href="https://trustnodelogic.com/songstructure.html">
+          <div class="card">
+            <div class="kicker">Structural Analysis</div>
+            <h4>The Architecture of the Three-Minute Song &rarr;</h4>
+            <p>How verse-chorus-bridge songwriting gave way to front-loaded, algorithm-tuned arrangements.</p>
+          </div>
+        </a>
+        <a href="https://trustnodelogic.com/promptingthemachine.html">
+          <div class="card">
+            <div class="kicker">Music &amp; Technology</div>
+            <h4>Prompting the Machine &rarr;</h4>
+            <p>How Suno, Udio, and current AI music tools actually turn a sentence into a song.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-row">
+    <div class="footer-links">
+      <a href="https://trustnodelogic.com/">Home</a>
+      <a href="https://trustnodelogic.com/what-is-hybrid.html">What Is Hybrid</a>
+      <a href="https://trustnodelogic.com/projects.html">Projects</a>
+      <a href="https://trustnodelogic.com/music.html">Music</a>
+      <a href="https://trustnodelogic.com/sitemap.xml">Sitemap</a>
+    </div>
+    <div class="copyright">&copy; 2026 Justin Tyler Ray (JRAY). All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var sNew = document.getElementById('s-new');
+  var sTotal = document.getElementById('s-total');
+  var sRate = document.getElementById('s-rate');
+  var vNew = document.getElementById('v-new');
+  var vTotal = document.getElementById('v-total');
+  var vRate = document.getElementById('v-rate');
+  var oDaily = document.getElementById('o-daily');
+  var oAnnual = document.getElementById('o-annual');
+  var oStreams = document.getElementById('o-streams');
+  var oYears = document.getElementById('o-years');
+
+  var DAILY_GLOBAL_STREAMS = 14000000000; // ~5.1 trillion / year, held constant
+
+  function fmt(n){ return Math.round(n).toLocaleString('en-US'); }
+
+  function update(){
+    var newTracks = parseInt(sNew.value, 10);
+    var totalTracks = parseInt(sTotal.value, 10);
+    var rate = parseFloat(sRate.value);
+
+    var streamsPerTrackDay = DAILY_GLOBAL_STREAMS / totalTracks;
+    var dailyRoyalty = streamsPerTrackDay * rate;
+    var annualRoyalty = dailyRoyalty * 365;
+    var newPerYear = newTracks * 365;
+    var yearsToMatch = totalTracks / newPerYear;
+
+    vNew.textContent = fmt(newTracks) + ' / day';
+    vTotal.textContent = fmt(totalTracks);
+    vRate.textContent = '$' + rate.toFixed(4);
+
+    oDaily.textContent = '$' + dailyRoyalty.toFixed(3) + ' / day';
+    oAnnual.textContent = '$' + annualRoyalty.toFixed(2) + ' / yr';
+    oStreams.textContent = streamsPerTrackDay.toFixed(1) + ' streams';
+    oYears.textContent = yearsToMatch.toFixed(1) + ' years';
+  }
+
+  [sNew, sTotal, sRate].forEach(function(el){
+    el.addEventListener('input', update);
+  });
+  update();
+})();
+</script>
+
+</body>
+</html>
