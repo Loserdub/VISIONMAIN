@@ -31,6 +31,7 @@
 - [Contact](https://trustnodelogic.com/contact.html): Direct collaboration and inquiry channel.
 
 - [Hybrid Production Standard (HPS-1.0)](https://trustnodelogic.com/hybridproductionstandard.html): Official 5-axis process classification, DDEX ERN 4.3 metadata mapping, and EU AI Act Article 50 compliance standard.
+- [Suno's True Business Model Revealed: What The September Terms Actually Say](https://trustnodelogic.com/sunonewtos.html): Critical analysis of Suno AI's September Terms of Service, IP upload licenses, arbitration clauses, download caps, and the BMG partnership deal.
 - [The Trust Signal Chain: AI, Hybrid Production, and the Industry in 2026](https://trustnodelogic.com/hp2026.html): Analysis of court rulings, EU AI Act Article 50, DDEX metadata, and platform policies in 2026.
 - [The Denominator Problem: Music Supply, Charts, and Income in 2026](https://trustnodelogic.com/saturation.html): 106,000 tracks a day, rewritten Billboard rules, and artist income realities in 2026.
 - [The Architecture of the Three-Minute Song: Song Structure in the Streaming Era](https://trustnodelogic.com/songstructure.html): Structural analysis of pop song arrangement evolution from the CD/download era (2000-2018) to the algorithmic streaming era (2019-present).

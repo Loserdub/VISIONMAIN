@@ -437,13 +437,13 @@
                   </span>
                 </a>
 
-                <!-- Song Structure Pill -->
-                <a href="./songstructure.html" class="group relative flex-1 inline-flex items-center justify-center px-6 py-4 rounded-sm bg-zinc-950/80 border border-lime-400/30 hover:border-lime-400/80 transition-all duration-300 shadow-[0_0_20px_rgba(163,230,53,0.06)] overflow-hidden">
-                  <div class="absolute -top-2 -right-2 z-20 bg-lime-400 text-black text-[9px] font-mono font-bold tracking-widest uppercase px-2 py-0.5 rounded-sm">NEW ARTICLE</div>
-                  <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-lime-400/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
+                <!-- Suno TOS Pill -->
+                <a href="./sunonewtos.html" class="group relative flex-1 inline-flex items-center justify-center px-6 py-4 rounded-sm bg-zinc-950/80 border border-purple-400/30 hover:border-purple-400/80 transition-all duration-300 shadow-[0_0_20px_rgba(168,85,247,0.06)] overflow-hidden">
+                  <div class="absolute -top-2 -right-2 z-20 bg-purple-400 text-black text-[9px] font-mono font-bold tracking-widest uppercase px-2 py-0.5 rounded-sm">NEW ARTICLE</div>
+                  <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-purple-400/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
                   <span class="relative z-10 flex flex-col items-center text-center">
-                    <span class="text-sm font-mono font-bold tracking-widest text-white uppercase group-hover:text-lime-400 transition-colors">SONG STRUCTURE</span>
-                    <span class="text-[10px] font-mono text-lime-400/80 mt-1 uppercase">Field Notes · Structural Analysis</span>
+                    <span class="text-sm font-mono font-bold tracking-widest text-white uppercase group-hover:text-purple-300 transition-colors">SUNO'S BUSINESS MODEL</span>
+                    <span class="text-[10px] font-mono text-purple-300/80 mt-1 uppercase">Field Notes · Industry Analysis</span>
                   </span>
                 </a>
 
@@ -584,81 +584,92 @@
               <div class="flex items-center gap-3">
                 <div class="flex items-center gap-1.5 bg-zinc-900/80 border border-white/10 rounded-lg p-1.5 backdrop-blur-md">
                   <button id="fn-prev-btn" onclick="rotateFieldNotes(-1)" class="px-2 py-1 text-xs font-mono text-white/60 hover:text-lime-400 hover:bg-white/5 rounded transition-all" aria-label="Previous Field Notes">←</button>
-                  <span id="fn-indicator" class="text-[10px] font-mono text-white/40 px-2 min-w-[70px] text-center">1–3 of 15</span>
+                  <span id="fn-indicator" class="text-[10px] font-mono text-white/40 px-2 min-w-[70px] text-center">1–3 of 16</span>
                   <button id="fn-next-btn" onclick="rotateFieldNotes(1)" class="px-2 py-1 text-xs font-mono text-white/60 hover:text-lime-400 hover:bg-white/5 rounded transition-all" aria-label="Next Field Notes">→</button>
                   <button id="fn-auto-btn" onclick="toggleAutoRotate()" class="px-2 py-1 text-[10px] font-mono text-lime-400/80 hover:text-lime-300 hover:bg-lime-500/10 rounded transition-all flex items-center gap-1" title="Toggle Auto Rotation">
                     <span class="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse" id="fn-pulse-dot"></span> ROTATE
                   </button>
                 </div>
-                <a href="./what-is-hybrid.html" class="text-xs font-mono text-white/50 hover:text-lime-400 transition-colors hidden sm:block">VIEW ALL (15) →</a>
+                <a href="./what-is-hybrid.html" class="text-xs font-mono text-white/50 hover:text-lime-400 transition-colors hidden sm:block">VIEW ALL (16) →</a>
               </div>
             </div>
 
             <div id="field-notes-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 transition-opacity duration-300">
               
-              <!-- Article 1: The Architecture of the Three-Minute Song -->
-              <a href="./songstructure.html" class="border border-emerald-500/40 shadow-[0_0_20px_rgba(52,211,153,0.15)] bg-zinc-950/60 p-7 group flex flex-col justify-between rounded-lg transition-all duration-300 hover:scale-[1.02]">
-                <div>
-                  <div class="flex items-center justify-between text-[10px] font-mono text-lime-400 mb-3">
-                    <span>AUG 06, 2026</span>
-                    <span class="text-[9px] font-mono tracking-widest text-emerald-400 uppercase px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 font-bold">NEW • STRUCTURAL ANALYSIS</span>
-                  </div>
-                  <h3 class="text-base font-bold text-white uppercase tracking-wide mb-3 group-hover:text-lime-400 transition-colors">THE ARCHITECTURE OF THE THREE-MINUTE SONG</h3>
-                  <p class="text-xs text-white/65 font-light leading-relaxed mb-4">
-                    How verse-chorus-bridge songwriting built for CDs and downloads gave way to front-loaded, algorithm-tuned arrangements built for streaming.
-                  </p>
-                </div>
-                <div class="flex items-center justify-between text-[11px] font-mono border-t border-white/5 pt-3 mt-auto">
-                  <span class="text-emerald-300 group-hover:text-white transition-colors">READ ARTICLE →</span>
-                  <span class="text-white/20 text-[9px]">12 MIN READ</span>
-                </div>
-              </a>
-
-              <!-- Article 2: Prompting the Machine -->
-              <a href="./promptingthemachine.html" class="hairline-card p-7 group flex flex-col justify-between rounded-lg transition-all duration-300 hover:scale-[1.02]">
-                <div>
-                  <div class="flex items-center justify-between text-[10px] font-mono text-cyan-400 mb-3">
-                    <span>JUL 26, 2026</span>
-                    <span class="text-white/30">PROMPT ENG</span>
-                  </div>
-                  <h3 class="text-base font-bold text-white uppercase tracking-wide mb-3 group-hover:text-cyan-300 transition-colors">PROMPTING THE MACHINE</h3>
-                  <p class="text-xs text-white/65 font-light leading-relaxed mb-4">
-                    How Suno, Udio, and the current wave of AI music tools turn a sentence into a song — how text encoders parse prompts, slider mechanics, and next-gen tools.
-                  </p>
-                </div>
-                <div class="flex items-center justify-between text-[11px] font-mono border-t border-white/5 pt-3 mt-auto">
-                  <span class="text-white/40 group-hover:text-white transition-colors">READ ARTICLE →</span>
-                  <span class="text-white/20 text-[9px]">13 MIN READ</span>
-                </div>
-              </a>
-
-              <!-- Article 3: The Last New Genre -->
-              <a href="./lastnewgenre.html" class="hairline-card p-7 group flex flex-col justify-between rounded-lg transition-all duration-300 hover:scale-[1.02]">
+              <!-- Article 1: Suno's True Business Model Revealed -->
+              <a href="./sunonewtos.html" class="border border-purple-500/40 shadow-[0_0_20px_rgba(168,85,247,0.15)] bg-zinc-950/60 p-7 group flex flex-col justify-between rounded-lg transition-all duration-300 hover:scale-[1.02]">
                 <div>
                   <div class="flex items-center justify-between text-[10px] font-mono text-purple-400 mb-3">
-                    <span>JUL 21, 2026</span>
-                    <span class="text-white/30">CULTURE</span>
+                    <span>AUG 13, 2026</span>
+                    <span class="text-[9px] font-mono tracking-widest text-purple-400 uppercase px-2 py-0.5 rounded bg-purple-500/10 border border-purple-500/20 font-bold">NEW • INDUSTRY ANALYSIS</span>
                   </div>
-                  <h3 class="text-base font-bold text-white uppercase tracking-wide mb-3 group-hover:text-purple-300 transition-colors">THE LAST NEW GENRE</h3>
+                  <h3 class="text-base font-bold text-white uppercase tracking-wide mb-3 group-hover:text-purple-300 transition-colors">SUNO'S TRUE BUSINESS MODEL REVEALED</h3>
                   <p class="text-xs text-white/65 font-light leading-relaxed mb-4">
-                    SoundCloud rap in 2019, COVID, and why algorithmic curation flattens cultural taste toward the familiar.
+                    The 7-download cap is the small story. What Suno's September terms actually say about who owns your uploads, why suing is harder than you think, and the BMG deal.
+                  </p>
+                </div>
+                <div class="flex items-center justify-between text-[11px] font-mono border-t border-white/5 pt-3 mt-auto">
+                  <span class="text-purple-300 group-hover:text-white transition-colors">READ ARTICLE →</span>
+                  <span class="text-white/20 text-[9px]">9 MIN READ</span>
+                </div>
+              </a>
+
+              <!-- Article 2: The Trust Signal Chain -->
+              <a href="./hp2026.html" class="hairline-card p-7 group flex flex-col justify-between rounded-lg transition-all duration-300 hover:scale-[1.02]">
+                <div>
+                  <div class="flex items-center justify-between text-[10px] font-mono text-emerald-400 mb-3">
+                    <span>AUG 09, 2026</span>
+                    <span class="text-white/30">INDUSTRY REPORT</span>
+                  </div>
+                  <h3 class="text-base font-bold text-white uppercase tracking-wide mb-3 group-hover:text-emerald-300 transition-colors">THE TRUST SIGNAL CHAIN (2026)</h3>
+                  <p class="text-xs text-white/65 font-light leading-relaxed mb-4">
+                    Courts, the EU AI Act, DDEX disclosure, streaming platforms, and the Grammys all ruled on AI music in 2026. A field note on what actually happened.
                   </p>
                 </div>
                 <div class="flex items-center justify-between text-[11px] font-mono border-t border-white/5 pt-3 mt-auto">
                   <span class="text-white/40 group-hover:text-white transition-colors">READ ARTICLE →</span>
-                  <span class="text-white/20 text-[9px]">11 MIN READ</span>
+                  <span class="text-white/20 text-[9px]">15 MIN READ</span>
+                </div>
+              </a>
+
+              <!-- Article 3: The Denominator Problem -->
+              <a href="./saturation.html" class="hairline-card p-7 group flex flex-col justify-between rounded-lg transition-all duration-300 hover:scale-[1.02]">
+                <div>
+                  <div class="flex items-center justify-between text-[10px] font-mono text-amber-400 mb-3">
+                    <span>AUG 08, 2026</span>
+                    <span class="text-white/30">MARKET ANALYSIS</span>
+                  </div>
+                  <h3 class="text-base font-bold text-white uppercase tracking-wide mb-3 group-hover:text-amber-300 transition-colors">THE DENOMINATOR PROBLEM</h3>
+                  <p class="text-xs text-white/65 font-light leading-relaxed mb-4">
+                    106,000 tracks a day, a rewritten Billboard rulebook, and streaming income realities. A data-first look at music supply and AI's real role.
+                  </p>
+                </div>
+                <div class="flex items-center justify-between text-[11px] font-mono border-t border-white/5 pt-3 mt-auto">
+                  <span class="text-white/40 group-hover:text-white transition-colors">READ ARTICLE →</span>
+                  <span class="text-white/20 text-[9px]">14 MIN READ</span>
                 </div>
               </a>
 
             </div>
 
             <div class="mt-8 flex items-center justify-between sm:hidden">
-              <a href="./what-is-hybrid.html" class="text-xs font-mono text-lime-400 hover:underline">VIEW ALL FIELD NOTES (15) →</a>
+              <a href="./what-is-hybrid.html" class="text-xs font-mono text-lime-400 hover:underline">VIEW ALL FIELD NOTES (16) →</a>
             </div>
           </section>
 
           <script>
             const ALL_FIELD_NOTES = [
+              {
+                title: "SUNO'S TRUE BUSINESS MODEL REVEALED",
+                date: "AUG 13, 2026",
+                category: "INDUSTRY ANALYSIS",
+                desc: "The 7-download cap is the small story. What Suno's September terms actually say about who owns your uploads, why suing is harder than you think, and the BMG deal.",
+                url: "./sunonewtos.html",
+                color: "text-purple-400",
+                hoverColor: "group-hover:text-purple-300",
+                readTime: "9 MIN READ",
+                isNew: true
+              },
               {
                 title: "THE TRUST SIGNAL CHAIN (2026)",
                 date: "AUG 09, 2026",
@@ -668,7 +679,7 @@
                 color: "text-emerald-400",
                 hoverColor: "group-hover:text-emerald-300",
                 readTime: "15 MIN READ",
-                isNew: true
+                isNew: false
               },
               {
                 title: "THE DENOMINATOR PROBLEM",
@@ -679,7 +690,7 @@
                 color: "text-amber-400",
                 hoverColor: "group-hover:text-amber-300",
                 readTime: "14 MIN READ",
-                isNew: true
+                isNew: false
               },
               {
                 title: "THE ARCHITECTURE OF THE THREE-MINUTE SONG",
