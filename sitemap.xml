@@ -127,6 +127,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://trustnodelogic.com/artistfinder.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://trustnodelogic.com/void/</loc>
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>

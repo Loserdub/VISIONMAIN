@@ -39,6 +39,7 @@
 - [The Last New Genre: SoundCloud Rap, COVID, and the Algorithm's Taste for the Familiar](https://trustnodelogic.com/lastnewgenre.html): Analysis of genre evolution, cultural flattening, and algorithmic curation.
 - [Autonomous Virtual Studio: Multi-Agent DAW Guide](https://trustnodelogic.com/agentichybridproduction.html): Architectural guide on multi-agent AI systems, OSC, EnCodec, and Ableton automation.
 - [MIXR Studio](https://trustnodelogic.com/mixrstudio.html): Browser-native Web Audio API segment mixer and mastering environment.
+- [AI Visibility Signal Checker (GEO for Musicians)](https://trustnodelogic.com/artistfinder.html): Interactive generative engine optimization scanner for evaluating artist entity clarity across LLMs and search engines.
 - [The Liquid Ear](https://trustnodelogic.com/liquidears.html): Real-time adaptive neural networks in mixing workflows.
 - [C2PA Music Provenance Deep Dive](https://trustnodelogic.com/c2pa-music-provenance.html): Cryptographic provenance and metadata standards in post-AI music distribution.
 - [Watermarks in AI Audio (The Invisible Grid)](https://trustnodelogic.com/fingerprint.html): ACRCloud and steganography analysis in modern generative models.
