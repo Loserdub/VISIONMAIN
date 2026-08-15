@@ -3615,8 +3615,8 @@
             "@type": "WebPage",
             "@id": "https://trustnodelogic.com/music.html#webpage",
             "url": "https://trustnodelogic.com/music.html",
-            "name": "Music | Justin Ray \u2014 Hybrid Producer",
-            "description": "Explore original music, sonic experiments, and hybrid production releases across aliases including loserdub, VISION, and le vide. Produced by JRAY.",
+            "name": "Original Music & Discography | loserdub, VISION, le vide \u2014 Justin Ray",
+            "description": "Listen to original tracks, alias releases, and hybrid electronic music by Justin Ray across projects including loserdub, VISION, and le vide.",
             "isPartOf": {
               "@id": "https://trustnodelogic.com/#website"
             },
@@ -3710,7 +3710,7 @@
             ],
             "url": "https://trustnodelogic.com",
             "image": "https://trustnodelogic.com/bio-avatar.jpg",
-            "email": "mailto:justin@trustnodelogic.com",
+            "email": "mailto:trustnodelogic@gmail.com",
             "jobTitle": [
               "Music Producer",
               "Music Artist",
