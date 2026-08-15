@@ -4570,8 +4570,8 @@
             "@type": "WebPage",
             "@id": "https://trustnodelogic.com/services.html#webpage",
             "url": "https://trustnodelogic.com/services.html",
-            "name": "Services & Consulting | AI Visibility, Tool Testing & Hybrid Audio \u2014 Justin Ray",
-            "description": "GEO visibility consulting, AI tool evaluation, hybrid stem mixing, and audio engineering for artists, labels, and platforms. By Justin Ray.",
+            "name": "Services & Consulting | SEO, GEO Optimization & Web Development \u2014 Justin Ray",
+            "description": "Full-stack SEO and GEO search optimization, web development, and creative consultation for AI-integrated workflows. By Justin Ray.",
             "isPartOf": {
               "@id": "https://trustnodelogic.com/#website"
             },
@@ -4582,35 +4582,21 @@
             "mainEntity": {
               "@type": "ItemList",
               "@id": "https://trustnodelogic.com/services.html#service-list",
-              "name": "Strategic Consulting & Audio Services",
+              "name": "Professional Services & Consulting",
               "description": "Professional services offered by Justin Ray (JRAY) & Trust Node Logic",
               "itemListElement": [
                 {
                   "@type": "ListItem",
                   "position": 1,
                   "item": {
-                    "@id": "https://trustnodelogic.com/services.html#service-geo"
+                    "@id": "https://trustnodelogic.com/services.html#service-seo-geo"
                   }
                 },
                 {
                   "@type": "ListItem",
                   "position": 2,
                   "item": {
-                    "@id": "https://trustnodelogic.com/services.html#service-creative-testing"
-                  }
-                },
-                {
-                  "@type": "ListItem",
-                  "position": 3,
-                  "item": {
-                    "@id": "https://trustnodelogic.com/services.html#service-mixing"
-                  }
-                },
-                {
-                  "@type": "ListItem",
-                  "position": 4,
-                  "item": {
-                    "@id": "https://trustnodelogic.com/services.html#service-review"
+                    "@id": "https://trustnodelogic.com/services.html#service-creative"
                   }
                 }
               ]
@@ -4637,9 +4623,9 @@
           },
           {
             "@type": "Service",
-            "@id": "https://trustnodelogic.com/services.html#service-geo",
-            "name": "GEO / AI Visibility Consulting",
-            "description": "Structured data graph implementation, llms.txt knowledge architecture, and Generative Engine Optimization (GEO) to ensure artists, labels, and brands are cited in AI search engines.",
+            "@id": "https://trustnodelogic.com/services.html#service-seo-geo",
+            "name": "SEO / GEO Optimization & Web Development",
+            "description": "Full-stack search optimization, technical SEO audits, JSON-LD schema graphs, Generative Engine Optimization (GEO), llms.txt manifests, and web development.",
             "url": "https://trustnodelogic.com/services.html",
             "provider": {
               "@id": "https://trustnodelogic.com/#person"
@@ -4648,19 +4634,18 @@
               "@type": "Place",
               "name": "Global"
             },
-            "serviceType": "AI Search Visibility & GEO Consulting",
+            "serviceType": "Search Optimization & Web Development",
             "offers": {
               "@type": "Offer",
-              "priceCurrency": "USD",
               "availability": "https://schema.org/InStock",
-              "url": "https://trustnodelogic.com/contact.html?service=geo-consulting"
+              "url": "https://trustnodelogic.com/contact.html?service=seo-geo-web"
             }
           },
           {
             "@type": "Service",
-            "@id": "https://trustnodelogic.com/services.html#service-creative-testing",
-            "name": "Creative Consultation & AI Tool Testing",
-            "description": "Hands-on evaluation, workflow stress-testing, and product feedback for generative music platforms and audio AI tools by an early-access hybrid producer.",
+            "@id": "https://trustnodelogic.com/services.html#service-creative",
+            "name": "Creative Consultation",
+            "description": "Strategic and creative advisory, workflow direction, generative production pipeline feedback, and AI tool evaluation for artists, labels, and creative teams.",
             "url": "https://trustnodelogic.com/services.html",
             "provider": {
               "@id": "https://trustnodelogic.com/#person"
@@ -4669,54 +4654,11 @@
               "@type": "Place",
               "name": "Global"
             },
-            "serviceType": "AI Tool Evaluation & Creative Advisory",
+            "serviceType": "Creative Advisory & Workflow Strategy",
             "offers": {
               "@type": "Offer",
-              "priceCurrency": "USD",
               "availability": "https://schema.org/InStock",
-              "url": "https://trustnodelogic.com/contact.html?service=creative-testing"
-            }
-          },
-          {
-            "@type": "Service",
-            "@id": "https://trustnodelogic.com/services.html#service-mixing",
-            "name": "Hybrid Music Production & Stem Mixing",
-            "description": "Integration of generative AI audio stems with traditional DAW mixing, spectral splitting, and analog/digital mastering.",
-            "url": "https://trustnodelogic.com/services.html",
-            "provider": {
-              "@id": "https://trustnodelogic.com/#person"
-            },
-            "areaServed": {
-              "@type": "Place",
-              "name": "Global"
-            },
-            "serviceType": "Audio Engineering & Mixing",
-            "offers": {
-              "@type": "Offer",
-              "priceCurrency": "USD",
-              "availability": "https://schema.org/InStock",
-              "url": "https://trustnodelogic.com/contact.html?service=hybrid-mixing"
-            }
-          },
-          {
-            "@type": "Service",
-            "@id": "https://trustnodelogic.com/services.html#service-review",
-            "name": "Track Review & AI Audio Diagnostics",
-            "description": "Detailed spectral analysis, stem evaluation, phase alignment, and structural feedback for hybrid AI audio tracks.",
-            "url": "https://trustnodelogic.com/services.html",
-            "provider": {
-              "@id": "https://trustnodelogic.com/#person"
-            },
-            "areaServed": {
-              "@type": "Place",
-              "name": "Global"
-            },
-            "serviceType": "Audio Diagnostics & Feedback",
-            "offers": {
-              "@type": "Offer",
-              "priceCurrency": "USD",
-              "availability": "https://schema.org/InStock",
-              "url": "https://trustnodelogic.com/contact.html?service=audio-review"
+              "url": "https://trustnodelogic.com/contact.html?service=creative-consultation"
             }
           },
           {
@@ -4753,6 +4695,9 @@
               "Generative Artificial Intelligence",
               "Generative Engine Optimization",
               "GEO",
+              "Technical SEO",
+              "Structured Data",
+              "JSON-LD",
               "Web Audio API",
               "Audio Engineering",
               "Digital Audio Workstation",
