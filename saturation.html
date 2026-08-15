@@ -214,6 +214,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link href="./style.css" rel="stylesheet"/>
 <style>
   :root{
     --bg:#0a0b12;
@@ -235,7 +236,7 @@
     --measure:680px;
     --wide:860px;
   }
-  *{box-sizing:border-box;}
+  *, *::before, *::after{box-sizing:border-box; border-radius:0px !important;}
   html{background:var(--bg);}
   body{
     margin:0;

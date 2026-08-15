@@ -1,14 +1,236 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Syne", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-sans: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "IBM Plex Mono", "SF Mono", Menlo, Consolas, monospace;
+
+  --color-ink: #0B0C0E;
+  --color-slate-dark: #121417;
+  --color-slate-surface: #171A1F;
+  --color-slate-border: #23272F;
+  --color-terminal: #EAEAEA;
+  --color-terminal-dim: #A1A1AA;
+  --color-zinc-muted: #71717A;
+  --color-zinc-dim: #52525B;
+  
+  --color-amber-volt: #FF9F1C;
+  --color-amber-bright: #FFAE33;
+  --color-amber-glow: rgba(255, 159, 28, 0.25);
+  --color-amber-subtle: rgba(255, 159, 28, 0.08);
+
+  --color-grid-line: rgba(255, 255, 255, 0.09);
+  --color-grid-bright: rgba(255, 255, 255, 0.20);
 }
 
 @layer base {
+  /* Strict 0px border-radius rule across ALL elements */
+  *, *::before, *::after {
+    border-radius: 0px !important;
+  }
+
+  :root {
+    --bg-main: #0B0C0E;
+    --bg-surface: #121417;
+    --bg-elevated: #171A1F;
+    --text-main: #EAEAEA;
+    --text-muted: #71717A;
+    --accent: #FF9F1C;
+    --accent-glow: rgba(255, 159, 28, 0.3);
+    --grid-line: rgba(255, 255, 255, 0.09);
+    --grid-line-bright: rgba(255, 255, 255, 0.20);
+  }
+
+  html {
+    background-color: #0B0C0E;
+    color: #EAEAEA;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #0B0C0E;
+    color: #EAEAEA;
+    font-family: var(--font-sans);
+    letter-spacing: -0.01em;
+  }
+
+  /* High-Voltage Accent Focus Ring */
   :focus-visible {
-    outline: 2px solid #4fd8c4 !important;
+    outline: 1px solid #FF9F1C !important;
     outline-offset: 2px !important;
   }
+
+  /* Terminal Scrollbar */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0B0C0E;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #23272F;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #FF9F1C;
+  }
+
+  ::selection {
+    background: #FF9F1C;
+    color: #000000;
+  }
+}
+
+/* 1. DOT-MATRIX BACKGROUND TEXTURE */
+.dot-matrix-bg {
+  background-color: #0B0C0E;
+  background-image: radial-gradient(rgba(234, 234, 234, 0.075) 1.25px, transparent 1.25px);
+  background-size: 24px 24px;
+}
+
+.dot-matrix-fine {
+  background-image: radial-gradient(rgba(255, 159, 28, 0.09) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.dot-matrix-terminal {
+  background-color: #0B0C0E;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    radial-gradient(rgba(234, 234, 234, 0.075) 1.25px, transparent 1.25px);
+  background-size: 96px 96px, 96px 96px, 24px 24px;
+}
+
+/* 2. ABSTRACT & STRUCTURAL BRUTALIST COMPONENTS */
+.tech-card {
+  background-color: rgba(18, 20, 23, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  position: relative;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tech-card:hover {
+  border-color: rgba(255, 159, 28, 0.65);
+  background-color: rgba(23, 26, 31, 0.95);
+  box-shadow: 0 0 25px rgba(255, 159, 28, 0.08);
+}
+
+.tech-card-active {
+  border-color: #FF9F1C;
+  background-color: rgba(23, 26, 31, 0.95);
+  box-shadow: 0 0 30px rgba(255, 159, 28, 0.12);
+}
+
+/* Graphing Lines & Crosshairs */
+.tech-border {
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.tech-border-b {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.tech-border-t {
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.tech-border-l {
+  border-left: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.tech-border-r {
+  border-right: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.tech-border-amber {
+  border: 1px solid #FF9F1C;
+}
+
+.tech-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  background: rgba(18, 20, 23, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #71717A;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tech-tag-amber {
+  border-color: rgba(255, 159, 28, 0.4);
+  color: #FF9F1C;
+  background: rgba(255, 159, 28, 0.06);
+}
+
+/* Corner Bracket Accents */
+.tech-bracket {
+  position: relative;
+}
+
+.tech-bracket::before {
+  content: "+";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #FF9F1C;
+  line-height: 1;
+  opacity: 0.85;
+}
+
+.tech-bracket::after {
+  content: "+";
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #FF9F1C;
+  line-height: 1;
+  opacity: 0.85;
+}
+
+/* Graphing Micro Lines */
+.graph-accent-line {
+  height: 1px;
+  background: linear-gradient(90deg, #FF9F1C 0%, rgba(255, 159, 28, 0.4) 40%, rgba(255, 255, 255, 0.1) 100%);
+}
+
+.graph-vertical-accent {
+  width: 1px;
+  background: linear-gradient(180deg, #FF9F1C 0%, rgba(255, 159, 28, 0.3) 50%, rgba(255, 255, 255, 0.08) 100%);
+}
+
+/* High Voltage Glows */
+.glow-amber-text {
+  text-shadow: 0 0 20px rgba(255, 159, 28, 0.45);
+}
+
+.glow-amber-box {
+  box-shadow: 0 0 25px rgba(255, 159, 28, 0.15);
+}
+
+/* Scanline / Oscilloscope Pulse Effect */
+@keyframes terminalBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+.animate-terminal-blink {
+  animation: terminalBlink 1.4s infinite;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 12s linear infinite;
 }
