@@ -639,5 +639,30 @@
   })();
   </script>
 
+  <!-- Pre-fill Service Inquiry from Query Parameter -->
+  <script>
+  (function() {
+    const params = new URLSearchParams(window.location.search);
+    const service = params.get('service');
+    if (!service) return;
+
+    const serviceMap = {
+      'geo-consulting': 'GEO / AI Visibility Consulting',
+      'creative-testing': 'Creative Consultation & AI Tool Testing',
+      'hybrid-mixing': 'Hybrid Music Production & Stem Mixing',
+      'audio-review': 'Track Review & AI Audio Diagnostics'
+    };
+
+    const serviceName = serviceMap[service.toLowerCase()] || service;
+    const textarea = document.querySelector('textarea[name="body"]');
+    if (textarea) {
+      const prefix = `I'm interested in: ${serviceName}. `;
+      textarea.value = prefix;
+      textarea.focus();
+      textarea.setSelectionRange(prefix.length, prefix.length);
+    }
+  })();
+  </script>
+  <script src="./assets/reader.js" defer></script>
 </body>
 </html>
