@@ -16,6 +16,12 @@
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="alternate" type="text/plain" href="/llms.txt" title="AI LLM Knowledge Graph Manifest">
 
+<!-- Font Preconnect & Stylesheets Early in Head -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="./style.css" rel="stylesheet">
+
 <!-- OpenGraph & Twitter Cards -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Can the Machines Find You? — AI Visibility Signal Checker | JRAY">
@@ -295,11 +301,6 @@
   ]
 }</script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link href="./style.css" rel="stylesheet"/>
-
 <style>
   *,
   *::before,
@@ -341,8 +342,8 @@
     --color-friction-dim: rgba(244, 63, 94, 0.12);
     --color-friction-border: rgba(244, 63, 94, 0.3);
 
-    --font-mono: 'JetBrains Mono', monospace;
-    --font-sans: 'Space Grotesk', sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --radius: 0px;
     --radius-lg: 0px;
   }
