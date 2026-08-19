@@ -38,552 +38,552 @@
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" rel="stylesheet"/>
 <style>
 
-  :root{
-    --bg:            #0a0b10;
-    --bg-raised:     #10121c;
-    --bg-raised-2:   #14172380;
-    --border:        rgba(255,255,255,0.09);
-    --border-strong: rgba(255,255,255,0.18);
-    --text-primary:  #e9eaf1;
-    --text-dim:      #9aa0b6;
-    --text-faint:    #9aa3ab;
-    --teal:          #3fe7c5;
-    --teal-dim:      rgba(63,231,197,0.13);
-    --teal-ink:      #06120f;
-    --amber:         #f2b84e;
-    --amber-dim:     rgba(242,184,78,0.13);
-    --serif: 'Playfair Display', Georgia, serif;
-    --mono: 'JetBrains Mono', ui-monospace, monospace;
-    --measure: 680px;
-    --wide: 860px;
-  }
+ :root{
+ --bg: #0a0b10;
+ --bg-raised: #10121c;
+ --bg-raised-2: #14172380;
+ --border: rgba(255,255,255,0.09);
+ --border-strong: rgba(255,255,255,0.18);
+ --text-primary: #e9eaf1;
+ --text-dim: #9aa0b6;
+ --text-faint: #9aa3ab;
+ --teal: #3fe7c5;
+ --teal-dim: rgba(63,231,197,0.13);
+ --teal-ink: #06120f;
+ --amber: #f2b84e;
+ --amber-dim: rgba(242,184,78,0.13);
+ --serif: 'Playfair Display', Georgia, serif;
+ --mono: 'JetBrains Mono', ui-monospace, monospace;
+ --measure: 680px;
+ --wide: 860px;
+ }
 
-  *{ box-sizing:border-box; }
+ *{ box-sizing:border-box; }
 
-  html{ background:var(--bg); scroll-behavior:smooth; }
-  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+ html{ background:var(--bg); scroll-behavior:smooth; }
+ @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
 
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text-primary);
-    font-family:var(--mono);
-    font-size:16px;
-    line-height:1.7;
-    -webkit-font-smoothing:antialiased;
-    position:relative;
-  }
+ body{
+ margin:0;
+ background:var(--bg);
+ color:var(--text-primary);
+ font-family:var(--mono);
+ font-size:16px;
+ line-height:1.7;
+ -webkit-font-smoothing:antialiased;
+ position:relative;
+ }
 
-  ::selection{ background:var(--teal-dim); color:var(--text-primary); }
+ ::selection{ background:var(--teal-dim); color:var(--text-primary); }
 
-  a{ color:var(--teal); text-decoration:none; }
-  a:hover{ text-decoration:underline; text-underline-offset:3px; }
+ a{ color:var(--teal); text-decoration:none; }
+ a:hover{ text-decoration:underline; text-underline-offset:3px; }
 
-  :focus-visible{
-    outline:2px solid var(--teal);
-    outline-offset:3px;
-    border-radius:2px;
-  }
+ :focus-visible{
+ outline:2px solid var(--teal);
+ outline-offset:3px;
+ border-radius:2px;
+ }
 
-  em, i{ font-family:var(--serif); font-style:italic; }
+ em, i{ font-family:var(--serif); font-style:italic; }
 
-  /* ---------- background texture ---------- */
-  .bg-texture{
-    position:fixed; inset:0; z-index:0; pointer-events:none;
-    background-image:
-      repeating-linear-gradient(90deg, rgba(255,255,255,0.028) 0px, rgba(255,255,255,0.028) 1px, transparent 1px, transparent 46px),
-      repeating-linear-gradient(0deg, rgba(255,255,255,0.022) 0px, rgba(255,255,255,0.022) 1px, transparent 1px, transparent 46px);
-    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 90%);
-            mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 90%);
-    opacity:0.7;
-  }
-  .bg-scan{
-    position:fixed; left:0; right:0; height:140px; z-index:0; pointer-events:none;
-    background:linear-gradient(180deg, transparent, rgba(63,231,197,0.05), transparent);
-    animation:scan 16s linear infinite;
-  }
-  @keyframes scan{
-    0%{ transform:translateY(-140px); }
-    100%{ transform:translateY(100vh); }
-  }
-  @media (prefers-reduced-motion: reduce){
-    .bg-scan{ animation:none; opacity:0; }
-  }
+ /* ---------- background texture ---------- */
+ .bg-texture{
+ position:fixed; inset:0; z-index:0; pointer-events:none;
+ background-image:
+ repeating-linear-gradient(90deg, rgba(255,255,255,0.028) 0px, rgba(255,255,255,0.028) 1px, transparent 1px, transparent 46px),
+ repeating-linear-gradient(0deg, rgba(255,255,255,0.022) 0px, rgba(255,255,255,0.022) 1px, transparent 1px, transparent 46px);
+ -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 90%);
+ mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 90%);
+ opacity:0.7;
+ }
+ .bg-scan{
+ position:fixed; left:0; right:0; height:140px; z-index:0; pointer-events:none;
+ background:linear-gradient(180deg, transparent, rgba(63,231,197,0.05), transparent);
+ animation:scan 16s linear infinite;
+ }
+ @keyframes scan{
+ 0%{ transform:translateY(-140px); }
+ 100%{ transform:translateY(100vh); }
+ }
+ @media (prefers-reduced-motion: reduce){
+ .bg-scan{ animation:none; opacity:0; }
+ }
 
-  main, header, footer{ position:relative; z-index:1; }
+ main, header, footer{ position:relative; z-index:1; }
 
-  /* ---------- layout helpers ---------- */
-  .measure{ max-width:var(--measure); margin:0 auto; padding-left:24px; padding-right:24px; }
-  .wide{ max-width:var(--wide); margin:0 auto; padding-left:24px; padding-right:24px; }
+ /* ---------- layout helpers ---------- */
+ .measure{ max-width:var(--measure); margin:0 auto; padding-left:24px; padding-right:24px; }
+ .wide{ max-width:var(--wide); margin:0 auto; padding-left:24px; padding-right:24px; }
 
-  .hairline{ border-top:1px solid var(--border); margin:0 auto; }
+ .hairline{ border-top:1px solid var(--border); margin:0 auto; }
 
-  /* ---------- header ---------- */
-  .site-header{
-    display:flex; align-items:center; justify-content:space-between;
-    max-width:var(--wide); margin:0 auto;
-    padding:28px 24px;
-  }
-  .wordmark{
-    font-family:var(--mono); font-weight:700; font-size:13px;
-    letter-spacing:0.14em; color:var(--text-primary);
-  }
-  .wordmark:hover{ color:var(--teal); text-decoration:none; }
-  .header-tag{
-    font-size:11px; letter-spacing:0.14em; color:var(--text-faint);
-  }
+ /* ---------- header ---------- */
+ .site-header{
+ display:flex; align-items:center; justify-content:space-between;
+ max-width:var(--wide); margin:0 auto;
+ padding:28px 24px;
+ }
+ .wordmark{
+ font-family:var(--mono); font-weight:700; font-size:13px;
+ letter-spacing:0.14em; color:var(--text-primary);
+ }
+ .wordmark:hover{ color:var(--teal); text-decoration:none; }
+ .header-tag{
+ font-size:11px; letter-spacing:0.14em; color:var(--text-faint);
+ }
 
-  /* ---------- eyebrow ---------- */
-  .eyebrow{
-    display:flex; align-items:center; gap:9px;
-    font-size:12px; letter-spacing:0.16em; text-transform:uppercase;
-    color:var(--text-dim); font-weight:500;
-    margin:0 0 18px;
-    font-family:var(--mono); font-style:normal;
-  }
-  .eyebrow .dot{
-    width:6px; height:6px; border-radius:50%;
-    background:var(--teal);
-    flex:none;
-  }
+ /* ---------- eyebrow ---------- */
+ .eyebrow{
+ display:flex; align-items:center; gap:9px;
+ font-size:12px; letter-spacing:0.16em; text-transform:uppercase;
+ color:var(--text-dim); font-weight:500;
+ margin:0 0 18px;
+ font-family:var(--mono); font-style:normal;
+ }
+ .eyebrow .dot{
+ width:6px; height:6px; border-radius:50%;
+ background:var(--teal);
+ flex:none;
+ }
 
-  /* ---------- hero ---------- */
-  .hero{ padding:56px 24px 64px; }
-  .hero h1{
-    font-family:var(--serif); font-weight:600; font-style:normal;
-    font-size:clamp(2rem, 5.4vw, 3.1rem);
-    line-height:1.18;
-    margin:0 0 24px;
-    color:var(--text-primary);
-    letter-spacing:-0.01em;
-  }
-  .hero h1 em{
-    display:block;
-    color:var(--amber);
-    font-weight:400;
-    margin-top:6px;
-  }
-  .dek{
-    font-size:15.5px; line-height:1.8; color:var(--text-dim);
-    max-width:58ch; margin:0 0 28px;
-  }
-  .meta-line{
-    font-size:11.5px; letter-spacing:0.1em; color:var(--text-faint);
-    text-transform:uppercase;
-  }
+ /* ---------- hero ---------- */
+ .hero{ padding:56px 24px 64px; }
+ .hero h1{
+ font-family:var(--serif); font-weight:600; font-style:normal;
+ font-size:clamp(2rem, 5.4vw, 3.1rem);
+ line-height:1.18;
+ margin:0 0 24px;
+ color:var(--text-primary);
+ letter-spacing:-0.01em;
+ }
+ .hero h1 em{
+ display:block;
+ color:var(--amber);
+ font-weight:400;
+ margin-top:6px;
+ }
+ .dek{
+ font-size:15.5px; line-height:1.8; color:var(--text-dim);
+ max-width:58ch; margin:0 0 28px;
+ }
+ .meta-line{
+ font-size:11.5px; letter-spacing:0.1em; color:var(--text-faint);
+ text-transform:uppercase;
+ }
 
-  /* ---------- premise strip ---------- */
-  .premise-strip{
-    display:grid; grid-template-columns:repeat(3,1fr);
-    padding:44px 24px;
-  }
-  .premise-strip{ margin:0 auto; }
-  .premise-item{
-    margin:0; padding:4px 22px;
-    border-left:1px solid var(--border);
-  }
-  .premise-item:first-child{ border-left:none; padding-left:0; }
-  .premise-num{
-    font-family:var(--serif); font-style:italic; font-weight:600;
-    font-size:1.9rem; color:var(--teal);
-    display:block; margin:0 0 10px;
-    line-height:1;
-  }
-  .premise-item dd{
-    margin:0; font-size:13px; line-height:1.65; color:var(--text-dim);
-  }
+ /* ---------- premise strip ---------- */
+ .premise-strip{
+ display:grid; grid-template-columns:repeat(3,1fr);
+ padding:44px 24px;
+ }
+ .premise-strip{ margin:0 auto; }
+ .premise-item{
+ margin:0; padding:4px 22px;
+ border-left:1px solid var(--border);
+ }
+ .premise-item:first-child{ border-left:none; padding-left:0; }
+ .premise-num{
+ font-family:var(--serif); font-style:italic; font-weight:600;
+ font-size:1.9rem; color:var(--teal);
+ display:block; margin:0 0 10px;
+ line-height:1;
+ }
+ .premise-item dd{
+ margin:0; font-size:13px; line-height:1.65; color:var(--text-dim);
+ }
 
-  @media (max-width:700px){
-    .premise-strip{ grid-template-columns:1fr; gap:26px; }
-    .premise-item{ border-left:none; padding-left:0; border-top:1px solid var(--border); padding-top:20px; }
-    .premise-item:first-child{ border-top:none; padding-top:0; }
-  }
+ @media (max-width:700px){
+ .premise-strip{ grid-template-columns:1fr; gap:26px; }
+ .premise-item{ border-left:none; padding-left:0; border-top:1px solid var(--border); padding-top:20px; }
+ .premise-item:first-child{ border-top:none; padding-top:0; }
+ }
 
-  /* ---------- content sections ---------- */
-  .content-section{ padding:64px 24px; }
-  .content-section h2{
-    font-family:var(--serif); font-weight:600; font-style:normal;
-    font-size:clamp(1.5rem, 3.4vw, 2.05rem);
-    line-height:1.28;
-    margin:0 0 26px;
-    color:var(--text-primary);
-  }
-  .content-section h2 em{ color:var(--amber); font-weight:400; }
-  .content-section p{
-    font-size:15px; line-height:1.85; color:var(--text-dim);
-    margin:0 0 20px;
-  }
-  .content-section p:last-child{ margin-bottom:0; }
-  .content-section p.intro{
-    color:var(--text-primary); font-size:15.5px;
-  }
-  .content-section strong{ color:var(--text-primary); font-weight:600; }
+ /* ---------- content sections ---------- */
+ .content-section{ padding:64px 24px; }
+ .content-section h2{
+ font-family:var(--serif); font-weight:600; font-style:normal;
+ font-size:clamp(1.5rem, 3.4vw, 2.05rem);
+ line-height:1.28;
+ margin:0 0 26px;
+ color:var(--text-primary);
+ }
+ .content-section h2 em{ color:var(--amber); font-weight:400; }
+ .content-section p{
+ font-size:15px; line-height:1.85; color:var(--text-dim);
+ margin:0 0 20px;
+ }
+ .content-section p:last-child{ margin-bottom:0; }
+ .content-section p.intro{
+ color:var(--text-primary); font-size:15.5px;
+ }
+ .content-section strong{ color:var(--text-primary); font-weight:600; }
 
-  /* ---------- signal chain ---------- */
-  .chain{ list-style:none; margin:36px 0 0; padding:0; }
-  .chain-stage{
-    display:grid; grid-template-columns:64px 1fr; gap:22px;
-    padding:26px 0;
-    border-top:1px solid var(--border);
-  }
-  .chain-stage:first-child{ border-top:none; padding-top:0; }
-  .stage-num{
-    font-family:var(--serif); font-style:italic; font-weight:600;
-    font-size:1.7rem; color:var(--text-faint);
-    line-height:1.4;
-  }
-  .stage-label{
-    display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
-    font-size:13.5px; font-weight:700; letter-spacing:0.06em;
-    color:var(--text-primary); margin:0 0 10px;
-    font-family:var(--mono); font-style:normal;
-  }
-  .stage-tag{
-    font-size:11px; font-weight:400; letter-spacing:0.04em;
-    color:var(--text-faint); text-transform:lowercase;
-    font-style:italic; font-family:var(--serif);
-  }
-  .stage-body p{ font-size:14.5px; line-height:1.8; color:var(--text-dim); margin:0; }
+ /* ---------- signal chain ---------- */
+ .chain{ list-style:none; margin:36px 0 0; padding:0; }
+ .chain-stage{
+ display:grid; grid-template-columns:64px 1fr; gap:22px;
+ padding:26px 0;
+ border-top:1px solid var(--border);
+ }
+ .chain-stage:first-child{ border-top:none; padding-top:0; }
+ .stage-num{
+ font-family:var(--serif); font-style:italic; font-weight:600;
+ font-size:1.7rem; color:var(--text-faint);
+ line-height:1.4;
+ }
+ .stage-label{
+ display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+ font-size:13.5px; font-weight:700; letter-spacing:0.06em;
+ color:var(--text-primary); margin:0 0 10px;
+ font-family:var(--mono); font-style:normal;
+ }
+ .stage-tag{
+ font-size:11px; font-weight:400; letter-spacing:0.04em;
+ color:var(--text-faint); text-transform:lowercase;
+ font-style:italic; font-family:var(--serif);
+ }
+ .stage-body p{ font-size:14.5px; line-height:1.8; color:var(--text-dim); margin:0; }
 
-  @media (max-width:700px){
-    .chain-stage{ grid-template-columns:1fr; gap:8px; }
-  }
+ @media (max-width:700px){
+ .chain-stage{ grid-template-columns:1fr; gap:8px; }
+ }
 
-  /* ---------- classifier tool ---------- */
-  .classifier-tool{
-    margin-top:34px;
-    border:1px solid var(--border);
-    background:linear-gradient(180deg, var(--bg-raised), var(--bg));
-    border-radius:4px;
-    padding:8px;
-  }
-  .axis-list{ padding:22px 22px 6px; }
-  fieldset.axis-row{
-    padding:18px 0; margin:0; border:none; border-top:1px solid var(--border);
-    min-width:0;
-    display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
-  }
-  fieldset.axis-row:first-of-type{ border-top:none; }
-  legend.axis-info{ padding:0; margin:0; float:none; width:auto; min-width:190px; }
-  .axis-name{ display:block; font-size:12.5px; font-weight:700; letter-spacing:0.08em; color:var(--text-primary); }
-  .axis-hint{ display:block; font-size:11.5px; color:var(--text-faint); margin-top:3px; }
-  .seg{
-    display:inline-flex; border:1px solid var(--border); border-radius:3px; overflow:hidden;
-  }
-  .seg-option{ position:relative; display:block; cursor:pointer; }
-  .seg-option input[type="radio"]{
-    position:absolute; width:1px; height:1px; padding:0; margin:-1px;
-    overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
-  }
-  .seg-option span{
-    display:block; font-family:var(--mono); font-size:11.5px; font-weight:700; letter-spacing:0.06em;
-    background:transparent; color:var(--text-faint);
-    padding:9px 14px; cursor:pointer;
-    border-right:1px solid var(--border);
-    transition:background 0.15s ease, color 0.15s ease;
-  }
-  .seg-option:last-child span{ border-right:none; }
-  .seg-option:hover span{ color:var(--text-primary); background:rgba(255,255,255,0.04); }
-  .seg-option input:focus-visible + span{ outline:2px solid var(--teal); outline-offset:-2px; }
-  .seg-option.is-checked[data-state="human"] span{ background:rgba(255,255,255,0.10); color:var(--text-primary); }
-  .seg-option.is-checked[data-state="hybrid"] span{ background:var(--amber-dim); color:var(--amber); }
-  .seg-option.is-checked[data-state="ai"] span{ background:var(--teal-dim); color:var(--teal); }
+ /* ---------- classifier tool ---------- */
+ .classifier-tool{
+ margin-top:34px;
+ border:1px solid var(--border);
+ background:linear-gradient(180deg, var(--bg-raised), var(--bg));
+ border-radius:4px;
+ padding:8px;
+ }
+ .axis-list{ padding:22px 22px 6px; }
+ fieldset.axis-row{
+ padding:18px 0; margin:0; border:none; border-top:1px solid var(--border);
+ min-width:0;
+ display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+ }
+ fieldset.axis-row:first-of-type{ border-top:none; }
+ legend.axis-info{ padding:0; margin:0; float:none; width:auto; min-width:190px; }
+ .axis-name{ display:block; font-size:12.5px; font-weight:700; letter-spacing:0.08em; color:var(--text-primary); }
+ .axis-hint{ display:block; font-size:11.5px; color:var(--text-faint); margin-top:3px; }
+ .seg{
+ display:inline-flex; border:1px solid var(--border); border-radius:3px; overflow:hidden;
+ }
+ .seg-option{ position:relative; display:block; cursor:pointer; }
+ .seg-option input[type="radio"]{
+ position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+ overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+ }
+ .seg-option span{
+ display:block; font-family:var(--mono); font-size:11.5px; font-weight:700; letter-spacing:0.06em;
+ background:transparent; color:var(--text-faint);
+ padding:9px 14px; cursor:pointer;
+ border-right:1px solid var(--border);
+ transition:background 0.15s ease, color 0.15s ease;
+ }
+ .seg-option:last-child span{ border-right:none; }
+ .seg-option:hover span{ color:var(--text-primary); background:rgba(255,255,255,0.04); }
+ .seg-option input:focus-visible + span{ outline:2px solid var(--teal); outline-offset:-2px; }
+ .seg-option.is-checked[data-state="human"] span{ background:rgba(255,255,255,0.10); color:var(--text-primary); }
+ .seg-option.is-checked[data-state="hybrid"] span{ background:var(--amber-dim); color:var(--amber); }
+ .seg-option.is-checked[data-state="ai"] span{ background:var(--teal-dim); color:var(--teal); }
 
-  .chain-visual{
-    display:flex; align-items:center; justify-content:center; gap:0;
-    padding:30px 22px 6px;
-  }
-  .chain-node-wrap{ display:flex; align-items:center; }
-  .chain-node{
-    width:15px; height:15px; border-radius:50%;
-    border:2px solid var(--text-faint);
-    background:var(--bg);
-    transition:background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-    flex:none;
-  }
-  .chain-node.hybrid{ border-color:var(--amber); background:var(--amber); box-shadow:0 0 10px rgba(242,184,78,0.5); }
-  .chain-node.ai{ border-color:var(--teal); background:var(--teal); box-shadow:0 0 10px rgba(63,231,197,0.5); }
-  .chain-wire{
-    width:clamp(18px, 5vw, 46px); height:1px; background:var(--border-strong); flex:none;
-  }
+ .chain-visual{
+ display:flex; align-items:center; justify-content:center; gap:0;
+ padding:30px 22px 6px;
+ }
+ .chain-node-wrap{ display:flex; align-items:center; }
+ .chain-node{
+ width:15px; height:15px; border-radius:50%;
+ border:2px solid var(--text-faint);
+ background:var(--bg);
+ transition:background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+ flex:none;
+ }
+ .chain-node.hybrid{ border-color:var(--amber); background:var(--amber); box-shadow:0 0 10px rgba(242,184,78,0.5); }
+ .chain-node.ai{ border-color:var(--teal); background:var(--teal); box-shadow:0 0 10px rgba(63,231,197,0.5); }
+ .chain-wire{
+ width:clamp(18px, 5vw, 46px); height:1px; background:var(--border-strong); flex:none;
+ }
 
-  .result-panel{
-    margin-top:8px; padding:24px 22px 26px;
-    border-top:1px solid var(--border);
-  }
-  .result-list{ margin:0; }
-  .result-row{
-    display:flex; align-items:baseline; justify-content:space-between; gap:16px;
-    padding:8px 0; flex-wrap:wrap;
-  }
-  .result-label{ margin:0; font-size:11px; letter-spacing:0.12em; color:var(--text-faint); text-transform:uppercase; }
-  .result-value{ margin:0; font-size:13.5px; font-weight:700; letter-spacing:0.05em; color:var(--text-primary); }
-  .node-badge{ color:var(--teal); }
-  .node-desc{ margin-top:14px; font-size:13.5px; line-height:1.8; color:var(--text-dim); }
-  .tool-caption{
-    font-size:11.5px; color:var(--text-faint); margin-top:16px; font-style:italic; font-family:var(--serif);
-  }
+ .result-panel{
+ margin-top:8px; padding:24px 22px 26px;
+ border-top:1px solid var(--border);
+ }
+ .result-list{ margin:0; }
+ .result-row{
+ display:flex; align-items:baseline; justify-content:space-between; gap:16px;
+ padding:8px 0; flex-wrap:wrap;
+ }
+ .result-label{ margin:0; font-size:11px; letter-spacing:0.12em; color:var(--text-faint); text-transform:uppercase; }
+ .result-value{ margin:0; font-size:13.5px; font-weight:700; letter-spacing:0.05em; color:var(--text-primary); }
+ .node-badge{ color:var(--teal); }
+ .node-desc{ margin-top:14px; font-size:13.5px; line-height:1.8; color:var(--text-dim); }
+ .tool-caption{
+ font-size:11.5px; color:var(--text-faint); margin-top:16px; font-style:italic; font-family:var(--serif);
+ }
 
-  @media (max-width:560px){
-    .axis-row{ flex-direction:column; align-items:flex-start; gap:12px; }
-    .chain-visual{ flex-wrap:wrap; row-gap:10px; }
-  }
+ @media (max-width:560px){
+ .axis-row{ flex-direction:column; align-items:flex-start; gap:12px; }
+ .chain-visual{ flex-wrap:wrap; row-gap:10px; }
+ }
 
-  /* ---------- practice list ---------- */
-  .practice-list{
-    list-style:none; margin:0; padding:0;
-  }
-  .practice-list li{
-    position:relative; padding:18px 0 18px 26px;
-    border-top:1px solid var(--border);
-    font-size:15px; line-height:1.8; color:var(--text-dim);
-  }
-  .practice-list li:first-child{ border-top:none; }
-  .practice-list li::before{
-    content:"→"; position:absolute; left:0; top:18px; color:var(--teal);
-  }
+ /* ---------- practice list ---------- */
+ .practice-list{
+ list-style:none; margin:0; padding:0;
+ }
+ .practice-list li{
+ position:relative; padding:18px 0 18px 26px;
+ border-top:1px solid var(--border);
+ font-size:15px; line-height:1.8; color:var(--text-dim);
+ }
+ .practice-list li:first-child{ border-top:none; }
+ .practice-list li::before{
+ content:"→"; position:absolute; left:0; top:18px; color:var(--teal);
+ }
 
-  /* ---------- closing ---------- */
-  .closing .pull-quote{
-    font-family:var(--serif); font-style:italic; font-size:clamp(1.2rem,2.6vw,1.5rem);
-    line-height:1.5; color:var(--text-primary);
-    margin:34px 0; padding-left:22px; border-left:2px solid var(--teal);
-  }
-  .cta-row{
-    margin-top:34px; display:flex; align-items:center; gap:22px; flex-wrap:wrap;
-  }
-  .btn-cta{
-    display:inline-block;
-    background:var(--teal); color:var(--teal-ink);
-    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:0.08em;
-    padding:15px 24px; border-radius:3px;
-    text-decoration:none;
-    transition:transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-    box-shadow:0 0 0 rgba(63,231,197,0);
-  }
-  .btn-cta:hover{
-    text-decoration:none; background:#5cf0d3;
-    box-shadow:0 6px 24px rgba(63,231,197,0.25);
-    transform:translateY(-1px);
-  }
-  .btn-cta:active{ transform:translateY(0px); }
-  .link-quiet{ font-size:12.5px; color:var(--text-dim); letter-spacing:0.02em; }
-  .link-quiet:hover{ color:var(--teal); }
+ /* ---------- closing ---------- */
+ .closing .pull-quote{
+ font-family:var(--serif); font-style:italic; font-size:clamp(1.2rem,2.6vw,1.5rem);
+ line-height:1.5; color:var(--text-primary);
+ margin:34px 0; padding-left:22px; border-left:2px solid var(--teal);
+ }
+ .cta-row{
+ margin-top:34px; display:flex; align-items:center; gap:22px; flex-wrap:wrap;
+ }
+ .btn-cta{
+ display:inline-block;
+ background:var(--teal); color:var(--teal-ink);
+ font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:0.08em;
+ padding:15px 24px; border-radius:3px;
+ text-decoration:none;
+ transition:transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+ box-shadow:0 0 0 rgba(63,231,197,0);
+ }
+ .btn-cta:hover{
+ text-decoration:none; background:#5cf0d3;
+ box-shadow:0 6px 24px rgba(63,231,197,0.25);
+ transform:translateY(-1px);
+ }
+ .btn-cta:active{ transform:translateY(0px); }
+ .link-quiet{ font-size:12.5px; color:var(--text-dim); letter-spacing:0.02em; }
+ .link-quiet:hover{ color:var(--teal); }
 
-  /* ---------- sources ---------- */
-  .sources{ padding:56px 24px 40px; }
-  .sources-list{ list-style:none; margin:0; padding:0; columns:1; }
-  .sources-list li{
-    padding:11px 0; border-top:1px solid var(--border);
-    font-size:12.5px; color:var(--text-faint);
-  }
-  .sources-list li:first-child{ border-top:none; }
-  .sources-list a{ color:var(--text-dim); }
-  .sources-list a:hover{ color:var(--teal); }
+ /* ---------- sources ---------- */
+ .sources{ padding:56px 24px 40px; }
+ .sources-list{ list-style:none; margin:0; padding:0; columns:1; }
+ .sources-list li{
+ padding:11px 0; border-top:1px solid var(--border);
+ font-size:12.5px; color:var(--text-faint);
+ }
+ .sources-list li:first-child{ border-top:none; }
+ .sources-list a{ color:var(--text-dim); }
+ .sources-list a:hover{ color:var(--teal); }
 
-  /* ---------- footer ---------- */
-  .site-footer{
-    padding:32px 24px 56px; text-align:center;
-    font-size:11px; letter-spacing:0.08em; color:var(--text-faint);
-    text-transform:uppercase;
-  }
+ /* ---------- footer ---------- */
+ .site-footer{
+ padding:32px 24px 56px; text-align:center;
+ font-size:11px; letter-spacing:0.08em; color:var(--text-faint);
+ text-transform:uppercase;
+ }
 
-  @media (max-width:700px){
-    .hero{ padding-top:40px; }
-    .content-section{ padding:48px 24px; }
-  }
+ @media (max-width:700px){
+ .hero{ padding-top:40px; }
+ .content-section{ padding:48px 24px; }
+ }
 </style>
 <!-- Structured Data / JSON-LD -->
 <script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "https://trustnodelogic.com/hp2026.html#webpage",
-      "url": "https://trustnodelogic.com/hp2026.html",
-      "name": "The Trust Signal Chain: AI, Hybrid Production, and the Industry in 2026 | TrustNodeLogic",
-      "description": "Courts, the EU AI Act, DDEX disclosure, and streaming platforms all ruled on AI music in 2026. A Trust Node Logic field note on what actually happened.",
-      "isPartOf": {
-        "@id": "https://trustnodelogic.com/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://trustnodelogic.com/hp2026.html#breadcrumb"
-      },
-      "inLanguage": "en-US",
-      "mainEntity": {
-        "@id": "https://trustnodelogic.com/hp2026.html#article"
-      },
-      "image": "https://trustnodelogic.com/assets/images/hp2026-card-og.webp"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://trustnodelogic.com/hp2026.html#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://trustnodelogic.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "The Trust Signal Chain",
-          "item": "https://trustnodelogic.com/hp2026.html"
-        }
-      ]
-    },
-    {
-      "@type": "TechArticle",
-      "@id": "https://trustnodelogic.com/hp2026.html#article",
-      "headline": "The Trust Signal Chain: AI, Hybrid Production, and the Industry in 2026",
-      "description": "Courts, the EU AI Act, DDEX disclosure, and streaming platforms all ruled on AI music in 2026. A Trust Node Logic field note on what actually happened.",
-      "url": "https://trustnodelogic.com/hp2026.html",
-      "mainEntityOfPage": {
-        "@id": "https://trustnodelogic.com/hp2026.html#webpage"
-      },
-      "isPartOf": {
-        "@id": "https://trustnodelogic.com/#website"
-      },
-      "author": {
-        "@id": "https://trustnodelogic.com/#person"
-      },
-      "publisher": {
-        "@id": "https://trustnodelogic.com/#organization"
-      },
-      "datePublished": "2026-08-09",
-      "dateModified": "2026-08-09",
-      "image": "https://trustnodelogic.com/assets/images/hp2026-card-og.webp",
-      "inLanguage": "en-US"
-    },
-    {
-      "@type": "Person",
-      "@id": "https://trustnodelogic.com/#person",
-      "name": "Justin Ray",
-      "additionalName": "Justin Tyler Ray",
-      "alternateName": [
-        "JRAY",
-        "loserdub",
-        "VISION",
-        "Flawed Future",
-        "le vide",
-        "disarray"
-      ],
-      "url": "https://trustnodelogic.com",
-      "image": "https://trustnodelogic.com/bio-avatar.jpg",
-      "email": "mailto:justin@trustnodelogic.com",
-      "jobTitle": [
-        "Music Producer",
-        "Music Artist",
-        "Pioneer of Hybrid AI Music Production",
-        "Audio Engineer",
-        "Creative Technologist"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "East Lansing",
-        "addressRegion": "MI",
-        "addressCountry": "US"
-      },
-      "knowsAbout": [
-        "Hybrid Music Production",
-        "Generative Artificial Intelligence",
-        "Web Audio API",
-        "Audio Engineering",
-        "Digital Audio Workstation",
-        "C2PA Provenance",
-        "Google MusicLM",
-        "Suno AI",
-        "Udio",
-        "SLERP Audio",
-        "Hybrid Production Standard",
-        "HPS-1.0",
-        "EU AI Act Article 50",
-        "DDEX ERN 4.3",
-        "Spectral Splitting",
-        "MIXR Studio",
-        "Sound Design",
-        "Logic Pro X",
-        "Ableton Live"
-      ],
-      "memberOf": [
-        {
-          "@id": "https://trustnodelogic.com/#organization"
-        },
-        {
-          "@id": "https://www.reddit.com/r/hybridproduction/#organization"
-        }
-      ],
-      "sameAs": [
-        "https://musicbrainz.org/artist/882fdb9b-8655-45dd-8e24-a59cd750d053",
-        "https://soundcloud.com/visiontracks",
-        "https://soundcloud.com/loserdub",
-        "https://www.youtube.com/@loserdub",
-        "https://www.linkedin.com/in/jray-me/",
-        "https://x.com/TheInnerVision",
-        "https://www.instagram.com/jray.me/",
-        "https://open.spotify.com/artist/3VZelnnW9OR0DyR2qRn4Oq",
-        "https://open.spotify.com/artist/6GGZwLOLxVxYGOcMry3NDi",
-        "https://open.spotify.com/artist/42TmrCeIumkPRyTNOPP78t",
-        "https://open.spotify.com/artist/3FNFzRyU0PCA2vjihWsg6y",
-        "https://open.spotify.com/artist/6TlAxGL1Hm4FRWfTxprlMi",
-        "https://www.reddit.com/r/hybridproduction/",
-        "https://network.landr.com/users/vision-hybrid",
-        "https://github.com/loserdub"
-      ]
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://trustnodelogic.com/#organization",
-      "name": "Trust Node Logic",
-      "alternateName": "JRAY & Trust Node Logic",
-      "url": "https://trustnodelogic.com",
-      "logo": "https://trustnodelogic.com/favicon.png",
-      "founder": {
-        "@id": "https://trustnodelogic.com/#person"
-      },
-      "slogan": "The Frontier of Hybrid AI Music Production & Creative Technology",
-      "knowsAbout": [
-        "Hybrid Production",
-        "AI Music Generation",
-        "Audio Engineering",
-        "Generative Audio Workflows",
-        "HPS-1.0 Metadata Verification"
-      ]
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://www.reddit.com/r/hybridproduction/#organization",
-      "name": "r/HybridProduction",
-      "url": "https://www.reddit.com/r/hybridproduction/",
-      "description": "The definitive online community for Hybrid Music Production.",
-      "founder": {
-        "@id": "https://trustnodelogic.com/#person"
-      },
-      "sameAs": "https://www.reddit.com/r/hybridproduction/"
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://trustnodelogic.com/#website",
-      "url": "https://trustnodelogic.com",
-      "name": "Trust Node Logic | Pioneer of Hybrid AI Music Production",
-      "description": "Official hub of Justin Ray (JRAY / loserdub), pioneer of the Hybrid AI Music Production methodology, creative technologist, and founder of r/hybridproduction.",
-      "author": {
-        "@id": "https://trustnodelogic.com/#person"
-      },
-      "publisher": {
-        "@id": "https://trustnodelogic.com/#organization"
-      },
-      "inLanguage": "en-US"
-    }
-  ]
+ "@context": "https://schema.org",
+ "@graph": [
+ {
+ "@type": "WebPage",
+ "@id": "https://trustnodelogic.com/hp2026.html#webpage",
+ "url": "https://trustnodelogic.com/hp2026.html",
+ "name": "The Trust Signal Chain: AI, Hybrid Production, and the Industry in 2026 | TrustNodeLogic",
+ "description": "Courts, the EU AI Act, DDEX disclosure, and streaming platforms all ruled on AI music in 2026. A Trust Node Logic field note on what actually happened.",
+ "isPartOf": {
+ "@id": "https://trustnodelogic.com/#website"
+ },
+ "breadcrumb": {
+ "@id": "https://trustnodelogic.com/hp2026.html#breadcrumb"
+ },
+ "inLanguage": "en-US",
+ "mainEntity": {
+ "@id": "https://trustnodelogic.com/hp2026.html#article"
+ },
+ "image": "https://trustnodelogic.com/assets/images/hp2026-card-og.webp"
+ },
+ {
+ "@type": "BreadcrumbList",
+ "@id": "https://trustnodelogic.com/hp2026.html#breadcrumb",
+ "itemListElement": [
+ {
+ "@type": "ListItem",
+ "position": 1,
+ "name": "Home",
+ "item": "https://trustnodelogic.com/"
+ },
+ {
+ "@type": "ListItem",
+ "position": 2,
+ "name": "The Trust Signal Chain",
+ "item": "https://trustnodelogic.com/hp2026.html"
+ }
+ ]
+ },
+ {
+ "@type": "TechArticle",
+ "@id": "https://trustnodelogic.com/hp2026.html#article",
+ "headline": "The Trust Signal Chain: AI, Hybrid Production, and the Industry in 2026",
+ "description": "Courts, the EU AI Act, DDEX disclosure, and streaming platforms all ruled on AI music in 2026. A Trust Node Logic field note on what actually happened.",
+ "url": "https://trustnodelogic.com/hp2026.html",
+ "mainEntityOfPage": {
+ "@id": "https://trustnodelogic.com/hp2026.html#webpage"
+ },
+ "isPartOf": {
+ "@id": "https://trustnodelogic.com/#website"
+ },
+ "author": {
+ "@id": "https://trustnodelogic.com/#person"
+ },
+ "publisher": {
+ "@id": "https://trustnodelogic.com/#organization"
+ },
+ "datePublished": "2026-08-09",
+ "dateModified": "2026-08-09",
+ "image": "https://trustnodelogic.com/assets/images/hp2026-card-og.webp",
+ "inLanguage": "en-US"
+ },
+ {
+ "@type": "Person",
+ "@id": "https://trustnodelogic.com/#person",
+ "name": "Justin Ray",
+ "additionalName": "Justin Tyler Ray",
+ "alternateName": [
+ "JRAY",
+ "loserdub",
+ "VISION",
+ "Flawed Future",
+ "le vide",
+ "disarray"
+ ],
+ "url": "https://trustnodelogic.com",
+ "image": "https://trustnodelogic.com/bio-avatar.jpg",
+ "email": "mailto:justin@trustnodelogic.com",
+ "jobTitle": [
+ "Music Producer",
+ "Music Artist",
+ "Pioneer of Hybrid AI Music Production",
+ "Audio Engineer",
+ "Creative Technologist"
+ ],
+ "address": {
+ "@type": "PostalAddress",
+ "addressLocality": "East Lansing",
+ "addressRegion": "MI",
+ "addressCountry": "US"
+ },
+ "knowsAbout": [
+ "Hybrid Music Production",
+ "Generative Artificial Intelligence",
+ "Web Audio API",
+ "Audio Engineering",
+ "Digital Audio Workstation",
+ "C2PA Provenance",
+ "Google MusicLM",
+ "Suno AI",
+ "Udio",
+ "SLERP Audio",
+ "Hybrid Production Standard",
+ "HPS-1.0",
+ "EU AI Act Article 50",
+ "DDEX ERN 4.3",
+ "Spectral Splitting",
+ "MIXR Studio",
+ "Sound Design",
+ "Logic Pro X",
+ "Ableton Live"
+ ],
+ "memberOf": [
+ {
+ "@id": "https://trustnodelogic.com/#organization"
+ },
+ {
+ "@id": "https://www.reddit.com/r/hybridproduction/#organization"
+ }
+ ],
+ "sameAs": [
+ "https://musicbrainz.org/artist/882fdb9b-8655-45dd-8e24-a59cd750d053",
+ "https://soundcloud.com/visiontracks",
+ "https://soundcloud.com/loserdub",
+ "https://www.youtube.com/@loserdub",
+ "https://www.linkedin.com/in/jray-me/",
+ "https://x.com/TheInnerVision",
+ "https://www.instagram.com/jray.me/",
+ "https://open.spotify.com/artist/3VZelnnW9OR0DyR2qRn4Oq",
+ "https://open.spotify.com/artist/6GGZwLOLxVxYGOcMry3NDi",
+ "https://open.spotify.com/artist/42TmrCeIumkPRyTNOPP78t",
+ "https://open.spotify.com/artist/3FNFzRyU0PCA2vjihWsg6y",
+ "https://open.spotify.com/artist/6TlAxGL1Hm4FRWfTxprlMi",
+ "https://www.reddit.com/r/hybridproduction/",
+ "https://network.landr.com/users/vision-hybrid",
+ "https://github.com/loserdub"
+ ]
+ },
+ {
+ "@type": "Organization",
+ "@id": "https://trustnodelogic.com/#organization",
+ "name": "Trust Node Logic",
+ "alternateName": "JRAY & Trust Node Logic",
+ "url": "https://trustnodelogic.com",
+ "logo": "https://trustnodelogic.com/favicon.png",
+ "founder": {
+ "@id": "https://trustnodelogic.com/#person"
+ },
+ "slogan": "The Frontier of Hybrid AI Music Production & Creative Technology",
+ "knowsAbout": [
+ "Hybrid Production",
+ "AI Music Generation",
+ "Audio Engineering",
+ "Generative Audio Workflows",
+ "HPS-1.0 Metadata Verification"
+ ]
+ },
+ {
+ "@type": "Organization",
+ "@id": "https://www.reddit.com/r/hybridproduction/#organization",
+ "name": "r/HybridProduction",
+ "url": "https://www.reddit.com/r/hybridproduction/",
+ "description": "The definitive online community for Hybrid Music Production.",
+ "founder": {
+ "@id": "https://trustnodelogic.com/#person"
+ },
+ "sameAs": "https://www.reddit.com/r/hybridproduction/"
+ },
+ {
+ "@type": "WebSite",
+ "@id": "https://trustnodelogic.com/#website",
+ "url": "https://trustnodelogic.com",
+ "name": "Trust Node Logic | Pioneer of Hybrid AI Music Production",
+ "description": "Official hub of Justin Ray (JRAY / loserdub), pioneer of the Hybrid AI Music Production methodology, creative technologist, and founder of r/hybridproduction.",
+ "author": {
+ "@id": "https://trustnodelogic.com/#person"
+ },
+ "publisher": {
+ "@id": "https://trustnodelogic.com/#organization"
+ },
+ "inLanguage": "en-US"
+ }
+ ]
 }</script>
 </head>
 <body>
 <div aria-hidden="true" class="bg-texture"></div>
 <div aria-hidden="true" class="bg-scan"></div>
 <header class="site-header">
-<a class="wordmark" href="https://trustnodelogic.com">TRUSTNODELOGIC</a>
+<a class="wordmark" href="https://trustnodelogic.com/">TRUSTNODELOGIC</a>
 <span class="header-tag">FIELD NOTES</span>
 </header>
 <main>
@@ -852,127 +852,127 @@
 </ul>
 </section>
 
-      <!-- Related Field Notes Topic Cluster -->
-      <section class="mt-16 pt-8 border-t border-white/10 w-full max-w-4xl mx-auto px-4" aria-label="Related Research">
-        <div class="flex items-center justify-between mb-6">
-          <div class="flex items-center gap-2 text-xs font-mono tracking-wider text-[#FF9F1C] uppercase">
-            <span>[ TOPIC_CLUSTER // RELATED_FIELD_NOTES ]</span>
-          </div>
-          <a href="./what-is-hybrid.html" class="text-xs font-mono text-[#71717A] hover:text-[#FF9F1C] transition-colors">ALL NOTES (16) →</a>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <a href="./hybridproductionstandard.html" class="tech-card p-5 bg-[#121417] border border-white/10 hover:border-[#FF9F1C] flex flex-col justify-between group transition-all">
-          <div>
-            <span class="text-[10px] font-mono tracking-widest text-[#FF9F1C] uppercase block mb-2">STANDARDS PILLAR // SPECIFICATION</span>
-            <h3 class="text-sm font-bold font-mono text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors mb-2">HPS-1.0 Production Standard</h3>
-            <p class="text-xs text-[#71717A] font-light leading-relaxed">The 5-axis classification standard for AI, hybrid, and human music production disclosure.</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-[#71717A] group-hover:text-[#EAEAEA]">
-            <span>Read Field Note</span>
-            <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">→</span>
-          </div>
-        </a>
-        <a href="./c2pa-music-provenance.html" class="tech-card p-5 bg-[#121417] border border-white/10 hover:border-[#FF9F1C] flex flex-col justify-between group transition-all">
-          <div>
-            <span class="text-[10px] font-mono tracking-widest text-[#FF9F1C] uppercase block mb-2">PROVENANCE // TRUST CHAIN</span>
-            <h3 class="text-sm font-bold font-mono text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors mb-2">C2PA Music Provenance</h3>
-            <p class="text-xs text-[#71717A] font-light leading-relaxed">Content credentials, cryptographically signed audio, and provenance verification in music.</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-[#71717A] group-hover:text-[#EAEAEA]">
-            <span>Read Field Note</span>
-            <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">→</span>
-          </div>
-        </a>
-        <a href="./saturation.html" class="tech-card p-5 bg-[#121417] border border-white/10 hover:border-[#FF9F1C] flex flex-col justify-between group transition-all">
-          <div>
-            <span class="text-[10px] font-mono tracking-widest text-[#FF9F1C] uppercase block mb-2">ECONOMICS // STREAMING DATA</span>
-            <h3 class="text-sm font-bold font-mono text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors mb-2">The Denominator Problem</h3>
-            <p class="text-xs text-[#71717A] font-light leading-relaxed">106,000 tracks a day and rewritten Billboard rules: a data-first look at music supply and income.</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-[#71717A] group-hover:text-[#EAEAEA]">
-            <span>Read Field Note</span>
-            <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">→</span>
-          </div>
-        </a>
-        </div>
-      </section>
+ <!-- Related Field Notes Topic Cluster -->
+ <section class="mt-16 pt-8 border-t border-white/10 w-full max-w-4xl mx-auto px-4" aria-label="Related Research">
+ <div class="flex items-center justify-between mb-6">
+ <div class="flex items-center gap-2 text-xs font-mono tracking-wider text-[#FF9F1C] uppercase">
+ <span>[ TOPIC_CLUSTER // RELATED_FIELD_NOTES ]</span>
+ </div>
+ <a href="./what-is-hybrid.html" class="text-xs font-mono text-[#71717A] hover:text-[#FF9F1C] transition-colors">ALL NOTES (16) →</a>
+ </div>
+ <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+ <a href="./hybridproductionstandard.html" class="tech-card p-5 bg-[#121417] border border-white/10 hover:border-[#FF9F1C] flex flex-col justify-between group transition-all">
+ <div>
+ <span class="text-[10px] font-mono tracking-widest text-[#FF9F1C] uppercase block mb-2">STANDARDS PILLAR // SPECIFICATION</span>
+ <h3 class="text-sm font-bold font-mono text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors mb-2">HPS-1.0 Production Standard</h3>
+ <p class="text-xs text-[#71717A] font-light leading-relaxed">The 5-axis classification standard for AI, hybrid, and human music production disclosure.</p>
+ </div>
+ <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-[#71717A] group-hover:text-[#EAEAEA]">
+ <span>Read Field Note</span>
+ <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">→</span>
+ </div>
+ </a>
+ <a href="./c2pa-music-provenance.html" class="tech-card p-5 bg-[#121417] border border-white/10 hover:border-[#FF9F1C] flex flex-col justify-between group transition-all">
+ <div>
+ <span class="text-[10px] font-mono tracking-widest text-[#FF9F1C] uppercase block mb-2">PROVENANCE // TRUST CHAIN</span>
+ <h3 class="text-sm font-bold font-mono text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors mb-2">C2PA Music Provenance</h3>
+ <p class="text-xs text-[#71717A] font-light leading-relaxed">Content credentials, cryptographically signed audio, and provenance verification in music.</p>
+ </div>
+ <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-[#71717A] group-hover:text-[#EAEAEA]">
+ <span>Read Field Note</span>
+ <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">→</span>
+ </div>
+ </a>
+ <a href="./saturation.html" class="tech-card p-5 bg-[#121417] border border-white/10 hover:border-[#FF9F1C] flex flex-col justify-between group transition-all">
+ <div>
+ <span class="text-[10px] font-mono tracking-widest text-[#FF9F1C] uppercase block mb-2">ECONOMICS // STREAMING DATA</span>
+ <h3 class="text-sm font-bold font-mono text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors mb-2">The Denominator Problem</h3>
+ <p class="text-xs text-[#71717A] font-light leading-relaxed">106,000 tracks a day and rewritten Billboard rules: a data-first look at music supply and income.</p>
+ </div>
+ <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-[#71717A] group-hover:text-[#EAEAEA]">
+ <span>Read Field Note</span>
+ <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">→</span>
+ </div>
+ </a>
+ </div>
+ </section>
 
 </article>
 </main>
 <footer class="site-footer">
-  © 2026 TrustNodeLogic · Hybrid Production Standard HPS-1.0
+ © 2026 TrustNodeLogic · Hybrid Production Standard HPS-1.0
 </footer>
 <script>
 (function(){
-  // Axis order drives tier-code order and the score calculation.
-  // The markup for each axis already exists in the page (see #axis-list);
-  // this script only reads its current state and reacts to changes.
-  var AXIS_ORDER = ['composition','performance','arrangement','mixing','mastering'];
+ // Axis order drives tier-code order and the score calculation.
+ // The markup for each axis already exists in the page (see #axis-list);
+ // this script only reads its current state and reacts to changes.
+ var AXIS_ORDER = ['composition','performance','arrangement','mixing','mastering'];
 
-  var STATE_META = {
-    human:  { letter:'H', points:0 },
-    hybrid: { letter:'X', points:1 },
-    ai:     { letter:'A', points:2 }
-  };
+ var STATE_META = {
+ human: { letter:'H', points:0 },
+ hybrid: { letter:'X', points:1 },
+ ai: { letter:'A', points:2 }
+ };
 
-  var axisListEl = document.getElementById('axis-list');
-  var tierCodeEl = document.getElementById('tier-code');
-  var nodeLabelEl = document.getElementById('node-label');
-  var nodeDescEl = document.getElementById('node-desc');
+ var axisListEl = document.getElementById('axis-list');
+ var tierCodeEl = document.getElementById('tier-code');
+ var nodeLabelEl = document.getElementById('node-label');
+ var nodeDescEl = document.getElementById('node-desc');
 
-  if(!axisListEl) return;
+ if(!axisListEl) return;
 
-  function currentState(){
-    var state = {};
-    AXIS_ORDER.forEach(function(key){
-      var checked = axisListEl.querySelector('input[name="axis-' + key + '"]:checked');
-      state[key] = checked ? checked.value : 'human';
-    });
-    return state;
-  }
+ function currentState(){
+ var state = {};
+ AXIS_ORDER.forEach(function(key){
+ var checked = axisListEl.querySelector('input[name="axis-' + key + '"]:checked');
+ state[key] = checked ? checked.value : 'human';
+ });
+ return state;
+ }
 
-  function render(){
-    var state = currentState();
+ function render(){
+ var state = currentState();
 
-    // sync visual highlight on the segmented labels
-    axisListEl.querySelectorAll('.seg-option').forEach(function(label){
-      var input = label.querySelector('input');
-      label.classList.toggle('is-checked', input.checked);
-    });
+ // sync visual highlight on the segmented labels
+ axisListEl.querySelectorAll('.seg-option').forEach(function(label){
+ var input = label.querySelector('input');
+ label.classList.toggle('is-checked', input.checked);
+ });
 
-    // sync the chain visual dots
-    AXIS_ORDER.forEach(function(key){
-      var node = document.getElementById('node-' + key);
-      if(node){ node.className = 'chain-node' + (state[key] !== 'human' ? ' ' + state[key] : ''); }
-    });
+ // sync the chain visual dots
+ AXIS_ORDER.forEach(function(key){
+ var node = document.getElementById('node-' + key);
+ if(node){ node.className = 'chain-node' + (state[key] !== 'human' ? ' ' + state[key] : ''); }
+ });
 
-    // tier code
-    var tier = AXIS_ORDER.map(function(key){ return STATE_META[state[key]].letter; }).join(' \u00B7 ');
-    if(tierCodeEl){ tierCodeEl.textContent = tier; }
+ // tier code
+ var tier = AXIS_ORDER.map(function(key){ return STATE_META[state[key]].letter; }).join(' \u00B7 ');
+ if(tierCodeEl){ tierCodeEl.textContent = tier; }
 
-    // score and classification
-    var score = AXIS_ORDER.reduce(function(sum, key){ return sum + STATE_META[state[key]].points; }, 0);
+ // score and classification
+ var score = AXIS_ORDER.reduce(function(sum, key){ return sum + STATE_META[state[key]].points; }, 0);
 
-    var node, desc;
-    if(score <= 2){
-      node = 'NODE A \u00B7 HUMAN-ANCHORED';
-      desc = 'AI, if it\u2019s present at all, is supporting the human decisions instead of replacing them. Lightest regulatory footprint: minimal marking exposure, straightforward Grammy eligibility, easy DDEX disclosure.';
-    } else if(score <= 7){
-      node = 'NODE B \u00B7 HYBRID';
-      desc = 'Human authorship and AI generation both shape the finished track. This is where most working producers already live, and it\u2019s exactly the zone DDEX\u2019s five-field disclosure and Article 50\u2019s marking rules were built for.';
-    } else {
-      node = 'NODE C \u00B7 AI-PRIMARY';
-      desc = 'Most of the signal chain is machine-generated. Article 50 marking and DDEX disclosure aren\u2019t optional here, and without a clearly credited human authorship stage, this is Grammy-ineligible outright.';
-    }
-    if(nodeLabelEl){ nodeLabelEl.textContent = node; }
-    if(nodeDescEl){ nodeDescEl.textContent = desc; }
-  }
+ var node, desc;
+ if(score <= 2){
+ node = 'NODE A \u00B7 HUMAN-ANCHORED';
+ desc = 'AI, if it\u2019s present at all, is supporting the human decisions instead of replacing them. Lightest regulatory footprint: minimal marking exposure, straightforward Grammy eligibility, easy DDEX disclosure.';
+ } else if(score <= 7){
+ node = 'NODE B \u00B7 HYBRID';
+ desc = 'Human authorship and AI generation both shape the finished track. This is where most working producers already live, and it\u2019s exactly the zone DDEX\u2019s five-field disclosure and Article 50\u2019s marking rules were built for.';
+ } else {
+ node = 'NODE C \u00B7 AI-PRIMARY';
+ desc = 'Most of the signal chain is machine-generated. Article 50 marking and DDEX disclosure aren\u2019t optional here, and without a clearly credited human authorship stage, this is Grammy-ineligible outright.';
+ }
+ if(nodeLabelEl){ nodeLabelEl.textContent = node; }
+ if(nodeDescEl){ nodeDescEl.textContent = desc; }
+ }
 
-  axisListEl.querySelectorAll('input[type="radio"]').forEach(function(input){
-    input.addEventListener('change', render);
-  });
+ axisListEl.querySelectorAll('input[type="radio"]').forEach(function(input){
+ input.addEventListener('change', render);
+ });
 
-  render();
+ render();
 })();
 </script>
 <script defer src="./assets/reader.js"></script>

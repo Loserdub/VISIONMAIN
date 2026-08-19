@@ -873,25 +873,61 @@
               "addressCountry": "US"
             },
             "knowsAbout": [
-              "Hybrid Music Production",
-              "Generative Artificial Intelligence",
-              "Web Audio API",
-              "Audio Engineering",
-              "Digital Audio Workstation",
-              "C2PA Provenance",
-              "Google MusicLM",
-              "Suno AI",
-              "Udio",
-              "SLERP Audio",
+              {
+                "@type": "DefinedTerm",
+                "name": "Hybrid Music Production",
+                "description": "The methodology of integrating generative AI audio models into professional digital audio workstation workflows."
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Generative Artificial Intelligence",
+                "url": "https://en.wikipedia.org/wiki/Generative_artificial_intelligence",
+                "sameAs": "https://www.wikidata.org/wiki/Q116972040"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Digital Audio Workstation",
+                "url": "https://en.wikipedia.org/wiki/Digital_audio_workstation",
+                "sameAs": "https://www.wikidata.org/wiki/Q11425"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Audio Engineering",
+                "url": "https://en.wikipedia.org/wiki/Audio_engineering",
+                "sameAs": "https://www.wikidata.org/wiki/Q654390"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Search Engine Optimization",
+                "url": "https://en.wikipedia.org/wiki/Search_engine_optimization",
+                "sameAs": "https://www.wikidata.org/wiki/Q180711"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Knowledge Graph",
+                "url": "https://en.wikipedia.org/wiki/Knowledge_graph",
+                "sameAs": "https://www.wikidata.org/wiki/Q33002955"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Web Audio API",
+                "url": "https://en.wikipedia.org/wiki/Web_Audio_API",
+                "sameAs": "https://www.wikidata.org/wiki/Q7978553"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "C2PA",
+                "url": "https://en.wikipedia.org/wiki/C2PA",
+                "sameAs": "https://www.wikidata.org/wiki/Q105622176"
+              },
               "Hybrid Production Standard",
               "HPS-1.0",
               "EU AI Act Article 50",
               "DDEX ERN 4.3",
               "Spectral Splitting",
               "MIXR Studio",
-              "Sound Design",
-              "Logic Pro X",
-              "Ableton Live"
+              "SLERP Audio",
+              "Sound Design"
             ],
             "memberOf": [
               {
@@ -1492,25 +1528,61 @@
               "addressCountry": "US"
             },
             "knowsAbout": [
-              "Hybrid Music Production",
-              "Generative Artificial Intelligence",
-              "Web Audio API",
-              "Audio Engineering",
-              "Digital Audio Workstation",
-              "C2PA Provenance",
-              "Google MusicLM",
-              "Suno AI",
-              "Udio",
-              "SLERP Audio",
+              {
+                "@type": "DefinedTerm",
+                "name": "Hybrid Music Production",
+                "description": "The methodology of integrating generative AI audio models into professional digital audio workstation workflows."
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Generative Artificial Intelligence",
+                "url": "https://en.wikipedia.org/wiki/Generative_artificial_intelligence",
+                "sameAs": "https://www.wikidata.org/wiki/Q116972040"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Digital Audio Workstation",
+                "url": "https://en.wikipedia.org/wiki/Digital_audio_workstation",
+                "sameAs": "https://www.wikidata.org/wiki/Q11425"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Audio Engineering",
+                "url": "https://en.wikipedia.org/wiki/Audio_engineering",
+                "sameAs": "https://www.wikidata.org/wiki/Q654390"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Search Engine Optimization",
+                "url": "https://en.wikipedia.org/wiki/Search_engine_optimization",
+                "sameAs": "https://www.wikidata.org/wiki/Q180711"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Knowledge Graph",
+                "url": "https://en.wikipedia.org/wiki/Knowledge_graph",
+                "sameAs": "https://www.wikidata.org/wiki/Q33002955"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Web Audio API",
+                "url": "https://en.wikipedia.org/wiki/Web_Audio_API",
+                "sameAs": "https://www.wikidata.org/wiki/Q7978553"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "C2PA",
+                "url": "https://en.wikipedia.org/wiki/C2PA",
+                "sameAs": "https://www.wikidata.org/wiki/Q105622176"
+              },
               "Hybrid Production Standard",
               "HPS-1.0",
               "EU AI Act Article 50",
               "DDEX ERN 4.3",
               "Spectral Splitting",
               "MIXR Studio",
-              "Sound Design",
-              "Logic Pro X",
-              "Ableton Live"
+              "SLERP Audio",
+              "Sound Design"
             ],
             "memberOf": [
               {
@@ -2382,7 +2454,7 @@
             ],
             "url": "https://trustnodelogic.com",
             "image": "https://trustnodelogic.com/bio-avatar.jpg",
-            "email": "mailto:justin@trustnodelogic.com",
+            "email": "mailto:trustnodelogic@gmail.com",
             "jobTitle": [
               "Music Producer",
               "Music Artist",
@@ -2400,25 +2472,61 @@
               "addressCountry": "US"
             },
             "knowsAbout": [
-              "Hybrid Music Production",
-              "Generative Artificial Intelligence",
-              "Web Audio API",
-              "Audio Engineering",
-              "Digital Audio Workstation",
-              "C2PA Provenance",
-              "Google MusicLM",
-              "Suno AI",
-              "Udio",
-              "SLERP Audio",
+              {
+                "@type": "DefinedTerm",
+                "name": "Hybrid Music Production",
+                "description": "The methodology of integrating generative AI audio models into professional digital audio workstation workflows."
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Generative Artificial Intelligence",
+                "url": "https://en.wikipedia.org/wiki/Generative_artificial_intelligence",
+                "sameAs": "https://www.wikidata.org/wiki/Q116972040"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Digital Audio Workstation",
+                "url": "https://en.wikipedia.org/wiki/Digital_audio_workstation",
+                "sameAs": "https://www.wikidata.org/wiki/Q11425"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Audio Engineering",
+                "url": "https://en.wikipedia.org/wiki/Audio_engineering",
+                "sameAs": "https://www.wikidata.org/wiki/Q654390"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Search Engine Optimization",
+                "url": "https://en.wikipedia.org/wiki/Search_engine_optimization",
+                "sameAs": "https://www.wikidata.org/wiki/Q180711"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Knowledge Graph",
+                "url": "https://en.wikipedia.org/wiki/Knowledge_graph",
+                "sameAs": "https://www.wikidata.org/wiki/Q33002955"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Web Audio API",
+                "url": "https://en.wikipedia.org/wiki/Web_Audio_API",
+                "sameAs": "https://www.wikidata.org/wiki/Q7978553"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "C2PA",
+                "url": "https://en.wikipedia.org/wiki/C2PA",
+                "sameAs": "https://www.wikidata.org/wiki/Q105622176"
+              },
               "Hybrid Production Standard",
               "HPS-1.0",
               "EU AI Act Article 50",
               "DDEX ERN 4.3",
               "Spectral Splitting",
               "MIXR Studio",
-              "Sound Design",
-              "Logic Pro X",
-              "Ableton Live"
+              "SLERP Audio",
+              "Sound Design"
             ],
             "memberOf": [
               {
@@ -3725,25 +3833,61 @@
               "addressCountry": "US"
             },
             "knowsAbout": [
-              "Hybrid Music Production",
-              "Generative Artificial Intelligence",
-              "Web Audio API",
-              "Audio Engineering",
-              "Digital Audio Workstation",
-              "C2PA Provenance",
-              "Google MusicLM",
-              "Suno AI",
-              "Udio",
-              "SLERP Audio",
+              {
+                "@type": "DefinedTerm",
+                "name": "Hybrid Music Production",
+                "description": "The methodology of integrating generative AI audio models into professional digital audio workstation workflows."
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Generative Artificial Intelligence",
+                "url": "https://en.wikipedia.org/wiki/Generative_artificial_intelligence",
+                "sameAs": "https://www.wikidata.org/wiki/Q116972040"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Digital Audio Workstation",
+                "url": "https://en.wikipedia.org/wiki/Digital_audio_workstation",
+                "sameAs": "https://www.wikidata.org/wiki/Q11425"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Audio Engineering",
+                "url": "https://en.wikipedia.org/wiki/Audio_engineering",
+                "sameAs": "https://www.wikidata.org/wiki/Q654390"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Search Engine Optimization",
+                "url": "https://en.wikipedia.org/wiki/Search_engine_optimization",
+                "sameAs": "https://www.wikidata.org/wiki/Q180711"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Knowledge Graph",
+                "url": "https://en.wikipedia.org/wiki/Knowledge_graph",
+                "sameAs": "https://www.wikidata.org/wiki/Q33002955"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Web Audio API",
+                "url": "https://en.wikipedia.org/wiki/Web_Audio_API",
+                "sameAs": "https://www.wikidata.org/wiki/Q7978553"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "C2PA",
+                "url": "https://en.wikipedia.org/wiki/C2PA",
+                "sameAs": "https://www.wikidata.org/wiki/Q105622176"
+              },
               "Hybrid Production Standard",
               "HPS-1.0",
               "EU AI Act Article 50",
               "DDEX ERN 4.3",
               "Spectral Splitting",
               "MIXR Studio",
-              "Sound Design",
-              "Logic Pro X",
-              "Ableton Live"
+              "SLERP Audio",
+              "Sound Design"
             ],
             "memberOf": [
               {
@@ -4080,25 +4224,61 @@
               "addressCountry": "US"
             },
             "knowsAbout": [
-              "Hybrid Music Production",
-              "Generative Artificial Intelligence",
-              "Web Audio API",
-              "Audio Engineering",
-              "Digital Audio Workstation",
-              "C2PA Provenance",
-              "Google MusicLM",
-              "Suno AI",
-              "Udio",
-              "SLERP Audio",
+              {
+                "@type": "DefinedTerm",
+                "name": "Hybrid Music Production",
+                "description": "The methodology of integrating generative AI audio models into professional digital audio workstation workflows."
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Generative Artificial Intelligence",
+                "url": "https://en.wikipedia.org/wiki/Generative_artificial_intelligence",
+                "sameAs": "https://www.wikidata.org/wiki/Q116972040"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Digital Audio Workstation",
+                "url": "https://en.wikipedia.org/wiki/Digital_audio_workstation",
+                "sameAs": "https://www.wikidata.org/wiki/Q11425"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Audio Engineering",
+                "url": "https://en.wikipedia.org/wiki/Audio_engineering",
+                "sameAs": "https://www.wikidata.org/wiki/Q654390"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Search Engine Optimization",
+                "url": "https://en.wikipedia.org/wiki/Search_engine_optimization",
+                "sameAs": "https://www.wikidata.org/wiki/Q180711"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Knowledge Graph",
+                "url": "https://en.wikipedia.org/wiki/Knowledge_graph",
+                "sameAs": "https://www.wikidata.org/wiki/Q33002955"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Web Audio API",
+                "url": "https://en.wikipedia.org/wiki/Web_Audio_API",
+                "sameAs": "https://www.wikidata.org/wiki/Q7978553"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "C2PA",
+                "url": "https://en.wikipedia.org/wiki/C2PA",
+                "sameAs": "https://www.wikidata.org/wiki/Q105622176"
+              },
               "Hybrid Production Standard",
               "HPS-1.0",
               "EU AI Act Article 50",
               "DDEX ERN 4.3",
               "Spectral Splitting",
               "MIXR Studio",
-              "Sound Design",
-              "Logic Pro X",
-              "Ableton Live"
+              "SLERP Audio",
+              "Sound Design"
             ],
             "memberOf": [
               {
@@ -4691,30 +4871,61 @@
               "addressCountry": "US"
             },
             "knowsAbout": [
-              "Hybrid Music Production",
-              "Generative Artificial Intelligence",
-              "Generative Engine Optimization",
-              "GEO",
-              "Technical SEO",
-              "Structured Data",
-              "JSON-LD",
-              "Web Audio API",
-              "Audio Engineering",
-              "Digital Audio Workstation",
-              "C2PA Provenance",
-              "Google MusicLM",
-              "Suno AI",
-              "Udio",
-              "SLERP Audio",
+              {
+                "@type": "DefinedTerm",
+                "name": "Hybrid Music Production",
+                "description": "The methodology of integrating generative AI audio models into professional digital audio workstation workflows."
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Generative Artificial Intelligence",
+                "url": "https://en.wikipedia.org/wiki/Generative_artificial_intelligence",
+                "sameAs": "https://www.wikidata.org/wiki/Q116972040"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Digital Audio Workstation",
+                "url": "https://en.wikipedia.org/wiki/Digital_audio_workstation",
+                "sameAs": "https://www.wikidata.org/wiki/Q11425"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Audio Engineering",
+                "url": "https://en.wikipedia.org/wiki/Audio_engineering",
+                "sameAs": "https://www.wikidata.org/wiki/Q654390"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Search Engine Optimization",
+                "url": "https://en.wikipedia.org/wiki/Search_engine_optimization",
+                "sameAs": "https://www.wikidata.org/wiki/Q180711"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Knowledge Graph",
+                "url": "https://en.wikipedia.org/wiki/Knowledge_graph",
+                "sameAs": "https://www.wikidata.org/wiki/Q33002955"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Web Audio API",
+                "url": "https://en.wikipedia.org/wiki/Web_Audio_API",
+                "sameAs": "https://www.wikidata.org/wiki/Q7978553"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "C2PA",
+                "url": "https://en.wikipedia.org/wiki/C2PA",
+                "sameAs": "https://www.wikidata.org/wiki/Q105622176"
+              },
               "Hybrid Production Standard",
               "HPS-1.0",
               "EU AI Act Article 50",
               "DDEX ERN 4.3",
               "Spectral Splitting",
               "MIXR Studio",
-              "Sound Design",
-              "Logic Pro X",
-              "Ableton Live"
+              "SLERP Audio",
+              "Sound Design"
             ],
             "memberOf": [
               {
@@ -5540,25 +5751,61 @@
               "addressCountry": "US"
             },
             "knowsAbout": [
-              "Hybrid Music Production",
-              "Generative Artificial Intelligence",
-              "Web Audio API",
-              "Audio Engineering",
-              "Digital Audio Workstation",
-              "C2PA Provenance",
-              "Google MusicLM",
-              "Suno AI",
-              "Udio",
-              "SLERP Audio",
+              {
+                "@type": "DefinedTerm",
+                "name": "Hybrid Music Production",
+                "description": "The methodology of integrating generative AI audio models into professional digital audio workstation workflows."
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Generative Artificial Intelligence",
+                "url": "https://en.wikipedia.org/wiki/Generative_artificial_intelligence",
+                "sameAs": "https://www.wikidata.org/wiki/Q116972040"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Digital Audio Workstation",
+                "url": "https://en.wikipedia.org/wiki/Digital_audio_workstation",
+                "sameAs": "https://www.wikidata.org/wiki/Q11425"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Audio Engineering",
+                "url": "https://en.wikipedia.org/wiki/Audio_engineering",
+                "sameAs": "https://www.wikidata.org/wiki/Q654390"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Search Engine Optimization",
+                "url": "https://en.wikipedia.org/wiki/Search_engine_optimization",
+                "sameAs": "https://www.wikidata.org/wiki/Q180711"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Knowledge Graph",
+                "url": "https://en.wikipedia.org/wiki/Knowledge_graph",
+                "sameAs": "https://www.wikidata.org/wiki/Q33002955"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "Web Audio API",
+                "url": "https://en.wikipedia.org/wiki/Web_Audio_API",
+                "sameAs": "https://www.wikidata.org/wiki/Q7978553"
+              },
+              {
+                "@type": "DefinedTerm",
+                "name": "C2PA",
+                "url": "https://en.wikipedia.org/wiki/C2PA",
+                "sameAs": "https://www.wikidata.org/wiki/Q105622176"
+              },
               "Hybrid Production Standard",
               "HPS-1.0",
               "EU AI Act Article 50",
               "DDEX ERN 4.3",
               "Spectral Splitting",
               "MIXR Studio",
-              "Sound Design",
-              "Logic Pro X",
-              "Ableton Live"
+              "SLERP Audio",
+              "Sound Design"
             ],
             "memberOf": [
               {

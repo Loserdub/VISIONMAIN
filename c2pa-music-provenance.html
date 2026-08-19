@@ -4,8 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Justin Ray | C2PA Music Provenance</title>
-<meta name="description" content="An in-depth analysis of C2PA metadata, content credentials, cryptographically signed audio, and provenance verification in modern music distribution.">
+<title>C2PA Music Provenance: Cryptographic Metadata in AI Audio | JRAY</title>
+<meta name="description" content="Comprehensive guide to C2PA provenance manifests, cryptographic metadata, and content authenticity in AI music. Technical breakdown by Justin Ray.">
 <meta name="author" content="Justin Ray">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="keywords" content="Hybrid AI Music Production, Justin Ray, JRAY, loserdub, VISION, Trust Node Logic, audio engineering, music producer, C2PA, HPS-1.0">
@@ -16,418 +16,418 @@
 
 <!-- OpenGraph & Twitter Cards -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Justin Ray | C2PA Music Provenance">
-<meta property="og:description" content="An in-depth analysis of C2PA metadata, content credentials, cryptographically signed audio, and provenance verification in modern music distribution.">
+<meta property="og:title" content="C2PA Music Provenance: Cryptographic Metadata in AI Audio | JRAY">
+<meta property="og:description" content="Comprehensive guide to C2PA provenance manifests, cryptographic metadata, and content authenticity in AI music. Technical breakdown by Justin Ray.">
 <meta property="og:url" content="https://trustnodelogic.com/c2pa-music-provenance.html">
 <meta property="og:site_name" content="Trust Node Logic">
 <meta property="og:image" content="https://trustnodelogic.com/assets/images/tnl-default-og.webp">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Justin Ray | C2PA Music Provenance">
-<meta name="twitter:description" content="An in-depth analysis of C2PA metadata, content credentials, cryptographically signed audio, and provenance verification in modern music distribution.">
+<meta name="twitter:title" content="C2PA Music Provenance: Cryptographic Metadata in AI Audio | JRAY">
+<meta name="twitter:description" content="Comprehensive guide to C2PA provenance manifests, cryptographic metadata, and content authenticity in AI music. Technical breakdown by Justin Ray.">
 <meta name="twitter:image" content="https://trustnodelogic.com/assets/images/tnl-default-og.webp">
 <link rel="icon" type="image/png" href="./favicon.png">
 
 <!-- Structured Data / JSON-LD -->
 <script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "https://trustnodelogic.com/c2pa-music-provenance.html#webpage",
-      "url": "https://trustnodelogic.com/c2pa-music-provenance.html",
-      "name": "Justin Ray | C2PA Music Provenance",
-      "description": "An in-depth analysis of C2PA metadata, content credentials, cryptographically signed audio, and provenance verification in modern music distribution.",
-      "isPartOf": {
-        "@id": "https://trustnodelogic.com/#website"
-      },
-      "breadcrumb": {
-        "@id": "https://trustnodelogic.com/c2pa-music-provenance.html#breadcrumb"
-      },
-      "inLanguage": "en-US",
-      "mainEntity": {
-        "@id": "https://trustnodelogic.com/c2pa-music-provenance.html#article"
-      },
-      "image": "https://trustnodelogic.com/assets/images/tnl-default-og.webp"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://trustnodelogic.com/c2pa-music-provenance.html#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://trustnodelogic.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "C2PA Provenance",
-          "item": "https://trustnodelogic.com/c2pa-music-provenance.html"
-        }
-      ]
-    },
-    {
-      "@type": "TechArticle",
-      "@id": "https://trustnodelogic.com/c2pa-music-provenance.html#article",
-      "headline": "C2PA Music Provenance Deep Dive",
-      "description": "An in-depth analysis of C2PA metadata, content credentials, cryptographically signed audio, and provenance verification in modern music distribution.",
-      "url": "https://trustnodelogic.com/c2pa-music-provenance.html",
-      "mainEntityOfPage": {
-        "@id": "https://trustnodelogic.com/c2pa-music-provenance.html#webpage"
-      },
-      "isPartOf": {
-        "@id": "https://trustnodelogic.com/#website"
-      },
-      "author": {
-        "@id": "https://trustnodelogic.com/#person"
-      },
-      "publisher": {
-        "@id": "https://trustnodelogic.com/#organization"
-      },
-      "datePublished": "2026-07-21",
-      "dateModified": "2026-07-21",
-      "image": "https://trustnodelogic.com/assets/images/tnl-default-og.webp",
-      "inLanguage": "en-US"
-    },
-    {
-      "@type": "Person",
-      "@id": "https://trustnodelogic.com/#person",
-      "name": "Justin Ray",
-      "additionalName": "Justin Tyler Ray",
-      "alternateName": [
-        "JRAY",
-        "loserdub",
-        "VISION",
-        "Flawed Future",
-        "le vide",
-        "disarray"
-      ],
-      "url": "https://trustnodelogic.com",
-      "image": "https://trustnodelogic.com/bio-avatar.jpg",
-      "email": "mailto:justin@trustnodelogic.com",
-      "jobTitle": [
-        "Music Producer",
-        "Music Artist",
-        "Pioneer of Hybrid AI Music Production",
-        "Audio Engineer",
-        "Creative Technologist"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "East Lansing",
-        "addressRegion": "MI",
-        "addressCountry": "US"
-      },
-      "knowsAbout": [
-        "Hybrid Music Production",
-        "Generative Artificial Intelligence",
-        "Web Audio API",
-        "Audio Engineering",
-        "Digital Audio Workstation",
-        "C2PA Provenance",
-        "Google MusicLM",
-        "Suno AI",
-        "Udio",
-        "SLERP Audio",
-        "Hybrid Production Standard",
-        "HPS-1.0",
-        "EU AI Act Article 50",
-        "DDEX ERN 4.3",
-        "Spectral Splitting",
-        "MIXR Studio",
-        "Sound Design",
-        "Logic Pro X",
-        "Ableton Live"
-      ],
-      "memberOf": [
-        {
-          "@id": "https://trustnodelogic.com/#organization"
-        },
-        {
-          "@id": "https://www.reddit.com/r/hybridproduction/#organization"
-        }
-      ],
-      "sameAs": [
-        "https://musicbrainz.org/artist/882fdb9b-8655-45dd-8e24-a59cd750d053",
-        "https://soundcloud.com/visiontracks",
-        "https://soundcloud.com/loserdub",
-        "https://www.youtube.com/@loserdub",
-        "https://www.linkedin.com/in/jray-me/",
-        "https://x.com/TheInnerVision",
-        "https://www.instagram.com/jray.me/",
-        "https://open.spotify.com/artist/3VZelnnW9OR0DyR2qRn4Oq",
-        "https://open.spotify.com/artist/6GGZwLOLxVxYGOcMry3NDi",
-        "https://open.spotify.com/artist/42TmrCeIumkPRyTNOPP78t",
-        "https://open.spotify.com/artist/3FNFzRyU0PCA2vjihWsg6y",
-        "https://open.spotify.com/artist/6TlAxGL1Hm4FRWfTxprlMi",
-        "https://www.reddit.com/r/hybridproduction/",
-        "https://network.landr.com/users/vision-hybrid",
-        "https://github.com/loserdub"
-      ]
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://trustnodelogic.com/#organization",
-      "name": "Trust Node Logic",
-      "alternateName": "JRAY & Trust Node Logic",
-      "url": "https://trustnodelogic.com",
-      "logo": "https://trustnodelogic.com/favicon.png",
-      "founder": {
-        "@id": "https://trustnodelogic.com/#person"
-      },
-      "slogan": "The Frontier of Hybrid AI Music Production & Creative Technology",
-      "knowsAbout": [
-        "Hybrid Production",
-        "AI Music Generation",
-        "Audio Engineering",
-        "Generative Audio Workflows",
-        "HPS-1.0 Metadata Verification"
-      ]
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://www.reddit.com/r/hybridproduction/#organization",
-      "name": "r/HybridProduction",
-      "url": "https://www.reddit.com/r/hybridproduction/",
-      "description": "The definitive online community for Hybrid Music Production.",
-      "founder": {
-        "@id": "https://trustnodelogic.com/#person"
-      },
-      "sameAs": "https://www.reddit.com/r/hybridproduction/"
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://trustnodelogic.com/#website",
-      "url": "https://trustnodelogic.com",
-      "name": "Trust Node Logic | Pioneer of Hybrid AI Music Production",
-      "description": "Official hub of Justin Ray (JRAY / loserdub), pioneer of the Hybrid AI Music Production methodology, creative technologist, and founder of r/hybridproduction.",
-      "author": {
-        "@id": "https://trustnodelogic.com/#person"
-      },
-      "publisher": {
-        "@id": "https://trustnodelogic.com/#organization"
-      },
-      "inLanguage": "en-US"
-    }
-  ]
+ "@context": "https://schema.org",
+ "@graph": [
+ {
+ "@type": "WebPage",
+ "@id": "https://trustnodelogic.com/c2pa-music-provenance.html#webpage",
+ "url": "https://trustnodelogic.com/c2pa-music-provenance.html",
+ "name": "Justin Ray | C2PA Music Provenance",
+ "description": "An in-depth analysis of C2PA metadata, content credentials, cryptographically signed audio, and provenance verification in modern music distribution.",
+ "isPartOf": {
+ "@id": "https://trustnodelogic.com/#website"
+ },
+ "breadcrumb": {
+ "@id": "https://trustnodelogic.com/c2pa-music-provenance.html#breadcrumb"
+ },
+ "inLanguage": "en-US",
+ "mainEntity": {
+ "@id": "https://trustnodelogic.com/c2pa-music-provenance.html#article"
+ },
+ "image": "https://trustnodelogic.com/assets/images/tnl-default-og.webp"
+ },
+ {
+ "@type": "BreadcrumbList",
+ "@id": "https://trustnodelogic.com/c2pa-music-provenance.html#breadcrumb",
+ "itemListElement": [
+ {
+ "@type": "ListItem",
+ "position": 1,
+ "name": "Home",
+ "item": "https://trustnodelogic.com/"
+ },
+ {
+ "@type": "ListItem",
+ "position": 2,
+ "name": "C2PA Provenance",
+ "item": "https://trustnodelogic.com/c2pa-music-provenance.html"
+ }
+ ]
+ },
+ {
+ "@type": "TechArticle",
+ "@id": "https://trustnodelogic.com/c2pa-music-provenance.html#article",
+ "headline": "C2PA Music Provenance Deep Dive",
+ "description": "An in-depth analysis of C2PA metadata, content credentials, cryptographically signed audio, and provenance verification in modern music distribution.",
+ "url": "https://trustnodelogic.com/c2pa-music-provenance.html",
+ "mainEntityOfPage": {
+ "@id": "https://trustnodelogic.com/c2pa-music-provenance.html#webpage"
+ },
+ "isPartOf": {
+ "@id": "https://trustnodelogic.com/#website"
+ },
+ "author": {
+ "@id": "https://trustnodelogic.com/#person"
+ },
+ "publisher": {
+ "@id": "https://trustnodelogic.com/#organization"
+ },
+ "datePublished": "2026-07-21",
+ "dateModified": "2026-07-21",
+ "image": "https://trustnodelogic.com/assets/images/tnl-default-og.webp",
+ "inLanguage": "en-US"
+ },
+ {
+ "@type": "Person",
+ "@id": "https://trustnodelogic.com/#person",
+ "name": "Justin Ray",
+ "additionalName": "Justin Tyler Ray",
+ "alternateName": [
+ "JRAY",
+ "loserdub",
+ "VISION",
+ "Flawed Future",
+ "le vide",
+ "disarray"
+ ],
+ "url": "https://trustnodelogic.com",
+ "image": "https://trustnodelogic.com/bio-avatar.jpg",
+ "email": "mailto:justin@trustnodelogic.com",
+ "jobTitle": [
+ "Music Producer",
+ "Music Artist",
+ "Pioneer of Hybrid AI Music Production",
+ "Audio Engineer",
+ "Creative Technologist"
+ ],
+ "address": {
+ "@type": "PostalAddress",
+ "addressLocality": "East Lansing",
+ "addressRegion": "MI",
+ "addressCountry": "US"
+ },
+ "knowsAbout": [
+ "Hybrid Music Production",
+ "Generative Artificial Intelligence",
+ "Web Audio API",
+ "Audio Engineering",
+ "Digital Audio Workstation",
+ "C2PA Provenance",
+ "Google MusicLM",
+ "Suno AI",
+ "Udio",
+ "SLERP Audio",
+ "Hybrid Production Standard",
+ "HPS-1.0",
+ "EU AI Act Article 50",
+ "DDEX ERN 4.3",
+ "Spectral Splitting",
+ "MIXR Studio",
+ "Sound Design",
+ "Logic Pro X",
+ "Ableton Live"
+ ],
+ "memberOf": [
+ {
+ "@id": "https://trustnodelogic.com/#organization"
+ },
+ {
+ "@id": "https://www.reddit.com/r/hybridproduction/#organization"
+ }
+ ],
+ "sameAs": [
+ "https://musicbrainz.org/artist/882fdb9b-8655-45dd-8e24-a59cd750d053",
+ "https://soundcloud.com/visiontracks",
+ "https://soundcloud.com/loserdub",
+ "https://www.youtube.com/@loserdub",
+ "https://www.linkedin.com/in/jray-me/",
+ "https://x.com/TheInnerVision",
+ "https://www.instagram.com/jray.me/",
+ "https://open.spotify.com/artist/3VZelnnW9OR0DyR2qRn4Oq",
+ "https://open.spotify.com/artist/6GGZwLOLxVxYGOcMry3NDi",
+ "https://open.spotify.com/artist/42TmrCeIumkPRyTNOPP78t",
+ "https://open.spotify.com/artist/3FNFzRyU0PCA2vjihWsg6y",
+ "https://open.spotify.com/artist/6TlAxGL1Hm4FRWfTxprlMi",
+ "https://www.reddit.com/r/hybridproduction/",
+ "https://network.landr.com/users/vision-hybrid",
+ "https://github.com/loserdub"
+ ]
+ },
+ {
+ "@type": "Organization",
+ "@id": "https://trustnodelogic.com/#organization",
+ "name": "Trust Node Logic",
+ "alternateName": "JRAY & Trust Node Logic",
+ "url": "https://trustnodelogic.com",
+ "logo": "https://trustnodelogic.com/favicon.png",
+ "founder": {
+ "@id": "https://trustnodelogic.com/#person"
+ },
+ "slogan": "The Frontier of Hybrid AI Music Production & Creative Technology",
+ "knowsAbout": [
+ "Hybrid Production",
+ "AI Music Generation",
+ "Audio Engineering",
+ "Generative Audio Workflows",
+ "HPS-1.0 Metadata Verification"
+ ]
+ },
+ {
+ "@type": "Organization",
+ "@id": "https://www.reddit.com/r/hybridproduction/#organization",
+ "name": "r/HybridProduction",
+ "url": "https://www.reddit.com/r/hybridproduction/",
+ "description": "The definitive online community for Hybrid Music Production.",
+ "founder": {
+ "@id": "https://trustnodelogic.com/#person"
+ },
+ "sameAs": "https://www.reddit.com/r/hybridproduction/"
+ },
+ {
+ "@type": "WebSite",
+ "@id": "https://trustnodelogic.com/#website",
+ "url": "https://trustnodelogic.com",
+ "name": "Trust Node Logic | Pioneer of Hybrid AI Music Production",
+ "description": "Official hub of Justin Ray (JRAY / loserdub), pioneer of the Hybrid AI Music Production methodology, creative technologist, and founder of r/hybridproduction.",
+ "author": {
+ "@id": "https://trustnodelogic.com/#person"
+ },
+ "publisher": {
+ "@id": "https://trustnodelogic.com/#organization"
+ },
+ "inLanguage": "en-US"
+ }
+ ]
 }</script>
 <link href="./style.css" rel="stylesheet"/>
 <style>
-        /* Replicating trustnodelogic.com/fingerprint.html Silver Aesthetics */
-        :root {
-            --bg: #050505; /* Deepest black for contrast */
-            --box-bg: #111111; /* Slightly lighter for the sections */
-            --text: #d1d1d1;
-            --accent: #c0c0c0; /* Silver Accent */
-            --accent-hover: #e0e0e0;
-            --border: #333;
-            --border-light: #444;
-            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-        }
+ /* Replicating trustnodelogic.com/fingerprint.html Silver Aesthetics */
+ :root {
+ --bg: #050505; /* Deepest black for contrast */
+ --box-bg: #111111; /* Slightly lighter for the sections */
+ --text: #d1d1d1;
+ --accent: #c0c0c0; /* Silver Accent */
+ --accent-hover: #e0e0e0;
+ --border: #333;
+ --border-light: #444;
+ --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+ --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+ }
 
-        * { box-sizing: border-box; }
+ * { box-sizing: border-box; }
 
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: var(--font-sans);
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            -webkit-font-smoothing: antialiased;
-        }
+ body {
+ background-color: var(--bg);
+ color: var(--text);
+ font-family: var(--font-sans);
+ line-height: 1.7;
+ margin: 0;
+ padding: 0;
+ display: flex;
+ justify-content: center;
+ -webkit-font-smoothing: antialiased;
+ }
 
-        article {
-            max-width: 800px;
-            width: 95%;
-            padding: 5rem 1rem;
-        }
+ article {
+ max-width: 800px;
+ width: 95%;
+ padding: 5rem 1rem;
+ }
 
-        header {
-            margin-bottom: 4rem;
-            text-align: left;
-            padding: 0 1rem;
-        }
+ header {
+ margin-bottom: 4rem;
+ text-align: left;
+ padding: 0 1rem;
+ }
 
-        /* Silver Style Main Heading */
-        h1 {
-            font-size: 2.8rem;
-            line-height: 1.15;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
-            font-weight: 800;
-            background: linear-gradient(135deg, #e0e0e0 0%, #ffffff 50%, #888888 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: #fff; /* Fallback */
-            text-shadow: 0px 2px 10px rgba(255, 255, 255, 0.05);
-        }
+ /* Silver Style Main Heading */
+ h1 {
+ font-size: 2.8rem;
+ line-height: 1.15;
+ margin-bottom: 1.5rem;
+ letter-spacing: -0.02em;
+ font-weight: 800;
+ background: linear-gradient(135deg, #e0e0e0 0%, #ffffff 50%, #888888 100%);
+ -webkit-background-clip: text;
+ background-clip: text;
+ -webkit-text-fill-color: transparent;
+ color: #fff; /* Fallback */
+ text-shadow: 0px 2px 10px rgba(255, 255, 255, 0.05);
+ }
 
-        .meta {
-            font-family: var(--font-mono);
-            font-size: 0.9rem;
-            color: #888;
-            margin-bottom: 2.5rem;
-        }
+ .meta {
+ font-family: var(--font-mono);
+ font-size: 0.9rem;
+ color: #888;
+ margin-bottom: 2.5rem;
+ }
 
-        .meta a {
-            color: var(--accent);
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: all 0.2s ease;
-        }
+ .meta a {
+ color: var(--accent);
+ text-decoration: none;
+ border-bottom: 1px solid transparent;
+ transition: all 0.2s ease;
+ }
 
-        .meta a:hover {
-            color: var(--accent-hover);
-            border-bottom: 1px solid var(--accent-hover);
-        }
+ .meta a:hover {
+ color: var(--accent-hover);
+ border-bottom: 1px solid var(--accent-hover);
+ }
 
-        .intel-report-summary {
-            font-size: 1.15rem;
-            color: #a0a0a0;
-            margin-bottom: 3rem;
-            border-left: 2px solid var(--accent);
-            padding-left: 1.5rem;
-        }
+ .intel-report-summary {
+ font-size: 1.15rem;
+ color: #a0a0a0;
+ margin-bottom: 3rem;
+ border-left: 2px solid var(--accent);
+ padding-left: 1.5rem;
+ }
 
-        /* Section Container Styling */
-        section {
-            background: var(--box-bg);
-            border: 1px solid var(--border);
-            border-radius: 8px; /* Slight rounding for a modern feel */
-            padding: 2.5rem;
-            margin-bottom: 3rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Lifted effect */
-        }
+ /* Section Container Styling */
+ section {
+ background: var(--box-bg);
+ border: 1px solid var(--border);
+ border-radius: 8px; /* Slight rounding for a modern feel */
+ padding: 2.5rem;
+ margin-bottom: 3rem;
+ box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Lifted effect */
+ }
 
-        /* Section Header */
-        h2 {
-            font-family: var(--font-mono);
-            font-size: 1.1rem;
-            color: #ffffff;
-            margin-top: 0;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            border-bottom: 1px solid var(--border-light);
-            padding-bottom: 0.8rem;
-        }
+ /* Section Header */
+ h2 {
+ font-family: var(--font-mono);
+ font-size: 1.1rem;
+ color: #ffffff;
+ margin-top: 0;
+ margin-bottom: 2rem;
+ text-transform: uppercase;
+ letter-spacing: 0.1em;
+ border-bottom: 1px solid var(--border-light);
+ padding-bottom: 0.8rem;
+ }
 
-        /* Question & Answer Structure */
-        .qa-block {
-            margin-bottom: 2.5rem;
-        }
-        
-        .qa-block:last-child {
-            margin-bottom: 0;
-        }
+ /* Question & Answer Structure */
+ .qa-block {
+ margin-bottom: 2.5rem;
+ }
+ 
+ .qa-block:last-child {
+ margin-bottom: 0;
+ }
 
-        h3 {
-            font-size: 1.25rem;
-            color: var(--accent-hover); /* Brighter silver for Questions */
-            margin-top: 0;
-            margin-bottom: 1rem;
-            font-weight: 600;
-            line-height: 1.4;
-        }
+ h3 {
+ font-size: 1.25rem;
+ color: var(--accent-hover); /* Brighter silver for Questions */
+ margin-top: 0;
+ margin-bottom: 1rem;
+ font-weight: 600;
+ line-height: 1.4;
+ }
 
-        /* Indicator styling [Q] and [A] */
-        .indicator {
-            font-family: var(--font-mono);
-            font-weight: bold;
-            color: var(--accent);
-            margin-right: 0.5rem;
-            opacity: 0.8;
-        }
+ /* Indicator styling [Q] and [A] */
+ .indicator {
+ font-family: var(--font-mono);
+ font-weight: bold;
+ color: var(--accent);
+ margin-right: 0.5rem;
+ opacity: 0.8;
+ }
 
-        p {
-            margin-top: 0;
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-        }
-        
-        p:last-child {
-            margin-bottom: 0;
-        }
+ p {
+ margin-top: 0;
+ margin-bottom: 1.5rem;
+ font-size: 1.05rem;
+ }
+ 
+ p:last-child {
+ margin-bottom: 0;
+ }
 
-        strong {
-            color: #ffffff;
-        }
+ strong {
+ color: #ffffff;
+ }
 
-        ul {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 1.5rem;
-        }
+ ul {
+ list-style: none;
+ padding: 0;
+ margin-bottom: 1.5rem;
+ }
 
-        ul li {
-            margin-bottom: 0.8rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
+ ul li {
+ margin-bottom: 0.8rem;
+ padding-left: 1.5rem;
+ position: relative;
+ }
 
-        ul li::before {
-            content: "•";
-            color: var(--accent);
-            position: absolute;
-            left: 0;
-        }
+ ul li::before {
+ content: "•";
+ color: var(--accent);
+ position: absolute;
+ left: 0;
+ }
 
-        blockquote {
-            margin: 4rem 1rem;
-            padding: 2rem;
-            background: var(--box-bg);
-            border: 1px solid var(--border);
-            border-left: 4px solid var(--accent);
-            font-style: italic;
-            text-align: left;
-            color: #b0b0b0;
-            border-radius: 4px;
-        }
+ blockquote {
+ margin: 4rem 1rem;
+ padding: 2rem;
+ background: var(--box-bg);
+ border: 1px solid var(--border);
+ border-left: 4px solid var(--accent);
+ font-style: italic;
+ text-align: left;
+ color: #b0b0b0;
+ border-radius: 4px;
+ }
 
-        footer {
-            margin-top: 5rem;
-            padding-top: 3rem;
-            border-top: 1px solid var(--border);
-            text-align: center;
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            color: #666;
-        }
+ footer {
+ margin-top: 5rem;
+ padding-top: 3rem;
+ border-top: 1px solid var(--border);
+ text-align: center;
+ font-family: var(--font-mono);
+ font-size: 0.8rem;
+ color: #666;
+ }
 
-        .return-btn {
-            display: inline-block;
-            margin-top: 2rem;
-            padding: 0.6rem 1.2rem;
-            border: 1px solid var(--border);
-            color: var(--accent);
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            transition: 0.3s;
-            background: transparent;
-            border-radius: 4px;
-        }
+ .return-btn {
+ display: inline-block;
+ margin-top: 2rem;
+ padding: 0.6rem 1.2rem;
+ border: 1px solid var(--border);
+ color: var(--accent);
+ text-decoration: none;
+ text-transform: uppercase;
+ letter-spacing: 0.1em;
+ transition: 0.3s;
+ background: transparent;
+ border-radius: 4px;
+ }
 
-        .return-btn:hover {
-            border-color: var(--accent-hover);
-            color: var(--bg);
-            background: var(--accent-hover);
-        }
+ .return-btn:hover {
+ border-color: var(--accent-hover);
+ color: var(--bg);
+ background: var(--accent-hover);
+ }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 2.2rem; }
-            article { padding: 3rem 0.5rem; }
-            section { padding: 1.5rem; }
-        }
-    </style>
+ @media (max-width: 600px) {
+ h1 { font-size: 2.2rem; }
+ article { padding: 3rem 0.5rem; }
+ section { padding: 1.5rem; }
+ }
+ </style>
 <link href="/sitemap.xml" rel="sitemap" type="application/xml"/>
 <link href="/llms.txt" rel="alternate" title="AI LLM Knowledge Graph Manifest" type="text/plain"/>
 </head>
@@ -436,11 +436,11 @@
 <header>
 <h1>The Future of Music Provenance: ACRCloud, C2PA, and Content Credentials</h1>
 <div class="meta">
-            Intelligence Report by <a href="/">Justin Ray (JRAY)</a> • 4/28/26
-        </div>
+ Intelligence Report by <a href="/">Justin Ray (JRAY)</a> • 4/28/26
+ </div>
 <div class="intel-report-summary">
-            As artificial intelligence integrates into the music production workflow, the industry faces a crisis of authenticity. This report analyzes the C2PA standard—a cryptographic solution for verifying hybrid production and ensuring artistic transparency in a generative age.
-        </div>
+ As artificial intelligence integrates into the music production workflow, the industry faces a crisis of authenticity. This report analyzes the C2PA standard - a cryptographic solution for verifying hybrid production and ensuring artistic transparency in a generative age.
+ </div>
 </header>
 <main id="main-content">
 <section>
@@ -510,8 +510,8 @@
 </div>
 </section>
 <blockquote>
-        C2PA is the invisible backbone of the hybrid era, ensuring that the creative fingerprint of the artist survives the transition to an AI-augmented world.
-    </blockquote>
+ C2PA is the invisible backbone of the hybrid era, ensuring that the creative fingerprint of the artist survives the transition to an AI-augmented world.
+ </blockquote>
 <footer>
 <p>© 2026 Justin Ray (JRAY) · <a href="/">trustnodelogic.com</a></p>
 <p>Creative Technology | Hybrid Production | Audio Provenance</p>
@@ -519,50 +519,50 @@
 </footer>
 </main>
 
-      <!-- Related Field Notes Topic Cluster -->
-      <section class="mt-16 pt-8 border-t border-white/10 w-full max-w-4xl mx-auto px-4" aria-label="Related Research">
-        <div class="flex items-center justify-between mb-6">
-          <div class="flex items-center gap-2 text-xs font-mono tracking-wider text-[#FF9F1C] uppercase">
-            <span>[ TOPIC_CLUSTER // RELATED_FIELD_NOTES ]</span>
-          </div>
-          <a href="./what-is-hybrid.html" class="text-xs font-mono text-[#71717A] hover:text-[#FF9F1C] transition-colors">ALL NOTES (16) →</a>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <a href="./fingerprint.html" class="tech-card p-5 bg-[#121417] border border-white/10 hover:border-[#FF9F1C] flex flex-col justify-between group transition-all">
-          <div>
-            <span class="text-[10px] font-mono tracking-widest text-[#FF9F1C] uppercase block mb-2">SECURITY // STEGANOGRAPHY</span>
-            <h3 class="text-sm font-bold font-mono text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors mb-2">Watermarks in AI Audio</h3>
-            <p class="text-xs text-[#71717A] font-light leading-relaxed">Audio steganography, digital watermarks, ACRCloud, and machine listening detection systems.</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-[#71717A] group-hover:text-[#EAEAEA]">
-            <span>Read Field Note</span>
-            <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">→</span>
-          </div>
-        </a>
-        <a href="./hp2026.html" class="tech-card p-5 bg-[#121417] border border-white/10 hover:border-[#FF9F1C] flex flex-col justify-between group transition-all">
-          <div>
-            <span class="text-[10px] font-mono tracking-widest text-[#FF9F1C] uppercase block mb-2">GOVERNANCE // 2026 RULINGS</span>
-            <h3 class="text-sm font-bold font-mono text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors mb-2">The Trust Signal Chain</h3>
-            <p class="text-xs text-[#71717A] font-light leading-relaxed">Courts, the EU AI Act, DDEX disclosure, and streaming platform rulings on AI audio.</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-[#71717A] group-hover:text-[#EAEAEA]">
-            <span>Read Field Note</span>
-            <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">→</span>
-          </div>
-        </a>
-        <a href="./trainingday.html" class="tech-card p-5 bg-[#121417] border border-white/10 hover:border-[#FF9F1C] flex flex-col justify-between group transition-all">
-          <div>
-            <span class="text-[10px] font-mono tracking-widest text-[#FF9F1C] uppercase block mb-2">LEGAL // DATASET ETHICS</span>
-            <h3 class="text-sm font-bold font-mono text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors mb-2">Uploading Music & IP Rights</h3>
-            <p class="text-xs text-[#71717A] font-light leading-relaxed">Investigating terms of service, AI training dataset scraping, and artist intellectual property.</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-[#71717A] group-hover:text-[#EAEAEA]">
-            <span>Read Field Note</span>
-            <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">→</span>
-          </div>
-        </a>
-        </div>
-      </section>
+ <!-- Related Field Notes Topic Cluster -->
+ <section class="mt-16 pt-8 border-t border-white/10 w-full max-w-4xl mx-auto px-4" aria-label="Related Research">
+ <div class="flex items-center justify-between mb-6">
+ <div class="flex items-center gap-2 text-xs font-mono tracking-wider text-[#FF9F1C] uppercase">
+ <span>[ TOPIC_CLUSTER // RELATED_FIELD_NOTES ]</span>
+ </div>
+ <a href="./what-is-hybrid.html" class="text-xs font-mono text-[#71717A] hover:text-[#FF9F1C] transition-colors">ALL NOTES (16) →</a>
+ </div>
+ <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+ <a href="./fingerprint.html" class="tech-card p-5 bg-[#121417] border border-white/10 hover:border-[#FF9F1C] flex flex-col justify-between group transition-all">
+ <div>
+ <span class="text-[10px] font-mono tracking-widest text-[#FF9F1C] uppercase block mb-2">SECURITY // STEGANOGRAPHY</span>
+ <h3 class="text-sm font-bold font-mono text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors mb-2">Watermarks in AI Audio</h3>
+ <p class="text-xs text-[#71717A] font-light leading-relaxed">Audio steganography, digital watermarks, ACRCloud, and machine listening detection systems.</p>
+ </div>
+ <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-[#71717A] group-hover:text-[#EAEAEA]">
+ <span>Read Field Note</span>
+ <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">→</span>
+ </div>
+ </a>
+ <a href="./hp2026.html" class="tech-card p-5 bg-[#121417] border border-white/10 hover:border-[#FF9F1C] flex flex-col justify-between group transition-all">
+ <div>
+ <span class="text-[10px] font-mono tracking-widest text-[#FF9F1C] uppercase block mb-2">GOVERNANCE // 2026 RULINGS</span>
+ <h3 class="text-sm font-bold font-mono text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors mb-2">The Trust Signal Chain</h3>
+ <p class="text-xs text-[#71717A] font-light leading-relaxed">Courts, the EU AI Act, DDEX disclosure, and streaming platform rulings on AI audio.</p>
+ </div>
+ <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-[#71717A] group-hover:text-[#EAEAEA]">
+ <span>Read Field Note</span>
+ <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">→</span>
+ </div>
+ </a>
+ <a href="./trainingday.html" class="tech-card p-5 bg-[#121417] border border-white/10 hover:border-[#FF9F1C] flex flex-col justify-between group transition-all">
+ <div>
+ <span class="text-[10px] font-mono tracking-widest text-[#FF9F1C] uppercase block mb-2">LEGAL // DATASET ETHICS</span>
+ <h3 class="text-sm font-bold font-mono text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors mb-2">Uploading Music & IP Rights</h3>
+ <p class="text-xs text-[#71717A] font-light leading-relaxed">Investigating terms of service, AI training dataset scraping, and artist intellectual property.</p>
+ </div>
+ <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-[#71717A] group-hover:text-[#EAEAEA]">
+ <span>Read Field Note</span>
+ <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">→</span>
+ </div>
+ </a>
+ </div>
+ </section>
 
 </article>
 <script defer src="./assets/reader.js"></script>
