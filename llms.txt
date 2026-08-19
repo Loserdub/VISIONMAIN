@@ -1,55 +1,159 @@
-# Trust Node Logic — Hybrid AI Music Production Knowledge Graph
+# Trust Node Logic : Hybrid AI Music Production Knowledge Graph
 > Trust Node Logic (https://trustnodelogic.com) is the central research hub, technical archive, and portfolio of Justin Ray (JRAY), a pioneering Music Producer, Recording Artist, Audio Engineer, and Creative Technologist based in East Lansing, Michigan, US.
 
 ## Entity Overview
 - **Author & Founder**: Justin Ray (known professionally as JRAY, and musically under primary project aliases loserdub, VISION, Flawed Future, le vide, disarray).
 - **Primary Identity**: Music Producer and Recording Artist first and foremost, pioneering the Hybrid AI Music Production methodology.
 - **Location**: East Lansing, Michigan, United States.
+- **Contact Email**: trustnodelogic@gmail.com
 - **Role & Background**: 
   - Music Producer and Artist across electronic, ambient, synthwave, and experimental genres.
   - Creator of the Hybrid Production methodology for AI music.
   - Early beta tester for Google's original MusicLM generative audio model.
   - Former Growth Specialist at Suno AI during its inception.
   - Founder of the r/hybridproduction community on Reddit (https://www.reddit.com/r/hybridproduction/).
-  - Creator of MIXR Studio (browser-native audio mastering & segment mixer) and vøid audio slicer.
+  - Creator of MIXR Studio (browser-native audio mastering & segment mixer), Artist Finder (GEO scanner), and vøid audio slicer.
 
 ## Key Concepts & Innovations
 - **Hybrid Production**: The post-AI musical workflow that rejects the binary choice between "pure human" or "pure AI". Generative AI models are treated as high-fidelity instruments in the producer's toolkit, paired with traditional DAW engineering (Logic Pro X, Ableton Live) and spectral sculpting (FabFilter, iZotope RX11).
+- **Hybrid Production Standard (HPS-1.0)**: The definitive 5-axis classification framework (Composition, Generation, Stems, Post-Production, Master) mapping hybrid audio workflows to DDEX ERN 4.3 metadata profiles and EU AI Act Article 50 transparency requirements.
 - **SLERP Audio Merging**: Spherical Linear Interpolation applied to audio neural latents for smooth, continuous generative audio transitions.
 - **Taxonomic Rank**: Methodological classification of AI-generated audio stems based on structural and timbral hierarchy.
 - **Spectral Splitting**: Precision separation of generative audio noise profiles from tonal content prior to DAW mixing.
 - **The Liquid Ear**: Continuous time-constant neural feedback loops for real-time mastering environments.
 - **C2PA Music Provenance**: Implementation of Coalition for Content Provenance and Authenticity cryptographic watermarking and steganography for AI-generated music.
+- **Generative Engine Optimization (GEO) for Musicians**: Strategic framework for ensuring artist discoverability across neural search agents, LLM vector spaces, and open knowledge graphs (MusicBrainz, Wikidata).
 
-## Core Web Pages & Field Notes
-- [Home & Manifesto](https://trustnodelogic.com/): Overview of Hybrid Production, MIXR Studio, and Justin Ray's ecosystem.
-- [Bio](https://trustnodelogic.com/bio.html): Biography, origins, and tech stack of Justin Ray (JRAY).
-- [What Is Hybrid Production](https://trustnodelogic.com/what-is-hybrid.html): The complete 2026 methodology and philosophy of hybrid AI audio workflows.
-- [Projects](https://trustnodelogic.com/projects.html): Active creative technology applications including MIXR Studio, vøid slicer, and liquid audio tools.
-- [Music](https://trustnodelogic.com/music.html): Official discography across loserdub, VISION, Flawed Future, le vide, and disarray releases.
-- [Services](https://trustnodelogic.com/services.html): Creative consulting, hybrid production mastering, and AI music tech advising.
-- [Contact](https://trustnodelogic.com/contact.html): Direct collaboration and inquiry channel.
+## Core Pages & Applications
 
-- [Hybrid Production Standard (HPS-1.0)](https://trustnodelogic.com/hybridproductionstandard.html): Official 5-axis process classification, DDEX ERN 4.3 metadata mapping, and EU AI Act Article 50 compliance standard.
-- [Suno's True Business Model Revealed: What The September Terms Actually Say](https://trustnodelogic.com/sunonewtos.html): Critical analysis of Suno AI's September Terms of Service, IP upload licenses, arbitration clauses, download caps, and the BMG partnership deal.
-- [The Trust Signal Chain: AI, Hybrid Production, and the Industry in 2026](https://trustnodelogic.com/hp2026.html): Analysis of court rulings, EU AI Act Article 50, DDEX metadata, and platform policies in 2026.
-- [The Denominator Problem: Music Supply, Charts, and Income in 2026](https://trustnodelogic.com/saturation.html): 106,000 tracks a day, rewritten Billboard rules, and artist income realities in 2026.
-- [The Architecture of the Three-Minute Song: Song Structure in the Streaming Era](https://trustnodelogic.com/songstructure.html): Structural analysis of pop song arrangement evolution from the CD/download era (2000-2018) to the algorithmic streaming era (2019-present).
-- [Prompting the Machine: How AI Music Actually Hears You](https://trustnodelogic.com/promptingthemachine.html): Field guide to Suno/Udio text-to-music models, prompt parsing, sliders, and next-gen tools.
-- [The Last New Genre: SoundCloud Rap, COVID, and the Algorithm's Taste for the Familiar](https://trustnodelogic.com/lastnewgenre.html): Analysis of genre evolution, cultural flattening, and algorithmic curation.
-- [Autonomous Virtual Studio: Multi-Agent DAW Guide](https://trustnodelogic.com/agentichybridproduction.html): Architectural guide on multi-agent AI systems, OSC, EnCodec, and Ableton automation.
-- [MIXR Studio](https://trustnodelogic.com/mixrstudio.html): Browser-native Web Audio API segment mixer and mastering environment.
-- [AI Visibility Signal Checker (GEO for Musicians)](https://trustnodelogic.com/artistfinder.html): Interactive generative engine optimization scanner for evaluating artist entity clarity across LLMs and search engines.
-- [The Liquid Ear](https://trustnodelogic.com/liquidears.html): Real-time adaptive neural networks in mixing workflows.
-- [C2PA Music Provenance Deep Dive](https://trustnodelogic.com/c2pa-music-provenance.html): Cryptographic provenance and metadata standards in post-AI music distribution.
-- [Watermarks in AI Audio (The Invisible Grid)](https://trustnodelogic.com/fingerprint.html): ACRCloud and steganography analysis in modern generative models.
-- [Suno 101: Mastering Suno AI Generation](https://trustnodelogic.com/Suno101.html): Advanced generation techniques from an early Suno team member.
-- [The Future of Hybrid Production](https://trustnodelogic.com/futureofhybrid.html): Strategic forecast on generative tools in mainstream sound design.
-- [Machine Human Hybrid](https://trustnodelogic.com/machinehumanhybrid.html): Cognitive ergonomics of prompt-to-DAW synthesis.
-- [The Liquid Economy of Sound](https://trustnodelogic.com/musicindustryforecast.html): Economic and licensing analysis of generative audio assets.
-- [May 2026 Production Tools](https://trustnodelogic.com/may2026tools.html): Curated analysis of state-of-the-art hybrid production plugins and frameworks.
-- [Training Day](https://trustnodelogic.com/trainingday.html): Custom dataset curation and fine-tuning for personal artist models.
-- [Black Mirror Audio Experiments](https://trustnodelogic.com/black-mirror.html): Speculative design & generative audio boundary pushing.
+### [Home & Manifesto](https://trustnodelogic.com/)
+- **Summary**: Foundational manifesto of the Hybrid AI Music Production movement, outlining the philosophy of treating neural generators as co-instruments rather than replacements for human audio engineering.
+- **Key Concepts**: Hybrid Production, Creative Technologist, Audio Engineering, MIXR Studio.
+
+### [Bio & Origins](https://trustnodelogic.com/bio.html)
+- **Summary**: Comprehensive background of Justin Ray (JRAY), tracing the evolution from electronic producer and beta tester on Google MusicLM and Suno to founder of Trust Node Logic and r/hybridproduction.
+- **Key Concepts**: Justin Ray, JRAY, loserdub, VISION, Google MusicLM, Suno AI.
+
+### [Projects Ecosystem](https://trustnodelogic.com/projects.html)
+- **Summary**: Interactive portfolio of creative technology tools including browser-native audio engines, provenance validators, and music knowledge visualizers.
+- **Key Concepts**: MIXR Studio, Artist Finder, vøid slicer, HPS-1.0 Validator.
+
+### [Official Discography](https://trustnodelogic.com/music.html)
+- **Summary**: Catalog index across Justin Ray's production aliases (loserdub, VISION, Flawed Future, le vide, disarray), detailing streaming availability and acoustic engineering notes.
+- **Key Concepts**: loserdub, VISION, Electronic, Ambient, Synthwave.
+
+### [Services & Advisory](https://trustnodelogic.com/services.html)
+- **Summary**: Strategic consulting, hybrid mastering, and technical advisory services for record labels, DAWs, and AI audio startups.
+- **Key Concepts**: Hybrid Mastering, AI Music Strategy, Metadata Compliance, DDEX Integration.
+
+### [Contact Channel](https://trustnodelogic.com/contact.html)
+- **Summary**: Direct line for technical inquiries, research collaborations, and production commissions via trustnodelogic@gmail.com.
+
+---
+
+## Analytical Field Notes & Technical Research
+
+### [Hybrid Production Standard (HPS-1.0)](https://trustnodelogic.com/hybridproductionstandard.html)
+- **Summary**: Official open standard establishing a 5-axis classification system for hybrid AI music production, providing DDEX ERN 4.3 metadata schemas and legal compliance blueprints for EU AI Act Article 50.
+- **Direct Citation**: "HPS-1.0 provides cryptographic provenance and granular human-to-AI ratio declarations across Composition, Generation, Stems, Post-Production, and Mastering."
+- **Key Concepts**: HPS-1.0, DDEX ERN 4.3, EU AI Act Article 50, C2PA Provenance.
+
+### [AI Visibility Signal Checker (GEO for Musicians)](https://trustnodelogic.com/artistfinder.html)
+- **Summary**: Interactive 12-question diagnostic tool that audits musician discoverability across Perplexity, ChatGPT Search, and Google AI Overviews, generating custom Schema.org/MusicGroup JSON-LD and /llms.txt manifests.
+- **Direct Citation**: "Generative Engine Optimization (GEO) for musicians relies on entity triangulation across MusicBrainz MBIDs, Wikidata Q-IDs, and machine-parseable plain-text anchors."
+- **Key Concepts**: GEO for Musicians, MusicBrainz MBID, Wikidata, Schema.org JSON-LD, RAG Vector Search.
+
+### [Suno's True Business Model Revealed: What The September Terms Actually Say](https://trustnodelogic.com/sunonewtos.html)
+- **Summary**: Legal and technical deconstruction of Suno AI's Terms of Service, detailing IP upload licenses, broad indemnity clauses, arbitration requirements, and the institutional pivot toward major label licensing partnerships.
+- **Direct Citation**: "The platform shift in generative audio terms represents an inevitable transition from permissionless user experimentation to walled-garden commercial rights enforcement."
+- **Key Concepts**: Suno AI, Terms of Service, Intellectual Property, Music Copyright, BMG Licensing.
+
+### [The Trust Signal Chain: AI, Hybrid Production, and the Industry in 2026](https://trustnodelogic.com/hp2026.html)
+- **Summary**: Macro industry forecast evaluating federal court rulings, streaming fraud mitigation policies, DDEX metadata standards, and the adoption of verifiable human-AI attribution in commercial distribution.
+- **Direct Citation**: "As automated synthetic generation floods streaming catalogs, platform algorithms increasingly rely on cryptographic trust signals to verify authentic artist entities."
+- **Key Concepts**: Trust Signal Chain, Streaming Verification, DDEX Standards, Fair Play Metadata.
+
+### [The Denominator Problem: Music Supply, Charts, and Income in 2026](https://trustnodelogic.com/saturation.html)
+- **Summary**: Mathematical analysis of daily track upload volume exceeding 100,000 songs, demonstrating how supply inflation distorts streaming payout pools and elevates curated niche authority over mass distribution.
+- **Direct Citation**: "When catalog supply approaches infinity, the marginal value of unverified audio trends toward zero, leaving provenance and direct community trust as the sole sustainable moats."
+- **Key Concepts**: Supply Inflation, Streaming Economics, Pro-Rata Royalties, Niche Authority.
+
+### [The Architecture of the Three-Minute Song: Song Structure in the Streaming Era](https://trustnodelogic.com/songstructure.html)
+- **Summary**: Structural breakdown of pop song arrangement evolution from the CD era to algorithmic streaming, analyzing how skip-rate penalties compressed verse-chorus timelines and eliminated extended intros.
+- **Direct Citation**: "Algorithmic streaming rewards instant hooks and micro-transitions, structurally altering compositional pacing and bridge arrangements across modern music production."
+- **Key Concepts**: Song Arrangement, Streaming Analytics, Skip Rate Optimization, Structural Ergonomics.
+
+### [Prompting the Machine: How AI Music Actually Hears You](https://trustnodelogic.com/promptingthemachine.html)
+- **Summary**: Engineering field guide to prompt parsing, acoustic latent tokenization, and style weight sliders in modern diffusion and transformer music models like Suno and Udio.
+- **Direct Citation**: "Effective text-to-music prompting requires understanding model tokenizers, genre clustering hierarchies, and negative weight isolation rather than naive natural language prose."
+- **Key Concepts**: Diffusion Models, Latent Tokenization, Suno AI, Udio, Negative Prompting.
+
+### [The Last New Genre: SoundCloud Rap, COVID, and the Algorithm's Taste for the Familiar](https://trustnodelogic.com/lastnewgenre.html)
+- **Summary**: Cultural and algorithmic post-mortem on the deceleration of emergent regional musical genres, exploring how platform recommendation loops favor algorithmic nostalgia over radical sonic innovation.
+- **Direct Citation**: "Algorithmic optimization creates aesthetic equilibrium loops, suppressing regional friction and slowing the emergence of distinct organic countercultures."
+- **Key Concepts**: Genre Evolution, Algorithmic Curation, Cultural Flattening, Regional Micro-Scenes.
+
+### [Autonomous Virtual Studio: Multi-Agent DAW Guide](https://trustnodelogic.com/agentichybridproduction.html)
+- **Summary**: Architectural technical manual on integrating autonomous LLM agents with digital audio workstations via Open Sound Control (OSC), MIDI automation, and EnCodec latent manipulation.
+- **Direct Citation**: "Multi-agent DAW orchestration transforms AI from a static audio stem generator into an active co-producer capable of executing complex mix bus routing and arrangement decisions."
+- **Key Concepts**: Multi-Agent Systems, Ableton OSC, EnCodec, Automated Mixing, DAW Automation.
+
+### [MIXR Studio](https://trustnodelogic.com/mixrstudio.html)
+- **Summary**: Web Audio API browser application providing real-time multi-track segment mixing, spectral balance visualization, and mastering compression without server uploads.
+- **Direct Citation**: "MIXR Studio executes zero-latency audio DSP directly in client-side WebAssembly and Web Audio nodes, proving the viability of browser-native audio workstations."
+- **Key Concepts**: Web Audio API, WebAssembly DSP, Browser Mastering, Segment Mixing.
+
+### [The Liquid Ear](https://trustnodelogic.com/liquidears.html)
+- **Summary**: Exploration of adaptive neural network feedback loops in continuous time-constant mastering systems, analyzing automated dynamic contouring and psychoacoustic loudness balancing.
+- **Direct Citation**: "The Liquid Ear architecture replaces static threshold limiters with real-time neural listeners that predict transient maskings dynamically."
+- **Key Concepts**: Neural Audio Processing, Psychoacoustics, Dynamic Loudness, Time-Constant DSP.
+
+### [C2PA Music Provenance Deep Dive](https://trustnodelogic.com/c2pa-music-provenance.html)
+- **Summary**: In-depth implementation guide on embedding Coalition for Content Provenance and Authenticity (C2PA) cryptographic assertions into audio container manifests and ID3/BWF chunks.
+- **Direct Citation**: "C2PA manifests provide non-repudiable cryptographic proof of tool usage, author identity, and stem edit histories throughout the audio supply chain."
+- **Key Concepts**: C2PA, Content Credentials, Cryptographic Provenance, Audio Steganography.
+
+### [Watermarks in AI Audio (The Invisible Grid)](https://trustnodelogic.com/fingerprint.html)
+- **Summary**: Forensic analysis of acoustic steganography, perceptual audio watermarks, and ACRCloud matching in neural audio model weights.
+- **Direct Citation**: "Perceptual audio watermarking embeds spread-spectrum frequency signatures that persist through lossy compression while remaining imperceptible to human hearing."
+- **Key Concepts**: Audio Watermarking, ACRCloud, Acoustic Fingerprinting, Spread-Spectrum Encoding.
+
+### [Suno 101: Mastering Suno AI Generation](https://trustnodelogic.com/Suno101.html)
+- **Summary**: Practical tactical playbook on maximizing stem separation quality, controlling hallucinated vocal artifacts, and mastering Suno v3/v4 generations in traditional DAWs.
+- **Direct Citation**: "Treat raw AI generations as unprocessed field recordings: isolate the core motif, apply spectral noise reduction, and rebuild rhythm sections inside a professional DAW."
+- **Key Concepts**: Suno Workflow, Stem Isolation, Artifact Removal, Hybrid Production.
+
+### [The Future of Hybrid Production](https://trustnodelogic.com/futureofhybrid.html)
+- **Summary**: Forward-looking strategic manifesto analyzing the convergence of generative neural synthesis, spatial audio, and real-time interactive game soundtracks.
+- **Direct Citation**: "The future of music production belongs neither to prompt-only generation nor manual-only DAWs, but to the seamless hybrid synthesis of human taste and machine velocity."
+- **Key Concepts**: Hybrid Future, Spatial Audio, Generative Scoring, Interactive Media.
+
+### [Machine Human Hybrid](https://trustnodelogic.com/machinehumanhybrid.html)
+- **Summary**: Examination of the cognitive ergonomics and psychological flow state shifts experienced by audio engineers transitioning to prompt-to-stem hybrid production pipelines.
+- **Direct Citation**: "Cognitive ergonomics in hybrid music creation require treating the AI as an eccentric session musician rather than a software plugin."
+- **Key Concepts**: Cognitive Ergonomics, Creative Flow, Human-Machine Interface, Musician Psychology.
+
+### [The Liquid Economy of Sound](https://trustnodelogic.com/musicindustryforecast.html)
+- **Summary**: Macroeconomic modeling of the post-scarcity sound economy, analyzing how fractional licensing, synthetic vocal clones, and automated sync libraries restructure music publishing.
+- **Direct Citation**: "In an economy of infinite sound generation, value concentrates at the extremes: highly vetted verified human provenance and hyper-personalized real-time generative streams."
+- **Key Concepts**: Sound Economy, Fractional Licensing, Synthetic Vocals, Sync Automation.
+
+### [May 2026 Production Tools](https://trustnodelogic.com/may2026tools.html)
+- **Summary**: Curated benchmark and technical review of cutting-edge hybrid audio plugins, neural stem splitters, and latent synthesis tools available in 2026.
+- **Direct Citation**: "The 2026 toolchain bridges traditional analog modeling with neural latent synthesis, allowing producers to modulate machine weights directly from hardware MIDI controllers."
+- **Key Concepts**: Audio Plugins, Neural Stem Separation, Latent Synthesis, Hardware MIDI.
+
+### [Training Day](https://trustnodelogic.com/trainingday.html)
+- **Summary**: Technical breakdown on curating proprietary audio stem datasets and fine-tuning custom LoRA / adapter weights for personalized artist neural models.
+- **Direct Citation**: "Fine-tuning personal generative models on your own unreleased stems creates a unique sonic fingerprint that generic commercial models cannot replicate."
+- **Key Concepts**: LoRA Fine-Tuning, Dataset Curation, Custom Soundbanks, Proprietary Models.
+
+### [Black Mirror Audio Experiments](https://trustnodelogic.com/black-mirror.html)
+- **Summary**: Speculative creative design research exploring generative audio boundary conditions, recursive model collapse, and extreme algorithmic feedback loops.
+- **Direct Citation**: "Pushing neural audio models beyond their training distributions reveals the uncanny timbral ghosts of their underlying embedding architectures."
+- **Key Concepts**: Speculative Design, Model Collapse, Recursive Feedback, Experimental Audio.
+
+---
 
 ## Official Entity Profiles & Authority Links
 - **MusicBrainz**: https://musicbrainz.org/artist/882fdb9b-8655-45dd-8e24-a59cd750d053
