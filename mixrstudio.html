@@ -37,7 +37,7 @@
  "@type": "WebPage",
  "@id": "https://trustnodelogic.com/mixrstudio.html#webpage",
  "url": "https://trustnodelogic.com/mixrstudio.html",
- "name": "MIXR Studio \u2014 Browser-Native Audio Segment Mixer | JRAY",
+ "name": "MIXR Studio - Browser-Native Audio Segment Mixer | JRAY",
  "description": "Free browser-native audio segment mixer for hybrid music producers. Auto-detect sections, arrange timeline blocks, and export lossless WAV. By JRAY.",
  "isPartOf": {
  "@id": "https://trustnodelogic.com/#website"
@@ -115,7 +115,7 @@
  {
  "@type": "Review",
  "name": "Essential workflow tool for hybrid audio producers",
- "reviewBody": "MIXR Studio solves the hardest part of hybrid production\u2014slicing, arranging, and seamlessly stitching AI audio generations directly in the browser with zero latency and full WAV export.",
+ "reviewBody": "MIXR Studio solves the hardest part of hybrid production: slicing, arranging, and seamlessly stitching AI audio generations directly in the browser with zero latency and full WAV export.",
  "datePublished": "2026-07-20",
  "author": {
  "@type": "Person",
@@ -161,7 +161,7 @@
  ],
  "url": "https://trustnodelogic.com",
  "image": "https://trustnodelogic.com/bio-avatar.jpg",
- "email": "mailto:justin@trustnodelogic.com",
+ "email": "mailto:trustnodelogic@gmail.com",
  "jobTitle": [
  "Music Producer",
  "Music Artist",
@@ -1520,6 +1520,16 @@
  { bg: 'rgba(80,220,180,0.15)', border: '#50dcb4', text: '#50dcb4' },
  ];
 
+ // Static precomputed equal-power fade curves (avoids dynamic TypedArray allocation during playback & export)
+ const FADE_CURVE_SIZE = 32;
+ const FADE_IN_CURVE = new Float32Array(FADE_CURVE_SIZE);
+ const FADE_OUT_CURVE = new Float32Array(FADE_CURVE_SIZE);
+ for (let i = 0; i < FADE_CURVE_SIZE; i++) {
+   const norm = i / (FADE_CURVE_SIZE - 1);
+   FADE_IN_CURVE[i] = Math.sin((Math.PI / 2) * norm);
+   FADE_OUT_CURVE[i] = Math.cos((Math.PI / 2) * norm);
+ }
+
  let tracks = [];
  let masterSegments = [];
  let audioCtx = null;
@@ -1752,6 +1762,42 @@
  }
  }
 
+ // Precompute compact peak data for O(1) waveform redraws
+ function computeTrackPeaks(buffer, numPeaks = 1200) {
+   const data = buffer.getChannelData(0);
+   const peaks = new Float32Array(numPeaks);
+   const step = Math.ceil(data.length / numPeaks);
+   for (let i = 0; i < numPeaks; i++) {
+     let max = 0;
+     const start = i * step;
+     const end = Math.min(start + step, data.length);
+     for (let j = start; j < end; j++) {
+       const val = Math.abs(data[j]);
+       if (val > max) max = val;
+     }
+     peaks[i] = max;
+   }
+   return peaks;
+ }
+
+ // Precompute cumulative squared energy table for instant O(1) segment energy scoring
+ function computeEnergyPrefix(buffer, hopSize = 2205) {
+   const data = buffer.getChannelData(0);
+   const numHops = Math.floor(data.length / hopSize);
+   const prefix = new Float64Array(numHops + 1);
+   prefix[0] = 0;
+   for (let i = 0; i < numHops; i++) {
+     let sumSq = 0;
+     const start = i * hopSize;
+     const end = Math.min(start + hopSize, data.length);
+     for (let j = start; j < end; j++) {
+       sumSq += data[j] * data[j];
+     }
+     prefix[i + 1] = prefix[i] + sumSq;
+   }
+   return { prefix, hopSize, numHops };
+ }
+
  // upload
  const fileInput = document.getElementById('file-input');
  const uploadZone = document.getElementById('upload-zone');
@@ -1766,7 +1812,18 @@
  const buf = await file.arrayBuffer();
  const audioBuffer = await ctx.decodeAudioData(buf);
  const color = COLORS[tracks.length % COLORS.length];
- tracks.push({ id: uid(), name: file.name.replace(/\.[^.]+$/, ''), buffer: audioBuffer, duration: audioBuffer.duration, color, segments: detectSegments(audioBuffer, color) });
+ const peaks = computeTrackPeaks(audioBuffer);
+ const energyData = computeEnergyPrefix(audioBuffer);
+ tracks.push({
+   id: uid(),
+   name: file.name.replace(/\.[^.]+$/, ''),
+   buffer: audioBuffer,
+   duration: audioBuffer.duration,
+   color,
+   peaks,
+   energyData,
+   segments: detectSegments(audioBuffer, color)
+ });
  renderTracks();
  } catch (e) { alert('Could not decode: ' + file.name); }
  }
@@ -1927,12 +1984,14 @@
  const wrap = cv.parentElement;
  cv.width = wrap.clientWidth; cv.height = wrap.clientHeight;
  const ctx = cv.getContext('2d');
- const data = track.buffer.getChannelData(0);
  const w = cv.width, h = cv.height;
- const step = Math.ceil(data.length / w);
+ const peaks = track.peaks;
+ if (!peaks || !peaks.length) return;
  ctx.fillStyle = track.color.border + '55';
+ const numPeaks = peaks.length;
  for (let x = 0; x < w; x++) {
- let max = 0; for (let i = x * step; i < (x + 1) * step && i < data.length; i++) max = Math.max(max, Math.abs(data[i]));
+ const peakIdx = Math.floor((x / w) * numPeaks);
+ const max = peaks[peakIdx] || 0;
  const bh = Math.max(2, max * h * 0.88);
  ctx.fillRect(x, (h - bh) / 2, 1, bh);
  }
@@ -2416,22 +2475,35 @@
  };
 
  function segEnergy(seg) {
- // Return cached value when available (set during detectSegments)
- if (seg._cachedE !== undefined) return seg._cachedE;
- // Fallback: scan audio buffer (used for master segments copied from source segs)
- const track = tracks.find(t => t.segments.some(s => s.id === seg.id));
- if (!track) return 0.5;
- const data = track.buffer.getChannelData(0);
- const sr = track.buffer.sampleRate;
- const start = Math.floor(seg.start * sr);
- const end = Math.min(Math.floor(seg.end * sr), data.length);
- let sum = 0;
- const step = Math.max(1, Math.floor((end - start) / 500));
- let count = 0;
- for (let i = start; i < end; i += step) { sum += data[i] * data[i]; count++; }
- const result = count > 0 ? Math.sqrt(sum / count) : 0;
- seg._cachedE = result; // cache for subsequent calls
- return result;
+  // Return cached value when available (set during detectSegments)
+  if (seg._cachedE !== undefined) return seg._cachedE;
+  // O(1) lookup using prefix energy table if available
+  const track = tracks.find(t => t.segments.some(s => s.id === seg.id) || t.id === seg.trackId);
+  if (track && track.energyData) {
+    const { prefix, hopSize, numHops } = track.energyData;
+    const sr = track.buffer.sampleRate;
+    const startHop = Math.max(0, Math.min(numHops, Math.floor((seg.start * sr) / hopSize)));
+    const endHop = Math.max(0, Math.min(numHops, Math.ceil((seg.end * sr) / hopSize)));
+    const countHops = Math.max(1, endHop - startHop);
+    const totalSq = Math.max(0, prefix[endHop] - prefix[startHop]);
+    const totalSamples = countHops * hopSize;
+    const result = totalSamples > 0 ? Math.sqrt(totalSq / totalSamples) : 0;
+    seg._cachedE = result;
+    return result;
+  }
+  // Fallback: scan audio buffer
+  if (!track) return 0.5;
+  const data = track.buffer.getChannelData(0);
+  const sr = track.buffer.sampleRate;
+  const start = Math.floor(seg.start * sr);
+  const end = Math.min(Math.floor(seg.end * sr), data.length);
+  let sum = 0;
+  const step = Math.max(1, Math.floor((end - start) / 500));
+  let count = 0;
+  for (let i = start; i < end; i += step) { sum += data[i] * data[i]; count++; }
+  const result = count > 0 ? Math.sqrt(sum / count) : 0;
+  seg._cachedE = result; // cache for subsequent calls
+  return result;
  }
 
  function updateSuggestions() {
@@ -2564,22 +2636,6 @@
  return { totalDur, lanes: laneParamsMap };
  }
 
- function makeFadeInCurve(length) {
- const curve = new Float32Array(length);
- for (let i = 0; i < length; i++) {
- curve[i] = Math.sin((Math.PI / 2) * (i / (length - 1)));
- }
- return curve;
- }
-
- function makeFadeOutCurve(length) {
- const curve = new Float32Array(length);
- for (let i = 0; i < length; i++) {
- curve[i] = Math.cos((Math.PI / 2) * (i / (length - 1)));
- }
- return curve;
- }
-
  function magicMix() {
  if (!tracks.length) { alert('Load some tracks first!'); return; }
  stopPlayback();
@@ -2654,14 +2710,14 @@
  if (scheduleDelay >= 0) {
  if (fadeInDur > 0) {
  gainNode.gain.setValueAtTime(0, startTime);
- gainNode.gain.setValueCurveAtTime(makeFadeInCurve(32), startTime, fadeInDur);
+ gainNode.gain.setValueCurveAtTime(FADE_IN_CURVE, startTime, fadeInDur);
  } else {
  gainNode.gain.setValueAtTime(1, startTime);
  }
 
  if (fadeOutDur > 0) {
  gainNode.gain.setValueAtTime(1, startTime + dur - fadeOutDur);
- gainNode.gain.setValueCurveAtTime(makeFadeOutCurve(32), startTime + dur - fadeOutDur, fadeOutDur);
+ gainNode.gain.setValueCurveAtTime(FADE_OUT_CURVE, startTime + dur - fadeOutDur, fadeOutDur);
  }
 
  src.start(startTime, ms.start, dur);
@@ -2683,7 +2739,7 @@
  if (alreadyElapsed < fadeOutStartOffset) {
  const futureFadeOutTime = ctx.currentTime + (fadeOutStartOffset - alreadyElapsed);
  gainNode.gain.setValueAtTime(1.0, futureFadeOutTime);
- gainNode.gain.setValueCurveAtTime(makeFadeOutCurve(32), futureFadeOutTime, fadeOutDur);
+ gainNode.gain.setValueCurveAtTime(FADE_OUT_CURVE, futureFadeOutTime, fadeOutDur);
  } else {
  const fadeOutElapsed = alreadyElapsed - fadeOutStartOffset;
  const startGain = Math.cos((Math.PI / 2) * (fadeOutElapsed / fadeOutDur));
@@ -2758,7 +2814,7 @@
  document.getElementById('play-btn').classList.remove('active');
  if (animFrame) cancelAnimationFrame(animFrame);
  scheduledSources.forEach(s => {
- try { s.src.stop(); s.src.disconnect(); s.gainNode.disconnect(); } catch (e) { }
+ try { s.src.stop(); s.src.disconnect(); if (s.gainNode) s.gainNode.disconnect(); } catch (e) { }
  });
  scheduledSources = [];
  clearActiveHighlight();
@@ -2772,7 +2828,7 @@
  document.getElementById('play-btn').classList.remove('active');
  if (animFrame) cancelAnimationFrame(animFrame);
  scheduledSources.forEach(s => {
- try { s.src.stop(); s.src.disconnect(); s.gainNode.disconnect(); } catch (e) { }
+ try { s.src.stop(); s.src.disconnect(); if (s.gainNode) s.gainNode.disconnect(); } catch (e) { }
  });
  scheduledSources = [];
  document.getElementById('progress-fill').style.width = '0%';
@@ -2895,14 +2951,14 @@
 
  if (fadeInDur > 0) {
  gainNode.gain.setValueAtTime(0, t);
- gainNode.gain.setValueCurveAtTime(makeFadeInCurve(32), t, fadeInDur);
+ gainNode.gain.setValueCurveAtTime(FADE_IN_CURVE, t, fadeInDur);
  } else {
  gainNode.gain.setValueAtTime(1, t);
  }
 
  if (fadeOutDur > 0) {
  gainNode.gain.setValueAtTime(1, t + dur - fadeOutDur);
- gainNode.gain.setValueCurveAtTime(makeFadeOutCurve(32), t + dur - fadeOutDur, fadeOutDur);
+ gainNode.gain.setValueCurveAtTime(FADE_OUT_CURVE, t + dur - fadeOutDur, fadeOutDur);
  }
 
  src.start(t, ms.start, dur);
@@ -2925,19 +2981,38 @@
 
  function audioBufferToWav(buffer) {
  const numCh = buffer.numberOfChannels, sr = buffer.sampleRate, len = buffer.length;
- const out = new ArrayBuffer(44 + len * numCh * 2), view = new DataView(out);
+ const out = new ArrayBuffer(44 + len * numCh * 2);
+ const view = new DataView(out);
  function ws(o, s) { for (let i = 0; i < s.length; i++) view.setUint8(o + i, s.charCodeAt(i)); }
- function wu16(o, v) { view.setUint16(o, v, true); }
- function wu32(o, v) { view.setUint32(o, v, true); }
- ws(0, 'RIFF'); wu32(4, 36 + len * numCh * 2); ws(8, 'WAVE'); ws(12, 'fmt ');
- wu32(16, 16); wu16(20, 1); wu16(22, numCh); wu32(24, sr); wu32(28, sr * numCh * 2);
- wu16(32, numCh * 2); wu16(34, 16); ws(36, 'data'); wu32(40, len * numCh * 2);
- let offset = 44;
- const interleaved = new Float32Array(len * numCh);
- for (let ch = 0; ch < numCh; ch++) { const d = buffer.getChannelData(ch); for (let i = 0; i < len; i++) interleaved[i * numCh + ch] = d[i]; }
- for (let i = 0; i < interleaved.length; i++, offset += 2) {
- const s = Math.max(-1, Math.min(1, interleaved[i]));
- view.setInt16(offset, s < 0 ? s * 0x8000 : s * 0x7FFF, true);
+ ws(0, 'RIFF');
+ view.setUint32(4, 36 + len * numCh * 2, true);
+ ws(8, 'WAVE');
+ ws(12, 'fmt ');
+ view.setUint32(16, 16, true);
+ view.setUint16(20, 1, true);
+ view.setUint16(22, numCh, true);
+ view.setUint32(24, sr, true);
+ view.setUint32(28, sr * numCh * 2, true);
+ view.setUint16(32, numCh * 2, true);
+ view.setUint16(34, 16, true);
+ ws(36, 'data');
+ view.setUint32(40, len * numCh * 2, true);
+ const int16View = new Int16Array(out, 44);
+ if (numCh === 2) {
+   const left = buffer.getChannelData(0), right = buffer.getChannelData(1);
+   for (let i = 0, ptr = 0; i < len; i++) {
+     const sL = left[i], sR = right[i];
+     int16View[ptr++] = sL < -1 ? -32768 : sL > 1 ? 32767 : (sL < 0 ? sL * 0x8000 : sL * 0x7FFF);
+     int16View[ptr++] = sR < -1 ? -32768 : sR > 1 ? 32767 : (sR < 0 ? sR * 0x8000 : sR * 0x7FFF);
+   }
+ } else {
+   for (let ch = 0; ch < numCh; ch++) {
+     const d = buffer.getChannelData(ch);
+     for (let i = 0; i < len; i++) {
+       const s = d[i];
+       int16View[i * numCh + ch] = s < -1 ? -32768 : s > 1 ? 32767 : (s < 0 ? s * 0x8000 : s * 0x7FFF);
+     }
+   }
  }
  return out;
  }

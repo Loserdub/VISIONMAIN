@@ -19,7 +19,7 @@ Whenever creating, updating, or modifying HTML pages in this repository, you mus
 
 ## Global Constraints
 - **Contact Email**: `trustnodelogic@gmail.com`
-- **Zero Em-Dashes**: No `—` or `&mdash;` in editorial copy.
+- **Zero Em-Dashes**: No `—` or `&mdash;` in public-facing text and editorial copy (allowed in internal/non-public text, code comments, schemas, or private assets).
 - **Meta Description**: Exactly 120–155 characters, matching `og:description` and `twitter:description`.
 - **Primary Web App**: `https://trustnodelogic.web.app`
 - **Canonical Root**: `https://trustnodelogic.com/`
