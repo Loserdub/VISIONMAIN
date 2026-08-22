@@ -1387,9 +1387,12 @@
 
  .vu-fill {
  height: 100%;
- width: 0%;
+ width: 100%;
  background: linear-gradient(to right, var(--accent) 65%, #fbbf24 85%, #f43f5e 100%);
- transition: width 0.05s linear;
+ transform-origin: left;
+ transform: scaleX(0);
+ transition: transform 0.05s linear;
+ will-change: transform;
  }
 
  .master-seg.selected-seg {
@@ -1408,8 +1411,9 @@
 <div class="logo-dot"></div>
 <div class="logo">MIXR</div>
 <h1 class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">MIXR Studio - Browser-Native Audio Segment Mixer &amp; Mastering Suite</h1>
-<div style="display: flex; gap: 8px; margin-left: 20px; align-items: center;">
+<div style="display: flex; gap: 8px; margin-left: 20px; align-items: center; flex-wrap: wrap;">
 <a class="nav-link" href="https://trustnodelogic.com/">trustnodelogic.com</a>
+<a class="nav-link" href="https://trustnodelogic.web.app" target="_blank" rel="noopener">trustnodelogic.web.app ↗</a>
 <a class="nav-link" href="https://www.reddit.com/r/hybridproduction" rel="noopener" target="_blank">r/hybridproduction</a>
 <button class="nav-link" onclick="openIntroModal()" style="background:var(--accent-dim); color:var(--accent); border:1px solid var(--accent-border); padding:2px 8px; border-radius:4px; font-family:var(--font-mono); font-size:10px; cursor:pointer;" title="Quick Start Guide">? guide</button>
 </div>
@@ -1486,7 +1490,14 @@
 <div class="footer-copyright">
  © 2026 <a class="footer-link" href="https://trustnodelogic.com/">trustnodelogic.com</a> · All Rights Reserved
  </div>
-<button class="export-btn" disabled="" id="export-btn" onclick="exportMix()">⬇ export wav</button>
+<div style="display: flex; align-items: center; gap: 8px;">
+  <select id="export-format-select" class="lane-select" style="background: var(--surface2); color: var(--text); border: 1px solid var(--border); font-family: var(--font-mono); font-size: 10px; padding: 4px 8px; cursor: pointer; height: 32px; border-radius: 0px;" title="Select Export Format & Bit-Depth">
+    <option value="16-44100">16-bit · 44.1 kHz (CD)</option>
+    <option value="24-48000" selected>24-bit · 48 kHz (Studio Pro)</option>
+    <option value="32-48000">32-bit Float · 48 kHz (Lossless)</option>
+  </select>
+  <button class="export-btn" disabled="" id="export-btn" onclick="exportMix()">⬇ export wav</button>
+</div>
 </footer>
 </div>
 <!-- Onboarding Intro Modal -->
@@ -1597,10 +1608,9 @@
 
  let masterLimiter = null;
  let laneGains = {};
- let lowFilter = null;
- let midLowCut = null;
- let midHighCut = null;
- let highFilter = null;
+ let lowFilter1 = null, lowFilter2 = null;
+ let midLowCut1 = null, midLowCut2 = null, midHighCut1 = null, midHighCut2 = null;
+ let highFilter1 = null, highFilter2 = null;
 
  const LANES = ['master', 'high', 'mid', 'low'];
  const LANE_META = {
@@ -1684,8 +1694,8 @@
  function resetVuMeter() {
  const fillL = document.getElementById('vu-fill-l');
  const fillR = document.getElementById('vu-fill-r');
- if (fillL) fillL.style.width = '0%';
- if (fillR) fillR.style.width = '0%';
+ if (fillL) fillL.style.transform = 'scaleX(0)';
+ if (fillR) fillR.style.transform = 'scaleX(0)';
  }
 
  function getCtx() {
@@ -1717,34 +1727,60 @@
  };
  Object.values(laneGains).forEach(g => g.connect(masterLimiter));
 
- // Crossover filters
- // LOW lane: lowpass at 250Hz
- lowFilter = ctx.createBiquadFilter();
- lowFilter.type = 'lowpass';
- lowFilter.frequency.value = 250;
- lowFilter.Q.value = 0.7;
- lowFilter.connect(laneGains.low);
+ // True Linkwitz-Riley 4th-Order (LR4) Crossover Filters
+ // LOW lane: 2 cascaded 2nd-order lowpass at 250Hz with Q=0.7071
+ lowFilter1 = ctx.createBiquadFilter();
+ lowFilter1.type = 'lowpass';
+ lowFilter1.frequency.value = 250;
+ lowFilter1.Q.value = 0.7071;
 
- // HIGH lane: highpass at 2500Hz
- highFilter = ctx.createBiquadFilter();
- highFilter.type = 'highpass';
- highFilter.frequency.value = 2500;
- highFilter.Q.value = 0.7;
- highFilter.connect(laneGains.high);
+ lowFilter2 = ctx.createBiquadFilter();
+ lowFilter2.type = 'lowpass';
+ lowFilter2.frequency.value = 250;
+ lowFilter2.Q.value = 0.7071;
 
- // MID lane: bandpass 250Hz to 2500Hz
- midLowCut = ctx.createBiquadFilter();
- midLowCut.type = 'highpass';
- midLowCut.frequency.value = 250;
- midLowCut.Q.value = 0.7;
+ lowFilter1.connect(lowFilter2);
+ lowFilter2.connect(laneGains.low);
 
- midHighCut = ctx.createBiquadFilter();
- midHighCut.type = 'lowpass';
- midHighCut.frequency.value = 2500;
- midHighCut.Q.value = 0.7;
+ // HIGH lane: 2 cascaded 2nd-order highpass at 2500Hz with Q=0.7071
+ highFilter1 = ctx.createBiquadFilter();
+ highFilter1.type = 'highpass';
+ highFilter1.frequency.value = 2500;
+ highFilter1.Q.value = 0.7071;
 
- midLowCut.connect(midHighCut);
- midHighCut.connect(laneGains.mid);
+ highFilter2 = ctx.createBiquadFilter();
+ highFilter2.type = 'highpass';
+ highFilter2.frequency.value = 2500;
+ highFilter2.Q.value = 0.7071;
+
+ highFilter1.connect(highFilter2);
+ highFilter2.connect(laneGains.high);
+
+ // MID lane: 2 cascaded 2nd-order highpass (250Hz) into 2 cascaded 2nd-order lowpass (2500Hz)
+ midLowCut1 = ctx.createBiquadFilter();
+ midLowCut1.type = 'highpass';
+ midLowCut1.frequency.value = 250;
+ midLowCut1.Q.value = 0.7071;
+
+ midLowCut2 = ctx.createBiquadFilter();
+ midLowCut2.type = 'highpass';
+ midLowCut2.frequency.value = 250;
+ midLowCut2.Q.value = 0.7071;
+
+ midHighCut1 = ctx.createBiquadFilter();
+ midHighCut1.type = 'lowpass';
+ midHighCut1.frequency.value = 2500;
+ midHighCut1.Q.value = 0.7071;
+
+ midHighCut2 = ctx.createBiquadFilter();
+ midHighCut2.type = 'lowpass';
+ midHighCut2.frequency.value = 2500;
+ midHighCut2.Q.value = 0.7071;
+
+ midLowCut1.connect(midLowCut2);
+ midLowCut2.connect(midHighCut1);
+ midHighCut1.connect(midHighCut2);
+ midHighCut2.connect(laneGains.mid);
  }
  return audioCtx;
  }
@@ -1752,11 +1788,11 @@
  function connectToLane(node, lane) {
  getCtx();
  if (lane === 'low') {
- node.connect(lowFilter);
+ node.connect(lowFilter1);
  } else if (lane === 'mid') {
- node.connect(midLowCut);
+ node.connect(midLowCut1);
  } else if (lane === 'high') {
- node.connect(highFilter);
+ node.connect(highFilter1);
  } else {
  node.connect(laneGains.master);
  }
@@ -1978,23 +2014,30 @@
  }
 
  function drawWaveform(track) {
- const cv = document.getElementById('cv-' + track.id);
- if (!cv) return;
- cv.draggable = false; // prevent browser hijacking drag events on canvas
- const wrap = cv.parentElement;
- cv.width = wrap.clientWidth; cv.height = wrap.clientHeight;
- const ctx = cv.getContext('2d');
- const w = cv.width, h = cv.height;
- const peaks = track.peaks;
- if (!peaks || !peaks.length) return;
- ctx.fillStyle = track.color.border + '55';
- const numPeaks = peaks.length;
- for (let x = 0; x < w; x++) {
- const peakIdx = Math.floor((x / w) * numPeaks);
- const max = peaks[peakIdx] || 0;
- const bh = Math.max(2, max * h * 0.88);
- ctx.fillRect(x, (h - bh) / 2, 1, bh);
- }
+  const cv = document.getElementById('cv-' + track.id);
+  if (!cv) return;
+  cv.draggable = false; // prevent browser hijacking drag events on canvas
+  const wrap = cv.parentElement;
+  const clientW = wrap.clientWidth;
+  const clientH = wrap.clientHeight;
+  if (!clientW || !clientH) return;
+  const dpr = window.devicePixelRatio || 1;
+  cv.width = Math.floor(clientW * dpr);
+  cv.height = Math.floor(clientH * dpr);
+  cv.style.width = clientW + 'px';
+  cv.style.height = clientH + 'px';
+  const ctx = cv.getContext('2d');
+  ctx.scale(dpr, dpr);
+  const peaks = track.peaks;
+  if (!peaks || !peaks.length) return;
+  ctx.fillStyle = track.color.border + '55';
+  const numPeaks = peaks.length;
+  for (let x = 0; x < clientW; x++) {
+  const peakIdx = Math.floor((x / clientW) * numPeaks);
+  const max = peaks[peakIdx] || 0;
+  const bh = Math.max(2, max * clientH * 0.88);
+  ctx.fillRect(x, (clientH - bh) / 2, 1, bh);
+  }
  }
 
  function drawSegmentOverlay(track) {
@@ -2226,10 +2269,17 @@
  stopAllPreviews();
  pushUndoState();
  const removed = tracks[ti];
+ if (removed) {
+ const wf = document.getElementById('wf-' + removed.id);
+ if (wf && waveformRO) waveformRO.unobserve(wf);
+ removed.peaks = null;
+ removed.energyData = null;
+ removed.buffer = null;
+ }
  tracks.splice(ti, 1);
  // Remove any master segments sourced from this track
  const before = masterSegments.length;
- masterSegments = masterSegments.filter(ms => ms.trackId !== removed.id);
+ masterSegments = masterSegments.filter(ms => ms.trackId !== (removed && removed.id));
  renderTracks();
  if (masterSegments.length !== before) { renderMaster(); updateSuggestions(); }
  }
@@ -2788,11 +2838,11 @@
  const val = Math.abs(vuDataArray[i] - 128);
  if (val > max) max = val;
  }
- const normLevel = Math.min(100, (max / 128) * 100 * 1.4);
+ const normLevel = Math.min(1, (max / 128) * 1.4);
  const fillL = document.getElementById('vu-fill-l');
  const fillR = document.getElementById('vu-fill-r');
- if (fillL) fillL.style.width = normLevel + '%';
- if (fillR) fillR.style.width = Math.max(0, normLevel - 3) + '%';
+ if (fillL) fillL.style.transform = `scaleX(${normLevel.toFixed(3)})`;
+ if (fillR) fillR.style.transform = `scaleX(${Math.max(0, normLevel - 0.03).toFixed(3)})`;
  }
 
  if (elapsed >= totalDur) { stopPlayback(); return; }
@@ -2849,180 +2899,352 @@
  if (wasPlaying) startPlayback();
  }
 
- // export
- async function exportMix() {
- if (!masterSegments.length) return;
- const btn = document.getElementById('export-btn');
- btn.textContent = '⏳ rendering...'; btn.disabled = true;
- try {
- const sr = 44100;
- const { totalDur, lanes: laneParamsMap } = getTimelineParams();
- const offCtx = new OfflineAudioContext(2, Math.ceil(Math.max(totalDur, 0.1) * sr), sr);
+  // ── NON-BLOCKING WEB WORKER WAV ENCODER ───────────────────────
+  const WAV_WORKER_CODE = `
+  self.onmessage = function(e) {
+    const { channelData, sampleRate, bitDepth, numChannels } = e.data;
+    const len = channelData[0].length;
+    const bytesPerSample = bitDepth === 32 ? 4 : (bitDepth === 24 ? 3 : 2);
+    const blockAlign = numChannels * bytesPerSample;
+    const byteRate = sampleRate * blockAlign;
+    const dataSize = len * blockAlign;
+    const buffer = new ArrayBuffer(44 + dataSize);
+    const view = new DataView(buffer);
 
- // Create offline limiter
- const offLimiter = offCtx.createDynamicsCompressor();
- offLimiter.threshold.setValueAtTime(-3, offCtx.currentTime);
- offLimiter.ratio.setValueAtTime(12, offCtx.currentTime);
- offLimiter.attack.setValueAtTime(0.003, offCtx.currentTime);
- offLimiter.release.setValueAtTime(0.1, offCtx.currentTime);
- offLimiter.connect(offCtx.destination);
+    function writeString(offset, str) {
+      for (let i = 0; i < str.length; i++) {
+        view.setUint8(offset + i, str.charCodeAt(i));
+      }
+    }
 
- // Evaluate solo & mute for offline rendering
- const anySolo = Object.values(laneStates).some(s => s.solo);
+    // RIFF Chunk Descriptor
+    writeString(0, 'RIFF');
+    view.setUint32(4, 36 + dataSize, true);
+    writeString(8, 'WAVE');
 
- let audibleCount = 0;
- LANES.forEach(laneKey => {
- const state = laneStates[laneKey];
- const isAudible = anySolo ? (state.solo && !state.mute) : !state.mute;
- if (isAudible) audibleCount++;
- });
+    // fmt Sub-chunk
+    writeString(12, 'fmt ');
+    view.setUint32(16, 16, true);
+    const format = bitDepth === 32 ? 3 : 1; // 3 = IEEE Float, 1 = PCM
+    view.setUint16(20, format, true);
+    view.setUint16(22, numChannels, true);
+    view.setUint32(24, sampleRate, true);
+    view.setUint32(28, byteRate, true);
+    view.setUint16(32, blockAlign, true);
+    view.setUint16(34, bitDepth, true);
 
- const scaleFactor = audibleCount > 0 ? (1 / Math.sqrt(audibleCount)) : 1;
+    // data Sub-chunk
+    writeString(36, 'data');
+    view.setUint32(40, dataSize, true);
 
- // Create offline lane gains
- const offLaneGains = {
- low: offCtx.createGain(),
- mid: offCtx.createGain(),
- high: offCtx.createGain(),
- master: offCtx.createGain()
- };
+    let offset = 44;
+    if (bitDepth === 32) {
+      // 32-bit IEEE Float
+      for (let i = 0; i < len; i++) {
+        for (let ch = 0; ch < numChannels; ch++) {
+          view.setFloat32(offset, channelData[ch][i], true);
+          offset += 4;
+        }
+      }
+    } else if (bitDepth === 24) {
+      // 24-bit PCM
+      for (let i = 0; i < len; i++) {
+        for (let ch = 0; ch < numChannels; ch++) {
+          let s = channelData[ch][i];
+          s = s < -1 ? -1 : s > 1 ? 1 : s;
+          const val = s < 0 ? s * 0x800000 : s * 0x7FFFFF;
+          const intVal = Math.floor(val);
+          view.setUint8(offset, intVal & 0xFF);
+          view.setUint8(offset + 1, (intVal >> 8) & 0xFF);
+          view.setUint8(offset + 2, (intVal >> 16) & 0xFF);
+          offset += 3;
+        }
+      }
+    } else {
+      // 16-bit PCM
+      const int16View = new Int16Array(buffer, 44);
+      let ptr = 0;
+      for (let i = 0; i < len; i++) {
+        for (let ch = 0; ch < numChannels; ch++) {
+          let s = channelData[ch][i];
+          s = s < -1 ? -1 : s > 1 ? 1 : s;
+          int16View[ptr++] = s < 0 ? s * 0x8000 : s * 0x7FFF;
+        }
+      }
+    }
 
- LANES.forEach(laneKey => {
- const state = laneStates[laneKey];
- const isAudible = anySolo ? (state.solo && !state.mute) : !state.mute;
- const targetGain = isAudible ? scaleFactor : 0;
- offLaneGains[laneKey].gain.setValueAtTime(targetGain, offCtx.currentTime);
- offLaneGains[laneKey].connect(offLimiter);
- });
+    self.postMessage({ buffer }, [buffer]);
+  };
+  `;
 
- // Create offline crossover filters
- const offLowFilter = offCtx.createBiquadFilter();
- offLowFilter.type = 'lowpass';
- offLowFilter.frequency.value = 250;
- offLowFilter.Q.value = 0.7;
- offLowFilter.connect(offLaneGains.low);
+  function encodeWavAsync(renderedBuffer, bitDepth = 24) {
+    return new Promise((resolve, reject) => {
+      try {
+        const numChannels = renderedBuffer.numberOfChannels;
+        const channelData = [];
+        for (let ch = 0; ch < numChannels; ch++) {
+          channelData.push(renderedBuffer.getChannelData(ch));
+        }
+        const blob = new Blob([WAV_WORKER_CODE], { type: 'application/javascript' });
+        const workerUrl = URL.createObjectURL(blob);
+        const worker = new Worker(workerUrl);
 
- const offHighFilter = offCtx.createBiquadFilter();
- offHighFilter.type = 'highpass';
- offHighFilter.frequency.value = 2500;
- offHighFilter.Q.value = 0.7;
- offHighFilter.connect(offLaneGains.high);
+        worker.onmessage = function(e) {
+          worker.terminate();
+          URL.revokeObjectURL(workerUrl);
+          resolve(e.data.buffer);
+        };
 
- const offMidLowCut = offCtx.createBiquadFilter();
- offMidLowCut.type = 'highpass';
- offMidLowCut.frequency.value = 250;
- offMidLowCut.Q.value = 0.7;
+        worker.onerror = function(err) {
+          worker.terminate();
+          URL.revokeObjectURL(workerUrl);
+          reject(err);
+        };
 
- const offMidHighCut = offCtx.createBiquadFilter();
- offMidHighCut.type = 'lowpass';
- offMidHighCut.frequency.value = 2500;
- offMidHighCut.Q.value = 0.7;
+        worker.postMessage({
+          channelData,
+          sampleRate: renderedBuffer.sampleRate,
+          bitDepth,
+          numChannels
+        });
+      } catch (err) {
+        resolve(audioBufferToWavSync(renderedBuffer, bitDepth));
+      }
+    });
+  }
 
- offMidLowCut.connect(offMidHighCut);
- offMidHighCut.connect(offLaneGains.mid);
+  function audioBufferToWavSync(buffer, bitDepth = 16) {
+    const numCh = buffer.numberOfChannels, sr = buffer.sampleRate, len = buffer.length;
+    const bytesPerSample = bitDepth === 32 ? 4 : (bitDepth === 24 ? 3 : 2);
+    const blockAlign = numCh * bytesPerSample;
+    const byteRate = sr * blockAlign;
+    const dataSize = len * blockAlign;
+    const out = new ArrayBuffer(44 + dataSize);
+    const view = new DataView(out);
+    function ws(o, s) { for (let i = 0; i < s.length; i++) view.setUint8(o + i, s.charCodeAt(i)); }
+    ws(0, 'RIFF');
+    view.setUint32(4, 36 + dataSize, true);
+    ws(8, 'WAVE');
+    ws(12, 'fmt ');
+    view.setUint32(16, 16, true);
+    const format = bitDepth === 32 ? 3 : 1;
+    view.setUint16(20, format, true);
+    view.setUint16(22, numCh, true);
+    view.setUint32(24, sr, true);
+    view.setUint32(28, byteRate, true);
+    view.setUint16(32, blockAlign, true);
+    view.setUint16(34, bitDepth, true);
+    ws(36, 'data');
+    view.setUint32(40, dataSize, true);
 
- LANES.forEach(laneKey => {
- const { laneSegments, starts, overlaps } = laneParamsMap[laneKey] || { laneSegments: [], starts: [], overlaps: [] };
- laneSegments.forEach((ms, i) => {
- const dur = ms.end - ms.start;
- const t = starts[i];
- if (!ms.buffer) return;
+    let offset = 44;
+    if (bitDepth === 32) {
+      for (let i = 0; i < len; i++) {
+        for (let ch = 0; ch < numCh; ch++) {
+          view.setFloat32(offset, buffer.getChannelData(ch)[i], true);
+          offset += 4;
+        }
+      }
+    } else if (bitDepth === 24) {
+      for (let i = 0; i < len; i++) {
+        for (let ch = 0; ch < numCh; ch++) {
+          let s = buffer.getChannelData(ch)[i];
+          s = s < -1 ? -1 : s > 1 ? 1 : s;
+          const val = s < 0 ? s * 0x800000 : s * 0x7FFFFF;
+          const intVal = Math.floor(val);
+          view.setUint8(offset, intVal & 0xFF);
+          view.setUint8(offset + 1, (intVal >> 8) & 0xFF);
+          view.setUint8(offset + 2, (intVal >> 16) & 0xFF);
+          offset += 3;
+        }
+      }
+    } else {
+      const int16View = new Int16Array(out, 44);
+      let ptr = 0;
+      for (let i = 0; i < len; i++) {
+        for (let ch = 0; ch < numCh; ch++) {
+          let s = buffer.getChannelData(ch)[i];
+          s = s < -1 ? -1 : s > 1 ? 1 : s;
+          int16View[ptr++] = s < 0 ? s * 0x8000 : s * 0x7FFF;
+        }
+      }
+    }
+    return out;
+  }
 
- const src = offCtx.createBufferSource();
- src.buffer = ms.buffer;
+  // export
+  async function exportMix() {
+  if (!masterSegments.length) return;
+  const btn = document.getElementById('export-btn');
+  btn.textContent = '⏳ rendering...'; btn.disabled = true;
+  try {
+  const fmtVal = document.getElementById('export-format-select') ? document.getElementById('export-format-select').value : '24-48000';
+  const [bitDepthStr, srStr] = fmtVal.split('-');
+  const bitDepth = parseInt(bitDepthStr, 10) || 24;
+  const sr = parseInt(srStr, 10) || 48000;
 
- const gainNode = offCtx.createGain();
- src.connect(gainNode);
+  const { totalDur, lanes: laneParamsMap } = getTimelineParams();
+  const offCtx = new OfflineAudioContext(2, Math.ceil(Math.max(totalDur, 0.1) * sr), sr);
 
- // Connect to the appropriate offline lane
- const lane = ms.lane || 'master';
- if (lane === 'low') {
- gainNode.connect(offLowFilter);
- } else if (lane === 'mid') {
- gainNode.connect(offMidLowCut);
- } else if (lane === 'high') {
- gainNode.connect(offHighFilter);
- } else {
- gainNode.connect(offLaneGains.master);
- }
+  // Create offline limiter
+  const offLimiter = offCtx.createDynamicsCompressor();
+  offLimiter.threshold.setValueAtTime(-3, offCtx.currentTime);
+  offLimiter.ratio.setValueAtTime(12, offCtx.currentTime);
+  offLimiter.attack.setValueAtTime(0.003, offCtx.currentTime);
+  offLimiter.release.setValueAtTime(0.1, offCtx.currentTime);
+  offLimiter.connect(offCtx.destination);
 
- const fadeInDur = i > 0 ? overlaps[i - 1] : 0;
- const fadeOutDur = i < laneSegments.length - 1 ? overlaps[i] : 0;
+  // Evaluate solo & mute for offline rendering
+  const anySolo = Object.values(laneStates).some(s => s.solo);
 
- if (fadeInDur > 0) {
- gainNode.gain.setValueAtTime(0, t);
- gainNode.gain.setValueCurveAtTime(FADE_IN_CURVE, t, fadeInDur);
- } else {
- gainNode.gain.setValueAtTime(1, t);
- }
+  let audibleCount = 0;
+  LANES.forEach(laneKey => {
+  const state = laneStates[laneKey];
+  const isAudible = anySolo ? (state.solo && !state.mute) : !state.mute;
+  if (isAudible) audibleCount++;
+  });
 
- if (fadeOutDur > 0) {
- gainNode.gain.setValueAtTime(1, t + dur - fadeOutDur);
- gainNode.gain.setValueCurveAtTime(FADE_OUT_CURVE, t + dur - fadeOutDur, fadeOutDur);
- }
+  const scaleFactor = audibleCount > 0 ? (1 / Math.sqrt(audibleCount)) : 1;
 
- src.start(t, ms.start, dur);
- });
- });
+  // Create offline lane gains
+  const offLaneGains = {
+  low: offCtx.createGain(),
+  mid: offCtx.createGain(),
+  high: offCtx.createGain(),
+  master: offCtx.createGain()
+  };
 
- const rendered = await offCtx.startRendering();
- const wav = audioBufferToWav(rendered);
- const blob = new Blob([wav], { type: 'audio/wav' });
- const url = URL.createObjectURL(blob);
- const a = document.createElement('a'); a.href = url; a.download = 'mix_' + Date.now() + '.wav'; a.click();
- URL.revokeObjectURL(url);
- } catch (e) {
- console.error('Export failed:', e);
- alert('Export failed: ' + e.message);
- } finally {
- btn.textContent = '⬇ export wav'; btn.disabled = false;
- }
- }
+  LANES.forEach(laneKey => {
+  const state = laneStates[laneKey];
+  const isAudible = anySolo ? (state.solo && !state.mute) : !state.mute;
+  const targetGain = isAudible ? scaleFactor : 0;
+  offLaneGains[laneKey].gain.setValueAtTime(targetGain, offCtx.currentTime);
+  offLaneGains[laneKey].connect(offLimiter);
+  });
 
- function audioBufferToWav(buffer) {
- const numCh = buffer.numberOfChannels, sr = buffer.sampleRate, len = buffer.length;
- const out = new ArrayBuffer(44 + len * numCh * 2);
- const view = new DataView(out);
- function ws(o, s) { for (let i = 0; i < s.length; i++) view.setUint8(o + i, s.charCodeAt(i)); }
- ws(0, 'RIFF');
- view.setUint32(4, 36 + len * numCh * 2, true);
- ws(8, 'WAVE');
- ws(12, 'fmt ');
- view.setUint32(16, 16, true);
- view.setUint16(20, 1, true);
- view.setUint16(22, numCh, true);
- view.setUint32(24, sr, true);
- view.setUint32(28, sr * numCh * 2, true);
- view.setUint16(32, numCh * 2, true);
- view.setUint16(34, 16, true);
- ws(36, 'data');
- view.setUint32(40, len * numCh * 2, true);
- const int16View = new Int16Array(out, 44);
- if (numCh === 2) {
-   const left = buffer.getChannelData(0), right = buffer.getChannelData(1);
-   for (let i = 0, ptr = 0; i < len; i++) {
-     const sL = left[i], sR = right[i];
-     int16View[ptr++] = sL < -1 ? -32768 : sL > 1 ? 32767 : (sL < 0 ? sL * 0x8000 : sL * 0x7FFF);
-     int16View[ptr++] = sR < -1 ? -32768 : sR > 1 ? 32767 : (sR < 0 ? sR * 0x8000 : sR * 0x7FFF);
-   }
- } else {
-   for (let ch = 0; ch < numCh; ch++) {
-     const d = buffer.getChannelData(ch);
-     for (let i = 0; i < len; i++) {
-       const s = d[i];
-       int16View[i * numCh + ch] = s < -1 ? -32768 : s > 1 ? 32767 : (s < 0 ? s * 0x8000 : s * 0x7FFF);
-     }
-   }
- }
- return out;
- }
+  // Offline Linkwitz-Riley 4th-Order (LR4) Crossover Filters
+  // LOW lane: 2 cascaded 2nd-order lowpass at 250Hz with Q=0.7071
+  const offLowFilter1 = offCtx.createBiquadFilter();
+  offLowFilter1.type = 'lowpass';
+  offLowFilter1.frequency.value = 250;
+  offLowFilter1.Q.value = 0.7071;
 
- function fmtTime(s) { const m = Math.floor(s / 60); return m + ':' + (Math.floor(s % 60) + '').padStart(2, '0'); }
- function uid() { return Math.random().toString(36).slice(2); }
+  const offLowFilter2 = offCtx.createBiquadFilter();
+  offLowFilter2.type = 'lowpass';
+  offLowFilter2.frequency.value = 250;
+  offLowFilter2.Q.value = 0.7071;
 
- // ── ONBOARDING GUIDE MODAL ─────────────────────────────────────
- let currentIntroPage = 0;
- const INTRO_PAGES = [
+  offLowFilter1.connect(offLowFilter2);
+  offLowFilter2.connect(offLaneGains.low);
+
+  // HIGH lane: 2 cascaded 2nd-order highpass at 2500Hz with Q=0.7071
+  const offHighFilter1 = offCtx.createBiquadFilter();
+  offHighFilter1.type = 'highpass';
+  offHighFilter1.frequency.value = 2500;
+  offHighFilter1.Q.value = 0.7071;
+
+  const offHighFilter2 = offCtx.createBiquadFilter();
+  offHighFilter2.type = 'highpass';
+  offHighFilter2.frequency.value = 2500;
+  offHighFilter2.Q.value = 0.7071;
+
+  offHighFilter1.connect(offHighFilter2);
+  offHighFilter2.connect(offLaneGains.high);
+
+  // MID lane: 2 cascaded 2nd-order highpass (250Hz) into 2 cascaded 2nd-order lowpass (2500Hz)
+  const offMidLowCut1 = offCtx.createBiquadFilter();
+  offMidLowCut1.type = 'highpass';
+  offMidLowCut1.frequency.value = 250;
+  offMidLowCut1.Q.value = 0.7071;
+
+  const offMidLowCut2 = offCtx.createBiquadFilter();
+  offMidLowCut2.type = 'highpass';
+  offMidLowCut2.frequency.value = 250;
+  offMidLowCut2.Q.value = 0.7071;
+
+  const offMidHighCut1 = offCtx.createBiquadFilter();
+  offMidHighCut1.type = 'lowpass';
+  offMidHighCut1.frequency.value = 2500;
+  offMidHighCut1.Q.value = 0.7071;
+
+  const offMidHighCut2 = offCtx.createBiquadFilter();
+  offMidHighCut2.type = 'lowpass';
+  offMidHighCut2.frequency.value = 2500;
+  offMidHighCut2.Q.value = 0.7071;
+
+  offMidLowCut1.connect(offMidLowCut2);
+  offMidLowCut2.connect(offMidHighCut1);
+  offMidHighCut1.connect(offMidHighCut2);
+  offMidHighCut2.connect(offLaneGains.mid);
+
+  LANES.forEach(laneKey => {
+  const { laneSegments, starts, overlaps } = laneParamsMap[laneKey] || { laneSegments: [], starts: [], overlaps: [] };
+  laneSegments.forEach((ms, i) => {
+  const dur = ms.end - ms.start;
+  const t = starts[i];
+  if (!ms.buffer) return;
+
+  const src = offCtx.createBufferSource();
+  src.buffer = ms.buffer;
+
+  const gainNode = offCtx.createGain();
+  src.connect(gainNode);
+
+  // Connect to the appropriate offline lane
+  const lane = ms.lane || 'master';
+  if (lane === 'low') {
+  gainNode.connect(offLowFilter1);
+  } else if (lane === 'mid') {
+  gainNode.connect(offMidLowCut1);
+  } else if (lane === 'high') {
+  gainNode.connect(offHighFilter1);
+  } else {
+  gainNode.connect(offLaneGains.master);
+  }
+
+  const fadeInDur = i > 0 ? overlaps[i - 1] : 0;
+  const fadeOutDur = i < laneSegments.length - 1 ? overlaps[i] : 0;
+
+  if (fadeInDur > 0) {
+  gainNode.gain.setValueAtTime(0, t);
+  gainNode.gain.setValueCurveAtTime(FADE_IN_CURVE, t, fadeInDur);
+  } else {
+  gainNode.gain.setValueAtTime(1, t);
+  }
+
+  if (fadeOutDur > 0) {
+  gainNode.gain.setValueAtTime(1, t + dur - fadeOutDur);
+  gainNode.gain.setValueCurveAtTime(FADE_OUT_CURVE, t + dur - fadeOutDur, fadeOutDur);
+  }
+
+  src.start(t, ms.start, dur);
+  });
+  });
+
+  const rendered = await offCtx.startRendering();
+  btn.textContent = '⏳ encoding WAV...';
+  const wavBuffer = await encodeWavAsync(rendered, bitDepth);
+  const blob = new Blob([wavBuffer], { type: 'audio/wav' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `mix_${bitDepth}bit_${sr}hz_${Date.now()}.wav`;
+  a.click();
+  URL.revokeObjectURL(url);
+  } catch (e) {
+  console.error('Export failed:', e);
+  alert('Export failed: ' + e.message);
+  } finally {
+  btn.textContent = '⬇ export wav'; btn.disabled = false;
+  }
+  }
+
+  function fmtTime(s) { const m = Math.floor(s / 60); return m + ':' + (Math.floor(s % 60) + '').padStart(2, '0'); }
+  function uid() { return Math.random().toString(36).slice(2); }
+
+  // ── ONBOARDING GUIDE MODAL ─────────────────────────────────────
+  let currentIntroPage = 0;
+  const INTRO_PAGES = [
  {
  title: "1/4 · WELCOME TO MIXR STUDIO",
  content: `
