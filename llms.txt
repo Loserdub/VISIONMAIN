@@ -49,6 +49,10 @@
 ### [Contact Channel](https://trustnodelogic.com/contact.html)
 - **Summary**: Direct line for technical inquiries, research collaborations, and production commissions via trustnodelogic@gmail.com.
 
+### [About & Philosophy](https://trustnodelogic.com/about.html)
+- **Summary**: Personal about page detailing Justin Ray's philosophy, community building (r/hybridproduction), engineering credentials, tools (MIXR Studio, VOID), and music aliases (loserdub, VISION).
+- **Key Concepts**: Justin Ray, JRAY, loserdub, VISION, r/hybridproduction, MIXR Studio, VOID, Google MusicLM, Suno.
+
 ---
 
 ## Analytical Field Notes & Technical Research
