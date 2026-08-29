@@ -384,9 +384,10 @@
  <!-- Monospace Terminal Navigation -->
  <nav class="hidden md:flex items-center gap-6 text-[11px] font-mono tracking-[0.14em] uppercase text-[#71717A]" aria-label="Main navigation">
  <a href="/" class="text-[#FF9F1C] font-semibold relative py-1 border-b border-[#FF9F1C]">HOME</a>
+ <a href="./field-notes.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">FIELD NOTES</a>
  <a href="./music.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">MUSIC</a>
  <a href="./projects.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">PROJECTS</a>
- <a href="./bio.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">BIO</a>
+ <a href="./about.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">ABOUT</a>
  <a href="./what-is-hybrid.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">WHAT IS HYBRID</a>
  <a href="./services.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">SERVICES</a>
  <a href="./contact.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">CONTACT</a>
@@ -405,9 +406,10 @@
  <div class="absolute top-full left-0 right-0 bg-[#0B0C0E] border-b border-white/20 shadow-2xl py-6 px-6 hidden peer-checked:flex flex-col items-center gap-4 text-center">
  <nav class="flex flex-col gap-3 text-center text-xs font-mono tracking-widest uppercase text-[#EAEAEA] font-medium w-full max-w-xs" aria-label="Mobile navigation">
  <a href="/" class="text-[#FF9F1C] py-2 border-b border-white/10 font-bold">HOME</a>
+ <a href="./field-notes.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">FIELD NOTES</a>
  <a href="./music.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">MUSIC</a>
  <a href="./projects.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">PROJECTS</a>
- <a href="./bio.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">BIO</a>
+ <a href="./about.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">ABOUT</a>
  <a href="./what-is-hybrid.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">WHAT IS HYBRID</a>
  <a href="./services.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">SERVICES</a>
  <a href="./contact.html" class="hover:text-[#FF9F1C] py-2 transition-colors">CONTACT</a>
@@ -528,23 +530,39 @@
  <!-- Field Notes -->
  <section class="w-full max-w-5xl mx-auto px-6 py-16">
  
+ <!-- Dedicated Field Notes Archive Hub CTA Banner -->
+ <a href="./field-notes.html" class="tech-card p-5 mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-left group border-[#FF9F1C]/40 bg-[#121417]/90 hover:border-[#FF9F1C] transition-all">
+ <div class="flex items-center gap-3.5">
+ <span class="tech-tag tech-tag-amber">RESEARCH HUB</span>
+ <div>
+ <h2 class="text-sm sm:text-base font-bold font-mono text-[#EAEAEA] uppercase tracking-wider group-hover:text-[#FF9F1C] transition-colors">
+ Browse The Field Notes &amp; Technical Archive (17 Entries)
+ </h2>
+ <span class="text-[11px] font-mono text-[#71717A]">Comprehensive research papers, prompt engineering guides, DSP analyses &amp; streaming economics.</span>
+ </div>
+ </div>
+ <span class="text-xs font-mono text-[#FF9F1C] group-hover:translate-x-1 transition-transform self-end sm:self-center whitespace-nowrap">
+ Open Hub ↗
+ </span>
+ </a>
+
  <div class="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-4">
  <div>
  <span class="text-[10px] font-mono tracking-[0.25em] text-[#FF9F1C] uppercase block mb-1">Writing &amp; analysis</span>
- <h2 class="text-2xl sm:text-3xl font-bold uppercase tracking-tight text-[#EAEAEA]">Field Notes</h2>
+ <h3 class="text-2xl sm:text-3xl font-bold uppercase tracking-tight text-[#EAEAEA]">Field Notes</h3>
  </div>
  
  <div class="flex items-center gap-3">
  <div class="flex items-center bg-[#121417] border border-white/15 p-1 font-mono text-xs">
  <button id="fn-prev-btn" onclick="rotateFieldNotes(-1)" class="px-2.5 py-1 text-[#A1A1AA] hover:text-[#FF9F1C] hover:bg-white/5 transition-all" aria-label="Previous Field Notes">[ &lt; ]</button>
- <span id="fn-indicator" class="text-[10px] text-[#71717A] px-3 min-w-[80px] text-center">1 - 3 of 16</span>
+ <span id="fn-indicator" class="text-[10px] text-[#71717A] px-3 min-w-[80px] text-center">1 - 3 of 17</span>
  <button id="fn-next-btn" onclick="rotateFieldNotes(1)" class="px-2.5 py-1 text-[#A1A1AA] hover:text-[#FF9F1C] hover:bg-white/5 transition-all" aria-label="Next Field Notes">[ &gt; ]</button>
  <button id="fn-auto-btn" onclick="toggleAutoRotate()" aria-label="Toggle auto-play" aria-pressed="true" class="px-2.5 py-1 text-[10px] text-[#FF9F1C] hover:bg-[#FF9F1C]/10 transition-all flex items-center gap-1.5 border-l border-white/10" title="Toggle Auto-Play">
  <span class="w-1.5 h-1.5 bg-[#FF9F1C] animate-terminal-blink" id="fn-pulse-dot"></span>
  <span>AUTO</span>
  </button>
  </div>
- <a href="./what-is-hybrid.html" class="text-xs font-mono text-[#71717A] hover:text-[#FF9F1C] transition-colors hidden sm:block">All (16) →</a>
+ <a href="./field-notes.html" class="text-xs font-mono text-[#71717A] hover:text-[#FF9F1C] transition-colors hidden sm:block">All (17) →</a>
  </div>
  </div>
 
@@ -553,7 +571,7 @@
  </div>
 
  <div class="mt-6 flex items-center justify-between sm:hidden">
- <a href="./what-is-hybrid.html" class="text-xs font-mono text-[#FF9F1C] hover:underline">View all 16 field notes →</a>
+ <a href="./field-notes.html" class="text-xs font-mono text-[#FF9F1C] hover:underline">View all 17 field notes →</a>
  </div>
  </section>
 
@@ -730,10 +748,12 @@
  </div>
  <nav class="flex flex-wrap justify-center gap-6 text-xs font-mono tracking-widest uppercase text-[#71717A]" aria-label="Footer navigation">
  <a href="/" class="text-[#FF9F1C] font-semibold">Home</a>
+ <a href="./field-notes.html" class="hover:text-[#EAEAEA] transition-colors">Field Notes</a>
  <a href="./what-is-hybrid.html" class="hover:text-[#EAEAEA] transition-colors">What Is Hybrid</a>
  <a href="./projects.html" class="hover:text-[#EAEAEA] transition-colors">Projects</a>
  <a href="./music.html" class="hover:text-[#EAEAEA] transition-colors">Music</a>
  <a href="./about.html" class="hover:text-[#EAEAEA] transition-colors">About</a>
+ <a href="./services.html" class="hover:text-[#EAEAEA] transition-colors">Services</a>
  <a href="./sitemap.xml" class="hover:text-[#EAEAEA] transition-colors">Sitemap</a>
  </nav>
  </div>
@@ -792,7 +812,7 @@
  {
  title: "THE LAST NEW GENRE",
  date: "JUL 21, 2026",
- category: "CULTURE",
+ category: "CULTURE & TECH",
  desc: "SoundCloud rap in 2019, COVID disruptions, and why algorithmic curation nudges cultural taste toward the familiar.",
  url: "./lastnewgenre.html",
  readTime: "11 MIN READ",
@@ -886,6 +906,15 @@
  desc: "An in-depth report on C2PA, content credentials, and the future of music provenance and chain of custody.",
  url: "./c2pa-music-provenance.html",
  readTime: "13 MIN READ",
+ isNew: false
+ },
+ {
+ title: "HYBRID PRODUCTION STANDARD (HPS-1.0)",
+ date: "MAR 24, 2026",
+ category: "SPECIFICATION",
+ desc: "The definitive classification and verification standard for AI and human music production under EU AI Act Article 50.",
+ url: "./hybridproductionstandard.html",
+ readTime: "18 MIN READ",
  isNew: false
  }
  ];

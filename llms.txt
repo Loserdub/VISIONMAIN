@@ -53,6 +53,10 @@
 - **Summary**: Personal about page detailing Justin Ray's philosophy, community building (r/hybridproduction), engineering credentials, tools (MIXR Studio, VOID), and music aliases (loserdub, VISION).
 - **Key Concepts**: Justin Ray, JRAY, loserdub, VISION, r/hybridproduction, MIXR Studio, VOID, Google MusicLM, Suno.
 
+### [Field Notes & Research Archive](https://trustnodelogic.com/field-notes.html)
+- **Summary**: Central category hub and archive indexing all 18 research papers, technical analyses, prompt engineering guides, and streaming economic reports.
+- **Key Concepts**: Field Notes, Hybrid AI Music Production, HPS-1.0, C2PA Provenance, Multi-Agent DAW Systems.
+
 ---
 
 ## Analytical Field Notes & Technical Research

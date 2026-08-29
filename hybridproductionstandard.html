@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -67,7 +67,7 @@
           "@type": "ListItem",
           "position": 2,
           "name": "Field Notes",
-          "item": "https://trustnodelogic.com/what-is-hybrid.html"
+          "item": "https://trustnodelogic.com/field-notes.html"
         },
         {
           "@type": "ListItem",
@@ -863,6 +863,27 @@
  transition:opacity .6s ease, transform .6s ease;
  }
  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ---------- Breadcrumb ---------- */
+  .breadcrumb {
+    max-width: var(--maxw, 860px);
+    margin: 14px auto 0;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono, monospace);
+    font-size: 11.5px;
+    color: var(--text-dim, #6b7280);
+  }
+  .breadcrumb a {
+    color: var(--text-dim, #6b7280);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .breadcrumb a:hover { color: var(--blue, #6c8dff); }
+  .breadcrumb [aria-current="page"] { color: var(--text-muted, #9ca3af); }
+  .breadcrumb span[aria-hidden] { color: var(--line, #1e2233); font-size: 13px; }
 </style>
 </head>
 <body>
@@ -909,6 +930,15 @@
 </div>
 </div>
 </header>
+
+<nav aria-label="Breadcrumb" class="breadcrumb">
+  <a href="https://trustnodelogic.com/">Home</a>
+  <span aria-hidden="true">&rsaquo;</span>
+  <a href="https://trustnodelogic.com/field-notes.html">Field Notes</a>
+  <span aria-hidden="true">&rsaquo;</span>
+  <span aria-current="page">HPS-1.0 Specification</span>
+</nav>
+
 <main id="main-content">
 <section class="bordered reveal" id="perspectives">
 <div class="wrap-wide">

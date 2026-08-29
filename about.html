@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -884,6 +884,33 @@
     .btn, .card, .persona, .meta-item, .tech-chip { transition: none; transform: none !important; }
     .brand-dot, .card .live-pill .radar { animation: none; }
   }
+
+  /* ---------- Breadcrumb ---------- */
+  .breadcrumb {
+    max-width: var(--maxw);
+    margin: 14px auto 0;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--text-dim);
+  }
+  .breadcrumb a {
+    color: var(--text-dim);
+    transition: color 0.15s;
+  }
+  .breadcrumb a:hover {
+    color: var(--blue);
+  }
+  .breadcrumb [aria-current="page"] {
+    color: var(--text-muted);
+  }
+  .breadcrumb span[aria-hidden] {
+    color: var(--line);
+    font-size: 13px;
+  }
 </style>
 </head>
 <body>
@@ -896,7 +923,9 @@
       <span>TNL // JUSTIN RAY</span>
     </a>
     <ul class="nav-links">
-      <li><a href="https://trustnodelogic.com/">Home</a></li>
+      <li><a href="https://trustnodelogic.com/">Home</a>
+      <a href="https://trustnodelogic.com/field-notes.html">Field Notes</a></li>
+      <li><a href="https://trustnodelogic.com/field-notes.html">Field Notes</a></li>
       <li><a href="https://trustnodelogic.com/music.html">Music</a></li>
       <li><a href="https://trustnodelogic.com/projects.html">Tools &amp; Projects</a></li>
       <li><a href="https://trustnodelogic.com/about.html" class="active">About</a></li>
@@ -909,6 +938,13 @@
     </a>
   </nav>
 </header>
+
+<nav aria-label="Breadcrumb" class="breadcrumb">
+  <a href="https://trustnodelogic.com/">Home</a>
+      <a href="https://trustnodelogic.com/field-notes.html">Field Notes</a>
+  <span aria-hidden="true">›</span>
+  <span aria-current="page">About</span>
+</nav>
 
 <main>
   <!-- Hero Section -->
@@ -1228,6 +1264,7 @@
       
       <div class="site-links">
         <a href="https://trustnodelogic.com/">Home</a>
+      <a href="https://trustnodelogic.com/field-notes.html">Field Notes</a>
         <a href="https://trustnodelogic.com/what-is-hybrid.html">What Is Hybrid</a>
         <a href="https://trustnodelogic.com/projects.html">Projects</a>
         <a href="https://trustnodelogic.com/music.html">Music</a>

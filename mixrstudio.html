@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -1401,7 +1401,28 @@
  box-shadow: 0 0 10px rgba(200, 240, 74, 0.4);
  opacity: 1 !important;
  }
- </style>
+ 
+  /* ---------- Breadcrumb ---------- */
+  .breadcrumb {
+    max-width: var(--maxw, 860px);
+    margin: 14px auto 0;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono, monospace);
+    font-size: 11.5px;
+    color: var(--text-dim, #6b7280);
+  }
+  .breadcrumb a {
+    color: var(--text-dim, #6b7280);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .breadcrumb a:hover { color: var(--blue, #6c8dff); }
+  .breadcrumb [aria-current="page"] { color: var(--text-muted, #9ca3af); }
+  .breadcrumb span[aria-hidden] { color: var(--line, #1e2233); font-size: 13px; }
+</style>
 <link href="/sitemap.xml" rel="sitemap" type="application/xml"/>
 <link href="/llms.txt" rel="alternate" title="AI LLM Knowledge Graph Manifest" type="text/plain"/>
 </head>
@@ -1419,6 +1440,15 @@
 </div>
 <div class="header-sub">ai song segment mixer v1.2</div>
 </header>
+
+<nav aria-label="Breadcrumb" class="breadcrumb">
+  <a href="https://trustnodelogic.com/">Home</a>
+  <span aria-hidden="true">&rsaquo;</span>
+  <a href="https://trustnodelogic.com/projects.html">Projects</a>
+  <span aria-hidden="true">&rsaquo;</span>
+  <span aria-current="page">MIXR Studio</span>
+</nav>
+
 <main>
 <!-- upload -->
 <div class="upload-zone" id="upload-zone" onclick="document.getElementById('file-input').click()">
