@@ -135,7 +135,6 @@ Every page must conclude with a validated, error-free JSON-LD `@graph` block lin
       "sameAs": [
         "https://musicbrainz.org/artist/882fdb9b-8655-45dd-8e24-a59cd750d053",
         "https://soundcloud.com/visiontracks",
-        "https://soundcloud.com/loserdub",
         "https://www.youtube.com/@loserdub",
         "https://www.linkedin.com/in/jray-me/",
         "https://x.com/TheInnerVision",
