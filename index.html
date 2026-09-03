@@ -330,6 +330,106 @@
  <link rel="prefetch" href="./may2026tools.html">
  <link rel="prefetch" href="./artistfinder.html">
  <link rel="alternate" type="text/plain" href="/llms.txt" title="AI LLM Knowledge Graph Manifest">
+
+ <style>
+    /* Audio Equalizer Micro-Animation */
+    @keyframes eqPulse1 { 0%, 100% { height: 4px; } 50% { height: 18px; } }
+    @keyframes eqPulse2 { 0%, 100% { height: 16px; } 50% { height: 6px; } }
+    @keyframes eqPulse3 { 0%, 100% { height: 8px; } 50% { height: 20px; } }
+    @keyframes eqPulse4 { 0%, 100% { height: 19px; } 50% { height: 5px; } }
+    @keyframes eqPulse5 { 0%, 100% { height: 6px; } 50% { height: 15px; } }
+
+    .eq-bar-1 { animation: eqPulse1 1.1s ease-in-out infinite; }
+    .eq-bar-2 { animation: eqPulse2 0.85s ease-in-out infinite; }
+    .eq-bar-3 { animation: eqPulse3 1.3s ease-in-out infinite; }
+    .eq-bar-4 { animation: eqPulse4 0.95s ease-in-out infinite; }
+    .eq-bar-5 { animation: eqPulse5 1.15s ease-in-out infinite; }
+
+    /* Bespoke Portal Cards: Unique Visual Identity per Section */
+    .portal-card-music {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(18, 20, 23, 0.98) 55%, rgba(6, 78, 59, 0.15) 100%);
+      border: 1px solid rgba(16, 185, 129, 0.28);
+      position: relative;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .portal-card-music:hover {
+      border-color: rgba(16, 185, 129, 0.8);
+      box-shadow: 0 0 35px rgba(16, 185, 129, 0.22), inset 0 0 25px rgba(16, 185, 129, 0.06);
+      transform: translateY(-2px);
+    }
+
+    .portal-card-hps {
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.07) 0%, rgba(18, 20, 23, 0.98) 60%, rgba(14, 165, 233, 0.1) 100%);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      position: relative;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .portal-card-hps:hover {
+      border-color: rgba(0, 240, 255, 0.85);
+      box-shadow: 0 0 35px rgba(0, 240, 255, 0.2), inset 0 0 20px rgba(0, 240, 255, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .portal-card-tools {
+      background: linear-gradient(135deg, rgba(255, 159, 28, 0.08) 0%, #000000 70%);
+      border: 1px solid rgba(255, 159, 28, 0.28);
+      position: relative;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .portal-card-tools:hover {
+      border-color: rgba(255, 159, 28, 0.85);
+      box-shadow: 0 0 35px rgba(255, 159, 28, 0.22);
+      transform: translateY(-2px);
+    }
+
+    .portal-card-methodology {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.08) 0%, rgba(18, 20, 23, 0.98) 65%, rgba(255, 255, 255, 0.03) 100%);
+      border: 1px solid rgba(168, 85, 247, 0.25);
+      position: relative;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .portal-card-methodology:hover {
+      border-color: rgba(168, 85, 247, 0.75);
+      box-shadow: 0 0 35px rgba(168, 85, 247, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .portal-card-dossier {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(18, 20, 23, 0.98) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      position: relative;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .portal-card-dossier:hover {
+      border-color: rgba(255, 255, 255, 0.55);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .portal-card-services {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(18, 20, 23, 0.98) 100%);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      position: relative;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .portal-card-services:hover {
+      border-color: rgba(245, 158, 11, 0.75);
+      box-shadow: 0 0 30px rgba(245, 158, 11, 0.18);
+      transform: translateY(-2px);
+    }
+
+    .portal-card-contact {
+      background: linear-gradient(135deg, rgba(148, 163, 184, 0.06) 0%, rgba(18, 20, 23, 0.98) 100%);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      position: relative;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .portal-card-contact:hover {
+      border-color: rgba(148, 163, 184, 0.65);
+      box-shadow: 0 0 30px rgba(148, 163, 184, 0.15);
+      transform: translateY(-2px);
+    }
+  </style>
 </head>
 <body class="bg-[#0B0C0E] text-[#EAEAEA] antialiased overflow-x-hidden dot-matrix-bg selection:bg-[#FF9F1C] selection:text-black font-sans min-h-screen flex flex-col">
  
@@ -438,240 +538,6 @@
  </h1>
 
  <p class="mt-8 text-base sm:text-xl font-light text-[#A1A1AA] max-w-3xl leading-relaxed">
- Music doesn't have to be purely human or purely machine. I use AI the same way I'd use a synthesizer - to generate raw material - then shape it by hand. The result sounds like neither, and that's the point.
- </p>
-
-
- <!-- Action Matrix: 3 High-Voltage Tech Blocks -->
- <div class="w-full max-w-4xl mt-12 flex flex-col gap-4">
- 
- <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
- 
- <!-- MIXR Studio Block -->
- <a href="./mixrstudio.html" class="tech-card p-6 flex flex-col justify-between text-left group">
- <div class="flex items-center justify-between mb-4">
- <span class="tech-tag tech-tag-amber">FREE TOOL</span>
- <span class="text-[10px] font-mono text-[#71717A] group-hover:text-[#FF9F1C] transition-colors">LAUNCH →</span>
- </div>
- <div>
- <h2 class="text-lg font-bold font-mono text-[#EAEAEA] uppercase tracking-wide group-hover:text-[#FF9F1C] transition-colors">MIXR STUDIO</h2>
- <p class="text-xs text-[#71717A] mt-1">Free browser-based audio mastering suite &amp; harmonic visualizer.</p>
- </div>
- </a>
-
- <!-- Trust Node Logic Web App Block -->
- <a href="https://trustnodelogic.web.app" target="_blank" rel="noopener noreferrer" class="tech-card p-6 flex flex-col justify-between text-left group">
- <div class="flex items-center justify-between mb-4">
- <span class="tech-tag tech-tag-amber">LIVE WEB APP</span>
- <span class="text-[10px] font-mono text-[#71717A] group-hover:text-[#FF9F1C] transition-colors">LAUNCH ↗</span>
- </div>
- <div>
- <h2 class="text-lg font-bold font-mono text-[#EAEAEA] uppercase tracking-wide group-hover:text-[#FF9F1C] transition-colors">TRUST NODE LOGIC</h2>
- <p class="text-xs text-[#71717A] mt-1">DAW Attestation Engine &amp; HPS-1.0 cryptographic provenance suite.</p>
- </div>
- </a>
-
- </div>
-
-
-
- </div>
-
- </section>
-
- <!-- SECTION 2: Graphing Line Section Divider -->
- <div class="w-full max-w-5xl mx-auto px-6">
- <div class="graph-accent-line"></div>
- </div>
-
- <!-- SECTION 3: The Hybrid Manifesto Pull-Quote Block -->
- <section class="w-full max-w-5xl mx-auto px-6 py-16">
- <div class="bg-[#121417]/90 border border-white/10 p-8 sm:p-12 relative tech-bracket">
- 
- <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-6 border-b border-white/[0.08] pb-3">
- <span class="text-[#FF9F1C] tracking-[0.18em] uppercase font-semibold">From the manifesto</span>
- <span> - Manifesto Core</span>
- </div>
-
- <blockquote class="text-2xl sm:text-3xl md:text-4xl font-light leading-snug text-[#EAEAEA] pl-4 sm:pl-6 border-l-2 border-[#FF9F1C]">
- "While people argue over black or white, human versus machine, or all or nothing, the real creative work happens in the <span class="text-[#FF9F1C] font-mono font-semibold">grey</span>. Hybrid production is about finding the soul inside the algorithm."
- </blockquote>
-
- <p class="mt-6 text-sm sm:text-base text-[#A1A1AA] leading-relaxed max-w-3xl">
- Hybrid production isn't about letting AI finish the track for you. It's about treating generative models as a starting point - seeding raw textures and ideas, then shaping them by hand with live instruments, analog signal chains, and real studio engineering.
- </p>
-
- <div class="mt-8 pt-4 border-t border-white/[0.08] flex items-center justify-between">
- <a href="./what-is-hybrid.html" class="inline-flex items-center gap-3 px-6 py-3 bg-[#0B0C0E] border border-white/20 hover:border-[#FF9F1C] text-xs font-mono tracking-widest text-[#EAEAEA] hover:text-[#FF9F1C] transition-all">
- <span>Read the full manifesto</span>
- <span>→</span>
- </a>
- <span class="text-[10px] font-mono text-[#71717A] hidden sm:inline">HPS-1.0 SPEC</span>
- </div>
-
- </div>
-
- <!-- HPS-1.0 Specification -->
- <a href="./hybridproductionstandard.html" class="tech-card mt-6 p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-left group border-white/20">
- <div class="flex items-center gap-3">
- <span class="tech-tag tech-tag-amber">Specification</span>
- <div>
- <h2 class="text-sm sm:text-base font-bold font-mono text-[#EAEAEA] uppercase tracking-wider group-hover:text-[#FF9F1C] transition-colors">
- Hybrid Production Standard (HPS-1.0)
- </h2>
- <span class="text-[11px] font-mono text-[#71717A]">A framework for classifying how much of a track is AI-generated · 5-axis · DDEX ERN 4.3</span>
- </div>
- </div>
- <span class="text-xs font-mono text-[#FF9F1C] group-hover:translate-x-1 transition-transform self-end sm:self-center">
- Read the spec →
- </span>
- </a>
-
- </section>
-
- <!-- Standout Field Notes Callout Banner -->
- <section class="w-full max-w-5xl mx-auto px-6 py-14">
- <div class="tech-card p-8 sm:p-12 border-[#FF9F1C]/40 bg-gradient-to-br from-[#121417] via-[#0E1013] to-[#141824] relative overflow-hidden group">
- <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-[#FF9F1C]/5 rounded-full blur-3xl pointer-events-none group-hover:bg-[#FF9F1C]/10 transition-colors"></div>
- <div class="flex flex-col md:flex-row md:items-center justify-between gap-8 relative z-10">
- <div class="max-w-2xl">
- <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#0B0C0E] border border-white/10 text-[10px] font-mono tracking-[0.2em] text-[#FF9F1C] uppercase mb-4">
- <span class="w-1.5 h-1.5 bg-[#FF9F1C] animate-terminal-blink"></span>
- <span>RESEARCH ARCHIVE // 18 FIELD NOTES</span>
- </div>
- <h2 class="text-2xl sm:text-4xl font-bold uppercase tracking-tight text-[#EAEAEA] mb-3 group-hover:text-[#FF9F1C] transition-colors">
- FIELD NOTES &amp; RESEARCH ARCHIVE
- </h2>
- <p class="text-sm sm:text-base text-[#A1A1AA] font-light leading-relaxed">
- In-depth technical investigations, HPS-1.0 verification standards, prompt diffusion physics, C2PA cryptographic provenance, and music streaming economics.
- </p>
- </div>
- <a href="./field-notes.html" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#FF9F1C] hover:bg-[#FFB042] text-black font-mono font-bold text-xs tracking-widest uppercase transition-all shadow-[0_0_25px_rgba(255,159,28,0.3)] hover:shadow-[0_0_35px_rgba(255,159,28,0.55)] whitespace-nowrap self-start md:self-center">
- <span>EXPLORE ALL 18 FIELD NOTES</span>
- <span>→</span>
- </a>
- </div>
- </div>
- </section>
-
- <!-- Section Divider -->
- <div class="w-full max-w-5xl mx-auto px-6">
- <div class="graph-accent-line"></div>
- </div>
-
- <!-- Explore -->
- <section class="w-full max-w-5xl mx-auto px-6 py-16">
- 
- <div class="mb-10 flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-white/10 pb-4">
- <div>
- <span class="text-[10px] font-mono tracking-[0.25em] text-[#FF9F1C] uppercase block mb-1">Everything here</span>
- <h2 class="text-2xl sm:text-3xl font-bold uppercase tracking-tight text-[#EAEAEA]">Explore</h2>
- </div>
- <span class="text-[11px] font-mono text-[#71717A]">6 sections</span>
- </div>
-
- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-
- <a href="./music.html" class="tech-card p-6 flex flex-col justify-between group">
- <div>
- <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-4">
- <span class="tech-tag">Music</span>
- </div>
- <h3 class="text-lg font-bold font-mono text-[#EAEAEA] uppercase tracking-wider mb-2 group-hover:text-[#FF9F1C] transition-colors">Discography</h3>
- <p class="text-xs text-[#71717A] font-light leading-relaxed mb-6">
- Original releases and sound experiments built with hybrid workflows - from ambient textures to full productions.
- </p>
- </div>
- <div class="text-[10px] font-mono text-[#71717A] border-t border-white/[0.08] pt-3 flex items-center justify-between">
- <span>View releases</span>
- <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">→</span>
- </div>
- </a>
-
- <a href="./projects.html" class="tech-card p-6 flex flex-col justify-between group">
- <div>
- <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-4">
- <span class="tech-tag">Tools</span>
- </div>
- <h3 class="text-lg font-bold font-mono text-[#EAEAEA] uppercase tracking-wider mb-2 group-hover:text-[#FF9F1C] transition-colors">Projects &amp; Tools</h3>
- <p class="text-xs text-[#71717A] font-light leading-relaxed mb-6">
- Free browser tools, audio analyzers, and DSP experiments. All open, no signup.
- </p>
- </div>
- <div class="text-[10px] font-mono text-[#71717A] border-t border-white/[0.08] pt-3 flex items-center justify-between">
- <span>Open tools</span>
- <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">→</span>
- </div>
- </a>
-
- <a href="./about.html" class="tech-card p-6 flex flex-col justify-between group">
- <div>
- <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-4">
- <span class="tech-tag">About</span>
- </div>
- <h3 class="text-lg font-bold font-mono text-[#EAEAEA] uppercase tracking-wider mb-2 group-hover:text-[#FF9F1C] transition-colors">About</h3>
- <p class="text-xs text-[#71717A] font-light leading-relaxed mb-6">
- Background, songwriting origins, music aliases, and the thinking behind blending code with studio engineering.
- </p>
- </div>
- <div class="text-[10px] font-mono text-[#71717A] border-t border-white/[0.08] pt-3 flex items-center justify-between">
- <span>Read about</span>
- <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">→</span>
- </div>
- </a>
-
- <a href="./what-is-hybrid.html" class="tech-card p-6 flex flex-col justify-between group">
- <div>
- <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-4">
- <span class="tech-tag">Methodology</span>
- </div>
- <h3 class="text-lg font-bold font-mono text-[#EAEAEA] uppercase tracking-wider mb-2 group-hover:text-[#FF9F1C] transition-colors">What is Hybrid</h3>
- <p class="text-xs text-[#71717A] font-light leading-relaxed mb-6">
- The full breakdown: spectral splitting, the 5-axis standard, and how hybrid production actually works in practice.
- </p>
- </div>
- <div class="text-[10px] font-mono text-[#71717A] border-t border-white/[0.08] pt-3 flex items-center justify-between">
- <span>Read more</span>
- <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">→</span>
- </div>
- </a>
-
- <a href="./services.html" class="tech-card p-6 flex flex-col justify-between group">
- <div>
- <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-4">
- <span class="tech-tag">Services</span>
- </div>
- <h3 class="text-lg font-bold font-mono text-[#EAEAEA] uppercase tracking-wider mb-2 group-hover:text-[#FF9F1C] transition-colors">Services</h3>
- <p class="text-xs text-[#71717A] font-light leading-relaxed mb-6">
- Mixing, hybrid mastering, and consulting for producers who want a human set of ears on their AI-assisted work.
- </p>
- </div>
- <div class="text-[10px] font-mono text-[#71717A] border-t border-white/[0.08] pt-3 flex items-center justify-between">
- <span>View rates</span>
- <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">→</span>
- </div>
- </a>
-
- <a href="./contact.html" class="tech-card p-6 flex flex-col justify-between group">
- <div>
- <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-4">
- <span class="tech-tag">Contact</span>
- </div>
- <h3 class="text-lg font-bold font-mono text-[#EAEAEA] uppercase tracking-wider mb-2 group-hover:text-[#FF9F1C] transition-colors">Get in Touch</h3>
- <p class="text-xs text-[#71717A] font-light leading-relaxed mb-6">
- Got a project, a question, or just want to talk shop? I read everything personally.
- </p>
- </div>
- <div class="text-[10px] font-mono text-[#71717A] border-t border-white/[0.08] pt-3 flex items-center justify-between">
- <span>Say hello</span>
- <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">→</span>
- </div>
- </a>
-
- </div>
- </section>
-
- <!-- Section Divider -->
  <div class="w-full max-w-5xl mx-auto px-6">
  <div class="graph-accent-line"></div>
  </div>
