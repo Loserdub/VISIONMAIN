@@ -384,23 +384,7 @@
  <!-- Aurora / Particle Canvas -->
  <canvas id="aurora-canvas"></canvas>
  
- <div id="root" class="relative z-10 flex flex-col flex-grow">
- 
- <!-- Brutalist Header -->
- <header class="sticky top-0 left-0 right-0 z-50 bg-[#0B0C0E]/95 backdrop-blur-md border-b border-white/10 py-3.5">
- <div class="container mx-auto px-6 flex justify-between items-center relative">
- 
- <a href="./index.html" class="flex items-center gap-3 group h-9 overflow-hidden w-[220px]" aria-label="Home">
- <div class="w-5 h-5 border border-[#FF9F1C] bg-[#FF9F1C]/10 flex items-center justify-center flex-shrink-0 text-[#FF9F1C] font-mono text-xs font-bold">
- <span>▪</span>
-</style>
-</head>
-<body class="bg-[#0B0C0E] text-[#EAEAEA] antialiased overflow-x-hidden selection:bg-[#FF9F1C] selection:text-black font-sans min-h-screen flex flex-col">
-
- <!-- Aurora / Particle Canvas -->
- <canvas id="aurora-canvas"></canvas>
- 
- <div id="root" class="relative z-10 flex flex-col flex-grow">
+ <div id="root" class="relative z-10 flex flex-col flex-grow min-h-screen">
  
  <!-- Brutalist Header -->
  <header class="sticky top-0 left-0 right-0 z-50 bg-[#0B0C0E]/95 backdrop-blur-md border-b border-white/10 py-3.5">
@@ -415,7 +399,7 @@
  TRUSTNODELOGIC
  </span>
  <span class="absolute inset-0 flex items-center text-xs font-mono tracking-[0.22em] uppercase font-bold text-[#FF9F1C] transition-transform duration-300 transform translate-y-full group-hover:translate-y-0">
- JRAY.ME // RELAY
+ JRAY.ME // CONTACT
  </span>
  </div>
  </a>
@@ -456,7 +440,8 @@
  </div>
  </header>
 
- <main class="flex-grow w-full pt-12 pb-20 flex flex-col" id="main-content">
+ <!-- Main Content -->
+ <main class="flex-grow w-full pt-12 pb-20 flex flex-col justify-center" id="main-content">
  <section class="py-12 px-6 relative z-10 max-w-6xl mx-auto w-full">
  
  <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
@@ -556,9 +541,8 @@
 
  </div>
 
- </section>
  <!-- Contact Conclusion Anchor -->
- <div class="mt-12 text-center text-xs font-mono text-[#71717A]">
+ <div class="mt-16 text-center text-xs font-mono text-[#71717A] border-t border-white/10 pt-10">
  <span>Direct inquiries to <strong class="text-[#EAEAEA]">Justin Ray</strong> for Creative Consultation and GEO Strategy.</span>
  </div>
  </section>
@@ -572,17 +556,19 @@
  </div>
  <nav class="flex flex-wrap justify-center gap-6 text-xs font-mono tracking-widest uppercase text-[#71717A]" aria-label="Footer navigation">
  <a href="./index.html" class="hover:text-[#EAEAEA] transition-colors">Home</a>
+ <a href="./field-notes.html" class="hover:text-[#EAEAEA] transition-colors">Field Notes</a>
  <a href="./what-is-hybrid.html" class="hover:text-[#EAEAEA] transition-colors">What Is Hybrid</a>
  <a href="./projects.html" class="hover:text-[#EAEAEA] transition-colors">Projects</a>
  <a href="./music.html" class="hover:text-[#EAEAEA] transition-colors">Music</a>
  <a href="./about.html" class="hover:text-[#EAEAEA] transition-colors">About</a>
+ <a href="./services.html" class="hover:text-[#EAEAEA] transition-colors">Services</a>
+ <a href="./contact.html" class="text-[#FF9F1C] font-semibold">Contact</a>
  <a href="./sitemap.xml" class="hover:text-[#EAEAEA] transition-colors">Sitemap</a>
  </nav>
  </div>
  </footer>
 
  </div>
- <script src="./assets/reader.js" defer></script>
 
  <!-- ── Aurora Waveform + Particle Canvas ── -->
  <script>

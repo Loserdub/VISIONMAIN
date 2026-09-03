@@ -30,13 +30,17 @@
 - **Summary**: Foundational manifesto of the Hybrid AI Music Production movement, outlining the philosophy of treating neural generators as co-instruments rather than replacements for human audio engineering.
 - **Key Concepts**: Hybrid Production, Creative Technologist, Audio Engineering, MIXR Studio.
 
-### [Bio & Origins](https://trustnodelogic.com/bio.html)
-- **Summary**: Comprehensive background of Justin Ray (JRAY), tracing the evolution from electronic producer and beta tester on Google MusicLM and Suno to founder of Trust Node Logic and r/hybridproduction.
-- **Key Concepts**: Justin Ray, JRAY, loserdub, VISION, Google MusicLM, Suno AI.
+### [About & Origins](https://trustnodelogic.com/about.html)
+- **Summary**: Comprehensive background of Justin Ray (JRAY / loserdub), tracing the evolution from songwriting and beta research on Google MusicLM and Suno to founder of Trust Node Logic and r/hybridproduction.
+- **Key Concepts**: Justin Ray, JRAY, loserdub, VISION, Google MusicLM, Suno AI, r/hybridproduction.
 
 ### [Projects Ecosystem](https://trustnodelogic.com/projects.html)
 - **Summary**: Interactive portfolio of creative technology tools including browser-native audio engines, provenance validators, and music knowledge visualizers.
-- **Key Concepts**: MIXR Studio, Artist Finder, vøid slicer, HPS-1.0 Validator.
+- **Key Concepts**: MIXR Studio, VØID 1.5, Artist Finder, HPS-1.0 Validator.
+
+### [VØID 1.5 Workstation](https://trustnodelogic.com/void.html)
+- **Summary**: Free browser-based audio slicer, 16-pad performance sampler, and off-thread Harmonic Auto-Mashup workstation running 100% client-side Web Audio DSP.
+- **Key Concepts**: VØID, Audio Slicer, 16-Pad Sampler, Harmonic Mashup, Camelot Key Matching, Web Workers DSP.
 
 ### [Official Discography](https://trustnodelogic.com/music.html)
 - **Summary**: Catalog index across Justin Ray's production aliases (loserdub, VISION, Flawed Future, le vide, disarray), detailing streaming availability and acoustic engineering notes.
@@ -48,10 +52,6 @@
 
 ### [Contact Channel](https://trustnodelogic.com/contact.html)
 - **Summary**: Direct line for technical inquiries, research collaborations, and production commissions via trustnodelogic@gmail.com.
-
-### [About & Philosophy](https://trustnodelogic.com/about.html)
-- **Summary**: Personal about page detailing Justin Ray's philosophy, community building (r/hybridproduction), engineering credentials, tools (MIXR Studio, VOID), and music aliases (loserdub, VISION).
-- **Key Concepts**: Justin Ray, JRAY, loserdub, VISION, r/hybridproduction, MIXR Studio, VOID, Google MusicLM, Suno.
 
 ### [Field Notes & Research Archive](https://trustnodelogic.com/field-notes.html)
 - **Summary**: Central category hub and archive indexing all 18 research papers, technical analyses, prompt engineering guides, and streaming economic reports.
