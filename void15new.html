@@ -1263,7 +1263,7 @@ function runMLAnalysis(audioBuffer, onProgress) {
 
 <header>
   <div style="display:flex;align-items:center;gap:18px;">
-    <a class="logo" href="./projects.html">VØID <span>1.5</span></a>
+    <h1 style="margin:0;font-size:inherit;font-weight:inherit;line-height:inherit;display:inline-flex;align-items:center;"><a class="logo" href="./projects.html">VØID <span>1.5</span></a></h1>
     <nav class="breadcrumb-nav" aria-label="Breadcrumb">
       <a href="./index.html">Home</a>
       <span aria-hidden="true">/</span>
@@ -1297,7 +1297,7 @@ function runMLAnalysis(audioBuffer, onProgress) {
 <div class="panel active" id="panel-slicer">
   <div class="left">
 
-    <div class="section-title">1 — drop audio files</div>
+    <div class="section-title">1 · drop audio files</div>
     <div class="dropzone" id="dropzone" onclick="document.getElementById('file-input').click()">
       <div class="dropzone-icon">⟁</div>
       <h3>Drop audio files here</h3>
@@ -1306,7 +1306,7 @@ function runMLAnalysis(audioBuffer, onProgress) {
     </div>
 
     <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
-      <div class="section-title" style="margin:0">2 — slice granularity & settings</div>
+      <div class="section-title" style="margin:0">2 · slice granularity & settings</div>
       <div style="display:flex; align-items:center; gap:8px;">
         <span class="setting-label" style="font-size:10px;">Loudness:</span>
         <select class="setting-select" id="normalize-select" style="padding:4px 8px; font-size:10px; height:auto;">
@@ -1369,7 +1369,7 @@ function runMLAnalysis(audioBuffer, onProgress) {
     <!-- SLICE LIBRARY -->
     <div id="stage-2" style="display:none">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-        <div class="section-title" style="margin:0">3 — slice library (<span id="slice-count">0</span>)</div>
+        <div class="section-title" style="margin:0">3 · slice library (<span id="slice-count">0</span>)</div>
         <div class="btn-row">
           <button class="btn btn-ghost" style="padding:6px 12px;font-size:11px" id="zip-btn" onclick="downloadAllZip()">
             <span id="zip-btn-inner">Download all ZIP</span>
@@ -1393,7 +1393,7 @@ function runMLAnalysis(audioBuffer, onProgress) {
 
     <!-- RIGHT: LOCAL REMIXER -->
   <div class="right" id="right-panel">
-    <div class="section-title">4 — local remixer</div>
+    <div class="section-title">4 · local remixer</div>
     <div>
       <div class="setting-row">
         <span class="setting-label">Structure</span>
@@ -1484,7 +1484,7 @@ function runMLAnalysis(audioBuffer, onProgress) {
         <div id="pad-detail" style="font-size:12px;color:var(--muted)">Click a pad to see details</div>
       </div>
       <div class="pad-info" style="flex:1">
-        <h3>Selected Slices — drag to pad</h3>
+        <h3>Selected Slices · drag to pad</h3>
         <div class="slice-drop-list" id="slice-drop-list">
           <p style="font-size:11px;color:var(--muted)">Build your pad bank in the Slicer tab first</p>
         </div>
@@ -1527,13 +1527,13 @@ function runMLAnalysis(audioBuffer, onProgress) {
   <div id="mashup-content" style="display:none;" class="pad-layout">
     <div style="display:flex; flex-direction:column; gap:20px;">
       <div class="output-box" style="background:var(--surface);">
-        <h3>1 — Select Sources & Mix</h3>
+        <h3>1 · Select Sources & Mix</h3>
         <p style="font-size:10px; color:var(--muted); margin-top:4px; font-family:var(--mono);">Adjust weight (how dominant) and volume per source</p>
         <div id="mashup-sources-list" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:10px; margin-top:10px;"></div>
       </div>
 
       <div class="output-box" style="background:var(--surface);">
-        <h3>2 — Mashup Settings</h3>
+        <h3>2 · Mashup Settings</h3>
         <div style="display:flex; flex-direction:column; gap:12px; margin-top:10px;">
           <div class="setting-row">
             <span class="setting-label">Target length</span>
@@ -2103,7 +2103,7 @@ function renderFileItem(item) {
   el.className = 'file-item'; el.id = 'file-' + item.id;
   
   // if not sliced yet, we don't have duration.
-  let metaHtml = '—';
+  let metaHtml = '-';
   if (item.duration && item.bpm) {
     metaHtml = `${Math.round(item.duration)}s · ${item.bpm} BPM <button class="bpm-edit" onclick="updateBPM('${item.id}')">edit</button>`;
   }
@@ -2315,7 +2315,7 @@ async function sliceAll() {
       document.getElementById('stat-' + item.id).textContent = 'error: ' + errMsg;
       document.getElementById('stat-' + item.id).style.color = 'var(--accent2)';
       document.getElementById('prog-' + item.id).style.width = '0%';
-      setStatus('error on ' + item.file.name.replace(/\.[^.]+$/,'') + ' — check console');
+      setStatus('error on ' + item.file.name.replace(/\.[^.]+$/,'') + ' : check console');
     }
   }
 
@@ -3367,7 +3367,7 @@ function selectPadInspector(index) {
 
   detailEl.innerHTML = `
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
-      <strong style="color:var(--text);font-size:11px">PAD ${keyName} — ${slice.source}</strong>
+      <strong style="color:var(--text);font-size:11px">PAD ${keyName} : ${slice.source}</strong>
       <span style="font-size:10px;color:var(--accent);font-family:var(--mono)">${slice.type}</span>
     </div>
     <div class="setting-row" style="margin-bottom:4px">

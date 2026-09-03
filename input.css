@@ -234,3 +234,7 @@
 .animate-spin-slow {
   animation: spinSlow 12s linear infinite;
 }
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}
