@@ -954,7 +954,7 @@ function runMLAnalysis(audioBuffer, onProgress) {
   /* SLICER PANEL */
   #panel-slicer { min-height: calc(100vh - 65px); }
   .left { flex: 1; padding: 36px 40px; border-right: 1px solid var(--border); }
-  .right { width: 380px; padding: 36px; background: var(--surface); display: flex; flex-direction: column; gap: 22px; position: sticky; top: 67px; height: calc(100vh - 67px); overflow-y: auto; }
+  .right { width: 420px; padding: 24px 20px; background: var(--surface); display: flex; flex-direction: column; gap: 16px; position: sticky; top: 67px; height: calc(100vh - 67px); overflow-y: auto; box-sizing: border-box; }
 
   .section-title { font-size: 10px; font-weight: 700; letter-spacing: .15em; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
 
@@ -1200,11 +1200,122 @@ function runMLAnalysis(audioBuffer, onProgress) {
   /* smart-only sections hide when smart mode is off */
   .smart-only { transition: opacity .3s, max-height .4s; overflow: hidden; max-height: 600px; opacity: 1; }
   .smart-off .smart-only { opacity: 0; max-height: 0; pointer-events: none; }
-  /* local remixer always visible — smart mode only hides AI-specific fields */
+  /* ─── SELECTED CLIP EDITOR & PAD STAGING (SLICER TAB) ─── */
+  .clip-editor-wrap {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+    padding: 16px 14px; display: flex; flex-direction: column; gap: 12px; position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  }
+  .clip-status-pill {
+    font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: .08em;
+    padding: 2px 7px; border-radius: 3px; background: rgba(66,245,164,0.1);
+    color: var(--accent); border: 1px solid rgba(66,245,164,0.25);
+  }
+  .clip-editor-empty {
+    padding: 26px 14px; text-align: center; border: 1.5px dashed var(--border);
+    border-radius: 6px; background: rgba(0,0,0,0.25);
+  }
+  .clip-editor-empty .empty-icon { font-size: 24px; margin-bottom: 8px; opacity: 0.6; }
+  .clip-editor-empty .empty-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+  .clip-editor-empty p { font-size: 11px; color: var(--muted); line-height: 1.5; margin: 0; }
 
-  /* local-only sections show only when smart is off */
-  .local-only { display: none; }
-  .smart-off .local-only { display: block; }
+  .clip-editor-active { display: flex; flex-direction: column; gap: 10px; }
+  .clip-meta-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+  .clip-title-wrap { flex: 1; min-width: 0; }
+  .clip-name { font-size: 12px; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .clip-source { font-size: 10px; color: var(--muted); font-family: var(--mono); margin-top: 2px; }
+  .clip-badges { display: flex; gap: 4px; flex-shrink: 0; align-items: center; }
+
+  .clip-waveform-cont {
+    position: relative; width: 100%; height: 76px; background: #060809;
+    border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+    cursor: crosshair; user-select: none; box-shadow: inset 0 2px 8px rgba(0,0,0,0.6);
+  }
+  canvas.clip-waveform-canvas { display: block; width: 100%; height: 100%; }
+  .clip-overlay { position: absolute; top: 0; bottom: 0; background: rgba(0,0,0,0.68); pointer-events: none; }
+  .clip-overlay-start { left: 0; border-right: 1.5px solid rgba(0,240,255,0.7); }
+  .clip-overlay-end { right: 0; border-left: 1.5px solid rgba(255,159,28,0.7); }
+  .clip-marker {
+    position: absolute; top: 0; bottom: 0; width: 4px; cursor: ew-resize; z-index: 10;
+    transform: translateX(-50%);
+  }
+  .clip-marker .marker-handle {
+    position: absolute; top: 2px; left: 50%; transform: translateX(-50%);
+    font-family: var(--mono); font-size: 8px; font-weight: 900; padding: 1px 4px;
+    border-radius: 2px; box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  }
+  .clip-marker-start { background: #00F0FF; box-shadow: 0 0 10px rgba(0,240,255,0.8); }
+  .clip-marker-start .marker-handle { background: #00F0FF; color: #04080a; }
+  .clip-marker-end { background: #FF9F1C; box-shadow: 0 0 10px rgba(255,159,28,0.8); }
+  .clip-marker-end .marker-handle { background: #FF9F1C; color: #0a0602; }
+  .clip-playhead {
+    position: absolute; top: 0; bottom: 0; width: 2px; background: #42f5a4;
+    box-shadow: 0 0 8px #42f5a4; pointer-events: none; z-index: 9; transform: translateX(-50%);
+  }
+
+  .clip-time-readout {
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--mono); font-size: 9px; color: var(--muted);
+    background: var(--surface2); padding: 5px 8px; border-radius: 4px;
+    border: 1px solid var(--border);
+  }
+  .clip-time-readout strong { color: var(--text); font-weight: 700; }
+
+  .clip-pitch-box {
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 6px; padding: 8px 10px; display: flex; flex-direction: column; gap: 6px;
+  }
+  .clip-pitch-header { display: flex; justify-content: space-between; align-items: center; }
+  .clip-pitch-readout { display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 10px; }
+  .pitch-semitones {
+    font-weight: 700; color: var(--accent); background: rgba(66,245,164,0.1);
+    padding: 1px 6px; border-radius: 3px; border: 1px solid rgba(66,245,164,0.3);
+  }
+  .pitch-key-preview { color: var(--muted); font-size: 9px; }
+  .clip-pitch-controls { display: flex; align-items: center; gap: 6px; }
+  .clip-pitch-slider { flex: 1; accent-color: var(--accent); height: 4px; cursor: pointer; }
+  .btn-nudge {
+    background: var(--surface); border: 1px solid var(--border); color: var(--text);
+    font-family: var(--mono); font-size: 10px; font-weight: 700; padding: 3px 7px;
+    border-radius: 3px; cursor: pointer; transition: all .15s;
+  }
+  .btn-nudge:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-nudge.reset { color: var(--muted); }
+
+  .clip-action-bar { display: flex; flex-direction: column; gap: 6px; margin-top: 2px; }
+
+  /* Pad Staging Bay */
+  .pad-staging-bay { display: flex; flex-direction: column; gap: 8px; }
+  .staging-actions-bar { display: flex; gap: 6px; align-items: center; }
+  .staging-dropzone {
+    min-height: 130px; max-height: 260px; border: 1.5px dashed rgba(66,245,164,0.4);
+    border-radius: 8px; padding: 8px; display: flex; flex-direction: column; gap: 6px;
+    transition: all .2s; background: rgba(17,31,0,0.35); box-shadow: inset 0 0 14px rgba(66,245,164,0.06);
+    overflow-y: auto;
+  }
+  .staging-dropzone.dragover { border-color: var(--accent); background: rgba(26,46,0,0.65); box-shadow: inset 0 0 22px rgba(66,245,164,0.2); }
+  .staged-item {
+    display: flex; align-items: center; gap: 6px; padding: 6px 8px; background: var(--surface);
+    border: 1px solid var(--border); border-radius: 5px; cursor: pointer; transition: all .15s;
+    user-select: none;
+  }
+  .staged-item:hover { border-color: rgba(66,245,164,0.5); background: var(--surface2); }
+  .staged-item.active-editing { border-color: var(--accent); box-shadow: 0 0 8px rgba(66,245,164,0.25); background: #132200; }
+  .staged-index { font-family: var(--mono); font-size: 9px; font-weight: 700; color: var(--muted); width: 22px; text-align: center; }
+  .staged-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .staged-title { flex: 1; font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--text); }
+  .staged-meta { display: flex; gap: 4px; align-items: center; font-family: var(--mono); font-size: 9px; color: var(--muted); }
+  .btn-staged-action { background: none; border: none; color: var(--muted); cursor: pointer; padding: 2px 5px; font-size: 11px; border-radius: 3px; transition: color .15s; }
+  .btn-staged-action:hover { color: var(--accent); }
+  .btn-staged-action.remove:hover { color: #f5425a; }
+
+  /* Responsive layout adjustment for Slicer panel */
+  @media (max-width: 1024px) {
+    #panel-slicer { flex-direction: column; }
+    .left { border-right: none; border-bottom: 1px solid var(--border); padding: 24px 18px; }
+    .right { width: 100%; position: static; height: auto; padding: 20px 18px; }
+  }
+
   /* ─── PATTERN SEQUENCER & LOOP WORKSTATION ─── */
   .sequencer-wrap {
     background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
@@ -1554,74 +1665,150 @@ function runMLAnalysis(audioBuffer, onProgress) {
         <button class="filter-btn active" onclick="filterSlices('all',this)">All</button>
       </div>
       <div class="slice-grid" id="slice-grid"></div>
-      <div class="waveform-wrap" id="waveform-wrap" style="display:none">
-        <canvas class="waveform" id="waveform-canvas" height="56"></canvas>
-        <audio class="preview" id="preview-audio" controls></audio>
-        <div style="margin-top:10px;display:flex;gap:8px">
-          <button class="btn btn-ghost" style="flex:1;justify-content:center;font-size:11px" id="dl-selected-btn" onclick="downloadSelected()">Download slice</button>
-          <button class="btn btn-ghost" style="flex:1;justify-content:center;font-size:11px" onclick="sendToPad()">Send to pad ↗</button>
-        </div>
-      </div>
     </div>
   </div>
 
-    <!-- RIGHT: LOCAL REMIXER -->
+    <!-- RIGHT: SELECTED CLIP EDITOR & PAD STAGING -->
   <div class="right" id="right-panel">
-    <div class="section-title">4 · local remixer</div>
-    <div>
-      <div class="setting-row">
-        <span class="setting-label">Structure</span>
-        <select class="setting-select" id="local-structure">
-          <option value="random">Random</option>
-          <option value="linear">Linear (song order)</option>
-          <option value="energy">Energy build</option>
-          <option value="section">Section-aware</option>
-          <option value="markov">Markov Chain</option>
-          <option value="call_response">Call & Response</option>
-          <option value="euclidean">Euclidean Stutter</option>
-          <option value="golden_ratio">Golden Ratio Build</option>
-          <option value="high_freq">Spike Glitch</option>
-        </select>
+    <!-- 4 · SELECTED CLIP EDITOR -->
+    <div class="clip-editor-wrap" id="clip-editor-wrap">
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div class="section-title" style="margin:0">4 · selected clip editor</div>
+        <span class="clip-status-pill" id="clip-editor-status">READY</span>
       </div>
-      <div class="setting-row">
-        <span class="setting-label">Target length</span>
-        <input type="range" min="30" max="240" value="90" step="15" id="local-length-slider" oninput="document.getElementById('local-length-val').textContent=this.value+'s'">
-        <span class="setting-val" id="local-length-val">90s</span>
+
+      <!-- Empty State -->
+      <div class="clip-editor-empty" id="clip-editor-empty">
+        <div class="empty-icon">✂</div>
+        <div class="empty-title">No Clip Selected</div>
+        <p>Click any slice in the library to inspect the waveform, pitch shift, trim start/stop markers, and stage for pads.</p>
       </div>
-      <div class="setting-row">
-        <span class="setting-label">Crossfade</span>
-        <input type="range" min="0" max="4" value="1" step="0.25" id="local-fade-slider" oninput="document.getElementById('local-fade-val').textContent=this.value+'s'">
-        <span class="setting-val" id="local-fade-val">1s</span>
-      </div>
-      <div class="setting-row">
-        <span class="setting-label">Key Lock</span>
-        <select class="setting-select" id="local-keylock">
-          <option value="auto_pitch" selected>Auto-Lock Key (Pitch Shift)</option>
-          <option value="repitch">Auto-Lock Key (Repitch Speed)</option>
-          <option value="off">Off (Original Key)</option>
-        </select>
-      </div>
-      <div class="setting-row">
-        <span class="setting-label">Sub-Bass Filter</span>
-        <select class="setting-select" id="local-bassfilter">
-          <option value="off" selected>Off (Full-Range Overlap)</option>
-          <option value="hp100">100Hz High-Pass Fade (Clean Sub)</option>
-          <option value="hp150">150Hz High-Pass Fade (Tight Low-End)</option>
-        </select>
+
+      <!-- Active Clip Editor -->
+      <div class="clip-editor-active" id="clip-editor-active" style="display:none;">
+        <div class="clip-meta-row">
+          <div class="clip-title-wrap">
+            <div class="clip-name" id="clip-name">Slice Name</div>
+            <div class="clip-source" id="clip-source">Source Song</div>
+          </div>
+          <div class="clip-badges">
+            <span class="tag bpm" id="clip-bpm-badge">120 BPM</span>
+            <span class="tag camelot" id="clip-key-badge">8B</span>
+            <span class="tag" id="clip-dur-badge">1.50s</span>
+          </div>
+        </div>
+
+        <!-- Waveform & Trim Canvas -->
+        <div class="clip-waveform-cont" id="clip-waveform-cont" title="Click or drag markers to trim slice">
+          <canvas class="clip-waveform-canvas" id="clip-waveform-canvas" height="74"></canvas>
+          <div class="clip-overlay clip-overlay-start" id="clip-overlay-start" style="left:0; width:0%;"></div>
+          <div class="clip-overlay clip-overlay-end" id="clip-overlay-end" style="right:0; width:0%;"></div>
+          <div class="clip-marker clip-marker-start" id="clip-marker-start" style="left:0%;" title="Drag Start Trim">
+            <div class="marker-handle">S</div>
+          </div>
+          <div class="clip-marker clip-marker-end" id="clip-marker-end" style="left:100%;" title="Drag Stop Trim">
+            <div class="marker-handle">E</div>
+          </div>
+          <div class="clip-playhead" id="clip-playhead" style="display:none; left:0%;"></div>
+        </div>
+
+        <!-- Time Readouts -->
+        <div class="clip-time-readout">
+          <span>Start: <strong id="clip-time-start">0.000s</strong></span>
+          <span>Stop: <strong id="clip-time-end">1.500s</strong></span>
+          <span style="color:var(--accent)">Trim: <strong id="clip-time-len">1.500s</strong></span>
+        </div>
+
+        <!-- Pitch Shift -->
+        <div class="clip-pitch-box">
+          <div class="clip-pitch-header">
+            <span class="setting-label">Pitch Shift (Semitones)</span>
+            <div class="clip-pitch-readout">
+              <span class="pitch-semitones" id="clip-pitch-val">0 st</span>
+              <span class="pitch-key-preview" id="clip-pitch-key">Key: 8B</span>
+            </div>
+          </div>
+          <div class="clip-pitch-controls">
+            <button class="btn-nudge" onclick="nudgeClipPitch(-1)" title="-1 Semitone">-1</button>
+            <input type="range" min="-12" max="12" value="0" step="1" id="clip-pitch-slider" class="clip-pitch-slider" oninput="setClipPitch(parseInt(this.value))">
+            <button class="btn-nudge" onclick="nudgeClipPitch(1)" title="+1 Semitone">+1</button>
+            <button class="btn-nudge reset" onclick="setClipPitch(0)" title="Reset to Original Pitch">0</button>
+          </div>
+        </div>
+
+        <!-- Audition & Action Row -->
+        <div class="clip-action-bar">
+          <div style="display:flex;gap:6px;width:100%;">
+            <button class="btn btn-primary" id="clip-play-btn" onclick="toggleClipPreview()" style="flex:1.2;justify-content:center;padding:7px 10px;font-size:11px;">
+              <span id="clip-play-btn-inner">▶ Preview</span>
+            </button>
+            <button class="btn btn-ghost" id="clip-loop-btn" onclick="toggleClipLoop()" style="padding:7px 10px;font-size:11px;" title="Toggle Looping Audition">
+              ⟳ Loop
+            </button>
+            <button class="btn btn-ghost" id="clip-dl-btn" onclick="downloadEditorClip()" style="flex:1.3;justify-content:center;padding:7px 10px;font-size:11px;" title="Download Trimmed & Pitched WAV">
+              ⬇ Download WAV
+            </button>
+          </div>
+          <div style="display:flex;gap:6px;width:100%;margin-top:2px;">
+            <button class="btn btn-ghost" id="clip-stage-btn" onclick="stageCurrentClip()" style="flex:1;justify-content:center;padding:6px 8px;font-size:10px;border-color:rgba(66,245,164,0.4);color:var(--accent);" title="Stage this clip into pad bank below">
+              + Stage for Pads
+            </button>
+            <div style="display:flex;align-items:center;gap:4px;flex:1;">
+              <select id="clip-assign-pad-select" class="setting-select" style="flex:1;padding:4px 6px;font-size:10px;height:auto;">
+                <option value="0">Pad 1 (A)</option>
+                <option value="1">Pad 2 (S)</option>
+                <option value="2">Pad 3 (D)</option>
+                <option value="3">Pad 4 (F)</option>
+                <option value="4">Pad 5 (G)</option>
+                <option value="5">Pad 6 (H)</option>
+                <option value="6">Pad 7 (J)</option>
+                <option value="7">Pad 8 (K)</option>
+                <option value="8">Pad 9 (Q)</option>
+                <option value="9">Pad 10 (W)</option>
+                <option value="10">Pad 11 (E)</option>
+                <option value="11">Pad 12 (R)</option>
+                <option value="12">Pad 13 (T)</option>
+                <option value="13">Pad 14 (Y)</option>
+                <option value="14">Pad 15 (U)</option>
+                <option value="15">Pad 16 (I)</option>
+              </select>
+              <button class="btn btn-ghost" onclick="assignCurrentClipToPad(parseInt(document.getElementById('clip-assign-pad-select').value))" style="padding:5px 8px;font-size:10px;" title="Assign directly to selected pad">
+                Send
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <button class="btn btn-primary" id="local-remix-btn" onclick="buildLocalRemix()" style="width:100%;justify-content:center" disabled>
-      <span id="local-remix-btn-inner">Auto remix</span>
-    </button>
-    <hr class="divider">
-    <div id="local-remix-output">
-      <div class="empty-state"><p>Slice your songs first,<br>then select a structure<br>and hit auto remix.</p></div>
-    </div>
-    <hr class="divider" style="margin-top: 10px;">
-    <div class="section-title" style="margin-top: 20px;">Pad bank staging</div>
-    <div id="user-slices-dropzone" style="min-height: 150px; border: 2px dashed #42f5a4; border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 8px; transition: all .2s; background: #111f00; flex: 1; box-shadow: inset 0 0 15px rgba(66,245,164,0.1);">
-      <div class="empty-state" style="padding:20px 0; margin:0;" id="user-slices-empty"><p>Drag slices here<br>to build your pad bank</p></div>
-      <div id="user-slices-list" style="display:flex; flex-direction:column; gap:4px; flex: 1; overflow-y:auto;"></div>
+
+    <hr class="divider" style="margin: 4px 0 8px 0;">
+
+    <!-- 5 · PAD BANK STAGING -->
+    <div class="pad-staging-bay" id="pad-staging-bay">
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div class="section-title" style="margin:0">5 · pad bank staging</div>
+        <span class="tag" id="staging-count-badge" style="font-size:9px;background:#1a2e00;color:var(--accent);">0 / 16</span>
+      </div>
+
+      <div class="staging-actions-bar">
+        <button class="btn btn-primary" id="push-pads-btn" onclick="pushStagedToPads()" style="flex:1;justify-content:center;padding:6px 10px;font-size:10px;" title="Assign all staged clips to Pads 1-16 and switch to Pads tab">
+          ⚡ Push to Pads (1-16)
+        </button>
+        <button class="btn btn-ghost" onclick="autoStageSlices()" style="padding:6px 8px;font-size:10px;" title="Auto-stage first 16 slices">
+          Auto 16
+        </button>
+        <button class="btn btn-ghost" onclick="clearStagedSlices()" style="padding:6px 8px;font-size:10px;" title="Clear staged bank">
+          Clear
+        </button>
+      </div>
+
+      <div id="user-slices-dropzone" class="staging-dropzone">
+        <div class="empty-state" style="padding:16px 0; margin:0;" id="user-slices-empty">
+          <div style="font-size:16px;margin-bottom:4px;opacity:0.6;">📦</div>
+          <p style="margin:0;font-size:11px;">Drag slices here from library<br>or click <strong>+ Stage for Pads</strong> above</p>
+        </div>
+        <div id="user-slices-list" style="display:flex; flex-direction:column; gap:4px; flex: 1;"></div>
+      </div>
     </div>
   </div>
 </div>
@@ -1970,128 +2157,568 @@ let recChunks = [];
 const PAD_KEYS = ['a','s','d','f','g','h','j','k','q','w','e','r','t','y','u','i'];
 const PAD_COLORS = ['#c8f542','#f5425a','#42c8f5','#f5a442','#a442f5','#42f5a4','#f542d4','#4287f5','#f5c842','#42f5e8','#f58542','#8542f5','#f5f542','#f5426b','#42f5a4','#5542f5'];
 
-function buildLocalRemix() {
-  if (slices.length === 0) return;
-  const structure = document.getElementById('local-structure').value;
-  const targetLen = parseInt(document.getElementById('local-length-slider').value);
-  const fadeTime = parseFloat(document.getElementById('local-fade-slider').value);
+// ─── SELECTED CLIP EDITOR & PAD STAGING (SLICER TAB) ─────────────────────
+let activeEditorSlice = null;
+let clipTrimStart = 0;          // 0.0 to 1.0
+let clipTrimEnd = 1.0;          // 0.0 to 1.0
+let clipPitchSemitones = 0;     // -12 to +12
+let clipIsLooping = false;
+let clipAudioSource = null;
+let clipPlaybackStartTime = 0;
+let clipPlaybackStartOffset = 0;
+let clipPlaybackDur = 0;
+let clipPlaybackRate = 1.0;
+let clipAnimFrame = null;
+let isDraggingClipMarker = null;
 
-  const getSlices = (types) => {
-    let s = slices.filter(x => types.includes(x.type));
-    return s.length > 0 ? s : slices;
-  };
+function openClipEditor(slice) {
+  if (!slice) return;
+  activeEditorSlice = slice;
+  
+  // Set initial trim and pitch from slice or reset
+  clipTrimStart = slice.trimStartRatio !== undefined ? slice.trimStartRatio : 0;
+  clipTrimEnd = slice.trimEndRatio !== undefined ? slice.trimEndRatio : 1.0;
+  clipPitchSemitones = slice.pitchSemitones !== undefined ? slice.pitchSemitones : 0;
+  
+  const emptyEl = document.getElementById('clip-editor-empty');
+  const activeEl = document.getElementById('clip-editor-active');
+  const statusEl = document.getElementById('clip-editor-status');
+  if (emptyEl) emptyEl.style.display = 'none';
+  if (activeEl) activeEl.style.display = 'flex';
+  if (statusEl) {
+    statusEl.textContent = 'ACTIVE';
+    statusEl.style.color = 'var(--accent)';
+  }
+  
+  // Populate metadata
+  const nameEl = document.getElementById('clip-name');
+  const srcEl = document.getElementById('clip-source');
+  const bpmEl = document.getElementById('clip-bpm-badge');
+  const keyEl = document.getElementById('clip-key-badge');
+  const durEl = document.getElementById('clip-dur-badge');
+  
+  if (nameEl) nameEl.textContent = slice.source || 'Audio Slice';
+  if (srcEl) srcEl.textContent = (slice.type ? slice.type.toUpperCase() + ' · ' : '') + (slice.section ? slice.section.toUpperCase() : 'SLICE');
+  if (bpmEl) bpmEl.textContent = (slice.bpm || 120) + ' BPM';
+  
+  const origKey = (slice.keyData && slice.keyData.camelot) ? slice.keyData.camelot : getSourceCamelot(slice.sourceId);
+  if (keyEl) keyEl.textContent = origKey || '8B';
+  if (durEl) durEl.textContent = (Math.round(slice.duration * 100) / 100).toFixed(2) + 's';
+  
+  // Update pitch slider & label
+  const pitchSlider = document.getElementById('clip-pitch-slider');
+  if (pitchSlider) pitchSlider.value = clipPitchSemitones;
+  updateClipPitchUI();
+  
+  // Update time readouts & markers
+  updateClipMarkerUI();
+  drawClipWaveform(slice.buffer);
+  
+  // Highlight currently active slice in staging list if present
+  updateStagingActiveState();
+  
+  // Autoplay preview
+  playClipPreview();
+}
 
-  let arrangement = [];
-  let t = 0;
+function closeClipEditor() {
+  stopClipPreview();
+  activeEditorSlice = null;
+  const emptyEl = document.getElementById('clip-editor-empty');
+  const activeEl = document.getElementById('clip-editor-active');
+  const statusEl = document.getElementById('clip-editor-status');
+  if (emptyEl) emptyEl.style.display = 'block';
+  if (activeEl) activeEl.style.display = 'none';
+  if (statusEl) {
+    statusEl.textContent = 'READY';
+    statusEl.style.color = 'var(--muted)';
+  }
+  updateStagingActiveState();
+}
 
-  const addBlock = (slice, startOffset = 0) => {
-    arrangement.push({ slice, startTime: t });
-    t += Math.max(0.05, slice.duration - fadeTime) + startOffset;
-  };
+function drawClipWaveform(buf) {
+  const canvas = document.getElementById('clip-waveform-canvas');
+  if (!canvas || !buf) return;
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const cssWidth = canvas.offsetWidth || 380;
+  const cssHeight = 74;
+  canvas.width = cssWidth * dpr;
+  canvas.height = cssHeight * dpr;
+  
+  ctx.save();
+  ctx.scale(dpr, dpr);
+  ctx.clearRect(0, 0, cssWidth, cssHeight);
+  
+  const data = buf.getChannelData(0);
+  const step = Math.ceil(data.length / cssWidth);
+  const amp = cssHeight / 2;
+  
+  // Draw center grid line
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(0, amp);
+  ctx.lineTo(cssWidth, amp);
+  ctx.stroke();
+  
+  // Draw waveform with vibrant gradient
+  const grad = ctx.createLinearGradient(0, 0, 0, cssHeight);
+  grad.addColorStop(0, '#00F0FF');
+  grad.addColorStop(0.5, '#42f5a4');
+  grad.addColorStop(1, '#00F0FF');
+  
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = 1.2;
+  ctx.beginPath();
+  for (let i = 0; i < cssWidth; i++) {
+    let max = 0;
+    for (let j = 0; j < step; j++) {
+      const v = Math.abs(data[i * step + j] || 0);
+      if (v > max) max = v;
+    }
+    const barHeight = Math.max(1, max * amp * 0.95);
+    ctx.moveTo(i, amp - barHeight);
+    ctx.lineTo(i, amp + barHeight);
+  }
+  ctx.stroke();
+  ctx.restore();
+}
 
-  if (structure === 'markov') {
-    const secOrder = ['intro', 'verse', 'build', 'drop', 'breakdown', 'bridge', 'outro'];
-    let currentSec = 'intro';
-    let pool = getSlices(['phrase', 'bar', 'beat']);
-    while (t < targetLen) {
-      let options = pool.filter(s => s.section === currentSec);
-      if (options.length === 0) options = pool;
-      addBlock(shuffle(options)[0]);
-      const r = Math.random();
-      if (currentSec === 'intro' && r > 0.3) currentSec = 'verse';
-      else if (currentSec === 'verse' && r > 0.4) currentSec = 'build';
-      else if (currentSec === 'build' && r > 0.2) currentSec = 'drop';
-      else if (currentSec === 'drop' && r > 0.6) currentSec = 'breakdown';
-      else if (currentSec === 'breakdown') currentSec = 'build';
-      else if (currentSec === 'bridge') currentSec = 'drop';
-    }
-  } else if (structure === 'call_response') {
-    const longs = getSlices(['phrase', 'bar']);
-    const shorts = getSlices(['hit', 'eighth', 'sixteenth']);
-    while (t < targetLen) {
-      addBlock(shuffle(longs)[0]); 
-      let stut = shuffle(shorts)[0];
-      for(let i=0; i<4; i++) {
-        arrangement.push({ slice: stut, startTime: t });
-        t += Math.max(0.05, stut.duration);
-      }
-    }
-  } else if (structure === 'euclidean') {
-    const pads = getSlices(['phrase', 'bar']);
-    const hits = getSlices(['hit', 'sixteenth']);
-    while (t < targetLen) {
-      let base = shuffle(pads)[0];
-      arrangement.push({ slice: base, startTime: t });
-      let hit = shuffle(hits)[0];
-      let step = base.duration / 3;
-      arrangement.push({ slice: hit, startTime: t });
-      arrangement.push({ slice: hit, startTime: t + step });
-      arrangement.push({ slice: hit, startTime: t + step * 2 });
-      t += Math.max(0.1, base.duration - fadeTime);
-    }
-  } else if (structure === 'golden_ratio') {
-    const all = shuffle(slices);
-    let size = 8;
-    while (t < targetLen) {
-      let options = slices.filter(s => Math.abs(s.duration - size) < 1.0);
-      if (options.length === 0) options = all;
-      let sl = shuffle(options)[0];
-      let reps = Math.ceil(8/size); 
-      for(let i=0; i < reps; i++) {
-        arrangement.push({ slice: sl, startTime: t });
-        t += Math.max(0.05, sl.duration - (fadeTime*(size/8))); 
-      }
-      size /= 1.618;
-      if (size < 0.25) size = 8; 
-    }
-  } else if (structure === 'high_freq') {
-    const beats = getSlices(['beat', 'bar']);
-    let vocals = getSlices(['eighth', 'sixteenth', 'hit']); 
-    while (t < targetLen) {
-      let b = shuffle(beats)[0];
-      arrangement.push({ slice: b, startTime: t });
-      let v = shuffle(vocals)[0];
-      let chops = Math.floor(Math.random() * 3) + 2;
-      for(let c=0; c<chops; c++) {
-        arrangement.push({ slice: v, startTime: t + (b.duration/chops)*c });
-      }
-      t += Math.max(0.1, b.duration - fadeTime);
-    }
-  } else {
-    let pool = slices.filter(s => s.type === 'phrase' || s.type === 'bar');
-    if (pool.length === 0) pool = [...slices];
-    let ordered = [];
-    if (structure === 'linear') {
-      ordered = [...pool].sort((a,b) => a.start - b.start);
-    } else if (structure === 'energy') {
-      const intro = pool.filter(s => s.section === 'intro');
-      const build = pool.filter(s => s.section === 'build');
-      const drop = pool.filter(s => s.section === 'drop');
-      const outro = pool.filter(s => s.section === 'outro');
-      ordered = [...shuffle(intro), ...shuffle(build), ...shuffle(drop), ...shuffle(outro)];
-      if (ordered.length === 0) ordered = shuffle([...pool]);
-    } else if (structure === 'section') {
-      const groups = {};
-      pool.forEach(s => { if (!groups[s.section]) groups[s.section] = []; groups[s.section].push(s); });
-      const order = ['intro','verse','build','drop','breakdown','bridge','outro'];
-      order.forEach(sec => { if (groups[sec]) ordered.push(...shuffle(groups[sec])); });
-      if (ordered.length === 0) ordered = shuffle([...pool]);
+function updateClipMarkerUI() {
+  if (!activeEditorSlice) return;
+  const dur = activeEditorSlice.duration;
+  const startSec = clipTrimStart * dur;
+  const endSec = clipTrimEnd * dur;
+  const trimDur = Math.max(0.01, endSec - startSec);
+  
+  const markerStart = document.getElementById('clip-marker-start');
+  const markerEnd = document.getElementById('clip-marker-end');
+  const overlayStart = document.getElementById('clip-overlay-start');
+  const overlayEnd = document.getElementById('clip-overlay-end');
+  
+  if (markerStart) markerStart.style.left = (clipTrimStart * 100) + '%';
+  if (markerEnd) markerEnd.style.left = (clipTrimEnd * 100) + '%';
+  if (overlayStart) overlayStart.style.width = (clipTrimStart * 100) + '%';
+  if (overlayEnd) overlayEnd.style.width = ((1 - clipTrimEnd) * 100) + '%';
+  
+  const timeStartEl = document.getElementById('clip-time-start');
+  const timeEndEl = document.getElementById('clip-time-end');
+  const timeLenEl = document.getElementById('clip-time-len');
+  
+  if (timeStartEl) timeStartEl.textContent = startSec.toFixed(3) + 's';
+  if (timeEndEl) timeEndEl.textContent = endSec.toFixed(3) + 's';
+  if (timeLenEl) timeLenEl.textContent = trimDur.toFixed(3) + 's';
+}
+
+function setupClipMarkerEvents() {
+  const cont = document.getElementById('clip-waveform-cont');
+  if (!cont) return;
+  
+  cont.addEventListener('mousedown', e => {
+    if (!activeEditorSlice) return;
+    const rect = cont.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const ratio = Math.max(0, Math.min(1, x / rect.width));
+    
+    const distStart = Math.abs(ratio - clipTrimStart);
+    const distEnd = Math.abs(ratio - clipTrimEnd);
+    
+    if (distStart < distEnd) {
+      isDraggingClipMarker = 'start';
     } else {
-      ordered = shuffle([...pool]);
+      isDraggingClipMarker = 'end';
     }
-    let i = 0;
-    while (t < targetLen && i < ordered.length * 3) {
-      const s = ordered[i % ordered.length];
-      arrangement.push({ slice: s, startTime: t });
-      t += Math.max(0.1, s.duration - fadeTime);
-      i++;
+    handleClipMarkerDrag(e);
+  });
+  
+  window.addEventListener('mousemove', e => {
+    if (!isDraggingClipMarker) return;
+    handleClipMarkerDrag(e);
+  });
+  
+  window.addEventListener('mouseup', () => {
+    if (isDraggingClipMarker) {
+      isDraggingClipMarker = null;
+      playClipPreview();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (activeEditorSlice) {
+      drawClipWaveform(activeEditorSlice.buffer);
+    }
+  });
+}
+
+function handleClipMarkerDrag(e) {
+  const cont = document.getElementById('clip-waveform-cont');
+  if (!cont || !activeEditorSlice) return;
+  const rect = cont.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  let ratio = Math.max(0, Math.min(1, x / rect.width));
+  
+  const minTrimRatio = 0.05 / activeEditorSlice.duration; // minimum 50ms
+  
+  if (isDraggingClipMarker === 'start') {
+    if (ratio > clipTrimEnd - minTrimRatio) ratio = clipTrimEnd - minTrimRatio;
+    clipTrimStart = Math.max(0, ratio);
+  } else if (isDraggingClipMarker === 'end') {
+    if (ratio < clipTrimStart + minTrimRatio) ratio = clipTrimStart + minTrimRatio;
+    clipTrimEnd = Math.min(1, ratio);
+  }
+  updateClipMarkerUI();
+}
+
+function setClipPitch(st) {
+  clipPitchSemitones = Math.max(-12, Math.min(12, st));
+  const slider = document.getElementById('clip-pitch-slider');
+  if (slider) slider.value = clipPitchSemitones;
+  updateClipPitchUI();
+  playClipPreview();
+}
+
+function nudgeClipPitch(delta) {
+  setClipPitch(clipPitchSemitones + delta);
+}
+
+function updateClipPitchUI() {
+  const valEl = document.getElementById('clip-pitch-val');
+  const keyEl = document.getElementById('clip-pitch-key');
+  if (valEl) {
+    valEl.textContent = (clipPitchSemitones > 0 ? '+' : '') + clipPitchSemitones + ' st';
+    valEl.style.color = clipPitchSemitones === 0 ? 'var(--muted)' : 'var(--accent)';
+  }
+  
+  if (keyEl && activeEditorSlice) {
+    const origKey = (activeEditorSlice.keyData && activeEditorSlice.keyData.camelot) ? activeEditorSlice.keyData.camelot : getSourceCamelot(activeEditorSlice.sourceId);
+    if (origKey && origKey !== '?') {
+      if (clipPitchSemitones === 0) {
+        keyEl.textContent = 'Key: ' + origKey + ' (Original)';
+      } else {
+        const num = parseInt(origKey);
+        const mode = origKey.slice(-1);
+        const shiftedNum = (((num - 1 + (clipPitchSemitones * 7)) % 12 + 12) % 12) + 1;
+        const transposedCamelot = `${shiftedNum}${mode}`;
+        keyEl.textContent = `${origKey} → ${transposedCamelot} (${clipPitchSemitones > 0 ? '+' : ''}${clipPitchSemitones}st)`;
+      }
+    } else {
+      keyEl.textContent = clipPitchSemitones === 0 ? 'Original Pitch' : `${clipPitchSemitones > 0 ? '+' : ''}${clipPitchSemitones} st`;
     }
   }
+}
 
-  let finalArr = arrangement.filter(x => x.startTime <= targetLen + 2);
-  const keyLockMode = document.getElementById('local-keylock') ? document.getElementById('local-keylock').value : 'auto_pitch';
-  const bassFilterMode = document.getElementById('local-bassfilter') ? document.getElementById('local-bassfilter').value : 'off';
-  renderLocalRemix(finalArr, fadeTime, 'local-remix-output', 'local-remix-btn', 'Auto remix', 'void_local_remix.wav', keyLockMode, bassFilterMode);
+function toggleClipPreview() {
+  if (clipAudioSource) {
+    stopClipPreview();
+  } else {
+    playClipPreview();
+  }
+}
+
+async function playClipPreview() {
+  if (!activeEditorSlice) return;
+  stopClipPreview();
+  await ensureAudioContext();
+  if (!actx) return;
+  if (actx.state === 'suspended') await actx.resume();
+
+  const buf = activeEditorSlice.buffer;
+  const startSec = clipTrimStart * activeEditorSlice.duration;
+  const endSec = clipTrimEnd * activeEditorSlice.duration;
+  const durSec = Math.max(0.01, endSec - startSec);
+  const rate = Math.pow(2, clipPitchSemitones / 12);
+
+  const src = actx.createBufferSource();
+  src.buffer = buf;
+  src.playbackRate.value = rate;
+
+  const gain = actx.createGain();
+  gain.connect(actx.destination);
+  src.connect(gain);
+
+  if (clipIsLooping) {
+    src.loop = true;
+    src.loopStart = startSec;
+    src.loopEnd = endSec;
+    src.start(0, startSec);
+  } else {
+    src.loop = false;
+    src.start(0, startSec, durSec);
+  }
+
+  clipAudioSource = src;
+  clipPlaybackStartTime = actx.currentTime;
+  clipPlaybackStartOffset = startSec;
+  clipPlaybackDur = durSec;
+  clipPlaybackRate = rate;
+
+  const playBtnInner = document.getElementById('clip-play-btn-inner');
+  if (playBtnInner) playBtnInner.textContent = '■ Stop';
+
+  startPlayheadAnim();
+
+  src.onended = () => {
+    if (clipAudioSource === src && !clipIsLooping) {
+      stopClipPreview();
+    }
+  };
+}
+
+function stopClipPreview() {
+  if (clipAudioSource) {
+    try { clipAudioSource.stop(); } catch(e) {}
+    clipAudioSource = null;
+  }
+  stopPlayheadAnim();
+  const playBtnInner = document.getElementById('clip-play-btn-inner');
+  if (playBtnInner) playBtnInner.textContent = '▶ Preview';
+}
+
+function toggleClipLoop() {
+  clipIsLooping = !clipIsLooping;
+  const loopBtn = document.getElementById('clip-loop-btn');
+  if (loopBtn) {
+    if (clipIsLooping) {
+      loopBtn.style.background = 'rgba(66,245,164,0.2)';
+      loopBtn.style.borderColor = 'var(--accent)';
+      loopBtn.style.color = 'var(--accent)';
+    } else {
+      loopBtn.style.background = '';
+      loopBtn.style.borderColor = '';
+      loopBtn.style.color = '';
+    }
+  }
+  if (clipAudioSource) {
+    playClipPreview();
+  }
+}
+
+function startPlayheadAnim() {
+  const playhead = document.getElementById('clip-playhead');
+  if (!playhead) return;
+  playhead.style.display = 'block';
+
+  function step() {
+    if (!clipAudioSource || !activeEditorSlice) {
+      stopPlayheadAnim();
+      return;
+    }
+    const elapsed = (actx.currentTime - clipPlaybackStartTime) * clipPlaybackRate;
+    let currentBufTime = clipPlaybackStartOffset + elapsed;
+    
+    if (clipIsLooping) {
+      const loopDur = clipPlaybackDur;
+      currentBufTime = clipPlaybackStartOffset + (elapsed % loopDur);
+    }
+    
+    const ratio = Math.max(0, Math.min(1, currentBufTime / activeEditorSlice.duration));
+    playhead.style.left = (ratio * 100) + '%';
+    clipAnimFrame = requestAnimationFrame(step);
+  }
+  cancelAnimationFrame(clipAnimFrame);
+  clipAnimFrame = requestAnimationFrame(step);
+}
+
+function stopPlayheadAnim() {
+  cancelAnimationFrame(clipAnimFrame);
+  const playhead = document.getElementById('clip-playhead');
+  if (playhead) playhead.style.display = 'none';
+}
+
+async function renderProcessedClipBuffer(slice, trimStartRatio, trimEndRatio, semitones) {
+  const origBuf = slice.buffer;
+  const sampleRate = origBuf.sampleRate;
+  const numChannels = origBuf.numberOfChannels;
+  
+  const startSec = trimStartRatio * slice.duration;
+  const endSec = trimEndRatio * slice.duration;
+  const rawDurSec = Math.max(0.01, endSec - startSec);
+  
+  const rate = Math.pow(2, semitones / 12);
+  const outDurSec = rawDurSec / rate;
+  const outSampleLength = Math.max(1, Math.floor(outDurSec * sampleRate));
+  
+  const offlineCtx = new (window.OfflineAudioContext || window.webkitOfflineAudioContext)(
+    numChannels,
+    outSampleLength,
+    sampleRate
+  );
+  
+  const srcNode = offlineCtx.createBufferSource();
+  srcNode.buffer = origBuf;
+  srcNode.playbackRate.value = rate;
+  
+  // De-click gain node with 4ms fade-in and 4ms fade-out
+  const gainNode = offlineCtx.createGain();
+  const fadeSec = Math.min(0.004, outDurSec * 0.05);
+  gainNode.gain.setValueAtTime(0, 0);
+  gainNode.gain.linearRampToValueAtTime(1, fadeSec);
+  gainNode.gain.setValueAtTime(1, Math.max(fadeSec, outDurSec - fadeSec));
+  gainNode.gain.linearRampToValueAtTime(0, outDurSec);
+  
+  srcNode.connect(gainNode);
+  gainNode.connect(offlineCtx.destination);
+  
+  srcNode.start(0, startSec, rawDurSec);
+  
+  return await offlineCtx.startRendering();
+}
+
+async function downloadEditorClip() {
+  if (!activeEditorSlice) return;
+  const dlBtn = document.getElementById('clip-dl-btn');
+  const origText = dlBtn.innerHTML;
+  dlBtn.innerHTML = '<span class="spinner"></span> Packing...';
+  dlBtn.disabled = true;
+  try {
+    const renderedBuf = await renderProcessedClipBuffer(
+      activeEditorSlice,
+      clipTrimStart,
+      clipTrimEnd,
+      clipPitchSemitones
+    );
+    const blob = bufferToWavBlob(renderedBuf);
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    const pitchStr = clipPitchSemitones !== 0 ? `_${clipPitchSemitones > 0 ? '+' : ''}${clipPitchSemitones}st` : '';
+    const cleanName = (activeEditorSlice.source || 'void_slice').replace(/[^a-zA-Z0-9_-]/g, '_');
+    a.download = `${cleanName}${pitchStr}_edit.wav`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+    setStatus('Downloaded trimmed slice WAV');
+  } catch (err) {
+    console.error('Download error:', err);
+    alert('Failed to export slice WAV: ' + (err.message || err));
+  } finally {
+    dlBtn.innerHTML = origText;
+    dlBtn.disabled = false;
+  }
+}
+
+async function stageCurrentClip() {
+  if (!activeEditorSlice) return;
+  const stageBtn = document.getElementById('clip-stage-btn');
+  const origText = stageBtn.innerHTML;
+  stageBtn.innerHTML = '<span class="spinner"></span> Staging...';
+  stageBtn.disabled = true;
+  try {
+    const renderedBuf = await renderProcessedClipBuffer(
+      activeEditorSlice,
+      clipTrimStart,
+      clipTrimEnd,
+      clipPitchSemitones
+    );
+    
+    // Compute transposed Camelot key
+    const origKey = (activeEditorSlice.keyData && activeEditorSlice.keyData.camelot) ? activeEditorSlice.keyData.camelot : getSourceCamelot(activeEditorSlice.sourceId);
+    let stagedKey = origKey;
+    if (origKey && origKey !== '?' && clipPitchSemitones !== 0) {
+      const num = parseInt(origKey);
+      const mode = origKey.slice(-1);
+      const shiftedNum = (((num - 1 + (clipPitchSemitones * 7)) % 12 + 12) % 12) + 1;
+      stagedKey = `${shiftedNum}${mode}`;
+    }
+    
+    const stagedSlice = {
+      ...activeEditorSlice,
+      id: 'staged_' + Date.now() + '_' + Math.random().toString(36).substr(2, 4),
+      buffer: renderedBuf,
+      duration: renderedBuf.duration,
+      pitchSemitones: clipPitchSemitones,
+      trimStartRatio: clipTrimStart,
+      trimEndRatio: clipTrimEnd,
+      filename: `${(activeEditorSlice.source || 'slice').replace(/[^a-zA-Z0-9_-]/g, '_')}_staged.wav`,
+      keyData: { camelot: stagedKey }
+    };
+    
+    userSelectedSlices.push(stagedSlice);
+    renderUserSlices();
+    setStatus(`Staged clip for pads (${userSelectedSlices.length}/16)`);
+  } catch (err) {
+    console.error('Staging error:', err);
+  } finally {
+    stageBtn.innerHTML = origText;
+    stageBtn.disabled = false;
+  }
+}
+
+async function assignCurrentClipToPad(padIndex) {
+  if (!activeEditorSlice) return;
+  if (padIndex < 0 || padIndex >= 16) return;
+  
+  const renderedBuf = await renderProcessedClipBuffer(
+    activeEditorSlice,
+    clipTrimStart,
+    clipTrimEnd,
+    clipPitchSemitones
+  );
+  
+  const padSlice = {
+    ...activeEditorSlice,
+    id: 'pad_' + padIndex + '_' + Date.now(),
+    buffer: renderedBuf,
+    duration: renderedBuf.duration,
+    pitchSemitones: clipPitchSemitones,
+    trimStartRatio: clipTrimStart,
+    trimEndRatio: clipTrimEnd
+  };
+  
+  pads[padIndex] = padSlice;
+  setupPads();
+  setStatus(`Assigned clip to Pad ${padIndex + 1} (${PAD_KEYS[padIndex].toUpperCase()})`);
+}
+
+function pushStagedToPads() {
+  if (userSelectedSlices.length === 0) {
+    if (slices.length > 0) {
+      autoStageSlices();
+    } else {
+      alert('Please slice audio files first!');
+      return;
+    }
+  }
+  
+  const takeSlices = userSelectedSlices.slice(0, 16);
+  takeSlices.forEach((s, idx) => {
+    pads[idx] = s;
+  });
+  
+  setupPads();
+  switchTab('pads');
+  if (typeof renderSequencerGrid === 'function') renderSequencerGrid();
+  setStatus(`Pushed ${takeSlices.length} staged clips to Pads 1-16`);
+}
+
+function autoStageSlices() {
+  if (slices.length === 0) {
+    alert('Please slice audio files in the Slicer tab first!');
+    return;
+  }
+  const takeSlices = slices.slice(0, 16);
+  userSelectedSlices = [...takeSlices];
+  renderUserSlices();
+  setStatus(`Auto-staged first ${takeSlices.length} slices`);
+}
+
+function clearStagedSlices() {
+  userSelectedSlices = [];
+  renderUserSlices();
+  setStatus('Cleared staged pad bank');
+}
+
+function updateStagingActiveState() {
+  document.querySelectorAll('.staged-item').forEach(el => {
+    const id = el.dataset.sliceId;
+    if (activeEditorSlice && id === activeEditorSlice.id) {
+      el.classList.add('active-editing');
+    } else {
+      el.classList.remove('active-editing');
+    }
+  });
 }
 
 function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5); }
@@ -2215,7 +2842,7 @@ async function renderLocalRemix(arrangement, fadeTime, containerId = 'local-remi
 function setStatus(msg) { document.getElementById('status-text').textContent = msg; }
 
 window.onload = () => {
-  setupDrop(); setupSliceDrop(); setupPads(); setupModeButtons(); initTutorial(); initMIDI(); initSequencer();
+  setupDrop(); setupSliceDrop(); setupClipMarkerEvents(); setupPads(); setupModeButtons(); initTutorial(); initMIDI(); initSequencer();
   document.addEventListener('keydown', handlePadKey);
 };
 
@@ -2292,6 +2919,12 @@ function switchTab(tab) {
 
   const targetPanel = document.getElementById(`panel-${tab}`);
   if (targetPanel) targetPanel.classList.add('active');
+
+  if (tab !== 'slicer') {
+    stopClipPreview();
+  } else if (activeEditorSlice) {
+    setTimeout(() => drawClipWaveform(activeEditorSlice.buffer), 50);
+  }
 
   if (tab === 'pads') {
     renderPadSliceList();
@@ -2381,11 +3014,12 @@ function removeFile(id) {
 
 function setupSliceDrop() {
   const dz = document.getElementById('user-slices-dropzone');
-  dz.addEventListener('dragover', e => { e.preventDefault(); dz.style.borderColor = 'var(--accent)'; dz.style.background = '#1a2e00'; });
-  dz.addEventListener('dragleave', () => { dz.style.borderColor = '#42f5a4'; dz.style.background = '#111f00'; });
+  if (!dz) return;
+  dz.addEventListener('dragover', e => { e.preventDefault(); dz.classList.add('dragover'); });
+  dz.addEventListener('dragleave', () => { dz.classList.remove('dragover'); });
   dz.addEventListener('drop', e => {
     e.preventDefault();
-    dz.style.borderColor = '#42f5a4'; dz.style.background = '#111f00';
+    dz.classList.remove('dragover');
     const id = e.dataTransfer.getData('sliceId');
     if (id) {
       const s = slices.find(x => x.id === id);
@@ -2400,24 +3034,56 @@ function setupSliceDrop() {
 function renderUserSlices() {
   const list = document.getElementById('user-slices-list');
   const empty = document.getElementById('user-slices-empty');
+  const badge = document.getElementById('staging-count-badge');
+  if (badge) badge.textContent = `${userSelectedSlices.length} / 16`;
+
   if (userSelectedSlices.length === 0) {
-    empty.style.display = 'block';
-    list.innerHTML = '';
+    if (empty) empty.style.display = 'block';
+    if (list) list.innerHTML = '';
     return;
   }
-  empty.style.display = 'none';
+  if (empty) empty.style.display = 'none';
+  if (!list) return;
   list.innerHTML = '';
+  
   userSelectedSlices.forEach((s, idx) => {
     const el = document.createElement('div');
-    el.className = 'slice-drop-item';
-    el.style.cursor = 'default';
+    el.className = 'staged-item' + (activeEditorSlice && activeEditorSlice.id === s.id ? ' active-editing' : '');
+    el.dataset.sliceId = s.id;
+    el.draggable = true;
+    el.addEventListener('dragstart', e => { e.dataTransfer.setData('sliceId', s.id); });
+    
+    // Clicking item opens it in the Selected Clip Editor
+    el.onclick = (e) => {
+      if (e.target.closest('button')) return;
+      openClipEditor(s);
+    };
+    
     const col = PAD_COLORS[idx % PAD_COLORS.length];
-    el.innerHTML = `<div class="slice-dot" style="background:${col}"></div>
-      <span style="flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${s.source} · ${s.type}</span>
-      <button class="file-remove" onclick="removeUserSlice('${s.id}')" style="margin-left:auto;font-size:14px;background:none;border:none;color:var(--muted);cursor:pointer;">✕</button>`;
+    const pitchTag = (s.pitchSemitones && s.pitchSemitones !== 0) 
+      ? `<span class="tag" style="background:#1a2e00;color:var(--accent);font-size:8px;padding:1px 4px;">${s.pitchSemitones > 0 ? '+' : ''}${s.pitchSemitones}st</span>` 
+      : '';
+    const camelotTag = (s.keyData && s.keyData.camelot && s.keyData.camelot !== '?')
+      ? `<span class="tag camelot" style="font-size:8px;padding:1px 4px;">${s.keyData.camelot}</span>`
+      : '';
+    const padNum = String(idx + 1).padStart(2, '0');
+    
+    el.innerHTML = `
+      <span class="staged-index" title="Pad Slot ${idx + 1}">P${padNum}</span>
+      <div class="staged-dot" style="background:${col};box-shadow:0 0 4px ${col}80;"></div>
+      <span class="staged-title" title="${s.source}">${s.source} · ${s.type || 'chop'}</span>
+      <div class="staged-meta">
+        ${camelotTag}
+        ${pitchTag}
+        <span>${(Math.round(s.duration * 10) / 10).toFixed(1)}s</span>
+      </div>
+      <button class="btn-staged-action" onclick="openClipEditor(userSelectedSlices.find(x => x.id === '${s.id}'))" title="Inspect & Trim">✂</button>
+      <button class="btn-staged-action remove" onclick="removeUserSlice('${s.id}')" title="Remove from staging">✕</button>
+    `;
     list.appendChild(el);
   });
-  if (document.getElementById('panel-pads').classList.contains('active')) {
+  
+  if (document.getElementById('panel-pads') && document.getElementById('panel-pads').classList.contains('active')) {
     renderPadSliceList();
   }
 }
@@ -2430,6 +3096,7 @@ function removeUserSlice(id) {
 function clearAll() {
   hasSliced = false;
   slices = []; userSelectedSlices = [];
+  closeClipEditor();
   // Reset ML cache so re-slicing after clear runs the worker fresh
   files.forEach(f => { f.mlData = null; f.keyData = null; });
   document.getElementById('slice-grid').innerHTML = '';
@@ -2445,8 +3112,6 @@ function clearAll() {
   }
   
   document.getElementById('slice-btn-inner').textContent = 'Slice all songs';
-  const remixOutput = document.getElementById('local-remix-output');
-  if (remixOutput) remixOutput.innerHTML = `<div class="empty-state"><p>Slice your songs first,<br>then select a structure<br>and hit auto remix.</p></div>`;
   
   for (const item of files) {
     const statEl = document.getElementById('stat-' + item.id);
@@ -2579,7 +3244,8 @@ async function sliceAll() {
   renderSliceLibrary();
   document.getElementById('stage-2').style.display = '';
   document.getElementById('slice-count').textContent = slices.length;
-  document.getElementById('local-remix-btn').disabled = false;
+  const localRemixBtn = document.getElementById('local-remix-btn');
+  if (localRemixBtn) localRemixBtn.disabled = false;
   document.getElementById('slice-btn-inner').textContent = 'Re-slice';
   btn.disabled = false;
   document.getElementById('dot-2').classList.add('active');
@@ -3447,20 +4113,10 @@ function filterSlices(type, btn) {
 
 function selectSlice(slice, el) {
   document.querySelectorAll('.slice-card').forEach(c => c.classList.remove('selected'));
-  el.classList.add('selected');
+  if (el) el.classList.add('selected');
   selectedSlice = slice;
-  const wrap = document.getElementById('waveform-wrap');
-  wrap.style.display = '';
-  drawWaveform(slice.buffer);
   
-  // Revoke previous preview URL to prevent browser memory leaks
-  revokeStoredUrl('preview');
-  
-  const blob = bufferToWavBlob(slice.buffer);
-  activePreviewUrl = URL.createObjectURL(blob);
-  const audio = document.getElementById('preview-audio');
-  audio.src = activePreviewUrl;
-  audio.play().catch(e => console.log('Playback prevented:', e));
+  openClipEditor(slice);
 }
 
 function drawWaveform(buf) {
@@ -3578,7 +4234,7 @@ const padSettings = Array.from({ length: 16 }, () => ({
 let selectedPadIndex = null;
 
 function assignSliceToPad(sliceId, padIndex) {
-  const s = slices.find(x => x.id === sliceId);
+  const s = slices.find(x => x.id === sliceId) || userSelectedSlices.find(x => x.id === sliceId);
   if (!s) return;
   pads[padIndex] = s;
   updatePadCardBadges(padIndex);
@@ -3827,7 +4483,8 @@ async function loadVoidProject(file) {
       hasSliced = true;
       document.getElementById('stage-2').style.display = 'block';
       document.getElementById('slice-count').textContent = slices.length;
-      document.getElementById('local-remix-btn').disabled = false;
+      const lRemix = document.getElementById('local-remix-btn');
+      if (lRemix) lRemix.disabled = false;
       userSelectedSlices = [...slices];
       renderSliceLibrary('all');
 
@@ -3957,6 +4614,11 @@ async function triggerPad(index, atTime = 0, velocity = 1) {
 
 function handlePadKey(e) {
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  if (e.code === 'Space' && document.getElementById('panel-slicer')?.classList.contains('active') && activeEditorSlice) {
+    e.preventDefault();
+    toggleClipPreview();
+    return;
+  }
   const idx = PAD_KEYS.indexOf(e.key.toLowerCase());
   if (idx >= 0) { e.preventDefault(); triggerPad(idx); }
 }
