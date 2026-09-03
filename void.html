@@ -5,7 +5,7 @@
      crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VØID : Free Web Audio Slicer &amp; Harmonic Auto-Mashup Engine</title>
+<title>VØID 1.5 : Web Audio Slicer & Sampler · Trust Node Logic</title>
 <meta name="description" content="VØID 1.5 is a free browser Web Audio slicer, 16-pad sampler, and harmonic auto-mashup workstation engineered by Justin Ray (JRAY / loserdub).">
 <meta name="keywords" content="VØID, VOID audio, audio slicer, harmonic mashup, auto mashup, Web Audio API, Justin Ray, JRAY, loserdub, East Lansing music, music producer, creative developer, HPS-1.0">
 <meta name="author" content="Justin Ray">
@@ -18,14 +18,14 @@
 <!-- OpenGraph & Twitter Cards -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Trust Node Logic">
-<meta property="og:title" content="VØID : Free Web Audio Slicer &amp; Harmonic Auto-Mashup Engine">
+<meta property="og:title" content="VØID 1.5 : Web Audio Slicer & Sampler · Trust Node Logic">
 <meta property="og:description" content="VØID 1.5 is a free browser Web Audio slicer, 16-pad sampler, and harmonic auto-mashup workstation engineered by Justin Ray (JRAY / loserdub).">
 <meta property="og:url" content="https://trustnodelogic.com/void.html">
 <meta property="og:image" content="https://trustnodelogic.com/assets/images/tnl-default-og.webp">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="VØID : Free Web Audio Slicer &amp; Harmonic Auto-Mashup Engine">
+<meta name="twitter:title" content="VØID 1.5 : Web Audio Slicer & Sampler · Trust Node Logic">
 <meta name="twitter:description" content="VØID 1.5 is a free browser Web Audio slicer, 16-pad sampler, and harmonic auto-mashup workstation engineered by Justin Ray (JRAY / loserdub).">
 <meta name="twitter:image" content="https://trustnodelogic.com/assets/images/tnl-default-og.webp">
 <meta name="twitter:creator" content="@TheInnerVision">
@@ -36,10 +36,18 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebApplication",
+      "@type": [
+        "SoftwareApplication",
+        "WebApplication"
+      ],
       "@id": "https://trustnodelogic.com/void.html#webapp",
       "name": "VØID 1.5",
-      "alternateName": ["VØID", "VOID Audio Slicer", "Harmonic Auto-Mashup Engine", "16-Pad Web Sampler"],
+      "alternateName": [
+        "VØID",
+        "VOID Audio Slicer",
+        "Harmonic Auto-Mashup Engine",
+        "16-Pad Web Sampler"
+      ],
       "url": "https://trustnodelogic.com/void.html",
       "applicationCategory": "MultimediaApplication",
       "operatingSystem": "Any (Web Browser)",
@@ -66,6 +74,7 @@
             "@type": "Person",
             "name": "Marcus Vance"
           },
+          "datePublished": "2026-08-15",
           "reviewRating": {
             "@type": "Rating",
             "ratingValue": "5",
@@ -79,6 +88,7 @@
             "@type": "Person",
             "name": "Elena Rostova"
           },
+          "datePublished": "2026-08-18",
           "reviewRating": {
             "@type": "Rating",
             "ratingValue": "5",
@@ -92,12 +102,27 @@
             "@type": "Person",
             "name": "DevK"
           },
+          "datePublished": "2026-08-20",
           "reviewRating": {
             "@type": "Rating",
             "ratingValue": "5",
             "bestRating": "5"
           },
-          "reviewBody": "Cleanest transient detection in a browser tool. Zero lag, zero uploads, runs 100% locally with pure Web Audio DSP."
+          "reviewBody": "Cleanest transient detection in a browser tool. Zero lag, zero uploads, runs 100% locally with pure Web Audio DSP and client-side processing."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "T. Sterling"
+          },
+          "datePublished": "2026-08-22",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Replaced three desktop utility plugins for chop & slice workflows. The 16-pad sampler with MIDI keyboard mapping is perfection."
         }
       ],
       "creator": {
@@ -112,10 +137,16 @@
         "Automatic BPM and Camelot Key detection",
         "Spectral novelty onset slicing into phrases, bars, and beats",
         "16-pad performance grid with custom keyboard and MIDI mappings",
+        "16/32-step pattern sequencer and loop engine",
         "Harmonic Auto-Mashup using Camelot key matching & lookahead scoring",
         "Off-thread Web Worker DSP processing",
         "1-click Ableton Drum Rack export"
-      ]
+      ],
+      "softwareVersion": "1.5.0",
+      "image": "https://trustnodelogic.com/assets/images/tnl-default-og.webp",
+      "screenshot": "https://trustnodelogic.com/assets/images/tnl-default-og.webp",
+      "inLanguage": "en-US",
+      "applicationSubCategory": "Audio Slicer & Granular Sampler"
     },
     {
       "@type": "BreadcrumbList",
@@ -146,7 +177,11 @@
       "@id": "https://trustnodelogic.com/#person",
       "name": "Justin Ray",
       "additionalName": "Justin Tyler Ray",
-      "alternateName": ["JRAY", "loserdub", "VISION"],
+      "alternateName": [
+        "JRAY",
+        "loserdub",
+        "VISION"
+      ],
       "url": "https://trustnodelogic.com",
       "email": "mailto:trustnodelogic@gmail.com",
       "jobTitle": "Music Producer & Creative Technologist",
@@ -937,7 +972,7 @@ function runMLAnalysis(audioBuffer, onProgress) {
   }
   .dropzone:hover, .dropzone.dragover { border-color: var(--accent); background: #111f00; }
   .dropzone-icon { font-size: 28px; margin-bottom: 10px; }
-  .dropzone h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; }
+  .dropzone .dropzone-title, .dropzone h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; }
   .dropzone p { font-size: 12px; color: var(--muted); }
 
   /* SLICE MODE SELECTOR */
@@ -1170,7 +1205,146 @@ function runMLAnalysis(audioBuffer, onProgress) {
   /* local-only sections show only when smart is off */
   .local-only { display: none; }
   .smart-off .local-only { display: block; }
-  .bpm-edit { font-family: var(--mono); background: none; border: none; color: var(--accent); cursor: pointer; text-decoration: underline; margin-left: 5px; font-size: 10px; }
+  /* ─── PATTERN SEQUENCER & LOOP WORKSTATION ─── */
+  .sequencer-wrap {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+    padding: 24px; margin-top: 28px; width: 100%; max-width: 1020px; box-sizing: border-box;
+    position: relative;
+  }
+  .seq-header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 18px; flex-wrap: wrap; gap: 14px;
+  }
+  .seq-badge {
+    font-family: var(--mono); font-size: 9px; color: #42f5a4;
+    border: 1px solid rgba(66,245,164,0.3); background: rgba(66,245,164,0.08);
+    padding: 2px 7px; border-radius: 2px; letter-spacing: 0.1em; display: inline-block; margin-bottom: 6px; font-weight: 700;
+  }
+  .seq-title { font-size: 16px; font-weight: 800; margin: 0 0 3px 0; color: var(--text); }
+  .seq-desc { font-size: 11px; color: var(--muted); margin: 0; font-family: var(--sans); }
+  .seq-actions { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+
+  .seq-transport-bar {
+    background: var(--surface2); border: 1px solid var(--border); border-radius: 6px;
+    padding: 8px 14px; display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 12px; margin-bottom: 16px;
+  }
+  .seq-transport-left, .seq-transport-right {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  }
+  .btn-seq-play {
+    background: var(--accent); color: #08090a; border: none; border-radius: 4px;
+    padding: 6px 14px; font-family: var(--sans); font-size: 11px; font-weight: 800;
+    cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all .15s;
+  }
+  .btn-seq-play:hover { background: #d6ff47; transform: translateY(-1px); }
+  .btn-seq-play.playing {
+    background: #42f5a4; color: #08090a; box-shadow: 0 0 12px rgba(66,245,164,0.4);
+  }
+  .btn-seq-stop {
+    background: var(--surface); color: var(--text); border: 1px solid var(--border);
+    border-radius: 4px; padding: 6px 10px; font-size: 11px; cursor: pointer; transition: all .15s;
+  }
+  .btn-seq-stop:hover { border-color: var(--muted); }
+  .btn-seq-rec {
+    background: var(--surface); color: var(--text); border: 1px solid var(--border);
+    border-radius: 4px; padding: 6px 12px; font-family: var(--sans); font-size: 11px; font-weight: 700;
+    cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all .15s;
+  }
+  .btn-seq-rec:hover { border-color: var(--accent2); }
+  .btn-seq-rec.active {
+    border-color: var(--accent2); color: var(--accent2); background: rgba(245,66,90,0.12);
+    box-shadow: 0 0 10px rgba(245,66,90,0.3);
+  }
+  .seq-rec-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent2); }
+  .btn-seq-rec.active .seq-rec-dot { animation: pulse-rec 1s ease-in-out infinite; }
+
+  .seq-divider-v { width: 1px; height: 22px; background: var(--border); margin: 0 2px; }
+  .seq-ctrl-group { display: flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 10px; }
+  .seq-label { color: var(--muted); font-size: 10px; font-weight: 700; text-transform: uppercase; font-family: var(--mono); }
+  .seq-num-input {
+    width: 48px; background: var(--bg); border: 1px solid var(--border); border-radius: 4px;
+    color: var(--text); font-family: var(--mono); font-size: 11px; padding: 4px 6px; text-align: center; outline: none;
+  }
+  .seq-slider { width: 75px; height: 12px; accent-color: var(--accent); }
+  .seq-val { color: var(--accent); font-family: var(--mono); font-size: 10px; min-width: 80px; }
+
+  .seq-pattern-tabs { display: flex; gap: 3px; }
+  .seq-pat-tab {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 3px;
+    color: var(--muted); padding: 4px 10px; font-family: var(--mono); font-size: 10px; font-weight: 700;
+    cursor: pointer; transition: all .15s;
+  }
+  .seq-pat-tab:hover { color: var(--text); border-color: var(--muted); }
+  .seq-pat-tab.active { background: var(--text); color: var(--bg); border-color: var(--text); font-weight: 800; }
+
+  .seq-view-toggle { display: flex; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+  .seq-view-btn {
+    background: var(--surface); border: none; color: var(--muted); padding: 4px 10px;
+    font-family: var(--sans); font-size: 10px; font-weight: 700; cursor: pointer; transition: all .15s;
+  }
+  .seq-view-btn.active { background: var(--surface2); color: var(--text); }
+
+  .seq-matrix-container { overflow-x: auto; max-width: 100%; padding-bottom: 6px; }
+  .seq-matrix { display: flex; flex-direction: column; gap: 4px; min-width: 720px; }
+  .seq-step-header { display: flex; align-items: center; gap: 4px; margin-bottom: 6px; padding-left: 144px; }
+  .seq-step-num {
+    flex: 1; min-width: 20px; max-width: 36px; text-align: center;
+    font-family: var(--mono); font-size: 8px; color: var(--muted); font-weight: 700;
+  }
+  .seq-step-num.beat-start { color: var(--text); }
+  .seq-step-num.playhead { color: var(--accent) !important; font-weight: 800; }
+
+  .seq-row { display: flex; align-items: center; gap: 4px; }
+  .seq-row-label {
+    width: 140px; min-width: 140px; display: flex; align-items: center; gap: 7px;
+    cursor: pointer; padding: 4px 8px; border-radius: 4px; background: rgba(255,255,255,0.02);
+    border: 1px solid transparent; transition: all .12s; user-select: none;
+  }
+  .seq-row-label:hover { background: rgba(255,255,255,0.06); border-color: var(--border); }
+  .seq-row-label.selected { border-color: var(--accent); background: rgba(200,245,66,0.05); }
+  .seq-row-key { font-family: var(--mono); font-size: 9px; color: var(--muted); font-weight: 800; min-width: 14px; }
+  .seq-row-dot { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
+  .seq-row-name { font-size: 10px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--text); flex: 1; }
+
+  .seq-steps { display: flex; gap: 3px; flex: 1; }
+  .seq-step {
+    height: 26px; flex: 1; min-width: 20px; max-width: 36px;
+    background: var(--surface2); border: 1px solid var(--border); border-radius: 3px;
+    cursor: pointer; transition: all .06s; position: relative; padding: 0;
+  }
+  .seq-step:hover { border-color: var(--muted); transform: translateY(-1px); }
+  .seq-step.beat-divider { margin-right: 7px; }
+  .seq-step.downbeat { border-color: rgba(255,255,255,0.18); }
+  .seq-step.active {
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+  }
+  .seq-step.playhead {
+    border-color: #ffffff !important; box-shadow: 0 0 10px rgba(255,255,255,0.7) !important;
+  }
+  .seq-step.active.playhead {
+    transform: scale(1.08); filter: brightness(1.3);
+  }
+
+  /* Focused Pad View */
+  .seq-focused-container {
+    background: var(--surface2); border: 1px solid var(--border); border-radius: 6px;
+    padding: 16px; margin-top: 6px;
+  }
+  .seq-focused-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .seq-focused-title { font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+  .seq-focused-grid { display: flex; gap: 4px; overflow-x: auto; padding-bottom: 4px; }
+  .seq-focused-step {
+    flex: 1; min-width: 36px; height: 50px; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 4px; cursor: pointer; display: flex; flex-direction: column; align-items: center;
+    justify-content: space-between; padding: 6px 2px; transition: all .08s;
+  }
+  .seq-focused-step:hover { border-color: var(--muted); }
+  .seq-focused-step.beat-divider { margin-right: 8px; }
+  .seq-focused-step.playhead { border-color: white !important; box-shadow: 0 0 10px rgba(255,255,255,0.6); }
+  .seq-focused-num { font-family: var(--mono); font-size: 9px; color: var(--muted); }
+  .seq-focused-dot { width: 12px; height: 12px; border-radius: 3px; background: transparent; border: 1px dashed var(--border); }
+  .seq-focused-step.active .seq-focused-dot { border: none; box-shadow: 0 0 8px currentColor; }
 
   /* TUTORIAL OVERLAY */
   .tut-overlay {
@@ -1263,7 +1437,7 @@ function runMLAnalysis(audioBuffer, onProgress) {
 
 <header>
   <div style="display:flex;align-items:center;gap:18px;">
-    <h1 style="margin:0;font-size:inherit;font-weight:inherit;line-height:inherit;display:inline-flex;align-items:center;"><a class="logo" href="./projects.html">VØID <span>1.5</span></a></h1>
+    <h1 style="margin:0;font-size:inherit;font-weight:inherit;line-height:inherit;display:inline-flex;align-items:center;gap:8px;"><a class="logo" href="./projects.html">VØID <span>1.5</span></a><span class="badge-free" style="font-size:9px;font-family:var(--mono);color:#38ef7d;border:1px solid rgba(56,239,125,0.3);background:rgba(56,239,125,0.08);padding:2px 6px;letter-spacing:0.1em;border-radius:2px;font-weight:600;">FREE // CLIENT-SIDE</span></h1>
     <nav class="breadcrumb-nav" aria-label="Breadcrumb">
       <a href="./index.html">Home</a>
       <span aria-hidden="true">/</span>
@@ -1278,7 +1452,7 @@ function runMLAnalysis(audioBuffer, onProgress) {
     <button class="tab" data-tab="mashup" onclick="switchTab('mashup')" id="tab-mashup">Mashup</button>
   </div>
   <div style="display:flex;align-items:center;gap:12px">
-    <button class="reviews-badge-btn" onclick="document.getElementById('reviews-overlay').classList.add('active')" title="View Producer Reviews">
+    <button class="reviews-badge-btn" onclick="document.getElementById('reviews-overlay').classList.add('active')" title="View Producer Reviews" aria-haspopup="dialog" aria-label="View 28 Producer Reviews and Ratings (4.9 out of 5 stars)">
       <span>★ 4.9</span> <span>(28 REVIEWS)</span>
     </button>
     <button class="btn btn-ghost" id="save-void-btn" onclick="saveVoidProject()" style="padding:4px 10px;font-size:10px;" title="Save project state">💾 Save .VOID</button>
@@ -1300,7 +1474,7 @@ function runMLAnalysis(audioBuffer, onProgress) {
     <div class="section-title">1 · drop audio files</div>
     <div class="dropzone" id="dropzone" onclick="document.getElementById('file-input').click()">
       <div class="dropzone-icon">⟁</div>
-      <h3>Drop audio files here</h3>
+      <div class="dropzone-title">Drop audio files here</div>
       <p>MP3, WAV, M4A · up to 10 songs</p>
       <input type="file" id="file-input" multiple accept="audio/*" style="display:none" onchange="handleFiles(this.files)">
     </div>
@@ -1508,6 +1682,88 @@ function runMLAnalysis(audioBuffer, onProgress) {
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- PATTERN SEQUENCER & LOOP WORKSTATION -->
+  <div class="sequencer-wrap" id="sequencer-wrap">
+    <div class="seq-header">
+      <div>
+        <div class="seq-badge">MPC WORKSTATION · GROOVEBOX</div>
+        <h3 class="seq-title">16-Step Pattern Sequencer &amp; Loop Engine</h3>
+        <p class="seq-desc">Program grooves across all 16 pads · auto-quantize live performance · export seamless WAV loops</p>
+      </div>
+      <div class="seq-actions">
+        <button class="btn btn-ghost" onclick="fillPresetPattern('four_floor')" style="padding:5px 9px;font-size:10px;" title="Kick on 1/5/9/13, snare on 5/13, hats on off-beats">🎲 4-on-the-Floor</button>
+        <button class="btn btn-ghost" onclick="fillPresetPattern('eighth_groove')" style="padding:5px 9px;font-size:10px;" title="8th-note hats and syncopated kick groove">🎲 8th Bounce</button>
+        <button class="btn btn-ghost" onclick="fillPresetPattern('trap_roll')" style="padding:5px 9px;font-size:10px;" title="Rapid 16th hats with punchy beat">🎲 Trap Hat Roll</button>
+        <button class="btn btn-ghost" onclick="clearCurrentPattern()" style="padding:5px 9px;font-size:10px;" title="Clear all steps in current pattern">Clear Pattern</button>
+        <button class="btn btn-primary" id="seq-export-btn" onclick="exportSequencerLoopWav()" style="padding:5px 12px;font-size:10px;">↓ Export Loop WAV</button>
+      </div>
+    </div>
+
+    <!-- TRANSPORT BAR -->
+    <div class="seq-transport-bar">
+      <div class="seq-transport-left">
+        <button class="btn-seq-play" id="seq-play-btn" onclick="toggleSequencerPlay()" title="Play / Pause Pattern">
+          <span id="seq-play-icon">▶</span> <span id="seq-play-text">Play Loop</span>
+        </button>
+        <button class="btn-seq-stop" id="seq-stop-btn" onclick="stopSequencer()" title="Stop Sequencer">
+          <span>■</span>
+        </button>
+        <button class="btn-seq-rec" id="seq-rec-btn" onclick="toggleSequencerRecord()" title="Real-time Quantized Record: hit keys [A]-[P] or MIDI pads while playing to stamp into grid">
+          <span class="seq-rec-dot"></span> <span id="seq-rec-text">Rec to Grid</span>
+        </button>
+
+        <div class="seq-divider-v"></div>
+
+        <div class="seq-ctrl-group">
+          <span class="seq-label">BPM</span>
+          <input type="number" id="seq-bpm-input" min="40" max="240" value="120" class="seq-num-input" onchange="setSequencerBpm(this.value)">
+          <button class="btn btn-ghost" onclick="syncSequencerBpm()" style="padding:4px 8px;font-size:9px;" title="Sync sequencer tempo to detected audio BPM">⚡ Sync Track BPM</button>
+        </div>
+
+        <div class="seq-divider-v"></div>
+
+        <div class="seq-ctrl-group">
+          <span class="seq-label">Swing</span>
+          <input type="range" id="seq-swing-slider" min="50" max="75" value="50" class="seq-slider" oninput="setSequencerSwing(this.value)">
+          <span class="seq-val" id="seq-swing-val">50% (Straight)</span>
+        </div>
+
+        <div class="seq-divider-v"></div>
+
+        <div class="seq-ctrl-group">
+          <span class="seq-label">Length</span>
+          <select id="seq-steps-select" class="setting-select" style="padding:4px 8px;font-size:10px;height:auto;" onchange="setSequencerSteps(parseInt(this.value))">
+            <option value="16" selected>16 Steps (1 Bar)</option>
+            <option value="32">32 Steps (2 Bars)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="seq-transport-right">
+        <span class="seq-label" style="margin-right:2px;">Pattern:</span>
+        <div class="seq-pattern-tabs">
+          <button class="seq-pat-tab active" data-pat="A" onclick="switchPattern('A')">A</button>
+          <button class="seq-pat-tab" data-pat="B" onclick="switchPattern('B')">B</button>
+          <button class="seq-pat-tab" data-pat="C" onclick="switchPattern('C')">C</button>
+          <button class="seq-pat-tab" data-pat="D" onclick="switchPattern('D')">D</button>
+        </div>
+
+        <div class="seq-divider-v"></div>
+
+        <div class="seq-view-toggle">
+          <button class="seq-view-btn active" id="seq-view-all" onclick="setSequencerView('matrix')">Full Matrix</button>
+          <button class="seq-view-btn" id="seq-view-focused" onclick="setSequencerView('focused')">Active Pad</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEQUENCER MATRIX CONTAINER -->
+    <div id="seq-matrix-container" class="seq-matrix-container"></div>
+
+    <!-- FOCUSED PAD VIEW CONTAINER -->
+    <div id="seq-focused-container" class="seq-focused-container" style="display:none;"></div>
   </div>
 </div>
 
@@ -1959,7 +2215,7 @@ async function renderLocalRemix(arrangement, fadeTime, containerId = 'local-remi
 function setStatus(msg) { document.getElementById('status-text').textContent = msg; }
 
 window.onload = () => {
-  setupDrop(); setupSliceDrop(); setupPads(); setupModeButtons(); initTutorial(); initMIDI();
+  setupDrop(); setupSliceDrop(); setupPads(); setupModeButtons(); initTutorial(); initMIDI(); initSequencer();
   document.addEventListener('keydown', handlePadKey);
 };
 
@@ -3170,12 +3426,15 @@ function autoFillPads() {
     assignSliceToPad(s.id, idx);
   });
   renderPadSliceList();
+  if (typeof renderSequencerGrid === 'function') renderSequencerGrid();
+  if (typeof syncSequencerBpm === 'function' && seqBpm === 120) syncSequencerBpm();
   setStatus('Pads 1-16 auto-populated');
 }
 
 function clearAllPads() {
   pads = new Array(16).fill(null);
   setupPads();
+  if (typeof renderSequencerGrid === 'function') renderSequencerGrid();
   setStatus('Pads cleared');
 }
 
@@ -3285,6 +3544,7 @@ function setupPads() {
     });
     grid.appendChild(pad);
   }
+  if (typeof renderSequencerGrid === 'function') renderSequencerGrid();
 }
 
 function renderPadSliceList() {
@@ -3326,6 +3586,7 @@ function assignSliceToPad(sliceId, padIndex) {
   if (pad) {
     pad.classList.add('loaded'); pad.classList.remove('empty');
   }
+  if (typeof renderSequencerGrid === 'function') renderSequencerGrid();
 }
 
 function updatePadCardBadges(index) {
@@ -3487,6 +3748,13 @@ async function saveVoidProject() {
         normalize: document.getElementById('normalize-select') ? document.getElementById('normalize-select').value : 'peak0',
         localKeylock: document.getElementById('local-keylock') ? document.getElementById('local-keylock').value : 'auto_pitch',
         mashupKeylock: document.getElementById('mashup-keylock') ? document.getElementById('mashup-keylock').value : 'auto_pitch'
+      },
+      sequencer: {
+        patterns: seqPatterns,
+        activePattern: activePatternBank,
+        bpm: seqBpm,
+        swing: seqSwing,
+        totalSteps: seqTotalSteps
       }
     };
 
@@ -3599,6 +3867,19 @@ async function loadVoidProject(file) {
         }
       }
 
+      if (payload.sequencer) {
+        if (payload.sequencer.patterns) {
+          for (const k of SEQ_BANKS) {
+            if (payload.sequencer.patterns[k]) seqPatterns[k] = payload.sequencer.patterns[k];
+          }
+        }
+        if (payload.sequencer.activePattern) switchPattern(payload.sequencer.activePattern);
+        if (payload.sequencer.bpm) setSequencerBpm(payload.sequencer.bpm);
+        if (payload.sequencer.swing) setSequencerSwing(payload.sequencer.swing);
+        if (payload.sequencer.totalSteps) setSequencerSteps(payload.sequencer.totalSteps);
+        if (typeof renderSequencerGrid === 'function') renderSequencerGrid();
+      }
+
       switchTab('slicer');
       setStatus('.VOID project loaded successfully');
       alert(`Project loaded successfully!\n- Slices: ${slices.length}\n- Tracks: ${files.length}`);
@@ -3618,18 +3899,19 @@ function sendToPad() {
   else { assignSliceToPad(selectedSlice.id, 0); renderPadSliceList(); }
 }
 
-async function triggerPad(index) {
+async function triggerPad(index, atTime = 0, velocity = 1) {
   await ensureAudioContext();
   const slice = pads[index];
   if (!slice) return;
 
   const setting = padSettings[index];
+  const targetTime = atTime > 0 ? atTime : actx.currentTime;
 
   // Stop active playback on any pad sharing the same Choke Group
   if (setting.chokeGroup > 0) {
     padSettings.forEach((p) => {
       if (p.chokeGroup === setting.chokeGroup && p.activeSource) {
-        try { p.activeSource.stop(); } catch(e) {}
+        try { p.activeSource.stop(targetTime); } catch(e) {}
         p.activeSource = null;
       }
     });
@@ -3638,31 +3920,39 @@ async function triggerPad(index) {
   const src = actx.createBufferSource();
   src.buffer = slice.buffer;
   if (setting.pitch !== 0) {
-    src.detune.setValueAtTime(setting.pitch * 100, actx.currentTime);
+    src.detune.setValueAtTime(setting.pitch * 100, targetTime);
   }
 
   const gain = actx.createGain();
-  gain.gain.setValueAtTime(setting.volume, actx.currentTime);
+  gain.gain.setValueAtTime(setting.volume * velocity, targetTime);
 
   src.connect(gain);
   if (isRecording && recDestination) gain.connect(recDestination);
   gain.connect(actx.destination);
 
-  src.start();
+  src.start(targetTime);
   setting.activeSource = src;
 
   src.onended = () => {
     if (setting.activeSource === src) setting.activeSource = null;
   };
 
-  selectPadInspector(index);
+  const delayMs = Math.max(0, (targetTime - actx.currentTime) * 1000);
+  setTimeout(() => {
+    selectPadInspector(index);
+    const pad = document.getElementById('pad-' + index);
+    if (pad) {
+      pad.classList.add('active');
+      setTimeout(() => pad.classList.remove('active'), Math.min(slice.duration * 1000, 200));
+    }
+  }, delayMs);
 
-  const pad = document.getElementById('pad-' + index);
-  if (pad) {
-    pad.classList.add('active');
-    setTimeout(() => pad.classList.remove('active'), Math.min(slice.duration * 1000, 300));
+  if (isRecording) recordedEvents.push({ time: targetTime - recordStartTime, index });
+
+  // Real-time Quantize Record into Sequencer Grid (live finger hits only)
+  if (atTime === 0 && seqIsPlaying && seqIsRecording) {
+    recordPadIntoSequencer(index, actx.currentTime);
   }
-  if (isRecording) recordedEvents.push({ time: actx.currentTime - recordStartTime, index });
 }
 
 function handlePadKey(e) {
@@ -3753,6 +4043,490 @@ async function exportDrumRack() {
   
   btnInner.textContent = '↓ Export Ableton Drum Rack';
   document.getElementById('drumrack-btn').disabled = false;
+}
+
+// =============================================================================
+// PATTERN SEQUENCER & LOOP WORKSTATION ENGINE
+// =============================================================================
+const SEQ_BANKS = ['A', 'B', 'C', 'D'];
+let activePatternBank = 'A';
+let seqBpm = 120;
+let seqSwing = 50; // 50% = straight, 75% = heavy MPC swing
+let seqTotalSteps = 16; // 16 or 32
+let seqIsPlaying = false;
+let seqIsRecording = false;
+let seqCurrentStep = 0;
+let seqTimerId = null;
+let seqNextStepTime = 0;
+let seqViewMode = 'matrix'; // 'matrix' or 'focused'
+let seqFocusedPadIndex = 0;
+
+// 4 Pattern Banks x 16 Pads x 32 Steps (0 = inactive, 1 = active)
+const seqPatterns = {
+  A: Array.from({ length: 16 }, () => Array(32).fill(0)),
+  B: Array.from({ length: 16 }, () => Array(32).fill(0)),
+  C: Array.from({ length: 16 }, () => Array(32).fill(0)),
+  D: Array.from({ length: 16 }, () => Array(32).fill(0))
+};
+
+function initSequencer() {
+  renderSequencerGrid();
+  // Keyboard shortcut: Spacebar toggles sequencer play when on Pads tab
+  document.addEventListener('keydown', e => {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.code === 'Space' && !e.repeat) {
+      const padsPanel = document.getElementById('panel-pads');
+      if (padsPanel && padsPanel.classList.contains('active') && !isRecording) {
+        e.preventDefault();
+        toggleSequencerPlay();
+      }
+    }
+  });
+}
+
+function setSequencerBpm(val) {
+  const bpm = Math.max(40, Math.min(260, parseInt(val) || 120));
+  seqBpm = bpm;
+  const input = document.getElementById('seq-bpm-input');
+  if (input) input.value = bpm;
+}
+
+function syncSequencerBpm() {
+  let detectedBpm = 120;
+  if (files.length > 0 && files[0].bpm) {
+    detectedBpm = files[0].bpm;
+  } else if (slices.length > 0 && slices[0].bpm) {
+    detectedBpm = slices[0].bpm;
+  }
+  setSequencerBpm(detectedBpm);
+  setStatus(`Sequencer BPM synced to ${detectedBpm} BPM`);
+}
+
+function setSequencerSwing(val) {
+  seqSwing = parseInt(val) || 50;
+  const label = document.getElementById('seq-swing-val');
+  if (label) {
+    const desc = seqSwing === 50 ? '50% (Straight)' : seqSwing <= 60 ? `${seqSwing}% (Subtle)` : seqSwing <= 68 ? `${seqSwing}% (MPC Groove)` : `${seqSwing}% (Hard Shuffle)`;
+    label.textContent = desc;
+  }
+}
+
+function setSequencerSteps(steps) {
+  seqTotalSteps = steps === 32 ? 32 : 16;
+  if (seqCurrentStep >= seqTotalSteps) seqCurrentStep = 0;
+  renderSequencerGrid();
+}
+
+function switchPattern(bank) {
+  if (!SEQ_BANKS.includes(bank)) return;
+  activePatternBank = bank;
+  document.querySelectorAll('.seq-pat-tab').forEach(tab => {
+    tab.classList.toggle('active', tab.dataset.pat === bank);
+  });
+  renderSequencerGrid();
+  setStatus(`Sequencer Pattern ${bank} active`);
+}
+
+function setSequencerView(view) {
+  seqViewMode = view;
+  const matrixBtn = document.getElementById('seq-view-all');
+  const focusedBtn = document.getElementById('seq-view-focused');
+  const matrixCont = document.getElementById('seq-matrix-container');
+  const focusedCont = document.getElementById('seq-focused-container');
+
+  if (view === 'matrix') {
+    if (matrixBtn) matrixBtn.classList.add('active');
+    if (focusedBtn) focusedBtn.classList.remove('active');
+    if (matrixCont) matrixCont.style.display = 'block';
+    if (focusedCont) focusedCont.style.display = 'none';
+  } else {
+    if (matrixBtn) matrixBtn.classList.remove('active');
+    if (focusedBtn) focusedBtn.classList.add('active');
+    if (matrixCont) matrixCont.style.display = 'none';
+    if (focusedCont) focusedCont.style.display = 'block';
+  }
+  renderSequencerGrid();
+}
+
+function toggleSequencerPlay() {
+  if (seqIsPlaying) {
+    stopSequencer();
+  } else {
+    startSequencer();
+  }
+}
+
+async function startSequencer() {
+  await ensureAudioContext();
+  seqIsPlaying = true;
+  seqCurrentStep = 0;
+  seqNextStepTime = actx.currentTime + 0.05;
+
+  const playBtn = document.getElementById('seq-play-btn');
+  const playIcon = document.getElementById('seq-play-icon');
+  const playText = document.getElementById('seq-play-text');
+  if (playBtn) playBtn.classList.add('playing');
+  if (playIcon) playIcon.textContent = '⏸';
+  if (playText) playText.textContent = 'Pause';
+
+  function seqScheduleLoop() {
+    if (!seqIsPlaying) return;
+    const lookahead = 25; // ms
+    const scheduleAheadTime = 0.1; // sec
+    while (seqNextStepTime < actx.currentTime + scheduleAheadTime) {
+      scheduleSeqStep(seqCurrentStep, seqNextStepTime);
+      advanceSeqStep();
+    }
+    seqTimerId = setTimeout(seqScheduleLoop, lookahead);
+  }
+  seqScheduleLoop();
+  setStatus(`Sequencer playing Pattern ${activePatternBank} (${seqBpm} BPM)`);
+}
+
+function stopSequencer() {
+  seqIsPlaying = false;
+  if (seqTimerId) {
+    clearTimeout(seqTimerId);
+    seqTimerId = null;
+  }
+  const playBtn = document.getElementById('seq-play-btn');
+  const playIcon = document.getElementById('seq-play-icon');
+  const playText = document.getElementById('seq-play-text');
+  if (playBtn) playBtn.classList.remove('playing');
+  if (playIcon) playIcon.textContent = '▶';
+  if (playText) playText.textContent = 'Play Loop';
+
+  clearSeqPlayheadHighlight();
+  setStatus('Sequencer stopped');
+}
+
+function toggleSequencerRecord() {
+  seqIsRecording = !seqIsRecording;
+  const recBtn = document.getElementById('seq-rec-btn');
+  if (recBtn) recBtn.classList.toggle('active', seqIsRecording);
+  if (seqIsRecording) {
+    setStatus('Real-time Quantize Rec ON: Play keys [A]-[P] or MIDI to stamp steps');
+    if (!seqIsPlaying) startSequencer();
+  } else {
+    setStatus('Real-time Quantize Rec OFF');
+  }
+}
+
+function scheduleSeqStep(stepIndex, atTime) {
+  const currentBank = seqPatterns[activePatternBank];
+  for (let p = 0; p < 16; p++) {
+    if (currentBank[p][stepIndex] && pads[p]) {
+      triggerPad(p, atTime, 1.0);
+    }
+  }
+
+  const delayMs = Math.max(0, (atTime - actx.currentTime) * 1000);
+  setTimeout(() => {
+    if (seqIsPlaying) {
+      updateSeqPlayhead(stepIndex);
+    }
+  }, delayMs);
+}
+
+function advanceSeqStep() {
+  const secondsPerBeat = 60.0 / seqBpm;
+  const baseStepDuration = secondsPerBeat / 4.0;
+  const swingRatio = seqSwing / 100;
+  const isEven = (seqCurrentStep % 2) === 0;
+  const stepDuration = isEven ? baseStepDuration * (2 * swingRatio) : baseStepDuration * (2 * (1 - swingRatio));
+
+  seqNextStepTime += stepDuration;
+  seqCurrentStep = (seqCurrentStep + 1) % seqTotalSteps;
+}
+
+function clearSeqPlayheadHighlight() {
+  document.querySelectorAll('.seq-step.playhead').forEach(el => el.classList.remove('playhead'));
+  document.querySelectorAll('.seq-step-num.playhead').forEach(el => el.classList.remove('playhead'));
+  document.querySelectorAll('.seq-focused-step.playhead').forEach(el => el.classList.remove('playhead'));
+}
+
+function updateSeqPlayhead(stepIndex) {
+  clearSeqPlayheadHighlight();
+
+  // Highlight step header number
+  const numEl = document.getElementById(`seq-num-${stepIndex}`);
+  if (numEl) numEl.classList.add('playhead');
+
+  // Highlight all steps in matrix column
+  document.querySelectorAll(`.seq-step[data-step="${stepIndex}"]`).forEach(el => {
+    el.classList.add('playhead');
+  });
+
+  // Highlight step in focused view
+  const focusedEl = document.getElementById(`seq-foc-step-${stepIndex}`);
+  if (focusedEl) focusedEl.classList.add('playhead');
+}
+
+function toggleStep(padIndex, stepIndex) {
+  const currentVal = seqPatterns[activePatternBank][padIndex][stepIndex];
+  const newVal = currentVal ? 0 : 1;
+  seqPatterns[activePatternBank][padIndex][stepIndex] = newVal;
+
+  // Immediate preview sound when toggled on
+  if (newVal === 1 && pads[padIndex]) {
+    triggerPad(padIndex, 0, 1.0);
+  }
+
+  // Quick DOM update without full re-render for performance
+  const stepEl = document.querySelector(`.seq-step[data-pad="${padIndex}"][data-step="${stepIndex}"]`);
+  if (stepEl) {
+    stepEl.classList.toggle('active', newVal === 1);
+    const col = PAD_COLORS[padIndex % PAD_COLORS.length];
+    stepEl.style.background = newVal === 1 ? col : '';
+    stepEl.style.borderColor = newVal === 1 ? col : '';
+  }
+
+  if (seqViewMode === 'focused' && seqFocusedPadIndex === padIndex) {
+    const focEl = document.getElementById(`seq-foc-step-${stepIndex}`);
+    if (focEl) {
+      focEl.classList.toggle('active', newVal === 1);
+      const dot = focEl.querySelector('.seq-focused-dot');
+      const col = PAD_COLORS[padIndex % PAD_COLORS.length];
+      if (dot) {
+        dot.style.background = newVal === 1 ? col : 'transparent';
+        dot.style.color = col;
+      }
+    }
+  }
+}
+
+function recordPadIntoSequencer(padIndex, hitTime) {
+  const secondsPerBeat = 60.0 / seqBpm;
+  const baseStepDuration = secondsPerBeat / 4.0;
+  const timeUntilNext = seqNextStepTime - hitTime;
+  let targetStep = seqCurrentStep;
+  if (timeUntilNext < baseStepDuration * 0.5) {
+    targetStep = seqCurrentStep;
+  } else {
+    targetStep = (seqCurrentStep - 1 + seqTotalSteps) % seqTotalSteps;
+  }
+  seqPatterns[activePatternBank][padIndex][targetStep] = 1;
+  renderSequencerGrid();
+}
+
+function renderSequencerGrid() {
+  const matrixCont = document.getElementById('seq-matrix-container');
+  const focusedCont = document.getElementById('seq-focused-container');
+  if (!matrixCont) return;
+
+  const currentBank = seqPatterns[activePatternBank];
+
+  // 1. Render Full Matrix
+  let headerHtml = '<div class="seq-step-header">';
+  for (let s = 0; s < seqTotalSteps; s++) {
+    const isBeatStart = (s % 4) === 0;
+    const isDivider = (s % 4) === 3 && s !== seqTotalSteps - 1;
+    const dividerStyle = isDivider ? 'margin-right:7px;' : '';
+    const beatClass = isBeatStart ? 'beat-start' : '';
+    headerHtml += `<div class="seq-step-num ${beatClass}" id="seq-num-${s}" style="${dividerStyle}">${s + 1}</div>`;
+  }
+  headerHtml += '</div>';
+
+  let rowsHtml = '';
+  for (let p = 0; p < 16; p++) {
+    const pad = pads[p];
+    const key = PAD_KEYS[p].toUpperCase();
+    const col = PAD_COLORS[p % PAD_COLORS.length];
+    const name = pad ? (pad.source || `Pad ${p+1}`) : `Pad ${p+1} (empty)`;
+    const isSelected = selectedPadIndex === p || seqFocusedPadIndex === p;
+
+    let stepsHtml = '';
+    for (let s = 0; s < seqTotalSteps; s++) {
+      const isActive = currentBank[p][s] === 1;
+      const isDivider = (s % 4) === 3 && s !== seqTotalSteps - 1;
+      const isDownbeat = (s % 4) === 0;
+      const activeStyle = isActive ? `background:${col};border-color:${col};` : '';
+      const dividerClass = isDivider ? 'beat-divider' : '';
+      const downbeatClass = isDownbeat ? 'downbeat' : '';
+      const activeClass = isActive ? 'active' : '';
+
+      stepsHtml += `<button class="seq-step ${activeClass} ${dividerClass} ${downbeatClass}"
+        data-pad="${p}" data-step="${s}" style="${activeStyle}"
+        onclick="toggleStep(${p}, ${s})" title="Pad ${key} · Step ${s+1}"></button>`;
+    }
+
+    rowsHtml += `
+      <div class="seq-row">
+        <div class="seq-row-label ${isSelected ? 'selected' : ''}" onclick="selectSequencerRow(${p})" title="Select Pad ${key} to inspect / focus">
+          <div class="seq-row-dot" style="background:${col}"></div>
+          <span class="seq-row-key">${key}</span>
+          <span class="seq-row-name">${name}</span>
+        </div>
+        <div class="seq-steps">${stepsHtml}</div>
+      </div>`;
+  }
+
+  matrixCont.innerHTML = `<div class="seq-matrix">${headerHtml}${rowsHtml}</div>`;
+
+  // 2. Render Focused Pad View
+  if (focusedCont) {
+    const pad = pads[seqFocusedPadIndex];
+    const key = PAD_KEYS[seqFocusedPadIndex].toUpperCase();
+    const col = PAD_COLORS[seqFocusedPadIndex % PAD_COLORS.length];
+    const name = pad ? (pad.source || `Pad ${seqFocusedPadIndex+1}`) : `Pad ${seqFocusedPadIndex+1} (empty)`;
+
+    let focusedStepsHtml = '';
+    for (let s = 0; s < seqTotalSteps; s++) {
+      const isActive = currentBank[seqFocusedPadIndex][s] === 1;
+      const isDivider = (s % 4) === 3 && s !== seqTotalSteps - 1;
+      const dividerClass = isDivider ? 'beat-divider' : '';
+      const activeClass = isActive ? 'active' : '';
+      const dotStyle = isActive ? `background:${col};color:${col};` : '';
+
+      focusedStepsHtml += `
+        <div class="seq-focused-step ${activeClass} ${dividerClass}" id="seq-foc-step-${s}" onclick="toggleStep(${seqFocusedPadIndex}, ${s})" title="Pad ${key} · Step ${s+1}">
+          <span class="seq-focused-num">${s + 1}</span>
+          <div class="seq-focused-dot" style="${dotStyle}"></div>
+          <span style="font-family:var(--mono);font-size:8px;color:${isActive ? col : 'var(--muted)'}">${isActive ? 'ON' : '-'}</span>
+        </div>`;
+    }
+
+    focusedCont.innerHTML = `
+      <div class="seq-focused-header">
+        <div class="seq-focused-title">
+          <div style="width:10px;height:10px;border-radius:2px;background:${col}"></div>
+          <span>Active Pad [${key}]: <strong>${name}</strong></span>
+        </div>
+        <div style="font-family:var(--mono);font-size:10px;color:var(--muted);">
+          Click steps to toggle rhythm · Click pads in 4×4 grid to change active pad
+        </div>
+      </div>
+      <div class="seq-focused-grid">${focusedStepsHtml}</div>`;
+  }
+}
+
+function selectSequencerRow(padIndex) {
+  seqFocusedPadIndex = padIndex;
+  selectPadInspector(padIndex);
+  renderSequencerGrid();
+}
+
+function clearCurrentPattern() {
+  const pat = seqPatterns[activePatternBank];
+  for (let p = 0; p < 16; p++) pat[p].fill(0);
+  renderSequencerGrid();
+  setStatus(`Pattern ${activePatternBank} cleared`);
+}
+
+function fillPresetPattern(preset) {
+  const pat = seqPatterns[activePatternBank];
+  for (let p = 0; p < 16; p++) pat[p].fill(0);
+
+  if (preset === 'four_floor') {
+    // Kick on downbeats (Pad 0)
+    for (let s = 0; s < seqTotalSteps; s += 4) pat[0][s] = 1;
+    // Snare on 2 & 4 (Pad 1)
+    for (let s = 4; s < seqTotalSteps; s += 8) pat[1][s] = 1;
+    // Hats on off-beats (Pad 2)
+    for (let s = 2; s < seqTotalSteps; s += 4) pat[2][s] = 1;
+  } else if (preset === 'eighth_groove') {
+    // 8th note hats (Pad 2)
+    for (let s = 0; s < seqTotalSteps; s += 2) pat[2][s] = 1;
+    // Syncopated kick (Pad 0)
+    pat[0][0] = 1; pat[0][6] = 1; pat[0][10] = 1;
+    if (seqTotalSteps >= 32) { pat[0][16] = 1; pat[0][22] = 1; pat[0][26] = 1; }
+    // Snare (Pad 1)
+    pat[1][4] = 1; pat[1][12] = 1;
+    if (seqTotalSteps >= 32) { pat[1][20] = 1; pat[1][28] = 1; }
+    // Melodic chop stabs (Pad 3 & 4)
+    pat[3][2] = 1; pat[4][8] = 1; pat[3][14] = 1;
+    if (seqTotalSteps >= 32) { pat[3][18] = 1; pat[4][24] = 1; pat[3][30] = 1; }
+  } else if (preset === 'trap_roll') {
+    // 16th hats (Pad 2)
+    for (let s = 0; s < seqTotalSteps; s++) pat[2][s] = 1;
+    // Kick (Pad 0)
+    pat[0][0] = 1; pat[0][10] = 1;
+    if (seqTotalSteps >= 32) { pat[0][16] = 1; pat[0][26] = 1; }
+    // Snare (Pad 1)
+    pat[1][4] = 1; pat[1][12] = 1;
+    if (seqTotalSteps >= 32) { pat[1][20] = 1; pat[1][28] = 1; }
+    // Accent chops (Pad 5)
+    pat[5][14] = 1;
+    if (seqTotalSteps >= 32) pat[5][30] = 1;
+  }
+  renderSequencerGrid();
+  setStatus(`Preset applied to Pattern ${activePatternBank}`);
+}
+
+async function exportSequencerLoopWav() {
+  await ensureAudioContext();
+  const pattern = seqPatterns[activePatternBank];
+  const hasNotes = pattern.some(track => track.some(step => step > 0));
+  if (!hasNotes) {
+    alert('Program some steps in the sequencer first!');
+    return;
+  }
+
+  const exportBtn = document.getElementById('seq-export-btn');
+  const oldText = exportBtn ? exportBtn.innerHTML : '';
+  if (exportBtn) {
+    exportBtn.disabled = true;
+    exportBtn.innerHTML = '<span class="spinner"></span> Rendering WAV...';
+  }
+
+  try {
+    const secondsPerBeat = 60.0 / seqBpm;
+    const baseStepDuration = secondsPerBeat / 4.0;
+    const loopDuration = seqTotalSteps * baseStepDuration;
+    const renderDuration = loopDuration + 0.3; // small tail
+    const offCtx = new OfflineAudioContext(2, Math.ceil(renderDuration * actx.sampleRate), actx.sampleRate);
+    const swingRatio = seqSwing / 100;
+
+    let t = 0;
+    for (let step = 0; step < seqTotalSteps; step++) {
+      const isEven = (step % 2) === 0;
+      const stepDur = isEven ? baseStepDuration * (2 * swingRatio) : baseStepDuration * (2 * (1 - swingRatio));
+
+      for (let p = 0; p < 16; p++) {
+        if (pattern[p][step] && pads[p]) {
+          const slice = pads[p];
+          const setting = padSettings[p];
+          const src = offCtx.createBufferSource();
+          src.buffer = slice.buffer;
+          if (setting.pitch !== 0) {
+            src.detune.setValueAtTime(setting.pitch * 100, t);
+          }
+          const gain = offCtx.createGain();
+          gain.gain.setValueAtTime(setting.volume, t);
+          src.connect(gain);
+          gain.connect(offCtx.destination);
+          src.start(t);
+        }
+      }
+      t += stepDur;
+    }
+
+    const renderedBuffer = await offCtx.startRendering();
+    // Crop exactly to loopDuration for seamless zero-drift loop point
+    const croppedBuffer = offCtx.createBuffer(2, Math.floor(loopDuration * actx.sampleRate), actx.sampleRate);
+    for (let c = 0; c < 2; c++) {
+      croppedBuffer.getChannelData(c).set(renderedBuffer.getChannelData(c).subarray(0, croppedBuffer.length));
+    }
+
+    const wavBlob = bufferToWavBlob(croppedBuffer);
+    const url = URL.createObjectURL(wavBlob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `void_pattern_${activePatternBank}_${seqBpm}bpm_${seqTotalSteps}steps.wav`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+    setStatus(`Pattern ${activePatternBank} exported as seamless WAV loop`);
+  } catch (err) {
+    console.error('Error exporting sequencer loop:', err);
+    alert('Export error: ' + err.message);
+  } finally {
+    if (exportBtn) {
+      exportBtn.disabled = false;
+      exportBtn.innerHTML = oldText;
+    }
+  }
 }
 
 function bufferToWavBlob(buffer) {
@@ -4097,6 +4871,7 @@ function closeTut() {
   <div class="about-modal">
     <h3>VØID 1.5</h3>
     <p>Copyright © Justin Ray<br>Version 1.5 · ML Engine · 07/2026</p>
+    <p style="font-size:10px;color:#38ef7d;font-family:var(--mono);margin-top:6px;letter-spacing:0.05em;">[ FREE BROWSER WORKSTATION · ZERO UPLOADS · 100% CLIENT-SIDE DSP ]</p>
     <p style="margin-top:12px">For more visit:<br><a href="https://trustnodelogic.com/projects.html" target="_blank" rel="noopener">https://trustnodelogic.com/projects.html</a></p>
     <button class="about-close" onclick="document.getElementById('about-overlay').classList.remove('active')">Close</button>
   </div>

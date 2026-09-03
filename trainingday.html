@@ -6,7 +6,7 @@
      crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uploading Music to AI: IP Rights &amp; Legal Realities | JRAY</title>
+<title>Uploading Music to AI: IP Realities · Trust Node Logic</title>
 <meta name="description" content="Should you upload original stems or full tracks to Suno or Udio? A deep investigation into terms of service, AI training datasets, and artist IP rights.">
 <meta name="author" content="Justin Ray">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -18,7 +18,7 @@
 
 <!-- OpenGraph & Twitter Cards -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Uploading Music to AI: IP Rights &amp; Legal Realities | JRAY">
+<meta property="og:title" content="Uploading Music to AI: IP Realities · Trust Node Logic">
 <meta property="og:description" content="Should you upload original stems or full tracks to Suno or Udio? A deep investigation into terms of service, AI training datasets, and artist IP rights.">
 <meta property="og:url" content="https://trustnodelogic.com/trainingday.html">
 <meta property="og:site_name" content="Trust Node Logic">
@@ -26,7 +26,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Uploading Music to AI: IP Rights &amp; Legal Realities | JRAY">
+<meta name="twitter:title" content="Uploading Music to AI: IP Realities · Trust Node Logic">
 <meta name="twitter:description" content="Should you upload original stems or full tracks to Suno or Udio? A deep investigation into terms of service, AI training datasets, and artist IP rights.">
 <meta name="twitter:image" content="https://trustnodelogic.com/assets/images/tnl-default-og.webp">
 <link rel="icon" type="image/png" href="./favicon.png">
@@ -434,7 +434,7 @@
  display: block;
  }
 
- .compare-cell h4 {
+ .compare-cell h3, .compare-cell h4 {
  font-family: var(--display);
  font-size: 1.4rem;
  letter-spacing: 0.06em;
@@ -632,15 +632,127 @@
   .breadcrumb a:hover { color: var(--blue, #6c8dff); }
   .breadcrumb [aria-current="page"] { color: var(--text-muted, #9ca3af); }
   .breadcrumb span[aria-hidden] { color: var(--line, #1e2233); font-size: 13px; }
+
+  /* Standard Brutalist Header */
+  .site-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: rgba(11, 12, 14, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 14px 0;
+  }
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono, 'JetBrains Mono', monospace);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #EAEAEA;
+    text-decoration: none;
+  }
+  .brand-logo .dot {
+    width: 8px;
+    height: 8px;
+    background: #FF9F1C;
+    box-shadow: 0 0 10px #FF9F1C;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-links a {
+    font-family: var(--mono, 'JetBrains Mono', monospace);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #71717A;
+    text-decoration: none;
+    padding: 4px 0;
+    transition: color 0.15s ease;
+  }
+  .nav-links a:hover, .nav-links a.active {
+    color: #FF9F1C;
+  }
+  .nav-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono, 'JetBrains Mono', monospace);
+    font-size: 11px;
+    padding: 5px 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #A1A1AA;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+  .nav-action:hover {
+    color: #fff;
+    border-color: #FF9F1C;
+    background: rgba(255, 159, 28, 0.15);
+  }
+  @media (max-width: 860px) {
+    .nav-links { display: none; }
+  }
+
 </style>
 <link href="/sitemap.xml" rel="sitemap" type="application/xml"/>
 <link href="/llms.txt" rel="alternate" title="AI LLM Knowledge Graph Manifest" type="text/plain"/>
 </link></head>
 <body>
+<!-- Rigid Brutalist Main Header -->
 <header class="site-header">
-<a class="site-logo" href="/">JRAY.ME</a>
-<a class="site-nav" href="./what-is-hybrid.html">What Is Hybrid</a>
+  <div class="header-inner">
+    <a href="./index.html" class="brand-logo" aria-label="Home">
+      <div class="dot"></div>
+      <span>TNL // JUSTIN RAY</span>
+    </a>
+    <nav class="nav-links" aria-label="Main Navigation">
+      <a href="./index.html">HOME</a>
+      <a href="./field-notes.html" class="active">FIELD NOTES</a>
+      <a href="./music.html">MUSIC</a>
+      <a href="./projects.html">PROJECTS</a>
+      <a href="./about.html">ABOUT</a>
+      <a href="./what-is-hybrid.html">WHAT IS HYBRID</a>
+      <a href="./services.html">SERVICES</a>
+      <a href="./contact.html">CONTACT</a>
+    </nav>
+    <a class="nav-action" href="https://trustnodelogic.web.app" target="_blank" rel="noopener noreferrer">
+      <span>WEB APP</span>
+      <span>↗</span>
+    </a>
+  </div>
 </header>
+
+<!-- Breadcrumbs Hierarchy -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="./index.html">Home</a>
+  <span aria-hidden="true">/</span>
+  <a href="./field-notes.html">Field Notes</a>
+  <span aria-hidden="true">/</span>
+  <span class="current" aria-current="page">Is Uploading Your Music Stealing?</span>
+</nav>
+
+
 
 <!-- HERO -->
 <div class="hero">
@@ -670,7 +782,7 @@
 <div class="compare-grid">
 <div class="compare-cell">
 <span class="cell-label">Option A</span>
-<h4>Simple Loop</h4>
+<h3>Simple Loop</h3>
 <span class="tag tag-pro">Pro</span>
 <p>Clean, unambiguous harmonic and rhythmic DNA. The AI latches on without competing signals. If you've built your loop following a deliberate Taxonomic Seed, Kingdom down to Species, the model has a strict biological blueprint to extend from. Output tends to stay closer to your intent, your tempo, your key.</p>
 <span class="tag tag-con">Con</span>
@@ -678,7 +790,7 @@
 </div>
 <div class="compare-cell">
 <span class="cell-label">Option B</span>
-<h4>Full Song</h4>
+<h3>Full Song</h3>
 <span class="tag tag-pro">Pro</span>
 <p>Rich context. The model gets your tempo, key, arrangement arc, emotional dynamics, breakdown, drop. Not just your sound, but your intent. Reduces random hallucination significantly. Better for style-matching or extending something with a defined identity.</p>
 <span class="tag tag-con">Con</span>

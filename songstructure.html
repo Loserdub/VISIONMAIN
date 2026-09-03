@@ -6,7 +6,7 @@
      crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Architecture of the Three-Minute Song | Trust Node Logic</title>
+<title>Architecture of the 3-Minute Song · Trust Node Logic</title>
 <meta name="description" content="How pop song arrangements shifted from CD-era verse-chorus-bridge dynamics to front-loaded, algorithmic structures built for streaming. By Justin Ray.">
 <meta name="author" content="Justin Ray">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -20,7 +20,7 @@
 
 <!-- OpenGraph & Twitter Cards -->
 <meta property="og:type" content="article">
-<meta property="og:title" content="The Architecture of the Three-Minute Song | Trust Node Logic">
+<meta property="og:title" content="Architecture of the 3-Minute Song · Trust Node Logic">
 <meta property="og:description" content="How pop song arrangements shifted from CD-era verse-chorus-bridge dynamics to front-loaded, algorithmic structures built for streaming. By Justin Ray.">
 <meta property="og:url" content="https://trustnodelogic.com/songstructure.html">
 <meta property="og:site_name" content="Trust Node Logic - Field Notes">
@@ -28,7 +28,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The Architecture of the Three-Minute Song | Trust Node Logic">
+<meta name="twitter:title" content="Architecture of the 3-Minute Song · Trust Node Logic">
 <meta name="twitter:description" content="How pop song arrangements shifted from CD-era verse-chorus-bridge dynamics to front-loaded, algorithmic structures built for streaming. By Justin Ray.">
 <meta name="twitter:image" content="https://trustnodelogic.com/assets/images/songstructure-card-og.webp">
 <link rel="icon" type="image/png" href="./favicon.png">
@@ -501,7 +501,7 @@
  background:var(--bg); border:2px solid var(--purple);
  }
  .hitem .hyear{font-family:var(--mono); font-size:.72rem; color:var(--purple); letter-spacing:.05em;}
- .hitem h4{font-family:var(--serif); font-size:1rem; margin:4px 0 6px; color:var(--text);}
+ .hitem h3, .hitem h4{font-family:var(--serif); font-size:1rem; margin:4px 0 6px; color:var(--text);}
  .hitem p{font-size:.88rem; margin:0;}
 
  /* Sources */
@@ -540,10 +540,157 @@
  }
  .footer-nav a{color:var(--text-mute); text-decoration:none;}
  .footer-nav a:hover{color:var(--cyan);}
+
+  /* Standard Brutalist Header */
+  .site-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: rgba(11, 12, 14, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 14px 0;
+  }
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono, 'JetBrains Mono', monospace);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #EAEAEA;
+    text-decoration: none;
+  }
+  .brand-logo .dot {
+    width: 8px;
+    height: 8px;
+    background: #FF9F1C;
+    box-shadow: 0 0 10px #FF9F1C;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-links a {
+    font-family: var(--mono, 'JetBrains Mono', monospace);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #71717A;
+    text-decoration: none;
+    padding: 4px 0;
+    transition: color 0.15s ease;
+  }
+  .nav-links a:hover, .nav-links a.active {
+    color: #FF9F1C;
+  }
+  .nav-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono, 'JetBrains Mono', monospace);
+    font-size: 11px;
+    padding: 5px 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #A1A1AA;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+  .nav-action:hover {
+    color: #fff;
+    border-color: #FF9F1C;
+    background: rgba(255, 159, 28, 0.15);
+  }
+  @media (max-width: 860px) {
+    .nav-links { display: none; }
+  }
+
+
+  /* ---------- Breadcrumb Navigation ---------- */
+  .breadcrumb {
+    max-width: var(--maxw, 860px);
+    margin: 16px auto 0;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono, 'JetBrains Mono', monospace);
+    font-size: 11.5px;
+    color: var(--text-dim, #71717A);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .breadcrumb a {
+    color: var(--text-dim, #71717A);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .breadcrumb a:hover {
+    color: #FF9F1C;
+  }
+  .breadcrumb [aria-current="page"] {
+    color: var(--text-muted, #A1A1AA);
+  }
+  .breadcrumb span[aria-hidden] {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 12px;
+  }
+
 </style>
 </head>
 <body>
 <div class="progress" id="progress"></div>
+<!-- Rigid Brutalist Main Header -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="./index.html" class="brand-logo" aria-label="Home">
+      <div class="dot"></div>
+      <span>TNL // JUSTIN RAY</span>
+    </a>
+    <nav class="nav-links" aria-label="Main Navigation">
+      <a href="./index.html">HOME</a>
+      <a href="./field-notes.html" class="active">FIELD NOTES</a>
+      <a href="./music.html">MUSIC</a>
+      <a href="./projects.html">PROJECTS</a>
+      <a href="./about.html">ABOUT</a>
+      <a href="./what-is-hybrid.html">WHAT IS HYBRID</a>
+      <a href="./services.html">SERVICES</a>
+      <a href="./contact.html">CONTACT</a>
+    </nav>
+    <a class="nav-action" href="https://trustnodelogic.web.app" target="_blank" rel="noopener noreferrer">
+      <span>WEB APP</span>
+      <span>↗</span>
+    </a>
+  </div>
+</header>
+
+<!-- Breadcrumbs Hierarchy -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="./index.html">Home</a>
+  <span aria-hidden="true">/</span>
+  <a href="./field-notes.html">Field Notes</a>
+  <span aria-hidden="true">/</span>
+  <span class="current" aria-current="page">The Architecture of the Three-Minute Song</span>
+</nav>
+
+
 <header class="hero wrap">
 <p class="eyebrow">Field Notes · Structural Analysis</p>
 <h1>The Architecture of the Three-Minute Song</h1>
@@ -713,17 +860,17 @@
 <div class="htimeline">
 <div class="hitem">
 <span class="hyear">1930s - 1950s</span>
-<h4>The 78 rpm ceiling</h4>
+<h3>The 78 rpm ceiling</h3>
 <p>Roughly 2:30 per side. The constraint produced the concise 32-bar AABA form that defined Tin Pan Alley and early pop songwriting.</p>
 </div>
 <div class="hitem">
 <span class="hyear">1960s - 1990s</span>
-<h4>LP, cassette, CD: the runtime unlocked</h4>
+<h3>LP, cassette, CD: the runtime unlocked</h3>
 <p>Long-playing formats removed the physical ceiling. Song lengths expanded, bridges, solos, and extended outros became standard, and the linear verse-chorus-bridge form matured.</p>
 </div>
 <div class="hitem">
 <span class="hyear">2019 - Present</span>
-<h4>Algorithmic re-compression</h4>
+<h3>Algorithmic re-compression</h3>
 <p>The ceiling returns, just mechanical this time: skip penalties and a 30-second payout threshold replace groove width as the limiting constraint. Modern pop functions as a neo-AABA form, condensed, loop-friendly, engineered for rapid re-consumption rather than physically bounded.</p>
 </div>
 </div>

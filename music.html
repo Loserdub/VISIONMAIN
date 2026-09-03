@@ -5,7 +5,7 @@
      crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Original Music &amp; Discography | loserdub, VISION, le vide | Justin Ray</title>
+<title>Original Music & Discography · Trust Node Logic</title>
 <meta name="description" content="Listen to original tracks, alias releases, and hybrid electronic music by Justin Ray across projects including loserdub, VISION, and le vide.">
 <meta name="author" content="Justin Ray">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -17,7 +17,7 @@
 
 <!-- OpenGraph & Twitter Cards -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Original Music &amp; Discography | loserdub, VISION, le vide | Justin Ray">
+<meta property="og:title" content="Original Music & Discography · Trust Node Logic">
 <meta property="og:description" content="Listen to original tracks, alias releases, and hybrid electronic music by Justin Ray across projects including loserdub, VISION, and le vide.">
 <meta property="og:url" content="https://trustnodelogic.com/music.html">
 <meta property="og:site_name" content="Trust Node Logic">
@@ -25,7 +25,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Original Music &amp; Discography | loserdub, VISION, le vide | Justin Ray">
+<meta name="twitter:title" content="Original Music & Discography · Trust Node Logic">
 <meta name="twitter:description" content="Listen to original tracks, alias releases, and hybrid electronic music by Justin Ray across projects including loserdub, VISION, and le vide.">
 <meta name="twitter:image" content="https://trustnodelogic.com/assets/images/music-card-og.webp">
 <link rel="icon" type="image/png" href="./favicon.png">
@@ -285,6 +285,39 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="/llms.txt" rel="alternate" title="AI LLM Knowledge Graph Manifest" type="text/plain"/>
+<style>
+  /* ---------- Breadcrumb Navigation ---------- */
+  .breadcrumb {
+    max-width: 1100px;
+    margin: 18px auto 0;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    color: #71717A;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .breadcrumb a {
+    color: #71717A;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .breadcrumb a:hover {
+    color: #FF9F1C;
+  }
+  .breadcrumb [aria-current="page"], .breadcrumb .current {
+    color: #A1A1AA;
+  }
+  .breadcrumb span[aria-hidden] {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 12px;
+  }
+</style>
 </head>
 <body class="bg-[#0B0C0E] text-[#EAEAEA] antialiased overflow-x-hidden dot-matrix-bg selection:bg-[#FF9F1C] selection:text-black font-sans min-h-screen flex flex-col">
  
@@ -343,6 +376,14 @@
 
  </div>
  </header>
+
+<!-- Breadcrumbs Hierarchy -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="./index.html">Home</a>
+  <span aria-hidden="true">/</span>
+  <span class="current" aria-current="page">Music</span>
+</nav>
+
 
   <!-- Main Content -->
   <main class="flex-grow w-full pt-12 pb-20 flex flex-col" id="main-content">

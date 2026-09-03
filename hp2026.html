@@ -6,7 +6,7 @@
      crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Trust Signal Chain: AI &amp; Hybrid Music in 2026 | JRAY</title>
+<title>The Trust Signal Chain (2026) · Trust Node Logic</title>
 <meta name="description" content="Courts, the EU AI Act, DDEX disclosure, and streaming platforms all ruled on AI music in 2026. A Trust Node Logic field note on what actually happened.">
 <meta name="author" content="Justin Ray">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -20,7 +20,7 @@
 
 <!-- OpenGraph & Twitter Cards -->
 <meta property="og:type" content="article">
-<meta property="og:title" content="The Trust Signal Chain: AI &amp; Hybrid Music in 2026 | JRAY">
+<meta property="og:title" content="The Trust Signal Chain (2026) · Trust Node Logic">
 <meta property="og:description" content="Courts, the EU AI Act, DDEX disclosure, and streaming platforms all ruled on AI music in 2026. A Trust Node Logic field note on what actually happened.">
 <meta property="og:url" content="https://trustnodelogic.com/hp2026.html">
 <meta property="og:site_name" content="Trust Node Logic">
@@ -32,7 +32,7 @@
 <meta property="article:tag" content="AI Music">
 <meta property="article:tag" content="Hybrid Production">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The Trust Signal Chain: AI &amp; Hybrid Music in 2026 | JRAY">
+<meta name="twitter:title" content="The Trust Signal Chain (2026) · Trust Node Logic">
 <meta name="twitter:description" content="Courts, the EU AI Act, DDEX disclosure, and streaming platforms all ruled on AI music in 2026. A Trust Node Logic field note on what actually happened.">
 <meta name="twitter:image" content="https://trustnodelogic.com/assets/images/hp2026-card-og.webp">
 <link rel="icon" type="image/png" href="./favicon.png">
@@ -417,6 +417,88 @@
   .breadcrumb a:hover { color: var(--blue, #6c8dff); }
   .breadcrumb [aria-current="page"] { color: var(--text-muted, #9ca3af); }
   .breadcrumb span[aria-hidden] { color: var(--line, #1e2233); font-size: 13px; }
+
+  /* Standard Brutalist Header */
+  .site-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: rgba(11, 12, 14, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 14px 0;
+  }
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono, 'JetBrains Mono', monospace);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #EAEAEA;
+    text-decoration: none;
+  }
+  .brand-logo .dot {
+    width: 8px;
+    height: 8px;
+    background: #FF9F1C;
+    box-shadow: 0 0 10px #FF9F1C;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-links a {
+    font-family: var(--mono, 'JetBrains Mono', monospace);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #71717A;
+    text-decoration: none;
+    padding: 4px 0;
+    transition: color 0.15s ease;
+  }
+  .nav-links a:hover, .nav-links a.active {
+    color: #FF9F1C;
+  }
+  .nav-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono, 'JetBrains Mono', monospace);
+    font-size: 11px;
+    padding: 5px 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #A1A1AA;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+  .nav-action:hover {
+    color: #fff;
+    border-color: #FF9F1C;
+    background: rgba(255, 159, 28, 0.15);
+  }
+  @media (max-width: 860px) {
+    .nav-links { display: none; }
+  }
+
 </style>
 <!-- Structured Data / JSON-LD -->
 <script type="application/ld+json">{
@@ -612,10 +694,40 @@
 <body>
 <div aria-hidden="true" class="bg-texture"></div>
 <div aria-hidden="true" class="bg-scan"></div>
+<!-- Rigid Brutalist Main Header -->
 <header class="site-header">
-<a class="wordmark" href="https://trustnodelogic.com/">TRUSTNODELOGIC</a>
-<span class="header-tag">FIELD NOTES</span>
+  <div class="header-inner">
+    <a href="./index.html" class="brand-logo" aria-label="Home">
+      <div class="dot"></div>
+      <span>TNL // JUSTIN RAY</span>
+    </a>
+    <nav class="nav-links" aria-label="Main Navigation">
+      <a href="./index.html">HOME</a>
+      <a href="./field-notes.html" class="active">FIELD NOTES</a>
+      <a href="./music.html">MUSIC</a>
+      <a href="./projects.html">PROJECTS</a>
+      <a href="./about.html">ABOUT</a>
+      <a href="./what-is-hybrid.html">WHAT IS HYBRID</a>
+      <a href="./services.html">SERVICES</a>
+      <a href="./contact.html">CONTACT</a>
+    </nav>
+    <a class="nav-action" href="https://trustnodelogic.web.app" target="_blank" rel="noopener noreferrer">
+      <span>WEB APP</span>
+      <span>↗</span>
+    </a>
+  </div>
 </header>
+
+<!-- Breadcrumbs Hierarchy -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="./index.html">Home</a>
+  <span aria-hidden="true">/</span>
+  <a href="./field-notes.html">Field Notes</a>
+  <span aria-hidden="true">/</span>
+  <span class="current" aria-current="page">The Trust Signal Chain (2026)</span>
+</nav>
+
+
 
 <main>
 <article>

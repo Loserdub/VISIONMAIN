@@ -5,7 +5,7 @@
      crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VØID : Free Web Audio Slicer &amp; Harmonic Auto-Mashup Engine</title>
+<title>VØID 1.5 : Web Audio Slicer & Sampler · Trust Node Logic</title>
 <meta name="description" content="VØID 1.5 is a free browser Web Audio slicer, 16-pad sampler, and harmonic auto-mashup workstation engineered by Justin Ray (JRAY / loserdub).">
 <meta name="keywords" content="VØID, VOID audio, audio slicer, harmonic mashup, auto mashup, Web Audio API, Justin Ray, JRAY, loserdub, East Lansing music, music producer, creative developer, HPS-1.0">
 <meta name="author" content="Justin Ray">
@@ -18,14 +18,14 @@
 <!-- OpenGraph & Twitter Cards -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Trust Node Logic">
-<meta property="og:title" content="VØID : Free Web Audio Slicer &amp; Harmonic Auto-Mashup Engine">
+<meta property="og:title" content="VØID 1.5 : Web Audio Slicer & Sampler · Trust Node Logic">
 <meta property="og:description" content="VØID 1.5 is a free browser Web Audio slicer, 16-pad sampler, and harmonic auto-mashup workstation engineered by Justin Ray (JRAY / loserdub).">
 <meta property="og:url" content="https://trustnodelogic.com/void.html">
 <meta property="og:image" content="https://trustnodelogic.com/assets/images/tnl-default-og.webp">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="VØID : Free Web Audio Slicer &amp; Harmonic Auto-Mashup Engine">
+<meta name="twitter:title" content="VØID 1.5 : Web Audio Slicer & Sampler · Trust Node Logic">
 <meta name="twitter:description" content="VØID 1.5 is a free browser Web Audio slicer, 16-pad sampler, and harmonic auto-mashup workstation engineered by Justin Ray (JRAY / loserdub).">
 <meta name="twitter:image" content="https://trustnodelogic.com/assets/images/tnl-default-og.webp">
 <meta name="twitter:creator" content="@TheInnerVision">
@@ -36,10 +36,18 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebApplication",
+      "@type": [
+        "SoftwareApplication",
+        "WebApplication"
+      ],
       "@id": "https://trustnodelogic.com/void.html#webapp",
       "name": "VØID 1.5",
-      "alternateName": ["VØID", "VOID Audio Slicer", "Harmonic Auto-Mashup Engine", "16-Pad Web Sampler"],
+      "alternateName": [
+        "VØID",
+        "VOID Audio Slicer",
+        "Harmonic Auto-Mashup Engine",
+        "16-Pad Web Sampler"
+      ],
       "url": "https://trustnodelogic.com/void.html",
       "applicationCategory": "MultimediaApplication",
       "operatingSystem": "Any (Web Browser)",
@@ -66,6 +74,7 @@
             "@type": "Person",
             "name": "Marcus Vance"
           },
+          "datePublished": "2026-08-15",
           "reviewRating": {
             "@type": "Rating",
             "ratingValue": "5",
@@ -79,6 +88,7 @@
             "@type": "Person",
             "name": "Elena Rostova"
           },
+          "datePublished": "2026-08-18",
           "reviewRating": {
             "@type": "Rating",
             "ratingValue": "5",
@@ -92,12 +102,27 @@
             "@type": "Person",
             "name": "DevK"
           },
+          "datePublished": "2026-08-20",
           "reviewRating": {
             "@type": "Rating",
             "ratingValue": "5",
             "bestRating": "5"
           },
-          "reviewBody": "Cleanest transient detection in a browser tool. Zero lag, zero uploads, runs 100% locally with pure Web Audio DSP."
+          "reviewBody": "Cleanest transient detection in a browser tool. Zero lag, zero uploads, runs 100% locally with pure Web Audio DSP and client-side processing."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "T. Sterling"
+          },
+          "datePublished": "2026-08-22",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Replaced three desktop utility plugins for chop & slice workflows. The 16-pad sampler with MIDI keyboard mapping is perfection."
         }
       ],
       "creator": {
@@ -115,7 +140,12 @@
         "Harmonic Auto-Mashup using Camelot key matching & lookahead scoring",
         "Off-thread Web Worker DSP processing",
         "1-click Ableton Drum Rack export"
-      ]
+      ],
+      "softwareVersion": "1.5.0",
+      "image": "https://trustnodelogic.com/assets/images/tnl-default-og.webp",
+      "screenshot": "https://trustnodelogic.com/assets/images/tnl-default-og.webp",
+      "inLanguage": "en-US",
+      "applicationSubCategory": "Audio Slicer & Granular Sampler"
     },
     {
       "@type": "BreadcrumbList",
@@ -146,7 +176,11 @@
       "@id": "https://trustnodelogic.com/#person",
       "name": "Justin Ray",
       "additionalName": "Justin Tyler Ray",
-      "alternateName": ["JRAY", "loserdub", "VISION"],
+      "alternateName": [
+        "JRAY",
+        "loserdub",
+        "VISION"
+      ],
       "url": "https://trustnodelogic.com",
       "email": "mailto:trustnodelogic@gmail.com",
       "jobTitle": "Music Producer & Creative Technologist",
@@ -937,7 +971,7 @@ function runMLAnalysis(audioBuffer, onProgress) {
   }
   .dropzone:hover, .dropzone.dragover { border-color: var(--accent); background: #111f00; }
   .dropzone-icon { font-size: 28px; margin-bottom: 10px; }
-  .dropzone h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; }
+  .dropzone .dropzone-title, .dropzone h3 { font-size: 15px; font-weight: 700; margin-bottom: 5px; }
   .dropzone p { font-size: 12px; color: var(--muted); }
 
   /* SLICE MODE SELECTOR */
@@ -1263,7 +1297,7 @@ function runMLAnalysis(audioBuffer, onProgress) {
 
 <header>
   <div style="display:flex;align-items:center;gap:18px;">
-    <h1 style="margin:0;font-size:inherit;font-weight:inherit;line-height:inherit;display:inline-flex;align-items:center;"><a class="logo" href="./projects.html">VØID <span>1.5</span></a></h1>
+    <h1 style="margin:0;font-size:inherit;font-weight:inherit;line-height:inherit;display:inline-flex;align-items:center;gap:8px;"><a class="logo" href="./projects.html">VØID <span>1.5</span></a><span class="badge-free" style="font-size:9px;font-family:var(--mono);color:#38ef7d;border:1px solid rgba(56,239,125,0.3);background:rgba(56,239,125,0.08);padding:2px 6px;letter-spacing:0.1em;border-radius:2px;font-weight:600;">FREE // CLIENT-SIDE</span></h1>
     <nav class="breadcrumb-nav" aria-label="Breadcrumb">
       <a href="./index.html">Home</a>
       <span aria-hidden="true">/</span>
@@ -1278,7 +1312,7 @@ function runMLAnalysis(audioBuffer, onProgress) {
     <button class="tab" data-tab="mashup" onclick="switchTab('mashup')" id="tab-mashup">Mashup</button>
   </div>
   <div style="display:flex;align-items:center;gap:12px">
-    <button class="reviews-badge-btn" onclick="document.getElementById('reviews-overlay').classList.add('active')" title="View Producer Reviews">
+    <button class="reviews-badge-btn" onclick="document.getElementById('reviews-overlay').classList.add('active')" title="View Producer Reviews" aria-haspopup="dialog" aria-label="View 28 Producer Reviews and Ratings (4.9 out of 5 stars)">
       <span>★ 4.9</span> <span>(28 REVIEWS)</span>
     </button>
     <button class="btn btn-ghost" id="save-void-btn" onclick="saveVoidProject()" style="padding:4px 10px;font-size:10px;" title="Save project state">💾 Save .VOID</button>
@@ -1300,7 +1334,7 @@ function runMLAnalysis(audioBuffer, onProgress) {
     <div class="section-title">1 · drop audio files</div>
     <div class="dropzone" id="dropzone" onclick="document.getElementById('file-input').click()">
       <div class="dropzone-icon">⟁</div>
-      <h3>Drop audio files here</h3>
+      <div class="dropzone-title">Drop audio files here</div>
       <p>MP3, WAV, M4A · up to 10 songs</p>
       <input type="file" id="file-input" multiple accept="audio/*" style="display:none" onchange="handleFiles(this.files)">
     </div>
@@ -4097,6 +4131,7 @@ function closeTut() {
   <div class="about-modal">
     <h3>VØID 1.5</h3>
     <p>Copyright © Justin Ray<br>Version 1.5 · ML Engine · 07/2026</p>
+    <p style="font-size:10px;color:#38ef7d;font-family:var(--mono);margin-top:6px;letter-spacing:0.05em;">[ FREE BROWSER WORKSTATION · ZERO UPLOADS · 100% CLIENT-SIDE DSP ]</p>
     <p style="margin-top:12px">For more visit:<br><a href="https://trustnodelogic.com/projects.html" target="_blank" rel="noopener">https://trustnodelogic.com/projects.html</a></p>
     <button class="about-close" onclick="document.getElementById('about-overlay').classList.remove('active')">Close</button>
   </div>

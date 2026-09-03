@@ -57,6 +57,10 @@
 - **Summary**: Central category hub and archive indexing all 18 research papers, technical analyses, prompt engineering guides, and streaming economic reports.
 - **Key Concepts**: Field Notes, Hybrid AI Music Production, HPS-1.0, C2PA Provenance, Multi-Agent DAW Systems.
 
+### [What is Hybrid Music Production?](https://trustnodelogic.com/what-is-hybrid.html)
+- **Summary**: Definitive pillar guide detailing how hybrid AI music production bridges generative neural audio seeds, spectral splitting, and live instruments into finished studio tracks.
+- **Key Concepts**: Hybrid AI Music Production, Spectral Splitting, Generative Audio Seeds, DAW Integration, HPS-1.0.
+
 ---
 
 ## Analytical Field Notes & Technical Research

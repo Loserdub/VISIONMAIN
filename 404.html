@@ -5,7 +5,7 @@
      crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>404 - Page Not Found | Trust Node Logic</title>
+<title>404 - Page Not Found · Trust Node Logic</title>
 <meta name="description" content="The requested page or node could not be found on Trust Node Logic. Return to the homepage to explore hybrid music tools, research, and releases.">
 <meta name="author" content="Justin Ray">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -17,7 +17,7 @@
 
 <!-- OpenGraph & Twitter Cards -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="404 - Page Not Found | Trust Node Logic">
+<meta property="og:title" content="404 - Page Not Found · Trust Node Logic">
 <meta property="og:description" content="The requested page or node could not be found on Trust Node Logic. Return to the homepage to explore hybrid music tools, research, and releases.">
 <meta property="og:url" content="https://trustnodelogic.com/404.html">
 <meta property="og:site_name" content="Trust Node Logic">
@@ -25,7 +25,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="404 - Page Not Found | Trust Node Logic">
+<meta name="twitter:title" content="404 - Page Not Found · Trust Node Logic">
 <meta name="twitter:description" content="The requested page or node could not be found on Trust Node Logic. Return to the homepage to explore hybrid music tools, research, and releases.">
 <meta name="twitter:image" content="https://trustnodelogic.com/assets/images/tnl-default-og.webp">
 <link rel="icon" type="image/png" href="./favicon.png">
@@ -199,6 +199,39 @@
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="/sitemap.xml" rel="sitemap" type="application/xml"/>
 <link href="/llms.txt" rel="alternate" title="AI LLM Knowledge Graph Manifest" type="text/plain"/>
+<style>
+  /* ---------- Breadcrumb Navigation ---------- */
+  .breadcrumb {
+    max-width: 1100px;
+    margin: 18px auto 0;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    color: #71717A;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .breadcrumb a {
+    color: #71717A;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .breadcrumb a:hover {
+    color: #FF9F1C;
+  }
+  .breadcrumb [aria-current="page"], .breadcrumb .current {
+    color: #A1A1AA;
+  }
+  .breadcrumb span[aria-hidden] {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 12px;
+  }
+</style>
 </head>
 <body class="bg-[#0B0C0E] text-[#EAEAEA] antialiased overflow-x-hidden dot-matrix-bg selection:bg-[#FF9F1C] selection:text-black font-sans min-h-screen flex flex-col">
  
@@ -226,7 +259,8 @@
  <a href="./index.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">HOME</a>
  <a href="./music.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">MUSIC</a>
  <a href="./projects.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">PROJECTS</a>
- <a href="./bio.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">BIO</a>
+ <a href="./field-notes.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">FIELD NOTES</a>
+        <a href="./about.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">ABOUT</a>
  <a href="./what-is-hybrid.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">WHAT IS HYBRID</a>
  <a href="./services.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">SERVICES</a>
  <a href="./contact.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">CONTACT</a>
@@ -246,7 +280,8 @@
  <a href="./index.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">HOME</a>
  <a href="./music.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">MUSIC</a>
  <a href="./projects.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">PROJECTS</a>
- <a href="./bio.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">BIO</a>
+ <a href="./field-notes.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">FIELD NOTES</a>
+  <a href="./about.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">ABOUT</a>
  <a href="./what-is-hybrid.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">WHAT IS HYBRID</a>
  <a href="./services.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">SERVICES</a>
  <a href="./contact.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">CONTACT</a>
@@ -255,6 +290,14 @@
 
  </div>
  </header>
+
+<!-- Breadcrumbs Hierarchy -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="./index.html">Home</a>
+  <span aria-hidden="true">/</span>
+  <span class="current" aria-current="page">404 Page Not Found</span>
+</nav>
+
 
  <!-- Main Content -->
  <main class="flex-grow flex items-center justify-center px-6 py-20 relative z-10" id="main-content">

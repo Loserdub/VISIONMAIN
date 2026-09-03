@@ -6,7 +6,7 @@
      crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hybrid Production Standard (HPS-1.0) | Specification</title>
+<title>Hybrid Production Standard (HPS-1.0) · Trust Node Logic</title>
 <meta name="description" content="The definitive specification and verification standard for AI, hybrid, and human music production under EU AI Act Article 50. By Justin Ray.">
 <meta name="author" content="Justin Ray">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -20,7 +20,7 @@
 
 <!-- OpenGraph & Twitter Cards -->
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hybrid Production Standard (HPS-1.0) | Specification">
+<meta property="og:title" content="Hybrid Production Standard (HPS-1.0) · Trust Node Logic">
 <meta property="og:description" content="The definitive specification and verification standard for AI, hybrid, and human music production under EU AI Act Article 50. By Justin Ray.">
 <meta property="og:url" content="https://trustnodelogic.com/hybridproductionstandard.html">
 <meta property="og:site_name" content="Trust Node Logic">
@@ -28,7 +28,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Hybrid Production Standard (HPS-1.0) | Specification">
+<meta name="twitter:title" content="Hybrid Production Standard (HPS-1.0) · Trust Node Logic">
 <meta name="twitter:description" content="The definitive specification and verification standard for AI, hybrid, and human music production under EU AI Act Article 50. By Justin Ray.">
 <meta name="twitter:image" content="https://trustnodelogic.com/assets/images/hps-card-og.webp">
 <link rel="icon" type="image/png" href="./favicon.png">
@@ -707,7 +707,7 @@
  .tier-card.h .swatch{background:var(--human);}
  .tier-card.x .swatch{background:var(--text);}
  .tier-card.a .swatch{background:var(--ai);}
- .tier-card h4{
+ .tier-card h3, .tier-card h4{
  font-family:'Bebas Neue', sans-serif;
  font-size:26px;
  letter-spacing:0.04em;
@@ -744,7 +744,7 @@
  background:var(--panel-solid);
  padding:24px;
  }
- .spec-card h4{font-size:22px; margin-bottom:10px; color:var(--text); letter-spacing:0.04em;}
+ .spec-card h3, .spec-card h4{font-size:22px; margin-bottom:10px; color:var(--text); letter-spacing:0.04em;}
  .spec-card p{font-size:15px; margin-bottom:12px; color:var(--muted);}
 
  /* ---------- article 50 table ---------- */
@@ -794,7 +794,7 @@
  margin-bottom:10px;
  letter-spacing:0.08em;
  }
- .roadmap-card h4{
+ .roadmap-card h3, .roadmap-card h4{
  font-family:'Bebas Neue', sans-serif;
  font-size:24px;
  letter-spacing:0.04em;
@@ -894,12 +894,13 @@
 <span class="dot"></span><strong>TrustNodeLogic</strong> <span style="opacity:.4">/</span> HPS-1.0 Flagship
  </a>
 <div class="nav-links">
+<a href="./index.html">Home</a>
+<a href="./field-notes.html">Field Notes</a>
+<a href="./about.html">About</a>
 <a href="#manifesto">Manifesto</a>
-<a href="#perspectives">Stakeholders</a>
 <a href="#standard">The 5 Axes</a>
 <a href="#builder">Live Builder</a>
 <a href="#distributors">Distributors</a>
-<a href="#dsps">DSPs</a>
 <a href="#legal">EU AI Act</a>
 </div>
 <div style="display:flex; align-items:center; gap:10px;">
@@ -931,6 +932,16 @@
 </div>
 </div>
 </header>
+
+<!-- Breadcrumbs Hierarchy -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="./index.html">Home</a>
+  <span aria-hidden="true">/</span>
+  <a href="./field-notes.html">Field Notes</a>
+  <span aria-hidden="true">/</span>
+  <span class="current" aria-current="page">Hybrid Production Standard (HPS-1.0)</span>
+</nav>
+
 
 <main id="main-content">
 <section class="bordered reveal" id="perspectives">
@@ -1055,12 +1066,12 @@
 <div class="tiers">
 <div class="tier-card h">
 <div class="swatch"></div>
-<h4>Tier H - Human</h4>
+<h3>Tier H - Human</h3>
 <p>Origination and performance are both human. Minimum 4 of 5 axes human. AI, if present, is restricted to post utility or corrective plugins.</p>
 </div>
 <div class="tier-card x">
 <div class="swatch"></div>
-<h4>Tier X - Hybrid</h4>
+<h3>Tier X - Hybrid</h3>
 <p>Primary human creative authorship on origination or performance with AI contribution on complementary axes.</p>
 <div class="subscale">
 <div><span>X1</span>  Human-Led - AI used for texture, sound design, or mastering only</div>
@@ -1071,7 +1082,7 @@
 </div>
 <div class="tier-card a">
 <div class="swatch"></div>
-<h4>Tier A - AI</h4>
+<h3>Tier A - AI</h3>
 <p>Origination and performance are both AI-generated. Human input limited to text prompting and selection without structural rework.</p>
 </div>
 </div>
@@ -1085,27 +1096,27 @@
 <div class="roadmap-grid">
 <div class="roadmap-card">
 <div class="phase-num">PHASE 1 · ZERO BUILD</div>
-<h4>Structured 5-Axis Self-Report</h4>
+<h3>Structured 5-Axis Self-Report</h3>
 <p>Replace flat AI checkboxes in upload forms with 5-axis dropdowns. Automatically maps directly to standard DDEX ERN 4.3 XML AI fields.</p>
 </div>
 <div class="roadmap-card">
 <div class="phase-num">PHASE 2 · OPTIONAL PROOF</div>
-<h4>Cryptographic Essence Signing</h4>
+<h3>Cryptographic Essence Signing</h3>
 <p>Artists generate Ed25519-signed `hps_manifest.json` via HPS CLI or DAW plugin. Ingestion server verifies raw PCM SHA-256 hash on drop.</p>
 </div>
 <div class="roadmap-card">
 <div class="phase-num">PHASE 3 · AUTOMATED PIPELINE</div>
-<h4>Verified Source of Truth</h4>
+<h3>Verified Source of Truth</h3>
 <p>Signed manifest populates all release delivery metadata. Surfaces verified `[HPS-X1]` badges directly on streaming partner UIs.</p>
 </div>
 </div>
 <div class="spec-grid">
 <div class="spec-card">
-<h4>Raw PCM Essence Hashing (`raw_audio_essence`)</h4>
+<h3>Raw PCM Essence Hashing (`raw_audio_essence`)</h3>
 <p>HPS hashes decoded PCM audio samples, ignoring container headers. If ID3 tags are altered or format converted, the essence hash remains valid. If audio samples are edited, the hash invalidates automatically.</p>
 </div>
 <div class="spec-card">
-<h4>Distributor Verification API Spec</h4>
+<h3>Distributor Verification API Spec</h3>
 <p><code class="mono">POST https://api.trustnodelogic.com/v1/verify</code></p>
 <p>Submits file or manifest. Returns boolean verification, essence hash match status, and Ed25519 signature validity.</p>
 </div>
@@ -1118,7 +1129,7 @@
 <h2 class="section-title">DSP Badging &amp; Metadata Guidelines (Spotify, Apple Music)</h2>
 <p>HPS specifies how streaming platforms display transparency badges and credits without cluttering UI design:</p>
 <div style="background:var(--panel-solid); border:1px solid var(--border); border-radius:var(--radius); padding:28px; margin-top:24px;">
-<h4 style="font-size:18px; margin-bottom:14px;">UI Badging Standards</h4>
+<h3 style="font-size:18px; margin-bottom:14px;">UI Badging Standards</h3>
 <div style="display:flex; flex-wrap:wrap; gap:12px; font-family:'JetBrains Mono', monospace; font-size:13px;">
 <span style="padding:6px 12px; border-radius:6px; border:1px solid var(--human); color:var(--human); background:var(--human-dim);">[HPS-H] Human Produced</span>
 <span style="padding:6px 12px; border-radius:6px; border:1px solid var(--amber); color:var(--amber); background:rgba(251,191,36,0.1);">[HPS-X1] Human-Led Hybrid</span>
