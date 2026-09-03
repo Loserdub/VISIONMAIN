@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Human Contribution Verification: Node Architecture · JRAY</title>
+<meta name="description" content="Explore how Trust Node Logic verifies human contribution in AI-hybrid music production using node types, Merkle attestation chains, and C2PA manifests.">
+<meta name="author" content="Justin Ray">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="keywords" content="Hybrid AI Music Production, Justin Ray, JRAY, loserdub, Trust Node Logic, HPS-1.0, C2PA, audio engineering, music provenance, Merkle attestation, content credentials">
+<meta name="geo.country" content="US">
+<meta name="geo.placename" content="East Lansing, Michigan, USA">
+<meta name="geo.region" content="US-MI">
+<link rel="canonical" href="https://trustnodelogic.com/humanbridge.html">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="AI LLM Knowledge Graph Manifest">
+
+<!-- OpenGraph & Twitter Cards -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Human Contribution Verification: Node Architecture · JRAY">
+<meta property="og:description" content="Explore how Trust Node Logic verifies human contribution in AI-hybrid music production using node types, Merkle attestation chains, and C2PA manifests.">
+<meta property="og:url" content="https://trustnodelogic.com/humanbridge.html">
+<meta property="og:site_name" content="Trust Node Logic - Field Notes">
+<meta property="og:image" content="https://trustnodelogic.com/assets/images/tnl-default-og.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-08-30T00:00:00-04:00">
+<meta property="article:author" content="Justin Ray">
+<meta property="article:section" content="Field Notes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Human Contribution Verification: Node Architecture · JRAY">
+<meta name="twitter:description" content="Explore how Trust Node Logic verifies human contribution in AI-hybrid music production using node types, Merkle attestation chains, and C2PA manifests.">
+<meta name="twitter:image" content="https://trustnodelogic.com/assets/images/tnl-default-og.webp">
+<meta name="twitter:creator" content="@TheInnerVision">
+
+<link rel="icon" type="image/png" href="./favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+
+<!-- Structured Data / JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://trustnodelogic.com/humanbridge.html#article",
+      "headline": "Human Contribution Meets Trust Node Logic: A Technical Guide to Verifying Hybrid Production",
+      "description": "Explore how Trust Node Logic verifies human contribution in AI-hybrid music production using node types, Merkle attestation chains, and C2PA manifests.",
+      "datePublished": "2026-08-30",
+      "dateModified": "2026-08-30",
+      "inLanguage": "en-US",
+      "wordCount": 1150,
+      "author": {
+        "@id": "https://trustnodelogic.com/#person"
+      },
+      "publisher": {
+        "@id": "https://trustnodelogic.com/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://trustnodelogic.com/#website"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://trustnodelogic.com/humanbridge.html#webpage"
+      },
+      "image": "https://trustnodelogic.com/assets/images/tnl-default-og.webp"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://trustnodelogic.com/humanbridge.html#webpage",
+      "url": "https://trustnodelogic.com/humanbridge.html",
+      "name": "Human Contribution Verification: Node Architecture · JRAY",
+      "description": "Explore how Trust Node Logic verifies human contribution in AI-hybrid music production using node types, Merkle attestation chains, and C2PA manifests.",
+      "isPartOf": {
+        "@id": "https://trustnodelogic.com/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://trustnodelogic.com/humanbridge.html#breadcrumb"
+      },
+      "inLanguage": "en-US",
+      "mainEntity": {
+        "@id": "https://trustnodelogic.com/humanbridge.html#article"
+      },
+      "image": "https://trustnodelogic.com/assets/images/tnl-default-og.webp"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://trustnodelogic.com/humanbridge.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://trustnodelogic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Field Notes",
+          "item": "https://trustnodelogic.com/field-notes.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Human Contribution Verification",
+          "item": "https://trustnodelogic.com/humanbridge.html"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://trustnodelogic.com/#person",
+      "name": "Justin Ray",
+      "additionalName": "Justin Tyler Ray",
+      "alternateName": ["JRAY", "loserdub", "VISION", "Flawed Future", "le vide", "disarray"],
+      "url": "https://trustnodelogic.com",
+      "image": "https://trustnodelogic.com/bio-avatar.jpg",
+      "email": "mailto:trustnodelogic@gmail.com",
+      "jobTitle": [
+        "Music Producer",
+        "Music Artist",
+        "Pioneer of Hybrid AI Music Production",
+        "Audio Engineer",
+        "Creative Technologist"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "East Lansing",
+        "addressRegion": "MI",
+        "addressCountry": "US"
+      },
+      "knowsAbout": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Hybrid Music Production",
+          "description": "The methodology of integrating generative AI audio models into professional digital audio workstation workflows."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Generative Artificial Intelligence",
+          "url": "https://en.wikipedia.org/wiki/Generative_artificial_intelligence",
+          "sameAs": "https://www.wikidata.org/wiki/Q116972040"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Digital Audio Workstation",
+          "url": "https://en.wikipedia.org/wiki/Digital_audio_workstation",
+          "sameAs": "https://www.wikidata.org/wiki/Q11425"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Audio Engineering",
+          "url": "https://en.wikipedia.org/wiki/Audio_engineering",
+          "sameAs": "https://www.wikidata.org/wiki/Q654390"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Search Engine Optimization",
+          "url": "https://en.wikipedia.org/wiki/Search_engine_optimization",
+          "sameAs": "https://www.wikidata.org/wiki/Q180711"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Knowledge Graph",
+          "url": "https://en.wikipedia.org/wiki/Knowledge_graph",
+          "sameAs": "https://www.wikidata.org/wiki/Q33002955"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Web Audio API",
+          "url": "https://en.wikipedia.org/wiki/Web_Audio_API",
+          "sameAs": "https://www.wikidata.org/wiki/Q7978553"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "C2PA",
+          "url": "https://en.wikipedia.org/wiki/C2PA",
+          "sameAs": "https://www.wikidata.org/wiki/Q105622176"
+        },
+        "HPS-1.0",
+        "SLERP Audio",
+        "Spectral Splitting",
+        "MIXR Studio"
+      ],
+      "memberOf": [
+        {"@id": "https://trustnodelogic.com/#organization"},
+        {"@id": "https://www.reddit.com/r/hybridproduction/#organization"}
+      ],
+      "sameAs": [
+        "https://musicbrainz.org/artist/882fdb9b-8655-45dd-8e24-a59cd750d053",
+        "https://soundcloud.com/visiontracks",
+        "https://www.youtube.com/@loserdub",
+        "https://www.linkedin.com/in/jray-me/",
+        "https://x.com/TheInnerVision",
+        "https://github.com/loserdub"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://trustnodelogic.com/#organization",
+      "name": "Trust Node Logic",
+      "alternateName": "JRAY & Trust Node Logic",
+      "url": "https://trustnodelogic.com",
+      "logo": "https://trustnodelogic.com/favicon.png",
+      "founder": {"@id": "https://trustnodelogic.com/#person"},
+      "slogan": "The Frontier of Hybrid AI Music Production & Creative Technology",
+      "knowsAbout": [
+        "Hybrid Production",
+        "Generative Engine Optimization",
+        "AI Music Generation",
+        "Audio Engineering",
+        "HPS-1.0 Metadata Verification"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://trustnodelogic.com/#website",
+      "url": "https://trustnodelogic.com",
+      "name": "Trust Node Logic",
+      "alternateName": "JRAY Audio & AI Music Research",
+      "description": "Justin Ray (JRAY / loserdub) · Pioneer of Hybrid AI Music Production, author of HPS-1.0, creator of MIXR Studio.",
+      "publisher": {"@id": "https://trustnodelogic.com/#organization"},
+      "author": {"@id": "https://trustnodelogic.com/#person"},
+      "inLanguage": "en-US"
+    }
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --bg: #08090A;
+    --bg-surface: #0E1013;
+    --panel: #121417;
+    --panel-border: rgba(255, 255, 255, 0.08);
+    --panel-hover: rgba(255, 255, 255, 0.14);
+    --ink: #EAEAEA;
+    --ink-dim: #A1A1AA;
+    --ink-faint: #71717A;
+    --orange: #FF9F1C;
+    --orange-dim: rgba(255, 159, 28, 0.15);
+    --cyan: #00F0FF;
+    --blue: #6C8DFF;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Space Grotesk', -apple-system, sans-serif;
+    --display: 'Playfair Display', Georgia, serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.75;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .site-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: rgba(11, 12, 14, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 14px 0;
+  }
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #EAEAEA;
+    text-decoration: none;
+  }
+  .brand-logo .dot {
+    width: 8px;
+    height: 8px;
+    background: var(--orange);
+    box-shadow: 0 0 10px var(--orange);
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    text-decoration: none;
+    padding: 4px 0;
+    transition: color 0.15s ease;
+  }
+  .nav-links a:hover, .nav-links a.active {
+    color: var(--orange);
+  }
+  .nav-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 5px 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--panel-border);
+    color: var(--ink-dim);
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+  .nav-action:hover {
+    color: #fff;
+    border-color: var(--orange);
+    background: var(--orange-dim);
+  }
+
+  @media (max-width: 860px) {
+    .nav-links { display: none; }
+  }
+
+  .breadcrumbs {
+    max-width: 820px;
+    margin: 28px auto 0;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .breadcrumbs a {
+    color: var(--ink-faint);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .breadcrumbs a:hover {
+    color: var(--orange);
+  }
+  .breadcrumbs .current {
+    color: var(--ink-dim);
+  }
+
+  .wrap {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+  }
+
+  .kicker {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--orange);
+    border: 1px solid rgba(255, 159, 28, 0.35);
+    padding: 4px 12px;
+    margin-bottom: 24px;
+    background: var(--orange-dim);
+  }
+
+  h1 {
+    font-family: var(--display);
+    font-size: clamp(2.1rem, 5vw, 3.2rem);
+    line-height: 1.18;
+    font-weight: 700;
+    color: #FFF;
+    margin: 0 0 20px;
+    letter-spacing: -0.015em;
+  }
+
+  .byline {
+    font-family: var(--mono);
+    color: var(--ink-faint);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--panel-border);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+  .byline strong { color: var(--ink); font-weight: 600; }
+
+  p { color: var(--ink-dim); margin: 0 0 24px; font-size: 16.5px; }
+  p strong { color: var(--ink); }
+  .lede {
+    color: var(--ink);
+    font-size: 18.5px;
+    line-height: 1.65;
+    font-weight: 400;
+  }
+
+  h2 {
+    font-family: var(--sans);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FFF;
+    margin: 54px 0 20px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    letter-spacing: -0.01em;
+  }
+  h2::before {
+    content: "//";
+    font-family: var(--mono);
+    color: var(--orange);
+    font-weight: 700;
+  }
+
+  h3 {
+    font-family: var(--mono);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--orange);
+    margin: 36px 0 16px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    padding: 24px;
+    margin: 28px 0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0 32px;
+    font-size: 13.5px;
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+  }
+  th {
+    text-align: left;
+    background: #171A1F;
+    color: var(--orange);
+    font-family: var(--mono);
+    font-weight: 600;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--panel-border);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+  }
+  td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--panel-border);
+    color: var(--ink-dim);
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  td:first-child { color: var(--ink); font-family: var(--mono); font-weight: 500; }
+
+  pre {
+    background: #0B0C0E;
+    border: 1px solid var(--panel-border);
+    border-left: 3px solid var(--orange);
+    padding: 20px;
+    overflow-x: auto;
+    font-size: 13px;
+    font-family: var(--mono);
+    color: #D7D5CF;
+    margin: 24px 0 32px;
+  }
+  code { font-family: var(--mono); }
+  .tok-key { color: var(--cyan); }
+  .tok-str { color: #FFB27A; }
+  .tok-num { color: #7FD99A; }
+
+  ol {
+    padding-left: 20px;
+    color: var(--ink-dim);
+    margin: 0 0 28px;
+  }
+  ol li {
+    margin-bottom: 14px;
+    padding-left: 6px;
+  }
+  ol li::marker {
+    color: var(--orange);
+    font-family: var(--mono);
+    font-weight: 700;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--panel-border);
+    margin: 52px 0;
+  }
+
+  .bio-card {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    padding: 28px;
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .bio-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .bio-avatar {
+    width: 52px;
+    height: 52px;
+    border: 1px solid var(--orange);
+    object-fit: cover;
+  }
+  .bio-title {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: #FFF;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .bio-sub {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--orange);
+  }
+  .bio-text {
+    font-size: 14px;
+    color: var(--ink-dim);
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  .cta {
+    background: linear-gradient(180deg, rgba(255, 159, 28, 0.08), rgba(255, 159, 28, 0.02));
+    border: 1px solid rgba(255, 159, 28, 0.35);
+    padding: 30px;
+    margin-top: 36px;
+  }
+  .btn-solid {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    background: var(--orange);
+    color: #08090A;
+    font-family: var(--mono);
+    font-weight: 700;
+    padding: 12px 22px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+  .btn-solid:hover { background: #FFB042; }
+
+  footer.site-footer {
+    margin-top: 64px;
+    padding: 36px 0;
+    border-top: 1px solid var(--panel-border);
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--ink-faint);
+    text-align: center;
+  }
+  footer.site-footer a { color: var(--ink-dim); text-decoration: none; }
+  footer.site-footer a:hover { color: var(--orange); }
+</style>
+</head>
+<body>
+
+<!-- Rigid Brutalist Main Header -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="./index.html" class="brand-logo" aria-label="Home">
+      <div class="dot"></div>
+      <span>TNL // JUSTIN RAY</span>
+    </a>
+    <nav class="nav-links" aria-label="Main Navigation">
+      <a href="./index.html">HOME</a>
+      <a href="./field-notes.html" class="active">FIELD NOTES</a>
+      <a href="./music.html">MUSIC</a>
+      <a href="./projects.html">PROJECTS</a>
+      <a href="./about.html">ABOUT</a>
+      <a href="./what-is-hybrid.html">WHAT IS HYBRID</a>
+      <a href="./services.html">SERVICES</a>
+      <a href="./contact.html">CONTACT</a>
+    </nav>
+    <a class="nav-action" href="https://trustnodelogic.web.app" target="_blank" rel="noopener noreferrer">
+      <span>WEB APP</span>
+      <span>↗</span>
+    </a>
+  </div>
+</header>
+
+<!-- Breadcrumbs Hierarchy -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="./index.html">HOME</a>
+  <span aria-hidden="true">/</span>
+  <a href="./field-notes.html">FIELD NOTES</a>
+  <span aria-hidden="true">/</span>
+  <span class="current" aria-current="page">HUMAN CONTRIBUTION VERIFICATION</span>
+</nav>
+
+<main class="wrap">
+
+  <span class="kicker">Field Note // Verification Architecture</span>
+
+  <h1>Human Contribution Meets Trust Node Logic: A Technical Guide to Verifying Hybrid Production</h1>
+
+  <div class="byline">
+    <span>By <strong>Justin Ray</strong></span>
+    <span>&middot;</span>
+    <span>AUG 30, 2026</span>
+    <span>&middot;</span>
+    <span>11 MIN READ</span>
+    <span>&middot;</span>
+    <span>PEER NOTES &amp; ARCHITECTURE</span>
+  </div>
+
+  <p class="lede">
+    Every hybrid track leaves an invisible paper trail: which acoustic elements originated from physical human instrumentation, which textures were synthesized from neural diffusion weights, and where the demarcation line between human artistry and machine computation resides.
+  </p>
+
+  <p>
+    Engineered by <strong>Justin Ray</strong>, the <strong>Hybrid Production Standard (HPS-1.0)</strong> establishes strict provenance metadata to verify substantial human authorship across multi-agent DAW workflows. Under the EU AI Act Article 50 transparency mandates and tightening streaming platform policies, creative releases face an urgent technical imperative: establishing verifiable mathematical proof of human input.
+  </p>
+
+  <p>
+    Developed as part of <strong>Trust Node Logic</strong>, <strong>Hybrid AI Music Production</strong> workflows require deterministic validation. Rather than relying on fragile self-reported claims that reward rhetorical exaggeration, the framework decomposes each track into verifiable Merkle tree attestations evaluated node by node before cryptographic serialization into audio container manifests.
+  </p>
+
+  <h2>What a Trust Node Actually Verifies</h2>
+
+  <p>
+    Traditional provenance architectures operate exclusively at the monolithic container level, assigning a single binary label indicating whether a track involved artificial intelligence. That coarse binary completely fails modern production realities, where a single master recording frequently combines a live acoustic vocal take, a neural string arrangement, analog hardware synthesizer processing, and human-directed multitrack mixing.
+  </p>
+
+  <p>
+    A trust node functions as an isolated verification unit scoped strictly to one distinct layer of creative contribution. Rather than issuing a global generalization across the entire file, each node answers a single verifiable inquiry: does verifiable cryptographic or forensic evidence demonstrate that a human engineer performed a specific take, authored a discrete harmonic progression, or executed post-generation DSP manipulation?
+  </p>
+
+  <p>
+    Decomposing authorship claims into independently verifiable units prevents manipulation. An artist attempting to misrepresent synthetic output must fabricate separate evidence chains across composition drafts, DAW multitrack stems, session timestamp logs, and prompt interaction histories. Each micro-claim is verified directly against raw artifacts.
+  </p>
+
+  <h3>The Four Core Node Types</h3>
+
+  <p>
+    In production environments, four foundational node types cover the spectrum of hybrid music generation:
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Node Type</th>
+        <th>Verification Target</th>
+        <th>Evidence Data Source</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Composition Node</td>
+        <td>Melodic, harmonic, or lyrical authorship established prior to model generation</td>
+        <td>MIDI session files, lyric timestamps, musical notation, early DAW drafts</td>
+      </tr>
+      <tr>
+        <td>Performance Node</td>
+        <td>Direct physical human performance (vocal take, live acoustic or hardware synth tracking)</td>
+        <td>Raw 24-bit multitrack stems, take logs, audio interface input telemetry</td>
+      </tr>
+      <tr>
+        <td>Prompt Boundary Node</td>
+        <td>Exact signal chain demarcation where stochastic neural generation begins and terminates</td>
+        <td>Prompt logs, seed parameters, generation timestamps, model checkpoints</td>
+      </tr>
+      <tr>
+        <td>Editorial Node</td>
+        <td>Human post-processing applied to generated audio (arrangement, dynamic EQ, analog summing)</td>
+        <td>DAW project history, plugin automation parameters, bounce timestamps</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>From Attestation Objects to Cryptographic Trust Scores</h2>
+
+  <p>
+    Each node produces a cryptographically signed attestation schema containing precise telemetry: an ISO-8601 timestamp, a SHA-256 evidence hash, a deterministic verifier identity, and a confidence coefficient bounded between 0.00 and 1.00:
+  </p>
+
+  <pre><code>{
+  <span class="tok-key">"node_type"</span>: <span class="tok-str">"performance"</span>,
+  <span class="tok-key">"claim"</span>: <span class="tok-str">"human_vocal_take"</span>,
+  <span class="tok-key">"evidence_ref"</span>: <span class="tok-str">"sha256:8f1a2c9e7b4d..."</span>,
+  <span class="tok-key">"verifier_id"</span>: <span class="tok-str">"tnl-verifier-04"</span>,
+  <span class="tok-key">"confidence"</span>: <span class="tok-num">0.96</span>,
+  <span class="tok-key">"timestamp"</span>: <span class="tok-str">"2026-08-30T14:22:00Z"</span>
+}</code></pre>
+
+  <p>
+    Individual attestations are organized into a Merkle tree data structure. Each node output is hashed, and adjacent hashes are combined recursively until a single cryptographic Merkle root hash is generated. Altering or removing a single sub-claim immediately invalidates the root hash, providing instant tamper detection prior to deep artifact inspection.
+  </p>
+
+  <p>
+    The composite trust score is calculated as a weighted runtime integral across all validated nodes, proportioned by the percentage of total track duration and decision surfaces covered by human-verified nodes:
+  </p>
+
+  <h3>Trust Score to HPS-1.0 Classification Tiers</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Score Range</th>
+        <th>Classification Tier</th>
+        <th>Attestation Profile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>0.85 &ndash; 1.00</td>
+        <td>Verified Human</td>
+        <td>Human performance and composition nodes span over 85% of arrangement runtime</td>
+      </tr>
+      <tr>
+        <td>0.55 &ndash; 0.84</td>
+        <td>Human-Led Hybrid</td>
+        <td>Human direction anchors structural points; neural models provide background texture</td>
+      </tr>
+      <tr>
+        <td>0.20 &ndash; 0.54</td>
+        <td>Machine-Led Hybrid</td>
+        <td>Generative output dominates; human involvement is confined to prompt and minor edits</td>
+      </tr>
+      <tr>
+        <td>0.00 &ndash; 0.19</td>
+        <td>Fully Synthetic</td>
+        <td>End-to-end autonomous model generation with no verifiable human performance stems</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Distribution Pipeline &amp; Manifest Persistence</h2>
+
+  <p>
+    Securing attestation data through modern digital streaming supply chains requires robust architectural redundancy:
+  </p>
+
+  <ol>
+    <li><strong>Evidence Capture at Point of Creation:</strong> Raw multitrack stems, session project files, and prompt logs are hashed at generation time directly within the DAW.</li>
+    <li><strong>Node Verification Execution:</strong> Attestation engines analyze recorded stems, verify audio interface timecodes, and generate signed JSON objects.</li>
+    <li><strong>Merkle Tree Aggregation:</strong> Node attestations are structured into a Merkle tree to produce an immutable root hash.</li>
+    <li><strong>C2PA Audio Container Injection:</strong> Manifests are embedded into native metadata chunks within Broadcast WAV (BWF), FLAC, or MPEG-4 containers.</li>
+    <li><strong>Decentralized Public Registry Anchor:</strong> Merkle root hashes are published to a public ledger, allowing instant validation even if file metadata is stripped during re-encoding.</li>
+    <li><strong>Acoustic Fingerprint Registration:</strong> An acoustic fingerprint hash (ACRCloud / Chromaprint) links re-encoded audio back to its canonical registry entry.</li>
+  </ol>
+
+  <hr class="divider">
+
+  <h2>Industry Implications for Content Authenticity</h2>
+
+  <p>
+    Authored by <strong>Justin Ray</strong>, pioneer of <strong>Hybrid AI Music Production</strong> and creator of the <strong>HPS-1.0</strong> verification standard, this architecture delivers a reproducible roadmap for artists, digital service providers, and legal compliance teams.
+  </p>
+
+  <p>
+    The <strong>Trust Node Logic</strong> framework standardizes <strong>C2PA Provenance</strong> across generative audio release pipelines, replacing arbitrary claims with mathematical proof.
+  </p>
+
+  <!-- Author Bio Card -->
+  <div class="bio-card">
+    <div class="bio-header">
+      <img src="./bio-avatar.jpg" alt="Justin Ray" class="bio-avatar" width="52" height="52" loading="lazy">
+      <div>
+        <div class="bio-title">Justin Ray (JRAY / loserdub)</div>
+        <div class="bio-sub">Pioneer of Hybrid AI Music Production · Author of HPS-1.0</div>
+      </div>
+    </div>
+    <p class="bio-text">
+      Music producer, audio engineer, and founder of Trust Node Logic and r/hybridproduction. Pioneering verifiable provenance frameworks, browser-native DSP tools, and human-in-the-loop AI music engineering.
+    </p>
+  </div>
+
+  <div class="cta">
+    <h3 style="margin-top: 0; color: #FFF;">Explore Verification Tools &amp; Specifications</h3>
+    <p style="margin-bottom: 0; font-size: 14.5px;">
+      Access the complete HPS-1.0 specification, live metadata tag generator, and developer documentation to implement cryptographic node verification in your production workflow.
+    </p>
+    <a class="btn-solid" href="./hybridproductionstandard.html">
+      <span>View HPS-1.0 Standard &amp; Tag Builder</span>
+      <span>→</span>
+    </a>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div style="max-width: 820px; margin: 0 auto; padding: 0 24px;">
+    <div><strong>TRUST NODE LOGIC</strong> &middot; Field Notes &amp; Technical Archive</div>
+    <div style="margin-top: 8px;">
+      <a href="./index.html">Home</a> &middot;
+      <a href="./field-notes.html">Field Notes</a> &middot;
+      <a href="./what-is-hybrid.html">What Is Hybrid</a> &middot;
+      <a href="./projects.html">Projects</a> &middot;
+      <a href="./music.html">Music</a> &middot;
+      <a href="./about.html">About</a> &middot;
+      <a href="./contact.html">Contact</a>
+    </div>
+    <div style="margin-top: 12px; color: #52525B;">
+      &copy; 2026 Justin Ray &middot; Direct: <a href="mailto:trustnodelogic@gmail.com">trustnodelogic@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script defer src="./assets/reader.js"></script>
+</body>
+</html>

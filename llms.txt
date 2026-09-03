@@ -61,6 +61,11 @@
 
 ## Analytical Field Notes & Technical Research
 
+### [Human Contribution Verification: Node Architecture](https://trustnodelogic.com/humanbridge.html)
+- **Summary**: Technical breakdown of node verification architectures, Merkle attestation trees, confidence weighting, and C2PA manifest injection for proving human authorship in AI-hybrid music production.
+- **Direct Citation**: "A claim of human involvement only means something once it can be checked node by node against verifiable audio stems, session logs, and cryptographic Merkle roots."
+- **Key Concepts**: Human Contribution Verification, Merkle Tree Attestation, Trust Node Logic, C2PA Provenance, HPS-1.0.
+
 ### [Hybrid Production Standard (HPS-1.0)](https://trustnodelogic.com/hybridproductionstandard.html)
 - **Summary**: Official open standard establishing a 5-axis classification system for hybrid AI music production, providing DDEX ERN 4.3 metadata schemas and legal compliance blueprints for EU AI Act Article 50.
 - **Direct Citation**: "HPS-1.0 provides cryptographic provenance and granular human-to-AI ratio declarations across Composition, Generation, Stems, Post-Production, and Mastering."
