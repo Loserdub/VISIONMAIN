@@ -249,33 +249,77 @@
   }
 }
 
-/* NEW Corner Sticker / Ribbon */
-.new-corner-ribbon {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 76px;
-  height: 76px;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 20;
+/* ─── Project Cards CSS Custom Properties & Dynamic Theming ─── */
+/* 1. VØID 1.5 - Toxic Neon Green + Electric Cyan Undertone */
+.tool-card-void {
+  --accent: #39FF14;
+  --accent-rgb: 57, 255, 20;
+  --undertone: #00D9FF;
+  --undertone-rgb: 0, 217, 255;
 }
-.new-corner-ribbon span {
-  position: absolute;
-  top: 14px;
-  right: -24px;
-  width: 96px;
-  transform: rotate(45deg);
-  background: #FF9F1C;
-  color: #000000;
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 800;
-  font-size: 9px;
-  letter-spacing: 0.16em;
-  text-align: center;
-  padding: 3px 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
-  text-transform: uppercase;
+
+/* 2. MIXR Studio - Electric Cyan + Cobalt Undertone */
+.tool-card-mixr {
+  --accent: #00D9FF;
+  --accent-rgb: 0, 217, 255;
+  --undertone: #2563EB;
+  --undertone-rgb: 37, 99, 235;
+}
+
+/* 3. Artist Finder - Radar Sky Blue + Emerald Undertone */
+.tool-card-artistfinder {
+  --accent: #38BDF8;
+  --accent-rgb: 56, 189, 248;
+  --undertone: #10B981;
+  --undertone-rgb: 16, 185, 129;
+}
+
+/* 4. VISION SYNTH - Electric Indigo + Deep Violet Undertone */
+.tool-card-synth {
+  --accent: #818CF8;
+  --accent-rgb: 129, 140, 248;
+  --undertone: #A855F7;
+  --undertone-rgb: 168, 85, 247;
+}
+
+/* 5. J-DAW - TNL Amber + Solar Gold Undertone */
+.tool-card-jdaw {
+  --accent: #FF9F1C;
+  --accent-rgb: 255, 159, 28;
+  --undertone: #F59E0B;
+  --undertone-rgb: 245, 158, 11;
+}
+
+/* 6. ChordCompose - Cool Mint Teal + Aqua Undertone */
+.tool-card-chord {
+  --accent: #14B8A6;
+  --accent-rgb: 20, 184, 166;
+  --undertone: #2DD4BF;
+  --undertone-rgb: 45, 212, 191;
+}
+
+/* 7. FractalAudio - Glitch Pink / Rose + Deep Cyan Undertone */
+.tool-card-fractal {
+  --accent: #FB7185;
+  --accent-rgb: 251, 113, 133;
+  --undertone: #06B6D4;
+  --undertone-rgb: 6, 182, 212;
+}
+
+/* 8. Black Mirror - High-Voltage Violet + Lilac Undertone */
+.tool-card-blackmirror {
+  --accent: #C084FC;
+  --accent-rgb: 192, 132, 252;
+  --undertone: #A855F7;
+  --undertone-rgb: 168, 85, 247;
+}
+
+/* 9. IMAGESIZER - Electric Emerald + Lime Undertone */
+.tool-card-imagesizer {
+  --accent: #34D399;
+  --accent-rgb: 52, 211, 153;
+  --undertone: #84CC16;
+  --undertone-rgb: 132, 204, 22;
 }
 
 /* ─── Tool Cards Hover Interaction Framework ─── */
@@ -292,70 +336,113 @@
   z-index: 2;
 }
 
-/* VØID 1.5 Center Expansion/Contraction Glow Layer */
-.tool-card-void::before {
+/* Base pseudo-element expansion layer for all cards */
+.tool-card::before {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: inherit;
   pointer-events: none;
   z-index: 1;
-  border: 1px solid #39FF14;
-  box-shadow: 0 0 12px rgba(57, 255, 20, 0.75), inset 0 0 16px rgba(0, 217, 255, 0.45);
-  background: radial-gradient(circle at center, rgba(57, 255, 20, 0.16) 0%, rgba(0, 217, 255, 0.1) 45%, transparent 75%);
   opacity: 0;
   transform: scale(0.35);
   transform-origin: center center;
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 14px rgba(var(--accent-rgb), 0.7), inset 0 0 18px rgba(var(--undertone-rgb), 0.35);
+  background: radial-gradient(circle at center, rgba(var(--accent-rgb), 0.16) 0%, rgba(var(--undertone-rgb), 0.08) 50%, transparent 75%);
 }
 
-/* Base hover states (applied instantly without transition under reduced-motion) */
-.tool-card-void:hover {
-  border-color: #39FF14 !important;
-  box-shadow: 0 0 10px rgba(57, 255, 20, 0.6), 0 0 20px rgba(0, 217, 255, 0.35) !important;
-}
-.tool-card-void:hover::before {
+/* Hover Triggers: Expand ::before from center outward */
+.tool-card:hover::before {
   opacity: 1;
   transform: scale(1);
 }
 
-.tool-card-mixr:hover {
-  border-color: #00D9FF !important;
-  box-shadow: 0 0 10px rgba(0, 217, 255, 0.55) !important;
+/* Outer Border & Glow Snapping on Hover */
+.tool-card:hover {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 12px rgba(var(--accent-rgb), 0.55), 0 0 24px rgba(var(--undertone-rgb), 0.25) !important;
 }
 
-.tool-card-artistfinder:hover {
-  border-color: #38BDF8 !important;
-  box-shadow: 0 0 10px rgba(56, 189, 248, 0.55) !important;
+.tool-card:hover h3 {
+  color: var(--accent) !important;
 }
 
-.tool-card-synth:hover {
-  border-color: #6366F1 !important;
-  box-shadow: 0 0 10px rgba(99, 102, 241, 0.6) !important;
+/* Card Internal Typography & Accent Elements */
+.tool-card .tool-cat-tag {
+  color: var(--accent);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.tool-card-jdaw:hover {
-  border-color: #FF9F1C !important;
-  box-shadow: 0 0 10px rgba(255, 159, 28, 0.55) !important;
+.tool-card .tool-arrow {
+  color: var(--accent);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  transition: transform 200ms ease-out;
 }
 
-.tool-card-chord:hover {
-  border-color: #14B8A6 !important;
-  box-shadow: 0 0 10px rgba(20, 184, 166, 0.55) !important;
+.tool-card:hover .tool-arrow {
+  transform: translateX(3px);
 }
 
-.tool-card-fractal:hover {
-  border-color: #06B6D4 !important;
-  box-shadow: 0 0 10px rgba(6, 182, 212, 0.55) !important;
+.tool-card .tool-core-tech-label {
+  color: var(--accent);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.tool-card-blackmirror:hover {
-  border-color: #A855F7 !important;
-  box-shadow: 0 0 10px rgba(168, 85, 247, 0.6) !important;
+.tool-card .tool-core-tech-val {
+  color: var(--undertone);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  line-height: 1.4;
 }
 
-.tool-card-imagesizer:hover {
-  border-color: #0EA5E9 !important;
-  box-shadow: 0 0 10px rgba(14, 165, 233, 0.55) !important;
+/* Card Action Button [ TRY TOOL → ] */
+.tool-card .tool-card-btn {
+  color: var(--accent);
+  border: 1px solid rgba(var(--accent-rgb), 0.35);
+  background: rgba(var(--accent-rgb), 0.06);
+  padding: 3px 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tool-card:hover .tool-card-btn {
+  color: #FFFFFF !important;
+  background: rgba(var(--accent-rgb), 0.28) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.5) !important;
+  transform: translateX(2px);
+}
+
+/* VØID 1.5 NEW Badge */
+.tool-badge-new {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 5px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(57, 255, 20, 0.12);
+  border: 1px solid rgba(57, 255, 20, 0.6);
+  color: #39FF14;
+  line-height: 1.2;
 }
 
 /* ─── Prefers Reduced Motion Controls ─── */
@@ -363,8 +450,13 @@
   .tool-card {
     transition: border-color 200ms ease-out, box-shadow 200ms ease-out, background-color 200ms ease-out;
   }
-  .tool-card-void::before {
+  .tool-card::before {
     transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1), opacity 240ms ease-out;
+  }
+  .tool-card h3,
+  .tool-card .tool-card-btn,
+  .tool-card .tool-arrow {
+    transition: color 200ms ease-out, background-color 200ms ease-out, border-color 200ms ease-out, box-shadow 200ms ease-out, transform 200ms ease-out;
   }
 }
 
@@ -504,19 +596,17 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         
-          <!-- 1. VØID 1.5 (Flagship Slicer Sampler & Auto-Mashup Engine with Center Expansion Glow & NEW sticker) -->
+          <!-- 1. VØID 1.5 (Flagship Slicer Sampler & Auto-Mashup Engine with Center Expansion Glow & NEW badge) -->
           <a href="./void.html" class="tech-card project-square-card tool-card tool-card-void p-6 flex flex-col justify-between group">
-            <!-- NEW Corner Ribbon -->
-            <div class="new-corner-ribbon">
-              <span>NEW</span>
-            </div>
-
             <div>
-              <div class="flex items-center justify-between text-[10px] font-mono text-[#FF9F1C] mb-3">
-                <span class="font-bold tracking-wider">[ SLICER // SAMPLER ]</span>
-                <span class="group-hover:text-[#FF9F1C] group-hover:translate-x-1 transition-all">→</span>
+              <div class="flex items-center justify-between text-[10px] font-mono mb-3">
+                <div class="flex items-center gap-2">
+                  <span class="tool-cat-tag">[ SLICER // SAMPLER ]</span>
+                  <span class="tool-badge-new">NEW</span>
+                </div>
+                <span class="tool-arrow">→</span>
               </div>
-              <h3 class="text-lg sm:text-xl font-bold font-mono uppercase text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors flex items-center gap-2">
+              <h3 class="text-lg sm:text-xl font-bold font-mono uppercase text-[#EAEAEA] transition-colors flex items-center gap-2">
                 <span>VØID 1.5</span>
                 <span class="text-[10px] text-[#00F0FF] font-normal tracking-normal font-mono">★ 4.9</span>
               </h3>
@@ -524,13 +614,13 @@
                 Granular Web Audio slicer, 16-pad performance sampler, and off-thread Harmonic Auto-Mashup workstation.
               </p>
               <div class="mt-3 pt-2.5 border-t border-white/[0.08] flex flex-col gap-1">
-                <span class="text-[10px] font-mono text-[#FF9F1C] font-semibold tracking-wider uppercase">[CORE_TECH]</span>
-                <span class="text-[11px] font-mono text-[#00F0FF] leading-snug">Web Audio API + off-thread DSP via Web Workers</span>
+                <span class="tool-core-tech-label">[CORE_TECH]</span>
+                <span class="tool-core-tech-val">Web Audio API + off-thread DSP via Web Workers</span>
               </div>
             </div>
             <div class="mt-auto pt-3 border-t border-white/[0.08] flex items-center justify-between text-[11px] font-mono">
               <span class="text-[#71717A] text-[10px] tracking-wider">[STATUS: LIVE]</span>
-              <span class="text-[#FF9F1C] font-bold tracking-wider group-hover:text-white group-hover:translate-x-1 transition-all inline-flex items-center gap-1">
+              <span class="tool-card-btn">
                 [ TRY TOOL → ]
               </span>
             </div>
@@ -539,22 +629,22 @@
           <!-- 2. MIXR Studio -->
           <a href="./mixrstudio.html" class="tech-card project-square-card tool-card tool-card-mixr p-6 flex flex-col justify-between group">
             <div>
-              <div class="flex items-center justify-between text-[10px] font-mono text-[#FF9F1C] mb-3">
-                <span class="font-bold tracking-wider">[ MASTERING // DSP ]</span>
-                <span class="group-hover:translate-x-1 transition-transform">→</span>
+              <div class="flex items-center justify-between text-[10px] font-mono mb-3">
+                <span class="tool-cat-tag">[ MASTERING // DSP ]</span>
+                <span class="tool-arrow">→</span>
               </div>
-              <h3 class="text-lg sm:text-xl font-bold font-mono uppercase text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors">MIXR Studio</h3>
+              <h3 class="text-lg sm:text-xl font-bold font-mono uppercase text-[#EAEAEA] transition-colors">MIXR Studio</h3>
               <p class="text-xs text-[#A1A1AA] mt-2.5 font-sans leading-relaxed">
                 Free browser-based audio mastering suite, dynamic EQ engine, LUFS loudness meter, and precision limiter.
               </p>
               <div class="mt-3 pt-2.5 border-t border-white/[0.08] flex flex-col gap-1">
-                <span class="text-[10px] font-mono text-[#FF9F1C] font-semibold tracking-wider uppercase">[CORE_TECH]</span>
-                <span class="text-[11px] font-mono text-[#00F0FF] leading-snug">Real-time LUFS analysis, dynamic EQ engine</span>
+                <span class="tool-core-tech-label">[CORE_TECH]</span>
+                <span class="tool-core-tech-val">Real-time LUFS analysis, dynamic EQ engine</span>
               </div>
             </div>
             <div class="mt-auto pt-3 border-t border-white/[0.08] flex items-center justify-between text-[11px] font-mono">
               <span class="text-[#71717A] text-[10px] tracking-wider">[STATUS: LIVE]</span>
-              <span class="text-[#FF9F1C] font-bold tracking-wider group-hover:text-white group-hover:translate-x-1 transition-all inline-flex items-center gap-1">
+              <span class="tool-card-btn">
                 [ TRY TOOL → ]
               </span>
             </div>
@@ -563,22 +653,22 @@
           <!-- 3. Artist Finder -->
           <a href="./artistfinder.html" class="tech-card project-square-card tool-card tool-card-artistfinder p-6 flex flex-col justify-between group">
             <div>
-              <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-3">
-                <span class="text-[#FF9F1C] font-bold tracking-wider">[ GEO // KNOWLEDGE GRAPH ]</span>
-                <span class="group-hover:translate-x-1 transition-transform">→</span>
+              <div class="flex items-center justify-between text-[10px] font-mono mb-3">
+                <span class="tool-cat-tag">[ GEO // KNOWLEDGE GRAPH ]</span>
+                <span class="tool-arrow">→</span>
               </div>
-              <h3 class="text-lg sm:text-xl font-bold font-mono uppercase text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors">Artist Finder</h3>
+              <h3 class="text-lg sm:text-xl font-bold font-mono uppercase text-[#EAEAEA] transition-colors">Artist Finder</h3>
               <p class="text-xs text-[#A1A1AA] mt-2.5 font-sans leading-relaxed">
                 GEO signal checker and entity analyzer for AI training data, knowledge graph salience, and artist visibility.
               </p>
               <div class="mt-3 pt-2.5 border-t border-white/[0.08] flex flex-col gap-1">
-                <span class="text-[10px] font-mono text-[#FF9F1C] font-semibold tracking-wider uppercase">[CORE_TECH]</span>
-                <span class="text-[11px] font-mono text-[#00F0FF] leading-snug">Entity salience heuristics + Knowledge Graph signal scoring</span>
+                <span class="tool-core-tech-label">[CORE_TECH]</span>
+                <span class="tool-core-tech-val">Entity salience heuristics + Knowledge Graph signal scoring</span>
               </div>
             </div>
             <div class="mt-auto pt-3 border-t border-white/[0.08] flex items-center justify-between text-[11px] font-mono">
               <span class="text-[#71717A] text-[10px] tracking-wider">[STATUS: LIVE]</span>
-              <span class="text-[#FF9F1C] font-bold tracking-wider group-hover:text-white group-hover:translate-x-1 transition-all inline-flex items-center gap-1">
+              <span class="tool-card-btn">
                 [ TRY TOOL → ]
               </span>
             </div>
@@ -587,22 +677,22 @@
           <!-- 4. VISION SYNTH -->
           <a href="https://loserdub.github.io/Subtractive/" target="_blank" rel="noopener noreferrer" class="tech-card project-square-card tool-card tool-card-synth p-6 flex flex-col justify-between group">
             <div>
-              <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-3">
-                <span class="text-[#FF9F1C] font-bold tracking-wider">[ SYNTH // SUBTRACTIVE ]</span>
-                <span class="group-hover:text-[#FF9F1C] transition-colors">↗</span>
+              <div class="flex items-center justify-between text-[10px] font-mono mb-3">
+                <span class="tool-cat-tag">[ SYNTH // SUBTRACTIVE ]</span>
+                <span class="tool-arrow">↗</span>
               </div>
-              <h3 class="text-lg sm:text-xl font-bold font-mono uppercase text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors">VISION SYNTH</h3>
+              <h3 class="text-lg sm:text-xl font-bold font-mono uppercase text-[#EAEAEA] transition-colors">VISION SYNTH</h3>
               <p class="text-xs text-[#A1A1AA] mt-2.5 font-sans leading-relaxed">
                 Polyphonic subtractive web synthesizer with dual oscillators, custom ADSR envelopes, and resonant low-pass filters.
               </p>
               <div class="mt-3 pt-2.5 border-t border-white/[0.08] flex flex-col gap-1">
-                <span class="text-[10px] font-mono text-[#FF9F1C] font-semibold tracking-wider uppercase">[CORE_TECH]</span>
-                <span class="text-[11px] font-mono text-[#00F0FF] leading-snug">Web Audio API polyphonic engine + custom ADSR envelope synthesis</span>
+                <span class="tool-core-tech-label">[CORE_TECH]</span>
+                <span class="tool-core-tech-val">Web Audio API polyphonic engine + custom ADSR envelope synthesis</span>
               </div>
             </div>
             <div class="mt-auto pt-3 border-t border-white/[0.08] flex items-center justify-between text-[11px] font-mono">
               <span class="text-[#71717A] text-[10px] tracking-wider">[STATUS: LIVE]</span>
-              <span class="text-[#FF9F1C] font-bold tracking-wider group-hover:text-white group-hover:translate-x-1 transition-all inline-flex items-center gap-1">
+              <span class="tool-card-btn">
                 [ TRY TOOL ↗ ]
               </span>
             </div>
@@ -611,22 +701,22 @@
           <!-- 5. J-DAW -->
           <a href="https://loserdub.github.io/jdaw/" target="_blank" rel="noopener noreferrer" class="tech-card project-square-card tool-card tool-card-jdaw p-6 flex flex-col justify-between group">
             <div>
-              <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-3">
-                <span class="text-[#FF9F1C] font-bold tracking-wider">[ WORKSTATION // DAW ]</span>
-                <span class="group-hover:text-[#FF9F1C] transition-colors">↗</span>
+              <div class="flex items-center justify-between text-[10px] font-mono mb-3">
+                <span class="tool-cat-tag">[ WORKSTATION // DAW ]</span>
+                <span class="tool-arrow">↗</span>
               </div>
-              <h3 class="text-lg sm:text-xl font-bold font-mono uppercase text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors">J-DAW</h3>
+              <h3 class="text-lg sm:text-xl font-bold font-mono uppercase text-[#EAEAEA] transition-colors">J-DAW</h3>
               <p class="text-xs text-[#A1A1AA] mt-2.5 font-sans leading-relaxed">
                 Complete multi-track Digital Audio Workstation running in the browser with sequencing, track stems, and mixing.
               </p>
               <div class="mt-3 pt-2.5 border-t border-white/[0.08] flex flex-col gap-1">
-                <span class="text-[10px] font-mono text-[#FF9F1C] font-semibold tracking-wider uppercase">[CORE_TECH]</span>
-                <span class="text-[11px] font-mono text-[#00F0FF] leading-snug">Web Audio API multi-track engine, timeline sequencing + stem mixing</span>
+                <span class="tool-core-tech-label">[CORE_TECH]</span>
+                <span class="tool-core-tech-val">Web Audio API multi-track engine, timeline sequencing + stem mixing</span>
               </div>
             </div>
             <div class="mt-auto pt-3 border-t border-white/[0.08] flex items-center justify-between text-[11px] font-mono">
               <span class="text-[#71717A] text-[10px] tracking-wider">[STATUS: LIVE]</span>
-              <span class="text-[#FF9F1C] font-bold tracking-wider group-hover:text-white group-hover:translate-x-1 transition-all inline-flex items-center gap-1">
+              <span class="tool-card-btn">
                 [ TRY TOOL ↗ ]
               </span>
             </div>
@@ -635,22 +725,22 @@
           <!-- 6. ChordCompose -->
           <a href="https://loserdub.github.io/chordcreate/" target="_blank" rel="noopener noreferrer" class="tech-card project-square-card tool-card tool-card-chord p-6 flex flex-col justify-between group">
             <div>
-              <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-3">
-                <span class="text-[#FF9F1C] font-bold tracking-wider">[ HARMONY // MIDI ]</span>
-                <span class="group-hover:text-[#FF9F1C] transition-colors">↗</span>
+              <div class="flex items-center justify-between text-[10px] font-mono mb-3">
+                <span class="tool-cat-tag">[ HARMONY // MIDI ]</span>
+                <span class="tool-arrow">↗</span>
               </div>
-              <h3 class="text-lg sm:text-xl font-bold font-mono uppercase text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors">ChordCompose</h3>
+              <h3 class="text-lg sm:text-xl font-bold font-mono uppercase text-[#EAEAEA] transition-colors">ChordCompose</h3>
               <p class="text-xs text-[#A1A1AA] mt-2.5 font-sans leading-relaxed">
                 Interactive chord progression sketchpad, scale mapper, voice leading builder, and MIDI sequence exporter.
               </p>
               <div class="mt-3 pt-2.5 border-t border-white/[0.08] flex flex-col gap-1">
-                <span class="text-[10px] font-mono text-[#FF9F1C] font-semibold tracking-wider uppercase">[CORE_TECH]</span>
-                <span class="text-[11px] font-mono text-[#00F0FF] leading-snug">Algorithmic voice leading engine, Web Audio preview + MIDI export</span>
+                <span class="tool-core-tech-label">[CORE_TECH]</span>
+                <span class="tool-core-tech-val">Algorithmic voice leading engine, Web Audio preview + MIDI export</span>
               </div>
             </div>
             <div class="mt-auto pt-3 border-t border-white/[0.08] flex items-center justify-between text-[11px] font-mono">
               <span class="text-[#71717A] text-[10px] tracking-wider">[STATUS: LIVE]</span>
-              <span class="text-[#FF9F1C] font-bold tracking-wider group-hover:text-white group-hover:translate-x-1 transition-all inline-flex items-center gap-1">
+              <span class="tool-card-btn">
                 [ TRY TOOL ↗ ]
               </span>
             </div>
@@ -659,22 +749,22 @@
           <!-- 7. FractalAudio -->
           <a href="https://loserdub.github.io/FractalAudio/" target="_blank" rel="noopener noreferrer" class="tech-card project-square-card tool-card tool-card-fractal p-6 flex flex-col justify-between group">
             <div>
-              <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-3">
-                <span class="text-[#FF9F1C] font-bold tracking-wider">[ GRANULAR // GLITCH ]</span>
-                <span class="group-hover:text-[#FF9F1C] transition-colors">↗</span>
+              <div class="flex items-center justify-between text-[10px] font-mono mb-3">
+                <span class="tool-cat-tag">[ GRANULAR // GLITCH ]</span>
+                <span class="tool-arrow">↗</span>
               </div>
-              <h3 class="text-lg sm:text-xl font-bold font-mono uppercase text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors">FractalAudio</h3>
+              <h3 class="text-lg sm:text-xl font-bold font-mono uppercase text-[#EAEAEA] transition-colors">FractalAudio</h3>
               <p class="text-xs text-[#A1A1AA] mt-2.5 font-sans leading-relaxed">
                 Non-linear fractal audio manipulation, granular cloud synthesis, recursive echoes, and glitch sound design.
               </p>
               <div class="mt-3 pt-2.5 border-t border-white/[0.08] flex flex-col gap-1">
-                <span class="text-[10px] font-mono text-[#FF9F1C] font-semibold tracking-wider uppercase">[CORE_TECH]</span>
-                <span class="text-[11px] font-mono text-[#00F0FF] leading-snug">Granular synthesis, recursive delay networks + fractal audio DSP</span>
+                <span class="tool-core-tech-label">[CORE_TECH]</span>
+                <span class="tool-core-tech-val">Granular synthesis, recursive delay networks + fractal audio DSP</span>
               </div>
             </div>
             <div class="mt-auto pt-3 border-t border-white/[0.08] flex items-center justify-between text-[11px] font-mono">
               <span class="text-[#71717A] text-[10px] tracking-wider">[STATUS: LIVE]</span>
-              <span class="text-[#FF9F1C] font-bold tracking-wider group-hover:text-white group-hover:translate-x-1 transition-all inline-flex items-center gap-1">
+              <span class="tool-card-btn">
                 [ TRY TOOL ↗ ]
               </span>
             </div>
@@ -683,22 +773,22 @@
           <!-- 8. Black Mirror -->
           <a href="./black-mirror.html" class="tech-card project-square-card tool-card tool-card-blackmirror p-6 flex flex-col justify-between group">
             <div>
-              <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-3">
-                <span class="text-[#FF9F1C] font-bold tracking-wider">[ VISUALIZER // MIDI ]</span>
-                <span class="group-hover:translate-x-1 transition-transform">→</span>
+              <div class="flex items-center justify-between text-[10px] font-mono mb-3">
+                <span class="tool-cat-tag">[ VISUALIZER // MIDI ]</span>
+                <span class="tool-arrow">→</span>
               </div>
-              <h3 class="text-lg sm:text-xl font-bold font-mono uppercase text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors">Black Mirror</h3>
+              <h3 class="text-lg sm:text-xl font-bold font-mono uppercase text-[#EAEAEA] transition-colors">Black Mirror</h3>
               <p class="text-xs text-[#A1A1AA] mt-2.5 font-sans leading-relaxed">
                 Interactive audio visualizer, reactive geometry canvas, and experimental Web MIDI controller portal.
               </p>
               <div class="mt-3 pt-2.5 border-t border-white/[0.08] flex flex-col gap-1">
-                <span class="text-[10px] font-mono text-[#FF9F1C] font-semibold tracking-wider uppercase">[CORE_TECH]</span>
-                <span class="text-[11px] font-mono text-[#00F0FF] leading-snug">HTML5 Canvas FFT frequency analysis + Web MIDI API integration</span>
+                <span class="tool-core-tech-label">[CORE_TECH]</span>
+                <span class="tool-core-tech-val">HTML5 Canvas FFT frequency analysis + Web MIDI API integration</span>
               </div>
             </div>
             <div class="mt-auto pt-3 border-t border-white/[0.08] flex items-center justify-between text-[11px] font-mono">
               <span class="text-[#71717A] text-[10px] tracking-wider">[STATUS: LIVE]</span>
-              <span class="text-[#FF9F1C] font-bold tracking-wider group-hover:text-white group-hover:translate-x-1 transition-all inline-flex items-center gap-1">
+              <span class="tool-card-btn">
                 [ TRY TOOL → ]
               </span>
             </div>
@@ -707,22 +797,22 @@
           <!-- 9. IMAGESIZER -->
           <a href="https://loserdub.github.io/IMAGESIZER" target="_blank" rel="noopener noreferrer" class="tech-card project-square-card tool-card tool-card-imagesizer p-6 flex flex-col justify-between group">
             <div>
-              <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-3">
-                <span class="text-[#FF9F1C] font-bold tracking-wider">[ CANVAS // UTILITY ]</span>
-                <span class="group-hover:text-[#FF9F1C] transition-colors">↗</span>
+              <div class="flex items-center justify-between text-[10px] font-mono mb-3">
+                <span class="tool-cat-tag">[ CANVAS // UTILITY ]</span>
+                <span class="tool-arrow">↗</span>
               </div>
-              <h3 class="text-lg sm:text-xl font-bold font-mono uppercase text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors">IMAGESIZER</h3>
+              <h3 class="text-lg sm:text-xl font-bold font-mono uppercase text-[#EAEAEA] transition-colors">IMAGESIZER</h3>
               <p class="text-xs text-[#A1A1AA] mt-2.5 font-sans leading-relaxed">
                 Zero-upload client-side album artwork &amp; web asset optimizer with multi-format WebP and PNG batch scaling.
               </p>
               <div class="mt-3 pt-2.5 border-t border-white/[0.08] flex flex-col gap-1">
-                <span class="text-[10px] font-mono text-[#FF9F1C] font-semibold tracking-wider uppercase">[CORE_TECH]</span>
-                <span class="text-[11px] font-mono text-[#00F0FF] leading-snug">Client-side HTML5 Canvas batch rasterizer + WebP encoding</span>
+                <span class="tool-core-tech-label">[CORE_TECH]</span>
+                <span class="tool-core-tech-val">Client-side HTML5 Canvas batch rasterizer + WebP encoding</span>
               </div>
             </div>
             <div class="mt-auto pt-3 border-t border-white/[0.08] flex items-center justify-between text-[11px] font-mono">
               <span class="text-[#71717A] text-[10px] tracking-wider">[STATUS: LIVE]</span>
-              <span class="text-[#FF9F1C] font-bold tracking-wider group-hover:text-white group-hover:translate-x-1 transition-all inline-flex items-center gap-1">
+              <span class="tool-card-btn">
                 [ TRY TOOL ↗ ]
               </span>
             </div>
