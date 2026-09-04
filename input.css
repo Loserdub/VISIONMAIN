@@ -167,6 +167,12 @@
   background: rgba(255, 159, 28, 0.06);
 }
 
+.tech-tag-cyan {
+  border-color: rgba(0, 240, 255, 0.4);
+  color: #00F0FF;
+  background: rgba(0, 240, 255, 0.08);
+}
+
 /* Corner Bracket Accents */
 .tech-bracket {
   position: relative;
