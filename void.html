@@ -5411,40 +5411,55 @@ function closeTut() {
   document.getElementById('tut-overlay').classList.remove('active');
   localStorage.setItem('void_tutorial_seen', 'true');
 }
+function openTut() {
+  tutStep = 1;
+  document.querySelectorAll('.tut-step').forEach((el, i) => {
+    el.classList.toggle('active', i === 0);
+  });
+  document.querySelectorAll('.tut-pdot').forEach((el, i) => {
+    el.classList.toggle('active', i === 0);
+  });
+  document.getElementById('tut-prev').style.display = 'none';
+  const nextBtn = document.getElementById('tut-next');
+  nextBtn.textContent = 'Next →';
+  nextBtn.style.background = 'var(--text)';
+  nextBtn.style.color = 'var(--bg)';
+  document.getElementById('tut-overlay').classList.add('active');
+}
 </script>
 
-<div class="tut-overlay" id="tut-overlay">
+<div class="tut-overlay" id="tut-overlay" onclick="if(event.target===this) closeTut()">
   <div class="tut-modal" style="width:460px;">
     <!-- Step 1 -->
     <div class="tut-step active" id="tut-step-1">
       <div class="tut-title"><div class="tut-dot"></div> Welcome to VØID 1.5</div>
       <div class="tut-text">
-        <strong>VØID 1.5</strong> is a high-performance, browser-based Web Audio workstation. Runs 100% offline with off-thread Web Worker DSP processing.<br><br>
-        Slice audio stems, build 16-pad performance kits, and generate intelligent Harmonic Auto-Mashups seamlessly.
+        <strong>VØID 1.5</strong> is a high-performance Web Audio workstation for granular slicing, MPC-style pad performance, and harmonic mashup synthesis. Runs 100% offline with zero server latency.<br><br>
+        Slice audio stems, inspect and trim waveforms, stage 16-pad performance kits, sequence drum grooves, and save entire sessions as <strong>.VOID</strong> project files.
       </div>
     </div>
     <!-- Step 2 -->
     <div class="tut-step" id="tut-step-2">
-      <div class="tut-title"><div class="tut-dot" style="background:#42f5a4"></div> 1 : Slicer Tab</div>
+      <div class="tut-title"><div class="tut-dot" style="background:#42f5a4"></div> 1 : Slicer &amp; Clip Editor</div>
       <div class="tut-text">
-        <strong>Slice &amp; Extract:</strong> Drop up to 10 audio files. Choose granularities: Phrases, Bars, Beats, Triplets, Fixed Lengths (1s–10s), Section Auto-Detect, or Transient Hits.<br><br>
-        <strong>Off-Thread ML:</strong> Automatic BPM, Camelot Key, &amp; Structural Section detection without UI lag.
+        <strong>Granular Slicing:</strong> Drop up to 10 audio files. Slice by Phrases, Bars, Beats, Triplets, Fixed Durations (1s-10s), Transient Hits, or ML Section Auto-Detect with real-time BPM and Camelot Key detection.<br><br>
+        <strong>Waveform Refinement:</strong> Click any slice in the library to adjust draggable start/stop markers on the waveform canvas, audition loops, and transpose pitch with dynamic Camelot harmonic key feedback.
       </div>
     </div>
     <!-- Step 3 -->
     <div class="tut-step" id="tut-step-3">
-      <div class="tut-title"><div class="tut-dot" style="background:#42c8f5"></div> 2 : Pads Tab</div>
+      <div class="tut-title"><div class="tut-dot" style="background:#00F0FF"></div> 2 : Pads &amp; Pattern Sequencer</div>
       <div class="tut-text">
-        <strong>16-Pad Sampler:</strong> Drag slices onto pads and play live using keys <strong>[A]–[P]</strong> or auto-mapped MIDI controllers.<br><br>
-        <strong>Tools:</strong> Customize pitch, volume, &amp; choke groups, trim sample boundaries, record live sets, and export 1-click <strong>Ableton Drum Racks</strong>.
+        <strong>Pad Staging &amp; Performance:</strong> Curate slices in the Slicer staging bay, then hit <strong>⚡ Push to Pads</strong> to load your live kit. Play 16 pads with keys <strong>[A]-[P]</strong> or auto-mapped Web MIDI.<br><br>
+        <strong>16-Step Groovebox:</strong> Program drum patterns across 4 banks (A-D), dial in swing (50%-75%), record live to grid, or export 1-click <strong>Ableton Drum Racks (.adg)</strong>.
       </div>
     </div>
     <!-- Step 4 -->
     <div class="tut-step" id="tut-step-4">
-      <div class="tut-title"><div class="tut-dot" style="background:var(--accent2)"></div> 3 : Mashup Tab</div>
+      <div class="tut-title"><div class="tut-dot" style="background:var(--accent2)"></div> 3 : Harmonic Auto-Mashup</div>
       <div class="tut-text">
-        <strong>Harmonic Auto-Mashup Engine:</strong> Blend multiple tracks using Camelot key matching, pitch locking, and sub-bass high-pass filtering.<br><br>
-        <strong>Controls:</strong> Fine-tune with per-source weight &amp; volume sliders, arrangement templates (<em>DJ Set, Energy Arc, A-B Alt</em>), and section filters.
+        <strong>Harmonic Synthesis Engine:</strong> Blend multi-track stems with automated Camelot key locking, pitch matching, and sub-bass clash prevention filters.<br><br>
+        <strong>Arrangement Architect:</strong> Apply structural templates (<em>DJ Set, Energy Arc, Chill, A-B Alternating</em>), filter by section (<em>Intro, Verse, Build, Drop, Outro</em>), and balance per-track weight and volume.
       </div>
     </div>
 
@@ -5464,6 +5479,7 @@ function closeTut() {
   </div>
 </div>
 
+<button class="about-btn" style="right:84px;" onclick="openTut()" title="Open Quickstart Guide">Guide</button>
 <button class="about-btn" onclick="document.getElementById('about-overlay').classList.add('active')">About</button>
 
 <!-- Reviews Modal Overlay -->
@@ -5535,7 +5551,10 @@ function closeTut() {
     <p>Copyright © Justin Ray<br>Version 1.5 · ML Engine · 07/2026</p>
     <p style="font-size:10px;color:#38ef7d;font-family:var(--mono);margin-top:6px;letter-spacing:0.05em;">[ FREE BROWSER WORKSTATION · ZERO UPLOADS · 100% CLIENT-SIDE DSP ]</p>
     <p style="margin-top:12px">For more visit:<br><a href="https://trustnodelogic.com/projects.html" target="_blank" rel="noopener">https://trustnodelogic.com/projects.html</a></p>
-    <button class="about-close" onclick="document.getElementById('about-overlay').classList.remove('active')">Close</button>
+    <div style="display:flex;gap:8px;margin-top:14px;">
+      <button class="btn btn-ghost" onclick="openTut(); document.getElementById('about-overlay').classList.remove('active');" style="flex:1;padding:6px 10px;font-size:10px;border-color:rgba(66,245,164,0.4);color:var(--accent);">📖 Quickstart Guide</button>
+      <button class="about-close" style="position:static;padding:6px 14px;border-radius:4px;background:var(--border);color:var(--text);border:none;cursor:pointer;font-family:var(--mono);font-size:10px;" onclick="document.getElementById('about-overlay').classList.remove('active')">Close</button>
+    </div>
   </div>
 </div>
 
