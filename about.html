@@ -222,13 +222,13 @@
   /* ---------- Breadcrumb Navigation ---------- */
   .breadcrumb {
     max-width: 1100px;
-    margin: 18px auto 0;
+    margin: 16px auto 0;
     padding: 0 24px;
     display: flex;
     align-items: center;
     gap: 8px;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11.5px;
+    font-size: 12px;
     color: #71717A;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -257,10 +257,10 @@
 <div id="root" class="relative z-10 flex flex-col flex-grow min-h-screen">
 
   <!-- Brutalist Header -->
-  <header class="sticky top-0 left-0 right-0 z-50 bg-[#0B0C0E]/95 backdrop-blur-md border-b border-white/10 py-3.5">
+  <header class="sticky top-0 left-0 right-0 z-50 bg-[#0B0C0E]/95 backdrop-blur-md border-b border-white/10 py-4">
     <div class="container mx-auto px-6 flex justify-between items-center relative">
       
-      <a href="./index.html" class="flex items-center gap-3 group h-9 overflow-hidden w-[220px]" aria-label="Home">
+      <a href="./index.html" class="flex items-center gap-4 group h-9 overflow-hidden w-[220px]" aria-label="Home">
         <div class="w-5 h-5 border border-[#FF9F1C] bg-[#FF9F1C]/10 flex items-center justify-center flex-shrink-0 text-[#FF9F1C] font-mono text-xs font-bold">
           <span>▪</span>
         </div>
@@ -274,7 +274,7 @@
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-6 text-[11px] font-mono tracking-[0.14em] uppercase text-[#71717A]" aria-label="Main navigation">
+      <nav class="hidden md:flex items-center gap-6 text-xs font-mono tracking-[0.14em] uppercase text-[#71717A]" aria-label="Main navigation">
         <a href="./index.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">HOME</a>
         <a href="./field-notes.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">FIELD NOTES</a>
         <a href="./music.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">MUSIC</a>
@@ -287,15 +287,15 @@
 
       <!-- Mobile Hamburger Toggle -->
       <input type="checkbox" id="mobile-menu-toggle" class="peer hidden">
-      <label for="mobile-menu-toggle" class="md:hidden text-[#EAEAEA] cursor-pointer peer-checked:hidden block p-1 hover:text-[#FF9F1C] transition-colors border border-white/10" aria-label="Open menu">
+      <label for="mobile-menu-toggle" class="md:hidden text-[#EAEAEA] cursor-pointer peer-checked:hidden block p-2 hover:text-[#FF9F1C] transition-colors border border-white/10" aria-label="Open menu">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
       </label>
-      <label for="mobile-menu-toggle" class="md:hidden text-[#EAEAEA] cursor-pointer peer-checked:block hidden p-1 hover:text-[#FF9F1C] transition-colors border border-white/10" aria-label="Close menu">
+      <label for="mobile-menu-toggle" class="md:hidden text-[#EAEAEA] cursor-pointer peer-checked:block hidden p-2 hover:text-[#FF9F1C] transition-colors border border-white/10" aria-label="Close menu">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
       </label>
 
       <div class="absolute top-full left-0 right-0 bg-[#0B0C0E] border-b border-white/20 shadow-2xl py-6 px-6 hidden peer-checked:flex flex-col items-center gap-4 text-center">
-        <nav class="flex flex-col gap-3 text-center text-xs font-mono tracking-widest uppercase text-[#EAEAEA] font-medium w-full max-w-xs" aria-label="Mobile navigation">
+        <nav class="flex flex-col gap-4 text-center text-xs font-mono tracking-widest uppercase text-[#EAEAEA] font-medium w-full max-w-xs" aria-label="Mobile navigation">
           <a href="./index.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">HOME</a>
           <a href="./field-notes.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">FIELD NOTES</a>
           <a href="./music.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">MUSIC</a>
@@ -319,20 +319,20 @@
 
 
   <!-- Main Content -->
-  <main class="flex-grow w-full pt-12 pb-20 flex flex-col" id="main-content">
+  <main class="flex-grow w-full pt-12 pb-24 flex flex-col" id="main-content">
     
     <!-- Hero Profile Dossier Section -->
-    <section class="py-12 px-6 relative z-10 max-w-7xl mx-auto w-full">
+    <section class="py-16 px-6 relative z-10 max-w-7xl mx-auto w-full">
 
       <!-- Centered Page Header (Unified Brutalist Dossier Style) -->
       <div class="mb-12 text-center max-w-2xl mx-auto">
-        <div class="inline-flex items-center gap-2 text-[10px] font-mono tracking-[0.25em] text-[#71717A] uppercase mb-3">
+        <div class="inline-flex items-center gap-2 text-[10px] font-mono tracking-[0.25em] text-[#71717A] uppercase mb-4">
           <span class="text-[#FF9F1C]">[ DOSSIER // BIOGRAPHY ]</span>
         </div>
-        <h1 class="text-4xl sm:text-6xl font-bold tracking-tight uppercase text-[#EAEAEA]">
+        <h1 class="text-3xl sm:text-6xl font-bold tracking-tight uppercase text-[#EAEAEA]">
           ABOUT &amp; ARCHIVES
         </h1>
-        <p class="text-sm text-[#A1A1AA] font-mono mt-3 leading-relaxed">
+        <p class="text-xs text-[#A1A1AA] font-mono mt-4 leading-relaxed">
           Official dossier, audio engineering methodology, and creative archives.
         </p>
         <div class="h-[1px] w-24 bg-[#FF9F1C] mx-auto mt-6"></div>
@@ -344,17 +344,17 @@
         <div class="md:col-span-8 space-y-8">
           
           <!-- Identity Record Card -->
-          <div class="tech-card p-6 sm:p-7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 border-white/10 hover:border-[#FF9F1C]/40 transition-all">
-            <div class="flex items-center gap-5">
+          <div class="tech-card p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 border-white/10 hover:border-[#FF9F1C]/40 transition-all">
+            <div class="flex items-center gap-6">
               <div class="w-14 h-14 sm:w-16 sm:h-16 border border-[#FF9F1C] bg-[#FF9F1C]/10 flex flex-col items-center justify-center flex-shrink-0 text-[#FF9F1C] font-mono shadow-[0_0_20px_rgba(255,159,28,0.15)]">
                 <span class="text-xl font-bold leading-none">▪</span>
-                <span class="text-[9px] tracking-widest uppercase mt-1 font-bold text-[#EAEAEA]">JRAY</span>
+                <span class="text-[10px] tracking-widest uppercase mt-1 font-bold text-[#EAEAEA]">JRAY</span>
               </div>
               <div>
                 <div class="inline-flex items-center gap-2 text-[10px] font-mono tracking-[0.25em] text-[#FF9F1C] uppercase mb-1">
                   <span>[ IDENTITY_RECORD // ARCHIVE ]</span>
                 </div>
-                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight uppercase text-[#EAEAEA] font-mono leading-none">
+                <h2 class="text-3xl font-bold tracking-tight uppercase text-[#EAEAEA] font-mono leading-none">
                   JUSTIN RAY
                 </h2>
                 <p class="text-xs font-mono text-[#71717A] mt-2">
@@ -365,29 +365,29 @@
             <div class="sm:text-right font-mono text-xs text-[#71717A] border-t sm:border-t-0 sm:border-l border-white/[0.08] pt-4 sm:pt-0 sm:pl-6 space-y-1 w-full sm:w-auto">
               <div class="text-[10px] uppercase text-[#FF9F1C] tracking-widest font-bold">COMMUNITY ROOT</div>
               <div class="text-[#EAEAEA]">Founder, <a href="https://www.reddit.com/r/hybridproduction/" target="_blank" rel="noopener noreferrer" class="text-[#FF9F1C] hover:underline">r/hybridproduction</a></div>
-              <div class="text-[11px] text-[#A1A1AA]">East Lansing, MI · USA</div>
+              <div class="text-xs text-[#A1A1AA]">East Lansing, MI · USA</div>
             </div>
           </div>
 
           <!-- LAA-v2 Attention Zone 1 (Intro Anchor: Justin Ray + Pioneer + Hybrid AI Music Production) -->
           <div class="tech-card p-6 sm:p-8 bg-gradient-to-br from-[#121417] via-[#0E1013] to-[#161922] border-[#FF9F1C]/30 relative overflow-hidden">
-            <div class="flex items-center gap-2 text-[10px] font-mono tracking-[0.2em] text-[#FF9F1C] uppercase mb-3">
+            <div class="flex items-center gap-2 text-[10px] font-mono tracking-[0.2em] text-[#FF9F1C] uppercase mb-4">
               <span class="w-1.5 h-1.5 bg-[#FF9F1C] animate-terminal-blink"></span>
               <span>MISSION // STATEMENT</span>
             </div>
-            <p class="text-base sm:text-lg text-[#EAEAEA] font-medium leading-relaxed">
-              <strong class="text-[#EAEAEA]">Justin Ray</strong> pioneers <strong class="text-[#FF9F1C]">Hybrid AI Music Production</strong>, authoring the Hybrid Production Standard (HPS-1.0) and building browser-native audio engineering tools to keep human creative sovereignty visible in modern music.
+            <p class="text-base text-[#EAEAEA] font-medium leading-relaxed">
+              <strong class="text-[#EAEAEA]">Justin Ray</strong> is a creative technologist bridging design, audio engineering, and AI, pioneering <strong class="text-[#FF9F1C]">Hybrid AI Music Production</strong>, authoring the Hybrid Production Standard (HPS-1.0), and building browser-native audio engineering tools to keep human creative sovereignty visible in modern music.
             </p>
           </div>
 
           <!-- LAA-v2 Attention Zone 2: 70% Dense Objective Technical Analysis (0 brand/self mentions) -->
-          <div class="space-y-6 text-[#A1A1AA] leading-relaxed text-sm sm:text-base font-sans">
+          <div class="space-y-6 text-[#A1A1AA] leading-relaxed text-base font-sans">
             
             <!-- Block 01: Songwriting Foundation -->
-            <div class="tech-card p-6 sm:p-8 space-y-4">
-              <div class="flex items-center justify-between border-b border-white/[0.08] pb-3">
+            <div class="scroll-section tech-card p-6 sm:p-8 space-y-4">
+              <div class="flex items-center justify-between border-b border-white/[0.08] pb-4">
                 <span class="text-xs font-mono tracking-[0.2em] uppercase text-[#FF9F1C]">[ 01 // ORIGIN &amp; SONGWRITING FOUNDATION ]</span>
-                <span class="tech-tag text-[9px]">ACOUSTIC ROOTS</span>
+                <span class="tech-tag text-[10px]">ACOUSTIC ROOTS</span>
               </div>
               <p>
                 The musical foundation began at the piano and the fretboard rather than inside digital code or algorithms. Following a complete withdrawal from social media noise, an intentional discipline was established: composing and recording an original song every single day. That intensive period grounded every subsequent production instinct in harmony, melodic tension, voice leading, and raw emotional resonance.
@@ -398,10 +398,10 @@
             </div>
 
             <!-- Block 02: Emergence of the Hybrid Method -->
-            <div class="tech-card p-6 sm:p-8 space-y-4">
-              <div class="flex items-center justify-between border-b border-white/[0.08] pb-3">
+            <div class="scroll-section tech-card p-6 sm:p-8 space-y-4">
+              <div class="flex items-center justify-between border-b border-white/[0.08] pb-4">
                 <span class="text-xs font-mono tracking-[0.2em] uppercase text-[#FF9F1C]">[ 02 // THE EMERGENCE OF HYBRID PRODUCTION ]</span>
-                <span class="tech-tag tech-tag-amber text-[9px]">METHODOLOGY</span>
+                <span class="tech-tag tech-tag-amber text-[10px]">METHODOLOGY</span>
               </div>
               <p>
                 When generative audio models first entered the industry, the market bifurcated into two unproductive extremes: traditional purists who dismissed the technology outright, and prompt-only operators who accepted unedited AI model exports as finished musical masters. Both perspectives fail to capture the true potential of music creation. Synthetic generations are neither replacements for artists nor finished records: they are versatile raw material.
@@ -412,10 +412,10 @@
             </div>
 
             <!-- Block 03: Studio Workflows & Signal Custody -->
-            <div class="tech-card p-6 sm:p-8 space-y-4">
-              <div class="flex items-center justify-between border-b border-white/[0.08] pb-3">
+            <div class="scroll-section tech-card p-6 sm:p-8 space-y-4">
+              <div class="flex items-center justify-between border-b border-white/[0.08] pb-4">
                 <span class="text-xs font-mono tracking-[0.2em] uppercase text-[#FF9F1C]">[ 03 // STUDIO WORKFLOW &amp; SIGNAL SURGERY ]</span>
-                <span class="tech-tag text-[9px]">DSP SURGERY</span>
+                <span class="tech-tag text-[10px]">DSP SURGERY</span>
               </div>
               <p>
                 Auditioning raw AI audio on precision studio monitors exposes distinct sonic defects: spectral smearing, phase incoherence, synthetic comb filtering, and artificial room resonances baked into frequencies that never inhabited physical space. Dedicated restoration tools like iZotope RX Dialogue Isolation, Spectral Repair, and Music Rebalance act as surgical filters. Stems that cannot survive thorough phase alignment and harmonic filtering are discarded immediately.
@@ -428,30 +428,30 @@
           </div>
 
           <!-- Creative Personas Bento Grid -->
-          <div class="space-y-4">
+          <div class="scroll-section space-y-4">
             <div class="flex items-center gap-2 text-xs font-mono tracking-[0.2em] text-[#FF9F1C] uppercase">
               <span>[ CREATIVE_IDENTITIES // THREE_LANES ]</span>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
               
               <!-- Persona 1: loserdub -->
               <a href="./music.html#loserdub" class="tech-card p-6 flex flex-col justify-between border-white/10 hover:border-[#FF9F1C] transition-all group block">
                 <div>
-                  <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-3">
+                  <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-4">
                     <span class="text-[#FF9F1C] font-bold">[ 01 ]</span>
                     <span class="tech-tag">100% HUMAN</span>
                   </div>
-                  <h3 class="text-lg font-bold font-mono text-[#EAEAEA] uppercase group-hover:text-[#FF9F1C] transition-colors flex items-center justify-between">
+                  <h3 class="text-xl font-bold font-mono text-[#EAEAEA] uppercase group-hover:text-[#FF9F1C] transition-colors flex items-center justify-between">
                     <span>loserdub</span>
                     <span class="text-xs font-mono text-[#FF9F1C] opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
                   </h3>
-                  <p class="text-xs text-[#71717A] font-mono mt-1 mb-3">Acoustic Records &amp; Songwriting</p>
+                  <p class="text-xs text-[#71717A] font-mono mt-1 mb-2">Acoustic Records &amp; Songwriting</p>
                   <p class="text-xs text-[#A1A1AA] leading-relaxed">
                     Live piano, acoustic guitars, raw vocal takes, and zero generative stems. The pure acoustic control group for the entire production ecosystem.
                   </p>
                 </div>
-                <div class="mt-4 pt-3 border-t border-white/[0.08] text-[10px] font-mono text-[#71717A] flex justify-between items-center">
+                <div class="mt-4 pt-4 border-t border-white/[0.08] text-[10px] font-mono text-[#71717A] flex justify-between items-center">
                   <span>UNQUANTIZED</span>
                   <span class="text-[#FF9F1C] group-hover:underline">VIEW MUSIC →</span>
                 </div>
@@ -460,20 +460,20 @@
               <!-- Persona 2: VISION -->
               <a href="./music.html#VISION" class="tech-card p-6 flex flex-col justify-between border-white/10 hover:border-[#00F0FF] transition-all group block">
                 <div>
-                  <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-3">
+                  <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-4">
                     <span class="text-[#00F0FF] font-bold">[ 02 ]</span>
                     <span class="tech-tag tech-tag-amber">HPS-1.0</span>
                   </div>
-                  <h3 class="text-lg font-bold font-mono text-[#EAEAEA] uppercase group-hover:text-[#00F0FF] transition-colors flex items-center justify-between">
+                  <h3 class="text-xl font-bold font-mono text-[#EAEAEA] uppercase group-hover:text-[#00F0FF] transition-colors flex items-center justify-between">
                     <span>VISION</span>
                     <span class="text-xs font-mono text-[#00F0FF] opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
                   </h3>
-                  <p class="text-xs text-[#71717A] font-mono mt-1 mb-3">Full-Scale Hybrid Releases</p>
+                  <p class="text-xs text-[#71717A] font-mono mt-1 mb-2">Full-Scale Hybrid Releases</p>
                   <p class="text-xs text-[#A1A1AA] leading-relaxed">
                     Where machine-generated source material and live acoustic performance sit in equal balance with spectral splitting, SLERP interpolation, and DAW mixing.
                   </p>
                 </div>
-                <div class="mt-4 pt-3 border-t border-white/[0.08] text-[10px] font-mono text-[#71717A] flex justify-between items-center">
+                <div class="mt-4 pt-4 border-t border-white/[0.08] text-[10px] font-mono text-[#71717A] flex justify-between items-center">
                   <span>HYBRID MASTER</span>
                   <span class="text-[#00F0FF] group-hover:underline">VIEW MUSIC →</span>
                 </div>
@@ -482,20 +482,20 @@
               <!-- Persona 3: JRAY -->
               <a href="./projects.html" class="tech-card p-6 flex flex-col justify-between border-white/10 hover:border-[#FF9F1C] transition-all group block">
                 <div>
-                  <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-3">
+                  <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-4">
                     <span class="text-[#FF9F1C] font-bold">[ 03 ]</span>
                     <span class="tech-tag">STANDARDS</span>
                   </div>
-                  <h3 class="text-lg font-bold font-mono text-[#EAEAEA] uppercase group-hover:text-[#FF9F1C] transition-colors flex items-center justify-between">
+                  <h3 class="text-xl font-bold font-mono text-[#EAEAEA] uppercase group-hover:text-[#FF9F1C] transition-colors flex items-center justify-between">
                     <span>JRAY</span>
                     <span class="text-xs font-mono text-[#FF9F1C] opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
                   </h3>
-                  <p class="text-xs text-[#71717A] font-mono mt-1 mb-3">Research &amp; Tool Architecture</p>
+                  <p class="text-xs text-[#71717A] font-mono mt-1 mb-2">Research &amp; Tool Architecture</p>
                   <p class="text-xs text-[#A1A1AA] leading-relaxed">
                     The through-line uniting code, research, and sound. Founder of r/hybridproduction, author of HPS-1.0, and developer of browser DSP tools.
                   </p>
                 </div>
-                <div class="mt-4 pt-3 border-t border-white/[0.08] text-[10px] font-mono text-[#71717A] flex justify-between items-center">
+                <div class="mt-4 pt-4 border-t border-white/[0.08] text-[10px] font-mono text-[#71717A] flex justify-between items-center">
                   <span>LAB &amp; SUITE</span>
                   <span class="text-[#FF9F1C] group-hover:underline">EXPLORE LAB →</span>
                 </div>
@@ -505,70 +505,70 @@
           </div>
 
           <!-- Industry Accreditations & Research History -->
-          <div class="tech-card p-6 sm:p-8 space-y-5">
-            <div class="flex items-center justify-between border-b border-white/[0.08] pb-3">
+          <div class="scroll-section tech-card p-6 sm:p-8 space-y-4">
+            <div class="flex items-center justify-between border-b border-white/[0.08] pb-4">
               <span class="text-xs font-mono tracking-[0.2em] uppercase text-[#FF9F1C]">[ 04 // INDUSTRY RESEARCH &amp; ADVISORY ]</span>
-              <span class="tech-tag text-[9px]">ACCREDITATIONS</span>
+              <span class="tech-tag text-[10px]">ACCREDITATIONS</span>
             </div>
-            <p class="text-sm text-[#A1A1AA] leading-relaxed">
+            <p class="text-base text-[#A1A1AA] leading-relaxed">
               Extensive hands-on testing, early model research, and product consulting with leading generative audio institutions:
             </p>
             
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
-              <div class="tech-card p-3.5 bg-[#0B0C0E]/80 border-white/10 hover:border-[#FF9F1C]/60 transition-all font-mono text-xs group">
-                <div class="flex items-center justify-between mb-1">
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
+              <div class="tech-card p-4 bg-[#0B0C0E]/80 border-white/10 hover:border-[#FF9F1C]/60 transition-all font-mono text-xs group">
+                <div class="flex items-center justify-between mb-2">
                   <span class="text-[#FF9F1C] text-[10px] uppercase tracking-wider">GOOGLE GEAR</span>
                   <span class="w-1.5 h-1.5 rounded-full bg-[#FF9F1C]/50 group-hover:bg-[#FF9F1C] transition-colors"></span>
                 </div>
                 <span class="text-[#EAEAEA] font-bold block">Accredited Badge</span>
-                <span class="text-[10px] text-[#71717A] mt-1 block">Hardware &amp; Studio Testing</span>
+                <span class="text-[10px] text-[#71717A] mt-2 block">Hardware &amp; Studio Testing</span>
               </div>
-              <div class="tech-card p-3.5 bg-[#0B0C0E]/80 border-white/10 hover:border-[#FF9F1C]/60 transition-all font-mono text-xs group">
-                <div class="flex items-center justify-between mb-1">
+              <div class="tech-card p-4 bg-[#0B0C0E]/80 border-white/10 hover:border-[#FF9F1C]/60 transition-all font-mono text-xs group">
+                <div class="flex items-center justify-between mb-2">
                   <span class="text-[#FF9F1C] text-[10px] uppercase tracking-wider">GOOGLE MUSICLM</span>
                   <span class="w-1.5 h-1.5 rounded-full bg-[#FF9F1C]/50 group-hover:bg-[#FF9F1C] transition-colors"></span>
                 </div>
                 <span class="text-[#EAEAEA] font-bold block">Beta Researcher</span>
-                <span class="text-[10px] text-[#71717A] mt-1 block">Diffusion &amp; Latent Audio</span>
+                <span class="text-[10px] text-[#71717A] mt-2 block">Diffusion &amp; Latent Audio</span>
               </div>
-              <div class="tech-card p-3.5 bg-[#0B0C0E]/80 border-white/10 hover:border-[#FF9F1C]/60 transition-all font-mono text-xs group">
-                <div class="flex items-center justify-between mb-1">
+              <div class="tech-card p-4 bg-[#0B0C0E]/80 border-white/10 hover:border-[#FF9F1C]/60 transition-all font-mono text-xs group">
+                <div class="flex items-center justify-between mb-2">
                   <span class="text-[#FF9F1C] text-[10px] uppercase tracking-wider">SUNO AI</span>
                   <span class="w-1.5 h-1.5 rounded-full bg-[#FF9F1C]/50 group-hover:bg-[#FF9F1C] transition-colors"></span>
                 </div>
                 <span class="text-[#EAEAEA] font-bold block">Early Access Producer</span>
-                <span class="text-[10px] text-[#71717A] mt-1 block">Bark &amp; Chirp Architecture</span>
+                <span class="text-[10px] text-[#71717A] mt-2 block">Bark &amp; Chirp Architecture</span>
               </div>
-              <div class="tech-card p-3.5 bg-[#0B0C0E]/80 border-white/10 hover:border-[#FF9F1C]/60 transition-all font-mono text-xs group">
-                <div class="flex items-center justify-between mb-1">
+              <div class="tech-card p-4 bg-[#0B0C0E]/80 border-white/10 hover:border-[#FF9F1C]/60 transition-all font-mono text-xs group">
+                <div class="flex items-center justify-between mb-2">
                   <span class="text-[#FF9F1C] text-[10px] uppercase tracking-wider">SOUNDRAW</span>
                   <span class="w-1.5 h-1.5 rounded-full bg-[#FF9F1C]/50 group-hover:bg-[#FF9F1C] transition-colors"></span>
                 </div>
                 <span class="text-[#EAEAEA] font-bold block">Workflow Consultant</span>
-                <span class="text-[10px] text-[#71717A] mt-1 block">Stem Splitting &amp; Export</span>
+                <span class="text-[10px] text-[#71717A] mt-2 block">Stem Splitting &amp; Export</span>
               </div>
-              <div class="tech-card p-3.5 bg-[#0B0C0E]/80 border-white/10 hover:border-[#FF9F1C]/60 transition-all font-mono text-xs group">
-                <div class="flex items-center justify-between mb-1">
+              <div class="tech-card p-4 bg-[#0B0C0E]/80 border-white/10 hover:border-[#FF9F1C]/60 transition-all font-mono text-xs group">
+                <div class="flex items-center justify-between mb-2">
                   <span class="text-[#FF9F1C] text-[10px] uppercase tracking-wider">STACCATO AI</span>
                   <span class="w-1.5 h-1.5 rounded-full bg-[#FF9F1C]/50 group-hover:bg-[#FF9F1C] transition-colors"></span>
                 </div>
                 <span class="text-[#EAEAEA] font-bold block">Model &amp; UX Advisor</span>
-                <span class="text-[10px] text-[#71717A] mt-1 block">MIDI Seed Generation</span>
+                <span class="text-[10px] text-[#71717A] mt-2 block">MIDI Seed Generation</span>
               </div>
-              <div class="tech-card p-3.5 bg-[#0B0C0E]/80 border-white/10 hover:border-[#FF9F1C]/60 transition-all font-mono text-xs group">
-                <div class="flex items-center justify-between mb-1">
+              <div class="tech-card p-4 bg-[#0B0C0E]/80 border-white/10 hover:border-[#FF9F1C]/60 transition-all font-mono text-xs group">
+                <div class="flex items-center justify-between mb-2">
                   <span class="text-[#FF9F1C] text-[10px] uppercase tracking-wider">HPS-1.0</span>
                   <span class="w-1.5 h-1.5 rounded-full bg-[#FF9F1C]/50 group-hover:bg-[#FF9F1C] transition-colors"></span>
                 </div>
                 <span class="text-[#EAEAEA] font-bold block">Standards Author</span>
-                <span class="text-[10px] text-[#71717A] mt-1 block">Cryptographic C2PA Manifests</span>
+                <span class="text-[10px] text-[#71717A] mt-2 block">Cryptographic C2PA Manifests</span>
               </div>
             </div>
           </div>
 
           <!-- Software Tools Developed -->
-          <div class="tech-card p-6 sm:p-8 space-y-5">
-            <div class="flex items-center justify-between border-b border-white/[0.08] pb-3">
+          <div class="scroll-section tech-card p-6 sm:p-8 space-y-4">
+            <div class="flex items-center justify-between border-b border-white/[0.08] pb-4">
               <span class="text-xs font-mono tracking-[0.2em] uppercase text-[#FF9F1C]">[ 05 // PROPRIETARY AUDIO TOOLS ]</span>
               <a href="./projects.html" class="text-xs font-mono text-[#71717A] hover:text-[#FF9F1C] transition-colors">ALL TOOLS →</a>
             </div>
@@ -576,52 +576,52 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               
               <!-- Flagship Tool: VØID 1.5 -->
-              <a href="./void.html" style="grid-column: 1 / -1;" class="p-4 bg-[#0B0C0E] border border-[#FF9F1C]/30 hover:border-[#FF9F1C] transition-all group block relative overflow-hidden">
-                <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-1">
+              <a href="./void.html" style="grid-column: 1 / -1;" class="p-6 bg-[#0B0C0E] border border-[#FF9F1C]/30 hover:border-[#FF9F1C] transition-all group block relative overflow-hidden">
+                <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-2">
                   <span class="text-[#FF9F1C] font-bold">[ FLAGSHIP // SLICER_SAMPLER ]</span>
                   <div class="flex items-center gap-2">
-                    <span class="tech-tag tech-tag-amber text-[9px]">VØID 1.5 LIVE</span>
+                    <span class="tech-tag tech-tag-amber text-[10px]">VØID 1.5 LIVE</span>
                     <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">→</span>
                   </div>
                 </div>
-                <h4 class="text-base font-bold font-mono text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors">VØID 1.5 Granular Slicer &amp; Auto-Mashup Workstation</h4>
-                <p class="text-xs text-[#71717A] mt-1">16-pad performance Web Audio sampler, granular slicer, and off-thread Harmonic Auto-Mashup engine running in browser Web Workers.</p>
+                <h4 class="text-xl font-bold font-mono text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors">VØID 1.5 Granular Slicer &amp; Auto-Mashup Workstation</h4>
+                <p class="text-xs text-[#71717A] mt-2">16-pad performance Web Audio sampler, granular slicer, and off-thread Harmonic Auto-Mashup engine running in browser Web Workers.</p>
               </a>
 
               <a href="./mixrstudio.html" class="p-4 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] transition-all group block">
-                <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-1">
+                <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-2">
                   <span class="text-[#FF9F1C]">[ AUDIO_MASTERING ]</span>
                   <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">→</span>
                 </div>
-                <h4 class="text-sm font-bold font-mono text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors">MIXR Studio</h4>
-                <p class="text-xs text-[#71717A] mt-1">Browser audio mastering suite, 4-band dynamic EQ, harmonic analyzer, and precision limiter.</p>
+                <h4 class="text-base font-bold font-mono text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors">MIXR Studio</h4>
+                <p class="text-xs text-[#71717A] mt-2">Browser audio mastering suite, 4-band dynamic EQ, harmonic analyzer, and precision limiter.</p>
               </a>
 
               <a href="./artistfinder.html" class="p-4 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] transition-all group block">
-                <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-1">
+                <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-2">
                   <span class="text-[#FF9F1C]">[ AI_GEO_VISIBILITY ]</span>
                   <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">→</span>
                 </div>
-                <h4 class="text-sm font-bold font-mono text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors">Artist Finder</h4>
-                <p class="text-xs text-[#71717A] mt-1">12-question diagnostic tool auditing musician discoverability in AI search engines and LLMs.</p>
+                <h4 class="text-base font-bold font-mono text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors">Artist Finder</h4>
+                <p class="text-xs text-[#71717A] mt-2">12-question diagnostic tool auditing musician discoverability in AI search engines and LLMs.</p>
               </a>
 
               <a href="https://loserdub.github.io/Subtractive/" target="_blank" rel="noopener noreferrer" class="p-4 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] transition-all group block">
-                <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-1">
+                <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-2">
                   <span class="text-[#FF9F1C]">[ WEB_SYNTH ]</span>
                   <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">↗</span>
                 </div>
-                <h4 class="text-sm font-bold font-mono text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors">VISION SYNTH</h4>
-                <p class="text-xs text-[#71717A] mt-1">Polyphonic subtractive Web Audio synthesizer with custom dual oscillators and envelope filters.</p>
+                <h4 class="text-base font-bold font-mono text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors">VISION SYNTH</h4>
+                <p class="text-xs text-[#71717A] mt-2">Polyphonic subtractive Web Audio synthesizer with custom dual oscillators and envelope filters.</p>
               </a>
 
               <a href="https://loserdub.github.io/jdaw/" target="_blank" rel="noopener noreferrer" class="p-4 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] transition-all group block">
-                <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-1">
+                <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-2">
                   <span class="text-[#FF9F1C]">[ BROWSER_DAW ]</span>
                   <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">↗</span>
                 </div>
-                <h4 class="text-sm font-bold font-mono text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors">J-DAW</h4>
-                <p class="text-xs text-[#71717A] mt-1">Full multi-track Digital Audio Workstation running natively in browser tabs without plugins.</p>
+                <h4 class="text-base font-bold font-mono text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors">J-DAW</h4>
+                <p class="text-xs text-[#71717A] mt-2">Full multi-track Digital Audio Workstation running natively in browser tabs without plugins.</p>
               </a>
 
             </div>
@@ -636,29 +636,29 @@
           <div class="tech-card p-6 border-white/10">
             <div class="flex items-center justify-between mb-4">
               <span class="text-[10px] font-mono text-[#71717A] tracking-widest uppercase block">[ DOSSIER_TELEMETRY ]</span>
-              <span class="inline-flex items-center gap-1.5 text-[9px] font-mono text-[#38ef7d]">
+              <span class="inline-flex items-center gap-2 text-[10px] font-mono text-[#38ef7d]">
                 <span class="w-1.5 h-1.5 rounded-full bg-[#38ef7d] animate-pulse"></span>
                 ONLINE
               </span>
             </div>
-            <div class="space-y-3.5 text-xs font-mono">
-              <div class="flex justify-between border-b border-white/[0.08] pb-2.5">
+            <div class="space-y-4 text-xs font-mono">
+              <div class="flex justify-between border-b border-white/[0.08] pb-2">
                 <span class="text-[#71717A]">LEGAL NAME:</span>
                 <span class="text-[#EAEAEA]">Justin Ray</span>
               </div>
-              <div class="flex justify-between border-b border-white/[0.08] pb-2.5">
+              <div class="flex justify-between border-b border-white/[0.08] pb-2">
                 <span class="text-[#71717A]">ALIASES:</span>
                 <span class="text-[#FF9F1C]">JRAY, loserdub, VISION</span>
               </div>
-              <div class="flex justify-between border-b border-white/[0.08] pb-2.5">
+              <div class="flex justify-between border-b border-white/[0.08] pb-2">
                 <span class="text-[#71717A]">LOCATION:</span>
                 <span class="text-[#EAEAEA]">East Lansing, MI (US)</span>
               </div>
-              <div class="flex justify-between border-b border-white/[0.08] pb-2.5">
+              <div class="flex justify-between border-b border-white/[0.08] pb-2">
                 <span class="text-[#71717A]">FOUNDED:</span>
                 <span class="text-[#EAEAEA]">r/hybridproduction</span>
               </div>
-              <div class="flex justify-between border-b border-white/[0.08] pb-2.5">
+              <div class="flex justify-between border-b border-white/[0.08] pb-2">
                 <span class="text-[#71717A]">SPECIFICATION:</span>
                 <span class="text-[#FF9F1C]">HPS-1.0 Standard</span>
               </div>
@@ -671,19 +671,19 @@
 
           <!-- Verified Portrait Card -->
           <div class="tech-card p-6 border-white/10 hover:border-[#FF9F1C]/40 transition-all">
-            <div class="flex items-center justify-between mb-3 text-[10px] font-mono text-[#71717A]">
+            <div class="flex items-center justify-between mb-4 text-[10px] font-mono text-[#71717A]">
               <span class="tracking-widest uppercase">[ VERIFIED_PORTRAIT ]</span>
-              <span class="tech-tag text-[9px]">PROVENANCE</span>
+              <span class="tech-tag text-[10px]">PROVENANCE</span>
             </div>
-            <div class="relative w-full h-[220px] border border-white/10 overflow-hidden bg-black/60 group">
+            <div class="relative w-full h-56 border border-white/10 overflow-hidden bg-black/60 group">
               <img src="./assets/images/croppedjrnu.webp" alt="Justin Ray (JRAY) - Pioneer of Hybrid AI Music Production" width="938" height="880" class="w-full h-full object-cover object-top filter grayscale contrast-105 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" loading="lazy">
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
-              <div class="absolute bottom-2 left-2 right-2 text-[9px] font-mono text-white/70 flex justify-between">
+              <div class="absolute bottom-2 left-2 right-2 text-[10px] font-mono text-white/70 flex justify-between">
                 <span>SHA-256 SIGNED</span>
                 <span class="text-[#FF9F1C]">C2PA VERIFIED</span>
               </div>
             </div>
-            <div class="mt-3 text-[10px] font-mono text-[#71717A] flex items-center justify-between pt-2 border-t border-white/[0.08]">
+            <div class="mt-4 text-[10px] font-mono text-[#71717A] flex items-center justify-between pt-2 border-t border-white/[0.08]">
               <span>SIGNAL: ACTIVE</span>
               <span class="text-[#FF9F1C]">C2PA // HPS-1.0</span>
             </div>
@@ -691,33 +691,33 @@
 
           <!-- Direct Links / Networks -->
           <div class="tech-card p-6 border-white/10">
-            <span class="text-[10px] font-mono text-[#71717A] tracking-widest uppercase block mb-3">[ CONNECT_SIGNALS ]</span>
+            <span class="text-[10px] font-mono text-[#71717A] tracking-widest uppercase block mb-4">[ CONNECT_SIGNALS ]</span>
             <div class="flex flex-col gap-2 font-mono text-xs">
-              <a href="https://soundcloud.com/visiontracks" target="_blank" rel="noopener noreferrer" class="py-2.5 px-3 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] hover:text-[#FF9F1C] transition-all flex items-center justify-between group">
+              <a href="https://soundcloud.com/visiontracks" target="_blank" rel="noopener noreferrer" class="py-2 px-4 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] hover:text-[#FF9F1C] transition-all flex items-center justify-between group">
                 <span class="group-hover:translate-x-1 transition-transform">SOUNDCLOUD</span>
                 <span class="text-[#FF9F1C] text-xs group-hover:translate-x-1 transition-transform">↗</span>
               </a>
-              <a href="https://www.reddit.com/r/hybridproduction/" target="_blank" rel="noopener noreferrer" class="py-2.5 px-3 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] hover:text-[#FF9F1C] transition-all flex items-center justify-between group">
+              <a href="https://www.reddit.com/r/hybridproduction/" target="_blank" rel="noopener noreferrer" class="py-2 px-4 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] hover:text-[#FF9F1C] transition-all flex items-center justify-between group">
                 <span class="group-hover:translate-x-1 transition-transform">R/HYBRIDPRODUCTION</span>
                 <span class="text-[#FF9F1C] text-xs group-hover:translate-x-1 transition-transform">↗</span>
               </a>
-              <a href="https://x.com/TheInnerVision" target="_blank" rel="noopener noreferrer" class="py-2.5 px-3 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] hover:text-[#FF9F1C] transition-all flex items-center justify-between group">
+              <a href="https://x.com/TheInnerVision" target="_blank" rel="noopener noreferrer" class="py-2 px-4 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] hover:text-[#FF9F1C] transition-all flex items-center justify-between group">
                 <span class="group-hover:translate-x-1 transition-transform">X / TWITTER</span>
                 <span class="text-[#FF9F1C] text-xs group-hover:translate-x-1 transition-transform">↗</span>
               </a>
-              <a href="https://youtube.com/@loserdub" target="_blank" rel="noopener noreferrer" class="py-2.5 px-3 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] hover:text-[#FF9F1C] transition-all flex items-center justify-between group">
+              <a href="https://youtube.com/@loserdub" target="_blank" rel="noopener noreferrer" class="py-2 px-4 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] hover:text-[#FF9F1C] transition-all flex items-center justify-between group">
                 <span class="group-hover:translate-x-1 transition-transform">YOUTUBE</span>
                 <span class="text-[#FF9F1C] text-xs group-hover:translate-x-1 transition-transform">↗</span>
               </a>
-              <a href="https://www.linkedin.com/in/jray-me/" target="_blank" rel="noopener noreferrer" class="py-2.5 px-3 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] hover:text-[#FF9F1C] transition-all flex items-center justify-between group">
+              <a href="https://www.linkedin.com/in/jray-me/" target="_blank" rel="noopener noreferrer" class="py-2 px-4 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] hover:text-[#FF9F1C] transition-all flex items-center justify-between group">
                 <span class="group-hover:translate-x-1 transition-transform">LINKEDIN</span>
                 <span class="text-[#FF9F1C] text-xs group-hover:translate-x-1 transition-transform">↗</span>
               </a>
-              <a href="https://network.landr.com/users/vision-hybrid" target="_blank" rel="noopener noreferrer" class="py-2.5 px-3 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] hover:text-[#FF9F1C] transition-all flex items-center justify-between group">
+              <a href="https://network.landr.com/users/vision-hybrid" target="_blank" rel="noopener noreferrer" class="py-2 px-4 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] hover:text-[#FF9F1C] transition-all flex items-center justify-between group">
                 <span class="group-hover:translate-x-1 transition-transform">LANDR NETWORK</span>
                 <span class="text-[#FF9F1C] text-xs group-hover:translate-x-1 transition-transform">↗</span>
               </a>
-              <a href="https://github.com/loserdub" target="_blank" rel="noopener noreferrer" class="py-2.5 px-3 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] hover:text-[#FF9F1C] transition-all flex items-center justify-between group">
+              <a href="https://github.com/loserdub" target="_blank" rel="noopener noreferrer" class="py-2 px-4 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] hover:text-[#FF9F1C] transition-all flex items-center justify-between group">
                 <span class="group-hover:translate-x-1 transition-transform">GITHUB REPOSITORIES</span>
                 <span class="text-[#FF9F1C] text-xs group-hover:translate-x-1 transition-transform">↗</span>
               </a>
@@ -730,7 +730,7 @@
               <span class="text-[#FF9F1C]">[ ATTESTATION_APP ]</span>
               <span class="w-2 h-2 rounded-full bg-[#38ef7d] animate-pulse"></span>
             </div>
-            <h4 class="text-sm font-bold font-mono text-[#EAEAEA] uppercase">trustnodelogic.web.app</h4>
+            <h4 class="text-base font-bold font-mono text-[#EAEAEA] uppercase">trustnodelogic.web.app</h4>
             <p class="text-xs text-[#71717A] mt-2 mb-4 leading-relaxed">
               Live web attestation engine generating C2PA-compliant manifests and track provenance certificates.
             </p>
@@ -747,25 +747,25 @@
     </section>
 
     <!-- Standout CTA Banner -->
-    <section class="w-full max-w-7xl mx-auto px-6 py-8">
-      <div class="tech-card p-8 sm:p-10 border-[#FF9F1C]/40 bg-gradient-to-br from-[#121417] via-[#0E1013] to-[#161922] relative overflow-hidden group">
+    <section class="w-full max-w-7xl mx-auto px-6 py-16">
+      <div class="tech-card p-8 sm:p-12 border-[#FF9F1C]/40 bg-gradient-to-br from-[#121417] via-[#0E1013] to-[#161922] relative overflow-hidden group">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
           <div>
             <div class="inline-flex items-center gap-2 text-[10px] font-mono tracking-[0.25em] text-[#FF9F1C] uppercase mb-2">
               <span>[ WORK_TOGETHER // CONTRACTS ]</span>
             </div>
-            <h3 class="text-xl sm:text-2xl font-bold font-mono text-[#EAEAEA] uppercase tracking-tight">
+            <h3 class="text-xl sm:text-3xl font-bold font-mono text-[#EAEAEA] uppercase tracking-tight">
               LOOKING FOR HYBRID PRODUCTION OR GEO STRATEGY?
             </h3>
-            <p class="text-xs sm:text-sm text-[#A1A1AA] mt-2 max-w-2xl font-sans">
+            <p class="text-xs sm:text-base text-[#A1A1AA] mt-2 max-w-2xl font-sans">
               Available for hybrid mixing, C2PA provenance consulting, audio DSP software engineering, and music AI visibility audits.
             </p>
           </div>
           <div class="flex flex-wrap gap-4 items-center">
-            <a href="./services.html" class="px-6 py-3.5 bg-[#FF9F1C] hover:bg-[#ffb042] text-black font-mono font-bold text-xs tracking-widest uppercase transition-all shadow-[0_0_20px_rgba(255,159,28,0.3)]">
+            <a href="./services.html" class="px-6 py-4 bg-[#FF9F1C] hover:bg-[#ffb042] text-black font-mono font-bold text-xs tracking-widest uppercase transition-all shadow-[0_0_20px_rgba(255,159,28,0.3)]">
               VIEW SERVICES →
             </a>
-            <a href="./contact.html" class="px-6 py-3.5 border border-white/20 hover:border-[#FF9F1C] text-[#EAEAEA] hover:text-[#FF9F1C] font-mono text-xs tracking-widest uppercase transition-colors">
+            <a href="./contact.html" class="px-6 py-4 border border-white/20 hover:border-[#FF9F1C] text-[#EAEAEA] hover:text-[#FF9F1C] font-mono text-xs tracking-widest uppercase transition-colors">
               GET IN TOUCH →
             </a>
           </div>
@@ -774,7 +774,7 @@
     </section>
 
     <!-- LAA-v2 Attention Zone 3 (Outro Anchor & Bio Card) -->
-    <div class="mt-8 text-center space-y-2 text-xs font-mono text-[#71717A]">
+    <div class="scroll-section mt-12 text-center space-y-2 text-xs font-mono text-[#71717A]">
       <p>Research hub and creative archives curated by <strong class="text-[#EAEAEA]">Justin Ray</strong> for Hybrid AI Music Production.</p>
       <p>Official technical dossier authored by <strong class="text-[#EAEAEA]">Trust Node Logic</strong>.</p>
     </div>
