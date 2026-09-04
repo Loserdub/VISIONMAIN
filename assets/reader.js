@@ -98,6 +98,25 @@
       border-color: #4fd8c4;
       color: #4fd8c4;
     }
+
+    /* 4. Section Scroll Fade (250ms Light Reading Rhythm Pacing) */
+    .has-scroll-fade .scroll-target {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 250ms cubic-bezier(0.16, 1, 0.3, 1), transform 250ms cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .has-scroll-fade .scroll-target.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .has-scroll-fade .scroll-target {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
   `;
 
   function init() {
@@ -217,6 +236,72 @@
       });
 
       container.appendChild(copyBtn);
+    });
+
+    // 4. Section Scroll Fade (Light 250ms reading rhythm pacing)
+    initScrollFade();
+  }
+
+  function initScrollFade() {
+    if (!('IntersectionObserver' in window)) return;
+
+    const candidates = Array.from(document.querySelectorAll('.scroll-section, main > section'));
+    if (!candidates.length) return;
+
+    // Filter: if a section contains child .scroll-section elements, target the children instead of parent
+    const targets = candidates.filter(el => {
+      const hasChildTarget = el.querySelector('.scroll-section') !== null && !el.classList.contains('scroll-section');
+      return !hasChildTarget;
+    });
+
+    if (!targets.length) return;
+
+    document.documentElement.classList.add('has-scroll-fade');
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px 0px -40px 0px',
+      threshold: 0.05
+    });
+
+    targets.forEach(el => {
+      el.classList.add('scroll-target');
+      const rect = el.getBoundingClientRect();
+      // If already within top 90% of screen at load, reveal immediately
+      if (rect.top < window.innerHeight * 0.9 && rect.bottom > 0) {
+        el.classList.add('is-visible');
+      } else {
+        observer.observe(el);
+      }
+    });
+
+    // Handle direct hash navigation
+    if (window.location.hash) {
+      try {
+        const hashEl = document.querySelector(window.location.hash);
+        if (hashEl) {
+          const targetSection = hashEl.closest('.scroll-target') || hashEl;
+          targetSection.classList.add('is-visible');
+        }
+      } catch (e) {}
+    }
+    window.addEventListener('hashchange', () => {
+      if (window.location.hash) {
+        try {
+          const hashEl = document.querySelector(window.location.hash);
+          if (hashEl) {
+            const targetSection = hashEl.closest('.scroll-target') || hashEl;
+            targetSection.classList.add('is-visible');
+          }
+        } catch (e) {}
+      }
     });
   }
 
