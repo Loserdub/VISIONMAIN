@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Notes Social Card - The Liquid Ear: Liquid Neural Networks in Audio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Space+Mono:ital,wght@1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper-bg: #f4f2eb;
+    --line-blue: #a5cce0;
+    --line-red: #e08282;
+    --ink-core: #18195e; 
+    --ink-bleed: #28318c;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1a1a1a;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .social-card {
+    position: relative;
+    width: 1200px;
+    height: 630px;
+    background-color: var(--paper-bg);
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    background-image: linear-gradient(transparent 95%, var(--line-blue) 95%);
+    background-size: 100% 40px;
+    background-position: 0 10px;
+  }
+
+  /* Deep Paper Texture */
+  .social-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjAwIDIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZmlsdGVyIGlkPSJuIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iMC45IiBudW1PY3RhdmVzPSIzIiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI24pIiBvcGFjaXR5PSIxIi8+PC9zdmc+");
+    opacity: 0.55;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .margin-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 140px;
+    width: 2px;
+    background-color: var(--line-red);
+    box-shadow: -4px 0 0 rgba(224, 130, 130, 0.15);
+    z-index: 1;
+  }
+
+  /* Ballpoint Text Container */
+  .writing-container {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-4deg);
+    width: 100%;
+    text-align: center;
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 140px;
+    line-height: 1;
+    z-index: 5;
+    filter: url(#ink-bleed-filter); 
+  }
+
+  .ballpoint-base {
+    position: absolute;
+    top: 0; left: 0; width: 100%;
+    color: var(--ink-bleed);
+    mix-blend-mode: color-burn;
+    text-shadow: 0.5px 0.5px 0px rgba(255, 255, 255, 0.8), -0.5px -0.5px 1px rgba(24, 25, 94, 0.15);
+  }
+
+  .ballpoint-core {
+    position: relative;
+    color: var(--ink-core);
+    mix-blend-mode: multiply;
+    opacity: 0.95;
+  }
+
+  .writing-container span {
+    display: block;
+    margin-left: 140px;
+  }
+
+  /* Pen Vectors */
+  .pen-vector {
+    position: absolute;
+    z-index: 4;
+    overflow: visible;
+    filter: url(#ink-bleed-filter);
+    mix-blend-mode: multiply;
+  }
+
+  .pen-vector path, .pen-vector circle, .pen-vector polyline, .pen-vector rect, .pen-vector ellipse {
+    fill: none;
+    stroke: var(--ink-core);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* The center underline */
+  .scribble-main {
+    top: 55%;
+    left: 45%;
+    width: 300px;
+    height: 100px;
+  }
+  
+  .scribble-main path {
+    stroke-width: 2.5;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 2s ease-out forwards;
+    animation-delay: 0.2s;
+  }
+
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+
+  /* Corner Doodles */
+  .doodle-top-right {
+    top: 40px;
+    right: 60px;
+    width: 150px;
+    height: 150px;
+    transform: rotate(13deg);
+    opacity: 0.85;
+  }
+
+  .doodle-bottom-left {
+    bottom: 50px;
+    left: 180px;
+    width: 200px;
+    height: 100px;
+    transform: rotate(-8deg);
+    opacity: 0.85;
+  }
+
+  /* Hand smudges */
+  .smudge {
+    position: absolute;
+    background: radial-gradient(circle, rgba(24, 25, 94, 0.08) 0%, transparent 60%);
+    border-radius: 50%;
+    filter: blur(3px);
+    mix-blend-mode: color-burn;
+    z-index: 3;
+  }
+
+  /* Dymo Tape */
+  .label-tape-container {
+    position: absolute;
+    bottom: 90px;
+    right: 140px;
+    z-index: 8;
+    transform: rotate(3deg);
+    transition: transform 0.2s ease, filter 0.2s ease;
+    cursor: pointer;
+    filter: drop-shadow(2px 6px 4px rgba(0,0,0,0.4));
+  }
+
+  .label-tape-container:hover {
+    transform: rotate(1deg) scale(1.03);
+    filter: drop-shadow(4px 10px 8px rgba(0,0,0,0.5));
+  }
+
+  .dymo-tape {
+    background: #111;
+    color: #e0e0e0;
+    font-family: 'Space Mono', monospace;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 10px 22px;
+    letter-spacing: 2px;
+    background-image: linear-gradient(to bottom, #3a3a3a 0%, #1a1a1a 25%, #111 75%, #050505 100%);
+    clip-path: polygon(1% 0, 99% 1%, 100% 98%, 0 100%);
+  }
+
+  .dymo-tape span {
+    text-shadow: 
+      -1px -1px 1px rgba(255,255,255,0.7),
+      1px 1px 1px rgba(0,0,0,0.9),
+      0 0 2px rgba(255,255,255,0.3);
+    opacity: 0.95;
+  }
+</style>
+</head>
+<body>
+
+<svg style="width:0;height:0;position:absolute;">
+  <filter id="ink-bleed-filter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" result="noise" />
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="0.9" xChannelSelector="R" yChannelSelector="G" />
+  </filter>
+</svg>
+
+<div class="social-card">
+  <div class="margin-line"></div>
+  
+  <!-- Subtle hand smudges -->
+  <div class="smudge" style="top: 80px; right: 90px; width: 100px; height: 100px;"></div>
+  <div class="smudge" style="bottom: 70px; left: 200px; width: 140px; height: 60px;"></div>
+
+  <!-- Top Right Doodles: Messy 3D Box & Spirals with TNL mark -->
+  <svg class="pen-vector doodle-top-right" viewBox="0 0 150 150">
+    <!-- Sloppy Cube Front -->
+    <rect x="30" y="50" width="50" height="50" />
+    <!-- Cube Back -->
+    <path d="M 50 30 L 104 32 L 100 84 L 50 82 Z" />
+    <!-- Connecting lines -->
+    <path d="M 28 48 L 52 28" />
+    <path d="M 78 51 L 102 33" />
+    <path d="M 80 101 L 102 85" />
+    <!-- Spiral doodle -->
+    <path d="M 110 115 C 100 105, 120 95, 135 110 C 145 125, 125 140, 110 130 C 95 120, 120 105, 130 120" />
+    <!-- TNL Ballpoint Doodle Mark -->
+    <text x="105" y="48" font-family="'Cedarville Cursive', cursive" font-size="26" fill="var(--ink-core)" transform="rotate(8 105 48)">TNL</text>
+            <path d="M 102 52 Q 120 60 132 50" stroke-width="1.2" />
+  </svg>
+
+  <!-- Bottom Left Doodles: Scratched out text & arrows -->
+  <svg class="pen-vector doodle-bottom-left" viewBox="0 0 200 100">
+    <path d="M 10 40 Q 30 35, 50 42 T 90 38" />
+    <path d="M 15 35 L 85 45 M 12 45 L 88 35 M 20 40 L 80 40 M 10 38 L 90 42" stroke-width="2" />
+    <path d="M 95 40 Q 140 30, 170 60" />
+    <polyline points="155 58, 170 60, 165 45" />
+    <path d="M 15 70 L 25 90 M 25 68 L 35 88 M 35 65 L 45 85 M 10 80 L 50 75" />
+  </svg>
+
+  <!-- Layered text to simulate pressure and ink saturation -->
+  <div class="writing-container">
+    <div class="ballpoint-base">
+      Liquid<br><span>Neural</span>
+    </div>
+    <div class="ballpoint-core">
+      Liquid<br><span>Neural</span>
+    </div>
+  </div>
+
+  <!-- Center underline sweeping toward the button -->
+  <svg class="pen-vector scribble-main" viewBox="0 0 300 100">
+    <path d="M 10 20 Q 150 40 270 15 Q 260 50 290 80 M 275 70 L 290 80 L 285 55" />
+    <path d="M 15 30 Q 140 45 260 22" stroke-width="1" opacity="0.6" />
+  </svg>
+
+  <!-- Dymo Tape -->
+  <div class="label-tape-container">
+    <div class="dymo-tape">
+      <span>Explore the approach</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

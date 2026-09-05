@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audio Attestation Engine - Waveform Edition</title>
+<style>
+  :root {
+    --bg: #0a0a0c;
+    --text-primary: #f0f0f0;
+    --text-muted: #55555d;
+    --accent: #00e5ff; /* Analytical cyan */
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #111;
+    margin: 0;
+    padding: 20px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+  .social-card {
+    position: relative;
+    width: 1200px;
+    height: 630px;
+    background-color: var(--bg);
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.8);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    padding: 50px;
+    box-sizing: border-box;
+  }
+
+  /* Architectural Grid Background */
+  .social-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .header {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    font-family: monospace;
+    color: var(--accent);
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 20px;
+  }
+
+  /* Central Typography */
+  .main-content {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .title {
+    font-size: 160px;
+    font-weight: 900;
+    line-height: 0.85;
+    margin: 0;
+    letter-spacing: -6px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 3; /* Sandwiched between the dull and lit waveforms */
+  }
+
+  .title .outline {
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(240, 240, 240, 0.5);
+  }
+
+  .title .solid {
+    color: var(--text-primary);
+  }
+
+  /* Waveform Engine Setup */
+  .waveform-container {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  /* The dormant, background waveform */
+  .wave-dull {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 2px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    z-index: 2; /* Behind the text */
+  }
+
+  /* The glowing, foreground waveform */
+  .wave-lit {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    stroke: var(--accent);
+    stroke-width: 4px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 0 12px var(--accent));
+    z-index: 4; /* In front of the text */
+    
+    /* CSS Masking to create the localized glow */
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,1) 50%, transparent 100%);
+    -webkit-mask-size: 10% 100%; /* The glow window is 10% the width of the card */
+    -webkit-mask-repeat: no-repeat;
+    animation: scan-mask 4s ease-in-out infinite alternate;
+  }
+
+  /* The physical scanner line */
+  .scanner-line {
+    position: absolute;
+    top: -20px;
+    bottom: -20px;
+    width: 2px;
+    background-color: #fff;
+    box-shadow: 0 0 15px 4px var(--accent), 0 0 30px 2px rgba(255,255,255,0.8);
+    z-index: 5;
+    animation: scan-line 4s ease-in-out infinite alternate;
+  }
+
+  /* Perfectly synchronized animations */
+  @keyframes scan-mask {
+    0% { -webkit-mask-position: 0% 0%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { -webkit-mask-position: 100% 0%; opacity: 0; }
+  }
+
+  @keyframes scan-line {
+    0% { left: 5%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { left: 95%; opacity: 0; }
+  }
+
+  .footer {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-family: monospace;
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  .data-block {
+    text-align: right;
+  }
+  
+  .data-block strong {
+    color: var(--text-primary);
+  }
+</style>
+</head>
+<body>
+
+<div class="social-card">
+  
+  <div class="header">
+    <span>SECURE_ENCLAVE_ACTIVE</span>
+    <span>SHA-256 VERIFIED</span>
+  </div>
+
+  <div class="main-content">
+    <h1 class="title">
+      <span class="outline">AUDIO</span><br>
+      <span class="solid">ATTESTATION</span>
+    </h1>
+  </div>
+
+  <!-- Centralized Waveform Engine -->
+  <div class="waveform-container">
+    
+    <!-- SVG Path data simulates a dense, realistic audio recording -->
+    <svg class="wave-dull" viewBox="0 0 1000 200" preserveAspectRatio="none">
+      <path d="M 0 100 L 10 90 L 20 110 L 30 70 L 40 130 L 50 40 L 60 160 L 70 20 L 80 180 L 90 60 L 100 140 L 110 30 L 120 170 L 130 80 L 140 120 L 150 10 L 160 190 L 170 45 L 180 155 L 190 70 L 200 130 L 210 20 L 220 180 L 230 85 L 240 115 L 250 30 L 260 170 L 270 50 L 280 150 L 290 10 L 300 190 L 310 60 L 320 140 L 330 25 L 340 175 L 350 70 L 360 130 L 370 5 L 380 195 L 390 40 L 400 160 L 410 80 L 420 120 L 430 15 L 440 185 L 450 55 L 460 145 L 470 35 L 480 165 L 490 90 L 500 110 L 510 20 L 520 180 L 530 40 L 540 160 L 550 70 L 560 130 L 570 10 L 580 190 L 590 60 L 600 140 L 610 30 L 620 170 L 630 80 L 640 120 L 650 45 L 660 155 L 670 15 L 680 185 L 690 50 L 700 150 L 710 90 L 720 110 L 730 25 L 740 175 L 750 65 L 760 135 L 770 10 L 780 190 L 790 40 L 800 160 L 810 80 L 820 120 L 830 30 L 840 170 L 850 55 L 860 145 L 870 20 L 880 180 L 890 70 L 900 130 L 910 40 L 920 160 L 930 85 L 940 115 L 950 35 L 960 165 L 970 95 L 980 105 L 990 100 L 1000 100" />
+    </svg>
+
+    <!-- Duplicate SVG masked to only show where the scanner is -->
+    <svg class="wave-lit" viewBox="0 0 1000 200" preserveAspectRatio="none">
+      <path d="M 0 100 L 10 90 L 20 110 L 30 70 L 40 130 L 50 40 L 60 160 L 70 20 L 80 180 L 90 60 L 100 140 L 110 30 L 120 170 L 130 80 L 140 120 L 150 10 L 160 190 L 170 45 L 180 155 L 190 70 L 200 130 L 210 20 L 220 180 L 230 85 L 240 115 L 250 30 L 260 170 L 270 50 L 280 150 L 290 10 L 300 190 L 310 60 L 320 140 L 330 25 L 340 175 L 350 70 L 360 130 L 370 5 L 380 195 L 390 40 L 400 160 L 410 80 L 420 120 L 430 15 L 440 185 L 450 55 L 460 145 L 470 35 L 480 165 L 490 90 L 500 110 L 510 20 L 520 180 L 530 40 L 540 160 L 550 70 L 560 130 L 570 10 L 580 190 L 590 60 L 600 140 L 610 30 L 620 170 L 630 80 L 640 120 L 650 45 L 660 155 L 670 15 L 680 185 L 690 50 L 700 150 L 710 90 L 720 110 L 730 25 L 740 175 L 750 65 L 760 135 L 770 10 L 780 190 L 790 40 L 800 160 L 810 80 L 820 120 L 830 30 L 840 170 L 850 55 L 860 145 L 870 20 L 880 180 L 890 70 L 900 130 L 910 40 L 920 160 L 930 85 L 940 115 L 950 35 L 960 165 L 970 95 L 980 105 L 990 100 L 1000 100" />
+    </svg>
+
+    <div class="scanner-line"></div>
+  </div>
+
+  <div class="footer">
+    <div>
+      [ENGINE_STATUS: ONLINE]<br>
+      ANALYZING STREAM PROTOCOL
+    </div>
+    <div class="data-block">
+      <strong>FINGERPRINT:</strong> 3F9A-4B2C-881D-E774<br>
+      <strong>CONFIDENCE:</strong> 99.98%
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

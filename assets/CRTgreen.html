@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Mirror Social Card</title>
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --phosphor: #33ff00;
+    --phosphor-dim: #1a8000;
+    --bg-color: #080808;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #111;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .social-card {
+    position: relative;
+    width: 1200px;
+    height: 630px;
+    background-color: var(--bg-color);
+    border-radius: 24px;
+    overflow: hidden;
+    font-family: 'VT323', monospace;
+    color: var(--phosphor);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8), inset 0 0 100px rgba(0,0,0,0.9);
+  }
+
+  /* CRT Scanlines & Flicker Overlay */
+  .social-card::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 10;
+    background-size: 100% 4px, 6px 100%;
+    pointer-events: none;
+  }
+
+  /* CRT Screen Curvature Vignette */
+  .social-card::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    box-shadow: inset 0 0 80px rgba(0,0,0,0.8);
+    border-radius: 24px;
+    z-index: 11;
+    pointer-events: none;
+  }
+
+  .content {
+    position: relative;
+    z-index: 5;
+    padding: 60px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-shadow: 0 0 8px var(--phosphor), 0 0 20px var(--phosphor-dim);
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid var(--phosphor);
+    padding-bottom: 10px;
+  }
+
+  .main-title {
+    font-size: 180px;
+    line-height: 0.8;
+    margin: 0;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    letter-spacing: -5px;
+    position: relative;
+  }
+
+  /* Avant-Garde Glitch Text Shift */
+  .main-title span {
+    display: block;
+  }
+  .main-title span:nth-child(2) {
+    margin-left: 150px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    font-size: 32px;
+  }
+
+  .block {
+    background-color: var(--phosphor);
+    color: var(--bg-color);
+    padding: 5px 15px;
+    text-shadow: none;
+    display: inline-block;
+  }
+
+  .blink {
+    animation: blinker 1s linear infinite;
+  }
+
+  @keyframes blinker {
+    50% { opacity: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="social-card">
+  <div class="content">
+    <header>
+      <span>SYS_INIT // MEM_OK</span>
+      <span>ATARI_OS_v8.4</span>
+    </header>
+    
+    <h1 class="main-title">
+      <span>BLACK</span>
+      <span>MIRROR<span class="blink">_</span></span>
+    </h1>
+
+    <div class="footer-grid">
+      <div>
+        <span class="block">APP_DATA</span><br>
+        v. 1.0.4<br>
+        [AWAITING_INPUT]
+      </div>
+      <div>
+        <span class="block">USER</span><br>
+        IDENTITY: NULL<br>
+        STATUS: OFFLINE
+      </div>
+      <div style="text-align: right;">
+        ERROR_CODE: 0x00A7<br>
+        REFLECT_YOUR_REALITY
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
