@@ -302,10 +302,10 @@
  <!-- Main Stylesheet -->
  <link rel="stylesheet" href="./style.css">
 
- <!-- Modern Typography: JetBrains Mono + Space Grotesk -->
+ <!-- Modern Typography: JetBrains Mono + Space Grotesk + Caveat + DotGothic16 + Silkscreen -->
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
- <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DotGothic16&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700;800&family=Silkscreen&display=swap" rel="stylesheet">
  
  <!-- Prefetch articles -->
  <link rel="prefetch" href="./music.html">
@@ -328,6 +328,7 @@
  <link rel="prefetch" href="./c2pa-music-provenance.html">
  <link rel="prefetch" href="./fingerprint.html">
  <link rel="prefetch" href="./may2026tools.html">
+ <link rel="prefetch" href="./staccatoreview.html">
  <link rel="prefetch" href="./artistfinder.html">
  <link rel="alternate" type="text/plain" href="/llms.txt" title="AI LLM Knowledge Graph Manifest">
 
@@ -358,27 +359,308 @@
       transform: translateY(-2px);
     }
 
+    /* ─── HPS-1.0 Audio Attestation Console & Waveform Scanner ─── */
     .portal-card-hps {
-      background: linear-gradient(135deg, rgba(0, 240, 255, 0.07) 0%, rgba(18, 20, 23, 0.98) 60%, rgba(14, 165, 233, 0.1) 100%);
-      border: 1px solid rgba(0, 240, 255, 0.3);
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.04) 0%, rgba(12, 14, 18, 0.98) 50%, rgba(18, 20, 23, 0.98) 100%);
+      border: 1px solid rgba(0, 240, 255, 0.25);
       position: relative;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+      transition: background 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
+    .portal-card-hps::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(0, 240, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 240, 255, 0.035) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+      z-index: 1;
+      transition: opacity 0.35s ease;
+    }
+    /* When user hovers over button it darkens to pure black with subtle cyan aura */
     .portal-card-hps:hover {
-      border-color: rgba(0, 240, 255, 0.85);
+      background: #000000 !important;
+      border-color: rgba(0, 240, 255, 0.65) !important;
       box-shadow: 0 0 35px rgba(0, 240, 255, 0.2), inset 0 0 20px rgba(0, 240, 255, 0.05);
       transform: translateY(-2px);
     }
+    .portal-card-hps:hover::before {
+      opacity: 0.35;
+    }
+
+    /* Waveform Container Setup */
+    .hps-waveform-wrap {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 180px;
+      transform: translateY(-50%);
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 2;
+    }
+    .hps-wave-dull {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      stroke: rgba(255, 255, 255, 0.07);
+      stroke-width: 1.5px;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      z-index: 2;
+      transition: stroke 0.35s ease;
+    }
+    .portal-card-hps:hover .hps-wave-dull {
+      stroke: rgba(255, 255, 255, 0.11);
+    }
+    .hps-wave-lit {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      stroke: #00F0FF;
+      stroke-width: 2.2px;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      filter: drop-shadow(0 0 6px rgba(0, 240, 255, 0.45));
+      z-index: 4;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.9) 50%, transparent 100%);
+      mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.9) 50%, transparent 100%);
+      -webkit-mask-size: 14% 100%;
+      mask-size: 14% 100%;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      animation: scan-mask 4s ease-in-out infinite alternate;
+    }
+    .hps-scanner-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1.5px;
+      background-color: rgba(255, 255, 255, 0.85);
+      box-shadow: 0 0 8px 1px rgba(0, 240, 255, 0.55), 0 0 16px rgba(0, 240, 255, 0.25);
+      z-index: 5;
+      animation: scan-line 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes scan-mask {
+      0% {
+        -webkit-mask-position: 0% 0%;
+        mask-position: 0% 0%;
+        opacity: 0.15;
+      }
+      10% {
+        opacity: 0.75;
+      }
+      90% {
+        opacity: 0.75;
+      }
+      100% {
+        -webkit-mask-position: 100% 0%;
+        mask-position: 100% 0%;
+        opacity: 0.15;
+      }
+    }
+
+    @keyframes scan-line {
+      0% {
+        left: 1%;
+        opacity: 0;
+      }
+      8% {
+        opacity: 0.75;
+      }
+      92% {
+        opacity: 0.75;
+      }
+      100% {
+        left: 99%;
+        opacity: 0;
+      }
+    }
+
+    /* Dual-Layer Kinetic Typography */
+    .hps-title-layer {
+      position: relative;
+      z-index: 3;
+      font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.88;
+      letter-spacing: -0.04em;
+    }
+    .hps-title-outline {
+      display: block;
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(240, 240, 240, 0.45);
+      transition: -webkit-text-stroke 0.35s ease, text-shadow 0.35s ease;
+    }
+    .portal-card-hps:hover .hps-title-outline {
+      -webkit-text-stroke: 1.5px #00F0FF;
+      text-shadow: 0 0 20px rgba(0, 240, 255, 0.35);
+    }
+    .hps-title-solid {
+      display: block;
+      color: #F0F0F0;
+      transition: color 0.35s ease, text-shadow 0.35s ease;
+    }
+    .portal-card-hps:hover .hps-title-solid {
+      color: #FFFFFF;
+      text-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+    }
+
+    /* ─── HPS-1.0 Layout System (Zero Height Expansion) ─── */
+    .hps-body-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+      z-index: 10;
+      margin: 16px 0;
+      min-height: 140px;
+      justify-content: center;
+    }
+    @media (min-width: 860px) {
+      .hps-body-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        align-items: center;
+        gap: 32px;
+      }
+    }
+
+    .hps-left-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hps-prompt-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: #71717A;
+      margin-top: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.3s ease;
+    }
+    .portal-card-hps:hover .hps-prompt-text {
+      color: #00F0FF;
+    }
+
+    /* Right column in the open space on the right half of the card */
+    .hps-right-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      opacity: 0;
+      transform: translateX(12px);
+      transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+    .portal-card-hps:hover .hps-right-col,
+    .portal-card-hps:focus-within .hps-right-col {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: auto;
+    }
+
+    @media (max-width: 859px) {
+      .hps-right-col {
+        opacity: 0.95;
+        transform: none;
+        pointer-events: auto;
+        margin-top: 8px;
+        padding-top: 12px;
+        border-top: 1px solid rgba(0, 240, 255, 0.15);
+      }
+    }
+
+    .hps-blurb-text {
+      font-size: 12px;
+      color: #A1A1AA;
+      font-weight: 300;
+      line-height: 1.5;
+      margin-bottom: 12px;
+      border-left: 2px solid rgba(0, 240, 255, 0.4);
+      padding-left: 10px;
+    }
+
+    .hps-metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+    @media (max-width: 500px) {
+      .hps-metric-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .hps-metric-chip {
+      background: rgba(0, 0, 0, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 6px 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      text-align: left;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .hps-metric-chip:hover {
+      border-color: rgba(0, 240, 255, 0.7);
+      background: rgba(0, 240, 255, 0.08);
+    }
+    .hps-metric-tag {
+      color: #00F0FF;
+      font-weight: 700;
+      display: block;
+      letter-spacing: 0.05em;
+    }
+    .hps-metric-sub {
+      color: #71717A;
+      font-size: 9px;
+      display: block;
+      margin-top: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hps-wave-lit,
+      .hps-scanner-line {
+        animation: none !important;
+      }
+      .hps-scanner-line {
+        left: 50% !important;
+        opacity: 0.5 !important;
+      }
+      .hps-right-col {
+        opacity: 1;
+        transform: none;
+        transition: none !important;
+      }
+    }
 
     .portal-card-tools {
-      background: linear-gradient(135deg, rgba(255, 159, 28, 0.08) 0%, #000000 70%);
-      border: 1px solid rgba(255, 159, 28, 0.28);
+      background: linear-gradient(135deg, rgba(148, 163, 184, 0.09) 0%, rgba(18, 20, 23, 0.98) 70%);
+      border: 1px solid rgba(148, 163, 184, 0.25);
       position: relative;
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .portal-card-tools:hover {
-      border-color: rgba(255, 159, 28, 0.85);
-      box-shadow: 0 0 35px rgba(255, 159, 28, 0.22);
+      border-color: rgba(226, 232, 240, 0.75);
+      box-shadow: 0 0 35px rgba(148, 163, 184, 0.2);
       transform: translateY(-2px);
     }
 
@@ -428,6 +710,105 @@
       border-color: rgba(148, 163, 184, 0.65);
       box-shadow: 0 0 30px rgba(148, 163, 184, 0.15);
       transform: translateY(-2px);
+    }
+
+    /* ─── Morphing Kinetic GREY Typography (Matte Gritty Grey, Zero Glow) ─── */
+    .cycling-grey-container {
+      display: inline-flex;
+      align-items: baseline;
+      justify-content: center;
+      position: relative;
+      min-width: 3.2ch;
+      vertical-align: baseline;
+    }
+
+    .cycling-grey-word {
+      display: inline-block;
+      color: #94A3B8;
+      text-shadow: none !important;
+      transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+                  filter 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform, filter;
+      text-decoration: none !important;
+    }
+
+    .cycling-grey-word.is-transitioning {
+      opacity: 0;
+      transform: translateY(-3px) scale(0.97);
+      filter: blur(1.5px);
+    }
+
+    /* 1. Modern Geometric */
+    .cycling-grey-word.font-modern {
+      font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      color: #94A3B8;
+    }
+
+    /* 2. Japanese Kanji (灰色 - Ashen/Grey) */
+    .cycling-grey-word.font-japanese {
+      font-family: 'DotGothic16', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #8E9AAF;
+    }
+
+    /* 3. French Editorial (GRIS) */
+    .cycling-grey-word.font-french {
+      font-family: 'Georgia', 'Baskerville', 'Times New Roman', serif;
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #A1A1AA;
+    }
+
+    /* 4. Expressive Cursive */
+    .cycling-grey-word.font-cursive {
+      font-family: 'Caveat', 'Brush Script MT', cursive;
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: 0.04em;
+      font-size: 1.15em;
+      line-height: 0.85;
+      color: #94A3B8;
+    }
+
+    /* 5. Wingdings / Symbolic Glyph Matrix */
+    .cycling-grey-word.font-wingdings {
+      font-family: 'Wingdings', 'Wingdings 2', 'Wingdings 3', 'Segoe UI Symbol', 'Apple Symbols', monospace;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #71717A;
+    }
+
+    /* 6. Dot Matrix / 8-Bit */
+    .cycling-grey-word.font-dotmatrix {
+      font-family: 'DotGothic16', 'Silkscreen', monospace;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #71717A;
+    }
+
+    /* 7. Swiss Helvetica */
+    .cycling-grey-word.font-helvetica {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: #8E9AAF;
+    }
+
+    /* 8. Braille Tactile Unicode */
+    .cycling-grey-word.font-braille {
+      font-family: 'JetBrains Mono', 'Segoe UI Symbol', monospace;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: #64748B;
     }
 
     /* Explicit responsive grid spans */
@@ -542,11 +923,11 @@
   </div>
 
   <h1 class="text-3xl sm:text-6xl font-bold tracking-[-0.035em] text-[#EAEAEA] leading-[0.94] uppercase max-w-5xl">
-  THE FUTURE EXISTS IN THE <span class="text-[#FF9F1C] font-mono tracking-tight underline decoration-white/20 decoration-2 underline-offset-8">GREY.</span>
+  THE FUTURE EXISTS IN THE <span class="cycling-grey-container"><span id="cycling-grey-target" class="cycling-grey-word font-modern" aria-label="GREY">GREY</span></span>.
   </h1>
 
    <p class="mt-8 text-base sm:text-xl font-light text-[#A1A1AA] max-w-3xl leading-relaxed">
-   Music doesn't have to be purely human or purely machine. I use AI the same way I'd use a synthesizer - to generate raw material - then shape it by hand. The result sounds like neither, and that's the point.
+   Knowledge Hub For The Next Generation of Creators
    </p>
 
    <!-- Action Matrix: 2 High-Voltage Flagship Launchpads -->
@@ -604,8 +985,8 @@
         <span>Manifesto Core // Foundational Thesis</span>
       </div>
 
-      <blockquote class="text-xl sm:text-3xl font-light leading-snug text-[#EAEAEA] pl-4 sm:pl-6 border-l-2 border-[#FF9F1C]">
-        "While people argue over black or white, human versus machine, or all or nothing, the real creative work happens in the <span class="text-[#FF9F1C] font-mono font-semibold">grey</span>. Hybrid production is about finding the soul inside the algorithm."
+      <blockquote class="text-xl sm:text-3xl font-light leading-snug text-[#EAEAEA] pl-4 sm:pl-6 border-l-2 border-[#CBD5E1]/60">
+        "While people argue over black or white, human versus machine, or all or nothing, the real creative work happens in the <span class="text-[#CBD5E1] font-mono font-semibold">grey</span>. Hybrid production is about finding the soul inside the algorithm."
       </blockquote>
 
       <p class="mt-6 text-base text-[#A1A1AA] leading-relaxed max-w-3xl">
@@ -622,49 +1003,100 @@
 
     </div>
 
-    <!-- HPS-1.0 Cyber Protocol Console -->
-    <a href="./hybridproductionstandard.html" class="portal-card-hps mt-6 p-6 sm:p-8 flex flex-col justify-between text-left group block">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-        <span class="inline-flex items-center gap-2 px-4 py-1 font-mono text-[10px] tracking-[0.18em] uppercase font-semibold" style="color: #00F0FF; background: rgba(0, 240, 255, 0.08); border: 1px solid rgba(0, 240, 255, 0.35);">
-          <span>[ SPECIFICATION // EU AI ACT ART. 50 &amp; DDEX ERN 4.3 ]</span>
-        </span>
-        <span class="text-xs font-mono text-[#00F0FF]/80 group-hover:text-[#00F0FF] transition-colors flex items-center gap-2 self-start sm:self-auto">
-          <span>INSPECT SPECIFICATION</span>
-          <span class="group-hover:translate-x-1 transition-transform">→</span>
-        </span>
-      </div>
-      <div>
-        <h2 class="text-xl font-bold font-mono text-[#EAEAEA] uppercase tracking-wider group-hover:text-[#00F0FF] transition-colors">
-          HYBRID PRODUCTION STANDARD (HPS-1.0)
-        </h2>
-        <p class="text-xs sm:text-base text-[#A1A1AA] mt-2 font-light leading-relaxed max-w-3xl">
-          The definitive 5-axis classification framework mapping neural audio synthesis, stem separation, and human studio engineering to verifiable DDEX ERN 4.3 metadata profiles and C2PA cryptographic provenance.
-        </p>
-      </div>
+    <!-- HPS-1.0 Cyber Protocol Console & Attestation Waveform Engine -->
+    <a href="./hybridproductionstandard.html" class="portal-card-hps mt-6 p-6 sm:p-8 flex flex-col justify-between text-left group block" aria-label="Hybrid Production Standard (HPS-1.0) Audio Attestation Engine">
       
-      <!-- 5-Axis Metric Indicator Strip -->
-      <div class="mt-6 pt-4 border-t border-[#00F0FF]/20 grid grid-cols-2 sm:grid-cols-5 gap-2 text-[10px] font-mono">
-        <div class="p-2 bg-[#0B0C0E]/80 border border-white/10 text-left">
-          <span class="text-[#00F0FF] block font-bold">[C] COMPOSITION</span>
-          <span class="text-[#71717A] text-[10px]">Human Harmony</span>
+      <!-- Card Top Header Bar -->
+      <div class="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/[0.08] pb-4 transition-colors duration-300">
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="inline-flex items-center gap-2 px-3 py-1 font-mono text-[10px] tracking-[0.18em] uppercase font-semibold text-[#00F0FF] bg-[#00F0FF]/[0.08] border border-[#00F0FF]/35">
+            [ SPECIFICATION // EU AI ACT ART. 50 &amp; DDEX ERN 4.3 ]
+          </span>
+          <span class="inline-flex items-center gap-1.5 font-mono text-[10px] text-[#00F0FF]/90">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-pulse"></span>
+            <span>SECURE_ENCLAVE_ACTIVE</span>
+          </span>
         </div>
-        <div class="p-2 bg-[#0B0C0E]/80 border border-white/10 text-left">
-          <span class="text-[#00F0FF] block font-bold">[G] GENERATION</span>
-          <span class="text-[#71717A] text-[10px]">Neural Latents</span>
-        </div>
-        <div class="p-2 bg-[#0B0C0E]/80 border border-white/10 text-left">
-          <span class="text-[#00F0FF] block font-bold">[S] STEMS</span>
-          <span class="text-[#71717A] text-[10px]">Multitrack Split</span>
-        </div>
-        <div class="p-2 bg-[#0B0C0E]/80 border border-white/10 text-left">
-          <span class="text-[#00F0FF] block font-bold">[P] POST-PROD</span>
-          <span class="text-[#71717A] text-[10px]">Analog DAW Master</span>
-        </div>
-        <div class="p-2 bg-[#0B0C0E]/80 border border-white/10 text-left col-span-2 sm:col-span-1">
-          <span class="text-[#00F0FF] block font-bold">[M] MASTER</span>
-          <span class="text-[#71717A] text-[10px]">C2PA Cryptoseal</span>
+        <div class="flex items-center gap-3">
+          <span class="text-[10px] font-mono text-[#71717A] tracking-wider uppercase hidden md:inline">SHA-256 VERIFIED</span>
+          <span class="text-xs font-mono text-[#00F0FF]/80 group-hover:text-[#00F0FF] transition-colors flex items-center gap-2 self-start sm:self-auto">
+            <span class="font-bold tracking-wider">INSPECT PROTOCOL</span>
+            <span class="group-hover:translate-x-1.5 transition-transform duration-300">→</span>
+          </span>
         </div>
       </div>
+
+      <!-- Main Body Grid: Left = Typography & Prompt, Right = Condensed 5-Axis & Blurb in Open Space (Zero Expansion) -->
+      <div class="hps-body-grid">
+        
+        <!-- Left Column: Title, Subtitle, and Prompt -->
+        <div class="hps-left-col">
+          <div class="hps-title-layer text-4xl sm:text-6xl md:text-7xl">
+            <span class="hps-title-outline">AUDIO</span>
+            <span class="hps-title-solid">ATTESTATION</span>
+          </div>
+          
+          <div class="mt-3">
+            <span class="text-xs sm:text-sm font-mono font-bold tracking-[0.18em] text-[#00F0FF] uppercase">
+              HYBRID PRODUCTION STANDARD (HPS-1.0)
+            </span>
+          </div>
+
+          <!-- Sleek default callout that transitions cleanly -->
+          <div class="hps-prompt-text">
+            <span>(click here for the future of creative control</span>
+            <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→)</span>
+          </div>
+        </div>
+
+        <!-- Right Column: Condensed Blurb & 5-Axis Metrics Revealed in Open Right Space on Hover -->
+        <div class="hps-right-col">
+          <p class="hps-blurb-text">
+            The open 5-axis framework mapping neural audio synthesis and stem separation to verified DDEX ERN 4.3 metadata and C2PA cryptographic provenance.
+          </p>
+
+          <div class="hps-metric-grid">
+            <div class="hps-metric-chip">
+              <span class="hps-metric-tag">[C] COMPOSITION</span>
+              <span class="hps-metric-sub">Human Harmony</span>
+            </div>
+            <div class="hps-metric-chip">
+              <span class="hps-metric-tag">[G] GENERATION</span>
+              <span class="hps-metric-sub">Neural Latents</span>
+            </div>
+            <div class="hps-metric-chip">
+              <span class="hps-metric-tag">[S] STEMS</span>
+              <span class="hps-metric-sub">Multitrack Split</span>
+            </div>
+            <div class="hps-metric-chip">
+              <span class="hps-metric-tag">[P] POST-PROD</span>
+              <span class="hps-metric-sub">DAW Master</span>
+            </div>
+            <div class="hps-metric-chip" style="grid-column: span 2;">
+              <span class="hps-metric-tag">[M] MASTER</span>
+              <span class="hps-metric-sub">C2PA Cryptoseal</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Central Moving Waveform Engine Overlay (Organic Asymmetrical Waves) -->
+      <div class="hps-waveform-wrap" aria-hidden="true">
+        <!-- Dull Background Waveform -->
+        <svg class="hps-wave-dull" viewBox="0 0 1000 200" preserveAspectRatio="none">
+          <path d="M 0 100 L 8.3 96 L 16.7 111 L 25 81 L 33.3 114 L 41.7 86 L 50 143 L 58.3 42 L 66.7 147 L 75 57 L 83.3 146 L 91.7 73 L 100 149 L 108.3 69 L 116.7 114 L 125 92 L 133.3 122 L 141.7 80 L 150 108 L 158.3 88 L 166.7 111 L 175 86 L 183.3 120 L 191.7 82 L 200 133 L 208.3 65 L 216.7 150 L 225 76 L 233.3 169 L 241.7 47 L 250 160 L 258.3 46 L 266.7 188 L 275 54 L 283.3 134 L 291.7 43 L 300 137 L 308.3 74 L 316.7 129 L 325 66 L 333.3 117 L 341.7 81 L 350 125 L 358.3 82 L 366.7 124 L 375 73 L 383.3 134 L 391.7 73 L 400 145 L 408.3 80 L 416.7 119 L 425 79 L 433.3 121 L 441.7 79 L 450 145 L 458.3 81 L 466.7 111 L 475 92 L 483.3 117 L 491.7 89 L 500 144 L 508.3 38 L 516.7 169 L 525 34 L 533.3 145 L 541.7 44 L 550 136 L 558.3 18 L 566.7 158 L 575 54 L 583.3 144 L 591.7 76 L 600 127 L 608.3 66 L 616.7 131 L 625 52 L 633.3 142 L 641.7 81 L 650 125 L 658.3 68 L 666.7 121 L 675 62 L 683.3 145 L 691.7 61 L 700 182 L 708.3 63 L 716.7 137 L 725 76 L 733.3 150 L 741.7 48 L 750 160 L 758.3 56 L 766.7 154 L 775 41 L 783.3 170 L 791.7 53 L 800 166 L 808.3 49 L 816.7 159 L 825 25 L 833.3 132 L 841.7 68 L 850 129 L 858.3 67 L 866.7 129 L 875 76 L 883.3 123 L 891.7 88 L 900 120 L 908.3 76 L 916.7 113 L 925 92 L 933.3 117 L 941.7 91 L 950 111 L 958.3 91 L 966.7 104 L 975 94 L 983.3 103 L 991.7 98 L 1000 100" />
+        </svg>
+
+        <!-- Lit Glowing Waveform with Scanning Mask -->
+        <svg class="hps-wave-lit" viewBox="0 0 1000 200" preserveAspectRatio="none">
+          <path d="M 0 100 L 8.3 96 L 16.7 111 L 25 81 L 33.3 114 L 41.7 86 L 50 143 L 58.3 42 L 66.7 147 L 75 57 L 83.3 146 L 91.7 73 L 100 149 L 108.3 69 L 116.7 114 L 125 92 L 133.3 122 L 141.7 80 L 150 108 L 158.3 88 L 166.7 111 L 175 86 L 183.3 120 L 191.7 82 L 200 133 L 208.3 65 L 216.7 150 L 225 76 L 233.3 169 L 241.7 47 L 250 160 L 258.3 46 L 266.7 188 L 275 54 L 283.3 134 L 291.7 43 L 300 137 L 308.3 74 L 316.7 129 L 325 66 L 333.3 117 L 341.7 81 L 350 125 L 358.3 82 L 366.7 124 L 375 73 L 383.3 134 L 391.7 73 L 400 145 L 408.3 80 L 416.7 119 L 425 79 L 433.3 121 L 441.7 79 L 450 145 L 458.3 81 L 466.7 111 L 475 92 L 483.3 117 L 491.7 89 L 500 144 L 508.3 38 L 516.7 169 L 525 34 L 533.3 145 L 541.7 44 L 550 136 L 558.3 18 L 566.7 158 L 575 54 L 583.3 144 L 591.7 76 L 600 127 L 608.3 66 L 616.7 131 L 625 52 L 633.3 142 L 641.7 81 L 650 125 L 658.3 68 L 666.7 121 L 675 62 L 683.3 145 L 691.7 61 L 700 182 L 708.3 63 L 716.7 137 L 725 76 L 733.3 150 L 741.7 48 L 750 160 L 758.3 56 L 766.7 154 L 775 41 L 783.3 170 L 791.7 53 L 800 166 L 808.3 49 L 816.7 159 L 825 25 L 833.3 132 L 841.7 68 L 850 129 L 858.3 67 L 866.7 129 L 875 76 L 883.3 123 L 891.7 88 L 900 120 L 908.3 76 L 916.7 113 L 925 92 L 933.3 117 L 941.7 91 L 950 111 L 958.3 91 L 966.7 104 L 975 94 L 983.3 103 L 991.7 98 L 1000 100" />
+        </svg>
+
+        <!-- Moving Vertical Scanner Line -->
+        <div class="hps-scanner-line"></div>
+      </div>
+
     </a>
 
   </section>
@@ -775,17 +1207,17 @@
       <a href="./projects.html" class="portal-card-tools col-span-1 md:col-span-1 lg:col-span-1 p-8 flex flex-col justify-between group min-h-[300px]">
         <div>
           <div class="flex items-center justify-between mb-4">
-            <span class="tech-tag tech-tag-amber">[ 9 LIVE BROWSER TOOLS ]</span>
-            <span class="text-[10px] font-mono text-[#71717A] group-hover:text-[#FF9F1C] transition-colors">ENTER LAB →</span>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 font-mono text-[10px] tracking-wider uppercase text-[#CBD5E1] bg-[#CBD5E1]/10 border border-[#CBD5E1]/30">[ 9 LIVE BROWSER TOOLS ]</span>
+            <span class="text-[10px] font-mono text-[#71717A] group-hover:text-[#CBD5E1] transition-colors">ENTER LAB →</span>
           </div>
-          <h3 class="text-xl font-bold font-mono text-[#EAEAEA] uppercase tracking-wider mb-4 group-hover:text-[#FF9F1C] transition-colors">
+          <h3 class="text-xl font-bold font-mono text-[#EAEAEA] uppercase tracking-wider mb-4 group-hover:text-[#CBD5E1] transition-colors">
             PROJECTS &amp; DSP LAB
           </h3>
           <p class="text-xs text-[#A1A1AA] font-light leading-relaxed mb-6">
             Interactive Web Audio DSP utilities: VØID 1.5 granular slicer sampler, MIXR Studio mastering, subtractive synths, multitrack J-DAW, and chord scalers. Free, zero sign-up, runs entirely in the browser.
           </p>
           <div class="flex flex-wrap gap-2 mb-6">
-            <span class="px-2 py-1 bg-[#121417] border border-white/10 text-[10px] font-mono text-[#FF9F1C]">VØID 1.5</span>
+            <span class="px-2 py-1 bg-[#121417] border border-[#CBD5E1]/30 text-[10px] font-mono text-[#CBD5E1]">VØID 1.5</span>
             <span class="px-2 py-1 bg-[#121417] border border-white/10 text-[10px] font-mono text-[#EAEAEA]">MIXR Studio</span>
             <span class="px-2 py-1 bg-[#121417] border border-white/10 text-[10px] font-mono text-[#EAEAEA]">VISION SYNTH</span>
             <span class="px-2 py-1 bg-[#121417] border border-white/10 text-[10px] font-mono text-[#EAEAEA]">J-DAW</span>
@@ -794,7 +1226,7 @@
 
         <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-[#71717A]">
           <span>WEB AUDIO API / DSP</span>
-          <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">LAUNCH TOOLS →</span>
+          <span class="text-[#CBD5E1] group-hover:translate-x-1 transition-transform">LAUNCH TOOLS →</span>
         </div>
       </a>
 
@@ -945,9 +1377,53 @@
  </nav>
  </div>
  </footer>
-
  </div>
 
- <script src="./assets/reader.js" defer></script>
+  <script src="./assets/reader.js" defer></script>
+  <!-- Kinetic Typography Font-Switcher Engine for GREY -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const el = document.getElementById('cycling-grey-target');
+      if (!el) return;
+
+      const fontModes = [
+        { text: 'GREY', className: 'font-modern', label: 'GREY' },
+        { text: '灰色', className: 'font-japanese', label: 'GREY' },
+        { text: 'GRIS', className: 'font-french', label: 'GREY' },
+        { text: 'Grey', className: 'font-cursive', label: 'GREY' },
+        { text: 'GREY', className: 'font-wingdings', label: 'GREY' },
+        { text: 'GREY', className: 'font-dotmatrix', label: 'GREY' },
+        { text: 'GREY', className: 'font-helvetica', label: 'GREY' },
+        { text: '\u281B\u2817\u2811\u283D', className: 'font-braille', label: 'GREY' }
+      ];
+
+      let currentIndex = 0;
+      const intervalMs = 2400; // Switches font every 2.4 seconds
+
+      setInterval(() => {
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          return;
+        }
+
+        el.classList.add('is-transitioning');
+        
+        setTimeout(() => {
+          currentIndex = (currentIndex + 1) % fontModes.length;
+          const currentMode = fontModes[currentIndex];
+          
+          // Remove previous font classes
+          fontModes.forEach(m => el.classList.remove(m.className));
+          
+          // Apply new font mode
+          el.textContent = currentMode.text;
+          el.classList.add(currentMode.className);
+          el.setAttribute('aria-label', currentMode.label);
+          
+          // Smooth fade back in
+          el.classList.remove('is-transitioning');
+        }, 220);
+      }, intervalMs);
+    });
+  </script>
 </body>
 </html>

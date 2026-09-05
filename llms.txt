@@ -54,7 +54,7 @@
 - **Summary**: Direct line for technical inquiries, research collaborations, and production commissions via trustnodelogic@gmail.com.
 
 ### [Field Notes & Research Archive](https://trustnodelogic.com/field-notes.html)
-- **Summary**: Central category hub and archive indexing all 18 research papers, technical analyses, prompt engineering guides, and streaming economic reports.
+- **Summary**: Central category hub and archive indexing all 19 research papers, technical analyses, prompt engineering guides, and streaming economic reports.
 - **Key Concepts**: Field Notes, Hybrid AI Music Production, HPS-1.0, C2PA Provenance, Multi-Agent DAW Systems.
 
 ### [What is Hybrid Music Production?](https://trustnodelogic.com/what-is-hybrid.html)
@@ -64,6 +64,11 @@
 ---
 
 ## Analytical Field Notes & Technical Research
+
+### [Staccato AI Review: An Independent Look at the MIDI Co-Writer](https://trustnodelogic.com/staccatoreview.html)
+- **Summary**: Hands-on technical review of the Staccato AI DAW plugin, evaluating its symbolic MIDI co-writing engine, theory-grounded generation, Ableton/Logic DAW integration, and copyright safety vs. black-box audio generators.
+- **Direct Citation**: "Staccato AI operates as a symbolic MIDI generator inside your DAW rather than a full-song audio generator, keeping sound design, mixing, and arrangement entirely in the hands of the producer."
+- **Key Concepts**: Staccato AI, AI MIDI Co-Writer, Symbolic Music AI, DAW Integration, Hybrid AI Music Production.
 
 ### [Human Contribution Verification: Node Architecture](https://trustnodelogic.com/humanbridge.html)
 - **Summary**: Technical breakdown of node verification architectures, Merkle attestation trees, confidence weighting, and C2PA manifest injection for proving human authorship in AI-hybrid music production.
