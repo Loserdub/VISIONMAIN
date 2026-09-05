@@ -5,9 +5,9 @@
      crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VØID 1.5 : Web Audio Slicer & Sampler · Trust Node Logic</title>
-<meta name="description" content="VØID 1.5 is a free browser Web Audio slicer, 16-pad sampler, and harmonic auto-mashup workstation engineered by Justin Ray (JRAY / loserdub).">
-<meta name="keywords" content="VØID, VOID audio, audio slicer, harmonic mashup, auto mashup, Web Audio API, Justin Ray, JRAY, loserdub, East Lansing music, music producer, creative developer, HPS-1.0">
+<title>VOID Web Sampler & Audio Slicer (1.5) · Trust Node Logic</title>
+<meta name="description" content="VOID 1.5 is a free browser VOID web sampler, 16-pad audio slicer, and harmonic auto-mashup workstation engineered by Justin Ray for hybrid producers.">
+<meta name="keywords" content="void web sampler, VOID web sampler, VOID sampler, online web sampler, browser sampler, VOID audio, audio slicer, 16-pad sampler, Web Audio API, harmonic mashup, auto mashup, Justin Ray, JRAY, loserdub, HPS-1.0">
 <meta name="author" content="Justin Ray">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="geo.country" content="US">
@@ -18,15 +18,15 @@
 <!-- OpenGraph & Twitter Cards -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Trust Node Logic">
-<meta property="og:title" content="VØID 1.5 : Web Audio Slicer & Sampler · Trust Node Logic">
-<meta property="og:description" content="VØID 1.5 is a free browser Web Audio slicer, 16-pad sampler, and harmonic auto-mashup workstation engineered by Justin Ray (JRAY / loserdub).">
+<meta property="og:title" content="VOID Web Sampler & Audio Slicer (1.5) · Trust Node Logic">
+<meta property="og:description" content="VOID 1.5 is a free browser VOID web sampler, 16-pad audio slicer, and harmonic auto-mashup workstation engineered by Justin Ray for hybrid producers.">
 <meta property="og:url" content="https://trustnodelogic.com/void.html">
 <meta property="og:image" content="https://trustnodelogic.com/assets/images/tnl-default-og.webp">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="VØID 1.5 : Web Audio Slicer & Sampler · Trust Node Logic">
-<meta name="twitter:description" content="VØID 1.5 is a free browser Web Audio slicer, 16-pad sampler, and harmonic auto-mashup workstation engineered by Justin Ray (JRAY / loserdub).">
+<meta name="twitter:title" content="VOID Web Sampler & Audio Slicer (1.5) · Trust Node Logic">
+<meta name="twitter:description" content="VOID 1.5 is a free browser VOID web sampler, 16-pad audio slicer, and harmonic auto-mashup workstation engineered by Justin Ray for hybrid producers.">
 <meta name="twitter:image" content="https://trustnodelogic.com/assets/images/tnl-default-og.webp">
 <meta name="twitter:creator" content="@TheInnerVision">
 
@@ -41,13 +41,16 @@
         "WebApplication"
       ],
       "@id": "https://trustnodelogic.com/void.html#webapp",
-      "name": "VØID 1.5",
+      "name": "VOID 1.5 Web Sampler",
       "alternateName": [
-        "VØID",
+        "VOID Web Sampler",
+        "VOID",
+        "VOID 1.5",
         "VOID Audio Slicer",
         "Harmonic Auto-Mashup Engine",
         "16-Pad Web Sampler"
       ],
+      "keywords": "void web sampler, VOID web sampler, online web sampler, browser audio sampler, audio slicer, 16-pad sampler, Web Audio API, harmonic mashup",
       "url": "https://trustnodelogic.com/void.html",
       "applicationCategory": "MultimediaApplication",
       "operatingSystem": "Any (Web Browser)",
@@ -166,7 +169,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "VØID 1.5",
+          "name": "VOID Web Sampler",
           "item": "https://trustnodelogic.com/void.html"
         }
       ]
@@ -211,7 +214,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script>
-// ─── ML ENGINE — Chunked Async (no Worker, CSP-safe) ────────────────────────
+// ─── ML ENGINE  -  Chunked Async (no Worker, CSP-safe) ────────────────────────
 // All heavy DSP runs on the main thread in time-sliced chunks.
 // yield() surrenders control to the browser for ~1 frame between batches,
 // keeping the progress bar live and the UI responsive.
@@ -787,7 +790,7 @@ function getWorker() {
   return voidWorker;
 }
 
-// Main-thread orchestrator — delegates to Web Worker with Transferable Float32Array
+// Main-thread orchestrator  -  delegates to Web Worker with Transferable Float32Array
 function runMLAnalysis(audioBuffer, onProgress) {
   return new Promise((resolve, reject) => {
     try {
@@ -1318,7 +1321,7 @@ function runMLAnalysis(audioBuffer, onProgress) {
   /* smart-only sections hide when smart mode is off */
   .smart-only { transition: opacity .3s, max-height .4s; overflow: hidden; max-height: 600px; opacity: 1; }
   .smart-off .smart-only { opacity: 0; max-height: 0; pointer-events: none; }
-  /* local remixer always visible — smart mode only hides AI-specific fields */
+  /* local remixer always visible  -  smart mode only hides AI-specific fields */
 
   /* local-only sections show only when smart is off */
   .local-only { display: none; }
@@ -1416,13 +1419,13 @@ function runMLAnalysis(audioBuffer, onProgress) {
 
 <header>
   <div style="display:flex;align-items:center;gap:18px;">
-    <h1 style="margin:0;font-size:inherit;font-weight:inherit;line-height:inherit;display:inline-flex;align-items:center;gap:8px;"><a class="logo" href="./projects.html">VØID <span>1.5</span></a><span class="badge-free" style="font-size:9px;font-family:var(--mono);color:#38ef7d;border:1px solid rgba(56,239,125,0.3);background:rgba(56,239,125,0.08);padding:2px 6px;letter-spacing:0.1em;border-radius:2px;font-weight:600;">FREE // CLIENT-SIDE</span></h1>
+    <h1 style="margin:0;font-size:inherit;font-weight:inherit;line-height:inherit;display:inline-flex;align-items:center;gap:8px;"><a class="logo" href="./projects.html" title="VOID 1.5 Web Sampler">VØID <span>1.5</span></a><span class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;"> - VOID Web Sampler &amp; Audio Slicer</span><span class="badge-free" style="font-size:9px;font-family:var(--mono);color:#38ef7d;border:1px solid rgba(56,239,125,0.3);background:rgba(56,239,125,0.08);padding:2px 6px;letter-spacing:0.1em;border-radius:2px;font-weight:600;">FREE // WEB SAMPLER</span></h1>
     <nav class="breadcrumb-nav" aria-label="Breadcrumb">
       <a href="./index.html">Home</a>
       <span aria-hidden="true">/</span>
       <a href="./projects.html">Projects</a>
       <span aria-hidden="true">/</span>
-      <span aria-current="page" style="color:var(--text);font-weight:700;">VØID</span>
+      <span aria-current="page" style="color:var(--text);font-weight:700;">VOID Web Sampler</span>
     </nav>
   </div>
   <div class="tabs">
@@ -1797,7 +1800,7 @@ function runMLAnalysis(audioBuffer, onProgress) {
 
 <script>
 // =============================================================================
-// VØID 1.5 WORKSTATION ENGINE — MAIN CONTROLLER & DSP CORE
+// VØID 1.5 WORKSTATION ENGINE  -  MAIN CONTROLLER & DSP CORE
 // =============================================================================
 
 // ─── 1. AUDIO ENGINE & CORE UTILITIES ───────────────────────────────────────
@@ -2435,7 +2438,7 @@ async function sliceAll() {
         document.getElementById('prog-' + item.id).style.width = '20%';
       }
       
-      // BPM now computed in Web Worker (via runMLAnalysis) — set fallback here
+      // BPM now computed in Web Worker (via runMLAnalysis)  -  set fallback here
       if (!item.bpm) item.bpm = 120;
       
       // Run all heavy ML analysis in the Web Worker (non-blocking)
@@ -2507,7 +2510,7 @@ function detectKey(audioBuffer) {
   for (let i = 0; i < fftSize; i++) hann[i] = 0.5 * (1 - Math.cos(2*Math.PI*i/fftSize));
   
   for (let hop = 0; hop + fftSize <= data.length; hop += hopSize) {
-    // Real DFT — extract magnitude per frequency bin, map to pitch class
+    // Real DFT  -  extract magnitude per frequency bin, map to pitch class
     const frame = new Float32Array(fftSize);
     for (let i = 0; i < fftSize; i++) frame[i] = data[hop+i] * hann[i];
     
@@ -2691,9 +2694,9 @@ function updateMashupUI() {
 }
 
 // Note: mashup scoring (scoreMashupCandidate/PREFERRED_NEXT_SECTIONS) runs
-// inside the Web Worker — see createVoidWorkerCode() above. buildMashup()
+// inside the Web Worker  -  see createVoidWorkerCode() above. buildMashup()
 // below only builds the lightweight metadata payload and delegates the
-// actual scoring to the worker. getSourceCamelot is kept here — it's used
+// actual scoring to the worker. getSourceCamelot is kept here  -  it's used
 // by renderLocalRemix()'s key-lock pitch-shifting, shared by both the
 // single-source remix and the mashup output.
 function getSourceCamelot(sourceId) {
@@ -2854,7 +2857,7 @@ function estimateBPM(audioBuffer) {
     env[i] = Math.sqrt(e / hopSize);
   }
   
-  // Step 2: Difference function — enhance onsets by comparing energy to previous frame
+  // Step 2: Difference function  -  enhance onsets by comparing energy to previous frame
   const df = new Float32Array(envLen);
   for (let i = 1; i < envLen; i++) {
     df[i] = Math.max(0, env[i] - env[i-1]); // half-wave rectified difference
@@ -2874,7 +2877,7 @@ function estimateBPM(audioBuffer) {
     if (corr > bestCorr) { bestCorr = corr; bestLag = lag; }
   }
   
-  // Step 4: Comb filter validation — check 2x and 0.5x harmonics to resolve octave ambiguity
+  // Step 4: Comb filter validation  -  check 2x and 0.5x harmonics to resolve octave ambiguity
   const lagToBPM = lag => Math.round(60 / (lag * hopSize / sr));
   let bpm = lagToBPM(bestLag);
   

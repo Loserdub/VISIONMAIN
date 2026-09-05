@@ -36,11 +36,11 @@
 
 ### [Projects Ecosystem](https://trustnodelogic.com/projects.html)
 - **Summary**: Interactive portfolio of creative technology tools including browser-native audio engines, provenance validators, and music knowledge visualizers.
-- **Key Concepts**: MIXR Studio, VØID 1.5, Artist Finder, HPS-1.0 Validator.
+- **Key Concepts**: MIXR Studio, VOID 1.5 Web Sampler, Artist Finder, HPS-1.0 Validator.
 
-### [VØID 1.5 Workstation](https://trustnodelogic.com/void.html)
-- **Summary**: Free browser-based audio slicer, 16-pad performance sampler, and off-thread Harmonic Auto-Mashup workstation running 100% client-side Web Audio DSP.
-- **Key Concepts**: VØID, Audio Slicer, 16-Pad Sampler, Harmonic Mashup, Camelot Key Matching, Web Workers DSP.
+### [VOID 1.5 Web Sampler](https://trustnodelogic.com/void.html)
+- **Summary**: Free browser-based VOID web sampler, 16-pad performance grid, and off-thread Harmonic Auto-Mashup workstation running 100% client-side Web Audio DSP.
+- **Key Concepts**: VOID Web Sampler, void web sampler, Audio Slicer, 16-Pad Sampler, Harmonic Mashup, Camelot Key Matching, Web Workers DSP.
 
 ### [Official Discography](https://trustnodelogic.com/music.html)
 - **Summary**: Catalog index across Justin Ray's production aliases (loserdub, VISION, Flawed Future, le vide, disarray), detailing streaming availability and acoustic engineering notes.

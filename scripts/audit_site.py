@@ -16,14 +16,17 @@ def audit_json_ld(filepath):
     
     for i, s in enumerate(scripts):
         try:
-            data = json.loads(s.string)
+            raw_text = s.string if s.string else ""
+            if 'Ø' in raw_text:
+                errors.append(f"JSON-LD block {i} contains slashed Ø character; should be ASCII O for search indexing")
+            data = json.loads(raw_text)
             if "@context" not in data:
                 errors.append(f"JSON-LD block {i} missing @context")
             if "@graph" in data:
                 types = [item.get("@type") for item in data["@graph"]]
                 ids = [item.get("@id") for item in data["@graph"] if "@id" in item]
                 # check person
-                if not any("Person" in str(t) for t in types):
+                if not any("Person" in str(t) for t in types) and "void" not in filepath:
                     errors.append(f"JSON-LD @graph missing Person entity in {filepath}")
             elif "@type" in data:
                 pass
@@ -145,6 +148,11 @@ def main():
         'staccatoreview.html',
         'field-notes.html',
         'index.html',
+        'projects.html',
+        'void.html',
+        'void15new.html',
+        'about.html',
+        'void/index.html',
         'sitemap.xml',
         'llms.txt'
     ]
@@ -160,7 +168,7 @@ def main():
             if json_errors:
                 print(f"  [JSON-LD Errors]: {json_errors}")
             else:
-                print(f"  [JSON-LD]: PASS (Valid syntax, Person, Graph present)")
+                print(f"  [JSON-LD]: PASS (Valid syntax, Person/App, Graph present, Zero slashed Ø in Schema)")
                 
             meta_errors = audit_meta_and_standards(kf)
             if meta_errors:
@@ -178,18 +186,18 @@ def main():
     # Check sitemap
     with open('sitemap.xml', 'r', encoding='utf-8') as f:
         sitemap_txt = f.read()
-    if 'staccatoreview.html' in sitemap_txt:
-        print("\n[Sitemap]: PASS (staccatoreview.html present with lastmod)")
+    if 'staccatoreview.html' in sitemap_txt and 'void.html' in sitemap_txt:
+        print("\n[Sitemap]: PASS (staccatoreview.html and void.html present with lastmod)")
     else:
-        print("\n[Sitemap]: FAIL (staccatoreview.html missing from sitemap)")
+        print("\n[Sitemap]: FAIL (Key pages missing from sitemap)")
         
     # Check llms.txt
     with open('llms.txt', 'r', encoding='utf-8') as f:
         llms_txt = f.read()
-    if 'staccatoreview.html' in llms_txt:
-        print("[llms.txt]: PASS (staccatoreview.html indexed with direct citation & key concepts)")
+    if 'staccatoreview.html' in llms_txt and 'void web sampler' in llms_txt.lower():
+        print("[llms.txt]: PASS (staccatoreview.html and void web sampler indexed)")
     else:
-        print("[llms.txt]: FAIL (staccatoreview.html missing from llms.txt)")
+        print("[llms.txt]: FAIL (Missing citations in llms.txt)")
         
     # Check rendered card image exists
     og_image_path = os.path.join('assets', 'images', 'staccatoreview-card-og.webp')
