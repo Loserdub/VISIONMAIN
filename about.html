@@ -36,11 +36,17 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "AboutPage",
+      "@type": "ProfilePage",
       "@id": "https://trustnodelogic.com/about.html#webpage",
       "url": "https://trustnodelogic.com/about.html",
-      "name": "About | Justin Ray : Trust Node Logic",
+      "name": "About Justin Ray | Origins · Trust Node Logic",
       "description": "Justin Ray (JRAY / loserdub) is a music producer, audio engineer, and pioneer of Hybrid AI Music Production and the Hybrid Production Standard (HPS-1.0).",
+      "image": "https://trustnodelogic.com/assets/images/bio-card-og.webp",
+      "primaryImageOfPage": {
+        "@id": "https://trustnodelogic.com/#person-image"
+      },
+      "dateCreated": "2024-08-24T00:00:00-04:00",
+      "dateModified": "2026-09-08T14:30:00-04:00",
       "isPartOf": {
         "@id": "https://trustnodelogic.com/#website"
       },
@@ -51,6 +57,16 @@
       "mainEntity": {
         "@id": "https://trustnodelogic.com/#person"
       }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://trustnodelogic.com/#person-image",
+      "url": "https://trustnodelogic.com/assets/images/croppedjrnu.webp",
+      "contentUrl": "https://trustnodelogic.com/assets/images/croppedjrnu.webp",
+      "width": 938,
+      "height": 880,
+      "caption": "Justin Ray (JRAY) - Music Producer and Pioneer of Hybrid AI Music Production",
+      "representativeOfPage": true
     },
     {
       "@type": "BreadcrumbList",
@@ -76,8 +92,13 @@
       "name": "Justin Ray",
       "additionalName": "Justin Tyler Ray",
       "alternateName": ["JRAY", "loserdub", "VISION", "Flawed Future", "le vide", "disarray"],
-      "url": "https://trustnodelogic.com",
-      "image": "https://trustnodelogic.com/bio-avatar.jpg",
+      "url": "https://trustnodelogic.com/about.html",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://trustnodelogic.com/#person-image",
+        "url": "https://trustnodelogic.com/assets/images/croppedjrnu.webp",
+        "caption": "Justin Ray (JRAY)"
+      },
       "email": "mailto:trustnodelogic@gmail.com",
       "jobTitle": [
         "Music Producer",
@@ -86,6 +107,10 @@
         "Audio Engineer",
         "Creative Technologist"
       ],
+      "description": "Justin Ray (JRAY / loserdub) is a music producer, audio engineer, and pioneer of Hybrid AI Music Production and the Hybrid Production Standard (HPS-1.0).",
+      "mainEntityOfPage": {
+        "@id": "https://trustnodelogic.com/about.html#webpage"
+      },
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "East Lansing",
