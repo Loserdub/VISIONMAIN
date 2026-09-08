@@ -35,7 +35,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
 
 <script type="application/ld+json">
 {
@@ -299,6 +300,19 @@
   }
   .section-mark.closing .section-line { background: var(--accent-purple); opacity: 0.35; }
 
+  figure.article-diagram {
+    margin: 1.5rem 0 2rem;
+    padding: 0;
+  }
+  figure.article-diagram picture,
+  figure.article-diagram img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+  }
+
   main.article h2 {
     font-family: var(--font-display);
     font-weight: 600;
@@ -437,8 +451,63 @@
 </head>
 <body>
 
+  <!-- Brutalist Sticky Header -->
+  <header class="sticky top-0 left-0 right-0 z-50 bg-[#0B0C0E]/95 backdrop-blur-md border-b border-white/10 py-3.5">
+    <div class="container mx-auto px-6 flex justify-between items-center relative">
+      
+      <a href="./index.html" class="flex items-center gap-3 group h-9 overflow-hidden w-[220px]" aria-label="Home">
+        <div class="w-5 h-5 border border-[#FF9F1C] bg-[#FF9F1C]/10 flex items-center justify-center flex-shrink-0 text-[#FF9F1C] font-mono text-xs font-bold">
+          <span>▪</span>
+        </div>
+        <div class="relative h-full flex items-center w-full">
+          <span class="absolute inset-0 flex items-center text-xs font-mono tracking-[0.16em] uppercase font-bold text-[#EAEAEA] transition-transform duration-300 transform group-hover:-translate-y-full">
+            TRUSTNODELOGIC
+          </span>
+          <span class="absolute inset-0 flex items-center text-xs font-mono tracking-[0.22em] uppercase font-bold text-[#FF9F1C] transition-transform duration-300 transform translate-y-full group-hover:translate-y-0">
+            JRAY.ME // RESEARCH
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-6 text-[11px] font-mono tracking-[0.14em] uppercase text-[#71717A]" aria-label="Main navigation">
+        <a href="./index.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">HOME</a>
+        <a href="./field-notes.html" class="text-[#FF9F1C] font-semibold relative py-1 border-b border-[#FF9F1C]">FIELD NOTES</a>
+        <a href="./music.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">MUSIC</a>
+        <a href="./projects.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">PROJECTS</a>
+        <a href="./about.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">ABOUT</a>
+        <a href="./what-is-hybrid.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">WHAT IS HYBRID</a>
+        <a href="./services.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">SERVICES</a>
+        <a href="./contact.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">CONTACT</a>
+      </nav>
+
+      <!-- Mobile Hamburger Toggle -->
+      <input type="checkbox" id="mobile-menu-toggle" class="peer hidden">
+      <label for="mobile-menu-toggle" class="md:hidden text-[#EAEAEA] cursor-pointer peer-checked:hidden block p-1 hover:text-[#FF9F1C] transition-colors border border-white/10" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
+      </label>
+      <label for="mobile-menu-toggle" class="md:hidden text-[#EAEAEA] cursor-pointer peer-checked:block hidden p-1 hover:text-[#FF9F1C] transition-colors border border-white/10" aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </label>
+
+      <div class="absolute top-full left-0 right-0 bg-[#0B0C0E] border-b border-white/20 shadow-2xl py-6 px-6 hidden peer-checked:flex flex-col items-center gap-4 text-center">
+        <nav class="flex flex-col gap-3 text-center text-xs font-mono tracking-widest uppercase text-[#EAEAEA] font-medium w-full max-w-xs" aria-label="Mobile navigation">
+          <a href="./index.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">HOME</a>
+          <a href="./field-notes.html" class="text-[#FF9F1C] py-2 border-b border-white/10 font-bold">FIELD NOTES</a>
+          <a href="./music.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">MUSIC</a>
+          <a href="./projects.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">PROJECTS</a>
+          <a href="./about.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">ABOUT</a>
+          <a href="./what-is-hybrid.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">WHAT IS HYBRID</a>
+          <a href="./services.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">SERVICES</a>
+          <a href="./contact.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">CONTACT</a>
+        </nav>
+      </div>
+
+    </div>
+  </header>
+
 <nav class="breadcrumb" aria-label="Breadcrumb">
-  <a href="/">Home</a><span class="sep">/</span><a href="/field-notes.html">Field Notes</a><span class="sep">/</span><span aria-current="page">Neural Vocals: Voice Cloning, Timbre Transfer and Vocal Transformation</span>
+  <a href="./index.html">Home</a><span class="sep">/</span><a href="./field-notes.html">Field Notes</a><span class="sep">/</span><span aria-current="page">Neural Vocals: Voice Cloning, Timbre Transfer and Vocal Transformation</span>
 </nav>
 
 <header class="hero">
@@ -518,6 +587,12 @@
   <span class="section-num">02</span>
   <span class="section-line"></span>
 </div>
+<figure class="article-diagram">
+  <picture>
+    <source srcset="./assets/images/formant.webp" type="image/webp">
+    <img src="./assets/images/formant.png" alt="Formant shifting diagram illustrating vocal tract tuning and separation of pitch from timbre, showing original spectral peaks F1, F2, F3 compared to transposed formant peaks F1', F2', F3' with pitch preserved" width="1408" height="768" loading="lazy" decoding="async">
+  </picture>
+</figure>
 <h2>Reshaping the Signal</h2>
 
 <p>Formant shifting operates on a part of the voice most listeners have never consciously noticed but instantly react to: the resonant peaks created by the shape of the throat and mouth. Formants carry information about a speaker's size and physiology, independent of pitch. Shift them without touching pitch, and a voice reads as older, younger, larger, or smaller, while still hitting the same notes. It is one of the oldest tricks in vocal processing and one of the hardest to do without introducing a metallic or hollow artifact, which is exactly the problem neural approaches were built to solve. <a href="#src1" class="ref-marker">[1]</a></p>
