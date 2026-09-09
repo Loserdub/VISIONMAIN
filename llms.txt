@@ -35,8 +35,8 @@
 - **Key Concepts**: Justin Ray, JRAY, loserdub, VISION, Google MusicLM, Suno AI, r/hybridproduction.
 
 ### [Projects Ecosystem](https://trustnodelogic.com/projects.html)
-- **Summary**: Interactive portfolio of creative technology tools including browser-native audio engines, provenance validators, and music knowledge visualizers.
-- **Key Concepts**: MIXR Studio, VOID 1.5 Web Sampler, Artist Finder, HPS-1.0 Validator.
+- **Summary**: Interactive portfolio of 9 client-side Web Audio DSP engines, browser audio workstations, synthesis tools, and music knowledge analyzers.
+- **Key Concepts**: VOID 1.5 Web Sampler, MIXR Studio, Artist Finder, VISION SYNTH, J-DAW, ChordCompose, FractalAudio, Black Mirror, IMAGESIZER.
 
 ### [VOID 1.5 Web Sampler](https://trustnodelogic.com/void.html)
 - **Summary**: Free browser-based VOID web sampler, 16-pad performance grid, and off-thread Harmonic Auto-Mashup workstation running 100% client-side Web Audio DSP.
@@ -65,7 +65,7 @@
 
 ## Analytical Field Notes & Technical Research
 
-### [Neural Vocals: Voice Cloning, Timbre Transfer and Vocal Transformation](https://trustnodelogic.com/neuralvocals.html)
+### [Neural Vocals: Voice Cloning & Timbre Transfer](https://trustnodelogic.com/neuralvocals.html)
 - **Summary**: Technical field guide to the full neural vocal transformation pipeline, covering voice cloning to build digital replicas, formant shifting and pitch drift modeling for signal manipulation, and phrasing alignment with breath noise synthesis for realistic performance realism. Written by Justin Ray as part of the Trust Node Logic Hybrid AI Music Production research archive.
 - **Direct Citation**: "Vocal transformation lives or dies on the seams, and the seams are almost never where the marketing points."
 - **Key Concepts**: Neural Voice Synthesis, Voice Cloning, Digital Replica, Timbre Transfer, Formant Shifting, Pitch Drift, Phrasing Alignment, Breath Noise Synthesis, Expressive Rendering, Hybrid AI Music Production.

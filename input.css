@@ -244,3 +244,80 @@
 .whitespace-nowrap {
   white-space: nowrap;
 }
+
+/* 3. TECHNICAL FIELD NOTES & EDITORIAL ARTICLES */
+.field-note-card,
+aside.field-note {
+  max-width: 68ch;
+  margin: 1.75rem 0 2rem;
+  padding: 1.1rem 1.4rem;
+  background: #121417;
+  border-left: 3px solid #FF9F1C;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0px !important;
+}
+
+.field-note-card .label,
+aside.field-note .label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #FF9F1C;
+  margin-bottom: 0.5rem;
+}
+
+aside.field-note p {
+  margin: 0;
+  font-size: 0.98rem;
+  color: #EAEAEA;
+}
+
+.terms-chip,
+.terms-list li {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: #A1A1AA;
+  background: rgba(18, 20, 23, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0px !important;
+  padding: 0.35rem 0.65rem;
+  transition: all 0.2s ease;
+}
+
+.terms-chip:hover,
+.terms-list li:hover {
+  border-color: #FF9F1C;
+  color: #EAEAEA;
+}
+
+aside.author-colophon {
+  margin: 3.5rem 0 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: #121417;
+  border-left: 3px solid #FF9F1C;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  border-right: 1px solid rgba(255, 255, 255, 0.09);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 0px !important;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: #A1A1AA;
+}
+
+aside.author-colophon p {
+  margin: 0;
+  max-width: 100%;
+  color: #A1A1AA;
+}
+
+aside.author-colophon strong {
+  color: #EAEAEA;
+  font-weight: 600;
+}
+
+

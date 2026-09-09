@@ -295,34 +295,15 @@
  <!-- Main Stylesheet -->
  <link rel="stylesheet" href="./style.css">
 
- <!-- Modern Typography: JetBrains Mono + Space Grotesk + Caveat + DotGothic16 + Silkscreen -->
+ <!-- Modern Typography: JetBrains Mono + Space Grotesk -->
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
- <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DotGothic16&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700;800&family=Silkscreen&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
  
- <!-- Prefetch articles -->
+ <!-- Primary Route Speculative Prefetches (Secondary routes prefetched on idle/intent) -->
+ <link rel="prefetch" href="./field-notes.html">
  <link rel="prefetch" href="./music.html">
  <link rel="prefetch" href="./projects.html">
- <link rel="prefetch" href="./about.html">
- <link rel="prefetch" href="./what-is-hybrid.html">
- <link rel="prefetch" href="./services.html">
- <link rel="prefetch" href="./contact.html">
- <link rel="prefetch" href="./hybridproductionstandard.html">
- <link rel="prefetch" href="./mixrstudio.html">
- <link rel="prefetch" href="./hp2026.html">
- <link rel="prefetch" href="./saturation.html">
- <link rel="prefetch" href="./songstructure.html">
- <link rel="prefetch" href="./promptingthemachine.html">
- <link rel="prefetch" href="./lastnewgenre.html">
- <link rel="prefetch" href="./liquidears.html">
- <link rel="prefetch" href="./Suno101.html">
- <link rel="prefetch" href="./futureofhybrid.html">
- <link rel="prefetch" href="./machinehumanhybrid.html">
- <link rel="prefetch" href="./c2pa-music-provenance.html">
- <link rel="prefetch" href="./fingerprint.html">
- <link rel="prefetch" href="./may2026tools.html">
- <link rel="prefetch" href="./staccatoreview.html">
- <link rel="prefetch" href="./artistfinder.html">
 
  <style>
     /* Audio Equalizer Micro-Animation */
@@ -710,8 +691,11 @@
       align-items: baseline;
       justify-content: center;
       position: relative;
-      min-width: 3.2ch;
+      width: 2.92em;
+      min-width: 2.92em;
+      max-width: 2.92em;
       vertical-align: baseline;
+      text-align: center;
     }
 
     .cycling-grey-word {
@@ -723,6 +707,7 @@
                   filter 0.2s cubic-bezier(0.16, 1, 0.3, 1);
       will-change: opacity, transform, filter;
       text-decoration: none !important;
+      white-space: nowrap;
     }
 
     .cycling-grey-word.is-transitioning {
@@ -735,8 +720,9 @@
     .cycling-grey-word.font-modern {
       font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
       font-weight: 800;
-      letter-spacing: -0.04em;
+      letter-spacing: 0.115em;
       text-transform: uppercase;
+      font-size: 1em;
       color: #94A3B8;
     }
 
@@ -744,7 +730,8 @@
     .cycling-grey-word.font-japanese {
       font-family: 'DotGothic16', 'Hiragino Sans', 'Yu Gothic', sans-serif;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.39em;
+      font-size: 1.05em;
       color: #8E9AAF;
     }
 
@@ -753,18 +740,19 @@
       font-family: 'Georgia', 'Baskerville', 'Times New Roman', serif;
       font-weight: 700;
       font-style: italic;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.055em;
       text-transform: uppercase;
+      font-size: 1em;
       color: #A1A1AA;
     }
 
     /* 4. Expressive Cursive */
     .cycling-grey-word.font-cursive {
-      font-family: 'Caveat', 'Brush Script MT', cursive;
+      font-family: 'Brush Script MT', 'Segoe Script', 'Apple Chancery', cursive;
       font-weight: 700;
       font-style: italic;
-      letter-spacing: 0.04em;
-      font-size: 1.15em;
+      letter-spacing: 0.01em;
+      font-size: 0.92em;
       line-height: 0.85;
       color: #94A3B8;
     }
@@ -773,16 +761,18 @@
     .cycling-grey-word.font-wingdings {
       font-family: 'Wingdings', 'Wingdings 2', 'Wingdings 3', 'Segoe UI Symbol', 'Apple Symbols', monospace;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: -0.01em;
+      font-size: 0.94em;
       color: #71717A;
     }
 
-    /* 6. Dot Matrix / 8-Bit */
+    /* 6. Dot Matrix / Monospace Terminal */
     .cycling-grey-word.font-dotmatrix {
-      font-family: 'DotGothic16', 'Silkscreen', monospace;
+      font-family: 'Courier New', Courier, monospace;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
+      font-size: 1.01em;
       color: #71717A;
     }
 
@@ -790,8 +780,9 @@
     .cycling-grey-word.font-helvetica {
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-weight: 900;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.04em;
       text-transform: uppercase;
+      font-size: 1em;
       color: #8E9AAF;
     }
 
@@ -799,7 +790,8 @@
     .cycling-grey-word.font-braille {
       font-family: 'JetBrains Mono', 'Segoe UI Symbol', monospace;
       font-weight: 700;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.02em;
+      font-size: 0.95em;
       color: #64748B;
     }
 
@@ -915,7 +907,7 @@
   </div>
 
   <h1 class="text-3xl sm:text-6xl font-bold tracking-[-0.035em] text-[#EAEAEA] leading-[0.94] uppercase max-w-5xl">
-  THE FUTURE EXISTS IN THE <span class="cycling-grey-container"><span id="cycling-grey-target" class="cycling-grey-word font-modern" aria-label="GREY">GREY</span></span>.
+  THE FUTURE EXISTS IN THE <span class="inline-block whitespace-nowrap"><span class="cycling-grey-container"><span id="cycling-grey-target" class="cycling-grey-word font-modern" aria-label="GREY">GREY</span></span>.</span>
   </h1>
 
    <p class="mt-8 text-base sm:text-xl font-light text-[#A1A1AA] max-w-3xl leading-relaxed">
@@ -1417,6 +1409,82 @@
         }, 220);
       }, intervalMs);
     });
+  </script>
+
+  <!-- High-Performance Intelligent Prefetch Engine (Data-Saver & Intent Aware) -->
+  <script>
+    (function() {
+      if (navigator.connection && (navigator.connection.saveData || /(slow-2g|2g)/.test(navigator.connection.effectiveType))) {
+        return;
+      }
+
+      var prefetched = new Set();
+      document.querySelectorAll('link[rel="prefetch"]').forEach(function(link) {
+        if (link.href) prefetched.add(link.href);
+      });
+
+      function prefetchUrl(url) {
+        if (!url || prefetched.has(url)) return;
+        try {
+          var parsed = new URL(url, window.location.href);
+          if (parsed.origin !== window.location.origin) return;
+          if (!parsed.pathname.endsWith('.html') && parsed.pathname !== '/') return;
+          if (parsed.pathname === window.location.pathname) return;
+
+          prefetched.add(url);
+          var link = document.createElement('link');
+          link.rel = 'prefetch';
+          link.href = url;
+          link.as = 'document';
+          document.head.appendChild(link);
+        } catch (e) {}
+      }
+
+      var hoverTimer = null;
+      document.addEventListener('pointerenter', function(e) {
+        var anchor = e.target && e.target.closest ? e.target.closest('a') : null;
+        if (!anchor || !anchor.href) return;
+        hoverTimer = setTimeout(function() {
+          prefetchUrl(anchor.href);
+        }, 65);
+      }, true);
+
+      document.addEventListener('pointerleave', function() {
+        if (hoverTimer) clearTimeout(hoverTimer);
+      }, true);
+
+      document.addEventListener('touchstart', function(e) {
+        var anchor = e.target && e.target.closest ? e.target.closest('a') : null;
+        if (anchor && anchor.href) {
+          prefetchUrl(anchor.href);
+        }
+      }, { passive: true });
+
+      function initViewportPrefetch() {
+        if (!('IntersectionObserver' in window)) return;
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              var anchor = entry.target;
+              if (anchor && anchor.href) {
+                prefetchUrl(anchor.href);
+                observer.unobserve(anchor);
+              }
+            }
+          });
+        }, { rootMargin: '0px 0px 50px 0px' });
+
+        document.querySelectorAll('main a[href$=".html"]').forEach(function(a) {
+          observer.observe(a);
+        });
+      }
+
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(initViewportPrefetch, { timeout: 3000 });
+      } else {
+        setTimeout(initViewportPrefetch, 2000);
+      }
+    })();
   </script>
 </body>
 </html>

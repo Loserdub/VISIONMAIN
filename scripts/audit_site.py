@@ -146,6 +146,7 @@ def main():
     
     key_files = [
         'staccatoreview.html',
+        'neuralvocals.html',
         'field-notes.html',
         'index.html',
         'projects.html',
@@ -176,7 +177,7 @@ def main():
             else:
                 print(f"  [Standards]: PASS (Zero em-dashes, Meta description 120-155 chars match)")
                 
-            if kf in ['staccatoreview.html']:
+            if kf in ['staccatoreview.html', 'neuralvocals.html']:
                 laa_errors = audit_laa_v2(kf)
                 if laa_errors:
                     print(f"  [LAA-v2 Errors]: {laa_errors}")
@@ -186,8 +187,8 @@ def main():
     # Check sitemap
     with open('sitemap.xml', 'r', encoding='utf-8') as f:
         sitemap_txt = f.read()
-    if 'staccatoreview.html' in sitemap_txt and 'void.html' in sitemap_txt:
-        print("\n[Sitemap]: PASS (staccatoreview.html and void.html present with lastmod)")
+    if 'staccatoreview.html' in sitemap_txt and 'neuralvocals.html' in sitemap_txt and 'void.html' in sitemap_txt:
+        print("\n[Sitemap]: PASS (staccatoreview.html, neuralvocals.html, and void.html present with lastmod)")
     else:
         print("\n[Sitemap]: FAIL (Key pages missing from sitemap)")
         
