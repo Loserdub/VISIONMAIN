@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" fill="none">
+  <!-- Bar 1: Electric Cyan Low-Band / Segment 1 -->
+  <rect x="70" y="32" width="44" height="56" fill="rgba(0, 217, 255, 0.18)" stroke="#00D9FF" stroke-width="1.5" />
+  
+  <!-- Separator Line 1: Left boundary of second square -->
+  <line x1="131" y1="22" x2="131" y2="98" stroke="rgba(255, 255, 255, 0.35)" stroke-width="1.5" stroke-dasharray="3 2" />
+
+  <!-- Second Square: Vibrant Amber Mid-Band / Segment 2 (Exact 44x44 Square) -->
+  <rect x="142" y="38" width="44" height="44" fill="rgba(255, 159, 28, 0.22)" stroke="#FF9F1C" stroke-width="1.5" />
+
+  <!-- Separator Line 2: Right boundary of second square -->
+  <line x1="203" y1="22" x2="203" y2="98" stroke="rgba(255, 255, 255, 0.35)" stroke-width="1.5" stroke-dasharray="3 2" />
+
+  <!-- Bar 3: Neon Emerald High-Band / Segment 3 -->
+  <rect x="214" y="32" width="44" height="56" fill="rgba(57, 255, 20, 0.18)" stroke="#39FF14" stroke-width="1.5" />
+</svg>
