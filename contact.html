@@ -610,8 +610,8 @@
  this.vy = rnd(0.12, 0.5);
  this.r = rnd(1.1, 2.8);
  this.alpha = rnd(0.22, 0.7);
- const hue = rnd(28, 45);
- this.color = `hsla(${hue},100%,60%,`;
+ const hue = rnd(200, 230);
+ this.color = `hsla(${hue},18%,28%,`;
  }
  update() {
  const dx = this.x - mouse.x, dy = this.y - mouse.y;
@@ -638,16 +638,9 @@
 
  /* ── Aurora blobs ── */
  const blobs = [
- { x: 0.15, y: 0.35, r: 0.32, hue: 36, spd: 0.00035 },
- { x: 0.75, y: 0.55, r: 0.28, hue: 200, spd: 0.00028 },
- { x: 0.45, y: 0.78, r: 0.24, hue: 260, spd: 0.00042 },
- ];
-
- /* ── Waveform bands ── */
- const waves = [
- { amp: 28, freq: 0.0032, spd: 0.0008, yOff: 0.54, hue: 36, alpha: 0.09 },
- { amp: 18, freq: 0.0025, spd: 0.0011, yOff: 0.64, hue: 30, alpha: 0.06 },
- { amp: 12, freq: 0.0019, spd: 0.0014, yOff: 0.72, hue: 22, alpha: 0.04 },
+ { x: 0.15, y: 0.35, r: 0.32, hue: 215, spd: 0.00035 },
+ { x: 0.75, y: 0.55, r: 0.28, hue: 230, spd: 0.00028 },
+ { x: 0.45, y: 0.78, r: 0.24, hue: 245, spd: 0.00042 },
  ];
 
  function drawBlobs(ts) {
@@ -657,30 +650,14 @@
  const cx = b.x * W + ox, cy = b.y * H + oy;
  const rad = b.r * Math.min(W, H);
  const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, rad);
- g.addColorStop(0, `hsla(${b.hue},80%,55%,0.17)`);
- g.addColorStop(0.5, `hsla(${b.hue},70%,45%,0.07)`);
- g.addColorStop(1, `hsla(${b.hue},60%,40%,0)`);
+ g.addColorStop(0, `hsla(${b.hue},22%,18%,0.18)`);
+ g.addColorStop(0.5, `hsla(${b.hue},18%,14%,0.07)`);
+ g.addColorStop(1, `hsla(${b.hue},14%,12%,0)`);
  ctx.beginPath();
  ctx.ellipse(cx, cy, rad, rad * 0.6, Math.sin(ts * 0.0002 + i) * 0.5, 0, Math.PI * 2);
  ctx.fillStyle = g;
  ctx.fill();
  });
- }
-
- function drawWave(w, ts) {
- ctx.beginPath();
- for (let x = 0; x <= W; x += 3) {
- const mdist = Math.abs(x - mouse.x);
- const mi = Math.max(0, 1 - mdist / 280) * 16;
- const y = H * w.yOff
- + Math.sin(x * w.freq + ts * w.spd * 1000) * w.amp
- + Math.sin(x * w.freq * 1.8 + ts * w.spd * 700) * w.amp * 0.35
- + mi * Math.sin(x * 0.025 + ts * 0.001);
- x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
- }
- ctx.strokeStyle = `hsla(${w.hue},90%,62%,${w.alpha})`;
- ctx.lineWidth = 1.5;
- ctx.stroke();
  }
 
  function drawConnections() {
@@ -705,7 +682,6 @@
  function loop(ts) {
  ctx.clearRect(0, 0, W, H);
  drawBlobs(ts);
- waves.forEach(w => drawWave(w, ts));
  drawConnections();
  particles.forEach(p => { p.update(); p.draw(); });
  requestAnimationFrame(loop);

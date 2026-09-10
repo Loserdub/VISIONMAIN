@@ -54,7 +54,7 @@
 - **Summary**: Direct line for technical inquiries, research collaborations, and production commissions via trustnodelogic@gmail.com.
 
 ### [Field Notes & Research Archive](https://trustnodelogic.com/field-notes.html)
-- **Summary**: Central category hub and archive indexing all 20 research papers, technical analyses, prompt engineering guides, and streaming economic reports.
+- **Summary**: Central category hub and archive indexing all 21 research papers, technical analyses, prompt engineering guides, and streaming economic reports.
 - **Key Concepts**: Field Notes, Hybrid AI Music Production, HPS-1.0, C2PA Provenance, Multi-Agent DAW Systems.
 
 ### [What is Hybrid Music Production?](https://trustnodelogic.com/what-is-hybrid.html)
@@ -64,6 +64,11 @@
 ---
 
 ## Analytical Field Notes & Technical Research
+
+### [Suno v6: The Migration Nobody Could Opt Out Of](https://trustnodelogic.com/sunov6.html)
+- **Summary**: Technical and architectural field report on the Suno v6 model migration, analyzing the retirement of legacy engines, training datasets licensed from Warner/BMG/Believe, conversational edit-mode workflows, stem isolation, and commercial licensing boundaries across free and paid tiers. Written by Justin Ray as part of the Trust Node Logic Hybrid AI Music Production research archive.
+- **Direct Citation**: "Generation was never the scarce resource here. What v6 is actually selling is control over material you already made, and control is a harder thing to get consistently right on day one than raw output ever was."
+- **Key Concepts**: Suno v6, Edit-First Audio Generation, AI Model Migration, Music Copyright Licensing, Commercial Rights, Hybrid AI Music Production.
 
 ### [Neural Vocals: Voice Cloning & Timbre Transfer](https://trustnodelogic.com/neuralvocals.html)
 - **Summary**: Technical field guide to the full neural vocal transformation pipeline, covering voice cloning to build digital replicas, formant shifting and pitch drift modeling for signal manipulation, and phrasing alignment with breath noise synthesis for realistic performance realism. Written by Justin Ray as part of the Trust Node Logic Hybrid AI Music Production research archive.

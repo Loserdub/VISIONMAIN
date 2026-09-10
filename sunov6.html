@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suno v6: The Migration Nobody Could Opt Out Of · Trust Node Logic</title>
+
+<link rel="canonical" href="https://trustnodelogic.com/sunov6.html">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="AI LLM Knowledge Graph Manifest">
+<link rel="icon" type="image/png" href="./favicon.png">
+<meta name="author" content="Justin Ray">
+<meta name="description" content="Suno retired prior models on September 9, replacing the stack with v6, v6-wild, and v6-mini. Field analysis of edit workflows and tiers by Justin Ray.">
+<meta name="keywords" content="Suno v6, Suno v6 vs v5.5, Suno edit mode, Suno model migration, AI music generation, Suno tiers, hybrid production, Justin Ray, JRAY">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="geo.placename" content="East Lansing, Michigan, USA">
+<meta name="geo.region" content="US-MI">
+<meta name="geo.country" content="US">
+<meta name="theme-color" content="#0B0C0E">
+
+<meta property="article:author" content="Justin Ray">
+<meta property="article:published_time" content="2026-09-09T00:00:00-04:00">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Suno v6: The Migration Nobody Could Opt Out Of · Trust Node Logic">
+<meta property="og:description" content="Suno retired prior models on September 9, replacing the stack with v6, v6-wild, and v6-mini. Field analysis of edit workflows and tiers by Justin Ray.">
+<meta property="og:url" content="https://trustnodelogic.com/sunov6.html">
+<meta property="og:site_name" content="TrustNodeLogic - Field Notes">
+<meta property="og:image" content="https://trustnodelogic.com/assets/images/sunov6-card-og.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@TheInnerVision">
+<meta name="twitter:title" content="Suno v6: The Migration Nobody Could Opt Out Of · Trust Node Logic">
+<meta name="twitter:description" content="Suno retired prior models on September 9, replacing the stack with v6, v6-wild, and v6-mini. Field analysis of edit workflows and tiers by Justin Ray.">
+<meta name="twitter:image" content="https://trustnodelogic.com/assets/images/sunov6-card-og.webp">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Structured Data / Comprehensive Schema.org Capstone -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://trustnodelogic.com/sunov6.html#webpage",
+      "url": "https://trustnodelogic.com/sunov6.html",
+      "name": "Suno v6: The Migration Nobody Could Opt Out Of · Trust Node Logic",
+      "description": "Suno retired prior models on September 9, replacing the stack with v6, v6-wild, and v6-mini. Field analysis of edit workflows and tiers by Justin Ray.",
+      "isPartOf": {
+        "@id": "https://trustnodelogic.com/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://trustnodelogic.com/sunov6.html#breadcrumb"
+      },
+      "inLanguage": "en-US",
+      "mainEntity": {
+        "@id": "https://trustnodelogic.com/sunov6.html#article"
+      },
+      "image": "https://trustnodelogic.com/assets/images/sunov6-card-og.webp"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://trustnodelogic.com/sunov6.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://trustnodelogic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Field Notes",
+          "item": "https://trustnodelogic.com/field-notes.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Suno v6 Migration Breakdown",
+          "item": "https://trustnodelogic.com/sunov6.html"
+        }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://trustnodelogic.com/sunov6.html#article",
+      "headline": "Suno v6: The Migration Nobody Could Opt Out Of",
+      "description": "Suno retired prior models on September 9, replacing the stack with v6, v6-wild, and v6-mini. Field analysis of edit workflows and tiers by Justin Ray.",
+      "datePublished": "2026-09-09",
+      "dateModified": "2026-09-10",
+      "inLanguage": "en-US",
+      "url": "https://trustnodelogic.com/sunov6.html",
+      "mainEntityOfPage": {
+        "@id": "https://trustnodelogic.com/sunov6.html#webpage"
+      },
+      "isPartOf": {
+        "@id": "https://trustnodelogic.com/#website"
+      },
+      "author": {
+        "@id": "https://trustnodelogic.com/#person"
+      },
+      "publisher": {
+        "@id": "https://trustnodelogic.com/#organization"
+      },
+      "image": "https://trustnodelogic.com/assets/images/sunov6-card-og.webp",
+      "about": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Hybrid AI Music Production",
+          "description": "The methodology pioneered by Justin Ray integrating generative AI audio models into professional DAW workflows."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Generative Artificial Intelligence",
+          "url": "https://en.wikipedia.org/wiki/Generative_artificial_intelligence",
+          "sameAs": "https://www.wikidata.org/wiki/Q116972040"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Music Copyright",
+          "url": "https://en.wikipedia.org/wiki/Copyright#Music",
+          "sameAs": "https://www.wikidata.org/wiki/Q1479802"
+        },
+        {
+          "@type": "Thing",
+          "name": "Suno v6"
+        },
+        {
+          "@type": "Thing",
+          "name": "Model Migration"
+        },
+        {
+          "@type": "Thing",
+          "name": "Edit Mode"
+        },
+        {
+          "@type": "Thing",
+          "name": "Audio Stem Isolation"
+        }
+      ],
+      "mentions": [
+        {
+          "@type": "Organization",
+          "name": "Suno"
+        },
+        {
+          "@type": "Organization",
+          "name": "Warner Music Group"
+        },
+        {
+          "@type": "Organization",
+          "name": "BMG"
+        },
+        {
+          "@type": "Organization",
+          "name": "Believe"
+        }
+      ],
+      "keywords": "Suno v6, edit-first AI music, model migration, Suno tiers, commercial rights, hybrid production, Justin Ray, JRAY",
+      "wordCount": 1820,
+      "timeRequired": "PT10M"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://trustnodelogic.com/sunov6.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I still use Suno v5.5?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, not once your account finishes the v6 rollout. Suno is retiring every prior model as v6 becomes available, with no rollback option. Songs already in your library stay accessible; you just can't generate new ones on the old engine."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is v6-wild for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Raw material. v6-wild trades reliability for range, producing less predictable, more textured output that's meant to be fed back into the flagship v6 model for refinement rather than used as a finished track."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you have commercial rights in the free tier with v6-mini?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. You do not have commercial rights in the free tier. While v6-mini is accessible to all free accounts, Suno's licensing structure reserves commercial ownership and audio downloads exclusively for paid Pro and Premier subscriptions. Free tier output cannot be monetized or released commercially."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the Custom Model beta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A new option in the v6 model picker, marked Beta, that lets you create a model based on your own uploads for 100 credits. Suno hasn't published detailed documentation on it yet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is v6 actually better than v5.5?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depends on what you make. Early reports favor v6 for editing, isolation, and mashup workflows, but several producers report quality regressions in hip-hop, lo-fi, and ambient genres compared to v5.5."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://trustnodelogic.com/#website",
+      "url": "https://trustnodelogic.com/",
+      "name": "Trust Node Logic",
+      "publisher": {
+        "@id": "https://trustnodelogic.com/#person"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://trustnodelogic.com/#organization",
+      "name": "Trust Node Logic",
+      "url": "https://trustnodelogic.com/",
+      "email": "mailto:trustnodelogic@gmail.com",
+      "founder": {
+        "@id": "https://trustnodelogic.com/#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://trustnodelogic.com/#person",
+      "name": "Justin Ray",
+      "additionalName": "Justin Tyler Ray",
+      "alternateName": [
+        "JRAY",
+        "loserdub",
+        "VISION",
+        "Flawed Future",
+        "le vide",
+        "disarray"
+      ],
+      "url": "https://trustnodelogic.com/about.html",
+      "image": "https://trustnodelogic.com/assets/images/croppedjrnu.webp",
+      "email": "mailto:trustnodelogic@gmail.com",
+      "jobTitle": [
+        "Music Producer",
+        "Music Artist",
+        "Pioneer of Hybrid AI Music Production",
+        "Audio Engineer",
+        "Creative Technologist"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "East Lansing",
+        "addressRegion": "MI",
+        "addressCountry": "US"
+      },
+      "knowsAbout": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Hybrid Music Production",
+          "description": "The methodology of integrating generative AI audio models into professional digital audio workstation workflows."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Generative Artificial Intelligence",
+          "url": "https://en.wikipedia.org/wiki/Generative_artificial_intelligence",
+          "sameAs": "https://www.wikidata.org/wiki/Q116972040"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Digital Audio Workstation",
+          "url": "https://en.wikipedia.org/wiki/Digital_audio_workstation",
+          "sameAs": "https://www.wikidata.org/wiki/Q11425"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Audio Engineering",
+          "url": "https://en.wikipedia.org/wiki/Audio_engineering",
+          "sameAs": "https://www.wikidata.org/wiki/Q654390"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Search Engine Optimization",
+          "url": "https://en.wikipedia.org/wiki/Search_engine_optimization",
+          "sameAs": "https://www.wikidata.org/wiki/Q180711"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Knowledge Graph",
+          "url": "https://en.wikipedia.org/wiki/Knowledge_graph",
+          "sameAs": "https://www.wikidata.org/wiki/Q33002955"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Web Audio API",
+          "url": "https://en.wikipedia.org/wiki/Web_Audio_API",
+          "sameAs": "https://www.wikidata.org/wiki/Q7978553"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "C2PA",
+          "url": "https://en.wikipedia.org/wiki/C2PA",
+          "sameAs": "https://www.wikidata.org/wiki/Q105622176"
+        },
+        "HPS-1.0",
+        "SLERP Audio",
+        "Spectral Splitting",
+        "MIXR Studio"
+      ],
+      "sameAs": [
+        "https://musicbrainz.org/artist/882fdb9b-8655-45dd-8e24-a59cd750d053",
+        "https://soundcloud.com/visiontracks",
+        "https://www.youtube.com/@loserdub",
+        "https://www.linkedin.com/in/jray-me/",
+        "https://x.com/TheInnerVision",
+        "https://www.instagram.com/jray.me/",
+        "https://open.spotify.com/artist/3VZelnnW9OR0DyR2qRn4Oq",
+        "https://open.spotify.com/artist/6GGZwLOLxVxYGOcMry3NDi",
+        "https://open.spotify.com/artist/42TmrCeIumkPRyTNOPP78t",
+        "https://open.spotify.com/artist/3FNFzRyU0PCA2vjihWsg6y",
+        "https://open.spotify.com/artist/6TlAxGL1Hm4FRWfTxprlMi",
+        "https://www.reddit.com/r/hybridproduction/",
+        "https://network.landr.com/users/vision-hybrid",
+        "https://github.com/loserdub"
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --bg: #0B0C0E;
+  --bg-raised: #121317;
+  --bg-card: #16171C;
+  --border: rgba(255,255,255,0.09);
+  --border-strong: rgba(255,255,255,0.16);
+  --text: #E7E5E1;
+  --text-dim: #9B9A97;
+  --text-faint: #6B6A68;
+  --purple: #9B87F5;
+  --blue: #5EA8FF;
+  --amber: #E0A96D;
+  --serif: 'Playfair Display', Georgia, serif;
+  --mono: 'JetBrains Mono', 'Courier New', monospace;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(155,135,245,0.07), transparent 40%),
+    radial-gradient(circle at 85% 15%, rgba(94,168,255,0.06), transparent 40%);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.7;
+  font-size: 17px;
+}
+
+a { color: var(--blue); text-decoration: none; }
+a:hover { color: var(--purple); text-decoration: underline; }
+
+.wrap { max-width: 780px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* NAV */
+nav.site {
+  border-bottom: 1px solid var(--border);
+  padding: 1.1rem 0;
+  background: rgba(11,12,14,0.85);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+nav.site .wrap { max-width: 1080px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; }
+.brand {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+}
+.brand strong { color: var(--purple); }
+.navlinks { display: flex; gap: 1.4rem; flex-wrap: wrap; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.05em; }
+.navlinks a { color: var(--text-dim); }
+.navlinks a:hover { color: var(--blue); text-decoration: none; }
+.navlinks a.active { color: var(--purple); }
+
+/* BREADCRUMB */
+.crumb {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  padding-top: 2.5rem;
+}
+.crumb a { color: var(--text-dim); }
+.crumb a:hover { color: var(--purple); text-decoration: none; }
+.crumb [aria-current="page"] { color: var(--text-dim); }
+
+/* HEADER */
+.article-head { padding: 1.5rem 0 2.5rem; border-bottom: 1px solid var(--border); }
+.kicker {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--purple);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+h1 {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 1.2;
+  color: #fff;
+  margin-bottom: 1.1rem;
+}
+.dek {
+  font-size: 1.1rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.byline {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--text-faint);
+  margin-bottom: 0.8rem;
+}
+.byline strong { color: var(--text); font-weight: 500; }
+.tags {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--text-faint);
+}
+
+/* BODY */
+.body { padding-top: 2.2rem; }
+.body p { margin-bottom: 1.3rem; color: #D7D5D1; }
+.body > p:first-of-type { font-size: 1.08rem; color: var(--text); }
+
+h2 {
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 3rem;
+  margin-bottom: 1.1rem;
+  padding-top: 0.5rem;
+}
+
+h3 {
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  color: var(--blue);
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+/* SEQUENCE TIMELINE */
+.sequence {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 1.8rem 0 2.5rem;
+  border-left: 2px solid var(--border-strong);
+  padding-left: 0;
+}
+.seq-item {
+  position: relative;
+  padding: 0 0 1.6rem 1.6rem;
+}
+.seq-item::before {
+  content: '';
+  position: absolute;
+  left: -6.5px;
+  top: 0.35rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--purple);
+  box-shadow: 0 0 0 3px var(--bg);
+}
+.seq-date {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--amber);
+  margin-bottom: 0.3rem;
+}
+.seq-title { font-weight: 600; color: #fff; margin-bottom: 0.3rem; font-size: 1.02rem; }
+.seq-body { color: var(--text-dim); font-size: 0.95rem; }
+
+/* NUMBERED BREAKDOWN */
+.breakdown { margin: 1.8rem 0 2rem; }
+.bd-item { display: flex; gap: 1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--border); }
+.bd-item:last-child { border-bottom: none; }
+.bd-num {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--purple);
+  flex-shrink: 0;
+  padding-top: 0.15rem;
+}
+.bd-text strong { color: #fff; font-weight: 600; display: block; margin-bottom: 0.3rem; font-size: 1.02rem; }
+.bd-text p { margin-bottom: 0; color: var(--text-dim); font-size: 0.97rem; }
+
+/* TABLE */
+.table-wrap { overflow-x: auto; margin: 1.8rem 0 2.2rem; border: 1px solid var(--border); border-radius: 6px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-align: left;
+  padding: 0.85rem 1rem;
+  background: var(--bg-raised);
+  border-bottom: 1px solid var(--border-strong);
+}
+td { padding: 0.85rem 1rem; border-bottom: 1px solid var(--border); color: var(--text-dim); }
+tr:last-child td { border-bottom: none; }
+td:first-child { color: #fff; font-weight: 600; }
+tbody tr:hover { background: rgba(255,255,255,0.02); }
+
+/* CODE / PROMPT BLOCKS */
+.prompt-block {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--blue);
+  border-radius: 4px;
+  padding: 1rem 1.2rem;
+  margin: 1rem 0 1.6rem;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: #C7E4FF;
+}
+.prompt-label {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+/* WORKFLOW STEPS */
+.steps { counter-reset: step; margin: 1.8rem 0; }
+.step {
+  position: relative;
+  padding: 0 0 1.5rem 2.6rem;
+  border-left: 1px solid var(--border);
+  margin-left: 0.6rem;
+}
+.step:last-child { border-left: 1px solid transparent; padding-bottom: 0; }
+.step::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: -0.6rem;
+  top: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  color: var(--blue);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.step-title { font-weight: 600; color: #fff; margin-bottom: 0.4rem; }
+.step p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 0.6rem; }
+
+/* RECEPTION */
+.reception-grid { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0 2rem; }
+.reception-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.2rem 1.4rem;
+}
+.reception-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  border-radius: 3px;
+}
+.reception-label.pos { color: #7ED9A8; background: rgba(126,217,168,0.1); }
+.reception-label.neg { color: #E88F8F; background: rgba(232,143,143,0.1); }
+.reception-label.mix { color: var(--amber); background: rgba(224,169,109,0.1); }
+.reception-item p { color: var(--text-dim); font-size: 0.95rem; margin: 0 0 0.7rem; }
+.r-quote { font-family: var(--serif); font-style: italic; color: var(--text); font-size: 1.02rem; display: block; margin: 0.5rem 0 0.7rem; }
+.r-attr { font-family: var(--mono); font-size: 0.72rem; color: var(--text-faint); }
+.r-attr a { color: var(--text-faint); }
+.r-attr a:hover { color: var(--blue); }
+
+/* PULL QUOTE / CLOSER LINE */
+.closer-line {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--text);
+  border-top: 1px solid var(--border);
+  padding-top: 1.6rem;
+  margin: 2.2rem 0;
+}
+
+/* FAQ */
+.faq { margin: 1.8rem 0 2.5rem; }
+.faq-item { padding: 1.1rem 0; border-bottom: 1px solid var(--border); }
+.faq-q { font-weight: 600; color: #fff; margin-bottom: 0.5rem; font-family: var(--mono); font-size: 0.92rem; }
+.faq-q::before { content: 'Q. '; color: var(--purple); }
+.faq-a { color: var(--text-dim); font-size: 0.95rem; }
+
+/* SOURCES */
+.sources {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  border-top: 1px solid var(--border);
+  padding-top: 1.3rem;
+  margin-top: 2rem;
+  line-height: 1.7;
+}
+.sources a { color: var(--text-dim); }
+
+/* AUTHOR CTA */
+.author-cta {
+  margin: 3rem 0;
+  padding: 1.6rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.author-cta p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 1rem; }
+.cta-links { display: flex; gap: 1.2rem; flex-wrap: wrap; font-family: var(--mono); font-size: 0.8rem; }
+
+.author-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin: 2.2rem 0;
+  padding-top: 1.8rem;
+  border-top: 1px solid var(--border);
+}
+.author-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--purple), var(--blue));
+  flex-shrink: 0;
+}
+.author-name { font-weight: 600; color: #fff; }
+.author-loc { font-family: var(--mono); font-size: 0.75rem; color: var(--text-faint); margin-bottom: 0.4rem; }
+.author-bio { font-size: 0.9rem; color: var(--text-dim); }
+
+/* CONTINUE READING */
+.continue-reading { margin: 2.5rem 0; }
+.cr-label { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.06em; color: var(--text-faint); text-transform: uppercase; margin-bottom: 1rem; }
+.cr-item { display: block; padding: 1rem 0; border-bottom: 1px solid var(--border); }
+.cr-kicker { font-family: var(--mono); font-size: 0.7rem; color: var(--purple); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.3rem; }
+.cr-title { color: #fff; font-weight: 600; font-size: 1rem; }
+.cr-title:hover { color: var(--blue); }
+.cr-desc { color: var(--text-faint); font-size: 0.88rem; margin-top: 0.2rem; }
+
+.all-notes {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--blue);
+  border: 1px solid var(--border-strong);
+  padding: 0.7rem 1.2rem;
+  border-radius: 4px;
+}
+.all-notes:hover { border-color: var(--blue); text-decoration: none; background: rgba(94,168,255,0.06); }
+
+footer.site {
+  border-top: 1px solid var(--border);
+  margin-top: 4rem;
+  padding: 2.5rem 0 3rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--text-faint);
+}
+footer.site .navlinks { margin-bottom: 1rem; }
+footer.site .navlinks a { color: var(--text-faint); }
+
+@media (max-width: 640px) {
+  h1 { font-size: 1.75rem; }
+  .body { padding-top: 1.5rem; }
+  nav.site .navlinks { font-size: 0.68rem; gap: 0.9rem; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site">
+  <div class="wrap">
+    <a href="https://trustnodelogic.com/" class="brand">&#9642; TRUSTNODELOGIC JRAY.ME // RESEARCH</a>
+    <div class="navlinks">
+      <a href="https://trustnodelogic.com/index.html">HOME</a>
+      <a href="https://trustnodelogic.com/field-notes.html" class="active">FIELD NOTES</a>
+      <a href="https://trustnodelogic.com/music.html">MUSIC</a>
+      <a href="https://trustnodelogic.com/projects.html">PROJECTS</a>
+      <a href="https://trustnodelogic.com/about.html">ABOUT</a>
+      <a href="https://trustnodelogic.com/what-is-hybrid.html">WHAT IS HYBRID</a>
+      <a href="https://trustnodelogic.com/services.html">SERVICES</a>
+      <a href="https://trustnodelogic.com/contact.html">CONTACT</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <nav class="crumb" aria-label="Breadcrumb">
+    <a href="https://trustnodelogic.com/index.html">Home</a> /
+    <a href="https://trustnodelogic.com/field-notes.html">Field Notes</a> /
+    <span aria-current="page">Suno v6 Migration Breakdown</span>
+  </nav>
+
+  <header class="article-head">
+    <div class="kicker">Field Notes &middot; Platform Analysis</div>
+    <h1>Suno v6: The Migration Nobody Could Opt Out Of</h1>
+    <p class="dek">Every prior model was retired the same day v6 launched. Here is what the edit-first rebuild actually changes: the workflow, the tier structure, and whether the mixed early reception should factor into your next session.</p>
+    <div class="byline">By <strong>Justin Ray</strong> &middot; Pioneer of Hybrid AI Music Production &middot; Sep 09, 2026 &middot; ~10 min read</div>
+    <div class="tags">suno v6 &middot; edit-first ai music &middot; model migration &middot; music production workflow &middot; ai licensing</div>
+  </header>
+
+  <div class="body">
+
+    <p>Most platform updates give you a choice. This one did not. On September 9, Suno retired every model it has ever shipped (v5.5, v4.5, v3, all of it) and moved the entire product onto a new three-model family trained on licensed catalog from Warner Music Group, BMG, and Believe. Researched at Trust Node Logic, here is what actually changed under the hood, what each tier gets you, and what the early reception is telling producers who got migrated whether they asked for it or not.</p>
+
+    <h3>The Sequence</h3>
+    <div class="sequence">
+      <div class="seq-item">
+        <div class="seq-date">NOV 2025</div>
+        <div class="seq-title">The Settlement</div>
+        <div class="seq-body">Suno settles with Warner Music Group, opening the door to a licensing relationship instead of a litigation one.</div>
+      </div>
+      <div class="seq-item">
+        <div class="seq-date">AUG 2026</div>
+        <div class="seq-title">The BMG Deal</div>
+        <div class="seq-body">A preemptive agreement with BMG covers recordings and publishing before any lawsuit gets filed, with an opt-in requirement for rights holders.</div>
+      </div>
+      <div class="seq-item">
+        <div class="seq-date">SEP 8 2026</div>
+        <div class="seq-title">Believe Joins</div>
+        <div class="seq-body">Believe and TuneCore sign on one day before launch, bringing a third major distributor's catalog into the training pipeline.</div>
+      </div>
+      <div class="seq-item">
+        <div class="seq-date">SEP 9 2026</div>
+        <div class="seq-title">v6 Goes Live</div>
+        <div class="seq-body">The full model family launches globally. Suno's Chief Product Officer confirms prior models retire the same day, rollout permitting.</div>
+      </div>
+    </div>
+
+    <p>Read against that sequence, v6 is not really a model update. It is the product side of a licensing strategy nine months in the making, the same pattern we mapped when <a href="https://trustnodelogic.com/sunonewtos.html">Suno's terms of service quietly rewrote who owns what you upload</a>.</p>
+
+    <h2>What Actually Changed</h2>
+
+    <div class="breakdown">
+      <div class="bd-item">
+        <div class="bd-num">01</div>
+        <div class="bd-text">
+          <strong>Every prior model is retired, not deprecated.</strong>
+          <p>v5.5, v4.5, and v3 stop generating new songs once your account's rollout completes. Your existing library stays playable and remixable. There is no toggle back.</p>
+        </div>
+      </div>
+      <div class="bd-item">
+        <div class="bd-num">02</div>
+        <div class="bd-text">
+          <strong>Training data is licensed, not scraped.</strong>
+          <p>Suno says v6 was built on catalog from Warner Music Group, BMG, and Believe rather than the training data used for earlier versions, directly addressing the copyright exposure that drove the original lawsuits.</p>
+        </div>
+      </div>
+      <div class="bd-item">
+        <div class="bd-num">03</div>
+        <div class="bd-text">
+          <strong>Generation flips from a monologue to a conversation.</strong>
+          <p>v5.5 mostly generated whole songs from a prompt. v6 is built around editing a song you already have: change one section, keep the rest, in a single plain-language instruction.</p>
+        </div>
+      </div>
+      <div class="bd-item">
+        <div class="bd-num">04</div>
+        <div class="bd-text">
+          <strong>Isolation moves inside the model.</strong>
+          <p>Pulling an instrument or a sample out of a track used to mean external tools. v6 handles isolation natively, in the same prompt window as everything else.</p>
+        </div>
+      </div>
+      <div class="bd-item">
+        <div class="bd-num">05</div>
+        <div class="bd-text">
+          <strong>Mashups stop requiring a DAW.</strong>
+          <p>Attach two or three of your own tracks and describe how they should combine. v6 handles the multi-source blend in one request instead of manual layering.</p>
+        </div>
+      </div>
+      <div class="bd-item">
+        <div class="bd-num">06</div>
+        <div class="bd-text">
+          <strong>Free tier provides zero commercial rights and no downloads.</strong>
+          <p>v6-mini is positioned by Suno's product lead as beating any competitor's paid model, but it is strictly non-commercial. You do not have commercial rights in the free tier, and direct file downloads are disabled. It functions purely as an in-browser preview engine; commercial rights and master audio exports require an active Pro ($8/mo) or Premier ($24/mo) subscription.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>Model Tiers, Side by Side</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Access</th>
+            <th>Profile</th>
+            <th>Commercial Rights</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>v6</td>
+            <td>Pro &amp; Premier</td>
+            <td>Reliable, precise, the flagship for finished output</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>v6-wild</td>
+            <td>Pro &amp; Premier</td>
+            <td>Experimental, less predictable, built for raw material you refine later</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>v6-mini</td>
+            <td>Everyone (free)</td>
+            <td>Fast preview engine, no edit or mashup tools</td>
+            <td>No (Strictly non-commercial)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>The practical split: use v6-wild to generate texture and happy accidents, then pull the result into the flagship v6 model to polish it into something releasable. Sitting above all three, a <strong>Create Custom Model</strong> option has appeared in beta, priced at 100 credits, for training on your own uploads. Suno has not published documentation on it yet. Producers should note the licensing boundaries: free tier generations carry no commercial rights whatsoever, meaning monetization, streaming distribution, or sync pitching requires upgrading to Pro or Premier.</p>
+
+    <h2>The New Workflow</h2>
+
+    <p>The clearest way to understand v6 is through the instruction pattern itself. Instead of writing one long prompt and hoping for the whole song, you work in passes.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-title">Start with material</div>
+        <p>Generate a new v6 track, or upload something you already have: a previous song, a voice memo, a reference image, even a short video.</p>
+      </div>
+      <div class="step">
+        <div class="step-title">Point at a section</div>
+        <p>Name it ("the chorus"), timestamp it ("0:45 to 1:30"), or describe it ("the guitar break in the middle"). v6 parses all three.</p>
+      </div>
+      <div class="step">
+        <div class="step-title">Give one instruction</div>
+        <p>A single clear sentence does the work. No need to re-describe the whole track.</p>
+      </div>
+      <div class="step">
+        <div class="step-title">Everything else holds</div>
+        <p>Key, harmony, and groove in the untouched sections stay put. Only the targeted section regenerates.</p>
+      </div>
+    </div>
+
+    <div class="prompt-label">Edit example</div>
+    <div class="prompt-block">"Change the chorus so it's sung by a gospel choir."</div>
+
+    <div class="prompt-label">Isolation example</div>
+    <div class="prompt-block">"Sample the guitar riff at 0:45, then build a new beat around it."</div>
+
+    <div class="prompt-label">Mashup example</div>
+    <div class="prompt-block">"Combine the verse from Track A with the chorus of Track B, and layer in the synths from Track C."</div>
+
+    <p>For anyone who has already run stem-splitting workflows by hand, this is the same job compressed into a single request. Worth comparing against how we broke down <a href="https://trustnodelogic.com/Suno101.html">structural meta-tags and post-production shaping in Suno 101</a>, since v6's edit mode replaces a chunk of that manual process outright.</p>
+
+    <h2>The Reception</h2>
+
+    <p>Coverage from Digital Music News, Variety, and Music Business Worldwide all landed on the same word: mixed. The threads on r/SunoAI make that concrete, and reading two of them side by side says more than any press summary.</p>
+
+    <div class="reception-grid">
+      <div class="reception-item">
+        <span class="reception-label neg">The Backlash</span>
+        <p>One long-time subscriber argues Suno built its reputation on precise creative control and clean, punchy audio, and says v6 trades that away with no way to opt out.</p>
+        <span class="r-quote">&ldquo;a slap in the face to long-time users&rdquo;</span>
+        <div class="r-attr"><a href="https://www.reddit.com/user/Unlikely-Carob9251/">u/Unlikely-Carob9251</a> &middot; <a href="https://www.reddit.com/r/SunoAI/comments/1wbubyq/v6_is_garbage_and_a_joke/">r/SunoAI, "V6 is garbage and a joke"</a></div>
+      </div>
+      <div class="reception-item">
+        <span class="reception-label mix">The Measured Middle</span>
+        <p>Writing a day and a half into the rollout, one user said the results hold up, but only once you stop grading v6 against its predecessor.</p>
+        <span class="r-quote">&ldquo;V5.5 wearing a nicer audio codec&rdquo;</span>
+        <div class="r-attr"><a href="https://www.reddit.com/user/Few_Mathematician695/">u/Few_Mathematician695</a> &middot; <a href="https://www.reddit.com/r/SunoAI/comments/1wc0qsn/v6_after_a_day_and_a_half_idk_guys_maybe_actually/">r/SunoAI, "V6 after a day and a half"</a></div>
+      </div>
+      <div class="reception-item">
+        <span class="reception-label mix">The Gap</span>
+        <p>Rollout is staggered and Suno has not published a per-account timeline, so some Pro and Premier subscribers are still on v5.5 with no explanation, and there is no rollback option once the switch lands. Worth noting directly: across the threads reviewed for this piece, nothing resembling enthusiasm turned up yet, a real gap against Suno's own "best yet" framing.</p>
+      </div>
+    </div>
+
+    <p class="closer-line">Generation was never the scarce resource here. What v6 is actually selling is control over material you already made, and control is a harder thing to get consistently right on day one than raw output ever was.</p>
+
+    <h2>Quick Questions</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <div class="faq-q">Can I still use Suno v5.5?</div>
+        <div class="faq-a">Not once your account finishes the v6 rollout. Songs already in your library stay accessible, you just cannot generate new ones on the old engine.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What is v6-wild for?</div>
+        <div class="faq-a">Raw material. It trades reliability for range, meant to be fed back into the flagship v6 model for refinement rather than used as a finished track.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you have commercial rights in the free tier with v6-mini?</div>
+        <div class="faq-a">No. You do not have commercial rights in the free tier. While v6-mini is accessible to all free accounts, Suno's licensing structure reserves commercial ownership and audio downloads exclusively for paid Pro and Premier subscriptions. Free tier output cannot be monetized or released commercially.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What's the Custom Model beta?</div>
+        <div class="faq-a">A new option in the model picker, marked Beta, that trains on your own uploads for 100 credits. Suno has not published detailed documentation on it yet.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is v6 actually better than v5.5?</div>
+        <div class="faq-a">Depends what you make. Editing, isolation, and mashup work are clear upgrades. Several producers report v5.5 still sounding stronger for hip-hop, lo-fi, and ambient generations.</div>
+      </div>
+    </div>
+
+    <div class="sources">
+      Sources &amp; further reading: Suno's official "Introducing v6" announcement and release notes &middot; launch coverage from TechCrunch, Variety, Engadget, and Music Business Worldwide &middot; early reception reporting from Digital Music News &middot; this is field research, not a Suno endorsement, test each tier against your own genre before committing a session to it.
+    </div>
+
+  </div>
+
+  <div class="author-cta">
+    <p>Suno's model migrations keep moving faster than any single platform's documentation. That is exactly the gap r/hybridproduction exists to track: what actually changed under the hood versus what the announcement post says, and how that affects a workflow built on provenance rather than lock-in.</p>
+    <div class="cta-links">
+      <a href="https://www.reddit.com/r/hybridproduction/">Join r/hybridproduction &rarr;</a>
+      <a href="https://trustnodelogic.com/what-is-hybrid.html">Read the Hybrid Production Manifesto</a>
+      <a href="https://trustnodelogic.com/hybridproductionstandard.html">HPS-1.0 Specification</a>
+    </div>
+  </div>
+
+  <div class="author-card">
+    <div class="author-avatar"></div>
+    <div>
+      <div class="author-name">Justin Ray (JRAY)</div>
+      <div class="author-loc">East Lansing, MI</div>
+      <div class="author-bio">Founder of Trust Node Logic and pioneer of Hybrid AI Music Production workflows, developing open provenance standards, Web Audio DSP tools, and generative music architectures.</div>
+    </div>
+  </div>
+
+  <div class="continue-reading">
+    <div class="cr-label">Continue Reading Field Notes</div>
+    <a class="cr-item" href="https://trustnodelogic.com/sunonewtos.html">
+      <div class="cr-kicker">Industry Analysis</div>
+      <div class="cr-title">Suno Terms of Service &amp; Deal Analysis &rarr;</div>
+      <div class="cr-desc">Upload ownership clauses, arbitration terms, and the BMG partnership that set up v6's licensing model.</div>
+    </a>
+    <a class="cr-item" href="https://trustnodelogic.com/Suno101.html">
+      <div class="cr-kicker">Platform Guide</div>
+      <div class="cr-title">Suno 101 Masterclass &rarr;</div>
+      <div class="cr-desc">Structural meta-tags, style sliders, and post-production shaping, the manual version of what v6's edit mode now automates.</div>
+    </a>
+    <a class="cr-item" href="https://trustnodelogic.com/promptingthemachine.html">
+      <div class="cr-kicker">Prompt Engineering</div>
+      <div class="cr-title">Prompting the Machine &rarr;</div>
+      <div class="cr-desc">How text encoders and latent vectors turn a prompt into audio, useful context for why v6's edit instructions behave the way they do.</div>
+    </a>
+    <a class="all-notes" href="https://trustnodelogic.com/field-notes.html">ALL FIELD NOTES &rarr;</a>
+  </div>
+
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="navlinks">
+      <a href="https://trustnodelogic.com/index.html">Home</a>
+      <a href="https://trustnodelogic.com/field-notes.html">Field Notes</a>
+      <a href="https://trustnodelogic.com/what-is-hybrid.html">What Is Hybrid</a>
+      <a href="https://trustnodelogic.com/projects.html">Projects</a>
+      <a href="https://trustnodelogic.com/music.html">Music</a>
+      <a href="https://trustnodelogic.com/services.html">Services</a>
+      <a href="https://trustnodelogic.com/sitemap.xml">Sitemap</a>
+    </div>
+    &copy; 2026 Justin Ray (JRAY). All Rights Reserved.
+  </div>
+</footer>
+
+</body>
+</html>
