@@ -5,7 +5,6 @@
  * 2. One-Click Copy for Prompt & Code Blocks
  * 3. Smooth Floating "Back to Top" Action
  * 4. Section Scroll Fade
- * 5. Left Rail Reading System (article pages only, >= 3 headings)
  */
 (function () {
   'use strict';
@@ -108,133 +107,42 @@
       .has-scroll-fade .scroll-target { opacity: 1 !important; transform: none !important; transition: none !important; }
     }
 
-    /* Left Rail Reading System */
-    #tnl-rail {
-      position: fixed;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 9000;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      width: 228px;
-    }
-    #tnl-rail.rail-visible { opacity: 1; pointer-events: auto; }
-
-    #tnl-rail-track {
-      position: absolute;
-      left: 19px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 2px;
-    }
-    #tnl-rail-fill {
-      position: absolute;
-      left: 19px;
-      top: 0;
-      width: 2px;
-      height: 0%;
-      background: #FF9F1C;
-      border-radius: 2px;
-      transition: height 0.12s ease-out;
-      box-shadow: 0 0 8px rgba(255, 159, 28, 0.45);
-    }
-    #tnl-rail-dot {
-      position: absolute;
-      left: 14px;
-      top: 0%;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #FF9F1C;
-      box-shadow: 0 0 10px rgba(255, 159, 28, 0.65);
-      transform: translateY(-50%);
-      transition: top 0.12s ease-out;
-    }
-    #tnl-rail.rail-done #tnl-rail-fill { background: #22c55e; box-shadow: 0 0 8px rgba(34,197,94,0.45); }
-    #tnl-rail.rail-done #tnl-rail-dot { background: #22c55e; box-shadow: 0 0 10px rgba(34,197,94,0.65); }
-
-    #tnl-rail-nav {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
+    /* Amber gradient nav underline — sitewide brand accent */
+    nav.site,
+    body > div#root > header,
+    body > header {
+      border-bottom-color: transparent !important;
       position: relative;
-      z-index: 1;
-      padding: 2px 0;
     }
-    .tnl-rail-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 6px 0;
-      cursor: pointer;
-      background: none;
-      border: none;
-      text-align: left;
-      width: 100%;
-    }
-    .tnl-rail-pip {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      border: 1.5px solid rgba(255, 255, 255, 0.14);
-      background: #08090A;
-      flex-shrink: 0;
-      margin-left: 15px;
-      transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
-    }
-    .tnl-rail-item.active .tnl-rail-pip {
-      border-color: #FF9F1C;
-      background: #FF9F1C;
-      box-shadow: 0 0 6px rgba(255, 159, 28, 0.5);
-    }
-    .tnl-rail-item:hover .tnl-rail-pip { border-color: rgba(255, 159, 28, 0.6); }
-    #tnl-rail.rail-done .tnl-rail-item.active .tnl-rail-pip {
-      border-color: #22c55e;
-      background: #22c55e;
-      box-shadow: 0 0 6px rgba(34,197,94,0.5);
-    }
-    .tnl-rail-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 9px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: transparent;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 160px;
-      opacity: 0;
-      transform: translateX(-6px);
-      transition: color 0.2s, opacity 0.25s, transform 0.25s;
-    }
-    #tnl-rail:hover .tnl-rail-label { opacity: 1; transform: translateX(0); color: rgba(255,255,255,0.35); }
-    .tnl-rail-item.active .tnl-rail-label { opacity: 1; transform: translateX(0); color: #FF9F1C !important; }
-    .tnl-rail-item:hover .tnl-rail-label { color: rgba(255,255,255,0.7) !important; }
-
-    #tnl-rail-meta {
+    nav.site::after,
+    body > div#root > header::after,
+    body > header::after {
+      content: '';
       position: absolute;
-      left: 32px;
-      bottom: -26px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 8px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.18);
-      white-space: nowrap;
-      opacity: 0;
-      transition: opacity 0.3s, color 0.3s;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, #FF9F1C 0%, rgba(255,159,28,0.22) 32%, transparent 66%);
+      pointer-events: none;
+      z-index: 1;
     }
-    #tnl-rail:hover #tnl-rail-meta { opacity: 1; }
-    #tnl-rail.rail-done #tnl-rail-meta { color: #22c55e; opacity: 1; }
 
-    @media (max-width: 1099px) { #tnl-rail { display: none !important; } }
+    /* Inactive nav link dimming — visual hierarchy sitewide */
+    .navlinks a:not(.active) {
+      opacity: 0.42;
+      transition: opacity 0.18s ease, color 0.18s ease;
+    }
+    .navlinks a:not(.active):hover {
+      opacity: 1;
+    }
+    nav[aria-label="Main navigation"] a:not([class*="text-\[#FF9F1C\]"]):not([class*="font-semibold"]) {
+      opacity: 0.42;
+      transition: opacity 0.18s ease;
+    }
+    nav[aria-label="Main navigation"] a:not([class*="text-\[#FF9F1C\]"]):not([class*="font-semibold"]):hover {
+      opacity: 1;
+    }
   `;
 
   function init() {
@@ -318,113 +226,6 @@
 
     // 4. Scroll Fade
     initScrollFade();
-
-    // 5. Left Rail
-    initReadingRail();
-  }
-
-  function initReadingRail() {
-    // Exclude catalog, index, and archive pages with multiple article cards
-    if (document.body.classList.contains('no-reading-rail') ||
-        document.querySelector('[data-no-reading-rail]') ||
-        document.querySelectorAll('article').length > 1 ||
-        /field-notes\.html|projects\.html|music\.html|index\.html|services\.html|contact\.html/i.test(location.pathname)) {
-      return;
-    }
-
-    const headings = Array.from(
-      document.querySelectorAll('main h2, main h3, article h2, article h3')
-    ).filter(h => h.textContent.trim().length > 2);
-
-    if (headings.length < 3) return;
-
-    const mainEl = document.querySelector('main, article');
-    const words = mainEl ? (mainEl.innerText || '').split(/\s+/).filter(Boolean).length : 0;
-    const totalMins = Math.max(1, Math.round(words / 200));
-    const pageKey = 'tnl_read_' + (location.pathname.split('/').pop() || 'index');
-
-    const rail = document.createElement('div');
-    rail.id = 'tnl-rail';
-    rail.setAttribute('aria-hidden', 'true');
-    rail.innerHTML = [
-      '<div id="tnl-rail-track"></div>',
-      '<div id="tnl-rail-fill"></div>',
-      '<div id="tnl-rail-dot"></div>',
-      '<nav id="tnl-rail-nav"></nav>',
-      '<div id="tnl-rail-meta">~' + totalMins + ' min left</div>'
-    ].join('');
-
-    const navEl  = rail.querySelector('#tnl-rail-nav');
-    const fillEl = rail.querySelector('#tnl-rail-fill');
-    const dotEl  = rail.querySelector('#tnl-rail-dot');
-    const metaEl = rail.querySelector('#tnl-rail-meta');
-
-    headings.forEach((h, i) => {
-      if (!h.id) h.id = 'tnl-s' + i;
-      const label = h.textContent.trim().replace(/\s+/g, ' ');
-      const short = label.length > 24 ? label.slice(0, 22) + '..' : label;
-      const btn = document.createElement('button');
-      btn.className = 'tnl-rail-item';
-      btn.setAttribute('data-target', h.id);
-      btn.setAttribute('aria-label', 'Jump to: ' + label);
-      btn.innerHTML = '<span class="tnl-rail-pip"></span><span class="tnl-rail-label">' + short + '</span>';
-      btn.addEventListener('click', () => {
-        const el = document.getElementById(h.id);
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-      navEl.appendChild(btn);
-    });
-
-    document.body.appendChild(rail);
-
-    let railShown = false, rafPending = false, saved = false;
-    const navItems = Array.from(navEl.querySelectorAll('.tnl-rail-item'));
-
-    function updateRail() {
-      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-      const docH = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      if (docH <= 0) { rafPending = false; return; }
-
-      const pct = Math.min(100, Math.max(0, (scrollY / docH) * 100));
-
-      if (!railShown && pct > 5) { rail.classList.add('rail-visible'); railShown = true; }
-
-      fillEl.style.height = pct + '%';
-      dotEl.style.top = pct + '%';
-
-      if (pct >= 98) {
-        metaEl.textContent = '✓ finished';
-        rail.classList.add('rail-done');
-        if (!saved) { try { localStorage.setItem(pageKey, '1'); } catch(e) {} saved = true; }
-      } else {
-        const minsLeft = Math.max(0, Math.round(totalMins * (1 - pct / 100)));
-        metaEl.textContent = '~' + (minsLeft < 1 ? '< 1' : minsLeft) + ' min left';
-      }
-
-      let activeIdx = 0;
-      headings.forEach((h, i) => {
-        if (h.getBoundingClientRect().top <= window.innerHeight * 0.45) activeIdx = i;
-      });
-      navItems.forEach((item, i) => item.classList.toggle('active', i === activeIdx));
-
-      rafPending = false;
-    }
-
-    window.addEventListener('scroll', () => {
-      if (!rafPending) { rafPending = true; requestAnimationFrame(updateRail); }
-    }, { passive: true });
-
-    updateRail();
-
-    try {
-      if (localStorage.getItem(pageKey) === '1') {
-        rail.classList.add('rail-visible', 'rail-done');
-        fillEl.style.height = '100%';
-        dotEl.style.top = '100%';
-        metaEl.textContent = '✓ read';
-        railShown = true;
-      }
-    } catch(e) {}
   }
 
   function initScrollFade() {
