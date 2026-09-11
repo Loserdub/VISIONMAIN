@@ -334,8 +334,8 @@
 
     /* ─── HPS-1.0 Audio Attestation Console & Waveform Scanner ─── */
     .portal-card-hps {
-      background: linear-gradient(135deg, rgba(0, 240, 255, 0.04) 0%, rgba(12, 14, 18, 0.98) 50%, rgba(18, 20, 23, 0.98) 100%);
-      border: 1px solid rgba(0, 240, 255, 0.25);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(12, 14, 18, 0.98) 50%, rgba(18, 20, 23, 0.98) 100%);
+      border: 1px solid rgba(255, 159, 28, 0.28);
       position: relative;
       overflow: hidden;
       transition: background 0.35s cubic-bezier(0.16, 1, 0.3, 1),
@@ -348,18 +348,18 @@
       position: absolute;
       inset: 0;
       background-image: 
-        linear-gradient(rgba(0, 240, 255, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 240, 255, 0.035) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
       background-size: 32px 32px;
       pointer-events: none;
       z-index: 1;
       transition: opacity 0.35s ease;
     }
-    /* When user hovers over button it darkens to pure black with subtle cyan aura */
+    /* When user hovers over card it darkens to pure black with subtle amber aura */
     .portal-card-hps:hover {
       background: #000000 !important;
-      border-color: rgba(0, 240, 255, 0.65) !important;
-      box-shadow: 0 0 35px rgba(0, 240, 255, 0.2), inset 0 0 20px rgba(0, 240, 255, 0.05);
+      border-color: rgba(255, 159, 28, 0.65) !important;
+      box-shadow: 0 0 35px rgba(255, 159, 28, 0.2), inset 0 0 20px rgba(255, 159, 28, 0.05);
       transform: translateY(-2px);
     }
     .portal-card-hps:hover::before {
@@ -925,8 +925,8 @@
         <h2 class="text-lg font-bold font-mono text-[#EAEAEA] uppercase tracking-wide group-hover:text-[#FF9F1C] transition-colors">
           HPS-1.0 SPECIFICATION
         </h2>
-        <p class="text-xs text-[#A1A1AA] mt-2 leading-relaxed font-light">
-          The 5-axis open protocol standardizing AI provenance, EU AI Act Art. 50 compliance, DDEX ERN 4.3 metadata, and C2PA cryptographic manifests.
+        <p class="text-xs font-mono text-[#A1A1AA] mt-2.5 leading-relaxed font-light">
+          5-Axis Audio Attestation · C2PA Cryptographic Provenance · DDEX ERN 4.3
         </p>
       </div>
       <div class="mt-6 pt-4 border-t border-white/[0.08] flex items-center justify-between text-[10px] font-mono text-[#71717A]">
@@ -945,8 +945,8 @@
         <h2 class="text-lg font-bold font-mono text-[#EAEAEA] uppercase tracking-wide group-hover:text-[#FF9F1C] transition-colors">
           AUDIO ENGINES &amp; LAB
         </h2>
-        <p class="text-xs text-[#A1A1AA] mt-2 leading-relaxed font-light">
-          Zero-install browser Web Audio DSP tools: VOID 1.5 web sampler, MIXR Studio mastering, J-DAW, and off-thread granular processors.
+        <p class="text-xs font-mono text-[#A1A1AA] mt-2.5 leading-relaxed font-light">
+          9 Zero-Install Web DSP Tools · VOID 1.5 · MIXR Studio
         </p>
       </div>
       <div class="mt-6 pt-4 border-t border-white/[0.08] flex items-center justify-between text-[10px] font-mono text-[#71717A]">
@@ -965,8 +965,8 @@
         <h2 class="text-lg font-bold font-mono text-[#EAEAEA] uppercase tracking-wide group-hover:text-[#10B981] transition-colors">
           MUSIC &amp; DISCOGRAPHY
         </h2>
-        <p class="text-xs text-[#A1A1AA] mt-2 leading-relaxed font-light">
-          Original records and multitrack productions spanning 5 project aliases: loserdub, VISION, Flawed Future, le vide, and disarray.
+        <p class="text-xs font-mono text-[#A1A1AA] mt-2.5 leading-relaxed font-light">
+          Original Records · Multitrack Productions Across 5 Aliases
         </p>
       </div>
       <div class="mt-6 pt-4 border-t border-white/[0.08] flex items-center justify-between text-[10px] font-mono text-[#71717A]">
@@ -999,10 +999,6 @@
       <blockquote class="text-xl sm:text-2xl font-light leading-snug text-[#EAEAEA] pl-4 sm:pl-6 border-l-2 border-[#CBD5E1]/60">
         "While people argue over black or white, human versus machine, or all or nothing, the real creative work happens in the <span class="text-[#CBD5E1] font-mono font-semibold">grey</span>. Hybrid production is about finding the soul inside the algorithm."
       </blockquote>
-
-      <p class="mt-6 text-sm sm:text-base text-[#A1A1AA] leading-relaxed max-w-3xl font-light">
-        Hybrid production is not about letting AI complete tracks unassisted. It treats neural audio models as raw oscillators: seeding initial harmonic latent structures, then surgically transforming them via live instrumentation, spectral stem splitting, and digital audio workstation master engineering.
-      </p>
 
       <div class="mt-8 pt-4 border-t border-white/[0.08] flex items-center justify-between">
         <a href="./what-is-hybrid.html" class="inline-flex items-center gap-3 px-5 py-3 bg-[#0B0C0E] border border-white/20 hover:border-[#FF9F1C] text-xs font-mono tracking-wider text-[#EAEAEA] hover:text-[#FF9F1C] transition-all">
@@ -1058,11 +1054,11 @@
           </div>
         </div>
 
-        <!-- Right Column: Condensed Blurb & 5-Axis Metrics -->
+        <!-- Right Column: Condensed 5-Axis Metrics -->
         <div class="hps-right-col">
-          <p class="hps-blurb-text">
-            The open 5-axis framework mapping neural audio synthesis and stem separation to verified DDEX ERN 4.3 metadata and C2PA cryptographic provenance.
-          </p>
+          <div class="text-[10px] font-mono tracking-[0.16em] uppercase text-[#FF9F1C] mb-2.5 font-semibold">
+            [ 5-AXIS ATTESTATION MATRIX ]
+          </div>
 
           <div class="hps-metric-grid">
             <div class="hps-metric-chip">
@@ -1130,9 +1126,20 @@
           <h3 class="text-2xl font-bold font-mono text-[#EAEAEA] uppercase tracking-wide group-hover:text-[#FF9F1C] transition-colors">
             MIXR STUDIO
           </h3>
-          <p class="text-xs text-[#A1A1AA] mt-3 leading-relaxed font-light">
-            In-browser audio mastering workstation engineered by Justin Ray. Features a dynamic 4-band EQ engine, real-time integrated LUFS loudness meter, phase correlation analysis, and lookahead precision limiter targeting streaming standard -14 LUFS.
-          </p>
+          <div class="mt-4 space-y-2 font-mono text-xs text-[#A1A1AA]">
+            <div class="flex items-center gap-2">
+              <span class="text-[#FF9F1C] text-[10px] font-semibold tracking-wider uppercase">CORE:</span>
+              <span>4-Band Dynamic EQ · True-Peak Lookahead</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-[#FF9F1C] text-[10px] font-semibold tracking-wider uppercase">ANALYSIS:</span>
+              <span>Integrated LUFS (-14 Target) · Phase Scope</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-[#FF9F1C] text-[10px] font-semibold tracking-wider uppercase">ARCH:</span>
+              <span>Zero-Install Web Audio DSP Workstation</span>
+            </div>
+          </div>
         </div>
         <div class="mt-6 pt-4 border-t border-white/[0.08] flex items-center justify-between text-[10px] font-mono text-[#71717A]">
           <span>DSP ENGINE // -14 LUFS TARGET</span>
@@ -1150,9 +1157,20 @@
           <h3 class="text-2xl font-bold font-mono text-[#EAEAEA] uppercase tracking-wide group-hover:text-[#FF9F1C] transition-colors">
             VOID 1.5 WEB SAMPLER
           </h3>
-          <p class="text-xs text-[#A1A1AA] mt-3 leading-relaxed font-light">
-            Browser-based 16-pad audio slicer and granular sampling workstation. Powered by off-thread Web Workers, transient peak detection, ADSR shaping, and the Harmonic Auto-Mashup engine with automated Camelot wheel key matching.
-          </p>
+          <div class="mt-4 space-y-2 font-mono text-xs text-[#A1A1AA]">
+            <div class="flex items-center gap-2">
+              <span class="text-[#F4F4F5] text-[10px] font-semibold tracking-wider uppercase">ENGINE:</span>
+              <span>16-Pad Granular Slicer · Transient Detection</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-[#F4F4F5] text-[10px] font-semibold tracking-wider uppercase">ROUTING:</span>
+              <span>Off-Thread Web Workers · ADSR Envelope Shaper</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-[#F4F4F5] text-[10px] font-semibold tracking-wider uppercase">HARMONIC:</span>
+              <span>Camelot Wheel Auto-Key Matching DSP</span>
+            </div>
+          </div>
         </div>
         <div class="mt-6 pt-4 border-t border-white/[0.08] flex items-center justify-between text-[10px] font-mono text-[#71717A]">
           <span>WEB WORKERS // CAMELOT DSP</span>
@@ -1199,8 +1217,8 @@
           <h3 class="text-2xl sm:text-3xl font-bold uppercase tracking-tight text-[#EAEAEA] mb-3 group-hover:text-[#FF9F1C] transition-colors">
             EMPIRICAL BENCHMARKS &amp; AI AUDIO PAPERS
           </h3>
-          <p class="text-sm text-[#A1A1AA] font-light leading-relaxed mb-6">
-            In-depth laboratory investigations authored by Justin Ray covering neural audio diffusion physics, multi-agent DAW architectures, C2PA cryptographic provenance, watermark survival, and streaming market economics.
+          <p class="text-xs font-mono text-[#A1A1AA] leading-relaxed mb-6">
+            Empirical benchmarks: Neural audio diffusion · Multi-agent DAWs · C2PA provenance · Watermark survival · Streaming economics.
           </p>
           <div class="flex flex-wrap gap-2 text-[10px] font-mono text-[#71717A]">
             <a href="./staccatoreview.html" class="px-2.5 py-1 bg-[#0B0C0E] border border-[#FF9F1C]/40 text-[#FF9F1C] hover:border-[#FF9F1C] transition-colors">Staccato AI Review</a>
@@ -1249,8 +1267,8 @@
           <h3 class="text-xl font-bold font-mono text-[#EAEAEA] uppercase tracking-wider mb-3 group-hover:text-[#10B981] transition-colors">
             STREAMING DISCOGRAPHY
           </h3>
-          <p class="text-xs text-[#A1A1AA] font-light leading-relaxed mb-6">
-            Acoustic songwriting, ambient synthwave, and full-scale hybrid master productions spanning 5 project aliases. Recorded and engineered in East Lansing, Michigan, and distributed globally across Spotify, Apple Music, and SoundCloud.
+          <p class="text-xs font-mono text-[#A1A1AA] leading-relaxed mb-6">
+            Acoustic songwriting, ambient synthwave, and hybrid productions engineered in East Lansing, MI. Released globally across major streaming platforms.
           </p>
 
           <div class="flex flex-wrap gap-2 mb-6">
@@ -1284,14 +1302,19 @@
           <h3 class="text-xl font-bold font-mono text-[#EAEAEA] uppercase tracking-wider mb-3 group-hover:text-[#F59E0B] transition-colors">
             STUDIO MASTERING &amp; CONSULTING
           </h3>
-          <p class="text-xs text-[#A1A1AA] font-light leading-relaxed mb-6">
-            Specialized studio engineering services for record labels, digital audio workstations, and AI audio startups. Offering hybrid audio mastering, surgical multitrack stem separation, and technical compliance consulting for EU AI Act and DDEX ERN 4.3 standards.
-          </p>
-
-          <div class="flex flex-wrap gap-2 mb-6">
-            <span class="px-2 py-1 bg-[#0B0C0E] border border-[#F59E0B]/30 text-[10px] font-mono text-[#EAEAEA]">Hybrid Audio Mastering</span>
-            <span class="px-2 py-1 bg-[#0B0C0E] border border-[#F59E0B]/30 text-[10px] font-mono text-[#EAEAEA]">Stem Separation</span>
-            <span class="px-2 py-1 bg-[#0B0C0E] border border-[#F59E0B]/30 text-[10px] font-mono text-[#EAEAEA]">C2PA Stamping</span>
+          <div class="mt-4 mb-6 space-y-2 font-mono text-xs text-[#A1A1AA]">
+            <div class="flex items-center gap-2">
+              <span class="text-[#F59E0B] text-[10px] font-semibold tracking-wider uppercase">MASTER:</span>
+              <span>Hybrid Stems &amp; Analog Attestation</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-[#F59E0B] text-[10px] font-semibold tracking-wider uppercase">STEMS:</span>
+              <span>Surgical Multitrack Spectral Extraction</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-[#F59E0B] text-[10px] font-semibold tracking-wider uppercase">AUDIT:</span>
+              <span>EU AI Act Art. 50 &amp; DDEX ERN 4.3</span>
+            </div>
           </div>
         </div>
 
