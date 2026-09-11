@@ -293,12 +293,12 @@
 }</script>
  
  <!-- Main Stylesheet -->
- <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css">
 
- <!-- Modern Typography: JetBrains Mono + Space Grotesk -->
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
- <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Modern & Display Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Hachi+Maru+Pop&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=New+Rocker&family=Rubik+Wet+Paint&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
  
  <!-- Primary Route Speculative Prefetches (Secondary routes prefetched on idle/intent) -->
  <link rel="prefetch" href="./field-notes.html">
@@ -691,9 +691,9 @@
       align-items: baseline;
       justify-content: center;
       position: relative;
-      width: 2.92em;
-      min-width: 2.92em;
-      max-width: 2.92em;
+      width: 3.15em;
+      min-width: 3.15em;
+      max-width: 3.15em;
       vertical-align: baseline;
       text-align: center;
     }
@@ -716,83 +716,52 @@
       filter: blur(1.5px);
     }
 
-    /* 1. Modern Geometric */
-    .cycling-grey-word.font-modern {
-      font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-weight: 800;
-      letter-spacing: 0.115em;
+    /* 1. New Rocker */
+    .cycling-grey-word.font-new-rocker {
+      font-family: 'New Rocker', cursive, system-ui;
+      font-weight: 400;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      font-size: 1em;
-      color: #94A3B8;
-    }
-
-    /* 2. Japanese Kanji (灰色 - Ashen/Grey) */
-    .cycling-grey-word.font-japanese {
-      font-family: 'DotGothic16', 'Hiragino Sans', 'Yu Gothic', sans-serif;
-      font-weight: 700;
-      letter-spacing: 0.39em;
       font-size: 1.05em;
-      color: #8E9AAF;
+      color: #CBD5E1;
     }
 
-    /* 3. French Editorial (GRIS) */
-    .cycling-grey-word.font-french {
-      font-family: 'Georgia', 'Baskerville', 'Times New Roman', serif;
-      font-weight: 700;
-      font-style: italic;
-      letter-spacing: 0.055em;
-      text-transform: uppercase;
-      font-size: 1em;
-      color: #A1A1AA;
-    }
-
-    /* 4. Expressive Cursive */
-    .cycling-grey-word.font-cursive {
-      font-family: 'Brush Script MT', 'Segoe Script', 'Apple Chancery', cursive;
-      font-weight: 700;
-      font-style: italic;
-      letter-spacing: 0.01em;
-      font-size: 0.92em;
-      line-height: 0.85;
-      color: #94A3B8;
-    }
-
-    /* 5. Wingdings / Symbolic Glyph Matrix */
-    .cycling-grey-word.font-wingdings {
-      font-family: 'Wingdings', 'Wingdings 2', 'Wingdings 3', 'Segoe UI Symbol', 'Apple Symbols', monospace;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      font-size: 0.94em;
-      color: #71717A;
-    }
-
-    /* 6. Dot Matrix / Monospace Terminal */
-    .cycling-grey-word.font-dotmatrix {
-      font-family: 'Courier New', Courier, monospace;
-      font-weight: 700;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      font-size: 1.01em;
-      color: #71717A;
-    }
-
-    /* 7. Swiss Helvetica */
-    .cycling-grey-word.font-helvetica {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      text-transform: uppercase;
-      font-size: 1em;
-      color: #8E9AAF;
-    }
-
-    /* 8. Braille Tactile Unicode */
+    /* 2. Braille Tactile Unicode (⠛⠗⠑⠽) */
     .cycling-grey-word.font-braille {
       font-family: 'JetBrains Mono', 'Segoe UI Symbol', monospace;
       font-weight: 700;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.04em;
       font-size: 0.95em;
-      color: #64748B;
+      color: #94A3B8;
+    }
+
+    /* 3. Bungee Hairline (French: GRIS) */
+    .cycling-grey-word.font-bungee-hairline {
+      font-family: 'Bungee Hairline', cursive, sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 1.02em;
+      color: #F1F5F9;
+    }
+
+    /* 4. Hachi Maru Pop (Japanese: 灰色) */
+    .cycling-grey-word.font-hachi-maru {
+      font-family: 'Hachi Maru Pop', cursive, sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      font-size: 0.98em;
+      color: #8E9AAF;
+    }
+
+    /* 5. Rubik Wet Paint */
+    .cycling-grey-word.font-rubik-paint {
+      font-family: 'Rubik Wet Paint', system-ui, cursive;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      font-size: 0.96em;
+      color: #CBD5E1;
     }
 
     /* Explicit responsive grid spans */
@@ -838,11 +807,11 @@
   </div>
 
   <!-- Rigid Brutalist Navigation Header -->
-  <header class="sticky top-0 left-0 right-0 z-50 bg-[#0B0C0E]/95 backdrop-blur-md border-b border-white/10 py-4">
+  <header class="sticky top-0 left-0 right-0 z-50 bg-[#0B0C0E]/95 backdrop-blur-md border-b border-white/10 py-3.5">
   <div class="container mx-auto px-6 flex justify-between items-center relative">
   
   <!-- Monospace Terminal Logo Switcher -->
-  <a href="/" class="flex items-center gap-4 group h-9 overflow-hidden w-[220px]" aria-label="Home">
+  <a href="/" class="flex items-center gap-3 group h-9 overflow-hidden w-[220px]" aria-label="Home">
   <div class="w-5 h-5 border border-[#FF9F1C] bg-[#FF9F1C]/10 flex items-center justify-center flex-shrink-0 text-[#FF9F1C] font-mono text-xs font-bold">
   <span class="animate-pulse">▪</span>
   </div>
@@ -857,35 +826,37 @@
   </a>
 
   <!-- Monospace Terminal Navigation -->
-  <nav class="hidden md:flex items-center gap-6 text-xs font-mono tracking-[0.14em] uppercase text-[#71717A]" aria-label="Main navigation">
+  <nav class="hidden md:flex items-center gap-6 text-[11px] font-mono tracking-[0.14em] uppercase text-[#71717A]" aria-label="Main navigation">
   <a href="/" class="text-[#FF9F1C] font-semibold relative py-1 border-b border-[#FF9F1C]">HOME</a>
-  <a href="./hybridproductionstandard.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">THE STANDARD</a>
-  <a href="./projects.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">THE SUITE</a>
   <a href="./field-notes.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">FIELD NOTES</a>
   <a href="./music.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">MUSIC</a>
+  <a href="./projects.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">PROJECTS</a>
   <a href="./about.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">ABOUT</a>
+  <a href="./what-is-hybrid.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">WHAT IS HYBRID</a>
+  <a href="./services.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">SERVICES</a>
   <a href="./contact.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">CONTACT</a>
   </nav>
 
   <!-- Mobile Hamburger Toggle -->
   <input type="checkbox" id="mobile-menu-toggle" class="peer hidden">
-  <label for="mobile-menu-toggle" class="md:hidden text-[#EAEAEA] cursor-pointer peer-checked:hidden block p-2 hover:text-[#FF9F1C] transition-colors border border-white/10" aria-label="Open menu">
+  <label for="mobile-menu-toggle" class="md:hidden text-[#EAEAEA] cursor-pointer peer-checked:hidden block p-1 hover:text-[#FF9F1C] transition-colors border border-white/10" aria-label="Open menu">
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
   </label>
-  <label for="mobile-menu-toggle" class="md:hidden text-[#EAEAEA] cursor-pointer peer-checked:block hidden p-2 hover:text-[#FF9F1C] transition-colors border border-white/10" aria-label="Close menu">
+  <label for="mobile-menu-toggle" class="md:hidden text-[#EAEAEA] cursor-pointer peer-checked:block hidden p-1 hover:text-[#FF9F1C] transition-colors border border-white/10" aria-label="Close menu">
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
   </label>
   
   <!-- Mobile Drawer (Brutalist 0px) -->
   <div class="absolute top-full left-0 right-0 bg-[#0B0C0E] border-b border-white/20 shadow-2xl py-6 px-6 hidden peer-checked:flex flex-col items-center gap-4 text-center">
-  <nav class="flex flex-col gap-4 text-center text-xs font-mono tracking-widest uppercase text-[#EAEAEA] font-medium w-full max-w-xs" aria-label="Mobile navigation">
+  <nav class="flex flex-col gap-3 text-center text-xs font-mono tracking-widest uppercase text-[#EAEAEA] font-medium w-full max-w-xs" aria-label="Mobile navigation">
   <a href="/" class="text-[#FF9F1C] py-2 border-b border-white/10 font-bold">HOME</a>
-  <a href="./hybridproductionstandard.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">THE STANDARD (HPS-1.0)</a>
-  <a href="./projects.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">THE SUITE (LAB &amp; TOOLS)</a>
   <a href="./field-notes.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">FIELD NOTES</a>
   <a href="./music.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">MUSIC</a>
+  <a href="./projects.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">PROJECTS</a>
   <a href="./about.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">ABOUT</a>
-  <a href="./contact.html" class="hover:text-[#FF9F1C] py-2 transition-colors">CONTACT</a>
+  <a href="./what-is-hybrid.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">WHAT IS HYBRID</a>
+  <a href="./services.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">SERVICES</a>
+  <a href="./contact.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">CONTACT</a>
   </nav>
   </div>
 
@@ -905,7 +876,7 @@
   </div>
 
   <h1 class="text-3xl sm:text-6xl font-bold tracking-[-0.035em] text-[#EAEAEA] leading-[0.94] uppercase max-w-5xl">
-  THE FUTURE EXISTS IN THE <span class="inline-block whitespace-nowrap"><span class="cycling-grey-container"><span id="cycling-grey-target" class="cycling-grey-word font-modern" aria-label="GREY">GREY</span></span>.</span>
+  THE FUTURE EXISTS IN THE <span class="inline-block whitespace-nowrap"><span class="cycling-grey-container"><span id="cycling-grey-target" class="cycling-grey-word font-new-rocker" aria-label="GREY">GREY</span></span>.</span>
   </h1>
 
   <p class="mt-6 text-base sm:text-lg font-light text-[#A1A1AA] max-w-3xl leading-relaxed">
@@ -1422,14 +1393,11 @@
       if (!el) return;
 
       const fontModes = [
-        { text: 'GREY', className: 'font-modern', label: 'GREY' },
-        { text: '灰色', className: 'font-japanese', label: 'GREY' },
-        { text: 'GRIS', className: 'font-french', label: 'GREY' },
-        { text: 'Grey', className: 'font-cursive', label: 'GREY' },
-        { text: 'GREY', className: 'font-wingdings', label: 'GREY' },
-        { text: 'GREY', className: 'font-dotmatrix', label: 'GREY' },
-        { text: 'GREY', className: 'font-helvetica', label: 'GREY' },
-        { text: '\u281B\u2817\u2811\u283D', className: 'font-braille', label: 'GREY' }
+        { text: 'GREY', className: 'font-new-rocker', label: 'GREY' },
+        { text: '\u281B\u2817\u2811\u283D', className: 'font-braille', label: 'GREY' },
+        { text: 'GRIS', className: 'font-bungee-hairline', label: 'GREY' },
+        { text: '灰色', className: 'font-hachi-maru', label: 'GREY' },
+        { text: 'GREY', className: 'font-rubik-paint', label: 'GREY' }
       ];
 
       let currentIndex = 0;
