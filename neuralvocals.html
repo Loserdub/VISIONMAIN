@@ -225,7 +225,7 @@
     --text-muted: #A1A1AA;
     --text-dim: #71717A;
     --accent-amber: #FF9F1C;
-    --accent-cyan: #00F0FF;
+    --accent-platinum: #F4F4F5;
     --border: rgba(255, 255, 255, 0.09);
     --border-strong: rgba(255, 255, 255, 0.18);
     --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
@@ -323,11 +323,11 @@
   .convergence-diagram { width: 100%; height: auto; display: block; }
   .diagram-line { stroke-width: 1.5; fill: none; }
   .diagram-line.a { stroke: var(--accent-amber); opacity: 0.8; }
-  .diagram-line.b { stroke: var(--accent-cyan); opacity: 0.8; }
+  .diagram-line.b { stroke: var(--accent-platinum); opacity: 0.55; }
   .diagram-line.c { stroke: var(--text-muted); opacity: 0.65; }
   .flow-dot.a { fill: var(--accent-amber); }
-  .flow-dot.b { fill: var(--accent-cyan); }
-  .flow-dot.c { fill: var(--accent-cyan); }
+  .flow-dot.b { fill: var(--accent-platinum); }
+  .flow-dot.c { fill: var(--accent-platinum); }
   .node-circle { fill: var(--bg-raised); stroke: var(--border-strong); stroke-width: 1.5; }
   .node-circle.center { fill: rgba(255, 159, 28, 0.12); stroke: var(--accent-amber); }
   .node-label {
@@ -364,14 +364,14 @@
   }
   .section-mark.identity .section-num { color: var(--accent-amber); }
   .section-mark.identity .section-line { background: var(--accent-amber); opacity: 0.85; }
-  .section-mark.signal .section-num { color: var(--accent-cyan); }
-  .section-mark.signal .section-line { background: var(--accent-cyan); opacity: 0.85; }
+  .section-mark.signal .section-num { color: var(--accent-platinum); }
+  .section-mark.signal .section-line { background: var(--accent-platinum); opacity: 0.7; }
   .section-mark.performance .section-num { color: var(--accent-amber); }
   .section-mark.performance .section-line { background: var(--accent-amber); opacity: 0.85; }
   .section-mark.converge .section-line {
     max-width: 100%;
-    background: linear-gradient(90deg, var(--accent-amber), var(--accent-cyan), var(--accent-amber));
-    opacity: 0.75;
+    background: linear-gradient(90deg, var(--accent-amber), var(--accent-platinum), var(--accent-amber));
+    opacity: 0.65;
   }
   .section-mark.closing .section-line { background: var(--accent-amber); opacity: 0.4; }
 

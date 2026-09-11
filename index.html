@@ -401,12 +401,12 @@
       left: 0;
       width: 100%;
       height: 100%;
-      stroke: #00F0FF;
+      stroke: #FF9F1C;
       stroke-width: 2.2px;
       fill: none;
       stroke-linecap: round;
       stroke-linejoin: round;
-      filter: drop-shadow(0 0 6px rgba(0, 240, 255, 0.45));
+      filter: drop-shadow(0 0 6px rgba(255, 159, 28, 0.45));
       z-index: 4;
       -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.9) 50%, transparent 100%);
       mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.9) 50%, transparent 100%);
@@ -422,7 +422,7 @@
       bottom: 0;
       width: 1.5px;
       background-color: rgba(255, 255, 255, 0.85);
-      box-shadow: 0 0 8px 1px rgba(0, 240, 255, 0.55), 0 0 16px rgba(0, 240, 255, 0.25);
+      box-shadow: 0 0 8px 1px rgba(255, 159, 28, 0.55), 0 0 16px rgba(255, 159, 28, 0.25);
       z-index: 5;
       animation: scan-line 4s ease-in-out infinite alternate;
     }
@@ -480,8 +480,8 @@
       transition: -webkit-text-stroke 0.35s ease, text-shadow 0.35s ease;
     }
     .portal-card-hps:hover .hps-title-outline {
-      -webkit-text-stroke: 1.5px #00F0FF;
-      text-shadow: 0 0 20px rgba(0, 240, 255, 0.35);
+      -webkit-text-stroke: 1.5px #FF9F1C;
+      text-shadow: 0 0 20px rgba(255, 159, 28, 0.35);
     }
     .hps-title-solid {
       display: block;
@@ -490,7 +490,7 @@
     }
     .portal-card-hps:hover .hps-title-solid {
       color: #FFFFFF;
-      text-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+      text-shadow: 0 0 20px rgba(255, 159, 28, 0.2);
     }
 
     /* ─── HPS-1.0 Layout System (Zero Height Expansion) ─── */
@@ -530,7 +530,7 @@
       transition: color 0.3s ease;
     }
     .portal-card-hps:hover .hps-prompt-text {
-      color: #00F0FF;
+      color: #FF9F1C;
     }
 
     /* Right column in the open space on the right half of the card */
@@ -558,7 +558,7 @@
         pointer-events: auto;
         margin-top: 8px;
         padding-top: 12px;
-        border-top: 1px solid rgba(0, 240, 255, 0.15);
+        border-top: 1px solid rgba(255, 159, 28, 0.2);
       }
     }
 
@@ -568,7 +568,7 @@
       font-weight: 300;
       line-height: 1.5;
       margin-bottom: 12px;
-      border-left: 2px solid rgba(0, 240, 255, 0.4);
+      border-left: 2px solid rgba(255, 159, 28, 0.5);
       padding-left: 10px;
     }
 
@@ -593,11 +593,11 @@
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .hps-metric-chip:hover {
-      border-color: rgba(0, 240, 255, 0.7);
-      background: rgba(0, 240, 255, 0.08);
+      border-color: rgba(255, 159, 28, 0.6);
+      background: rgba(255, 159, 28, 0.06);
     }
     .hps-metric-tag {
-      color: #00F0FF;
+      color: #FF9F1C;
       font-weight: 700;
       display: block;
       letter-spacing: 0.05em;
@@ -859,12 +859,11 @@
   <!-- Monospace Terminal Navigation -->
   <nav class="hidden md:flex items-center gap-6 text-xs font-mono tracking-[0.14em] uppercase text-[#71717A]" aria-label="Main navigation">
   <a href="/" class="text-[#FF9F1C] font-semibold relative py-1 border-b border-[#FF9F1C]">HOME</a>
+  <a href="./hybridproductionstandard.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">THE STANDARD</a>
+  <a href="./projects.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">THE SUITE</a>
   <a href="./field-notes.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">FIELD NOTES</a>
   <a href="./music.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">MUSIC</a>
-  <a href="./projects.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">PROJECTS</a>
   <a href="./about.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">ABOUT</a>
-  <a href="./what-is-hybrid.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">WHAT IS HYBRID</a>
-  <a href="./services.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">SERVICES</a>
   <a href="./contact.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">CONTACT</a>
   </nav>
 
@@ -881,12 +880,11 @@
   <div class="absolute top-full left-0 right-0 bg-[#0B0C0E] border-b border-white/20 shadow-2xl py-6 px-6 hidden peer-checked:flex flex-col items-center gap-4 text-center">
   <nav class="flex flex-col gap-4 text-center text-xs font-mono tracking-widest uppercase text-[#EAEAEA] font-medium w-full max-w-xs" aria-label="Mobile navigation">
   <a href="/" class="text-[#FF9F1C] py-2 border-b border-white/10 font-bold">HOME</a>
+  <a href="./hybridproductionstandard.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">THE STANDARD (HPS-1.0)</a>
+  <a href="./projects.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">THE SUITE (LAB &amp; TOOLS)</a>
   <a href="./field-notes.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">FIELD NOTES</a>
   <a href="./music.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">MUSIC</a>
-  <a href="./projects.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">PROJECTS</a>
   <a href="./about.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">ABOUT</a>
-  <a href="./what-is-hybrid.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">WHAT IS HYBRID</a>
-  <a href="./services.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">SERVICES</a>
   <a href="./contact.html" class="hover:text-[#FF9F1C] py-2 transition-colors">CONTACT</a>
   </nav>
   </div>
@@ -895,96 +893,124 @@
   </header>
 
   <!-- Main Content Stream -->
-  <main class="flex-grow w-full pt-12 pb-24 flex flex-col" id="main-content">
+  <main class="flex-grow w-full pt-10 pb-24 flex flex-col" id="main-content">
   
-  <!-- SECTION 1: Brutalist Manifesto Hero -->
-  <section class="relative flex flex-col items-center px-6 py-16 max-w-6xl mx-auto text-center">
+  <!-- HERO SECTION: Brutalist Manifesto + Tri-Hub Intent Gateway -->
+  <section class="relative flex flex-col items-center px-6 pt-10 pb-16 max-w-6xl mx-auto text-center">
   
   <!-- Identity tag -->
-  <div class="inline-flex items-center gap-2 px-4 py-2 bg-[#121417] border border-white/15 text-[10px] font-mono tracking-[0.16em] text-[#FF9F1C] mb-8">
+  <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-[#121417] border border-white/15 text-[10px] font-mono tracking-[0.16em] text-[#FF9F1C] mb-8">
   <span class="w-1.5 h-1.5 bg-[#FF9F1C] animate-terminal-blink"></span>
-  <span>Justin Ray - hybrid production & creative tech</span>
+  <span>Justin Ray · Hybrid AI Music Production &amp; Creative Technology</span>
   </div>
 
   <h1 class="text-3xl sm:text-6xl font-bold tracking-[-0.035em] text-[#EAEAEA] leading-[0.94] uppercase max-w-5xl">
   THE FUTURE EXISTS IN THE <span class="inline-block whitespace-nowrap"><span class="cycling-grey-container"><span id="cycling-grey-target" class="cycling-grey-word font-modern" aria-label="GREY">GREY</span></span>.</span>
   </h1>
 
-   <p class="mt-8 text-base sm:text-xl font-light text-[#A1A1AA] max-w-3xl leading-relaxed">
-   Knowledge Hub For The Next Generation of Creators
-   </p>
+  <p class="mt-6 text-base sm:text-lg font-light text-[#A1A1AA] max-w-3xl leading-relaxed">
+    The central research laboratory of <strong class="text-[#EAEAEA] font-medium">Justin Ray</strong> (JRAY / loserdub). Standardizing <strong class="text-[#EAEAEA] font-medium">Hybrid AI Music Production</strong>, engineering browser audio DSP engines, and architecting the open <strong class="text-[#EAEAEA] font-medium">Hybrid Production Standard (HPS-1.0)</strong>.
+  </p>
 
-   <!-- Action Matrix: 2 High-Voltage Flagship Launchpads -->
-   <div class="w-full max-w-4xl mt-12 flex flex-col gap-4">
-     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-       
-       <!-- MIXR Studio Block (Amber Mastering Suite) -->
-       <a href="./mixrstudio.html" class="tech-card p-6 flex flex-col justify-between text-left group border-[#FF9F1C]/30 hover:border-[#FF9F1C]">
-         <div class="flex items-center justify-between mb-4">
-           <span class="tech-tag tech-tag-amber">FREE MASTERING SUITE</span>
-           <span class="text-[10px] font-mono text-[#71717A] group-hover:text-[#FF9F1C] transition-colors">LAUNCH STUDIO →</span>
-         </div>
-         <div>
-           <h2 class="text-xl font-bold font-mono text-[#EAEAEA] uppercase tracking-wide group-hover:text-[#FF9F1C] transition-colors">MIXR STUDIO</h2>
-           <p class="text-xs text-[#71717A] mt-2 leading-relaxed">Browser audio mastering suite, dynamic EQ engine, LUFS meter, and precision limiter.</p>
-         </div>
-         <div class="mt-4 pt-4 border-t border-white/[0.08] flex items-center justify-between text-[10px] font-mono text-[#71717A]">
-           <span>DSP ENGINE // -14 LUFS TARGET</span>
-           <span class="text-[#FF9F1C]">OPEN →</span>
-         </div>
-       </a>
+  <!-- Tri-Hub Intent Gateway -->
+  <div class="w-full max-w-5xl mt-12 grid grid-cols-1 md:grid-cols-3 gap-5 text-left">
+    
+    <!-- PILLAR 01: THE STANDARD -->
+    <a href="./hybridproductionstandard.html" class="tech-card p-6 flex flex-col justify-between group border-white/15 hover:border-[#FF9F1C] transition-all">
+      <div>
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-[10px] font-mono tracking-[0.2em] uppercase text-[#FF9F1C] font-semibold">[ 01 // THE STANDARD ]</span>
+          <span class="text-[10px] font-mono text-[#71717A] group-hover:text-[#FF9F1C] transition-colors">HPS-1.0 →</span>
+        </div>
+        <h2 class="text-lg font-bold font-mono text-[#EAEAEA] uppercase tracking-wide group-hover:text-[#FF9F1C] transition-colors">
+          HPS-1.0 SPECIFICATION
+        </h2>
+        <p class="text-xs text-[#A1A1AA] mt-2 leading-relaxed font-light">
+          The 5-axis open protocol standardizing AI provenance, EU AI Act Art. 50 compliance, DDEX ERN 4.3 metadata, and C2PA cryptographic manifests.
+        </p>
+      </div>
+      <div class="mt-6 pt-4 border-t border-white/[0.08] flex items-center justify-between text-[10px] font-mono text-[#71717A]">
+        <span>ATTESTATION PROTOCOL</span>
+        <span class="text-[#FF9F1C] font-semibold">INSPECT →</span>
+      </div>
+    </a>
 
-        <!-- VOID 1.5 Web Sampler Block (Cyan Audio Slicer) -->
-        <a href="./void.html" class="tech-card p-6 flex flex-col justify-between text-left group border-[#00F0FF]/30 hover:border-[#00F0FF]">
-          <div class="flex items-center justify-between mb-4">
-            <span class="tech-tag tech-tag-cyan">NEW · WEB SAMPLER</span>
-            <span class="text-[10px] font-mono text-[#71717A] group-hover:text-[#00F0FF] transition-colors">LAUNCH WORKSTATION →</span>
-          </div>
-          <div>
-            <h2 class="text-xl font-bold font-mono text-[#EAEAEA] uppercase tracking-wide group-hover:text-[#00F0FF] transition-colors">VOID 1.5 WEB SAMPLER</h2>
-            <p class="text-xs text-[#71717A] mt-2 leading-relaxed">Free browser VOID web sampler, 16-pad audio slicer, and off-thread Harmonic Auto-Mashup engine.</p>
-          </div>
-          <div class="mt-4 pt-4 border-t border-white/[0.08] flex items-center justify-between text-[10px] font-mono text-[#71717A]">
-            <span>WEB WORKERS // CAMELOT DSP</span>
-            <span class="text-[#00F0FF]">OPEN →</span>
-          </div>
-        </a>
+    <!-- PILLAR 02: THE SUITE -->
+    <a href="./projects.html" class="tech-card p-6 flex flex-col justify-between group border-white/15 hover:border-[#FF9F1C] transition-all">
+      <div>
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-[10px] font-mono tracking-[0.2em] uppercase text-[#FF9F1C] font-semibold">[ 02 // THE SUITE ]</span>
+          <span class="text-[10px] font-mono text-[#71717A] group-hover:text-[#FF9F1C] transition-colors">9 ENGINES →</span>
+        </div>
+        <h2 class="text-lg font-bold font-mono text-[#EAEAEA] uppercase tracking-wide group-hover:text-[#FF9F1C] transition-colors">
+          AUDIO ENGINES &amp; LAB
+        </h2>
+        <p class="text-xs text-[#A1A1AA] mt-2 leading-relaxed font-light">
+          Zero-install browser Web Audio DSP tools: VOID 1.5 web sampler, MIXR Studio mastering, J-DAW, and off-thread granular processors.
+        </p>
+      </div>
+      <div class="mt-6 pt-4 border-t border-white/[0.08] flex items-center justify-between text-[10px] font-mono text-[#71717A]">
+        <span>WEB AUDIO API / DSP</span>
+        <span class="text-[#FF9F1C] font-semibold">LAUNCH LAB →</span>
+      </div>
+    </a>
 
-     </div>
-   </div>
+    <!-- PILLAR 03: THE ARTIST -->
+    <a href="./music.html" class="tech-card p-6 flex flex-col justify-between group border-white/15 hover:border-[#10B981] transition-all">
+      <div>
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-[10px] font-mono tracking-[0.2em] uppercase text-[#10B981] font-semibold">[ 03 // THE ARTIST ]</span>
+          <span class="text-[10px] font-mono text-[#71717A] group-hover:text-[#10B981] transition-colors">DISCOGRAPHY →</span>
+        </div>
+        <h2 class="text-lg font-bold font-mono text-[#EAEAEA] uppercase tracking-wide group-hover:text-[#10B981] transition-colors">
+          MUSIC &amp; DISCOGRAPHY
+        </h2>
+        <p class="text-xs text-[#A1A1AA] mt-2 leading-relaxed font-light">
+          Original records and multitrack productions spanning 5 project aliases: loserdub, VISION, Flawed Future, le vide, and disarray.
+        </p>
+      </div>
+      <div class="mt-6 pt-4 border-t border-white/[0.08] flex items-center justify-between text-[10px] font-mono text-[#71717A]">
+        <span>STREAMING CATALOG</span>
+        <span class="text-[#10B981] font-semibold">STREAM →</span>
+      </div>
+    </a>
+
+  </div>
 
   </section>
 
-  <!-- SECTION 2: Graphing Line Section Divider -->
-  <div class="w-full max-w-5xl mx-auto px-6">
-    <div class="graph-accent-line"></div>
-  </div>
-
-  <!-- SECTION 3: The Hybrid Manifesto & HPS-1.0 Protocol Console -->
+  <!-- CHAPTER 01: The Standard, Manifesto Thesis, & Attestation Engine -->
   <section class="w-full max-w-5xl mx-auto px-6 py-16">
+    <div class="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-white/10 pb-4">
+      <div>
+        <span class="text-[10px] font-mono tracking-[0.25em] text-[#FF9F1C] uppercase block mb-1">01 // Protocol Architecture &amp; Methodology</span>
+        <h2 class="text-3xl font-bold uppercase tracking-tight text-[#EAEAEA]">The Standard &amp; Philosophy</h2>
+      </div>
+      <span class="text-xs font-mono text-[#71717A]">HPS-1.0 Attestation Framework</span>
+    </div>
+
+    <!-- The Hybrid Manifesto Thesis Box -->
     <div class="bg-[#121417]/90 border border-white/10 p-8 sm:p-12 relative tech-bracket">
-      
       <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-6 border-b border-white/[0.08] pb-4">
-        <span class="text-[#FF9F1C] tracking-[0.18em] uppercase font-semibold">From the manifesto</span>
-        <span>Manifesto Core // Foundational Thesis</span>
+        <span class="text-[#FF9F1C] tracking-[0.18em] uppercase font-semibold">Manifesto Core</span>
+        <span>The Grey Zone Methodology</span>
       </div>
 
-      <blockquote class="text-xl sm:text-3xl font-light leading-snug text-[#EAEAEA] pl-4 sm:pl-6 border-l-2 border-[#CBD5E1]/60">
+      <blockquote class="text-xl sm:text-2xl font-light leading-snug text-[#EAEAEA] pl-4 sm:pl-6 border-l-2 border-[#CBD5E1]/60">
         "While people argue over black or white, human versus machine, or all or nothing, the real creative work happens in the <span class="text-[#CBD5E1] font-mono font-semibold">grey</span>. Hybrid production is about finding the soul inside the algorithm."
       </blockquote>
 
-      <p class="mt-6 text-base text-[#A1A1AA] leading-relaxed max-w-3xl">
-        Hybrid production isn't about letting AI finish the track for you. It's about treating generative models as a starting point - seeding raw textures and ideas, then shaping them by hand with live instruments, analog signal chains, and real studio engineering.
+      <p class="mt-6 text-sm sm:text-base text-[#A1A1AA] leading-relaxed max-w-3xl font-light">
+        Hybrid production is not about letting AI complete tracks unassisted. It treats neural audio models as raw oscillators: seeding initial harmonic latent structures, then surgically transforming them via live instrumentation, spectral stem splitting, and digital audio workstation master engineering.
       </p>
 
       <div class="mt-8 pt-4 border-t border-white/[0.08] flex items-center justify-between">
-        <a href="./what-is-hybrid.html" class="inline-flex items-center gap-4 px-6 py-4 bg-[#0B0C0E] border border-white/20 hover:border-[#FF9F1C] text-xs font-mono tracking-widest text-[#EAEAEA] hover:text-[#FF9F1C] transition-all">
-          <span>Read the full manifesto</span>
+        <a href="./what-is-hybrid.html" class="inline-flex items-center gap-3 px-5 py-3 bg-[#0B0C0E] border border-white/20 hover:border-[#FF9F1C] text-xs font-mono tracking-wider text-[#EAEAEA] hover:text-[#FF9F1C] transition-all">
+          <span>Read the full methodology manifesto</span>
           <span>→</span>
         </a>
-        <span class="text-[10px] font-mono text-[#71717A] hidden sm:inline">THE GREY ZONE METHODOLOGY</span>
+        <span class="text-[10px] font-mono text-[#71717A] hidden sm:inline">FOUNDATIONAL ARCHITECTURE</span>
       </div>
-
     </div>
 
     <!-- HPS-1.0 Cyber Protocol Console & Attestation Waveform Engine -->
@@ -993,24 +1019,24 @@
       <!-- Card Top Header Bar -->
       <div class="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/[0.08] pb-4 transition-colors duration-300">
         <div class="flex flex-wrap items-center gap-3">
-          <span class="inline-flex items-center gap-2 px-3 py-1 font-mono text-[10px] tracking-[0.18em] uppercase font-semibold text-[#00F0FF] bg-[#00F0FF]/[0.08] border border-[#00F0FF]/35">
+          <span class="inline-flex items-center gap-2 px-3 py-1 font-mono text-[10px] tracking-[0.18em] uppercase font-semibold text-[#FF9F1C] bg-[#FF9F1C]/[0.08] border border-[#FF9F1C]/35">
             [ SPECIFICATION // EU AI ACT ART. 50 &amp; DDEX ERN 4.3 ]
           </span>
-          <span class="inline-flex items-center gap-1.5 font-mono text-[10px] text-[#00F0FF]/90">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-pulse"></span>
+          <span class="inline-flex items-center gap-1.5 font-mono text-[10px] text-[#FF9F1C]/90">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#FF9F1C] animate-pulse"></span>
             <span>SECURE_ENCLAVE_ACTIVE</span>
           </span>
         </div>
         <div class="flex items-center gap-3">
-          <span class="text-[10px] font-mono text-[#71717A] tracking-wider uppercase hidden md:inline">SHA-256 VERIFIED</span>
-          <span class="text-xs font-mono text-[#00F0FF]/80 group-hover:text-[#00F0FF] transition-colors flex items-center gap-2 self-start sm:self-auto">
+          <span class="text-[10px] font-mono text-[#71717A] tracking-wider uppercase hidden md:inline">C2PA PROVENANCE</span>
+          <span class="text-xs font-mono text-[#FF9F1C]/80 group-hover:text-[#FF9F1C] transition-colors flex items-center gap-2 self-start sm:self-auto">
             <span class="font-bold tracking-wider">INSPECT PROTOCOL</span>
             <span class="group-hover:translate-x-1.5 transition-transform duration-300">→</span>
           </span>
         </div>
       </div>
 
-      <!-- Main Body Grid: Left = Typography & Prompt, Right = Condensed 5-Axis & Blurb in Open Space (Zero Expansion) -->
+      <!-- Main Body Grid: Left = Typography & Prompt, Right = Condensed 5-Axis in Open Space -->
       <div class="hps-body-grid">
         
         <!-- Left Column: Title, Subtitle, and Prompt -->
@@ -1021,19 +1047,18 @@
           </div>
           
           <div class="mt-3">
-            <span class="text-xs sm:text-sm font-mono font-bold tracking-[0.18em] text-[#00F0FF] uppercase">
+            <span class="text-xs sm:text-sm font-mono font-bold tracking-[0.18em] text-[#FF9F1C] uppercase">
               HYBRID PRODUCTION STANDARD (HPS-1.0)
             </span>
           </div>
 
-          <!-- Sleek default callout that transitions cleanly -->
           <div class="hps-prompt-text">
-            <span>(click here for the future of creative control</span>
-            <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→)</span>
+            <span>Explore cryptographic audio provenance</span>
+            <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
           </div>
         </div>
 
-        <!-- Right Column: Condensed Blurb & 5-Axis Metrics Revealed in Open Right Space on Hover -->
+        <!-- Right Column: Condensed Blurb & 5-Axis Metrics -->
         <div class="hps-right-col">
           <p class="hps-blurb-text">
             The open 5-axis framework mapping neural audio synthesis and stem separation to verified DDEX ERN 4.3 metadata and C2PA cryptographic provenance.
@@ -1067,17 +1092,14 @@
 
       <!-- Central Moving Waveform Engine Overlay (Organic Asymmetrical Waves) -->
       <div class="hps-waveform-wrap" aria-hidden="true">
-        <!-- Dull Background Waveform -->
         <svg class="hps-wave-dull" viewBox="0 0 1000 200" preserveAspectRatio="none">
           <path d="M 0 100 L 8.3 96 L 16.7 111 L 25 81 L 33.3 114 L 41.7 86 L 50 143 L 58.3 42 L 66.7 147 L 75 57 L 83.3 146 L 91.7 73 L 100 149 L 108.3 69 L 116.7 114 L 125 92 L 133.3 122 L 141.7 80 L 150 108 L 158.3 88 L 166.7 111 L 175 86 L 183.3 120 L 191.7 82 L 200 133 L 208.3 65 L 216.7 150 L 225 76 L 233.3 169 L 241.7 47 L 250 160 L 258.3 46 L 266.7 188 L 275 54 L 283.3 134 L 291.7 43 L 300 137 L 308.3 74 L 316.7 129 L 325 66 L 333.3 117 L 341.7 81 L 350 125 L 358.3 82 L 366.7 124 L 375 73 L 383.3 134 L 391.7 73 L 400 145 L 408.3 80 L 416.7 119 L 425 79 L 433.3 121 L 441.7 79 L 450 145 L 458.3 81 L 466.7 111 L 475 92 L 483.3 117 L 491.7 89 L 500 144 L 508.3 38 L 516.7 169 L 525 34 L 533.3 145 L 541.7 44 L 550 136 L 558.3 18 L 566.7 158 L 575 54 L 583.3 144 L 591.7 76 L 600 127 L 608.3 66 L 616.7 131 L 625 52 L 633.3 142 L 641.7 81 L 650 125 L 658.3 68 L 666.7 121 L 675 62 L 683.3 145 L 691.7 61 L 700 182 L 708.3 63 L 716.7 137 L 725 76 L 733.3 150 L 741.7 48 L 750 160 L 758.3 56 L 766.7 154 L 775 41 L 783.3 170 L 791.7 53 L 800 166 L 808.3 49 L 816.7 159 L 825 25 L 833.3 132 L 841.7 68 L 850 129 L 858.3 67 L 866.7 129 L 875 76 L 883.3 123 L 891.7 88 L 900 120 L 908.3 76 L 916.7 113 L 925 92 L 933.3 117 L 941.7 91 L 950 111 L 958.3 91 L 966.7 104 L 975 94 L 983.3 103 L 991.7 98 L 1000 100" />
         </svg>
 
-        <!-- Lit Glowing Waveform with Scanning Mask -->
         <svg class="hps-wave-lit" viewBox="0 0 1000 200" preserveAspectRatio="none">
           <path d="M 0 100 L 8.3 96 L 16.7 111 L 25 81 L 33.3 114 L 41.7 86 L 50 143 L 58.3 42 L 66.7 147 L 75 57 L 83.3 146 L 91.7 73 L 100 149 L 108.3 69 L 116.7 114 L 125 92 L 133.3 122 L 141.7 80 L 150 108 L 158.3 88 L 166.7 111 L 175 86 L 183.3 120 L 191.7 82 L 200 133 L 208.3 65 L 216.7 150 L 225 76 L 233.3 169 L 241.7 47 L 250 160 L 258.3 46 L 266.7 188 L 275 54 L 283.3 134 L 291.7 43 L 300 137 L 308.3 74 L 316.7 129 L 325 66 L 333.3 117 L 341.7 81 L 350 125 L 358.3 82 L 366.7 124 L 375 73 L 383.3 134 L 391.7 73 L 400 145 L 408.3 80 L 416.7 119 L 425 79 L 433.3 121 L 441.7 79 L 450 145 L 458.3 81 L 466.7 111 L 475 92 L 483.3 117 L 491.7 89 L 500 144 L 508.3 38 L 516.7 169 L 525 34 L 533.3 145 L 541.7 44 L 550 136 L 558.3 18 L 566.7 158 L 575 54 L 583.3 144 L 591.7 76 L 600 127 L 608.3 66 L 616.7 131 L 625 52 L 633.3 142 L 641.7 81 L 650 125 L 658.3 68 L 666.7 121 L 675 62 L 683.3 145 L 691.7 61 L 700 182 L 708.3 63 L 716.7 137 L 725 76 L 733.3 150 L 741.7 48 L 750 160 L 758.3 56 L 766.7 154 L 775 41 L 783.3 170 L 791.7 53 L 800 166 L 808.3 49 L 816.7 159 L 825 25 L 833.3 132 L 841.7 68 L 850 129 L 858.3 67 L 866.7 129 L 875 76 L 883.3 123 L 891.7 88 L 900 120 L 908.3 76 L 916.7 113 L 925 92 L 933.3 117 L 941.7 91 L 950 111 L 958.3 91 L 966.7 104 L 975 94 L 983.3 103 L 991.7 98 L 1000 100" />
         </svg>
 
-        <!-- Moving Vertical Scanner Line -->
         <div class="hps-scanner-line"></div>
       </div>
 
@@ -1085,31 +1107,110 @@
 
   </section>
 
-  <!-- SECTION 4: Standout Field Notes & Research Archive (Amber #FF9F1C) -->
+  <!-- CHAPTER 02: The Creator Suite (Browser Audio DSP Engines) -->
   <section class="w-full max-w-5xl mx-auto px-6 py-16">
+    <div class="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-white/10 pb-4">
+      <div>
+        <span class="text-[10px] font-mono tracking-[0.25em] text-[#FF9F1C] uppercase block mb-1">02 // Interactive Web Audio Lab</span>
+        <h2 class="text-3xl font-bold uppercase tracking-tight text-[#EAEAEA]">Browser Audio Engines</h2>
+      </div>
+      <span class="text-xs font-mono text-[#71717A]">Free · Zero Install · Web DSP</span>
+    </div>
+
+    <!-- Dual Flagship Launchpads Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+      
+      <!-- MIXR Studio Block (Mastering Suite) -->
+      <a href="./mixrstudio.html" class="tech-card p-8 flex flex-col justify-between text-left group border-[#FF9F1C]/30 hover:border-[#FF9F1C] transition-all">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="tech-tag tech-tag-amber">FREE MASTERING SUITE</span>
+            <span class="text-[10px] font-mono text-[#71717A] group-hover:text-[#FF9F1C] transition-colors">LAUNCH STUDIO →</span>
+          </div>
+          <h3 class="text-2xl font-bold font-mono text-[#EAEAEA] uppercase tracking-wide group-hover:text-[#FF9F1C] transition-colors">
+            MIXR STUDIO
+          </h3>
+          <p class="text-xs text-[#A1A1AA] mt-3 leading-relaxed font-light">
+            In-browser audio mastering workstation engineered by Justin Ray. Features a dynamic 4-band EQ engine, real-time integrated LUFS loudness meter, phase correlation analysis, and lookahead precision limiter targeting streaming standard -14 LUFS.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/[0.08] flex items-center justify-between text-[10px] font-mono text-[#71717A]">
+          <span>DSP ENGINE // -14 LUFS TARGET</span>
+          <span class="text-[#FF9F1C] font-semibold">OPEN WORKSTATION →</span>
+        </div>
+      </a>
+
+      <!-- VOID 1.5 Web Sampler Block (Granular Audio Slicer) -->
+      <a href="./void.html" class="tech-card p-8 flex flex-col justify-between text-left group border-white/15 hover:border-[#FF9F1C] transition-all">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="tech-tag tech-tag-platinum">NEW · WEB SAMPLER</span>
+            <span class="text-[10px] font-mono text-[#71717A] group-hover:text-[#FF9F1C] transition-colors">LAUNCH SAMPLER →</span>
+          </div>
+          <h3 class="text-2xl font-bold font-mono text-[#EAEAEA] uppercase tracking-wide group-hover:text-[#FF9F1C] transition-colors">
+            VOID 1.5 WEB SAMPLER
+          </h3>
+          <p class="text-xs text-[#A1A1AA] mt-3 leading-relaxed font-light">
+            Browser-based 16-pad audio slicer and granular sampling workstation. Powered by off-thread Web Workers, transient peak detection, ADSR shaping, and the Harmonic Auto-Mashup engine with automated Camelot wheel key matching.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/[0.08] flex items-center justify-between text-[10px] font-mono text-[#71717A]">
+          <span>WEB WORKERS // CAMELOT DSP</span>
+          <span class="text-[#FF9F1C] font-semibold">OPEN SAMPLER →</span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Complete Lab Directory Banner -->
+    <div class="mt-6 p-6 bg-[#121417] border border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div>
+        <span class="text-[10px] font-mono uppercase text-[#71717A] tracking-wider block mb-1">Additional Browser Tools</span>
+        <p class="text-xs text-[#EAEAEA] font-mono">
+          VISION Subtractive Synth · J-DAW Multitrack · Modal Chord Scaler · Neural Vocals · Fractal Audio
+        </p>
+      </div>
+      <a href="./projects.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#0B0C0E] border border-white/20 hover:border-[#FF9F1C] text-xs font-mono text-[#EAEAEA] hover:text-[#FF9F1C] transition-all whitespace-nowrap self-start sm:self-auto">
+        <span>Explore all 9 tools in Projects &amp; Lab</span>
+        <span>→</span>
+      </a>
+    </div>
+
+  </section>
+
+  <!-- CHAPTER 03: The Research Stream (Field Notes & Academic Archive) -->
+  <section class="w-full max-w-5xl mx-auto px-6 py-16">
+    <div class="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-white/10 pb-4">
+      <div>
+        <span class="text-[10px] font-mono tracking-[0.25em] text-[#FF9F1C] uppercase block mb-1">03 // Technical Investigations</span>
+        <h2 class="text-3xl font-bold uppercase tracking-tight text-[#EAEAEA]">Field Notes &amp; Research Archive</h2>
+      </div>
+      <span class="text-xs font-mono text-[#71717A]">19 Original Research Papers</span>
+    </div>
+
     <div class="tech-card p-8 sm:p-12 border-[#FF9F1C]/40 bg-gradient-to-br from-[#121417] via-[#0E1013] to-[#141824] relative overflow-hidden group">
       <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-[#FF9F1C]/5 rounded-full blur-3xl pointer-events-none group-hover:bg-[#FF9F1C]/10 transition-colors"></div>
       <div class="flex flex-col md:flex-row md:items-center justify-between gap-8 relative z-10">
         <div class="max-w-2xl">
-          <div class="inline-flex items-center gap-2 px-4 py-1 bg-[#0B0C0E] border border-[#FF9F1C]/30 text-[10px] font-mono tracking-[0.2em] text-[#FF9F1C] uppercase mb-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#0B0C0E] border border-[#FF9F1C]/30 text-[10px] font-mono tracking-[0.18em] text-[#FF9F1C] uppercase mb-4">
             <span class="w-1.5 h-1.5 bg-[#FF9F1C] animate-terminal-blink"></span>
             <span>RESEARCH ARCHIVE // 19 ANALYTICAL FIELD NOTES</span>
           </div>
-          <h2 class="text-3xl font-bold uppercase tracking-tight text-[#EAEAEA] mb-4 group-hover:text-[#FF9F1C] transition-colors">
-            FIELD NOTES &amp; RESEARCH ARCHIVE
-          </h2>
-          <p class="text-base text-[#A1A1AA] font-light leading-relaxed mb-6">
-            In-depth technical investigations, prompt diffusion physics, multi-agent DAW architectures, C2PA cryptographic provenance, and music streaming economics.
+          <h3 class="text-2xl sm:text-3xl font-bold uppercase tracking-tight text-[#EAEAEA] mb-3 group-hover:text-[#FF9F1C] transition-colors">
+            EMPIRICAL BENCHMARKS &amp; AI AUDIO PAPERS
+          </h3>
+          <p class="text-sm text-[#A1A1AA] font-light leading-relaxed mb-6">
+            In-depth laboratory investigations authored by Justin Ray covering neural audio diffusion physics, multi-agent DAW architectures, C2PA cryptographic provenance, watermark survival, and streaming market economics.
           </p>
           <div class="flex flex-wrap gap-2 text-[10px] font-mono text-[#71717A]">
-            <a href="./staccatoreview.html" class="px-2 py-1 bg-[#0B0C0E] border border-[#FF9F1C]/40 text-[#FF9F1C] hover:border-[#FF9F1C] transition-colors">NEW: Staccato AI Review</a>
-            <a href="./humanbridge.html" class="px-2 py-1 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] hover:text-[#EAEAEA] transition-colors">Human Contribution</a>
-            <a href="./sunonewtos.html" class="px-2 py-1 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] hover:text-[#EAEAEA] transition-colors">Suno Terms of Service</a>
-            <a href="./c2pa-music-provenance.html" class="px-2 py-1 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] hover:text-[#EAEAEA] transition-colors">C2PA Steganography</a>
-            <a href="./agentichybridproduction.html" class="px-2 py-1 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] hover:text-[#EAEAEA] transition-colors">Multi-Agent DAWs</a>
+            <a href="./staccatoreview.html" class="px-2.5 py-1 bg-[#0B0C0E] border border-[#FF9F1C]/40 text-[#FF9F1C] hover:border-[#FF9F1C] transition-colors">Staccato AI Review</a>
+            <a href="./humanbridge.html" class="px-2.5 py-1 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] hover:text-[#EAEAEA] transition-colors">Human Contribution Score</a>
+            <a href="./sunonewtos.html" class="px-2.5 py-1 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] hover:text-[#EAEAEA] transition-colors">Suno Terms of Service</a>
+            <a href="./c2pa-music-provenance.html" class="px-2.5 py-1 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] hover:text-[#EAEAEA] transition-colors">C2PA Steganography</a>
+            <a href="./agentichybridproduction.html" class="px-2.5 py-1 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] hover:text-[#EAEAEA] transition-colors">Multi-Agent DAWs</a>
           </div>
         </div>
-        <a href="./field-notes.html" class="inline-flex items-center justify-center gap-4 px-6 py-4 bg-[#FF9F1C] hover:bg-[#FFB042] text-black font-mono font-bold text-xs tracking-widest uppercase transition-all shadow-[0_0_25px_rgba(255,159,28,0.3)] hover:shadow-[0_0_35px_rgba(255,159,28,0.55)] whitespace-nowrap flex-shrink-0 self-start md:self-center">
+        <a href="./field-notes.html" class="inline-flex items-center justify-center gap-3 px-6 py-4 bg-[#FF9F1C] hover:bg-[#FFB042] text-black font-mono font-bold text-xs tracking-widest uppercase transition-all shadow-[0_0_25px_rgba(255,159,28,0.3)] hover:shadow-[0_0_35px_rgba(255,159,28,0.55)] whitespace-nowrap flex-shrink-0 self-start md:self-center">
           <span>EXPLORE ALL 19 FIELD NOTES</span>
           <span>→</span>
         </a>
@@ -1117,34 +1218,25 @@
     </div>
   </section>
 
-  <!-- Section Divider -->
-  <div class="w-full max-w-5xl mx-auto px-6">
-    <div class="graph-accent-line"></div>
-  </div>
-
-  <!-- SECTION 5: The Command Portals (Asymmetric, Distinctive Layout) -->
+  <!-- CHAPTER 04: The Artist, Discography & Studio Engagement -->
   <section class="w-full max-w-5xl mx-auto px-6 py-16">
-    
     <div class="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-white/10 pb-4">
       <div>
-        <span class="text-[10px] font-mono tracking-[0.25em] text-[#FF9F1C] uppercase block mb-1">Ecosystem Navigation</span>
-        <h2 class="text-3xl font-bold uppercase tracking-tight text-[#EAEAEA]">Explore The Network</h2>
+        <span class="text-[10px] font-mono tracking-[0.25em] text-[#10B981] uppercase block mb-1">04 // Musical Output &amp; Studio</span>
+        <h2 class="text-3xl font-bold uppercase tracking-tight text-[#EAEAEA]">The Artist &amp; Studio Services</h2>
       </div>
-      <span class="text-xs font-mono text-[#71717A]">6 Specialized Portals</span>
+      <span class="text-xs font-mono text-[#71717A]">Catalog Across 5 Aliases</span>
     </div>
 
-    <!-- Asymmetric Bento Command Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <!-- PORTAL 1: MUSIC & DISCOGRAPHY (The Star Music Button - Large 2-Column Hero Portal) -->
-      <a href="./music.html" class="portal-card-music portal-span-2-md portal-span-2-lg p-8 flex flex-col justify-between group min-h-[300px]">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Discography Card -->
+      <a href="./music.html" class="portal-card-music p-8 flex flex-col justify-between group min-h-[300px] text-left">
         <div>
           <div class="flex items-center justify-between mb-4">
-            <span class="inline-flex items-center gap-2 px-4 py-1 font-mono text-[10px] tracking-[0.16em] uppercase font-semibold text-[#10B981] bg-[#10B981]/10 border border-[#10B981]/30">
-              <span>[ ORIGINAL DISCOGRAPHY &amp; MASTER RELEASES ]</span>
+            <span class="inline-flex items-center gap-2 px-3 py-1 font-mono text-[10px] tracking-[0.16em] uppercase font-semibold text-[#10B981] bg-[#10B981]/10 border border-[#10B981]/30">
+              ORIGINAL DISCOGRAPHY
             </span>
-            
-            <!-- Live Audio Frequency Equalizer Bars -->
             <div class="flex items-end gap-1 h-5 px-2 py-1 bg-[#0B0C0E] border border-[#10B981]/30" title="Active Audio Frequency">
               <span class="w-1 bg-[#10B981] eq-bar-1"></span>
               <span class="w-1 bg-[#10B981] eq-bar-2"></span>
@@ -1154,16 +1246,15 @@
             </div>
           </div>
 
-          <h3 class="text-xl font-bold font-mono text-[#EAEAEA] uppercase tracking-wider mb-4 group-hover:text-[#10B981] transition-colors">
-            MUSIC &amp; STREAMING CATALOG
+          <h3 class="text-xl font-bold font-mono text-[#EAEAEA] uppercase tracking-wider mb-3 group-hover:text-[#10B981] transition-colors">
+            STREAMING DISCOGRAPHY
           </h3>
-          <p class="text-xs sm:text-base text-[#A1A1AA] font-light leading-relaxed mb-6 max-w-2xl">
-            Acoustic songwriting records, ambient synthwave journeys, and full-scale hybrid master productions spanning 5 project aliases. Recorded and engineered in East Lansing, Michigan, and distributed globally across major streaming platforms.
+          <p class="text-xs text-[#A1A1AA] font-light leading-relaxed mb-6">
+            Acoustic songwriting, ambient synthwave, and full-scale hybrid master productions spanning 5 project aliases. Recorded and engineered in East Lansing, Michigan, and distributed globally across Spotify, Apple Music, and SoundCloud.
           </p>
 
-          <!-- Verified Catalog Aliases -->
           <div class="flex flex-wrap gap-2 mb-6">
-            <span class="px-2 py-1 bg-[#0B0C0E] border border-[#10B981]/25 text-[10px] font-mono text-[#EAEAEA]">loserdub <span class="text-[#71717A]">(Acoustic / Raw)</span></span>
+            <span class="px-2 py-1 bg-[#0B0C0E] border border-[#10B981]/25 text-[10px] font-mono text-[#EAEAEA]">loserdub <span class="text-[#71717A]">(Acoustic)</span></span>
             <span class="px-2 py-1 bg-[#0B0C0E] border border-[#10B981]/25 text-[10px] font-mono text-[#EAEAEA]">VISION <span class="text-[#71717A]">(Hybrid Ambient)</span></span>
             <span class="px-2 py-1 bg-[#0B0C0E] border border-[#10B981]/25 text-[10px] font-mono text-[#EAEAEA]">Flawed Future <span class="text-[#71717A]">(Synthwave)</span></span>
             <span class="px-2 py-1 bg-[#0B0C0E] border border-[#10B981]/25 text-[10px] font-mono text-[#EAEAEA]">le vide</span>
@@ -1171,178 +1262,114 @@
           </div>
         </div>
 
-        <div class="pt-4 border-t border-[#10B981]/20 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs font-mono">
-          <div class="flex items-center gap-4 text-[10px] text-[#71717A]">
-            <span>SPOTIFY</span>
-            <span>·</span>
-            <span>APPLE MUSIC</span>
-            <span>·</span>
-            <span>SOUNDCLOUD</span>
-            <span>·</span>
-            <span>BANDCAMP</span>
-          </div>
-          <span class="text-[#10B981] font-bold group-hover:translate-x-1 transition-transform flex items-center gap-2 self-start sm:self-auto">
+        <div class="pt-4 border-t border-[#10B981]/20 flex items-center justify-between text-xs font-mono">
+          <span class="text-[10px] text-[#71717A]">SPOTIFY · APPLE MUSIC · SC</span>
+          <span class="text-[#10B981] font-bold group-hover:translate-x-1 transition-transform flex items-center gap-1.5">
             <span>STREAM RELEASES</span>
             <span>→</span>
           </span>
         </div>
       </a>
 
-      <!-- PORTAL 2: PROJECTS & DSP LAB (9 Live Browser Tools) -->
-      <a href="./projects.html" class="portal-card-tools col-span-1 md:col-span-1 lg:col-span-1 p-8 flex flex-col justify-between group min-h-[300px]">
+      <!-- Studio Services & Engineering Card -->
+      <a href="./services.html" class="portal-card-services p-8 flex flex-col justify-between group min-h-[300px] text-left">
         <div>
           <div class="flex items-center justify-between mb-4">
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 font-mono text-[10px] tracking-wider uppercase text-[#CBD5E1] bg-[#CBD5E1]/10 border border-[#CBD5E1]/30">[ 9 LIVE BROWSER TOOLS ]</span>
-            <span class="text-[10px] font-mono text-[#71717A] group-hover:text-[#CBD5E1] transition-colors">ENTER LAB →</span>
-          </div>
-          <h3 class="text-xl font-bold font-mono text-[#EAEAEA] uppercase tracking-wider mb-4 group-hover:text-[#CBD5E1] transition-colors">
-            PROJECTS &amp; DSP LAB
-          </h3>
-          <p class="text-xs text-[#A1A1AA] font-light leading-relaxed mb-6">
-            Interactive Web Audio DSP utilities: VOID 1.5 web sampler &amp; granular slicer, MIXR Studio mastering, subtractive synths, multitrack J-DAW, and chord scalers. Free, zero sign-up, runs entirely in the browser.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-6">
-            <span class="px-2 py-1 bg-[#121417] border border-[#CBD5E1]/30 text-[10px] font-mono text-[#CBD5E1]">VOID 1.5</span>
-            <span class="px-2 py-1 bg-[#121417] border border-white/10 text-[10px] font-mono text-[#EAEAEA]">MIXR Studio</span>
-            <span class="px-2 py-1 bg-[#121417] border border-white/10 text-[10px] font-mono text-[#EAEAEA]">VISION SYNTH</span>
-            <span class="px-2 py-1 bg-[#121417] border border-white/10 text-[10px] font-mono text-[#EAEAEA]">J-DAW</span>
-          </div>
-        </div>
-
-        <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-[#71717A]">
-          <span>WEB AUDIO API / DSP</span>
-          <span class="text-[#CBD5E1] group-hover:translate-x-1 transition-transform">LAUNCH TOOLS →</span>
-        </div>
-      </a>
-
-      <!-- PORTAL 3: WHAT IS HYBRID (Methodology & Philosophy) -->
-      <a href="./what-is-hybrid.html" class="portal-card-methodology p-6 flex flex-col justify-between group">
-        <div>
-          <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-4">
-            <span class="inline-flex items-center gap-2 px-2 py-1 font-mono text-[10px] tracking-wider uppercase text-[#A855F7] bg-[#A855F7]/10 border border-[#A855F7]/30">
-              METHODOLOGY
-            </span>
-            <span class="text-[10px] font-mono text-[#71717A] group-hover:text-[#A855F7] transition-colors">THE GREY ZONE →</span>
-          </div>
-          <h3 class="text-xl font-bold font-mono text-[#EAEAEA] uppercase tracking-wider mb-2 group-hover:text-[#A855F7] transition-colors">What is Hybrid</h3>
-          <p class="text-xs text-[#71717A] font-light leading-relaxed mb-6">
-            The comprehensive technical breakdown: spectral splitting, neural generators as co-instruments, and why treating AI as an oscillator redefines modern studio engineering.
-          </p>
-        </div>
-        <div class="text-[10px] font-mono text-[#71717A] border-t border-white/[0.08] pt-4 flex items-center justify-between">
-          <span>Read methodology</span>
-          <span class="text-[#A855F7] group-hover:translate-x-1 transition-transform">→</span>
-        </div>
-      </a>
-
-      <!-- PORTAL 4: ARCHITECT DOSSIER (Background & Narrative) -->
-      <a href="./about.html" class="portal-card-dossier p-6 flex flex-col justify-between group">
-        <div>
-          <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-4">
-            <span class="tech-tag">ARCHITECT DOSSIER</span>
-            <span class="text-[10px] font-mono text-[#71717A] group-hover:text-white transition-colors">PROFILE →</span>
-          </div>
-          <h3 class="text-xl font-bold font-mono text-[#EAEAEA] uppercase tracking-wider mb-2 group-hover:text-white transition-colors">Origins &amp; Bio</h3>
-          <p class="text-xs text-[#71717A] font-light leading-relaxed mb-6">
-            Acoustic songwriting roots, DAW signal chain evolution, Google MusicLM early beta testing, Suno growth specialist, and creative tech leadership.
-          </p>
-        </div>
-        <div class="text-[10px] font-mono text-[#71717A] border-t border-white/[0.08] pt-4 flex items-center justify-between">
-          <span>Read dossier</span>
-          <span class="text-white group-hover:translate-x-1 transition-transform">→</span>
-        </div>
-      </a>
-
-      <!-- PORTAL 5: SERVICES & ADVISORY (Mastering & Consulting) -->
-      <a href="./services.html" class="portal-card-services p-6 flex flex-col justify-between group">
-        <div>
-          <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-4">
-            <span class="inline-flex items-center gap-2 px-2 py-1 font-mono text-[10px] tracking-wider uppercase text-[#F59E0B] bg-[#F59E0B]/10 border border-[#F59E0B]/30">
-              SERVICES
+            <span class="inline-flex items-center gap-2 px-3 py-1 font-mono text-[10px] tracking-wider uppercase text-[#F59E0B] bg-[#F59E0B]/10 border border-[#F59E0B]/30">
+              SERVICES &amp; ADVISORY
             </span>
             <span class="text-[10px] font-mono text-[#71717A] group-hover:text-[#F59E0B] transition-colors">INQUIRE →</span>
           </div>
-          <h3 class="text-xl font-bold font-mono text-[#EAEAEA] uppercase tracking-wider mb-2 group-hover:text-[#F59E0B] transition-colors">Services &amp; Advisory</h3>
-          <p class="text-xs text-[#71717A] font-light leading-relaxed mb-6">
-            Hybrid mastering, stems surgical separation, and technical compliance consulting for record labels, digital audio workstations, and AI audio startups.
-          </p>
-        </div>
-        <div class="text-[10px] font-mono text-[#71717A] border-t border-white/[0.08] pt-4 flex items-center justify-between">
-          <span>View rates &amp; options</span>
-          <span class="text-[#F59E0B] group-hover:translate-x-1 transition-transform">→</span>
-        </div>
-      </a>
 
-      <!-- PORTAL 6: DIRECT CONTACT (Communication Dispatch) -->
-      <a href="./contact.html" class="portal-card-contact portal-span-2-md portal-span-3-lg p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group">
-        <div class="flex items-center gap-4">
-          <div class="w-2.5 h-2.5 bg-[#10B981] animate-pulse flex-shrink-0"></div>
-          <div>
-            <div class="flex items-center gap-2 mb-1">
-              <span class="text-[10px] font-mono text-[#10B981] uppercase tracking-wider font-semibold">● DIRECT DISPATCH CHANNEL</span>
-              <span class="text-[10px] font-mono text-[#71717A]">|</span>
-              <span class="text-[10px] font-mono text-[#71717A]">trustnodelogic@gmail.com</span>
-            </div>
-            <h3 class="text-xl font-bold font-mono text-[#EAEAEA] uppercase tracking-wider group-hover:text-white transition-colors">
-              HAVE A PROJECT, RESEARCH PROPOSAL, OR WANT TO TALK SHOP?
-            </h3>
+          <h3 class="text-xl font-bold font-mono text-[#EAEAEA] uppercase tracking-wider mb-3 group-hover:text-[#F59E0B] transition-colors">
+            STUDIO MASTERING &amp; CONSULTING
+          </h3>
+          <p class="text-xs text-[#A1A1AA] font-light leading-relaxed mb-6">
+            Specialized studio engineering services for record labels, digital audio workstations, and AI audio startups. Offering hybrid audio mastering, surgical multitrack stem separation, and technical compliance consulting for EU AI Act and DDEX ERN 4.3 standards.
+          </p>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-2 py-1 bg-[#0B0C0E] border border-[#F59E0B]/30 text-[10px] font-mono text-[#EAEAEA]">Hybrid Audio Mastering</span>
+            <span class="px-2 py-1 bg-[#0B0C0E] border border-[#F59E0B]/30 text-[10px] font-mono text-[#EAEAEA]">Stem Separation</span>
+            <span class="px-2 py-1 bg-[#0B0C0E] border border-[#F59E0B]/30 text-[10px] font-mono text-[#EAEAEA]">C2PA Stamping</span>
           </div>
         </div>
-        <span class="inline-flex items-center gap-2 px-6 py-4 bg-[#0B0C0E] border border-white/20 group-hover:border-white text-xs font-mono tracking-widest text-[#EAEAEA] uppercase transition-all flex-shrink-0 self-start sm:self-auto">
-          <span>SEND INQUIRY</span>
-          <span>→</span>
-        </span>
+
+        <div class="pt-4 border-t border-[#F59E0B]/20 flex items-center justify-between text-xs font-mono">
+          <span class="text-[10px] text-[#71717A]">DIRECT STUDIO RATES</span>
+          <span class="text-[#F59E0B] font-bold group-hover:translate-x-1 transition-transform flex items-center gap-1.5">
+            <span>VIEW OPTIONS</span>
+            <span>→</span>
+          </span>
+        </div>
       </a>
 
     </div>
+
+    <!-- Direct Dispatch Bar -->
+    <a href="./contact.html" class="portal-card-contact mt-6 p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group block text-left">
+      <div class="flex items-center gap-4">
+        <div class="w-2.5 h-2.5 bg-[#10B981] animate-pulse flex-shrink-0"></div>
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-[10px] font-mono text-[#10B981] uppercase tracking-wider font-semibold">● DIRECT DISPATCH CHANNEL</span>
+            <span class="text-[10px] font-mono text-[#71717A]">|</span>
+            <span class="text-[10px] font-mono text-[#71717A]">trustnodelogic@gmail.com</span>
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold font-mono text-[#EAEAEA] uppercase tracking-wider group-hover:text-white transition-colors">
+            HAVE A PROJECT, RESEARCH PROPOSAL, OR WANT TO TALK SHOP?
+          </h3>
+        </div>
+      </div>
+      <span class="inline-flex items-center gap-2 px-6 py-3.5 bg-[#0B0C0E] border border-white/20 group-hover:border-white text-xs font-mono tracking-widest text-[#EAEAEA] uppercase transition-all flex-shrink-0 self-start sm:self-auto">
+        <span>SEND INQUIRY</span>
+        <span>→</span>
+      </span>
+    </a>
+
   </section>
 
-  <!-- Section Divider -->
-  <div class="w-full max-w-5xl mx-auto px-6">
-    <div class="graph-accent-line"></div>
+  <!-- Socials Matrix -->
+  <section class="w-full max-w-5xl mx-auto px-6 py-12 text-center">
+    <div class="flex items-center justify-center gap-2 text-[10px] font-mono tracking-[0.25em] text-[#71717A] uppercase mb-6">
+      <span>Verified External Channels</span>
+    </div>
+    
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
+      <a href="https://x.com/TheInnerVision" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" class="tech-card p-4 flex flex-col items-center justify-center gap-2 text-[#71717A] hover:text-[#EAEAEA] group">
+        <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current group-hover:text-[#FF9F1C] transition-colors"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+        <span class="text-xs font-mono tracking-widest uppercase">X / Twitter</span>
+      </a>
+
+      <a href="https://youtube.com/@loserdub" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="tech-card p-4 flex flex-col items-center justify-center gap-2 text-[#71717A] hover:text-[#EAEAEA] group">
+        <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current group-hover:text-[#FF3B30] transition-colors"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
+        <span class="text-xs font-mono tracking-widest uppercase">YouTube</span>
+      </a>
+
+      <a href="https://www.linkedin.com/in/jray-me/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="tech-card p-4 flex flex-col items-center justify-center gap-2 text-[#71717A] hover:text-[#EAEAEA] group">
+        <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current group-hover:text-[#0052FF] transition-colors"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+        <span class="text-xs font-mono tracking-widest uppercase">LinkedIn</span>
+      </a>
+
+      <a href="https://network.landr.com/users/vision-hybrid" target="_blank" rel="noopener noreferrer" aria-label="LANDR Network" class="tech-card p-4 flex flex-col items-center justify-center gap-2 text-[#71717A] hover:text-[#EAEAEA] group">
+        <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current group-hover:text-[#FF9F1C] transition-colors"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"></path></svg>
+        <span class="text-xs font-mono tracking-widest uppercase">LANDR</span>
+      </a>
+    </div>
+
+    <div class="mt-8 text-center">
+      <a href="./about.html" class="inline-flex items-center gap-2 text-xs font-mono text-[#71717A] hover:text-[#FF9F1C] transition-colors">
+        <span>Read the full backstory on About Justin Ray</span>
+        <span>→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- LAA-v2 Final Outro Attribution -->
+  <div class="scroll-section mt-8 text-center text-xs font-mono text-[#71717A]">
+    <span>Authored by <strong class="text-[#EAEAEA]">Justin Ray</strong> · Pioneer of Hybrid AI Music Production</span>
   </div>
-
- <!-- Socials -->
- <section class="w-full max-w-5xl mx-auto px-6 py-16 text-center">
- <div class="flex items-center justify-center gap-2 text-[10px] font-mono tracking-[0.25em] text-[#71717A] uppercase mb-8">
- <span>Find me on</span>
- </div>
- 
- <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
- <a href="https://x.com/TheInnerVision" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" class="tech-card p-4 flex flex-col items-center justify-center gap-2 text-[#71717A] hover:text-[#EAEAEA] group">
- <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current group-hover:text-[#FF9F1C] transition-colors"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
- <span class="text-xs font-mono tracking-widest uppercase">X / Twitter</span>
- </a>
-
- <a href="https://youtube.com/@loserdub" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="tech-card p-4 flex flex-col items-center justify-center gap-2 text-[#71717A] hover:text-[#EAEAEA] group">
- <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current group-hover:text-[#FF3B30] transition-colors"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
- <span class="text-xs font-mono tracking-widest uppercase">YouTube</span>
- </a>
-
- <a href="https://www.linkedin.com/in/jray-me/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="tech-card p-4 flex flex-col items-center justify-center gap-2 text-[#71717A] hover:text-[#EAEAEA] group">
- <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current group-hover:text-[#0052FF] transition-colors"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
- <span class="text-xs font-mono tracking-widest uppercase">LinkedIn</span>
- </a>
-
- <a href="https://network.landr.com/users/vision-hybrid" target="_blank" rel="noopener noreferrer" aria-label="LANDR Network" class="tech-card p-4 flex flex-col items-center justify-center gap-2 text-[#71717A] hover:text-[#EAEAEA] group">
- <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current group-hover:text-[#FF9F1C] transition-colors"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"></path></svg>
- <span class="text-xs font-mono tracking-widest uppercase">LANDR</span>
- </a>
- </div>
-
- <div class="mt-8 text-center">
- <a href="./about.html" class="inline-flex items-center gap-2 text-xs font-mono text-[#71717A] hover:text-[#FF9F1C] transition-colors">
- <span>Read the full About Justin Ray backstory</span>
- <span>→</span>
- </a>
- </div>
- </section>
-
- <!-- Conclusion Anchor -->
- <div class="scroll-section mt-12 text-center text-xs font-mono text-[#71717A]">
- <span>Authored by <strong class="text-[#EAEAEA]">Justin Ray</strong> · Pioneer of Generative Audio Workflows</span>
- </div>
- </main>
+  </main>
 
  <!-- Rigid Terminal Footer -->
  <footer class="w-full bg-[#0B0C0E] border-t border-white/10 py-8 mt-auto z-20 relative">
@@ -1352,9 +1379,9 @@
  </div>
  <nav class="flex flex-wrap justify-center gap-6 text-xs font-mono tracking-widest uppercase text-[#71717A]" aria-label="Footer navigation">
  <a href="/" class="text-[#FF9F1C] font-semibold">Home</a>
+ <a href="./hybridproductionstandard.html" class="hover:text-[#EAEAEA] transition-colors">The Standard</a>
+ <a href="./projects.html" class="hover:text-[#EAEAEA] transition-colors">The Suite</a>
  <a href="./field-notes.html" class="hover:text-[#EAEAEA] transition-colors">Field Notes</a>
- <a href="./what-is-hybrid.html" class="hover:text-[#EAEAEA] transition-colors">What Is Hybrid</a>
- <a href="./projects.html" class="hover:text-[#EAEAEA] transition-colors">Projects</a>
  <a href="./music.html" class="hover:text-[#EAEAEA] transition-colors">Music</a>
  <a href="./about.html" class="hover:text-[#EAEAEA] transition-colors">About</a>
  <a href="./services.html" class="hover:text-[#EAEAEA] transition-colors">Services</a>

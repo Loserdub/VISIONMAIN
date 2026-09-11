@@ -167,10 +167,10 @@
   background: rgba(255, 159, 28, 0.06);
 }
 
-.tech-tag-cyan {
-  border-color: rgba(0, 240, 255, 0.4);
-  color: #00F0FF;
-  background: rgba(0, 240, 255, 0.08);
+.tech-tag-platinum {
+  border-color: rgba(244, 244, 245, 0.25);
+  color: #F4F4F5;
+  background: rgba(244, 244, 245, 0.05);
 }
 
 /* Corner Bracket Accents */
@@ -318,6 +318,69 @@ aside.author-colophon p {
 aside.author-colophon strong {
   color: #EAEAEA;
   font-weight: 600;
+}
+
+/* 3. EDITORIAL CHAPTER INTERSTITIAL BREATHING SYSTEM */
+.chapter-interstitial {
+  margin-bottom: 2rem;
+}
+
+.chapter-interstitial-lead {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #A1A1AA;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.chapter-interstitial-lead .chapter-num {
+  color: #FF9F1C;
+  font-weight: 700;
+}
+
+.chapter-interstitial-rule {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 159, 28, 0.55) 0%, rgba(255, 255, 255, 0.10) 55%, transparent 100%);
+  position: relative;
+  margin: 0.75rem 0 1.25rem;
+}
+
+.chapter-interstitial-rule::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -2px;
+  width: 5px;
+  height: 5px;
+  background: #FF9F1C;
+  box-shadow: 0 0 8px rgba(255, 159, 28, 0.7);
+}
+
+.chapter-executive-takeaway {
+  font-size: 0.88rem;
+  color: #C5CBD3;
+  line-height: 1.55;
+  padding: 0.85rem 1.15rem;
+  background: rgba(255, 159, 28, 0.04);
+  border-left: 2px solid #FF9F1C;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 1.75rem;
+}
+
+.chapter-executive-takeaway strong {
+  color: #EAEAEA;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-right: 0.35rem;
 }
 
 

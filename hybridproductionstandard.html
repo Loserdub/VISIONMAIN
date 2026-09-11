@@ -251,24 +251,25 @@
   --muted: #8892A0;
   --muted-dim: #545C68;
   
-  /* Precision Accent Hierarchy */
+  /* Institutional Tone Hierarchy */
   --human: #FF9F1C;
   --human-dim: rgba(255, 159, 28, 0.12);
-  --human-glow: rgba(255, 159, 28, 0.28);
+  --human-glow: rgba(255, 159, 28, 0.15);
   --amber: #FF9F1C;
   --amber-dim: rgba(255, 159, 28, 0.12);
   
-  --cyan: #00F0FF;
-  --cyan-dim: rgba(0, 240, 255, 0.10);
-  --cyan-glow: rgba(0, 240, 255, 0.28);
+  --cyan: #F4F4F5;
+  --cyan-dim: rgba(244, 244, 245, 0.10);
+  --cyan-glow: rgba(244, 244, 245, 0.12);
   
-  --ai: #A855F7;
-  --ai-dim: rgba(168, 85, 247, 0.12);
-  --ai-glow: rgba(168, 85, 247, 0.28);
+  /* Institutional Slate for Autonomous / Synthetic Processes */
+  --ai: #94A3B8;
+  --ai-dim: rgba(148, 163, 184, 0.12);
+  --ai-glow: rgba(148, 163, 184, 0.15);
   
   --emerald: #10B981;
   --emerald-dim: rgba(16, 185, 129, 0.12);
-  --emerald-glow: rgba(16, 185, 129, 0.28);
+  --emerald-glow: rgba(16, 185, 129, 0.15);
   
   --crimson: #EF4444;
   --crimson-dim: rgba(239, 68, 68, 0.12);
@@ -296,8 +297,8 @@
   margin: 0;
   background-color: var(--bg);
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   background-size: 32px 32px;
   background-position: -1px -1px;
   color: var(--text);
@@ -323,175 +324,93 @@
  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
  .wrap-wide { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
- /* ---------- Top Standards Specification Docket Ribbon ---------- */
- .spec-ribbon {
+ /* ---------- Standards Specification Docket & Index Bar ---------- */
+ .spec-docket-bar {
   background: #050607;
-  border-bottom: 1px solid var(--border-soft);
-  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  padding: 10px 0;
   font-family: var(--font-mono);
-  font-size: 10.5px;
-  color: var(--muted);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 11px;
  }
- .spec-ribbon .wrap-wide {
+ .docket-bar-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 12px;
  }
- .spec-ribbon-left {
+ .docket-status {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 8px;
   flex-wrap: wrap;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
  }
- .spec-ribbon-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
- }
- .spec-ribbon-tag {
+ .docket-status-tag {
   color: var(--cyan);
   font-weight: 700;
  }
- .spec-ribbon-code {
+ .docket-code {
   color: #fff;
   font-weight: 700;
   padding: 1px 6px;
-  background: rgba(0, 240, 255, 0.12);
-  border: 1px solid rgba(0, 240, 255, 0.3);
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid rgba(0, 240, 255, 0.25);
  }
- .spec-ribbon-dot {
-  width: 5px;
-  height: 5px;
-  background: var(--cyan);
-  box-shadow: 0 0 8px var(--cyan-glow);
-  display: inline-block;
- }
- .spec-ribbon-sep {
+ .docket-sep {
   color: var(--border-strong);
  }
- .spec-ribbon-right {
-  display: flex;
-  align-items: center;
-  gap: 14px;
- }
- .spec-status-pill {
-  color: var(--emerald);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 600;
- }
- .spec-status-pill::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  background: var(--emerald);
-  box-shadow: 0 0 8px var(--emerald);
- }
-
- /* ---------- Navigation Bar ---------- */
- nav.site-nav {
-  padding: 14px 0;
-  border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 61px;
-  z-index: 1000;
-  background: rgba(8, 9, 10, 0.94);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
- }
- nav.site-nav .wrap-wide {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 14px;
- }
- .brand {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  letter-spacing: 0.14em;
+ .docket-item {
   color: var(--text-dim);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-transform: uppercase;
  }
- .brand-indicator {
-  width: 20px;
-  height: 20px;
-  border: 1px solid var(--amber);
-  background: var(--amber-dim);
-  color: var(--amber);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 9px;
-  font-weight: 700;
- }
- .brand strong { color: #fff; font-weight: 700; }
- .brand-divider { opacity: 0.35; }
- .brand-spec { color: var(--cyan); font-size: 11px; }
-
- .nav-links {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  flex-wrap: wrap;
- }
- .nav-links a {
-  color: var(--muted);
-  transition: color .15s ease;
-  position: relative;
-  padding: 4px 0;
- }
- .nav-links a:hover {
-  color: #fff;
- }
- .nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--cyan);
-  transition: width .2s ease;
- }
- .nav-links a:hover::after {
-  width: 100%;
- }
-
- .nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
- }
- .nav-badge {
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  letter-spacing: 0.06em;
-  padding: 5px 10px;
-  background: rgba(16, 185, 129, 0.08);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+ .docket-status-ready {
   color: var(--emerald);
-  text-transform: uppercase;
+  font-weight: 600;
   display: inline-flex;
   align-items: center;
   gap: 6px;
  }
- .nav-badge-dot {
+ .docket-status-ready::before {
+  content: '';
   width: 5px;
   height: 5px;
   background: var(--emerald);
+  display: inline-block;
+ }
+ .docket-jumps {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 10.5px;
+ }
+ .docket-jumps a {
+  color: var(--muted);
+  transition: color .15s ease;
+ }
+ .docket-jumps a:hover {
+  color: var(--cyan);
+ }
+ .docket-btn-takeaway {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  background: var(--panel-elevated);
+  color: var(--cyan);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  cursor: pointer;
+  transition: all .15s ease;
+ }
+ .docket-btn-takeaway:hover {
+  background: rgba(0, 240, 255, 0.12);
+  border-color: var(--cyan);
+  color: #fff;
  }
 
  /* ---------- Standard Hero Section ---------- */
@@ -538,7 +457,6 @@
   border: 1px solid var(--cyan);
   padding: 6px 12px;
   letter-spacing: 0.12em;
-  box-shadow: 0 0 16px var(--cyan-glow);
  }
  .spec-badge-meta {
   display: flex;
@@ -581,8 +499,11 @@
   margin-bottom: 28px;
  }
  .reg-callout-icon {
-  font-size: 20px;
   color: var(--emerald);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
  }
  .reg-callout-content {
   flex: 1;
@@ -637,17 +558,16 @@
  }
 
  h1.title {
-  font-size: clamp(38px, 5.6vw, 68px);
-  line-height: 1.02;
+  font-size: clamp(34px, 5vw, 60px);
+  line-height: 1.06;
   margin-bottom: 24px;
   font-weight: 800;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.03em;
   color: #fff;
  }
  h1.title em {
   font-style: normal;
   color: var(--cyan);
-  text-shadow: 0 0 25px rgba(0, 240, 255, 0.25);
  }
 
  .lede {
@@ -886,8 +806,9 @@
 
  /* ---------- Section Architecture ---------- */
  section {
-  padding: 88px 0;
+  padding: 110px 0 96px;
   position: relative;
+  scroll-margin-top: 72px;
  }
  section.bordered {
   border-bottom: 1px solid var(--border);
@@ -958,9 +879,9 @@
   right: 0;
   height: 3px;
  }
- .p-card.artist::before { background: var(--human); box-shadow: 0 0 12px var(--human-glow); }
- .p-card.distributor::before { background: var(--emerald); box-shadow: 0 0 12px var(--emerald-glow); }
- .p-card.dsp::before { background: var(--ai); box-shadow: 0 0 12px var(--ai-glow); }
+ .p-card.artist::before { background: var(--human); }
+ .p-card.distributor::before { background: var(--emerald); }
+ .p-card.dsp::before { background: var(--ai); }
 
  .p-card .node-index {
   font-family: var(--font-mono);
@@ -1122,12 +1043,16 @@
   font-weight: 600;
  }
  .compare .label::before {
-  content: '⚠️';
-  font-size: 12px;
+  content: '[!]';
+  font-size: 11px;
+  color: var(--crimson);
+  font-weight: 700;
  }
  .compare .label.label-check::before {
-  content: '✦';
+  content: '[✓]';
+  font-size: 11px;
   color: var(--cyan);
+  font-weight: 700;
  }
  .compare p {
   font-size: 14.5px;
@@ -1164,7 +1089,7 @@
   position: relative;
  }
  .principle-box::before {
-  content: '[ AXIOM 01 // FIRST PRINCIPLE OF HYBRID PRODUCTION ]';
+  content: '[ REGULATORY & RIGHTS INTEGRITY STANDARD ]';
   position: absolute;
   top: -10px;
   left: 28px;
@@ -1301,7 +1226,6 @@
   border: 1px solid var(--border-strong);
   background: var(--panel-solid);
   overflow: hidden;
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
   position: relative;
  }
  .builder::before {
@@ -1311,7 +1235,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--amber), var(--cyan), var(--ai));
+  background: var(--border-strong);
  }
  .builder-head {
   padding: 20px 28px;
@@ -1333,7 +1257,6 @@
   width: 7px;
   height: 7px;
   background: var(--cyan);
-  box-shadow: 0 0 10px var(--cyan);
   display: inline-block;
  }
  .builder-head h3 {
@@ -1360,6 +1283,45 @@
  .builder-actions {
   display: flex;
   gap: 8px;
+ }
+
+ .builder-presets {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: #090B0E;
+  border-bottom: 1px solid var(--border-soft);
+  flex-wrap: wrap;
+ }
+ .preset-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--muted-dim);
+  text-transform: uppercase;
+  margin-right: 4px;
+ }
+ .preset-btn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  padding: 6px 12px;
+  background: var(--panel-solid);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all .15s ease;
+ }
+ .preset-btn:hover {
+  border-color: var(--cyan);
+  color: #fff;
+ }
+ .preset-btn.active {
+  background: rgba(0, 240, 255, 0.1);
+  border-color: var(--cyan);
+  color: var(--cyan);
+  font-weight: 600;
  }
 
  .axes-grid {
@@ -1488,7 +1450,6 @@
   background: #11141A;
   margin-bottom: 18px;
   align-self: flex-start;
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
   transition: all .2s ease;
  }
  .tier-readout .tier-badge .tier-code {
@@ -1532,6 +1493,126 @@
   border-bottom: 1px solid var(--border-soft);
   word-break: break-all;
   line-height: 1.5;
+ }
+
+ /* Studio Hardware Authorship Meter */
+ .authorship-meter-card {
+  margin-top: 20px;
+  padding: 14px 16px;
+  background: #0D1014;
+  border: 1px solid var(--border-soft);
+  border-left: 2px solid var(--human);
+  transition: border-color .2s ease;
+ }
+ .authorship-meter-card.tier-h {
+  border-left-color: var(--human);
+ }
+ .authorship-meter-card.tier-x {
+  border-left-color: var(--cyan);
+ }
+ .authorship-meter-card.tier-a {
+  border-left-color: var(--ai);
+ }
+ .meter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+ }
+ .meter-title {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  color: var(--muted-dim);
+  text-transform: uppercase;
+ }
+ .meter-readout-val {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--human);
+  transition: color .2s ease;
+ }
+ .meter-ladder {
+  display: flex;
+  gap: 4px;
+  background: #090B0E;
+  padding: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+ }
+ .meter-seg {
+  flex: 1;
+  height: 10px;
+  background: #171A20;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background-color .15s ease, border-color .15s ease;
+ }
+ .meter-seg.active-human {
+  background: var(--human);
+  border-color: #FFAF38;
+ }
+ .meter-seg.active-hybrid {
+  background: var(--cyan);
+  border-color: #5CF5FF;
+ }
+ .meter-seg.active-ai {
+  background: var(--ai);
+  border-color: #CBD5E1;
+ }
+ .meter-scale-marks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  color: var(--muted-dim);
+  letter-spacing: 0.08em;
+ }
+ .meter-usco-marker {
+  color: var(--cyan);
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-weight: 600;
+ }
+ .meter-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+ }
+ .meter-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+ }
+ .meter-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--human);
+  transition: background-color .2s ease;
+ }
+ .meter-status-dot.dot-eligible {
+  background: var(--human);
+ }
+ .meter-status-dot.dot-scrutiny {
+  background: var(--cyan);
+ }
+ .meter-status-dot.dot-ineligible {
+  background: var(--ai);
+ }
+ .meter-statutory-ref {
+  color: var(--muted-dim);
+  letter-spacing: 0.08em;
  }
 
  /* Code Tabs & Terminal Chrome */
@@ -1624,16 +1705,15 @@
   display: inline-block;
  }
  .pt-h { color: var(--human); }
- .pt-h .spectrum-dot { background: var(--human); box-shadow: 0 0 8px var(--human-glow); }
+ .pt-h .spectrum-dot { background: var(--human); }
  .pt-x { color: var(--cyan); }
- .pt-x .spectrum-dot { background: var(--cyan); box-shadow: 0 0 8px var(--cyan-glow); }
+ .pt-x .spectrum-dot { background: var(--cyan); }
  .pt-a { color: var(--ai); }
- .pt-a .spectrum-dot { background: var(--ai); box-shadow: 0 0 8px var(--ai-glow); }
+ .pt-a .spectrum-dot { background: var(--ai); }
  .spectrum-connector {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, var(--human), var(--cyan), var(--ai));
-  opacity: 0.35;
+  background: var(--border);
   min-width: 30px;
  }
  @media (max-width: 680px) {
@@ -1666,9 +1746,9 @@
   height: 3px;
   margin-bottom: 20px;
  }
- .tier-card.h .swatch { background: var(--human); box-shadow: 0 0 10px var(--human-glow); }
- .tier-card.x .swatch { background: var(--cyan); box-shadow: 0 0 10px var(--cyan-glow); }
- .tier-card.a .swatch { background: var(--ai); box-shadow: 0 0 10px var(--ai-glow); }
+ .tier-card.h .swatch { background: var(--human); }
+ .tier-card.x .swatch { background: var(--cyan); }
+ .tier-card.a .swatch { background: var(--ai); }
 
  .tier-card-header {
   margin-bottom: 12px;
@@ -1684,7 +1764,7 @@
  }
  .tier-pill-h { background: var(--human-dim); color: var(--human); border: 1px solid rgba(255, 159, 28, 0.3); }
  .tier-pill-x { background: var(--cyan-dim); color: var(--cyan); border: 1px solid rgba(0, 240, 255, 0.3); }
- .tier-pill-a { background: var(--ai-dim); color: var(--ai); border: 1px solid rgba(168, 85, 247, 0.3); }
+ .tier-pill-a { background: var(--ai-dim); color: var(--ai); border: 1px solid rgba(148, 163, 184, 0.3); }
 
  .tier-card h3, .tier-card h4 {
   font-size: 22px;
@@ -2121,6 +2201,401 @@
   .statute-callout { flex-direction: column; align-items: flex-start; }
   .tag-line { word-break: break-all; }
  }
+
+ /* ---------- Chapter Interstitial Breathing System ---------- */
+ .chapter-interstitial {
+  margin-bottom: 24px;
+ }
+ .chapter-interstitial-lead {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+ }
+ .chapter-interstitial-lead .chapter-num {
+  color: var(--amber);
+  font-weight: 700;
+ }
+ .chapter-interstitial-rule {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(0, 240, 255, 0.45) 0%, rgba(255, 255, 255, 0.12) 60%, transparent 100%);
+  position: relative;
+  margin: 8px 0 16px;
+ }
+ .chapter-interstitial-rule::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -2px;
+  width: 5px;
+  height: 5px;
+  background: var(--cyan);
+  box-shadow: 0 0 8px rgba(0, 240, 255, 0.8);
+ }
+ .chapter-executive-takeaway {
+  font-size: 13.5px;
+  color: var(--text-dim);
+  line-height: 1.55;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 2px solid var(--cyan);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 24px;
+ }
+ .chapter-executive-takeaway strong {
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-right: 6px;
+ }
+
+ /* ---------- HPS Sticky Lateral Telemetry Rail (Desktop) ---------- */
+ .hps-telemetry-rail {
+  display: none;
+  position: fixed;
+  top: 112px;
+  left: 18px;
+  width: 148px;
+  background: rgba(11, 14, 18, 0.94);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 14px 12px;
+  z-index: 40;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+ }
+ @media (min-width: 1260px) {
+  .hps-telemetry-rail {
+   display: flex;
+   flex-direction: column;
+   left: max(14px, calc((100vw - 1240px) / 2 - 164px));
+  }
+ }
+ @media (min-width: 1536px) {
+  .hps-telemetry-rail {
+   width: 164px;
+   left: max(20px, calc((100vw - 1240px) / 2 - 184px));
+   padding: 16px 14px;
+  }
+ }
+ .rail-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+ }
+ .rail-telemetry-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  color: var(--amber);
+  font-weight: 700;
+ }
+ .rail-status-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--cyan);
+  box-shadow: 0 0 8px var(--cyan);
+ }
+ .rail-progress-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  color: var(--muted);
+ }
+ .rail-progress-val {
+  color: var(--cyan);
+  font-weight: 700;
+ }
+ .rail-track {
+  position: relative;
+  padding-left: 12px;
+ }
+ .rail-track::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.12);
+ }
+ .rail-progress-line {
+  position: absolute;
+  left: 4px;
+  top: 6px;
+  width: 2px;
+  background: var(--cyan);
+  box-shadow: 0 0 8px var(--cyan);
+  height: 0%;
+  transition: height 0.12s ease-out;
+ }
+ .rail-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+ }
+ .rail-node {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  padding: 5px 6px;
+  text-decoration: none;
+  transition: all 0.18s ease;
+  border-left: 2px solid transparent;
+  margin-left: -12px;
+  padding-left: 14px;
+ }
+ .rail-node:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.03);
+ }
+ .rail-node.active {
+  color: var(--cyan);
+  border-left-color: var(--cyan);
+  background: rgba(0, 240, 255, 0.06);
+  font-weight: 700;
+ }
+ .rail-node.active .node-tick {
+  background: var(--cyan);
+  box-shadow: 0 0 6px var(--cyan);
+ }
+ .node-tick {
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.25);
+  flex-shrink: 0;
+  transition: background 0.18s ease;
+ }
+ .node-num {
+  color: var(--amber);
+  font-size: 9px;
+ }
+ .rail-node.active .node-num {
+  color: var(--cyan);
+ }
+ .node-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+ }
+ .rail-footer {
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+ }
+ .rail-top-btn {
+  display: block;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  text-decoration: none;
+  transition: all 0.15s ease;
+ }
+ .rail-top-btn:hover {
+  color: var(--cyan);
+  border-color: var(--cyan);
+ }
+
+ /* ---------- HPS Mobile Stepper Pill (Viewport < 1260px) ---------- */
+ .hps-mobile-stepper {
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.8));
+ }
+ @media (min-width: 1260px) {
+  .hps-mobile-stepper {
+   display: none;
+  }
+ }
+ .stepper-pill-inner {
+  display: flex;
+  align-items: center;
+  background: rgba(11, 14, 18, 0.94);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  padding: 4px 6px;
+  gap: 4px;
+ }
+ .stepper-step-btn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+ }
+ .stepper-step-btn:hover {
+  color: var(--cyan);
+  border-color: var(--cyan);
+  background: rgba(0, 240, 255, 0.1);
+ }
+ .stepper-status-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+ }
+ .stepper-tag {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--amber);
+  background: rgba(255, 159, 28, 0.12);
+  border: 1px solid rgba(255, 159, 28, 0.3);
+  padding: 1px 4px;
+ }
+ .stepper-active-title {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--cyan);
+  max-width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+ }
+ .stepper-chevron {
+  font-size: 9px;
+  color: var(--muted);
+ }
+ .stepper-bar {
+  display: flex;
+  gap: 3px;
+  width: 100%;
+  padding: 0 4px;
+ }
+ .stepper-seg {
+  flex: 1;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.15);
+  transition: background 0.2s ease;
+ }
+ .stepper-seg.active {
+  background: var(--cyan);
+  box-shadow: 0 0 6px var(--cyan);
+ }
+
+ /* Mobile Chapter Quick-Sheet */
+ .hps-stepper-sheet {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+ }
+ .hps-stepper-sheet.open {
+  display: block;
+ }
+ .sheet-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+ }
+ .sheet-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 80vh;
+  background: #0D0F13;
+  border-top: 1px solid var(--cyan);
+  padding: 20px 20px 32px;
+  overflow-y: auto;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.8);
+ }
+ .sheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+ }
+ .sheet-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--cyan);
+  font-weight: 700;
+ }
+ .sheet-close-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  padding: 2px 8px;
+  cursor: pointer;
+ }
+ .sheet-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+ }
+ .sheet-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: all 0.15s ease;
+ }
+ .sheet-item:hover, .sheet-item:focus {
+  background: rgba(0, 240, 255, 0.08);
+  border-color: var(--cyan);
+  color: #fff;
+ }
+ .sheet-num {
+  color: var(--amber);
+  font-weight: 700;
+ }
 </style>
 </head>
 <body>
@@ -2181,51 +2656,32 @@
   </header>
 
 
-<!-- Specification Docket Ribbon -->
-<div class="spec-ribbon">
- <div class="wrap-wide">
-  <div class="spec-ribbon-left">
-   <span class="spec-ribbon-item"><span class="spec-ribbon-dot"></span><span class="spec-ribbon-tag">STANDARD SPECIFICATION</span></span>
-   <span class="spec-ribbon-sep">/</span>
-   <span class="spec-ribbon-code">HPS-1.0</span>
-   <span class="spec-ribbon-sep">/</span>
-   <span>C2PA JUMBF PROFILE</span>
-   <span class="spec-ribbon-sep">/</span>
-   <span>DDEX ERN 4.3 DIRECT</span>
-   <span class="spec-ribbon-sep">/</span>
-   <span>RAW PCM SHA-256</span>
+<!-- Standards Specification Docket & Section Index -->
+<div class="spec-docket-bar">
+ <div class="wrap-wide docket-bar-inner">
+  <div class="docket-status">
+   <span class="docket-status-tag">SPECIFICATION</span>
+   <span class="docket-code">HPS-1.0</span>
+   <span class="docket-sep">/</span>
+   <span class="docket-item">DDEX ERN 4.3</span>
+   <span class="docket-sep">/</span>
+   <span class="docket-item">C2PA JUMBF</span>
+   <span class="docket-sep">/</span>
+   <span class="docket-item">RAW PCM SHA-256</span>
+   <span class="docket-sep">/</span>
+   <span class="docket-status-ready">RATIFIED SPECIFICATION · EU AI ACT ART. 50 READY</span>
   </div>
-  <div class="spec-ribbon-right">
-   <span class="spec-status-pill">RATIFIED DRAFT · MANDATE DEADLINE: AUG 2, 2026</span>
+  <div class="docket-jumps">
+   <a href="#perspectives">01 Stakeholders</a>
+   <a href="#manifesto">02 Architecture</a>
+   <a href="#standard">03 The 5 Axes</a>
+   <a href="#builder">04 Attestation Console</a>
+   <a href="#distributors">05 Distributors</a>
+   <a href="#legal">06 EU AI Act</a>
+   <button class="docket-btn-takeaway" id="btn-nav-takeaway">Download Takeaway (.txt)</button>
   </div>
  </div>
 </div>
-
-<!-- Primary Standards Sticky Navigation -->
-<nav class="site-nav">
-<div class="wrap-wide">
-<a class="brand" href="https://trustnodelogic.com/">
- <span class="brand-indicator">▪</span>
- <strong>TrustNodeLogic</strong>
- <span class="brand-divider">/</span>
- <span class="brand-spec">HPS-1.0 Flagship</span>
-</a>
-<div class="nav-links">
-<a href="./index.html">Home</a>
-<a href="./field-notes.html">Field Notes</a>
-<a href="./about.html">About</a>
-<a href="#manifesto">Manifesto</a>
-<a href="#standard">The 5 Axes</a>
-<a href="#builder">Live Builder</a>
-<a href="#distributors">Distributors</a>
-<a href="#legal">EU AI Act</a>
-</div>
-<div class="nav-actions">
-<button class="btn-sm btn-highlight" id="btn-nav-takeaway">Download Takeaway Guide</button>
-<span class="nav-badge"><span class="nav-badge-dot"></span>EU AI Act Aug 2, 2026 Ready</span>
-</div>
-</div>
-</nav>
 
 <!-- Standard Hero Header -->
 <header class="hero">
@@ -2245,21 +2701,29 @@
  </div>
 
  <div class="regulatory-callout">
-  <div class="reg-callout-icon">⚖</div>
+  <div class="reg-callout-icon">
+   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+    <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+    <path d="M7 21h10"></path>
+    <path d="M12 3v18"></path>
+    <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"></path>
+   </svg>
+  </div>
   <div class="reg-callout-content">
    <div class="reg-callout-header">
     <span class="reg-tag">REGULATORY MANDATE ENFORCEMENT HORIZON</span>
     <span class="reg-date">AUGUST 2, 2026</span>
    </div>
    <div class="reg-callout-body">
-    Article 50 of Regulation (EU) 2024/1689 mandates machine-readable transparency for synthetic and AI-generated audio across European Union territories.
+    Article 50 of Regulation (EU) 2024/1689 mandates machine-readable transparency for synthetic audio across European Union territories, introducing statutory penalties up to €35M or 7% of worldwide annual turnover for non-compliance.
    </div>
   </div>
  </div>
 
- <div class="eyebrow">The Bible of Hybrid Production · HPS-1.0</div>
- <h1 class="title">The standard that ends the <em>"AI vs. Human"</em> culture war.</h1>
- <p class="lede">On August 2, 2026, Article 50 of the EU AI Act enforces synthetic content transparency. Binary checkboxes fail modern creators, distributors, and streaming platforms. HPS-1.0 introduces a transparent, 5-axis process classification and cryptographic provenance layer - built to bring nuance, legal compliance, and order to modern music production.</p>
+ <div class="eyebrow">Technical Specification &amp; Regulatory Standard · HPS-1.0</div>
+ <h1 class="title">The Five-Axis Attestation Standard for Sound Recording Provenance and Rights Integrity.</h1>
+ <p class="lede">On August 2, 2026, Article 50 of the EU AI Act enforces synthetic content transparency. Unverified binary checkboxes fail modern catalog administration and risk master copyright protection. Justin Ray pioneered the Hybrid Production Standard (HPS-1.0) to deliver a 5-axis process attestation framework, DDEX ERN 4.3 XML integration, and tamper-evident raw PCM audio essence verification (SHA-256) - engineered for record labels, digital distributors, collection societies, and streaming platforms.</p>
 
  <!-- Executive Technical Metrics Docket -->
  <div class="hero-docket">
@@ -2281,17 +2745,17 @@
   <div class="docket-cell">
    <div class="docket-num">04</div>
    <div class="docket-label">Mandate Compliance</div>
-   <div class="docket-val">EU AI Act Article 50</div>
+   <div class="docket-val">EU AI Act Art. 50 Ready</div>
   </div>
  </div>
 
  <div class="hero-actions">
   <button class="btn-primary" id="btn-hero-takeaway">Download Executive Takeaway Guide (.txt)</button>
-  <a class="btn-secondary" href="#builder">Launch 5-Axis Live Builder ↓</a>
-  <a class="btn-highlight" href="https://trustnodelogic.web.app">Launch Trust Node Logic App ↗</a>
+  <a class="btn-secondary" href="#builder">Launch 5-Axis Attestation Console ↓</a>
+  <a class="btn-highlight" href="https://trustnodelogic.web.app">Launch DAW Attestation Engine ↗</a>
  </div>
  <div class="hero-author">
-  <span>Authored by</span> <strong>Justin Ray</strong> &nbsp;·&nbsp; <span>Contact:</span> <a href="mailto:trustnodelogic@gmail.com">trustnodelogic@gmail.com</a>
+  <span>Authored by</span> <strong>Justin Ray</strong> &nbsp;·&nbsp; <span>Pioneer of Hybrid AI Music Production</span> &nbsp;·&nbsp; <span>Contact:</span> <a href="mailto:trustnodelogic@gmail.com">trustnodelogic@gmail.com</a>
  </div>
  <div class="hero-badges">
   <span class="pill"><span class="pill-prefix">TAXONOMY:</span> Classify Process, Not Tools</span>
@@ -2313,48 +2777,189 @@
   <span class="current" aria-current="page">Hybrid Production Standard (HPS-1.0)</span>
 </nav>
 
+<!-- Sticky Lateral Telemetry Rail (Desktop >= 1260px) -->
+<aside class="hps-telemetry-rail" id="hps-telemetry-rail" aria-label="Specification Telemetry Wayfinding">
+  <div class="rail-header">
+    <div class="rail-telemetry-status">
+      <span class="rail-status-dot"></span>
+      <span class="rail-status-text">HPS-1.0 DOCKET</span>
+    </div>
+    <div class="rail-progress-box">
+      <span class="rail-progress-label">READOUT</span>
+      <span class="rail-progress-val" id="rail-progress-pct">0%</span>
+    </div>
+  </div>
+  <div class="rail-track">
+    <div class="rail-progress-line" id="rail-progress-line"></div>
+    <nav class="rail-nav" aria-label="Specification Chapters">
+      <a href="#perspectives" class="rail-node active" data-target="perspectives">
+        <span class="node-tick"></span>
+        <span class="node-num">01</span>
+        <span class="node-label">PERSPECTIVES</span>
+      </a>
+      <a href="#manifesto" class="rail-node" data-target="manifesto">
+        <span class="node-tick"></span>
+        <span class="node-num">02</span>
+        <span class="node-label">THE GAP</span>
+      </a>
+      <a href="#standard" class="rail-node" data-target="standard">
+        <span class="node-tick"></span>
+        <span class="node-num">03</span>
+        <span class="node-label">FIVE AXES</span>
+      </a>
+      <a href="#builder" class="rail-node" data-target="builder">
+        <span class="node-tick"></span>
+        <span class="node-num">04</span>
+        <span class="node-label">CONSOLE</span>
+      </a>
+      <a href="#classification" class="rail-node" data-target="classification">
+        <span class="node-tick"></span>
+        <span class="node-num">05</span>
+        <span class="node-label">TIERS</span>
+      </a>
+      <a href="#distributors" class="rail-node" data-target="distributors">
+        <span class="node-tick"></span>
+        <span class="node-num">06</span>
+        <span class="node-label">INGESTION</span>
+      </a>
+      <a href="#dsps" class="rail-node" data-target="dsps">
+        <span class="node-tick"></span>
+        <span class="node-num">07</span>
+        <span class="node-label">DSP UI</span>
+      </a>
+      <a href="#legal" class="rail-node" data-target="legal">
+        <span class="node-tick"></span>
+        <span class="node-num">08</span>
+        <span class="node-label">COMPLIANCE</span>
+      </a>
+    </nav>
+  </div>
+  <div class="rail-footer">
+    <a href="#main-content" class="rail-top-btn" title="Back to Top">▲ TOP</a>
+  </div>
+</aside>
+
+<!-- Mobile Stepper Pill (Viewport < 1260px) -->
+<div class="hps-mobile-stepper" id="hps-mobile-stepper" aria-label="Specification Navigation Pill">
+  <div class="stepper-pill-inner">
+    <button class="stepper-step-btn" id="stepper-prev" aria-label="Previous Chapter" title="Previous Chapter">‹</button>
+    <button class="stepper-status-trigger" id="stepper-trigger" aria-label="Open Chapter Selector" title="Open Chapter Selector">
+      <span class="stepper-tag">HPS</span>
+      <span class="stepper-active-title" id="stepper-active-title">01 PERSPECTIVES</span>
+      <span class="stepper-chevron">▲</span>
+    </button>
+    <button class="stepper-step-btn" id="stepper-next" aria-label="Next Chapter" title="Next Chapter">›</button>
+  </div>
+  <div class="stepper-bar" id="stepper-bar">
+    <span class="stepper-seg active" data-idx="0"></span>
+    <span class="stepper-seg" data-idx="1"></span>
+    <span class="stepper-seg" data-idx="2"></span>
+    <span class="stepper-seg" data-idx="3"></span>
+    <span class="stepper-seg" data-idx="4"></span>
+    <span class="stepper-seg" data-idx="5"></span>
+    <span class="stepper-seg" data-idx="6"></span>
+    <span class="stepper-seg" data-idx="7"></span>
+  </div>
+</div>
+
+<!-- Mobile Chapter Quick-Sheet Overlay -->
+<div class="hps-stepper-sheet" id="hps-stepper-sheet" aria-hidden="true">
+  <div class="sheet-backdrop" id="sheet-backdrop"></div>
+  <div class="sheet-content">
+    <div class="sheet-header">
+      <span class="sheet-title">// SPECIFICATION DIRECTORY</span>
+      <button class="sheet-close-btn" id="sheet-close" aria-label="Close chapter menu">✕</button>
+    </div>
+    <nav class="sheet-nav">
+      <a href="#perspectives" class="sheet-item" data-target="perspectives">
+        <span class="sheet-num">01</span>
+        <span class="sheet-label">PERSPECTIVES · Labels, Distributors &amp; DSPs</span>
+      </a>
+      <a href="#manifesto" class="sheet-item" data-target="manifesto">
+        <span class="sheet-num">02</span>
+        <span class="sheet-label">THE GAP · Binary vs 5-Axis Attribution</span>
+      </a>
+      <a href="#standard" class="sheet-item" data-target="standard">
+        <span class="sheet-num">03</span>
+        <span class="sheet-label">FIVE AXES · The 5 Dimensions of Production</span>
+      </a>
+      <a href="#builder" class="sheet-item" data-target="builder">
+        <span class="sheet-num">04</span>
+        <span class="sheet-label">CONSOLE · Interactive Attestation Console</span>
+      </a>
+      <a href="#classification" class="sheet-item" data-target="classification">
+        <span class="sheet-num">05</span>
+        <span class="sheet-label">TIERS · Classification Matrix (H, X, A)</span>
+      </a>
+      <a href="#distributors" class="sheet-item" data-target="distributors">
+        <span class="sheet-num">06</span>
+        <span class="sheet-label">INGESTION · Digital Distributor Ingestion</span>
+      </a>
+      <a href="#dsps" class="sheet-item" data-target="dsps">
+        <span class="sheet-num">07</span>
+        <span class="sheet-label">DSP UI · Standardized Platform Badging</span>
+      </a>
+      <a href="#legal" class="sheet-item" data-target="legal">
+        <span class="sheet-num">08</span>
+        <span class="sheet-label">COMPLIANCE · EU AI Act Article 50</span>
+      </a>
+    </nav>
+  </div>
+</div>
+
 <main id="main-content">
 <section class="bordered reveal" id="perspectives">
 <div class="wrap-wide">
+<div class="chapter-interstitial">
+ <div class="chapter-interstitial-lead">
+  <span class="chapter-num">CHAPTER 01</span>
+  <span>//</span>
+  <span>STAKEHOLDER ARCHITECTURE</span>
+ </div>
+ <div class="chapter-interstitial-rule"></div>
+ <div class="chapter-executive-takeaway">
+  <strong>Executive Takeaway:</strong> HPS-1.0 establishes an institutional bridge between master rights holders, distributor delivery feeds, and global streaming platforms, defending catalog equity under USCO guidelines.
+ </div>
+</div>
 <div class="kicker">Three Essential Stakeholders</div>
-<h2 class="section-title">Built for Artists, Distributors, &amp; Platforms Alike</h2>
-<p class="section-desc">HPS bridges the divide between independent creators, distributor ingest pipelines, and global streaming platforms.</p>
+<h2 class="section-title">Built for Record Labels, Distributors, &amp; DSPs</h2>
+<p class="section-desc">HPS-1.0 establishes an institutional bridge between master rights holders, distributor delivery feeds, and global streaming platforms.</p>
 <div class="perspectives-grid">
  <div class="p-card artist">
   <div class="p-card-top">
-   <div class="node-index">NODE 01 // CREATOR ADVOCACY</div>
-   <div class="role-tag">For Artists &amp; Advocates</div>
-   <h3>Elevating Human Craftsmanship</h3>
-   <p>Provides positive proof of human composition and tracking. Protects independent creators from false AI takedowns while giving hybrid artists a proud, transparent label.</p>
+   <div class="node-index">NODE 01 // RECORD LABELS &amp; RIGHTS HOLDERS</div>
+   <div class="role-tag">For Labels &amp; Master Owners</div>
+   <h3>Preserving Copyright Validity &amp; Master Value</h3>
+   <p>Establishes indisputable chain-of-title under US Copyright Office (USCO) human authorship standards. Protects catalog equity by providing cryptographic proof of human composition and performance, insulating artists and labels against false AI takedowns and streaming fraud flags.</p>
   </div>
   <div class="p-deliverables">
-   <div class="p-deliv-item"><span class="p-check">✓</span> Positive Proof of Human Authorship</div>
-   <div class="p-deliv-item"><span class="p-check">✓</span> Immunity from False AI Takedowns</div>
-   <div class="p-deliv-item"><span class="p-check">✓</span> Verifiable Hybrid Production Credit</div>
+   <div class="p-deliv-item"><span class="p-check">✓</span> Positive Proof of Human Authorship (USCO Compliant)</div>
+   <div class="p-deliv-item"><span class="p-check">✓</span> Immunity from False Catalog De-Listings</div>
+   <div class="p-deliv-item"><span class="p-check">✓</span> Master Sound Recording Equity Protection</div>
   </div>
  </div>
  <div class="p-card distributor">
   <div class="p-card-top">
    <div class="node-index">NODE 02 // INGEST INFRASTRUCTURE</div>
-   <div class="role-tag">For Distributors (DistroKid, FUGA, Believe)</div>
-   <h3>Zero-Friction Fraud Defense</h3>
-   <p>Replaces unverified checkboxes with tamper-evident audio essence hashes (`raw_audio_essence`). Maps 1-to-1 into existing DDEX ERN 4.3 delivery feeds.</p>
+   <div class="role-tag">For Digital Distributors (FUGA, Believe, The Orchard, DistroKid)</div>
+   <h3>Zero-Overhead Ingest &amp; Streaming Fraud Defense</h3>
+   <p>Replaces unverified upload checkboxes with tamper-evident raw audio essence hashes (`raw_audio_essence`). Maps 1-to-1 into existing DDEX ERN 4.3 XML delivery batches without requiring custom ingestion pipeline rebuilds.</p>
   </div>
   <div class="p-deliverables">
    <div class="p-deliv-item"><span class="p-check">✓</span> 1-to-1 DDEX ERN 4.3 AI Field Mapping</div>
-   <div class="p-deliv-item"><span class="p-check">✓</span> Tamper-Evident Raw PCM Essence Hash</div>
+   <div class="p-deliv-item"><span class="p-check">✓</span> Tamper-Evident Raw PCM Essence Hash (SHA-256)</div>
    <div class="p-deliv-item"><span class="p-check">✓</span> Phase 1 Zero-Code Ingest Onboarding</div>
   </div>
  </div>
  <div class="p-card dsp">
   <div class="p-card-top">
-   <div class="node-index">NODE 03 // DSP COMPLIANCE</div>
-   <div class="role-tag">For DSPs (Spotify, Apple, YouTube)</div>
-   <h3>Audit-Ready Legal Compliance</h3>
-   <p>Fully satisfies EU AI Act Article 50 disclosure mandates. Surfaces clear Transparency Badges (`[HPS-X1]`) and credits without flattening creative context.</p>
+   <div class="node-index">NODE 03 // DSP COMPLIANCE &amp; PROS</div>
+   <div class="role-tag">For DSPs &amp; Rights Societies (Spotify, Apple, The MLC)</div>
+   <h3>Statutory Compliance &amp; Clean Credit Display</h3>
+   <p>Fulfills EU AI Act Article 50 disclosure mandates through structured metadata, insulating platforms from multi-million euro statutory exposure. Displays verified production credits in a clean drawer format without cluttering listener playback UI.</p>
   </div>
   <div class="p-deliverables">
-   <div class="p-deliv-item"><span class="p-check">✓</span> Full EU AI Act Art. 50 Compliance</div>
+   <div class="p-deliv-item"><span class="p-check">✓</span> EU AI Act Article 50 Statutory Shield</div>
    <div class="p-deliv-item"><span class="p-check">✓</span> Non-Destructive [HPS-X1] UI Badging</div>
    <div class="p-deliv-item"><span class="p-check">✓</span> Granular 5-Axis Process Attribution</div>
   </div>
@@ -2365,13 +2970,24 @@
 
 <section class="bordered reveal" id="manifesto">
 <div class="wrap">
+<div class="chapter-interstitial">
+ <div class="chapter-interstitial-lead">
+  <span class="chapter-num">CHAPTER 02</span>
+  <span>//</span>
+  <span>THE INDUSTRY GAP</span>
+ </div>
+ <div class="chapter-interstitial-rule"></div>
+ <div class="chapter-executive-takeaway">
+  <strong>Executive Takeaway:</strong> Flat binary AI checkboxes fail because modern studio reality is hybrid. HPS-1.0 evaluates human creative decision points across each stage rather than asking a blunt tool question.
+ </div>
+</div>
 <div class="kicker">The Industry Gap</div>
-<h2 class="section-title thesis-statement">Binary labels collapse process into a single bit.</h2>
-<p class="section-desc">A single "Was AI used?" checkbox creates two major failure modes across the industry today:</p>
+<h2 class="section-title thesis-statement">Binary Checkboxes Collapse Multi-Million Dollar Catalogs into a Single Bit.</h2>
+<p class="section-desc">A flat "Was AI used?" checkbox creates two critical operational and legal failure modes across the music industry today:</p>
 
 <div class="contrast-container">
  <div class="contrast-header-strip">
-  <div class="contrast-col-title flaw">THE CURRENT BINARY MODEL [1-BIT COLLAPSE]</div>
+  <div class="contrast-col-title flaw">THE CURRENT BINARY MODEL [1-BIT LOSS OF FIDELITY]</div>
   <div class="contrast-col-title fix">THE 5-AXIS PROCESS MODEL [CONTINUOUS FIDELITY]</div>
  </div>
  <div class="compare">
@@ -2385,14 +3001,14 @@
     <div class="stream-step collapsed-out">Flag: AI [TRUE]</div>
    </div>
    <div class="mode-item">
-    <div class="label">Failure Mode A - Over-Flagging</div>
-    <p>A songwriter tracks acoustic drums and vocals live, then runs an AI mastering plugin. They receive the exact same binary "AI" flag as a 10-second prompt generator.</p>
-    <span class="badge badge-warn">Penalizes standard studio tools</span>
+    <div class="label">Failure Mode A · Over-Flagging &amp; Penalty Risk</div>
+    <p>A songwriter tracks acoustic drums, bass, and live vocals in an A-list studio, then runs an AI assistive mastering limiter. The master receives the exact same binary "AI" flag as an autonomous 10-second prompt generator, risking DSP penalty algorithms and editorial playlist exclusion.</p>
+    <span class="badge badge-warn">Penalizes Standard Studio Workflows</span>
    </div>
    <div class="mode-item">
-    <div class="label">Failure Mode B - Erasure of Craft</div>
-    <p>A producer spends 40 hours re-pitching, re-arranging, stem-separating, and re-performing an AI vocal seed. They are forced to hide their process or get branded as automated junk.</p>
-    <span class="badge badge-warn">Erases human artistry</span>
+    <div class="label">Failure Mode B · Chain-of-Title &amp; Copyright Forfeiture</div>
+    <p>A producer spends 60 hours arranging, stem-separating, tracking live analog synths, and performing live vocals around a generative seed. Under a binary system, they are forced to either conceal their workflow or forfeit legal copyright protection under USCO human authorship rulings.</p>
+    <span class="badge badge-warn">Jeopardizes Master Copyright Validity</span>
    </div>
   </div>
   <div class="compare-col hps-advantage">
@@ -2405,27 +3021,38 @@
     <div class="stream-step verified-out">Tier: [HPS-X1]</div>
    </div>
    <div class="advantage-item">
-    <div class="label label-check">Fidelity Advantage A · Nuanced Attribution</div>
-    <p>Isolates AI to the specific production stage where it occurred (e.g. mastering assist), preserving human composition and performance royalties.</p>
-    <span class="badge badge-success">Protects Human Craft</span>
+    <div class="label label-check">Fidelity Advantage A · Stage-Isolated Attribution</div>
+    <p>Isolates AI to the specific production stage where it occurred (e.g. dynamic mastering assist), legally safeguarding human composition and performance copyright.</p>
+    <span class="badge badge-success">Protects Human Authorship</span>
    </div>
    <div class="advantage-item">
     <div class="label label-check">Fidelity Advantage B · Transparent Co-Creation</div>
-    <p>Empowers hybrid producers to document stem transformations and physical instrumentation without fear of algorithmic demonetization.</p>
-    <span class="badge badge-success">Enables Hybrid Legitimacy</span>
+    <p>Empowers hybrid producers and labels to document stem transformations and live instrumentation with auditable integrity from DAW to DSP.</p>
+    <span class="badge badge-success">Enables Hybrid Catalog Legitimacy</span>
    </div>
   </div>
  </div>
 </div>
 
 <div class="principle-box">
- <div class="display">HPS does not ask <span class="a">"did you use AI."</span> It evaluates who made the creative decisions at each stage - <span class="h">classifying the process, not the tool.</span></div>
+ <div class="display">HPS does not ask <span class="a">"did you use AI."</span> It evaluates who made the creative decisions at each stage: <span class="h">classifying the process, not the tool.</span></div>
 </div>
 </div>
 </section>
 
 <section class="bordered reveal" id="standard">
 <div class="wrap">
+<div class="chapter-interstitial">
+ <div class="chapter-interstitial-lead">
+  <span class="chapter-num">CHAPTER 03</span>
+  <span>//</span>
+  <span>THE FIVE PRODUCTION AXES</span>
+ </div>
+ <div class="chapter-interstitial-rule"></div>
+ <div class="chapter-executive-takeaway">
+  <strong>Executive Takeaway:</strong> Production is scored across five independent stages (Origination, Performance, Curation, Sound Source, Post-Production) as Human (H), Hybrid (H+A), or Autonomous (A).
+ </div>
+</div>
 <div class="kicker">Core Standard</div>
 <h2 class="section-title">The Five Axes of Music Production</h2>
 <p class="section-desc" style="max-width:680px;">Every work is scored across five core production stages as <strong>H</strong> (Human), <strong>A</strong> (AI), or <strong>H+A</strong> (Hybrid / Co-Creative):</p>
@@ -2436,7 +3063,7 @@
   <span class="tax-chip">H</span>
   <div class="tax-meta">
    <strong>Human</strong>
-   <span>Direct human physical execution, composition, or instrumental performance</span>
+   <span>Direct human physical execution, composition, acoustic tracking, or instrumental performance</span>
   </div>
  </div>
  <div class="tax-item tax-ha">
@@ -2449,7 +3076,7 @@
  <div class="tax-item tax-a">
   <span class="tax-chip">A</span>
   <div class="tax-meta">
-   <strong>Artificial Intelligence</strong>
+   <strong>Autonomous Synthetic</strong>
    <span>Direct generative neural synthesis without human structural intervention</span>
   </div>
  </div>
@@ -2460,19 +3087,19 @@
 <div>Axis</div><div>Production Stage</div><div>Key Question</div>
 </div>
 <div class="axes-matrix-row">
-<div class="axis-row-id"><span class="axis-index-tag">01</span> Origination</div><div class="axis-row-stage">Composition &amp; Writing</div><div class="axis-row-q">Where did the core idea come from - melody, chords, lyrics, or structural seed?</div>
+<div class="axis-row-id"><span class="axis-index-tag">01</span> Origination</div><div class="axis-row-stage">Composition &amp; Writing</div><div class="axis-row-q">Where did the core musical idea come from: melody, chord progression, lyric concept, or structural seed?</div>
 </div>
 <div class="axes-matrix-row">
-<div class="axis-row-id"><span class="axis-index-tag">02</span> Performance</div><div class="axis-row-stage">Tracking &amp; Vocal Execution</div><div class="axis-row-q">Who performed the final vocal, instrument, or MIDI performance in the master?</div>
+<div class="axis-row-id"><span class="axis-index-tag">02</span> Performance</div><div class="axis-row-stage">Tracking &amp; Vocal Execution</div><div class="axis-row-q">Who tracked the final audio: live physical instrument, vocalist, or MIDI performance in the master?</div>
 </div>
 <div class="axes-matrix-row">
-<div class="axis-row-id"><span class="axis-index-tag">03</span> Curation</div><div class="axis-row-stage">Editing &amp; Arrangement</div><div class="axis-row-q">Who selected, chopped, re-arranged, and sequenced stems into the final structure?</div>
+<div class="axis-row-id"><span class="axis-index-tag">03</span> Curation</div><div class="axis-row-stage">Arrangement &amp; Editing</div><div class="axis-row-q">Who selected, chopped, stem-separated, and sequenced material into the master structure?</div>
 </div>
 <div class="axes-matrix-row">
-<div class="axis-row-id"><span class="axis-index-tag">04</span> Sound Source</div><div class="axis-row-stage">Timbre &amp; Synthesis</div><div class="axis-row-q">Is the raw audio source a physical instrument/voice, or an AI synth model?</div>
+<div class="axis-row-id"><span class="axis-index-tag">04</span> Sound Source</div><div class="axis-row-stage">Timbre &amp; Synthesis</div><div class="axis-row-q">Is the raw audio source an acoustic instrument/voice, analog hardware, or an AI synth model?</div>
 </div>
 <div class="axes-matrix-row">
-<div class="axis-row-id"><span class="axis-index-tag">05</span> Post-Production</div><div class="axis-row-stage">Mixing &amp; Mastering</div><div class="axis-row-q">Who executed mixing, equalization, dynamic processing, and final mastering?</div>
+<div class="axis-row-id"><span class="axis-index-tag">05</span> Post-Production</div><div class="axis-row-stage">Mixing &amp; Mastering</div><div class="axis-row-q">Who executed dynamic processing, EQ, spatial balance, and final audio mastering?</div>
 </div>
 </div>
 </div>
@@ -2480,23 +3107,43 @@
 
 <section class="bordered reveal" id="builder">
 <div class="wrap-wide">
-<div class="kicker">Live Interactive Engine</div>
-<h2 class="section-title">5-Axis Tag Builder &amp; Multi-Format Exporter</h2>
-<p class="section-desc" style="max-width:680px;">Toggle values for each axis below. Generate canonical JSON manifests, DDEX ERN 4.3 XML snippets, C2PA assertions, and CLI commands instantly.</p>
+<div class="chapter-interstitial">
+ <div class="chapter-interstitial-lead">
+  <span class="chapter-num">CHAPTER 04</span>
+  <span>//</span>
+  <span>ATTESTATION ENGINE &amp; CONSOLE</span>
+ </div>
+ <div class="chapter-interstitial-rule"></div>
+ <div class="chapter-executive-takeaway">
+  <strong>Executive Takeaway:</strong> Interactive 5-axis console generating canonical JSON manifests, DDEX ERN 4.3 XML blocks, C2PA assertions, and CLI attestation commands with instant cryptographic verification.
+ </div>
+</div>
+<div class="kicker">Attestation Engine</div>
+<h2 class="section-title">5-Axis Attestation Console &amp; Multi-Format Exporter</h2>
+<p class="section-desc" style="max-width:720px;">Toggle values across the five production axes or select an industry workflow preset to generate canonical JSON manifests, DDEX ERN 4.3 XML snippets, C2PA assertions, and CLI attestation commands instantly.</p>
 
 <div class="builder" style="margin-top:32px;">
 <div class="builder-head">
 <div class="builder-meta-title">
 <span class="builder-telemetry-dot"></span>
-<h3>HPS Live Tag Builder</h3>
-<span class="builder-status-badge">[ ENGINE: HPS-V1.0-RUNTIME ]</span>
+<h3>HPS Attestation Console</h3>
+<span class="builder-status-badge">[ RUNTIME: HPS-V1.0-ENTERPRISE ]</span>
 <span class="builder-crypto-badge">ED25519 READY</span>
 </div>
 <div class="builder-actions">
-<button class="btn-ghost" id="load-example">Load Worked Example</button>
-<button class="btn-ghost" id="reset-builder">Reset</button>
+<button class="btn-ghost" id="reset-builder">Reset to Default</button>
 </div>
 </div>
+
+<!-- Executive Workflow Presets Bar -->
+<div class="builder-presets">
+ <span class="preset-label">Industry Presets:</span>
+ <button class="preset-btn builder-preset-btn" data-preset="preset-pop" id="preset-pop">Commercial Pop Master (X1)</button>
+ <button class="preset-btn builder-preset-btn" data-preset="preset-vocal" id="preset-vocal">Co-Creative Vocal Track (X2)</button>
+ <button class="preset-btn builder-preset-btn" data-preset="preset-acoustic" id="preset-acoustic">Acoustic / Live Master (H)</button>
+ <button class="preset-btn builder-preset-btn" data-preset="preset-generative" id="preset-generative">Autonomous Synthetic (A)</button>
+</div>
+
 <div class="axes-grid" id="axes-grid"></div>
 <div class="builder-result">
 <div class="tier-readout">
@@ -2506,6 +3153,39 @@
 </div>
 <div class="tier-name" id="tier-name">Human-Led Hybrid</div>
 <div class="tier-desc" id="tier-desc">Human origination and performance. AI confined to sound design, texture, or mastering.</div>
+
+<!-- Studio Hardware Authorship Meter -->
+<div class="authorship-meter-card" id="authorship-meter-card">
+ <div class="meter-header">
+  <span class="meter-title">// HUMAN AUTHORSHIP SIGNAL METER</span>
+  <span class="meter-readout-val" id="meter-val">80% HUMAN CRAFT</span>
+ </div>
+ <div class="meter-ladder" id="meter-ladder">
+  <div class="meter-seg active-human" data-idx="0"></div>
+  <div class="meter-seg active-human" data-idx="1"></div>
+  <div class="meter-seg active-human" data-idx="2"></div>
+  <div class="meter-seg active-human" data-idx="3"></div>
+  <div class="meter-seg active-human" data-idx="4"></div>
+  <div class="meter-seg active-human" data-idx="5"></div>
+  <div class="meter-seg active-human" data-idx="6"></div>
+  <div class="meter-seg active-human" data-idx="7"></div>
+  <div class="meter-seg" data-idx="8"></div>
+  <div class="meter-seg" data-idx="9"></div>
+ </div>
+ <div class="meter-scale-marks">
+  <span>0% SYNTH</span>
+  <span class="meter-usco-marker">▲ 60% USCO REGISTRATION CUTOFF</span>
+  <span>100% HUMAN</span>
+ </div>
+ <div class="meter-footer">
+  <div class="meter-status-badge">
+   <span class="meter-status-dot dot-eligible" id="meter-status-dot"></span>
+   <span id="meter-status-label">[✓] USCO HUMAN AUTHORSHIP ELIGIBLE</span>
+  </div>
+  <span class="meter-statutory-ref">DDEX ERN 4.3 COMPLIANT</span>
+ </div>
+</div>
+
 <div class="tag-line-container">
  <div class="tag-line-label">CANONICAL HPS STRING</div>
  <div class="tag-line" id="tag-line">HPS: X1 [Origination: H, Performance: H, Curation: H, Sound: H, Post: H]</div>
@@ -2516,7 +3196,7 @@
 <button class="code-tab active" id="tab-json">JSON Manifest</button>
 <button class="code-tab" id="tab-xml">DDEX ERN 4.3 XML</button>
 <button class="code-tab" id="tab-c2pa">C2PA JUMBF</button>
-<button class="code-tab" id="tab-cli">HPS CLI Command</button>
+<button class="code-tab" id="tab-cli">HPS CLI / DAW Attestation</button>
 </div>
 <div class="manifest-preview" id="manifest-preview"></div>
 <div class="export-btns">
@@ -2531,20 +3211,31 @@
 </div>
 </section>
 
-<section class="bordered reveal">
+<section class="bordered reveal" id="classification">
 <div class="wrap">
+<div class="chapter-interstitial">
+ <div class="chapter-interstitial-lead">
+  <span class="chapter-num">CHAPTER 05</span>
+  <span>//</span>
+  <span>CLASSIFICATION TIERS</span>
+ </div>
+ <div class="chapter-interstitial-rule"></div>
+ <div class="chapter-executive-takeaway">
+  <strong>Executive Takeaway:</strong> Three deterministic tiers (Tier H Human, Tier X Hybrid Continuum X1-X4, Tier A Synthetic) capture the operational reality of modern music production without ambiguity.
+ </div>
+</div>
 <div class="kicker">Classification Matrix</div>
 <h2 class="section-title">Three Tiers. The Hybrid Gradient is the Point.</h2>
-<p class="section-desc">The production spectrum moves from unassisted acoustic execution to autonomous synthetic generation. Tier X classifies the entire nuance of modern studio workflows.</p>
+<p class="section-desc">The production spectrum moves from unassisted acoustic execution to autonomous synthetic generation. Tier X classifies the entire operational reality of modern studio workflows.</p>
 
 <!-- Continuum Spectrum Bar -->
 <div class="spectrum-bar">
  <div class="spectrum-track">
-  <div class="spectrum-point pt-h"><span class="spectrum-dot"></span><span>TIER H (HUMAN)</span></div>
+  <div class="spectrum-point pt-h"><span class="spectrum-dot"></span><span>TIER H (VERIFIED HUMAN)</span></div>
   <div class="spectrum-connector"></div>
   <div class="spectrum-point pt-x"><span class="spectrum-dot"></span><span>TIER X (HYBRID SPECTRUM: X1 · X2 · X3 · X4)</span></div>
   <div class="spectrum-connector"></div>
-  <div class="spectrum-point pt-a"><span class="spectrum-dot"></span><span>TIER A (AI)</span></div>
+  <div class="spectrum-point pt-a"><span class="spectrum-dot"></span><span>TIER A (AUTONOMOUS SYNTHETIC)</span></div>
  </div>
 </div>
 
@@ -2552,7 +3243,7 @@
 <div class="tier-card h">
 <div class="swatch"></div>
 <div class="tier-card-header">
- <span class="tier-pill tier-pill-h">VERIFIED HUMAN</span>
+ <span class="tier-pill tier-pill-h">VERIFIED HUMAN MASTER</span>
  <h3>Tier H - Human</h3>
 </div>
 <p>Origination and performance are both human. Minimum 4 of 5 axes human. AI, if present, is restricted to post utility or corrective plugins.</p>
@@ -2567,14 +3258,14 @@
 <div class="subscale">
 <div class="subscale-item"><span class="subscale-tag">X1</span> <div class="subscale-text"><strong>Human-Led:</strong> AI used for texture, sound design, or mastering only</div></div>
 <div class="subscale-item"><span class="subscale-tag">X2</span> <div class="subscale-text"><strong>Co-Creative:</strong> Human &amp; AI co-compose/sing; human retains edit control</div></div>
-<div class="subscale-item"><span class="subscale-tag">X3</span> <div class="subscale-text"><strong>AI-Led:</strong> AI origination/synth; human substantially re-arranges &amp; transforms</div></div>
-<div class="subscale-item"><span class="subscale-tag">X4</span> <div class="subscale-text"><strong>Curated:</strong> AI origination/performance; human selects and lightly edits</div></div>
+<div class="subscale-item"><span class="subscale-tag">X3</span> <div class="subscale-text"><strong>AI-Led:</strong> Generative origination/synth; human substantially re-arranges &amp; transforms</div></div>
+<div class="subscale-item"><span class="subscale-tag">X4</span> <div class="subscale-text"><strong>Curated:</strong> Generative origination/performance; human selects and lightly edits</div></div>
 </div>
 </div>
 <div class="tier-card a">
 <div class="swatch"></div>
 <div class="tier-card-header">
- <span class="tier-pill tier-pill-a">SYNTHETIC AUTONOMOUS</span>
+ <span class="tier-pill tier-pill-a">AUTONOMOUS SYNTHETIC</span>
  <h3>Tier A - AI</h3>
 </div>
 <p>Origination and performance are both AI-generated. Human input limited to text prompting and selection without structural rework.</p>
@@ -2585,47 +3276,58 @@
 
 <section class="bordered reveal" id="distributors">
 <div class="wrap-wide">
-<div class="kicker">Distributor Portal</div>
-<h2 class="section-title">Zero-Friction Ingest &amp; Fraud Protection for Distributors</h2>
-<p class="section-desc" style="max-width:680px;">Distributors (DistroKid, TuneCore, FUGA, Believe) can adopt HPS in three seamless phases without rebuilding ingestion pipelines.</p>
+<div class="chapter-interstitial">
+ <div class="chapter-interstitial-lead">
+  <span class="chapter-num">CHAPTER 06</span>
+  <span>//</span>
+  <span>DISTRIBUTOR INGESTION SPECIFICATION</span>
+ </div>
+ <div class="chapter-interstitial-rule"></div>
+ <div class="chapter-executive-takeaway">
+  <strong>Executive Takeaway:</strong> Digital distributors implement HPS with zero infrastructure refactoring via DDEX ERN 4.3 XML pass-through, raw PCM essence hashing (SHA-256), and deterministic validation APIs.
+ </div>
+</div>
+<div class="kicker">DISTRIBUTOR SPECIFICATION // INGESTION WORKFLOW</div>
+<h2 class="section-title">Zero-Overhead Ingestion &amp; Catalog Protection for Digital Distributors</h2>
+<p class="section-desc" style="max-width:760px;">Major digital distributors (FUGA, Believe, DistroKid, TuneCore) can implement HPS across three friction-free tiers without rebuilding existing ingestion backends or disrupting artist delivery schedules.</p>
 <div class="roadmap-grid">
 <div class="roadmap-card">
-<div class="phase-num">PHASE 1 · ZERO BUILD</div>
-<h3>Structured 5-Axis Self-Report</h3>
-<p>Replace flat AI checkboxes in upload forms with 5-axis dropdowns. Automatically maps directly to standard DDEX ERN 4.3 XML AI fields.</p>
+<div class="phase-num">PHASE 1 · ZERO INFRASTRUCTURE OVERHEAD</div>
+<h3>Direct DDEX ERN 4.3 XML Mapping</h3>
+<p>Replace flat binary checkboxes with 5-axis process attribution. Maps directly to existing DDEX ERN 4.3 <code>ArtificialIntelligenceDetails</code> blocks without altering downstream delivery engines.</p>
 <div class="phase-footer"><span>DDEX ERN 4.3 Native</span></div>
 </div>
 <div class="roadmap-card">
-<div class="phase-num">PHASE 2 · OPTIONAL PROOF</div>
-<h3>Cryptographic Essence Signing</h3>
-<p>Artists generate Ed25519-signed `hps_manifest.json` via HPS CLI or DAW plugin. Ingestion server verifies raw PCM SHA-256 hash on drop.</p>
+<div class="phase-num">PHASE 2 · VERIFIABLE ATTESTATION</div>
+<h3>Cryptographic Essence Attestation</h3>
+<p>Mastering studios generate Ed25519-signed <code>hps_manifest.json</code> manifests via the open HPS CLI or DAW plugins. Ingestion endpoints automatically verify raw audio essence against SHA-256 signatures.</p>
 <div class="phase-footer"><span>SHA-256 PCM Verification</span></div>
 </div>
 <div class="roadmap-card">
-<div class="phase-num">PHASE 3 · AUTOMATED PIPELINE</div>
-<h3>Verified Source of Truth</h3>
-<p>Signed manifest populates all release delivery metadata. Surfaces verified `[HPS-X1]` badges directly on streaming partner UIs.</p>
-<div class="phase-footer"><span>Automated DSP Feed Delivery</span></div>
+<div class="phase-num">PHASE 3 · DETERMINISTIC CATALOG INTEGRITY</div>
+<h3>Automated DSP Pass-Through</h3>
+<p>Signed attestation manifests pass securely through DDEX feeds to DSPs, triggering verified <code>[HPS-X1]</code> or <code>[HPS-H]</code> designations across global streaming partners.</p>
+<div class="phase-footer"><span>Automated DSP Ingest Feed</span></div>
 </div>
 </div>
 <div class="spec-grid">
 <div class="spec-card">
-<div class="spec-card-badge">PROVENANCE CORE</div>
-<h3>Raw PCM Essence Hashing (`raw_audio_essence`)</h3>
-<p>HPS hashes decoded PCM audio samples, ignoring container headers. If ID3 tags are altered or format converted, the essence hash remains valid. If audio samples are edited, the hash invalidates automatically.</p>
+<div class="spec-card-badge">PROVENANCE ARCHITECTURE</div>
+<h3>Raw PCM Essence Hashing (<code>raw_audio_essence</code>)</h3>
+<p>HPS computes SHA-256 hashes exclusively over decoded, uncompressed PCM audio sample buffers, bypassing container wrappers and ID3 tags. Modifying tags, converting codecs (WAV to FLAC), or updating ISRC codes leaves the attestation hash completely intact. Altering musical audio content invalidates the hash instantaneously.</p>
 <div class="spec-tech-callout">
- <code>algorithm: SHA-256(pcm_uncompressed_samples)</code>
- <span>Container header immutable · Codec agnostic</span>
+ <code>algorithm: SHA-256(raw_pcm_audio_stream)</code>
+ <span>Container header immutable · Codec agnostic · Tamper-evident</span>
 </div>
 </div>
 <div class="spec-card">
-<div class="spec-card-badge">VERIFICATION REST API</div>
-<h3>Distributor Verification API Spec</h3>
+<div class="spec-card-badge">ENTERPRISE INGEST API</div>
+<h3>Verification REST Endpoint</h3>
 <p><code class="mono endpoint">POST https://api.trustnodelogic.com/v1/verify</code></p>
-<p>Submits file or manifest. Returns boolean verification, essence hash match status, and Ed25519 signature validity.</p>
+<p>Distributor ingestion services submit audio buffers or signed JSON manifests. Returns deterministic validation status, essence verification, and cryptographic signature validity.</p>
 <div class="spec-tech-callout">
  <code>200 OK · { "verified": true, "tier": "X1", "sig_valid": true }</code>
- <span>Sub-50ms cryptographic attestation</span>
+ <span>Sub-50ms deterministic attestation</span>
 </div>
 </div>
 </div>
@@ -2634,67 +3336,91 @@
 
 <section class="bordered reveal" id="dsps">
 <div class="wrap">
-<div class="kicker">DSP Specification</div>
-<h2 class="section-title">DSP Badging &amp; Metadata Guidelines (Spotify, Apple Music)</h2>
-<p class="section-desc">HPS specifies how streaming platforms display transparency badges and credits without cluttering UI design:</p>
+<div class="chapter-interstitial">
+ <div class="chapter-interstitial-lead">
+  <span class="chapter-num">CHAPTER 07</span>
+  <span>//</span>
+  <span>STREAMING UI &amp; PROGRESSIVE DISCLOSURE</span>
+ </div>
+ <div class="chapter-interstitial-rule"></div>
+ <div class="chapter-executive-takeaway">
+  <strong>Executive Takeaway:</strong> Progressive disclosure standard for DSPs preserves uncluttered album art while offering full transparency through expandable 5-axis credits drawers.
+ </div>
+</div>
+<div class="kicker">STREAMING SPECIFICATION // PROGRESSIVE DISCLOSURE</div>
+<h2 class="section-title">Standardized Platform Badging &amp; Credits Drawer Architecture</h2>
+<p class="section-desc">HPS defines an unobtrusive, progressive disclosure standard for DSP user interfaces (Spotify, Apple Music, Tidal, Amazon Music), preserving clean album art while providing full regulatory transparency:</p>
 <div class="dsp-showcase">
 <div class="dsp-showcase-header">
- <span class="dsp-ui-tag">STREAMING PLATFORM UI SPECIFICATION</span>
+ <span class="dsp-ui-tag">DSP CLIENT SPECIFICATION · PROGRESSIVE DISCLOSURE</span>
  <h3>Standardized Tier Badges</h3>
 </div>
 <div class="dsp-badge-row">
-<span class="dsp-badge-item dsp-badge-h"><span class="badge-icon">●</span> [HPS-H] Human Produced</span>
-<span class="dsp-badge-item dsp-badge-x1"><span class="badge-icon">●</span> [HPS-X1] Human-Led Hybrid</span>
-<span class="dsp-badge-item dsp-badge-x2"><span class="badge-icon">●</span> [HPS-X2] Co-Creative Hybrid</span>
-<span class="dsp-badge-item dsp-badge-a"><span class="badge-icon">●</span> [HPS-A] Synthetic AI</span>
+<span class="dsp-badge-item dsp-badge-h"><span class="badge-icon">[✓]</span> [HPS-H] Human Master</span>
+<span class="dsp-badge-item dsp-badge-x1"><span class="badge-icon">[✓]</span> [HPS-X1] Human-Led Hybrid</span>
+<span class="dsp-badge-item dsp-badge-x2"><span class="badge-icon">[·]</span> [HPS-X2] Co-Creative Hybrid</span>
+<span class="dsp-badge-item dsp-badge-a"><span class="badge-icon">[!]</span> [HPS-A] Synthetic Audio</span>
 </div>
 <div class="dsp-drawer-preview">
  <div class="drawer-header">PROGRESSIVE DISCLOSURE CREDITS DRAWER (CLICK TO EXPAND)</div>
  <div class="drawer-body">
   <div class="drawer-line"><span>Track Title:</span> <strong>Signal Path (Master)</strong></div>
-  <div class="drawer-line"><span>Attestation:</span> <strong class="accent-cyan">[HPS-X1] Human-Led Hybrid</strong></div>
+  <div class="drawer-line"><span>Attestation:</span> <strong class="accent-cyan">[HPS-X1] Human-Led Hybrid (Cryptographically Verified)</strong></div>
   <div class="drawer-grid">
-   <div><span>Origination:</span> Human (Songwriting)</div>
-   <div><span>Performance:</span> Human (Vocals, Guitar)</div>
-   <div><span>Curation:</span> Human (Arrangement)</div>
-   <div><span>Sound Source:</span> Hybrid (Analog Synth + AI Texture)</div>
-   <div><span>Post-Production:</span> Hybrid (Human Mix + AI Mastering Assist)</div>
+   <div><span>Origination:</span> Human (Composition &amp; Lyrics)</div>
+   <div><span>Performance:</span> Human (Vocals &amp; Live Tracking)</div>
+   <div><span>Curation:</span> Human (Arrangement &amp; Stem Editing)</div>
+   <div><span>Sound Source:</span> Hybrid (Analog Hardware + Neural Synthesis)</div>
+   <div><span>Post-Production:</span> Hybrid (Human Mix + Algorithmic Mastering)</div>
   </div>
  </div>
 </div>
-<p style="margin-top:16px; font-size:14px; color:var(--muted);">Clicking any badge reveals full 5-axis process credits (e.g., Vocals: Human, Master: AI Assist, Composition: Human).</p>
+<p style="margin-top:16px; font-size:14px; color:var(--muted);">Tapping any badge or expanding the native track credits reveals the comprehensive 5-axis process attestation without cluttering primary playback viewports or compromising cover artwork.</p>
 </div>
 </div>
 </section>
 
 <section class="bordered reveal" id="legal">
 <div class="wrap">
-<div class="kicker">Regulatory Compliance</div>
-<h2 class="section-title">EU AI Act Article 50 Legal Compliance Matrix</h2>
-<p class="section-desc">Regulation (EU) 2024/1689 imposes strict transparency obligations on generative AI systems. HPS-1.0 fulfills every statutory requirement through machine-readable provenance metadata.</p>
+<div class="chapter-interstitial">
+ <div class="chapter-interstitial-lead">
+  <span class="chapter-num">CHAPTER 08</span>
+  <span>//</span>
+  <span>EU AI ACT ARTICLE 50 &amp; RIGHTS COMPLIANCE</span>
+ </div>
+ <div class="chapter-interstitial-rule"></div>
+ <div class="chapter-executive-takeaway">
+  <strong>Executive Takeaway:</strong> Complete compliance mapping for Regulation (EU) 2024/1689 Article 50 transparency requirements and USCO human authorship standards, mitigating non-compliance penalties up to 35M EUR.
+ </div>
+</div>
+<div class="kicker">STATUTORY COMPLIANCE // RISK MITIGATION</div>
+<h2 class="section-title">EU AI Act Article 50 &amp; Global Rights Compliance Matrix</h2>
+<p class="section-desc">Regulation (EU) 2024/1689 enforces strict transparency obligations on generative audio systems, with statutory penalties reaching up to &euro;35M or 7% of global annual turnover. HPS-1.0 provides the machine-readable evidentiary standard required to maintain compliance and defend USCO human authorship.</p>
 <div class="a50-table">
-<div class="a50-row head"><div>EU Provision</div><div>Article 50 Binary Mandate</div><div>HPS-1.0 Technical Standard</div></div>
-<div class="a50-row"><div>Article 50(2) Provider Marking</div><div>Machine-readable flag for synthetic audio.</div><div>Full Tier A &amp; X4 cryptographic manifest integration.</div></div>
-<div class="a50-row"><div>Article 50(4) Deployer Disclosure</div><div>Disclose artificially generated/manipulated content.</div><div>Granular 5-axis role breakdown (e.g., AI vocal vs AI master).</div></div>
-<div class="a50-row"><div>Article 50 Exemptions</div><div>Artistic/Creative assistance exemptions.</div><div>Tier H &amp; X1 provide verifiable positive proof of human craft.</div></div>
+<div class="a50-row head"><div>Regulatory Mandate</div><div>Statutory Requirement</div><div>HPS-1.0 Compliance Architecture</div></div>
+<div class="a50-row"><div>Article 50(2)<br/><small style="color:var(--muted);">Provider Marking</small></div><div>Machine-readable marking of synthetic or heavily altered audio content prior to commercial release.</div><div>Tier A and Tier X4 assign immutable cryptographic manifest metadata via SHA-256 essence hashing.</div></div>
+<div class="a50-row"><div>Article 50(4)<br/><small style="color:var(--muted);">Deployer Disclosure</small></div><div>Public disclosure of AI-generated sound recordings distributed to European consumers.</div><div>Surfaces verified progressive disclosure credits drawer across DSP endpoints without compromising UI aesthetics.</div></div>
+<div class="a50-row"><div>Article 50 Exemptions<br/><small style="color:var(--muted);">Creative Assistance</small></div><div>Exemptions for authorized artistic works where human editorial control remains demonstrably dominant.</div><div>Tier H and Tier X1 establish positive, forensic proof of human creative authorship and stem custody.</div></div>
+<div class="a50-row"><div>USCO Human Authorship<br/><small style="color:var(--muted);">Copyright Eligibility</small></div><div>Strict requirement that copyrightable elements reflect independent human creative expression.</div><div>5-Axis attestation delineates exact human origination and performance boundaries for copyright registration.</div></div>
 </div>
 <div class="statute-callout">
- <span class="statute-stamp">STATUTORY CITATION</span>
- <span class="statute-text">Regulation (EU) 2024/1689 of the European Parliament and of the Council · Article 50 Transparency Obligations · Statutory Deadline: August 2, 2026</span>
+ <span class="statute-stamp">STATUTORY DIRECTIVE</span>
+ <span class="statute-text">Regulation (EU) 2024/1689 · Article 50 Transparency Obligations · Enforcement Commences: August 2, 2026 · Statutory Non-Compliance Penalties: Up to &euro;35,000,000 or 7% of Global Annual Turnover</span>
 </div>
 </div>
 </section>
 
 <section class="cta reveal">
 <div class="wrap">
-<div class="cta-badge">STANDARDS RATIFICATION &amp; ADOPTION</div>
-<h2>Integrate HPS on TrustNodeLogic.com</h2>
-<p>HPS-1.0 is an open, versioned specification dated for the August 2, 2026 EU AI Act deadline. Pilot Phase 1 with zero infrastructure build.</p>
+<div class="cta-badge">STANDARDS RATIFICATION &amp; PILOT ADOPTION</div>
+<h2>Partner on the HPS-1.0 Standard Specification</h2>
+<p>Justin Ray engineered the Hybrid Production Standard to establish deterministic provenance across label catalogs, digital distributors, and streaming platforms ahead of August 2026 enforcement deadlines. Evaluate the specification or pilot Phase 1 with zero infrastructure refactoring.</p>
 <div class="cta-buttons">
-<a class="btn-primary" href="mailto:trustnodelogic@gmail.com">Contact Justin Ray</a>
-<a class="btn-secondary" href="https://trustnodelogic.com/" rel="noopener" target="_blank">Visit TrustNodeLogic.com</a>
+<a class="btn-primary" href="mailto:trustnodelogic@gmail.com">Request Consultation</a>
+<button class="btn-secondary" id="btn-footer-takeaway" style="cursor:pointer;">Download Executive Dossier (.TXT)</button>
+<a class="btn-secondary" href="https://trustnodelogic.com/" rel="noopener" target="_blank">TrustNodeLogic Archive</a>
 </div>
-<div class="cta-footnote">Open specification license · Reference implementation available for DAW developers &amp; DSP engineers.</div>
+<div class="cta-footnote">Open specification licensed under Apache 2.0 / CC BY-ND 4.0 · Production schemas and DAW reference implementations available upon request.</div>
 </div>
 </section>
 
@@ -2956,22 +3682,20 @@ Visit: https://trustnodelogic.com
  document.getElementById('tag-line').textContent = tag;
 
  const badge = document.getElementById('tier-badge');
+ badge.style.boxShadow = 'none';
  if (result.tier === 'H') {
   badge.style.borderColor = 'var(--human)';
-  badge.style.boxShadow = '0 0 24px rgba(255, 159, 28, 0.25)';
  } else if (result.tier === 'A') {
   badge.style.borderColor = 'var(--ai)';
-  badge.style.boxShadow = '0 0 24px rgba(168, 85, 247, 0.25)';
  } else {
   badge.style.borderColor = 'var(--cyan)';
-  badge.style.boxShadow = '0 0 24px rgba(0, 240, 255, 0.25)';
  }
 
  const mp = document.getElementById('manifest-preview');
  if (activeTab === 'json') {
  mp.innerHTML =
 `{
- <span class="k">"hps_version"</span>: <span class="v">"0.1"</span>,
+ <span class="k">"hps_version"</span>: <span class="v">"1.0"</span>,
  <span class="k">"tier"</span>: <span class="v">"${result.code}"</span>,
  <span class="k">"axes"</span>: {
  <span class="k">"origination"</span>: <span class="v">"${labelFor(state.origination)}"</span>,
@@ -2990,13 +3714,102 @@ Visit: https://trustnodelogic.com
  } else if (activeTab === 'cli') {
  mp.innerHTML = generateCLI(result);
  }
+
+  // Calculate Authorship Signal & Segmented Meter
+  const axisWeights = {
+   origination: state.origination === 'H' ? 1.0 : (state.origination === 'HA' ? 0.5 : 0.0),
+   performance: state.performance === 'H' ? 1.0 : (state.performance === 'HA' ? 0.5 : 0.0),
+   curation: state.curation === 'H' ? 1.0 : (state.curation === 'HA' ? 0.5 : 0.0),
+   sound: state.sound === 'H' ? 1.0 : (state.sound === 'HA' ? 0.5 : 0.0),
+   post: state.post === 'H' ? 1.0 : (state.post === 'HA' ? 0.5 : 0.0)
+  };
+  const totalScore = Object.values(axisWeights).reduce((a, b) => a + b, 0);
+  const humanPercent = Math.round((totalScore / 5.0) * 100);
+  const activeSegCount = Math.round((humanPercent / 100) * 10);
+
+  const meterVal = document.getElementById('meter-val');
+  if (meterVal) {
+   meterVal.textContent = `${humanPercent}% HUMAN CRAFT`;
+   if (humanPercent >= 60) {
+    meterVal.style.color = 'var(--human)';
+   } else if (humanPercent >= 40) {
+    meterVal.style.color = 'var(--cyan)';
+   } else {
+    meterVal.style.color = 'var(--ai)';
+   }
+  }
+
+  const segs = document.querySelectorAll('.meter-seg');
+  segs.forEach((seg, idx) => {
+   seg.className = 'meter-seg';
+   if (idx < activeSegCount) {
+    if (humanPercent >= 60) {
+     seg.classList.add('active-human');
+    } else if (humanPercent >= 40) {
+     seg.classList.add('active-hybrid');
+    } else {
+     seg.classList.add('active-ai');
+    }
+   }
+  });
+
+  const statusLabel = document.getElementById('meter-status-label');
+  const statusDot = document.getElementById('meter-status-dot');
+  const meterCard = document.getElementById('authorship-meter-card');
+
+  if (meterCard) {
+   meterCard.classList.remove('tier-h', 'tier-x', 'tier-a');
+   if (result.tier === 'H') meterCard.classList.add('tier-h');
+   else if (result.tier === 'A') meterCard.classList.add('tier-a');
+   else meterCard.classList.add('tier-x');
+  }
+
+  if (statusLabel && statusDot) {
+   statusDot.className = 'meter-status-dot';
+   if (humanPercent >= 70) {
+    statusLabel.textContent = '[✓] USCO HUMAN AUTHORSHIP ELIGIBLE';
+    statusLabel.style.color = 'var(--human)';
+    statusDot.classList.add('dot-eligible');
+   } else if (humanPercent >= 50) {
+    statusLabel.textContent = '[·] CO-CREATIVE HYBRID · USCO DISCLAIMER APPLIES';
+    statusLabel.style.color = 'var(--cyan)';
+    statusDot.classList.add('dot-scrutiny');
+   } else if (humanPercent >= 20) {
+    statusLabel.textContent = '[!] AI-DOMINANT · ELEVATED COPYRIGHT SCRUTINY';
+    statusLabel.style.color = 'var(--ai)';
+    statusDot.classList.add('dot-ineligible');
+   } else {
+    statusLabel.textContent = '[!] AUTONOMOUS SYNTHETIC · NO SOUND RECORDING COPYRIGHT';
+    statusLabel.style.color = 'var(--ai)';
+    statusDot.classList.add('dot-ineligible');
+   }
+  }
  }
+
+ const PRESETS = {
+ 'preset-pop': { origination:'H', performance:'H', curation:'H', sound:'H', post:'HA' },
+ 'preset-vocal': { origination:'H', performance:'HA', curation:'H', sound:'HA', post:'HA' },
+ 'preset-acoustic': { origination:'H', performance:'H', curation:'H', sound:'H', post:'H' },
+ 'preset-generative': { origination:'A', performance:'A', curation:'A', sound:'A', post:'A' }
+ };
+
+ document.querySelectorAll('.builder-preset-btn').forEach(btn => {
+ btn.addEventListener('click', () => {
+ const p = PRESETS[btn.dataset.preset];
+ if (p) {
+ state = Object.assign({}, p);
+ document.querySelectorAll('.builder-preset-btn').forEach(b => b.classList.toggle('active', b === btn));
+ render();
+ }
+ });
+ });
 
  grid.addEventListener('click', (e) => {
  const btn = e.target.closest('button[data-v]');
  if (!btn) return;
  const key = btn.closest('.axis-toggle').dataset.axis;
  state[key] = btn.dataset.v;
+ document.querySelectorAll('.builder-preset-btn').forEach(b => b.classList.remove('active'));
  render();
  });
 
@@ -3028,7 +3841,7 @@ Visit: https://trustnodelogic.com
  document.getElementById('btn-download-json').addEventListener('click', () => {
  const result = classify(state);
  const manifest = {
- hps_version: "0.1",
+ hps_version: "1.0",
  tier: result.code,
  axes: {
  origination: labelFor(state.origination),
@@ -3037,6 +3850,8 @@ Visit: https://trustnodelogic.com
  sound_source: labelFor(state.sound),
  post_production: labelFor(state.post)
  },
+ content_hash: { scope: "raw_audio_essence", algorithm: "sha256" },
+ signature: { algorithm: "ed25519" },
  timestamp: new Date().toISOString()
  };
  const blob = new Blob([JSON.stringify(manifest, null, 2)], { type: 'application/json' });
@@ -3065,6 +3880,7 @@ Visit: https://trustnodelogic.com
  <SoundSource>${labelFor(state.sound)}</SoundSource>
  <PostProduction>${labelFor(state.post)}</PostProduction>
  </Axes>
+ <ContentHash scope="raw_audio_essence" algorithm="sha256">e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</ContentHash>
  </HPSClassificationBlock>
 </SoundRecordingDetailsByTerritory>`;
  const blob = new Blob([xmlRaw], { type: 'application/xml' });
@@ -3076,18 +3892,27 @@ Visit: https://trustnodelogic.com
  });
 
  ['btn-download-takeaway', 'btn-footer-takeaway', 'btn-hero-takeaway', 'btn-nav-takeaway'].forEach(id => {
- const el = document.getElementById(id);
- if (el) el.addEventListener('click', downloadTakeawayDoc);
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('click', downloadTakeawayDoc);
  });
 
- document.getElementById('load-example').addEventListener('click', () => {
- state = Object.assign({}, EXAMPLE_STATE);
- render();
- });
- document.getElementById('reset-builder').addEventListener('click', () => {
- state = Object.assign({}, DEFAULT_STATE);
- render();
- });
+ const loadExampleEl = document.getElementById('load-example');
+ if (loadExampleEl) {
+  loadExampleEl.addEventListener('click', () => {
+   state = Object.assign({}, EXAMPLE_STATE);
+   document.querySelectorAll('.builder-preset-btn').forEach(b => b.classList.remove('active'));
+   render();
+  });
+ }
+
+ const resetBuilderEl = document.getElementById('reset-builder');
+ if (resetBuilderEl) {
+  resetBuilderEl.addEventListener('click', () => {
+   state = Object.assign({}, DEFAULT_STATE);
+   document.querySelectorAll('.builder-preset-btn').forEach(b => b.classList.remove('active'));
+   render();
+  });
+ }
 
  render();
 
@@ -3105,6 +3930,125 @@ Visit: https://trustnodelogic.com
  } else {
  revealEls.forEach(el => el.classList.add('in'));
  }
+
+  // Telemetry Rail & Mobile Stepper Wayfinding Controller
+  const CHAPTER_TARGETS = [
+    { id: 'perspectives', title: '01 PERSPECTIVES' },
+    { id: 'manifesto', title: '02 THE GAP' },
+    { id: 'standard', title: '03 FIVE AXES' },
+    { id: 'builder', title: '04 CONSOLE' },
+    { id: 'classification', title: '05 TIERS' },
+    { id: 'distributors', title: '06 INGESTION' },
+    { id: 'dsps', title: '07 DSP UI' },
+    { id: 'legal', title: '08 COMPLIANCE' }
+  ];
+
+  let currentChapterIdx = 0;
+
+  function updateActiveChapter(id) {
+    const idx = CHAPTER_TARGETS.findIndex(c => c.id === id);
+    if (idx === -1) return;
+    currentChapterIdx = idx;
+
+    // Update Desktop Rail
+    document.querySelectorAll('.rail-node').forEach(node => {
+      node.classList.toggle('active', node.dataset.target === id);
+    });
+
+    // Update Mobile Pill
+    const titleEl = document.getElementById('stepper-active-title');
+    if (titleEl) titleEl.textContent = CHAPTER_TARGETS[idx].title;
+
+    document.querySelectorAll('.stepper-seg').forEach((seg, i) => {
+      seg.classList.toggle('active', i <= idx);
+    });
+  }
+
+  // Reading Progress Readout
+  function updateReadingProgress() {
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight <= 0) return;
+    const progress = Math.min(100, Math.max(0, Math.round((window.scrollY / docHeight) * 100)));
+    
+    const pctEl = document.getElementById('rail-progress-pct');
+    if (pctEl) pctEl.textContent = progress + '%';
+
+    const lineEl = document.getElementById('rail-progress-line');
+    if (lineEl) lineEl.style.height = progress + '%';
+  }
+
+  window.addEventListener('scroll', updateReadingProgress, { passive: true });
+  updateReadingProgress();
+
+  // IntersectionObserver for Chapters
+  if ('IntersectionObserver' in window) {
+    const chapterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          updateActiveChapter(entry.target.id);
+        }
+      });
+    }, {
+      rootMargin: '-15% 0px -65% 0px',
+      threshold: 0
+    });
+
+    CHAPTER_TARGETS.forEach(c => {
+      const el = document.getElementById(c.id);
+      if (el) chapterObserver.observe(el);
+    });
+  }
+
+  // Stepper Prev/Next Buttons
+  const prevBtn = document.getElementById('stepper-prev');
+  const nextBtn = document.getElementById('stepper-next');
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      if (currentChapterIdx > 0) {
+        const prevTarget = CHAPTER_TARGETS[currentChapterIdx - 1];
+        const el = document.getElementById(prevTarget.id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      if (currentChapterIdx < CHAPTER_TARGETS.length - 1) {
+        const nextTarget = CHAPTER_TARGETS[currentChapterIdx + 1];
+        const el = document.getElementById(nextTarget.id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
+  // Mobile Sheet Toggle
+  const sheet = document.getElementById('hps-stepper-sheet');
+  const trigger = document.getElementById('stepper-trigger');
+  const backdrop = document.getElementById('sheet-backdrop');
+  const closeBtn = document.getElementById('sheet-close');
+
+  function openSheet() {
+    if (sheet) {
+      sheet.classList.add('open');
+      sheet.setAttribute('aria-hidden', 'false');
+    }
+  }
+  function closeSheet() {
+    if (sheet) {
+      sheet.classList.remove('open');
+      sheet.setAttribute('aria-hidden', 'true');
+    }
+  }
+
+  if (trigger) trigger.addEventListener('click', openSheet);
+  if (backdrop) backdrop.addEventListener('click', closeSheet);
+  if (closeBtn) closeBtn.addEventListener('click', closeSheet);
+
+  document.querySelectorAll('.sheet-item').forEach(item => {
+    item.addEventListener('click', () => {
+      closeSheet();
+    });
+  });
 })();
 </script>
 <script defer src="./assets/reader.js"></script>
