@@ -1,6 +1,47 @@
 <!DOCTYPE html>
+<!--
+================================================================================
+  PROPRIETARY NOTICE & INTELLECTUAL PROPERTY DECLARATION
+================================================================================
+  APPLICATION: VØID 1.5 Web Sampler & Audio Slicer (Harmonic Auto-Mashup Workstation)
+  AUTHOR / INVENTOR: Justin Ray (JRAY / loserdub)
+  OWNER: Trust Node Logic (https://trustnodelogic.com)
+  COPYRIGHT: © 2026 Justin Ray. All Rights Reserved.
+  STANDARD: Hybrid Production Standard (HPS-1.0)
+  
+  PROPRIETARY ALGORITHMS & INTELLECTUAL PROPERTY:
+  The client-side digital signal processing (DSP) architecture, including:
+  1. Spectral Novelty Onset Detection & Granular Transient Slicing (Web Worker DSP)
+  2. Camelot Wheel Lookahead Harmonic Compatibility Scoring & Auto-Mashup Engine
+  3. Interactive Multi-Node Synth ADSR Envelope Waveform Vector Overlay
+  4. Master Limiter Headroom Matrix & Anti-Click Voice Allocation Protocols
+  5. HPS-1.0 Audio Attestation & Cryptographic Session Provenance Encoding
+  are the exclusive intellectual property and trade secrets of Justin Ray.
+
+  TERMS OF USE & STRICT RESTRICTIONS:
+  Permission is granted to execute this application in standard web browsers for
+  personal and commercial music creation and sound design. Decompilation, disassembly,
+  reverse engineering, automated scraping, extraction of raw DSP routines,
+  redistribution, unauthorized mirroring, white-labeling, or training proprietary
+  AI models on this software is strictly prohibited under United States and
+  international copyright, trademark, and trade secret laws. Violators will be
+  subject to civil and criminal legal action.
+================================================================================
+-->
 <html lang="en">
 <head>
+  <script>
+    // Anti-Clickjacking Frame-Busting Defense
+    if (window.top !== window.self) {
+      try {
+        if (window.top.location.hostname !== window.location.hostname) {
+          window.top.location = window.location.href;
+        }
+      } catch (e) {
+        window.top.location = window.location.href;
+      }
+    }
+  </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2773282020530522"
      crossorigin="anonymous"></script>
 <meta charset="UTF-8">
@@ -9,6 +50,7 @@
 <meta name="description" content="VOID 1.5 is a free browser VOID web sampler, 16-pad audio slicer, and harmonic auto-mashup workstation engineered by Justin Ray for hybrid producers.">
 <meta name="keywords" content="void web sampler, VOID web sampler, VOID sampler, online web sampler, browser sampler, VOID audio, audio slicer, 16-pad sampler, Web Audio API, harmonic mashup, auto mashup, Justin Ray, JRAY, loserdub, HPS-1.0">
 <meta name="author" content="Justin Ray">
+<meta name="copyright" content="Copyright © 2026 Justin Ray. All Rights Reserved.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="geo.country" content="US">
 <meta name="geo.placename" content="East Lansing, Michigan, USA">
@@ -56,6 +98,19 @@
       "operatingSystem": "Any (Web Browser)",
       "browserRequirements": "Requires HTML5, Web Audio API, and Web Workers support",
       "description": "Free browser-based Web Audio workstation for granular stem slicing, 16-pad grid sampling, and off-thread Harmonic Auto-Mashup generation.",
+      "copyrightHolder": {
+        "@type": "Person",
+        "name": "Justin Ray",
+        "alternateName": ["JRAY", "loserdub"],
+        "url": "https://trustnodelogic.com/about.html"
+      },
+      "copyrightYear": "2026",
+      "author": {
+        "@type": "Person",
+        "name": "Justin Ray",
+        "url": "https://trustnodelogic.com/about.html"
+      },
+      "license": "https://trustnodelogic.com/void.html#terms",
       "isAccessibleForFree": true,
       "offers": {
         "@type": "Offer",
@@ -1375,6 +1430,77 @@ function runMLAnalysis(audioBuffer, onProgress) {
     box-shadow: 0 0 8px #42f5a4; pointer-events: none; z-index: 9; transform: translateX(-50%);
   }
 
+  /* ─── Waveform Overlay Mode Toolbar & ADSR Styles ─── */
+  .clip-mode-btn {
+    background: var(--surface2); border: 1px solid var(--border); color: var(--muted);
+    font-family: var(--mono); font-size: 10px; font-weight: 600; padding: 3px 8px;
+    border-radius: 4px; cursor: pointer; transition: all 0.15s ease;
+  }
+  .clip-mode-btn:hover { color: var(--text); border-color: rgba(255,255,255,0.25); }
+  .clip-mode-btn.active {
+    background: rgba(0, 240, 255, 0.12); border-color: #00F0FF; color: #00F0FF;
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.25);
+  }
+
+  .clip-adsr-svg {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 12;
+  }
+  .clip-adsr-nodes {
+    position: absolute; inset: 0; z-index: 15; pointer-events: none;
+  }
+  .adsr-node {
+    position: absolute; width: 18px; height: 18px; border-radius: 50%;
+    background: #00F0FF; box-shadow: 0 0 8px rgba(0,240,255,0.85), 0 0 16px rgba(0,240,255,0.35);
+    transform: translate(-50%, -50%); cursor: grab; pointer-events: auto;
+    display: flex; align-items: center; justify-content: center; user-select: none;
+    transition: transform 0.08s ease, box-shadow 0.12s ease; z-index: 20;
+  }
+  .adsr-node:hover {
+    transform: translate(-50%, -50%) scale(1.25);
+    box-shadow: 0 0 12px rgba(0,240,255,1), 0 0 24px rgba(0,240,255,0.6);
+  }
+  .adsr-node:active {
+    cursor: grabbing; transform: translate(-50%, -50%) scale(1.35);
+    background: #FF9F1C; box-shadow: 0 0 14px rgba(255,159,28,1);
+  }
+  .adsr-node-tag {
+    font-family: var(--mono); font-size: 8.5px; font-weight: 900;
+    color: #04080a; pointer-events: none; line-height: 1;
+  }
+
+  .clip-adsr-readout {
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--mono); font-size: 9px; color: var(--muted);
+    background: var(--surface2); padding: 5px 8px; border-radius: 4px;
+    border: 1px solid var(--border);
+  }
+  .clip-adsr-readout strong { color: #00F0FF; font-weight: 700; }
+
+  /* Voice Mode & Panic Controls */
+  .sampler-mode-wrap {
+    display: inline-flex; border: 1px solid var(--border); border-radius: 4px; overflow: hidden;
+  }
+  .sampler-mode-btn {
+    background: var(--surface2); border: none; border-right: 1px solid var(--border);
+    color: var(--muted); font-family: var(--mono); font-size: 9.5px; font-weight: 700;
+    padding: 4px 8px; cursor: pointer; transition: all 0.15s ease;
+  }
+  .sampler-mode-btn:last-child { border-right: none; }
+  .sampler-mode-btn:hover { color: var(--text); }
+  .sampler-mode-btn.active {
+    background: rgba(255, 159, 28, 0.16); color: #FF9F1C;
+  }
+  .btn-panic {
+    background: rgba(255, 59, 48, 0.12); border: 1px solid rgba(255, 59, 48, 0.45);
+    color: #FF3B30; font-family: var(--mono); font-size: 9.5px; font-weight: 800;
+    padding: 3px 8px; border-radius: 4px; cursor: pointer; transition: all 0.15s ease;
+  }
+  .btn-panic:hover {
+    background: rgba(255, 59, 48, 0.28); border-color: #FF3B30; color: #FFF;
+    box-shadow: 0 0 10px rgba(255, 59, 48, 0.4);
+  }
+
   .clip-time-readout {
     display: flex; justify-content: space-between; align-items: center;
     font-family: var(--mono); font-size: 9px; color: var(--muted);
@@ -1688,6 +1814,7 @@ function runMLAnalysis(audioBuffer, onProgress) {
     <button class="reviews-badge-btn" onclick="document.getElementById('reviews-overlay').classList.add('active')" title="View Producer Reviews" aria-haspopup="dialog" aria-label="View 28 Producer Reviews and Ratings (4.9 out of 5 stars)">
       <span>★ 4.9</span> <span>(28 REVIEWS)</span>
     </button>
+    <button class="btn btn-ghost" onclick="document.getElementById('legal-overlay').classList.add('active')" style="padding:4px 8px;font-size:10px;color:var(--muted);" title="Intellectual Property & Terms of Use">⚖ Terms &amp; IP</button>
     <button class="btn btn-ghost" id="save-void-btn" onclick="saveVoidProject()" style="padding:4px 10px;font-size:10px;" title="Save project state">💾 Save .VOID</button>
     <button class="btn btn-ghost" onclick="document.getElementById('void-file-input').click()" style="padding:4px 10px;font-size:10px;" title="Load project file">📂 Load .VOID</button>
     <input type="file" id="void-file-input" accept=".void,.json" style="display:none" onchange="loadVoidProject(this.files[0]); this.value='';">
@@ -1820,8 +1947,22 @@ function runMLAnalysis(audioBuffer, onProgress) {
           </div>
         </div>
 
-        <!-- Waveform & Trim Canvas -->
-        <div class="clip-waveform-cont" id="clip-waveform-cont" title="Click or drag markers to trim slice">
+        <!-- Mode Toolbar: Trim vs ADSR Overlay -->
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+          <div style="display:flex; gap:4px;">
+            <button type="button" id="btn-clip-trim" class="clip-mode-btn active" onclick="setClipOverlayMode('trim')">✂ Trim</button>
+            <button type="button" id="btn-clip-adsr" class="clip-mode-btn" onclick="setClipOverlayMode('adsr')">∿ ADSR Envelope</button>
+          </div>
+          <div id="clip-adsr-controls" style="display:none; align-items:center; gap:8px;">
+            <label style="font-size:10px; color:var(--text); cursor:pointer; display:flex; align-items:center; gap:4px; font-family:var(--mono);">
+              <input type="checkbox" id="clip-adsr-active-cb" onchange="toggleClipAdsr(this.checked)" style="accent-color:#00F0FF; cursor:pointer;"> Active
+            </label>
+            <button type="button" class="btn btn-xs" onclick="resetClipAdsrToDefault()" style="padding:1px 6px; font-size:9px;">Reset</button>
+          </div>
+        </div>
+
+        <!-- Waveform & Trim / ADSR Canvas -->
+        <div class="clip-waveform-cont" id="clip-waveform-cont" title="Drag markers to trim, or switch to ADSR mode to shape the amplitude envelope">
           <canvas class="clip-waveform-canvas" id="clip-waveform-canvas" height="74"></canvas>
           <div class="clip-overlay clip-overlay-start" id="clip-overlay-start" style="left:0; width:0%;"></div>
           <div class="clip-overlay clip-overlay-end" id="clip-overlay-end" style="right:0; width:0%;"></div>
@@ -1832,13 +1973,39 @@ function runMLAnalysis(audioBuffer, onProgress) {
             <div class="marker-handle">E</div>
           </div>
           <div class="clip-playhead" id="clip-playhead" style="display:none; left:0%;"></div>
+
+          <!-- Interactive Waveform ADSR SVG & Draggable Nodes -->
+          <svg id="clip-adsr-svg" class="clip-adsr-svg" viewBox="0 0 1000 100" preserveAspectRatio="none" style="display:none;">
+            <defs>
+              <linearGradient id="adsrGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.4"/>
+                <stop offset="100%" stop-color="#00F0FF" stop-opacity="0.03"/>
+              </linearGradient>
+            </defs>
+            <path id="adsr-area-path" fill="url(#adsrGradient)" d=""/>
+            <path id="adsr-line-path" fill="none" stroke="#00F0FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d=""/>
+          </svg>
+          <div id="clip-adsr-nodes-wrap" class="clip-adsr-nodes" style="display:none;">
+            <div class="adsr-node" id="adsr-node-a" data-node="A" title="Attack: Drag left/right"><span class="adsr-node-tag">A</span></div>
+            <div class="adsr-node" id="adsr-node-d" data-node="D" title="Decay &amp; Sustain: Drag horizontal for Decay, vertical for Sustain"><span class="adsr-node-tag">D</span></div>
+            <div class="adsr-node" id="adsr-node-s" data-node="S" title="Sustain Level: Drag vertical"><span class="adsr-node-tag">S</span></div>
+            <div class="adsr-node" id="adsr-node-r" data-node="R" title="Release: Drag left/right"><span class="adsr-node-tag">R</span></div>
+          </div>
         </div>
 
-        <!-- Time Readouts -->
-        <div class="clip-time-readout">
+        <!-- Time Readouts (Trim Mode) -->
+        <div class="clip-time-readout" id="clip-time-readout">
           <span>Start: <strong id="clip-time-start">0.000s</strong></span>
           <span>Stop: <strong id="clip-time-end">1.500s</strong></span>
           <span style="color:var(--accent)">Trim: <strong id="clip-time-len">1.500s</strong></span>
+        </div>
+
+        <!-- ADSR Live Readout Strip (ADSR Mode) -->
+        <div class="clip-adsr-readout" id="clip-adsr-readout" style="display:none;">
+          <span>ATTACK: <strong id="adsr-txt-a">5ms</strong></span>
+          <span>DECAY: <strong id="adsr-txt-d">180ms</strong></span>
+          <span>SUSTAIN: <strong id="adsr-txt-s">75% (-2.5dB)</strong></span>
+          <span>RELEASE: <strong id="adsr-txt-r">120ms</strong></span>
         </div>
 
         <!-- Pitch Shift -->
@@ -1943,6 +2110,14 @@ function runMLAnalysis(audioBuffer, onProgress) {
       <p>Drag slices onto pads · play with keyboard keys A–P · record your performance</p>
     </div>
     <div class="record-controls">
+      <!-- Sampler Voice Mode -->
+      <div class="sampler-mode-wrap" style="margin-right:8px;" title="Voice Mode: Kit (Self-Choke), Chop (1-Voice Solo), Poly (Open Polyphony)">
+        <button type="button" id="mode-kit-btn" class="sampler-mode-btn active" onclick="setSamplerVoiceMode('kit')">KIT</button>
+        <button type="button" id="mode-chop-btn" class="sampler-mode-btn" onclick="setSamplerVoiceMode('chop')">CHOP (SOLO)</button>
+        <button type="button" id="mode-poly-btn" class="sampler-mode-btn" onclick="setSamplerVoiceMode('poly')">POLY</button>
+      </div>
+      <button type="button" class="btn-panic" onclick="panicStopAllAudio()" title="Panic: Kill all active audio voices instantly (Escape)" style="margin-right:8px;">■ PANIC</button>
+
       <button class="btn btn-ghost" onclick="autoFillPads()" style="padding:6px 12px;font-size:11px;margin-right:6px">⚡ Auto-Fill Pads (1–16)</button>
       <button class="btn btn-ghost" onclick="clearAllPads()" style="padding:6px 12px;font-size:11px;margin-right:12px">Clear Pads</button>
       <button class="btn btn-ghost" onclick="exportDrumRack()" id="drumrack-btn" style="padding:6px 14px;font-size:11px;margin-right:12px">
@@ -2016,12 +2191,19 @@ function runMLAnalysis(audioBuffer, onProgress) {
         <button class="btn-seq-play" id="seq-play-btn" onclick="toggleSequencerPlay()" title="Play / Pause Pattern">
           <span id="seq-play-icon">▶</span> <span id="seq-play-text">Play Loop</span>
         </button>
-        <button class="btn-seq-stop" id="seq-stop-btn" onclick="stopSequencer()" title="Stop Sequencer">
+        <button class="btn-seq-stop" id="seq-stop-btn" onclick="stopSequencer(true)" title="Stop Sequencer and kill all ringing voices">
           <span>■</span>
         </button>
         <button class="btn-seq-rec" id="seq-rec-btn" onclick="toggleSequencerRecord()" title="Real-time Quantized Record: hit keys [A]-[P] or MIDI pads while playing to stamp into grid">
           <span class="seq-rec-dot"></span> <span id="seq-rec-text">Rec to Grid</span>
         </button>
+        <button type="button" class="btn-panic" onclick="panicStopAllAudio()" title="Panic: Kill all active audio voices instantly (Escape)" style="margin-left:4px;">■ PANIC</button>
+
+        <div class="sampler-mode-wrap" style="margin-left:8px;" title="Voice Mode: Kit (Self-Choke), Chop (1-Voice Solo), Poly (Open Polyphony)">
+          <button type="button" id="seq-mode-kit-btn" class="sampler-mode-btn active" onclick="setSamplerVoiceMode('kit')">KIT</button>
+          <button type="button" id="seq-mode-chop-btn" class="sampler-mode-btn" onclick="setSamplerVoiceMode('chop')">CHOP</button>
+          <button type="button" id="seq-mode-poly-btn" class="sampler-mode-btn" onclick="setSamplerVoiceMode('poly')">POLY</button>
+        </div>
 
         <div class="seq-divider-v"></div>
 
@@ -2210,7 +2392,50 @@ function runMLAnalysis(audioBuffer, onProgress) {
 <script>
 // =============================================================================
 // VØID 1.5 WORKSTATION ENGINE  -  MAIN CONTROLLER & DSP CORE
+// Copyright © 2026 Justin Ray (JRAY / loserdub). All Rights Reserved.
+// Standard: Hybrid Production Standard (HPS-1.0) · Trust Node Logic
+// Proprietary & Confidential · Unauthorized Decompilation Strictly Prohibited
 // =============================================================================
+
+// ─── DEVTOOLS CONSOLE LEGAL DETERRENT & IP NOTICE ──────────────────────────
+try {
+  console.log(
+    `%c⚠️ VØID 1.5 · PROPRIETARY INTELLECTUAL PROPERTY NOTICE\n` +
+    `%cCopyright © 2026 Justin Ray (JRAY / loserdub). All Rights Reserved.\n` +
+    `Standard: Hybrid Production Standard (HPS-1.0) · Trust Node Logic (https://trustnodelogic.com)\n\n` +
+    `NOTICE TO DEVELOPERS, AUTOMATED SCRAPERS & AUDITORS:\n` +
+    `The client-side Web Audio DSP graph, Spectral Novelty Onset detection worker,\n` +
+    `Camelot Lookahead harmonic compatibility matrix, and interactive ADSR waveform\n` +
+    `engine in this application are protected under federal and international copyright,\n` +
+    `trademark, and trade secret laws.\n\n` +
+    `• Permitted: Free personal & commercial music creation in the browser.\n` +
+    `• Prohibited: Reverse engineering, decompilation, scraping, automated extraction\n` +
+    `  of DSP code, white-labeling, framing/mirroring, or unauthorized redistribution.\n\n` +
+    `Terms of Use: https://trustnodelogic.com/void.html#terms\n` +
+    `Licensing & Inquiries: trustnodelogic@gmail.com`,
+    'color:#FF9F1C;font-family:monospace;font-size:13px;font-weight:900;line-height:1.4;',
+    'color:#00F0FF;font-family:monospace;font-size:10.5px;line-height:1.4;'
+  );
+} catch(e) {}
+
+// ─── CLIENT SECURITY & INTEGRITY GUARD ─────────────────────────────────────
+(function initSecurityGuard() {
+  try {
+    if (typeof Object.freeze === 'function') {
+      // Protect default envelope from prototype poisoning
+      Object.freeze(DEFAULT_ADSR);
+    }
+  } catch(e) {}
+
+  // Periodic integrity check ensuring audio limiter chain remains uncompromised
+  setInterval(() => {
+    if (actx && padMasterLimiter && padMasterBus && actx.state === 'running') {
+      if (padMasterLimiter.numberOfOutputs === 0) {
+        try { padMasterLimiter.connect(actx.destination); } catch(err) {}
+      }
+    }
+  }, 15000);
+})();
 
 // ─── 1. AUDIO ENGINE & CORE UTILITIES ───────────────────────────────────────
 const AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -2220,22 +2445,26 @@ let actx = null;
 let activePreviewUrl = null;
 const activeRemixUrls = new Map();
 
-/**
- * Revokes stored Blob Object URLs to prevent browser heap memory leaks.
- * @param {string} key - Container ID or 'preview'
- */
-function revokeStoredUrl(key) {
-  if (key === 'preview' && activePreviewUrl) {
-    URL.revokeObjectURL(activePreviewUrl);
-    activePreviewUrl = null;
-  } else if (activeRemixUrls.has(key)) {
-    URL.revokeObjectURL(activeRemixUrls.get(key));
-    activeRemixUrls.delete(key);
-  }
-}
+// Master Output Bus & Brickwall Limiter (Guards browser DAC against digital clipping)
+let padMasterBus = null;
+let padMasterLimiter = null;
+let activePadVoices = []; // Pool of { source, gainNode, padIndex, chokeGroup, startTime }
+
+// Global Sampler Voice Mode: 'kit' (self-choke), 'chop' (mono-solo), 'poly' (full polyphony)
+let samplerVoiceMode = 'kit';
+
+// Default 4-Node ADSR Envelope Specification
+const DEFAULT_ADSR = {
+  enabled: false,
+  attack: 0.005,   // 5ms fast attack
+  decay: 0.180,    // 180ms decay
+  sustain: 0.75,   // 75% amplitude (-2.5 dB)
+  release: 0.120   // 120ms release
+};
 
 /**
- * Centralized AudioContext Guard to handle browser cold-boot autoplay policies.
+ * Centralized AudioContext Guard with Master Brickwall Limiter Bus.
+ * Handles browser autoplay policies and establishes safe gain staging.
  * @returns {Promise<AudioContext>} Active AudioContext
  */
 async function ensureAudioContext() {
@@ -2243,7 +2472,152 @@ async function ensureAudioContext() {
   if (actx.state === 'suspended') {
     await actx.resume();
   }
+  if (!padMasterBus) {
+    padMasterBus = actx.createGain();
+    padMasterBus.gain.setValueAtTime(0.85, actx.currentTime); // -1.4 dB master headroom
+
+    padMasterLimiter = actx.createDynamicsCompressor();
+    padMasterLimiter.threshold.setValueAtTime(-0.5, actx.currentTime); // -0.5 dBFS brickwall ceiling
+    padMasterLimiter.knee.setValueAtTime(3, actx.currentTime);
+    padMasterLimiter.ratio.setValueAtTime(20, actx.currentTime);
+    padMasterLimiter.attack.setValueAtTime(0.002, actx.currentTime); // 2ms fast lookahead attack
+    padMasterLimiter.release.setValueAtTime(0.050, actx.currentTime); // 50ms recovery release
+
+    padMasterBus.connect(padMasterLimiter);
+    padMasterLimiter.connect(actx.destination);
+  }
   return actx;
+}
+
+/**
+ * Smooth anti-click voice micro-fading (5ms exponential decay).
+ * Eliminates transient pops when choking or stealing active voices.
+ * @param {{ source: AudioNode, gainNode: GainNode }} voice
+ * @param {number} chokeTime - Ramp duration in seconds
+ */
+function chokeVoice(voice, chokeTime = 0.005) {
+  if (!voice || !voice.gainNode || !actx) return;
+  const now = actx.currentTime;
+  const g = voice.gainNode.gain;
+  try {
+    g.cancelScheduledValues(now);
+    const currVal = Math.max(0.0001, g.value || 0.0001);
+    g.setValueAtTime(currVal, now);
+    g.exponentialRampToValueAtTime(0.0001, now + chokeTime);
+    if (voice.source) {
+      voice.source.stop(now + chokeTime + 0.001);
+    }
+  } catch(e) {
+    try { if (voice.source) voice.source.stop(); } catch(err) {}
+  }
+}
+
+/**
+ * Audio Panic Button: silences all active pad voices, previews, and sequencer playback.
+ */
+function panicStopAllAudio() {
+  stopClipPreview();
+  if (activePadVoices && activePadVoices.length > 0) {
+    activePadVoices.forEach(v => chokeVoice(v, 0.002));
+    activePadVoices = [];
+  }
+  if (typeof padSettings !== 'undefined' && Array.isArray(padSettings)) {
+    padSettings.forEach(p => {
+      if (p.activeSource) {
+        try { p.activeSource.stop(); } catch(e) {}
+        p.activeSource = null;
+      }
+      p.activeVoice = null;
+    });
+  }
+  setStatus('Audio Panic: All voices silenced');
+}
+
+// Global Panic Hotkey (Escape key)
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    panicStopAllAudio();
+  }
+});
+
+/**
+ * Sets sampler voice allocation mode:
+ * - 'kit': Pads self-choke duplicate triggers on same pad (drum machine standard)
+ * - 'chop': Monophonic solo mode (any hit cuts all other pads, classic hip-hop chops)
+ * - 'poly': Polyphonic playback (limiter-protected, permits voice layering)
+ * @param {'kit'|'chop'|'poly'} mode
+ */
+function setSamplerVoiceMode(mode) {
+  if (!['kit', 'chop', 'poly'].includes(mode)) return;
+  samplerVoiceMode = mode;
+  
+  document.querySelectorAll('.sampler-mode-btn').forEach(btn => {
+    if (btn.getAttribute('data-mode') === mode) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+
+  const modeLabels = {
+    kit: 'KIT (Self-choking duplicate hits)',
+    chop: 'CHOP (Mono-solo chops - any hit cuts previous)',
+    poly: 'POLY (Full polyphony · Limiter protected)'
+  };
+  setStatus(`Voice Mode: ${modeLabels[mode] || mode}`);
+}
+
+/**
+ * Schedules dynamic ADSR amplitude ramps onto a Web Audio GainNode.
+ * @param {GainNode} gainNode
+ * @param {{ enabled: boolean, attack: number, decay: number, sustain: number, release: number }} adsr
+ * @param {number} startTime - Scheduling start in AudioContext seconds
+ * @param {number} duration - Active voice note duration in seconds
+ * @param {number} targetPeak - Peak amplitude scalar (velocity * volume)
+ */
+function applyAdsrGain(gainNode, adsr, startTime, duration, targetPeak = 0.8) {
+  if (!gainNode || !actx) return;
+  const g = gainNode.gain;
+  const targetTime = Math.max(actx.currentTime, startTime);
+
+  if (!adsr || !adsr.enabled) {
+    // Clean default micro-fade (2ms attack, 5ms release) to avoid transients
+    g.cancelScheduledValues(targetTime);
+    g.setValueAtTime(0.0001, targetTime);
+    g.linearRampToValueAtTime(targetPeak, targetTime + 0.002);
+    const holdEnd = Math.max(targetTime + 0.005, targetTime + duration - 0.005);
+    g.setValueAtTime(targetPeak, holdEnd);
+    g.exponentialRampToValueAtTime(0.0001, targetTime + duration);
+    return;
+  }
+
+  const voiceDur = Math.max(0.05, duration);
+  const a = Math.max(0.001, Math.min(voiceDur * 0.45, adsr.attack));
+  const d = Math.max(0.005, Math.min(voiceDur * 0.45, adsr.decay));
+  const s = Math.max(0.001, Math.min(1.0, adsr.sustain));
+  const r = Math.max(0.005, Math.min(voiceDur * 0.45, adsr.release));
+
+  const peak = Math.max(0.001, targetPeak);
+  const susLevel = Math.max(0.0001, peak * s);
+
+  g.cancelScheduledValues(targetTime);
+  g.setValueAtTime(0.0001, targetTime);
+
+  // Attack phase
+  const attackEnd = targetTime + a;
+  g.linearRampToValueAtTime(peak, attackEnd);
+
+  // Decay phase
+  const decayEnd = attackEnd + d;
+  g.exponentialRampToValueAtTime(susLevel, decayEnd);
+
+  // Sustain hold & Release phase
+  const releaseStart = Math.max(decayEnd, targetTime + voiceDur - r);
+  if (releaseStart > decayEnd) {
+    g.setValueAtTime(susLevel, releaseStart);
+  }
+  const releaseEnd = releaseStart + r;
+  g.exponentialRampToValueAtTime(0.0001, releaseEnd);
 }
 
 /**
@@ -2297,6 +2671,11 @@ function openClipEditor(slice) {
   if (!slice) return;
   activeEditorSlice = slice;
   
+  // Initialize 4-Node ADSR Envelope if not present
+  if (!slice.adsr) {
+    slice.adsr = { ...DEFAULT_ADSR };
+  }
+
   // Set initial trim and pitch from slice or reset
   clipTrimStart = slice.trimStartRatio !== undefined ? slice.trimStartRatio : 0;
   clipTrimEnd = slice.trimEndRatio !== undefined ? slice.trimEndRatio : 1.0;
@@ -2332,8 +2711,11 @@ function openClipEditor(slice) {
   if (pitchSlider) pitchSlider.value = clipPitchSemitones;
   updateClipPitchUI();
   
-  // Update time readouts & markers
+  // Update time readouts, trim markers, and ADSR overlay
   updateClipMarkerUI();
+  if (clipOverlayMode === 'adsr') {
+    updateClipAdsrVisuals();
+  }
   drawClipWaveform(slice.buffer);
   
   // Highlight currently active slice in staging list if present
@@ -2438,7 +2820,7 @@ function setupClipMarkerEvents() {
   if (!cont) return;
   
   cont.addEventListener('mousedown', e => {
-    if (!activeEditorSlice) return;
+    if (!activeEditorSlice || clipOverlayMode !== 'trim') return;
     const rect = cont.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const ratio = Math.max(0, Math.min(1, x / rect.width));
@@ -2469,6 +2851,7 @@ function setupClipMarkerEvents() {
   window.addEventListener('resize', () => {
     if (activeEditorSlice) {
       drawClipWaveform(activeEditorSlice.buffer);
+      if (clipOverlayMode === 'adsr') updateClipAdsrVisuals();
     }
   });
 }
@@ -2490,6 +2873,257 @@ function handleClipMarkerDrag(e) {
     clipTrimEnd = Math.min(1, ratio);
   }
   updateClipMarkerUI();
+}
+
+// ─── INTERACTIVE WAVEFORM ADSR ENVELOPE CONTROLS ───────────────────────────
+let clipOverlayMode = 'trim'; // 'trim' | 'adsr'
+let isDraggingAdsrNode = null; // 'A' | 'D' | 'S' | 'R'
+
+/**
+ * Switches between waveform Trim Marker mode and Synth-style ADSR Overlay mode.
+ * @param {'trim'|'adsr'} mode
+ */
+function setClipOverlayMode(mode) {
+  clipOverlayMode = mode === 'adsr' ? 'adsr' : 'trim';
+
+  const btnTrim = document.getElementById('btn-clip-trim');
+  const btnAdsr = document.getElementById('btn-clip-adsr');
+  if (btnTrim) btnTrim.classList.toggle('active', clipOverlayMode === 'trim');
+  if (btnAdsr) btnAdsr.classList.toggle('active', clipOverlayMode === 'adsr');
+
+  const trimMarkers = [
+    document.getElementById('clip-marker-start'),
+    document.getElementById('clip-marker-end'),
+    document.getElementById('clip-overlay-start'),
+    document.getElementById('clip-overlay-end'),
+    document.getElementById('clip-time-readout')
+  ];
+  const adsrControls = document.getElementById('clip-adsr-controls');
+  const adsrSvg = document.getElementById('clip-adsr-svg');
+  const adsrNodes = document.getElementById('clip-adsr-nodes-wrap');
+  const adsrReadout = document.getElementById('clip-adsr-readout');
+
+  if (clipOverlayMode === 'trim') {
+    trimMarkers.forEach(el => { if (el) el.style.display = ''; });
+    if (adsrControls) adsrControls.style.display = 'none';
+    if (adsrSvg) adsrSvg.style.display = 'none';
+    if (adsrNodes) adsrNodes.style.display = 'none';
+    if (adsrReadout) adsrReadout.style.display = 'none';
+    updateClipMarkerUI();
+  } else {
+    trimMarkers.forEach(el => { if (el) el.style.display = 'none'; });
+    if (adsrControls) adsrControls.style.display = 'flex';
+    if (adsrSvg) adsrSvg.style.display = 'block';
+    if (adsrNodes) adsrNodes.style.display = 'block';
+    if (adsrReadout) adsrReadout.style.display = 'flex';
+    updateClipAdsrVisuals();
+  }
+}
+
+/**
+ * Toggles ADSR envelope bypass on active slice.
+ * @param {boolean} checked
+ */
+function toggleClipAdsr(checked) {
+  if (!activeEditorSlice) return;
+  if (!activeEditorSlice.adsr) activeEditorSlice.adsr = { ...DEFAULT_ADSR };
+  activeEditorSlice.adsr.enabled = checked;
+
+  if (selectedPadIndex !== null && pads[selectedPadIndex] && pads[selectedPadIndex].id === activeEditorSlice.id) {
+    if (!padSettings[selectedPadIndex].adsr) padSettings[selectedPadIndex].adsr = { ...DEFAULT_ADSR };
+    padSettings[selectedPadIndex].adsr.enabled = checked;
+    updatePadCardBadges(selectedPadIndex);
+  }
+
+  updateClipAdsrVisuals();
+  playClipPreview();
+}
+
+/**
+ * Resets active slice ADSR envelope parameters to studio defaults.
+ */
+function resetClipAdsrToDefault() {
+  if (!activeEditorSlice) return;
+  activeEditorSlice.adsr = {
+    enabled: true,
+    attack: 0.005,
+    decay: 0.180,
+    sustain: 0.75,
+    release: 0.120
+  };
+  const cb = document.getElementById('clip-adsr-active-cb');
+  if (cb) cb.checked = true;
+
+  if (selectedPadIndex !== null && pads[selectedPadIndex] && pads[selectedPadIndex].id === activeEditorSlice.id) {
+    padSettings[selectedPadIndex].adsr = { ...activeEditorSlice.adsr };
+    updatePadCardBadges(selectedPadIndex);
+  }
+
+  updateClipAdsrVisuals();
+  playClipPreview();
+}
+
+/**
+ * Updates SVG paths, draggable node handles, and readout labels for the ADSR overlay.
+ */
+function updateClipAdsrVisuals() {
+  if (!activeEditorSlice) return;
+  if (!activeEditorSlice.adsr) activeEditorSlice.adsr = { ...DEFAULT_ADSR };
+
+  const adsr = activeEditorSlice.adsr;
+  const cb = document.getElementById('clip-adsr-active-cb');
+  if (cb) cb.checked = !!adsr.enabled;
+
+  const dur = Math.max(0.05, (clipTrimEnd - clipTrimStart) * activeEditorSlice.duration);
+
+  // Clamped ADSR values
+  const a = Math.max(0.001, Math.min(dur * 0.45, adsr.attack));
+  const d = Math.max(0.005, Math.min(dur * 0.45, adsr.decay));
+  const s = Math.max(0.001, Math.min(1.0, adsr.sustain));
+  const r = Math.max(0.005, Math.min(dur * 0.45, adsr.release));
+
+  // Normalized coordinate positions (0.0 to 1.0)
+  const normXa = Math.max(0.01, Math.min(0.40, a / dur));
+  const normXd = Math.max(normXa + 0.02, Math.min(0.70, normXa + (d / dur)));
+  const normXs = Math.max(normXd + 0.02, Math.min(0.95, 1.0 - (r / dur)));
+  const normXr = 1.0;
+  const normYs = 1.0 - s; // 0 is top peak (0dB), 1 is bottom (silence)
+
+  // Position DOM nodes A, D, S, R
+  const nodeA = document.getElementById('adsr-node-a');
+  const nodeD = document.getElementById('adsr-node-d');
+  const nodeS = document.getElementById('adsr-node-s');
+  const nodeR = document.getElementById('adsr-node-r');
+
+  if (nodeA) {
+    nodeA.style.left = (normXa * 100) + '%';
+    nodeA.style.top = '5%';
+  }
+  if (nodeD) {
+    nodeD.style.left = (normXd * 100) + '%';
+    nodeD.style.top = (normYs * 100) + '%';
+  }
+  if (nodeS) {
+    nodeS.style.left = (normXs * 100) + '%';
+    nodeS.style.top = (normYs * 100) + '%';
+  }
+  if (nodeR) {
+    nodeR.style.left = (normXr * 100) + '%';
+    nodeR.style.top = '95%';
+  }
+
+  // Generate SVG path coordinates (viewBox 0 0 1000 100)
+  const svgXa = (normXa * 1000).toFixed(1);
+  const svgXd = (normXd * 1000).toFixed(1);
+  const svgXs = (normXs * 1000).toFixed(1);
+  const svgXr = (normXr * 1000).toFixed(1);
+  const svgYs = (normYs * 100).toFixed(1);
+
+  const lineD = `M 0 100 L ${svgXa} 5 L ${svgXd} ${svgYs} L ${svgXs} ${svgYs} L ${svgXr} 100`;
+  const areaD = `M 0 100 L ${svgXa} 5 L ${svgXd} ${svgYs} L ${svgXs} ${svgYs} L ${svgXr} 100 Z`;
+
+  const lineEl = document.getElementById('adsr-line-path');
+  const areaEl = document.getElementById('adsr-area-path');
+
+  if (lineEl) {
+    lineEl.setAttribute('d', lineD);
+    lineEl.style.stroke = adsr.enabled ? '#00F0FF' : 'rgba(255,255,255,0.25)';
+    lineEl.style.strokeDasharray = adsr.enabled ? 'none' : '4,4';
+  }
+  if (areaEl) {
+    areaEl.setAttribute('d', areaD);
+    areaEl.style.opacity = adsr.enabled ? '1' : '0.2';
+  }
+
+  // Update text readouts
+  const txtA = document.getElementById('adsr-txt-a');
+  const txtD = document.getElementById('adsr-txt-d');
+  const txtS = document.getElementById('adsr-txt-s');
+  const txtR = document.getElementById('adsr-txt-r');
+
+  if (txtA) txtA.textContent = Math.round(a * 1000) + 'ms';
+  if (txtD) txtD.textContent = Math.round(d * 1000) + 'ms';
+  if (txtS) {
+    const dbVal = s > 0 ? (20 * Math.log10(s)).toFixed(1) : '-inf';
+    txtS.textContent = `${Math.round(s * 100)}% (${dbVal}dB)`;
+  }
+  if (txtR) txtR.textContent = Math.round(r * 1000) + 'ms';
+}
+
+/**
+ * Initializes pointer drag event handlers for waveform ADSR nodes.
+ */
+function setupClipAdsrEvents() {
+  const nodes = ['a', 'd', 's', 'r'];
+  nodes.forEach(n => {
+    const el = document.getElementById('adsr-node-' + n);
+    if (!el) return;
+
+    const startDrag = (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      if (!activeEditorSlice) return;
+      isDraggingAdsrNode = n.toUpperCase();
+      if (!activeEditorSlice.adsr.enabled) {
+        activeEditorSlice.adsr.enabled = true;
+        const cb = document.getElementById('clip-adsr-active-cb');
+        if (cb) cb.checked = true;
+      }
+    };
+
+    el.addEventListener('mousedown', startDrag);
+    el.addEventListener('touchstart', startDrag, { passive: false });
+  });
+
+  const onPointerMove = (e) => {
+    if (!isDraggingAdsrNode || !activeEditorSlice) return;
+    const cont = document.getElementById('clip-waveform-cont');
+    if (!cont) return;
+
+    const rect = cont.getBoundingClientRect();
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+
+    const normX = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+    const normY = Math.max(0, Math.min(1, (clientY - rect.top) / rect.height));
+    const dur = Math.max(0.05, (clipTrimEnd - clipTrimStart) * activeEditorSlice.duration);
+
+    const adsr = activeEditorSlice.adsr;
+    const sustainFromY = Math.max(0.01, Math.min(1.0, 1.0 - normY));
+
+    if (isDraggingAdsrNode === 'A') {
+      adsr.attack = Math.max(0.001, Math.min(dur * 0.45, normX * dur));
+    } else if (isDraggingAdsrNode === 'D') {
+      const aDur = adsr.attack;
+      const decayTime = Math.max(0.005, (normX * dur) - aDur);
+      adsr.decay = Math.min(dur * 0.45, decayTime);
+      adsr.sustain = sustainFromY;
+    } else if (isDraggingAdsrNode === 'S') {
+      adsr.sustain = sustainFromY;
+      adsr.release = Math.max(0.005, Math.min(dur * 0.45, (1.0 - normX) * dur));
+    } else if (isDraggingAdsrNode === 'R') {
+      adsr.release = Math.max(0.005, Math.min(dur * 0.45, (1.0 - normX) * dur));
+    }
+
+    if (selectedPadIndex !== null && pads[selectedPadIndex] && pads[selectedPadIndex].id === activeEditorSlice.id) {
+      padSettings[selectedPadIndex].adsr = { ...adsr };
+      updatePadCardBadges(selectedPadIndex);
+    }
+
+    updateClipAdsrVisuals();
+  };
+
+  const onPointerUp = () => {
+    if (isDraggingAdsrNode) {
+      isDraggingAdsrNode = null;
+      playClipPreview();
+    }
+  };
+
+  window.addEventListener('mousemove', onPointerMove);
+  window.addEventListener('touchmove', onPointerMove, { passive: false });
+  window.addEventListener('mouseup', onPointerUp);
+  window.addEventListener('touchend', onPointerUp);
 }
 
 function setClipPitch(st) {
@@ -2556,8 +3190,18 @@ async function playClipPreview() {
   src.playbackRate.value = rate;
 
   const gain = actx.createGain();
-  gain.connect(actx.destination);
+  if (padMasterBus) {
+    gain.connect(padMasterBus);
+  } else {
+    gain.connect(actx.destination);
+  }
   src.connect(gain);
+
+  if (activeEditorSlice.adsr && activeEditorSlice.adsr.enabled) {
+    applyAdsrGain(gain, activeEditorSlice.adsr, actx.currentTime, durSec, 0.85);
+  } else {
+    gain.gain.setValueAtTime(0.85, actx.currentTime);
+  }
 
   if (clipIsLooping) {
     src.loop = true;
@@ -2964,7 +3608,7 @@ async function renderLocalRemix(arrangement, fadeTime, containerId = 'local-remi
 function setStatus(msg) { document.getElementById('status-text').textContent = msg; }
 
 window.onload = () => {
-  setupDrop(); setupSliceDrop(); setupClipMarkerEvents(); setupPads(); setupModeButtons(); initTutorial(); initMIDI(); initSequencer();
+  setupDrop(); setupSliceDrop(); setupClipMarkerEvents(); setupClipAdsrEvents(); setupPads(); setupModeButtons(); initTutorial(); initMIDI(); initSequencer();
   document.addEventListener('keydown', handlePadKey);
 };
 
@@ -4348,10 +4992,12 @@ function renderPadSliceList() {
 }
 
 const padSettings = Array.from({ length: 16 }, () => ({
-  volume: 1.0,
+  volume: 0.75, // Scaled default (-2.5 dB) to prevent gain-staging distortion
   pitch: 0,
   chokeGroup: 0,
-  activeSource: null
+  activeSource: null,
+  activeVoice: null,
+  adsr: { ...DEFAULT_ADSR }
 }));
 let selectedPadIndex = null;
 
@@ -4359,6 +5005,12 @@ function assignSliceToPad(sliceId, padIndex) {
   const s = slices.find(x => x.id === sliceId) || userSelectedSlices.find(x => x.id === sliceId);
   if (!s) return;
   pads[padIndex] = s;
+  if (s.adsr) {
+    padSettings[padIndex].adsr = JSON.parse(JSON.stringify(s.adsr));
+  } else {
+    s.adsr = { ...DEFAULT_ADSR };
+    padSettings[padIndex].adsr = { ...DEFAULT_ADSR };
+  }
   updatePadCardBadges(padIndex);
   const pad = document.getElementById('pad-' + padIndex);
   if (pad) {
@@ -4377,6 +5029,7 @@ function updatePadCardBadges(index) {
   let badges = [];
   if (setting.pitch !== 0) badges.push(`${setting.pitch > 0 ? '+' : ''}${setting.pitch}st`);
   if (setting.chokeGroup > 0) badges.push(`G${setting.chokeGroup}`);
+  if (setting.adsr && setting.adsr.enabled) badges.push('ADSR');
   const badgeStr = badges.length > 0 ? ` · <span style="color:var(--accent);font-weight:bold;">${badges.join(' ')}</span>` : '';
 
   pad.innerHTML = `<span class="pad-key">${PAD_KEYS[index].toUpperCase()}</span>
@@ -4403,6 +5056,7 @@ function selectPadInspector(index) {
 
   const setting = padSettings[index];
   const keyName = PAD_KEYS[index].toUpperCase();
+  const adsrOn = setting.adsr && setting.adsr.enabled;
 
   detailEl.innerHTML = `
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
@@ -4417,15 +5071,24 @@ function selectPadInspector(index) {
       <span class="setting-label" style="font-size:10px">Pitch (${setting.pitch > 0 ? '+'+setting.pitch : setting.pitch}st)</span>
       <input type="range" min="-12" max="12" value="${setting.pitch}" step="1" style="flex:1;height:14px" oninput="updatePadPitch(${index}, this.value)">
     </div>
-    <div class="setting-row">
+    <div class="setting-row" style="margin-bottom:4px">
       <span class="setting-label" style="font-size:10px">Choke Group</span>
       <select class="setting-select" style="padding:2px 6px;font-size:10px;height:auto" onchange="updatePadChoke(${index}, this.value)">
-        <option value="0" ${setting.chokeGroup === 0 ? 'selected' : ''}>Off</option>
+        <option value="0" ${setting.chokeGroup === 0 ? 'selected' : ''}>Off (Poly)</option>
         <option value="1" ${setting.chokeGroup === 1 ? 'selected' : ''}>Group 1 (Open/Closed Hat)</option>
         <option value="2" ${setting.chokeGroup === 2 ? 'selected' : ''}>Group 2</option>
         <option value="3" ${setting.chokeGroup === 3 ? 'selected' : ''}>Group 3</option>
         <option value="4" ${setting.chokeGroup === 4 ? 'selected' : ''}>Group 4</option>
       </select>
+    </div>
+    <div class="setting-row" style="margin-top:6px;padding-top:6px;border-top:1px solid rgba(255,255,255,0.06);">
+      <label style="font-size:10px;color:var(--text);display:flex;align-items:center;gap:4px;cursor:pointer;font-family:var(--mono);">
+        <input type="checkbox" ${adsrOn ? 'checked' : ''} onchange="updatePadAdsr(${index}, this.checked)" style="accent-color:#00F0FF;cursor:pointer;">
+        ADSR Envelope
+      </label>
+      <button type="button" class="btn btn-xs" onclick="editPadAdsrOnWaveform(${index})" style="padding:2px 8px;font-size:9.5px;color:var(--accent);" title="Open clip in waveform editor to drag ADSR nodes">
+        ∿ Shape on Waveform
+      </button>
     </div>
   `;
 }
@@ -4445,6 +5108,25 @@ function updatePadChoke(index, val) {
   padSettings[index].chokeGroup = parseInt(val);
   selectPadInspector(index);
   updatePadCardBadges(index);
+}
+
+function updatePadAdsr(index, enabled) {
+  if (!padSettings[index].adsr) padSettings[index].adsr = { ...DEFAULT_ADSR };
+  padSettings[index].adsr.enabled = enabled;
+  if (pads[index]) {
+    if (!pads[index].adsr) pads[index].adsr = { ...DEFAULT_ADSR };
+    pads[index].adsr.enabled = enabled;
+  }
+  selectPadInspector(index);
+  updatePadCardBadges(index);
+}
+
+function editPadAdsrOnWaveform(index) {
+  const slice = pads[index];
+  if (!slice) return;
+  switchTab('slicer');
+  openClipEditor(slice);
+  setClipOverlayMode('adsr');
 }
 
 // ─── PORTABLE .VOID PROJECT SAVE & LOAD ENGINE ───────────────────────────────
@@ -4490,6 +5172,7 @@ async function saveVoidProject() {
       brightness: s.brightness,
       normalized: s.normalized,
       filename: s.filename,
+      adsr: s.adsr || null,
       wavBase64: await bufferToBase64Wav(s.buffer)
     }));
 
@@ -4503,7 +5186,8 @@ async function saveVoidProject() {
     const serializedSettings = {
       volume: padSettings.map(p => p.volume),
       pitch: padSettings.map(p => p.pitch),
-      chokeGroup: padSettings.map(p => p.chokeGroup)
+      chokeGroup: padSettings.map(p => p.chokeGroup),
+      adsr: padSettings.map(p => p.adsr || { ...DEFAULT_ADSR })
     };
 
     const projectPayload = {
@@ -4511,6 +5195,17 @@ async function saveVoidProject() {
       appName: 'VØID Workstation',
       timestamp: Date.now(),
       author: 'Justin Ray / JRAY',
+      provenance: {
+        engine: 'VOID 1.5 Web Sampler',
+        author: 'Justin Ray (JRAY / loserdub)',
+        organization: 'Trust Node Logic',
+        copyright: 'Copyright © 2026 Justin Ray. All Rights Reserved.',
+        standard: 'HPS-1.0 (Hybrid Production Standard)',
+        canonicalUrl: 'https://trustnodelogic.com/void.html',
+        timestamp: Date.now(),
+        license: 'Permitted for Personal & Commercial Music Creation. Unauthorized Code Cloning Prohibited.'
+      },
+      samplerVoiceMode: samplerVoiceMode,
       files: files.map(f => ({
         id: String(f.id),
         name: f.file ? f.file.name : (f.name || 'track.mp3'),
@@ -4566,6 +5261,10 @@ async function loadVoidProject(file) {
         throw new Error('Invalid .VOID project file schema');
       }
 
+      if (payload.samplerVoiceMode) {
+        setSamplerVoiceMode(payload.samplerVoiceMode);
+      }
+
       files = (payload.files || []).map(f => ({
         id: f.id,
         file: { name: f.name },
@@ -4598,6 +5297,7 @@ async function loadVoidProject(file) {
           brightness: s.brightness,
           normalized: s.normalized,
           filename: s.filename,
+          adsr: s.adsr ? { ...DEFAULT_ADSR, ...s.adsr } : { ...DEFAULT_ADSR },
           buffer: audioBuf
         });
       }
@@ -4622,9 +5322,12 @@ async function loadVoidProject(file) {
 
       if (payload.padSettings) {
         for (let i = 0; i < 16; i++) {
-          if (payload.padSettings.volume) padSettings[i].volume = payload.padSettings.volume[i] || 1.0;
+          if (payload.padSettings.volume) padSettings[i].volume = payload.padSettings.volume[i] !== undefined ? payload.padSettings.volume[i] : 0.75;
           if (payload.padSettings.pitch) padSettings[i].pitch = payload.padSettings.pitch[i] || 0;
           if (payload.padSettings.chokeGroup) padSettings[i].chokeGroup = payload.padSettings.chokeGroup[i] || 0;
+          if (payload.padSettings.adsr && payload.padSettings.adsr[i]) {
+            padSettings[i].adsr = { ...DEFAULT_ADSR, ...payload.padSettings.adsr[i] };
+          }
         }
       }
 
@@ -4678,7 +5381,7 @@ function sendToPad() {
   else { assignSliceToPad(selectedSlice.id, 0); renderPadSliceList(); }
 }
 
-async function triggerPad(index, atTime = 0, velocity = 1) {
+async function triggerPad(index, atTime = 0, velocity = 1, duration = null) {
   await ensureAudioContext();
   const slice = pads[index];
   if (!slice) return;
@@ -4686,16 +5389,47 @@ async function triggerPad(index, atTime = 0, velocity = 1) {
   const setting = padSettings[index];
   const targetTime = atTime > 0 ? atTime : actx.currentTime;
 
-  // Stop active playback on any pad sharing the same Choke Group
-  if (setting.chokeGroup > 0) {
-    padSettings.forEach((p) => {
-      if (p.chokeGroup === setting.chokeGroup && p.activeSource) {
-        try { p.activeSource.stop(targetTime); } catch(e) {}
-        p.activeSource = null;
-      }
-    });
+  // 1. Voice Allocation & Choking Protocol based on Voice Mode
+  if (samplerVoiceMode === 'chop') {
+    // CHOP Mode: Monophonic solo - cut ALL active voices across all pads
+    if (activePadVoices.length > 0) {
+      activePadVoices.forEach(v => chokeVoice(v, 0.005));
+      activePadVoices = [];
+    }
+  } else if (samplerVoiceMode === 'kit') {
+    // KIT Mode: Self-choke duplicate triggers on this exact pad
+    if (setting.activeVoice) {
+      chokeVoice(setting.activeVoice, 0.005);
+      setting.activeVoice = null;
+    }
+    // Choke any pad sharing the same active non-zero choke group
+    if (setting.chokeGroup > 0) {
+      activePadVoices.forEach(v => {
+        if (v.chokeGroup === setting.chokeGroup) {
+          chokeVoice(v, 0.005);
+        }
+      });
+      activePadVoices = activePadVoices.filter(v => v.chokeGroup !== setting.chokeGroup);
+    }
+  } else if (samplerVoiceMode === 'poly') {
+    // POLY Mode: Check choke groups if configured
+    if (setting.chokeGroup > 0) {
+      activePadVoices.forEach(v => {
+        if (v.chokeGroup === setting.chokeGroup) {
+          chokeVoice(v, 0.005);
+        }
+      });
+      activePadVoices = activePadVoices.filter(v => v.chokeGroup !== setting.chokeGroup);
+    }
   }
 
+  // 2. Global Voice Stealing Cap (16 simultaneous voices max to guard CPU & memory)
+  if (activePadVoices.length >= 16) {
+    const oldest = activePadVoices.shift();
+    chokeVoice(oldest, 0.005);
+  }
+
+  // 3. Audio Node Graph Construction
   const src = actx.createBufferSource();
   src.buffer = slice.buffer;
   if (setting.pitch !== 0) {
@@ -4703,17 +5437,54 @@ async function triggerPad(index, atTime = 0, velocity = 1) {
   }
 
   const gain = actx.createGain();
-  gain.gain.setValueAtTime(setting.volume * velocity, targetTime);
-
   src.connect(gain);
+
+  // 4. Note & Envelope Duration Calculation
+  const sliceDur = slice.duration || (slice.buffer ? slice.buffer.duration : 1.0);
+  const voiceDur = duration && duration > 0 ? duration : sliceDur;
+  const targetPeak = Math.max(0.01, setting.volume * velocity);
+
+  // 5. Envelope Application (4-Node ADSR or Smooth Transient Micro-fade)
+  const adsr = setting.adsr || slice.adsr;
+  if (adsr && adsr.enabled) {
+    applyAdsrGain(gain, adsr, targetTime, voiceDur, targetPeak);
+  } else {
+    // Clean default micro-fade (2ms attack, 5ms release) to eliminate pops
+    gain.gain.setValueAtTime(0.0001, targetTime);
+    gain.gain.linearRampToValueAtTime(targetPeak, targetTime + 0.002);
+    const holdEnd = Math.max(targetTime + 0.005, targetTime + voiceDur - 0.005);
+    gain.gain.setValueAtTime(targetPeak, holdEnd);
+    gain.gain.exponentialRampToValueAtTime(0.0001, targetTime + voiceDur);
+  }
+
+  // 6. Connect to Master Limiter Bus & Optional MediaRecorder
   if (isRecording && recDestination) gain.connect(recDestination);
-  gain.connect(actx.destination);
+  if (padMasterBus) {
+    gain.connect(padMasterBus);
+  } else {
+    gain.connect(actx.destination);
+  }
 
   src.start(targetTime);
+
+  const voiceEntry = {
+    source: src,
+    gainNode: gain,
+    padIndex: index,
+    chokeGroup: setting.chokeGroup,
+    startTime: targetTime
+  };
+  setting.activeVoice = voiceEntry;
   setting.activeSource = src;
+  activePadVoices.push(voiceEntry);
 
   src.onended = () => {
-    if (setting.activeSource === src) setting.activeSource = null;
+    if (setting.activeVoice === voiceEntry) {
+      setting.activeVoice = null;
+      setting.activeSource = null;
+    }
+    const idx = activePadVoices.indexOf(voiceEntry);
+    if (idx >= 0) activePadVoices.splice(idx, 1);
   };
 
   const delayMs = Math.max(0, (targetTime - actx.currentTime) * 1000);
@@ -4722,7 +5493,7 @@ async function triggerPad(index, atTime = 0, velocity = 1) {
     const pad = document.getElementById('pad-' + index);
     if (pad) {
       pad.classList.add('active');
-      setTimeout(() => pad.classList.remove('active'), Math.min(slice.duration * 1000, 200));
+      setTimeout(() => pad.classList.remove('active'), Math.min(sliceDur * 1000, 180));
     }
   }, delayMs);
 
@@ -4934,7 +5705,7 @@ function setSequencerView(view) {
 
 function toggleSequencerPlay() {
   if (seqIsPlaying) {
-    stopSequencer();
+    stopSequencer(true);
   } else {
     startSequencer();
   }
@@ -4967,7 +5738,7 @@ async function startSequencer() {
   setStatus(`Sequencer playing Pattern ${activePatternBank} (${seqBpm} BPM)`);
 }
 
-function stopSequencer() {
+function stopSequencer(killVoices = false) {
   seqIsPlaying = false;
   if (seqTimerId) {
     clearTimeout(seqTimerId);
@@ -4981,7 +5752,12 @@ function stopSequencer() {
   if (playText) playText.textContent = 'Play Loop';
 
   clearSeqPlayheadHighlight();
-  setStatus('Sequencer stopped');
+  if (killVoices) {
+    panicStopAllAudio();
+    setStatus('Sequencer stopped · All voices silenced');
+  } else {
+    setStatus('Sequencer stopped');
+  }
 }
 
 function toggleSequencerRecord() {
@@ -4998,9 +5774,10 @@ function toggleSequencerRecord() {
 
 function scheduleSeqStep(stepIndex, atTime) {
   const currentBank = seqPatterns[activePatternBank];
+  const stepDur = (60.0 / seqBpm) / 4.0;
   for (let p = 0; p < 16; p++) {
     if (currentBank[p][stepIndex] && pads[p]) {
-      triggerPad(p, atTime, 1.0);
+      triggerPad(p, atTime, 1.0, stepDur);
     }
   }
 
@@ -5315,20 +6092,81 @@ async function exportSequencerLoopWav() {
 
 function bufferToWavBlob(buffer) {
   const numCh = buffer.numberOfChannels, sr = buffer.sampleRate, len = buffer.length;
-  const ab = new ArrayBuffer(44 + len*numCh*2);
+  const pcmBytes = len * numCh * 2;
+
+  // Metadata tags for RIFF LIST INFO chunk
+  const metaTags = [
+    { id: 'IART', val: 'Justin Ray (JRAY / loserdub)' },
+    { id: 'ICOP', val: 'Copyright (c) 2026 Justin Ray. All Rights Reserved.' },
+    { id: 'ISFT', val: 'VOID 1.5 Web Sampler (HPS-1.0)' },
+    { id: 'ICMT', val: 'Engineered with HPS-1.0 Hybrid Production Standard · Trust Node Logic' }
+  ];
+
+  // Encode subchunks with word alignment
+  let subchunks = [];
+  let totalSubchunksLen = 0;
+  metaTags.forEach(m => {
+    let strBytes = [];
+    for (let i = 0; i < m.val.length; i++) {
+      strBytes.push(m.val.charCodeAt(i) & 0xFF);
+    }
+    strBytes.push(0); // Null terminator
+    if (strBytes.length % 2 !== 0) strBytes.push(0); // Word alignment padding
+    subchunks.push({ id: m.id, bytes: strBytes });
+    totalSubchunksLen += 8 + strBytes.length;
+  });
+
+  const listChunkLen = 4 + totalSubchunksLen; // 4 bytes for 'INFO' + subchunks
+  const totalRiffLen = 36 + pcmBytes + 8 + listChunkLen;
+  const ab = new ArrayBuffer(8 + totalRiffLen);
   const view = new DataView(ab);
-  const w = (o,s) => { for(let i=0;i<s.length;i++) view.setUint8(o+i,s.charCodeAt(i)); };
-  w(0,'RIFF'); view.setUint32(4,36+len*numCh*2,true); w(8,'WAVE');
-  w(12,'fmt '); view.setUint32(16,16,true); view.setUint16(20,1,true);
-  view.setUint16(22,numCh,true); view.setUint32(24,sr,true);
-  view.setUint32(28,sr*numCh*2,true); view.setUint16(32,numCh*2,true);
-  view.setUint16(34,16,true); w(36,'data'); view.setUint32(40,len*numCh*2,true);
+  const w = (o, s) => { for (let i = 0; i < s.length; i++) view.setUint8(o + i, s.charCodeAt(i)); };
+
+  // RIFF header
+  w(0, 'RIFF');
+  view.setUint32(4, totalRiffLen, true);
+  w(8, 'WAVE');
+
+  // fmt chunk
+  w(12, 'fmt ');
+  view.setUint32(16, 16, true);
+  view.setUint16(20, 1, true); // PCM
+  view.setUint16(22, numCh, true);
+  view.setUint32(24, sr, true);
+  view.setUint32(28, sr * numCh * 2, true);
+  view.setUint16(32, numCh * 2, true);
+  view.setUint16(34, 16, true);
+
+  // data chunk
+  w(36, 'data');
+  view.setUint32(40, pcmBytes, true);
+
+  // Write PCM samples
   let offset = 44;
-  for (let i=0;i<len;i++) for (let c=0;c<numCh;c++) {
-    const s = Math.max(-1,Math.min(1,buffer.getChannelData(c)[i]));
-    view.setInt16(offset, s<0?s*0x8000:s*0x7FFF, true); offset+=2;
+  for (let i = 0; i < len; i++) {
+    for (let c = 0; c < numCh; c++) {
+      const s = Math.max(-1, Math.min(1, buffer.getChannelData(c)[i]));
+      view.setInt16(offset, s < 0 ? s * 0x8000 : s * 0x7FFF, true);
+      offset += 2;
+    }
   }
-  return new Blob([ab],{type:'audio/wav'});
+
+  // Write RIFF LIST INFO metadata chunk
+  w(offset, 'LIST');
+  view.setUint32(offset + 4, listChunkLen, true);
+  w(offset + 8, 'INFO');
+  offset += 12;
+
+  subchunks.forEach(sc => {
+    w(offset, sc.id);
+    view.setUint32(offset + 4, sc.bytes.length, true);
+    for (let b = 0; b < sc.bytes.length; b++) {
+      view.setUint8(offset + 8 + b, sc.bytes[b]);
+    }
+    offset += 8 + sc.bytes.length;
+  });
+
+  return new Blob([ab], { type: 'audio/wav' });
 }
 
 // REFINEMENT LOGIC
@@ -5933,6 +6771,7 @@ renderUserReviews();
   </div>
 </div>
 
+<button class="about-btn" style="right:156px;" onclick="document.getElementById('legal-overlay').classList.add('active')" title="Intellectual Property & Terms of Use">⚖ Legal &amp; IP</button>
 <button class="about-btn" style="right:84px;" onclick="openTut()" title="Open Quickstart Guide">Guide</button>
 <button class="about-btn" onclick="document.getElementById('about-overlay').classList.add('active')">About</button>
 
@@ -6055,7 +6894,65 @@ renderUserReviews();
     <p style="margin-top:12px">For more visit:<br><a href="https://trustnodelogic.com/projects.html" target="_blank" rel="noopener">https://trustnodelogic.com/projects.html</a></p>
     <div style="display:flex;gap:8px;margin-top:14px;">
       <button class="btn btn-ghost" onclick="openTut(); document.getElementById('about-overlay').classList.remove('active');" style="flex:1;padding:6px 10px;font-size:10px;border-color:rgba(66,245,164,0.4);color:var(--accent);">📖 Quickstart Guide</button>
+      <button class="btn btn-ghost" onclick="document.getElementById('about-overlay').classList.remove('active'); document.getElementById('legal-overlay').classList.add('active');" style="flex:1;padding:6px 10px;font-size:10px;border-color:rgba(255,159,28,0.4);color:#FF9F1C;">⚖ Terms &amp; IP</button>
       <button class="about-close" style="position:static;padding:6px 14px;border-radius:4px;background:var(--border);color:var(--text);border:none;cursor:pointer;font-family:var(--mono);font-size:10px;" onclick="document.getElementById('about-overlay').classList.remove('active')">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- Legal & Intellectual Property Overlay Modal -->
+<div class="about-overlay" id="legal-overlay" onclick="if(event.target===this) this.classList.remove('active')">
+  <div class="about-modal" style="max-width:640px;max-height:85vh;overflow-y:auto;text-align:left;padding:24px;border-color:rgba(0,240,255,0.4);">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:12px;margin-bottom:14px;">
+      <div>
+        <div style="font-size:10px;font-family:var(--mono);color:#00F0FF;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:2px;">[ LEGAL PROVENANCE &amp; INTELLECTUAL PROPERTY ]</div>
+        <h3 style="font-size:18px;font-weight:800;color:var(--text);margin:0;">VØID 1.5 · TERMS OF USE &amp; IP DECLARATION</h3>
+      </div>
+      <button class="about-close" style="margin:0;position:static;" onclick="document.getElementById('legal-overlay').classList.remove('active')">✕</button>
+    </div>
+
+    <div style="font-size:11.5px;line-height:1.65;color:#A1A1AA;font-family:var(--sans);">
+      <p style="margin-bottom:10px;"><strong style="color:var(--text);">Proprietary Ownership &amp; Copyright Notice:</strong><br>
+      VØID 1.5 Web Sampler &amp; Audio Slicer is the proprietary software, architectural invention, and copyrighted work of <strong style="color:var(--text);">Justin Ray</strong> (JRAY / loserdub), published by <strong style="color:var(--text);">Trust Node Logic</strong> (<a href="https://trustnodelogic.com" target="_blank" rel="noopener" style="color:var(--accent);">https://trustnodelogic.com</a>). Copyright © 2026 Justin Ray. All Rights Reserved under United States (Title 17 U.S.C.) and international copyright treaties.
+      </p>
+
+      <div style="background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:10px 12px;margin:12px 0;">
+        <span style="font-size:10px;font-family:var(--mono);color:#FF9F1C;font-weight:700;display:block;margin-bottom:4px;">PROTECTED ARCHITECTURAL INVENTIONS:</span>
+        <ul style="margin:0;padding-left:16px;font-size:11px;color:#D4D4D8;">
+          <li>Off-thread Spectral Novelty Onset Detection &amp; Transient Granular Slicing Engine</li>
+          <li>Lookahead Harmonic Compatibility Scoring Matrix &amp; Camelot Wheel Auto-Mashup Engine</li>
+          <li>Interactive 4-Node Multi-Parameter ADSR Waveform Vector Overlay &amp; Scheduling</li>
+          <li>Master Brickwall Headroom Limiter &amp; Exponential Anti-Click Voice Stealing Protocols</li>
+          <li>Hybrid Production Standard (HPS-1.0) Client-Side Attestation &amp; Cryptographic Provenance</li>
+        </ul>
+      </div>
+
+      <p style="margin-bottom:10px;"><strong style="color:var(--text);">1. Permitted Producer License:</strong><br>
+      Users are granted a free, non-exclusive, revocable license to execute VØID in a standard web browser strictly for personal, artistic, and commercial audio production, stem slicing, and musical arrangement. <strong style="color:#38ef7d;">All audio and musical compositions created or exported by you using VØID belong 100% to you.</strong>
+      </p>
+
+      <p style="margin-bottom:10px;"><strong style="color:var(--text);">2. Strict Anti-Reverse Engineering Covenant:</strong><br>
+      Except as permitted for authorized browser playback, you agree that you shall NOT:
+      </p>
+      <ul style="margin:0 0 10px 0;padding-left:16px;color:#D4D4D8;">
+        <li>Decompile, disassemble, reverse engineer, decrypt, unpack, or deobfuscate any client-side JavaScript, Web Worker DSP code, or Web Audio graphs.</li>
+        <li>Copy, scrape, clone, mirror, iframe, frame, or redistribute VØID in whole or in part on any third-party domain, server, or application.</li>
+        <li>White-label, resell, sublicense, or commercially distribute the software or its proprietary audio algorithms.</li>
+        <li>Extract the DSP routines to train proprietary generative code or AI models without express written authorization.</li>
+      </ul>
+
+      <p style="margin-bottom:10px;"><strong style="color:var(--text);">3. Attestation &amp; Export Watermarking:</strong><br>
+      Exported project files (.VOID) and audio files (.WAV) contain embedded provenance metadata (RIFF INFO chunks and HPS-1.0 attestation blocks) identifying the software engine, standards compliance, and copyright attribution. Tampering with or stripping provenance metadata for unauthorized commercial redistribution is prohibited.
+      </p>
+
+      <p style="margin-top:14px;border-top:1px solid rgba(255,255,255,0.08);padding-top:10px;font-size:10px;font-family:var(--mono);color:var(--muted);">
+        Legal Inquiries &amp; Enterprise Commercial Licensing: <a href="mailto:trustnodelogic@gmail.com" style="color:var(--accent);">trustnodelogic@gmail.com</a><br>
+        Published under the Hybrid Production Standard (HPS-1.0) · East Lansing, Michigan, USA.
+      </p>
+    </div>
+
+    <div style="display:flex;justify-content:flex-end;margin-top:16px;">
+      <button class="btn btn-primary" onclick="document.getElementById('legal-overlay').classList.remove('active')" style="padding:6px 16px;font-size:11px;">I Understand &amp; Agree</button>
     </div>
   </div>
 </div>

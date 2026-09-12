@@ -729,9 +729,9 @@
 
  .btn-highlight {
   background: var(--panel-elevated);
-  color: var(--cyan);
+  color: var(--text);
   font-weight: 600;
-  border: 1px solid rgba(0, 240, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   font-family: var(--font-mono);
   font-size: 12px;
   padding: 8px 16px;
@@ -743,9 +743,168 @@
   text-transform: uppercase;
  }
  .btn-highlight:hover {
-  background: rgba(0, 240, 255, 0.12);
-  border-color: var(--cyan);
-  box-shadow: 0 0 16px var(--cyan-dim);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--amber);
+  color: #fff;
+ }
+
+ .nav-engine-btn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 159, 28, 0.4);
+  background: rgba(255, 159, 28, 0.06);
+  color: #F4F4F5;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all .15s ease;
+  flex-shrink: 0;
+ }
+ .nav-engine-btn:hover {
+  border-color: #FF9F1C;
+  background: #FF9F1C;
+  color: #08090A;
+ }
+ .nav-engine-btn .nav-engine-dot {
+  color: #FF9F1C;
+  font-size: 9px;
+  transition: color .15s ease;
+ }
+ .nav-engine-btn:hover .nav-engine-dot {
+  color: #08090A;
+ }
+
+ .demo-scope-card {
+  background: var(--panel-solid);
+  border: 1px solid var(--border-strong);
+  border-left: 3px solid var(--amber);
+  padding: 24px 28px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+ }
+ .demo-scope-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-soft);
+ }
+ .demo-scope-tag {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--amber);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+ }
+ .demo-scope-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 3px 8px;
+  background: var(--panel-elevated);
+ }
+ .demo-scope-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+ }
+ .demo-scope-copy {
+  flex: 1;
+  min-width: 280px;
+ }
+ .demo-scope-title {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 6px 0;
+  letter-spacing: -0.01em;
+ }
+ .demo-scope-text {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.5;
+  margin: 0 0 12px 0;
+ }
+ .demo-scope-points {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 6px 14px;
+ }
+ .demo-scope-pill {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #EAEAEA;
+  line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+ }
+ .demo-scope-pill span {
+  color: var(--amber);
+  font-size: 8px;
+  margin-top: 3px;
+  flex-shrink: 0;
+ }
+ .demo-scope-action-side {
+  flex-shrink: 0;
+ }
+ .btn-engine-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px 18px;
+  background: #F4F4F5;
+  color: #08090A;
+  text-decoration: none;
+  border: 1px solid #FFFFFF;
+  transition: all .15s ease;
+  min-width: 200px;
+ }
+ .btn-engine-card:hover {
+  background: #FF9F1C;
+  border-color: #FF9F1C;
+  color: #08090A;
+ }
+ .btn-engine-lead {
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 2px;
+ }
+ .btn-engine-main {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: inherit;
+ }
+ .btn-engine-sub {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  color: #666;
+  margin-top: 3px;
  }
 
  .btn-ghost {
@@ -2628,6 +2787,11 @@
         <a href="./what-is-hybrid.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">WHAT IS HYBRID</a>
         <a href="./services.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">SERVICES</a>
         <a href="./contact.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">CONTACT</a>
+        <a href="https://trustnodelogic.web.app" target="_blank" rel="noopener noreferrer" class="nav-engine-btn">
+          <span class="nav-engine-dot">▪</span>
+          <span>LAUNCH ENGINE</span>
+          <span class="nav-engine-arrow">↗</span>
+        </a>
       </nav>
 
       <!-- Mobile Hamburger Toggle -->
@@ -2649,6 +2813,9 @@
           <a href="./what-is-hybrid.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">WHAT IS HYBRID</a>
           <a href="./services.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">SERVICES</a>
           <a href="./contact.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">CONTACT</a>
+          <a href="https://trustnodelogic.web.app" target="_blank" rel="noopener noreferrer" class="py-2.5 mt-2 border border-[#FF9F1C]/40 bg-[#FF9F1C]/10 text-[#FF9F1C] font-bold tracking-wider hover:bg-[#FF9F1C] hover:text-[#08090A] transition-colors">
+            ▪ LAUNCH DAW ENGINE ↗
+          </a>
         </nav>
       </div>
 
@@ -2750,9 +2917,9 @@
  </div>
 
  <div class="hero-actions">
-  <button class="btn-primary" id="btn-hero-takeaway">Download Executive Takeaway Guide (.txt)</button>
-  <a class="btn-secondary" href="#builder">Launch 5-Axis Attestation Console ↓</a>
-  <a class="btn-highlight" href="https://trustnodelogic.web.app">Launch DAW Attestation Engine ↗</a>
+  <a class="btn-primary" href="https://trustnodelogic.web.app" target="_blank" rel="noopener noreferrer">Launch DAW Attestation Engine ↗</a>
+  <a class="btn-secondary" href="#builder">Explore Sandbox Below ↓</a>
+  <button class="btn-secondary" id="btn-hero-takeaway" style="font-size:12px; padding:13px 18px; color:var(--text-dim); background:transparent; border-color:var(--border);">Executive Guide (.txt)</button>
  </div>
  <div class="hero-author">
   <span>Authored by</span> <strong>Justin Ray</strong> &nbsp;·&nbsp; <span>Pioneer of Hybrid AI Music Production</span> &nbsp;·&nbsp; <span>Contact:</span> <a href="mailto:trustnodelogic@gmail.com">trustnodelogic@gmail.com</a>
@@ -3115,12 +3282,44 @@
  </div>
  <div class="chapter-interstitial-rule"></div>
  <div class="chapter-executive-takeaway">
-  <strong>Executive Takeaway:</strong> Interactive 5-axis console generating canonical JSON manifests, DDEX ERN 4.3 XML blocks, C2PA assertions, and CLI attestation commands with instant cryptographic verification.
+  <strong>Executive Takeaway:</strong> Interactive sandbox demonstrating 5-axis process scoring and manifest generation. Automated DAW session scanning and bit-perfect WAV sealing execute in the standalone engine.
  </div>
 </div>
 <div class="kicker">Attestation Engine</div>
 <h2 class="section-title">5-Axis Attestation Console &amp; Multi-Format Exporter</h2>
-<p class="section-desc" style="max-width:720px;">Toggle values across the five production axes or select an industry workflow preset to generate canonical JSON manifests, DDEX ERN 4.3 XML snippets, C2PA assertions, and CLI attestation commands instantly.</p>
+<p class="section-desc" style="max-width:720px;">Toggle values across the five production axes or select an industry preset to preview canonical JSON manifests, DDEX ERN 4.3 XML snippets, and C2PA assertions.</p>
+
+<!-- Scope Notice: Reference Sandbox vs. Operational Engine -->
+<div class="demo-scope-card">
+ <div class="demo-scope-header">
+  <div class="demo-scope-tag">
+   <span style="color:#FF9F1C;">▪</span>
+   <span>SPECIFICATION SCOPE // SANDBOX DEMO</span>
+  </div>
+  <span class="demo-scope-badge">REFERENCE IMPLEMENTATION</span>
+ </div>
+ <div class="demo-scope-main">
+  <div class="demo-scope-copy">
+   <h3 class="demo-scope-title">Reference Sandbox vs. Operational DAW Engine</h3>
+   <p class="demo-scope-text">
+    The console below is an isolated reference model demonstrating 5-axis process scoring and manifest generation. The standalone <strong>DAW Attestation Engine</strong> automates this workflow directly on production files:
+   </p>
+   <div class="demo-scope-points">
+    <div class="demo-scope-pill"><span>▪</span> Scans 8 native DAW formats (Ableton, Logic, FL, Pro Tools, Cubase, Studio One, REAPER, DAWProject)</div>
+    <div class="demo-scope-pill"><span>▪</span> Bit-perfect SHA-256 PCM audio essence seal into WAV (<code style="color:#FF9F1C;">hps1</code> RIFF chunk)</div>
+    <div class="demo-scope-pill"><span>▪</span> Client-side Ed25519 signing with distributor PDF evidence &amp; DDEX ERN 4.3 export</div>
+    <div class="demo-scope-pill"><span>▪</span> 100% sovereign browser privacy: zero audio or session uploads</div>
+   </div>
+  </div>
+  <div class="demo-scope-action-side">
+   <a href="https://trustnodelogic.web.app" target="_blank" rel="noopener noreferrer" class="btn-engine-card">
+    <span class="btn-engine-lead">OPERATIONAL SOFTWARE</span>
+    <span class="btn-engine-main">Launch DAW Engine ↗</span>
+    <span class="btn-engine-sub">trustnodelogic.web.app</span>
+   </a>
+  </div>
+ </div>
+</div>
 
 <div class="builder" style="margin-top:32px;">
 <div class="builder-head">
@@ -3201,9 +3400,10 @@
 <div class="manifest-preview" id="manifest-preview"></div>
 <div class="export-btns">
 <button class="btn-sm" id="btn-copy-tag">Copy HPS Tag</button>
-<button class="btn-sm" id="btn-download-json">Download Manifest (.json)</button>
-<button class="btn-sm" id="btn-download-xml">Download DDEX (.xml)</button>
-<button class="btn-sm btn-highlight" id="btn-download-takeaway">Download Executive Takeaway Doc</button>
+<button class="btn-sm" id="btn-download-json">Download JSON</button>
+<button class="btn-sm" id="btn-download-xml">Download DDEX</button>
+<button class="btn-sm btn-highlight" id="btn-download-takeaway">Executive Guide (.txt)</button>
+<a class="btn-sm" href="https://trustnodelogic.web.app" target="_blank" rel="noopener noreferrer" style="background:#F4F4F5; color:#08090A; font-weight:700; border:1px solid #FFFFFF; text-decoration:none; display:inline-flex; align-items:center; gap:5px;">Launch DAW Engine ↗</a>
 </div>
 </div>
 </div>
@@ -3416,9 +3616,10 @@
 <h2>Partner on the HPS-1.0 Standard Specification</h2>
 <p>Justin Ray engineered the Hybrid Production Standard to establish deterministic provenance across label catalogs, digital distributors, and streaming platforms ahead of August 2026 enforcement deadlines. Evaluate the specification or pilot Phase 1 with zero infrastructure refactoring.</p>
 <div class="cta-buttons">
-<a class="btn-primary" href="mailto:trustnodelogic@gmail.com">Request Consultation</a>
-<button class="btn-secondary" id="btn-footer-takeaway" style="cursor:pointer;">Download Executive Dossier (.TXT)</button>
-<a class="btn-secondary" href="https://trustnodelogic.com/" rel="noopener" target="_blank">TrustNodeLogic Archive</a>
+<a class="btn-primary" href="https://trustnodelogic.web.app" target="_blank" rel="noopener noreferrer">Launch DAW Attestation Engine ↗</a>
+<a class="btn-secondary" href="mailto:trustnodelogic@gmail.com">Request Consultation</a>
+<button class="btn-secondary" id="btn-footer-takeaway" style="cursor:pointer;">Executive Dossier (.txt)</button>
+<a class="btn-secondary" href="https://trustnodelogic.com/" rel="noopener" target="_blank">Archive Home</a>
 </div>
 <div class="cta-footnote">Open specification licensed under Apache 2.0 / CC BY-ND 4.0 · Production schemas and DAW reference implementations available upon request.</div>
 </div>
@@ -3481,6 +3682,7 @@
 Direct Email: <a href="mailto:trustnodelogic@gmail.com">trustnodelogic@gmail.com</a> &nbsp;·&nbsp; Web: <a href="https://trustnodelogic.com/" target="_blank">trustnodelogic.com</a>
 </div>
 <div class="footer-btns">
+<a class="btn-sm" href="https://trustnodelogic.web.app" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:6px; text-decoration:none; background:#F4F4F5; color:#08090A; font-weight:700; padding:8px 16px; font-family:var(--font-mono); font-size:11px; text-transform:uppercase; border:1px solid #FFFFFF;">Launch DAW Engine ↗</a>
 <a class="btn-sm btn-highlight" href="https://trustnodelogic.com/" style="display:inline-block; text-decoration:none;">TrustNodeLogic.com (Home)</a>
 </div>
 </div>
