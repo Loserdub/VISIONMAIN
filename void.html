@@ -1289,6 +1289,32 @@ function runMLAnalysis(audioBuffer, onProgress) {
 
   .pad-layout { display: grid; grid-template-columns: minmax(auto, 600px) 380px; gap: 32px; justify-content: start; }
 
+  /* PAD & SEQUENCER SPLIT LAYOUT (PC / DESKTOP OPTIMIZED) */
+  .pad-sequencer-split {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+  }
+  .pad-sequencer-split .pad-left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+  @media (min-width: 1025px) {
+    .pad-sequencer-split {
+      display: grid;
+      grid-template-columns: minmax(360px, 420px) minmax(640px, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+    .pad-sequencer-split .sequencer-wrap {
+      margin-top: 0;
+      max-width: 100%;
+    }
+  }
+
   .pad-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
   .pad {
     aspect-ratio: 1; background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
@@ -1705,6 +1731,208 @@ function runMLAnalysis(audioBuffer, onProgress) {
   .seq-focused-dot { width: 12px; height: 12px; border-radius: 3px; background: transparent; border: 1px dashed var(--border); }
   .seq-focused-step.active .seq-focused-dot { border: none; box-shadow: 0 0 8px currentColor; }
 
+  /* SEQUENCER SUSTAIN & DRAG-TO-PLAY */
+  .seq-step.drag-preview, .seq-focused-step.drag-preview {
+    border-color: #ffffff !important;
+    box-shadow: 0 0 10px rgba(255,255,255,0.7) !important;
+    transform: scale(1.04);
+  }
+  .seq-step.sustain-start {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: 0 !important;
+  }
+  .seq-step.sustain-mid {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    margin-right: 0 !important;
+    opacity: 0.9;
+  }
+  .seq-step.sustain-end {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+    opacity: 0.9;
+  }
+  .seq-step.sustain-start::after,
+  .seq-step.sustain-mid::after,
+  .seq-step.sustain-end::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    height: 3px;
+    margin-top: -1.5px;
+    background: rgba(255,255,255,0.75);
+    box-shadow: 0 0 4px rgba(255,255,255,0.85);
+    pointer-events: none;
+  }
+  .seq-step.sustain-start::after {
+    left: 4px;
+    right: 0;
+    border-radius: 2px 0 0 2px;
+  }
+  .seq-step.sustain-mid::after {
+    left: 0;
+    right: 0;
+  }
+  .seq-step.sustain-end::after {
+    left: 0;
+    right: 4px;
+    border-radius: 0 2px 2px 0;
+  }
+
+  .seq-focused-step.sustain-start {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right-style: dashed;
+  }
+  .seq-focused-step.sustain-mid {
+    border-radius: 0;
+    border-left-style: dashed;
+    border-right-style: dashed;
+    opacity: 0.92;
+  }
+  .seq-focused-step.sustain-end {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left-style: dashed;
+    opacity: 0.92;
+  }
+
+  /* SEQUENCER HELP BUBBLE & MODAL */
+  .seq-help-bubble {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .15s ease;
+    user-select: none;
+    padding: 0;
+    line-height: 1;
+  }
+  .seq-help-bubble:hover {
+    background: var(--accent);
+    color: #08090A;
+    border-color: var(--accent);
+    box-shadow: 0 0 10px rgba(200, 245, 66, 0.4);
+    transform: scale(1.1);
+  }
+
+  .seq-help-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(8, 9, 10, 0.85);
+    backdrop-filter: blur(6px);
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    animation: fadeInHelp 0.2s ease forwards;
+  }
+  .seq-help-overlay.active {
+    display: flex;
+  }
+  @keyframes fadeInHelp {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .seq-help-modal {
+    background: #121417;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    width: 560px;
+    max-width: 95vw;
+    max-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.7), 0 0 0 1px rgba(200,245,66,0.12);
+    position: relative;
+    overflow: hidden;
+  }
+  .seq-help-modal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), #00F0FF, #FF9F1C);
+  }
+  .seq-help-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 22px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .seq-help-close {
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all .15s ease;
+  }
+  .seq-help-close:hover {
+    color: var(--text);
+    background: rgba(255,255,255,0.08);
+  }
+  .seq-help-body {
+    padding: 20px 22px;
+    overflow-y: auto;
+    flex: 1;
+  }
+  .seq-help-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .seq-help-list li {
+    font-size: 12px;
+    line-height: 1.55;
+    color: #c9cdd4;
+    position: relative;
+    padding-left: 18px;
+  }
+  .seq-help-list li::before {
+    content: '•';
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .seq-help-list li strong {
+    color: #ffffff;
+    font-weight: 700;
+  }
+  .seq-help-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 22px;
+    border-top: 1px solid var(--border);
+    background: rgba(0,0,0,0.25);
+  }
+
   /* TUTORIAL OVERLAY */
   .tut-overlay {
     position: fixed; inset: 0; background: rgba(10,10,10,0.85); backdrop-filter: blur(8px);
@@ -2107,7 +2335,7 @@ function runMLAnalysis(audioBuffer, onProgress) {
   <div class="pad-header">
     <div>
       <h2>Pad player</h2>
-      <p>Drag slices onto pads · play with keyboard keys A–P · record your performance</p>
+      <p>Drag slices onto pads · play with keyboard keys A-P · record your performance</p>
     </div>
     <div class="record-controls">
       <!-- Sampler Voice Mode -->
@@ -2118,7 +2346,7 @@ function runMLAnalysis(audioBuffer, onProgress) {
       </div>
       <button type="button" class="btn-panic" onclick="panicStopAllAudio()" title="Panic: Kill all active audio voices instantly (Escape)" style="margin-right:8px;">■ PANIC</button>
 
-      <button class="btn btn-ghost" onclick="autoFillPads()" style="padding:6px 12px;font-size:11px;margin-right:6px">⚡ Auto-Fill Pads (1–16)</button>
+      <button class="btn btn-ghost" onclick="autoFillPads()" style="padding:6px 12px;font-size:11px;margin-right:6px">⚡ Auto-Fill Pads (1-16)</button>
       <button class="btn btn-ghost" onclick="clearAllPads()" style="padding:6px 12px;font-size:11px;margin-right:12px">Clear Pads</button>
       <button class="btn btn-ghost" onclick="exportDrumRack()" id="drumrack-btn" style="padding:6px 14px;font-size:11px;margin-right:12px">
         <span id="drumrack-btn-inner">↓ Export Ableton Drum Rack</span>
@@ -2129,132 +2357,178 @@ function runMLAnalysis(audioBuffer, onProgress) {
     </div>
   </div>
   <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:6px 14px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;font-size:10px;font-family:var(--mono);color:var(--muted)">
-    <span>⌨️ Keyboard: [A]–[P]</span>
+    <span>⌨️ Keyboard: [A]-[P]</span>
     <span>🎛️ MIDI: Auto-mapped</span>
     <span>🔴 Record: Spacebar</span>
     <span>💡 Ableton Export: Single-click Drum Rack</span>
   </div>
-  <div class="pad-layout">
-    <div class="pad-grid" id="pad-grid"></div>
-    <div class="pad-sidebar">
-      <div class="pad-info">
-        <h3>Loaded pad</h3>
-        <div id="pad-detail" style="font-size:12px;color:var(--muted)">Click a pad to see details</div>
-      </div>
-      <div class="pad-info" style="flex:1">
-        <h3>Selected Slices · drag to pad</h3>
-        <div class="slice-drop-list" id="slice-drop-list">
-          <p style="font-size:11px;color:var(--muted)">Build your pad bank in the Slicer tab first</p>
+
+  <div class="pad-sequencer-split">
+    <div class="pad-left-col">
+      <div class="pad-grid" id="pad-grid"></div>
+      <div class="pad-sidebar">
+        <div class="pad-info">
+          <h3>Loaded pad</h3>
+          <div id="pad-detail" style="font-size:12px;color:var(--muted)">Click a pad to see details</div>
+        </div>
+        <div class="pad-info" style="flex:1">
+          <h3>Selected Slices · drag to pad</h3>
+          <div class="slice-drop-list" id="slice-drop-list">
+            <p style="font-size:11px;color:var(--muted)">Build your pad bank in the Slicer tab first</p>
+          </div>
+        </div>
+        <div class="refinement-wrap" id="refinement-editor">
+          <h3 id="refinement-title">Sample Refinement</h3>
+          <div class="refinement-canvas-container" id="ref-canvas-cont">
+            <canvas class="refinement-canvas" id="ref-canvas"></canvas>
+            <div class="refinement-overlay" id="ref-overlay-start" style="left:0; width:0%"></div>
+            <div class="refinement-overlay" id="ref-overlay-end" style="right:0; width:0%"></div>
+            <div class="refinement-marker" id="ref-marker-start" style="left: 0%;"></div>
+            <div class="refinement-marker end-marker" id="ref-marker-end" style="left: 100%;"></div>
+          </div>
+          <div class="refinement-controls">
+            <button class="btn btn-ghost" style="padding:6px; font-size:14px" id="ref-play-btn" title="Preview slice">▶</button>
+            <input type="text" class="refinement-input" id="ref-name-input" placeholder="Slice Name">
+          </div>
+          <div class="refinement-controls" style="margin-top:8px">
+            <button class="btn btn-primary" style="flex:1; padding:6px; font-size:11px" id="ref-save-btn">Save Trim</button>
+            <button class="btn btn-ghost" style="padding:6px 10px; font-size:11px" id="ref-dl-btn" title="Download Slice">↓</button>
+          </div>
         </div>
       </div>
-      <div class="refinement-wrap" id="refinement-editor">
-        <h3 id="refinement-title">Sample Refinement</h3>
-        <div class="refinement-canvas-container" id="ref-canvas-cont">
-          <canvas class="refinement-canvas" id="ref-canvas"></canvas>
-          <div class="refinement-overlay" id="ref-overlay-start" style="left:0; width:0%"></div>
-          <div class="refinement-overlay" id="ref-overlay-end" style="right:0; width:0%"></div>
-          <div class="refinement-marker" id="ref-marker-start" style="left: 0%;"></div>
-          <div class="refinement-marker end-marker" id="ref-marker-end" style="left: 100%;"></div>
+    </div>
+
+    <!-- PATTERN SEQUENCER & LOOP WORKSTATION -->
+    <div class="sequencer-wrap" id="sequencer-wrap">
+      <div class="seq-header">
+        <div>
+          <div class="seq-badge">MPC WORKSTATION · GROOVEBOX</div>
+          <h3 class="seq-title">16-Step Pattern Sequencer &amp; Loop Engine</h3>
+          <p class="seq-desc">Program grooves across all 16 pads · auto-quantize live performance · export seamless WAV loops</p>
         </div>
-        <div class="refinement-controls">
-          <button class="btn btn-ghost" style="padding:6px; font-size:14px" id="ref-play-btn" title="Preview slice">▶</button>
-          <input type="text" class="refinement-input" id="ref-name-input" placeholder="Slice Name">
-        </div>
-        <div class="refinement-controls" style="margin-top:8px">
-          <button class="btn btn-primary" style="flex:1; padding:6px; font-size:11px" id="ref-save-btn">Save Trim</button>
-          <button class="btn btn-ghost" style="padding:6px 10px; font-size:11px" id="ref-dl-btn" title="Download Slice">↓</button>
+        <div class="seq-actions">
+          <button class="btn btn-ghost" onclick="fillPresetPattern('four_floor')" style="padding:5px 9px;font-size:10px;" title="Kick on 1/5/9/13, snare on 5/13, hats on off-beats">🎲 4-on-the-Floor</button>
+          <button class="btn btn-ghost" onclick="fillPresetPattern('eighth_groove')" style="padding:5px 9px;font-size:10px;" title="8th-note hats and syncopated kick groove">🎲 8th Bounce</button>
+          <button class="btn btn-ghost" onclick="fillPresetPattern('trap_roll')" style="padding:5px 9px;font-size:10px;" title="Rapid 16th hats with punchy beat">🎲 Trap Hat Roll</button>
+          <button class="btn btn-ghost" onclick="clearCurrentPattern()" style="padding:5px 9px;font-size:10px;" title="Clear all steps in current pattern">Clear Pattern</button>
+          <button class="btn btn-primary" id="seq-export-btn" onclick="exportSequencerLoopWav()" style="padding:5px 12px;font-size:10px;">↓ Export Loop WAV</button>
+          <button type="button" class="seq-help-bubble" id="seq-help-btn" onclick="toggleSequencerHelp(event)" title="Sequencer Guide &amp; Tricks (?)" aria-label="Sequencer Guide &amp; Tricks">?</button>
         </div>
       </div>
+
+      <!-- TRANSPORT BAR -->
+      <div class="seq-transport-bar">
+        <div class="seq-transport-left">
+          <button class="btn-seq-play" id="seq-play-btn" onclick="toggleSequencerPlay()" title="Play / Pause Pattern">
+            <span id="seq-play-icon">▶</span> <span id="seq-play-text">Play Loop</span>
+          </button>
+          <button class="btn-seq-stop" id="seq-stop-btn" onclick="stopSequencer(true)" title="Stop Sequencer and kill all ringing voices">
+            <span>■</span>
+          </button>
+          <button class="btn-seq-rec" id="seq-rec-btn" onclick="toggleSequencerRecord()" title="Real-time Quantized Record: hit keys [A]-[P] or MIDI pads while playing to stamp into grid">
+            <span class="seq-rec-dot"></span> <span id="seq-rec-text">Rec to Grid</span>
+          </button>
+          <button type="button" class="btn-panic" onclick="panicStopAllAudio()" title="Panic: Kill all active audio voices instantly (Escape)" style="margin-left:4px;">■ PANIC</button>
+
+          <div class="sampler-mode-wrap" style="margin-left:8px;" title="Voice Mode: Kit (Self-Choke), Chop (1-Voice Solo), Poly (Open Polyphony)">
+            <button type="button" id="seq-mode-kit-btn" class="sampler-mode-btn active" onclick="setSamplerVoiceMode('kit')">KIT</button>
+            <button type="button" id="seq-mode-chop-btn" class="sampler-mode-btn" onclick="setSamplerVoiceMode('chop')">CHOP</button>
+            <button type="button" id="seq-mode-poly-btn" class="sampler-mode-btn" onclick="setSamplerVoiceMode('poly')">POLY</button>
+          </div>
+
+          <div class="seq-divider-v"></div>
+
+          <div class="seq-ctrl-group">
+            <span class="seq-label">BPM</span>
+            <input type="number" id="seq-bpm-input" min="40" max="240" value="120" class="seq-num-input" onchange="setSequencerBpm(this.value)">
+            <button class="btn btn-ghost" onclick="syncSequencerBpm()" style="padding:4px 8px;font-size:9px;" title="Sync sequencer tempo to detected audio BPM">⚡ Sync Track BPM</button>
+          </div>
+
+          <div class="seq-divider-v"></div>
+
+          <div class="seq-ctrl-group">
+            <span class="seq-label">Swing</span>
+            <input type="range" id="seq-swing-slider" min="50" max="75" value="50" class="seq-slider" oninput="setSequencerSwing(this.value)">
+            <span class="seq-val" id="seq-swing-val">50% (Straight)</span>
+          </div>
+
+          <div class="seq-divider-v"></div>
+
+          <div class="seq-ctrl-group">
+            <span class="seq-label">Length</span>
+            <select id="seq-steps-select" class="setting-select" style="padding:4px 8px;font-size:10px;height:auto;" onchange="setSequencerSteps(parseInt(this.value))">
+              <option value="16" selected>16 Steps (1 Bar)</option>
+              <option value="32">32 Steps (2 Bars)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="seq-transport-right">
+          <span class="seq-label" style="margin-right:2px;">Pattern:</span>
+          <div class="seq-pattern-tabs">
+            <button class="seq-pat-tab active" data-pat="A" onclick="switchPattern('A')">A</button>
+            <button class="seq-pat-tab" data-pat="B" onclick="switchPattern('B')">B</button>
+            <button class="seq-pat-tab" data-pat="C" onclick="switchPattern('C')">C</button>
+            <button class="seq-pat-tab" data-pat="D" onclick="switchPattern('D')">D</button>
+          </div>
+
+          <div class="seq-divider-v"></div>
+
+          <div class="seq-view-toggle">
+            <button class="seq-view-btn active" id="seq-view-all" onclick="setSequencerView('matrix')">Full Matrix</button>
+            <button class="seq-view-btn" id="seq-view-focused" onclick="setSequencerView('focused')">Active Pad</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEQUENCER MATRIX CONTAINER -->
+      <div id="seq-matrix-container" class="seq-matrix-container"></div>
+
+      <!-- FOCUSED PAD VIEW CONTAINER -->
+      <div id="seq-focused-container" class="seq-focused-container" style="display:none;"></div>
     </div>
   </div>
 
-  <!-- PATTERN SEQUENCER & LOOP WORKSTATION -->
-  <div class="sequencer-wrap" id="sequencer-wrap">
-    <div class="seq-header">
-      <div>
-        <div class="seq-badge">MPC WORKSTATION · GROOVEBOX</div>
-        <h3 class="seq-title">16-Step Pattern Sequencer &amp; Loop Engine</h3>
-        <p class="seq-desc">Program grooves across all 16 pads · auto-quantize live performance · export seamless WAV loops</p>
+  <!-- SEQUENCER HELP MODAL -->
+  <div class="seq-help-overlay" id="seq-help-overlay" onclick="closeSequencerHelp(event)">
+    <div class="seq-help-modal" onclick="event.stopPropagation()">
+      <div class="seq-help-header">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span style="font-size:18px;">💡</span>
+          <div>
+            <h3 style="margin:0;font-size:15px;font-weight:800;letter-spacing:-0.02em;color:var(--text);">How to Use the Sequencer</h3>
+            <span style="font-family:var(--mono);font-size:10px;color:var(--accent);">WORKSTATION WORKFLOW &amp; PRO TRICKS</span>
+          </div>
+        </div>
+        <button type="button" class="seq-help-close" onclick="closeSequencerHelp()" title="Close">&times;</button>
       </div>
-      <div class="seq-actions">
-        <button class="btn btn-ghost" onclick="fillPresetPattern('four_floor')" style="padding:5px 9px;font-size:10px;" title="Kick on 1/5/9/13, snare on 5/13, hats on off-beats">🎲 4-on-the-Floor</button>
-        <button class="btn btn-ghost" onclick="fillPresetPattern('eighth_groove')" style="padding:5px 9px;font-size:10px;" title="8th-note hats and syncopated kick groove">🎲 8th Bounce</button>
-        <button class="btn btn-ghost" onclick="fillPresetPattern('trap_roll')" style="padding:5px 9px;font-size:10px;" title="Rapid 16th hats with punchy beat">🎲 Trap Hat Roll</button>
-        <button class="btn btn-ghost" onclick="clearCurrentPattern()" style="padding:5px 9px;font-size:10px;" title="Clear all steps in current pattern">Clear Pattern</button>
-        <button class="btn btn-primary" id="seq-export-btn" onclick="exportSequencerLoopWav()" style="padding:5px 12px;font-size:10px;">↓ Export Loop WAV</button>
+      <div class="seq-help-body">
+        <ul class="seq-help-list">
+          <li><strong>Step Toggle:</strong> Click any step square to turn a hit on or off for that pad.</li>
+          <li><strong>Drag to Sustain Period:</strong> Click and drag across multiple squares in a row to set an extended note length. The clip will play for that entire selected period.</li>
+          <li><strong>Instant Audition:</strong> Releasing a drag selection immediately previews the pad clip for the full selected duration at current BPM.</li>
+          <li><strong>Side-by-Side PC Workflow:</strong> On desktop, the sequencer aligns directly alongside the 16 performance pads for rapid beatmaking.</li>
+          <li><strong>Real-Time Quantized Rec:</strong> Click <em>Rec to Grid</em> and tap keys [A]-[P] or MIDI pads while the loop plays to punch in rhythms live.</li>
+          <li><strong>Sampler Voice Modes:</strong>
+            <div style="margin:4px 0 0 12px;font-size:11px;color:var(--muted);line-height:1.5;">
+              · <strong>KIT:</strong> Classic drum kit with choke groups (closed hats choke open hats)<br>
+              · <strong>CHOP:</strong> 1-voice solo slicer mode where every new trigger cuts prior audio<br>
+              · <strong>POLY:</strong> Full polyphony where all triggered pads ring out together
+            </div>
+          </li>
+          <li><strong>Pattern Banks (A / B / C / D):</strong> Build up to 4 different pattern variations and switch between them on the fly.</li>
+          <li><strong>Swing &amp; Pocket:</strong> Use the Swing slider (50% straight to 75% heavy swing) to add human MPC bounce.</li>
+          <li><strong>Track BPM Sync:</strong> Tap <em>Sync Track BPM</em> to immediately lock tempo with your imported sample.</li>
+          <li><strong>Export Seamless Loop:</strong> Click <em>Export Loop WAV</em> to render a 32-bit zero-drift master loop WAV file.</li>
+          <li><strong>Spacebar Shortcut:</strong> Press [Spacebar] anytime on the Pads tab to start or pause the loop.</li>
+          <li><strong>Panic Button:</strong> Click <em>■ PANIC</em> (or press [Esc]) to instantly silence all active voices.</li>
+        </ul>
       </div>
-    </div>
-
-    <!-- TRANSPORT BAR -->
-    <div class="seq-transport-bar">
-      <div class="seq-transport-left">
-        <button class="btn-seq-play" id="seq-play-btn" onclick="toggleSequencerPlay()" title="Play / Pause Pattern">
-          <span id="seq-play-icon">▶</span> <span id="seq-play-text">Play Loop</span>
-        </button>
-        <button class="btn-seq-stop" id="seq-stop-btn" onclick="stopSequencer(true)" title="Stop Sequencer and kill all ringing voices">
-          <span>■</span>
-        </button>
-        <button class="btn-seq-rec" id="seq-rec-btn" onclick="toggleSequencerRecord()" title="Real-time Quantized Record: hit keys [A]-[P] or MIDI pads while playing to stamp into grid">
-          <span class="seq-rec-dot"></span> <span id="seq-rec-text">Rec to Grid</span>
-        </button>
-        <button type="button" class="btn-panic" onclick="panicStopAllAudio()" title="Panic: Kill all active audio voices instantly (Escape)" style="margin-left:4px;">■ PANIC</button>
-
-        <div class="sampler-mode-wrap" style="margin-left:8px;" title="Voice Mode: Kit (Self-Choke), Chop (1-Voice Solo), Poly (Open Polyphony)">
-          <button type="button" id="seq-mode-kit-btn" class="sampler-mode-btn active" onclick="setSamplerVoiceMode('kit')">KIT</button>
-          <button type="button" id="seq-mode-chop-btn" class="sampler-mode-btn" onclick="setSamplerVoiceMode('chop')">CHOP</button>
-          <button type="button" id="seq-mode-poly-btn" class="sampler-mode-btn" onclick="setSamplerVoiceMode('poly')">POLY</button>
-        </div>
-
-        <div class="seq-divider-v"></div>
-
-        <div class="seq-ctrl-group">
-          <span class="seq-label">BPM</span>
-          <input type="number" id="seq-bpm-input" min="40" max="240" value="120" class="seq-num-input" onchange="setSequencerBpm(this.value)">
-          <button class="btn btn-ghost" onclick="syncSequencerBpm()" style="padding:4px 8px;font-size:9px;" title="Sync sequencer tempo to detected audio BPM">⚡ Sync Track BPM</button>
-        </div>
-
-        <div class="seq-divider-v"></div>
-
-        <div class="seq-ctrl-group">
-          <span class="seq-label">Swing</span>
-          <input type="range" id="seq-swing-slider" min="50" max="75" value="50" class="seq-slider" oninput="setSequencerSwing(this.value)">
-          <span class="seq-val" id="seq-swing-val">50% (Straight)</span>
-        </div>
-
-        <div class="seq-divider-v"></div>
-
-        <div class="seq-ctrl-group">
-          <span class="seq-label">Length</span>
-          <select id="seq-steps-select" class="setting-select" style="padding:4px 8px;font-size:10px;height:auto;" onchange="setSequencerSteps(parseInt(this.value))">
-            <option value="16" selected>16 Steps (1 Bar)</option>
-            <option value="32">32 Steps (2 Bars)</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="seq-transport-right">
-        <span class="seq-label" style="margin-right:2px;">Pattern:</span>
-        <div class="seq-pattern-tabs">
-          <button class="seq-pat-tab active" data-pat="A" onclick="switchPattern('A')">A</button>
-          <button class="seq-pat-tab" data-pat="B" onclick="switchPattern('B')">B</button>
-          <button class="seq-pat-tab" data-pat="C" onclick="switchPattern('C')">C</button>
-          <button class="seq-pat-tab" data-pat="D" onclick="switchPattern('D')">D</button>
-        </div>
-
-        <div class="seq-divider-v"></div>
-
-        <div class="seq-view-toggle">
-          <button class="seq-view-btn active" id="seq-view-all" onclick="setSequencerView('matrix')">Full Matrix</button>
-          <button class="seq-view-btn" id="seq-view-focused" onclick="setSequencerView('focused')">Active Pad</button>
-        </div>
+      <div class="seq-help-footer">
+        <span style="font-family:var(--mono);font-size:10px;color:var(--muted);">Pro Tip: Select Active Pad view to zoom in on single-pad micro-timing.</span>
+        <button type="button" class="btn btn-primary" onclick="closeSequencerHelp()" style="padding:6px 14px;font-size:11px;">Got It</button>
       </div>
     </div>
-
-    <!-- SEQUENCER MATRIX CONTAINER -->
-    <div id="seq-matrix-container" class="seq-matrix-container"></div>
-
-    <!-- FOCUSED PAD VIEW CONTAINER -->
-    <div id="seq-focused-container" class="seq-focused-container" style="display:none;"></div>
   </div>
 </div>
 
@@ -5224,6 +5498,7 @@ async function saveVoidProject() {
       },
       sequencer: {
         patterns: seqPatterns,
+        stepLengths: typeof seqStepLengths !== 'undefined' ? seqStepLengths : undefined,
         activePattern: activePatternBank,
         bpm: seqBpm,
         swing: seqSwing,
@@ -5355,6 +5630,11 @@ async function loadVoidProject(file) {
             if (payload.sequencer.patterns[k]) seqPatterns[k] = payload.sequencer.patterns[k];
           }
         }
+        if (payload.sequencer.stepLengths && typeof seqStepLengths !== 'undefined') {
+          for (const k of SEQ_BANKS) {
+            if (payload.sequencer.stepLengths[k]) seqStepLengths[k] = payload.sequencer.stepLengths[k];
+          }
+        }
         if (payload.sequencer.activePattern) switchPattern(payload.sequencer.activePattern);
         if (payload.sequencer.bpm) setSequencerBpm(payload.sequencer.bpm);
         if (payload.sequencer.swing) setSequencerSwing(payload.sequencer.swing);
@@ -5444,6 +5724,10 @@ async function triggerPad(index, atTime = 0, velocity = 1, duration = null) {
   const voiceDur = duration && duration > 0 ? duration : sliceDur;
   const targetPeak = Math.max(0.01, setting.volume * velocity);
 
+  if (duration && duration > 0 && voiceDur > sliceDur + 0.02) {
+    src.loop = true;
+  }
+
   // 5. Envelope Application (4-Node ADSR or Smooth Transient Micro-fade)
   const adsr = setting.adsr || slice.adsr;
   if (adsr && adsr.enabled) {
@@ -5466,6 +5750,9 @@ async function triggerPad(index, atTime = 0, velocity = 1, duration = null) {
   }
 
   src.start(targetTime);
+  if (duration && duration > 0) {
+    src.stop(targetTime + voiceDur + 0.01);
+  }
 
   const voiceEntry = {
     source: src,
@@ -5616,12 +5903,30 @@ let seqNextStepTime = 0;
 let seqViewMode = 'matrix'; // 'matrix' or 'focused'
 let seqFocusedPadIndex = 0;
 
-// 4 Pattern Banks x 16 Pads x 32 Steps (0 = inactive, 1 = active)
+// 4 Pattern Banks x 16 Pads x 32 Steps (0 = inactive, 1 = active / note-on, 2 = sustain)
 const seqPatterns = {
   A: Array.from({ length: 16 }, () => Array(32).fill(0)),
   B: Array.from({ length: 16 }, () => Array(32).fill(0)),
   C: Array.from({ length: 16 }, () => Array(32).fill(0)),
   D: Array.from({ length: 16 }, () => Array(32).fill(0))
+};
+
+// Note duration lengths in steps (default 1 step)
+const seqStepLengths = {
+  A: Array.from({ length: 16 }, () => Array(32).fill(1)),
+  B: Array.from({ length: 16 }, () => Array(32).fill(1)),
+  C: Array.from({ length: 16 }, () => Array(32).fill(1)),
+  D: Array.from({ length: 16 }, () => Array(32).fill(1))
+};
+
+// Drag selection state for click-and-drag across sequencer squares
+let seqDragState = {
+  isDragging: false,
+  padIndex: -1,
+  startStep: -1,
+  currentStep: -1,
+  isFocusedView: false,
+  hasMoved: false
 };
 
 function initSequencer() {
@@ -5635,8 +5940,14 @@ function initSequencer() {
         e.preventDefault();
         toggleSequencerPlay();
       }
+    } else if (e.code === 'Escape') {
+      closeSequencerHelp();
     }
   });
+
+  // Global pointer up to finalize drag selection anywhere in window
+  window.addEventListener('pointerup', onSeqWindowPointerUp);
+  window.addEventListener('mouseup', onSeqWindowPointerUp);
 }
 
 function setSequencerBpm(val) {
@@ -5774,10 +6085,14 @@ function toggleSequencerRecord() {
 
 function scheduleSeqStep(stepIndex, atTime) {
   const currentBank = seqPatterns[activePatternBank];
+  const currentLengths = seqStepLengths[activePatternBank];
   const stepDur = (60.0 / seqBpm) / 4.0;
   for (let p = 0; p < 16; p++) {
-    if (currentBank[p][stepIndex] && pads[p]) {
-      triggerPad(p, atTime, 1.0, stepDur);
+    const val = currentBank[p][stepIndex];
+    if (val === 1 && pads[p]) {
+      const len = (currentLengths && currentLengths[p] && currentLengths[p][stepIndex]) || 1;
+      const noteDur = len * stepDur;
+      triggerPad(p, atTime, 1.0, noteDur);
     }
   }
 
@@ -5823,37 +6138,168 @@ function updateSeqPlayhead(stepIndex) {
   if (focusedEl) focusedEl.classList.add('playhead');
 }
 
-function toggleStep(padIndex, stepIndex) {
-  const currentVal = seqPatterns[activePatternBank][padIndex][stepIndex];
-  const newVal = currentVal ? 0 : 1;
-  seqPatterns[activePatternBank][padIndex][stepIndex] = newVal;
+// ─── SEQUENCER DRAG-TO-PLAY POINTER HANDLERS ─────────────────────────────────
+function onSeqStepPointerDown(e, padIndex, stepIndex, isFocused = false) {
+  if (e.button !== 0 && e.buttons !== 1) return;
+  e.preventDefault();
+  seqDragState.isDragging = true;
+  seqDragState.padIndex = padIndex;
+  seqDragState.startStep = stepIndex;
+  seqDragState.currentStep = stepIndex;
+  seqDragState.isFocusedView = isFocused;
+  seqDragState.hasMoved = false;
 
-  // Immediate preview sound when toggled on
-  if (newVal === 1 && pads[padIndex]) {
-    triggerPad(padIndex, 0, 1.0);
+  updateSeqDragPreview();
+}
+
+function onSeqStepPointerEnter(padIndex, stepIndex, isFocused = false) {
+  if (!seqDragState.isDragging) return;
+  if (isFocused !== seqDragState.isFocusedView) return;
+  if (!isFocused && padIndex !== seqDragState.padIndex) return;
+
+  if (stepIndex !== seqDragState.currentStep) {
+    seqDragState.currentStep = stepIndex;
+    seqDragState.hasMoved = true;
+    updateSeqDragPreview();
   }
+}
 
-  // Quick DOM update without full re-render for performance
-  const stepEl = document.querySelector(`.seq-step[data-pad="${padIndex}"][data-step="${stepIndex}"]`);
-  if (stepEl) {
-    stepEl.classList.toggle('active', newVal === 1);
-    const col = PAD_COLORS[padIndex % PAD_COLORS.length];
-    stepEl.style.background = newVal === 1 ? col : '';
-    stepEl.style.borderColor = newVal === 1 ? col : '';
-  }
+function clearSeqDragPreview() {
+  document.querySelectorAll('.seq-step.drag-preview').forEach(el => {
+    el.classList.remove('drag-preview');
+    el.style.boxShadow = '';
+  });
+  document.querySelectorAll('.seq-focused-step.drag-preview').forEach(el => {
+    el.classList.remove('drag-preview');
+    el.style.boxShadow = '';
+  });
+}
 
-  if (seqViewMode === 'focused' && seqFocusedPadIndex === padIndex) {
-    const focEl = document.getElementById(`seq-foc-step-${stepIndex}`);
-    if (focEl) {
-      focEl.classList.toggle('active', newVal === 1);
-      const dot = focEl.querySelector('.seq-focused-dot');
-      const col = PAD_COLORS[padIndex % PAD_COLORS.length];
-      if (dot) {
-        dot.style.background = newVal === 1 ? col : 'transparent';
-        dot.style.color = col;
+function updateSeqDragPreview() {
+  clearSeqDragPreview();
+  if (!seqDragState.isDragging) return;
+
+  const minS = Math.min(seqDragState.startStep, seqDragState.currentStep);
+  const maxS = Math.max(seqDragState.startStep, seqDragState.currentStep);
+  const p = seqDragState.padIndex;
+  const count = maxS - minS + 1;
+  const col = PAD_COLORS[p % PAD_COLORS.length];
+
+  const secondsPerBeat = 60.0 / seqBpm;
+  const baseStepDur = secondsPerBeat / 4.0;
+  const periodDuration = count * baseStepDur;
+
+  if (seqDragState.isFocusedView) {
+    for (let s = minS; s <= maxS; s++) {
+      const el = document.getElementById(`seq-foc-step-${s}`);
+      if (el) {
+        el.classList.add('drag-preview');
+        el.style.borderColor = col;
+      }
+    }
+  } else {
+    for (let s = minS; s <= maxS; s++) {
+      const el = document.querySelector(`.seq-step[data-pad="${p}"][data-step="${s}"]`);
+      if (el) {
+        el.classList.add('drag-preview');
+        el.style.borderColor = col;
+        el.style.boxShadow = `0 0 10px ${col}`;
       }
     }
   }
+
+  if (count > 1) {
+    const padKey = PAD_KEYS[p].toUpperCase();
+    setStatus(`Drag selection [Pad ${padKey}]: ${count} squares (${periodDuration.toFixed(2)}s period)`);
+  }
+}
+
+function onSeqWindowPointerUp() {
+  if (!seqDragState.isDragging) return;
+  const p = seqDragState.padIndex;
+  const minS = Math.min(seqDragState.startStep, seqDragState.currentStep);
+  const maxS = Math.max(seqDragState.startStep, seqDragState.currentStep);
+  const count = maxS - minS + 1;
+  const hasMoved = seqDragState.hasMoved;
+
+  seqDragState.isDragging = false;
+  clearSeqDragPreview();
+
+  const currentBank = seqPatterns[activePatternBank];
+  const currentLengths = seqStepLengths[activePatternBank];
+  const secondsPerBeat = 60.0 / seqBpm;
+  const baseStepDur = secondsPerBeat / 4.0;
+
+  if (!hasMoved || count === 1) {
+    // Single step click: toggle step
+    toggleStep(p, minS);
+    return;
+  }
+
+  // Multi-step drag: program sustained clip period
+  for (let s = minS; s <= maxS; s++) {
+    currentBank[p][s] = 0;
+    currentLengths[p][s] = 1;
+  }
+
+  // Note-on at minS with duration = count steps
+  currentBank[p][minS] = 1;
+  currentLengths[p][minS] = count;
+
+  // Mark sustain steps
+  for (let s = minS + 1; s <= maxS; s++) {
+    currentBank[p][s] = 2;
+    currentLengths[p][s] = 0;
+  }
+
+  // Audition / play the clip for the ENTIRE selected period
+  const selectedDuration = count * baseStepDur;
+  if (pads[p]) {
+    triggerPad(p, 0, 1.0, selectedDuration);
+    const padKey = PAD_KEYS[p].toUpperCase();
+    setStatus(`Playing Pad [${padKey}] clip for selected period: ${count} squares (${selectedDuration.toFixed(2)}s)`);
+  } else {
+    const padKey = PAD_KEYS[p].toUpperCase();
+    setStatus(`Assigned ${count} squares on Pad [${padKey}] · (Load slice to audition)`);
+  }
+
+  renderSequencerGrid();
+}
+
+function toggleStep(padIndex, stepIndex) {
+  const currentBank = seqPatterns[activePatternBank];
+  const currentLengths = seqStepLengths[activePatternBank];
+  const currentVal = currentBank[padIndex][stepIndex];
+
+  if (currentVal > 0) {
+    // If clearing a sustained note or one of its continuation steps:
+    let startStep = stepIndex;
+    if (currentVal === 2) {
+      for (let s = stepIndex - 1; s >= 0; s--) {
+        if (currentBank[padIndex][s] === 1) {
+          startStep = s;
+          break;
+        }
+      }
+    }
+    const len = currentLengths[padIndex][startStep] || 1;
+    for (let s = startStep; s < startStep + len && s < seqTotalSteps; s++) {
+      currentBank[padIndex][s] = 0;
+      currentLengths[padIndex][s] = 1;
+    }
+  } else {
+    // Turn on single step
+    currentBank[padIndex][stepIndex] = 1;
+    currentLengths[padIndex][stepIndex] = 1;
+
+    // Immediate preview sound when toggled on
+    if (pads[padIndex]) {
+      const stepDur = (60.0 / seqBpm) / 4.0;
+      triggerPad(padIndex, 0, 1.0, stepDur);
+    }
+  }
+
+  renderSequencerGrid();
 }
 
 function recordPadIntoSequencer(padIndex, hitTime) {
@@ -5867,6 +6313,7 @@ function recordPadIntoSequencer(padIndex, hitTime) {
     targetStep = (seqCurrentStep - 1 + seqTotalSteps) % seqTotalSteps;
   }
   seqPatterns[activePatternBank][padIndex][targetStep] = 1;
+  seqStepLengths[activePatternBank][padIndex][targetStep] = 1;
   renderSequencerGrid();
 }
 
@@ -5876,6 +6323,7 @@ function renderSequencerGrid() {
   if (!matrixCont) return;
 
   const currentBank = seqPatterns[activePatternBank];
+  const currentLengths = seqStepLengths[activePatternBank];
 
   // 1. Render Full Matrix
   let headerHtml = '<div class="seq-step-header">';
@@ -5898,7 +6346,9 @@ function renderSequencerGrid() {
 
     let stepsHtml = '';
     for (let s = 0; s < seqTotalSteps; s++) {
-      const isActive = currentBank[p][s] === 1;
+      const stepVal = currentBank[p][s];
+      const isActive = stepVal > 0;
+      const noteLen = currentLengths[p][s] || 1;
       const isDivider = (s % 4) === 3 && s !== seqTotalSteps - 1;
       const isDownbeat = (s % 4) === 0;
       const activeStyle = isActive ? `background:${col};border-color:${col};` : '';
@@ -5906,9 +6356,18 @@ function renderSequencerGrid() {
       const downbeatClass = isDownbeat ? 'downbeat' : '';
       const activeClass = isActive ? 'active' : '';
 
-      stepsHtml += `<button class="seq-step ${activeClass} ${dividerClass} ${downbeatClass}"
+      let sustainClass = '';
+      if (stepVal === 1 && noteLen > 1) sustainClass = 'sustain-start';
+      else if (stepVal === 2) {
+        const nextVal = s + 1 < seqTotalSteps ? currentBank[p][s + 1] : 0;
+        sustainClass = nextVal === 2 ? 'sustain-mid' : 'sustain-end';
+      }
+
+      stepsHtml += `<button type="button" class="seq-step ${activeClass} ${dividerClass} ${downbeatClass} ${sustainClass}"
         data-pad="${p}" data-step="${s}" style="${activeStyle}"
-        onclick="toggleStep(${p}, ${s})" title="Pad ${key} · Step ${s+1}"></button>`;
+        onpointerdown="onSeqStepPointerDown(event, ${p}, ${s}, false)"
+        onpointerenter="onSeqStepPointerEnter(${p}, ${s}, false)"
+        title="Pad ${key} · Step ${s+1}${stepVal > 0 ? (noteLen > 1 ? ` (Period: ${noteLen} squares)` : ' (Active)') : ''}"></button>`;
     }
 
     rowsHtml += `
@@ -5933,17 +6392,29 @@ function renderSequencerGrid() {
 
     let focusedStepsHtml = '';
     for (let s = 0; s < seqTotalSteps; s++) {
-      const isActive = currentBank[seqFocusedPadIndex][s] === 1;
+      const stepVal = currentBank[seqFocusedPadIndex][s];
+      const isActive = stepVal > 0;
+      const noteLen = currentLengths[seqFocusedPadIndex][s] || 1;
       const isDivider = (s % 4) === 3 && s !== seqTotalSteps - 1;
       const dividerClass = isDivider ? 'beat-divider' : '';
       const activeClass = isActive ? 'active' : '';
       const dotStyle = isActive ? `background:${col};color:${col};` : '';
 
+      let sustainClass = '';
+      if (stepVal === 1 && noteLen > 1) sustainClass = 'sustain-start';
+      else if (stepVal === 2) {
+        const nextVal = s + 1 < seqTotalSteps ? currentBank[seqFocusedPadIndex][s + 1] : 0;
+        sustainClass = nextVal === 2 ? 'sustain-mid' : 'sustain-end';
+      }
+
       focusedStepsHtml += `
-        <div class="seq-focused-step ${activeClass} ${dividerClass}" id="seq-foc-step-${s}" onclick="toggleStep(${seqFocusedPadIndex}, ${s})" title="Pad ${key} · Step ${s+1}">
+        <div class="seq-focused-step ${activeClass} ${dividerClass} ${sustainClass}" id="seq-foc-step-${s}"
+          onpointerdown="onSeqStepPointerDown(event, ${seqFocusedPadIndex}, ${s}, true)"
+          onpointerenter="onSeqStepPointerEnter(${seqFocusedPadIndex}, ${s}, true)"
+          title="Pad ${key} · Step ${s+1}${stepVal > 0 ? (noteLen > 1 ? ` (Period: ${noteLen} squares)` : ' (Active)') : ''}">
           <span class="seq-focused-num">${s + 1}</span>
           <div class="seq-focused-dot" style="${dotStyle}"></div>
-          <span style="font-family:var(--mono);font-size:8px;color:${isActive ? col : 'var(--muted)'}">${isActive ? 'ON' : '-'}</span>
+          <span style="font-family:var(--mono);font-size:8px;color:${isActive ? col : 'var(--muted)'}">${stepVal === 1 ? (noteLen > 1 ? `${noteLen}ST` : 'ON') : (stepVal === 2 ? 'HOLD' : '-')}</span>
         </div>`;
     }
 
@@ -5954,7 +6425,7 @@ function renderSequencerGrid() {
           <span>Active Pad [${key}]: <strong>${name}</strong></span>
         </div>
         <div style="font-family:var(--mono);font-size:10px;color:var(--muted);">
-          Click steps to toggle rhythm · Click pads in 4×4 grid to change active pad
+          Click steps to toggle · Drag over squares to sustain clip period · Click pads to switch
         </div>
       </div>
       <div class="seq-focused-grid">${focusedStepsHtml}</div>`;
@@ -5969,14 +6440,22 @@ function selectSequencerRow(padIndex) {
 
 function clearCurrentPattern() {
   const pat = seqPatterns[activePatternBank];
-  for (let p = 0; p < 16; p++) pat[p].fill(0);
+  const len = seqStepLengths[activePatternBank];
+  for (let p = 0; p < 16; p++) {
+    pat[p].fill(0);
+    len[p].fill(1);
+  }
   renderSequencerGrid();
   setStatus(`Pattern ${activePatternBank} cleared`);
 }
 
 function fillPresetPattern(preset) {
   const pat = seqPatterns[activePatternBank];
-  for (let p = 0; p < 16; p++) pat[p].fill(0);
+  const len = seqStepLengths[activePatternBank];
+  for (let p = 0; p < 16; p++) {
+    pat[p].fill(0);
+    len[p].fill(1);
+  }
 
   if (preset === 'four_floor') {
     // Kick on downbeats (Pad 0)
@@ -6044,19 +6523,31 @@ async function exportSequencerLoopWav() {
       const stepDur = isEven ? baseStepDuration * (2 * swingRatio) : baseStepDuration * (2 * (1 - swingRatio));
 
       for (let p = 0; p < 16; p++) {
-        if (pattern[p][step] && pads[p]) {
+        const val = pattern[p][step];
+        if (val === 1 && pads[p]) {
+          const lengthInSteps = (seqStepLengths && seqStepLengths[activePatternBank] && seqStepLengths[activePatternBank][p][step]) || 1;
+          const noteDur = lengthInSteps * baseStepDuration;
           const slice = pads[p];
           const setting = padSettings[p];
           const src = offCtx.createBufferSource();
           src.buffer = slice.buffer;
+          const sliceDur = slice.duration || (slice.buffer ? slice.buffer.duration : 1.0);
+          if (noteDur > sliceDur + 0.02) {
+            src.loop = true;
+          }
           if (setting.pitch !== 0) {
             src.detune.setValueAtTime(setting.pitch * 100, t);
           }
           const gain = offCtx.createGain();
-          gain.gain.setValueAtTime(setting.volume, t);
+          gain.gain.setValueAtTime(0.0001, t);
+          gain.gain.linearRampToValueAtTime(setting.volume, t + 0.002);
+          const holdEnd = Math.max(t + 0.005, t + noteDur - 0.005);
+          gain.gain.setValueAtTime(setting.volume, holdEnd);
+          gain.gain.exponentialRampToValueAtTime(0.0001, t + noteDur);
           src.connect(gain);
           gain.connect(offCtx.destination);
           src.start(t);
+          src.stop(t + noteDur + 0.01);
         }
       }
       t += stepDur;
@@ -6087,6 +6578,23 @@ async function exportSequencerLoopWav() {
       exportBtn.disabled = false;
       exportBtn.innerHTML = oldText;
     }
+  }
+}
+
+// ─── SEQUENCER HELP MODAL CONTROLS ───────────────────────────────────────────
+function toggleSequencerHelp(e) {
+  if (e) e.stopPropagation();
+  const overlay = document.getElementById('seq-help-overlay');
+  if (overlay) {
+    overlay.classList.toggle('active');
+  }
+}
+
+function closeSequencerHelp(e) {
+  if (e && e.target && e.target !== e.currentTarget && !e.target.classList.contains('seq-help-close') && !e.target.closest('.seq-help-close') && e.target.id !== 'seq-help-overlay') return;
+  const overlay = document.getElementById('seq-help-overlay');
+  if (overlay) {
+    overlay.classList.remove('active');
   }
 }
 
