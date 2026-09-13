@@ -11,7 +11,7 @@
 
   const styles = `
     :focus-visible {
-      outline: 2px solid #4fd8c4 !important;
+      outline: 2px solid #FF9F1C !important;
       outline-offset: 2px !important;
     }
 
@@ -22,11 +22,11 @@
       left: 0;
       height: 3px;
       width: 0%;
-      background: linear-gradient(90deg, #4fd8c4, #a3e635);
+      background: linear-gradient(90deg, #FF9F1C, #FFD166);
       z-index: 99999;
       pointer-events: none;
       transition: width 0.08s ease-out;
-      box-shadow: 0 0 8px rgba(79, 216, 196, 0.6);
+      box-shadow: 0 0 8px rgba(255, 159, 28, 0.4);
     }
 
     /* Back to top */
@@ -476,7 +476,12 @@
       }
     });
 
-    // 2. Upgrade existing author cards or author bio containers
+    // 2. Prevent duplicate injection if author entity card already exists
+    if (document.querySelector('.tnl-author-entity-card')) {
+      return;
+    }
+
+    // 3. Upgrade existing author cards or author bio containers
     const existingCards = document.querySelectorAll('.author-card, .authorbio');
     if (existingCards.length > 0) {
       existingCards.forEach(card => {
