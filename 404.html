@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2773282020530522"
-     crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="/">
 <title>404 - Page Not Found · Trust Node Logic</title>
 <meta name="description" content="The requested page or node could not be found on Trust Node Logic. Return to the homepage to explore hybrid music tools, research, and releases.">
 <meta name="author" content="Justin Ray">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="robots" content="noindex, follow">
 <meta name="keywords" content="Hybrid AI Music Production, Justin Ray, JRAY, loserdub, VISION, Trust Node Logic, audio engineering, music producer, C2PA, HPS-1.0">
 <meta name="geo.country" content="US">
 <meta name="geo.placename" content="East Lansing, Michigan, USA">
@@ -28,7 +27,7 @@
 <meta name="twitter:title" content="404 - Page Not Found · Trust Node Logic">
 <meta name="twitter:description" content="The requested page or node could not be found on Trust Node Logic. Return to the homepage to explore hybrid music tools, research, and releases.">
 <meta name="twitter:image" content="https://trustnodelogic.com/assets/images/tnl-default-og.webp">
-<link rel="icon" type="image/png" href="./favicon.png">
+<link rel="icon" type="image/png" href="/favicon.png">
 
 <!-- Structured Data / JSON-LD -->
 <script type="application/ld+json">{
@@ -189,9 +188,8 @@
  ]
 }</script>
 
-<!-- Favicon -->
-<link href="./favicon.png" rel="icon" type="image/png"/>
-<link href="./style.css" rel="stylesheet"/>
+<!-- Main Stylesheet (Root-relative) -->
+<link href="/style.css" rel="stylesheet">
 
 <!-- Modern Typography: JetBrains Mono + Space Grotesk -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -199,7 +197,52 @@
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="/sitemap.xml" rel="sitemap" type="application/xml"/>
 <link href="/llms.txt" rel="alternate" title="AI LLM Knowledge Graph Manifest" type="text/plain"/>
+
 <style>
+  /* ---------- Critical Fallback & Standalone Resilience ---------- */
+  :root {
+    --bg-main: #0B0C0E;
+    --bg-surface: #121417;
+    --text-main: #EAEAEA;
+    --text-muted: #A1A1AA;
+    --accent: #FF9F1C;
+  }
+  html {
+    background-color: #0B0C0E;
+    color: #EAEAEA;
+    color-scheme: dark;
+  }
+  body {
+    background-color: #0B0C0E;
+    color: #EAEAEA;
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+  }
+  .dot-matrix-bg {
+    background-color: #0B0C0E;
+    background-image: radial-gradient(rgba(234, 234, 234, 0.075) 1.25px, transparent 1.25px);
+    background-size: 24px 24px;
+  }
+  @keyframes terminalBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.2; }
+  }
+  .animate-terminal-blink {
+    animation: terminalBlink 1.4s infinite;
+  }
+  .tech-card {
+    background-color: rgba(18, 20, 23, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    position: relative;
+    transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .tech-card:hover {
+    border-color: rgba(255, 159, 28, 0.65);
+    background-color: rgba(23, 26, 31, 0.95);
+    box-shadow: 0 0 25px rgba(255, 159, 28, 0.08);
+  }
+
   /* ---------- Breadcrumb Navigation ---------- */
   .breadcrumb {
     max-width: 1100px;
@@ -210,14 +253,14 @@
     gap: 8px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 11.5px;
-    color: #71717A;
+    color: #A1A1AA;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     width: 100%;
     box-sizing: border-box;
   }
   .breadcrumb a {
-    color: #71717A;
+    color: #A1A1AA;
     text-decoration: none;
     transition: color 0.15s ease;
   }
@@ -225,7 +268,7 @@
     color: #FF9F1C;
   }
   .breadcrumb [aria-current="page"], .breadcrumb .current {
-    color: #A1A1AA;
+    color: #EAEAEA;
   }
   .breadcrumb span[aria-hidden] {
     color: rgba(255, 255, 255, 0.2);
@@ -241,7 +284,7 @@
  <header class="sticky top-0 left-0 right-0 z-50 bg-[#0B0C0E]/95 backdrop-blur-md border-b border-white/10 py-3.5">
  <div class="container mx-auto px-6 flex justify-between items-center relative">
  
- <a href="./index.html" class="flex items-center gap-3 group h-9 overflow-hidden w-[220px]" aria-label="Home">
+ <a href="/" class="flex items-center gap-3 group h-9 overflow-hidden w-[220px]" aria-label="Trust Node Logic Home">
  <div class="w-5 h-5 border border-[#FF9F1C] bg-[#FF9F1C]/10 flex items-center justify-center flex-shrink-0 text-[#FF9F1C] font-mono text-xs font-bold">
  <span>▪</span>
  </div>
@@ -255,15 +298,15 @@
  </div>
  </a>
 
- <nav class="hidden md:flex items-center gap-6 text-[11px] font-mono tracking-[0.14em] uppercase text-[#71717A]" aria-label="Main navigation">
- <a href="./index.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">HOME</a>
- <a href="./music.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">MUSIC</a>
- <a href="./projects.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">PROJECTS</a>
- <a href="./field-notes.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">FIELD NOTES</a>
-        <a href="./about.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">ABOUT</a>
- <a href="./what-is-hybrid.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">WHAT IS HYBRID</a>
- <a href="./services.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">SERVICES</a>
- <a href="./contact.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">CONTACT</a>
+ <nav class="hidden md:flex items-center gap-6 text-[11px] font-mono tracking-[0.14em] uppercase text-[#A1A1AA]" aria-label="Main navigation">
+ <a href="/" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">HOME</a>
+ <a href="/music.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">MUSIC</a>
+ <a href="/projects.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">PROJECTS</a>
+ <a href="/field-notes.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">FIELD NOTES</a>
+ <a href="/about.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">ABOUT</a>
+ <a href="/what-is-hybrid.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">WHAT IS HYBRID</a>
+ <a href="/services.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">SERVICES</a>
+ <a href="/contact.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">CONTACT</a>
  </nav>
 
  <!-- Mobile Hamburger Toggle -->
@@ -277,14 +320,14 @@
 
  <div class="absolute top-full left-0 right-0 bg-[#0B0C0E] border-b border-white/20 shadow-2xl py-6 px-6 hidden peer-checked:flex flex-col items-center gap-4 text-center">
  <nav class="flex flex-col gap-3 text-center text-xs font-mono tracking-widest uppercase text-[#EAEAEA] font-medium w-full max-w-xs" aria-label="Mobile navigation">
- <a href="./index.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">HOME</a>
- <a href="./music.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">MUSIC</a>
- <a href="./projects.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">PROJECTS</a>
- <a href="./field-notes.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">FIELD NOTES</a>
-  <a href="./about.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">ABOUT</a>
- <a href="./what-is-hybrid.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">WHAT IS HYBRID</a>
- <a href="./services.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">SERVICES</a>
- <a href="./contact.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">CONTACT</a>
+ <a href="/" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">HOME</a>
+ <a href="/music.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">MUSIC</a>
+ <a href="/projects.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">PROJECTS</a>
+ <a href="/field-notes.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">FIELD NOTES</a>
+ <a href="/about.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">ABOUT</a>
+ <a href="/what-is-hybrid.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">WHAT IS HYBRID</a>
+ <a href="/services.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">SERVICES</a>
+ <a href="/contact.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">CONTACT</a>
  </nav>
  </div>
 
@@ -293,7 +336,7 @@
 
 <!-- Breadcrumbs Hierarchy -->
 <nav class="breadcrumb" aria-label="Breadcrumb">
-  <a href="./index.html">Home</a>
+  <a href="/">Home</a>
   <span aria-hidden="true">/</span>
   <span class="current" aria-current="page">404 Page Not Found</span>
 </nav>
@@ -312,39 +355,39 @@
  LOST IN LATENT SPACE
  </h1>
 
- <p class="text-sm sm:text-base text-[#71717A] font-mono leading-relaxed max-w-lg mx-auto mb-10">
+ <p class="text-sm sm:text-base text-[#A1A1AA] font-mono leading-relaxed max-w-lg mx-auto mb-10">
  The requested coordinate node does not exist or has been restructured in the hybrid production archive.
  </p>
 
  <div class="flex flex-wrap items-center justify-center gap-4 mb-16">
- <a href="./index.html" class="px-6 py-3 bg-[#FF9F1C] text-black font-mono text-xs font-bold tracking-widest uppercase hover:bg-[#FFAE33] transition-colors">
+ <a href="/" class="px-6 py-3 bg-[#FF9F1C] text-black font-mono text-xs font-bold tracking-widest uppercase hover:bg-[#FFAE33] transition-colors">
  ← RETURN TO HOME NODE
  </a>
- <a href="./what-is-hybrid.html" class="px-6 py-3 bg-[#121417] border border-white/15 text-[#EAEAEA] hover:border-[#FF9F1C] hover:text-[#FF9F1C] font-mono text-xs font-bold tracking-widest uppercase transition-colors">
+ <a href="/what-is-hybrid.html" class="px-6 py-3 bg-[#121417] border border-white/15 text-[#EAEAEA] hover:border-[#FF9F1C] hover:text-[#FF9F1C] font-mono text-xs font-bold tracking-widest uppercase transition-colors">
  WHAT IS HYBRID
  </a>
- <a href="./projects.html" class="px-6 py-3 bg-[#121417] border border-white/15 text-[#EAEAEA] hover:border-[#FF9F1C] hover:text-[#FF9F1C] font-mono text-xs font-bold tracking-widest uppercase transition-colors">
+ <a href="/projects.html" class="px-6 py-3 bg-[#121417] border border-white/15 text-[#EAEAEA] hover:border-[#FF9F1C] hover:text-[#FF9F1C] font-mono text-xs font-bold tracking-widest uppercase transition-colors">
  PROJECTS &amp; LAB
  </a>
  </div>
 
  <div class="border-t border-white/10 pt-10 text-left">
- <div class="text-[10px] font-mono uppercase tracking-widest text-[#71717A] mb-4 text-center">[ POPULAR_COORDINATES ]</div>
+ <div class="text-[10px] font-mono uppercase tracking-widest text-[#A1A1AA] mb-4 text-center">[ POPULAR_COORDINATES ]</div>
  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
- <a href="./mixrstudio.html" class="tech-card p-4 group block">
+ <a href="/mixrstudio.html" class="tech-card p-4 group block">
  <span class="text-[9px] font-mono text-[#FF9F1C] uppercase block">[ WEB_APP ]</span>
  <strong class="font-mono text-xs text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors mt-1 block">MIXR Studio →</strong>
- <span class="text-[11px] text-[#71717A] mt-1 block">Browser mastering suite</span>
+ <span class="text-[11px] text-[#A1A1AA] mt-1 block">Browser mastering suite</span>
  </a>
- <a href="./lastnewgenre.html" class="tech-card p-4 group block">
+ <a href="/lastnewgenre.html" class="tech-card p-4 group block">
  <span class="text-[9px] font-mono text-[#FF9F1C] uppercase block">[ FIELD_NOTE ]</span>
  <strong class="font-mono text-xs text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors mt-1 block">Last New Genre →</strong>
- <span class="text-[11px] text-[#71717A] mt-1 block">Culture &amp; algorithm analysis</span>
+ <span class="text-[11px] text-[#A1A1AA] mt-1 block">Culture &amp; algorithm analysis</span>
  </a>
- <a href="./music.html" class="tech-card p-4 group block">
+ <a href="/music.html" class="tech-card p-4 group block">
  <span class="text-[9px] font-mono text-[#FF9F1C] uppercase block">[ CATALOG ]</span>
  <strong class="font-mono text-xs text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors mt-1 block">Discography →</strong>
- <span class="text-[11px] text-[#71717A] mt-1 block">Stream original releases</span>
+ <span class="text-[11px] text-[#A1A1AA] mt-1 block">Stream original releases</span>
  </a>
  </div>
  </div>
@@ -355,21 +398,21 @@
  <!-- Footer -->
  <footer class="w-full bg-[#0B0C0E] border-t border-white/10 py-8 mt-auto z-20 relative">
  <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
- <div class="text-[#71717A] text-xs font-mono tracking-widest uppercase text-center md:text-left">
+ <div class="text-[#A1A1AA] text-xs font-mono tracking-widest uppercase text-center md:text-left">
  <span>© 2026 Justin Ray (JRAY). All Rights Reserved.</span>
  </div>
- <nav class="flex flex-wrap justify-center gap-6 text-xs font-mono tracking-widest uppercase text-[#71717A]" aria-label="Footer navigation">
- <a href="./index.html" class="hover:text-[#EAEAEA] transition-colors">Home</a>
- <a href="./what-is-hybrid.html" class="hover:text-[#EAEAEA] transition-colors">What Is Hybrid</a>
- <a href="./projects.html" class="hover:text-[#EAEAEA] transition-colors">Projects</a>
- <a href="./music.html" class="hover:text-[#EAEAEA] transition-colors">Music</a>
- <a href="./about.html" class="hover:text-[#EAEAEA] transition-colors">About</a>
- <a href="./sitemap.xml" class="hover:text-[#EAEAEA] transition-colors">Sitemap</a>
+ <nav class="flex flex-wrap justify-center gap-6 text-xs font-mono tracking-widest uppercase text-[#A1A1AA]" aria-label="Footer navigation">
+ <a href="/" class="hover:text-[#EAEAEA] transition-colors">Home</a>
+ <a href="/what-is-hybrid.html" class="hover:text-[#EAEAEA] transition-colors">What Is Hybrid</a>
+ <a href="/projects.html" class="hover:text-[#EAEAEA] transition-colors">Projects</a>
+ <a href="/music.html" class="hover:text-[#EAEAEA] transition-colors">Music</a>
+ <a href="/about.html" class="hover:text-[#EAEAEA] transition-colors">About</a>
+ <a href="/sitemap.xml" class="hover:text-[#EAEAEA] transition-colors">Sitemap</a>
  </nav>
  </div>
  </footer>
 
  </div>
- <script src="./assets/reader.js" defer></script>
+ <script src="/assets/reader.min.js" defer></script>
 </body>
 </html>

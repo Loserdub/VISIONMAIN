@@ -67,13 +67,13 @@
       "itemListElement": [
         {
           "@type": "ListItem",
-          "position": 2,
+          "position": 1,
           "name": "Home",
           "item": "https://trustnodelogic.com/"
         },
         {
           "@type": "ListItem",
-          "position": 3,
+          "position": 2,
           "name": "Field Notes",
           "item": "https://trustnodelogic.com/field-notes.html"
         }
@@ -1054,16 +1054,16 @@
         <a href="./services.html" class="hover:text-[#EAEAEA] transition-colors">SERVICES</a>
         <a href="./contact.html" class="hover:text-[#EAEAEA] transition-colors">CONTACT</a>
       </div>
-      <a href="#main-content" class="hover:text-[#FF9F1C] transition-colors">↑ TOP</a>
+      <a href="#main-content" aria-label="Back to top of page" class="hover:text-[#FF9F1C] transition-colors">↑ TOP</a>
     </div>
   </footer>
 
 </div>
 
 <!-- Floating Back to Top Button -->
-<a href="#main-content" id="backToTop" class="fixed bottom-6 right-6 z-40 bg-[#121417] border border-white/20 text-[#EAEAEA] hover:text-[#FF9F1C] hover:border-[#FF9F1C] text-xs font-mono px-3 py-2 transition-all opacity-0 pointer-events-none shadow-lg">
+<button type="button" id="backToTop" aria-label="Scroll back to top of page" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-6 right-6 z-40 bg-[#121417] border border-white/20 text-[#EAEAEA] hover:text-[#FF9F1C] hover:border-[#FF9F1C] text-xs font-mono px-3 py-2 transition-all opacity-0 pointer-events-none shadow-lg">
   ↑ TOP
-</a>
+</button>
 
 <script>
 const ARTICLES = [

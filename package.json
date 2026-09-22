@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "build:css": "npx tailwindcss -i ./input.css -o ./style.css --minify",
+    "build:js": "node scripts/build-js.js",
     "render:cards": "node scripts/render-cards.js",
     "indexnow": "python scripts/submit_indexnow.py"
   },

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Suno v6 Review: Edit Mode, Tier Breakdown, and the Forced Migration · Trust Node Logic</title>
+<title>Suno v6 Review: Edit Mode, Tiers &amp; Migration · Trust Node Logic</title>
 
 <link rel="canonical" href="https://trustnodelogic.com/sunov6.html">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -27,7 +27,7 @@
 <meta property="article:tag" content="Model Migration">
 <meta property="article:tag" content="Hybrid Production">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Suno v6 Review: Edit Mode, Tier Breakdown, and the Forced Migration · Trust Node Logic">
+<meta property="og:title" content="Suno v6 Review: Edit Mode, Tiers &amp; Migration · Trust Node Logic">
 <meta property="og:description" content="Suno v6 review: forced migration with no rollback, edit-first workflows, v6-mini free tier with no commercial rights, and early reception from producers.">
 <meta property="og:url" content="https://trustnodelogic.com/sunov6.html">
 <meta property="og:site_name" content="TrustNodeLogic - Field Notes">
@@ -36,7 +36,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@TheInnerVision">
-<meta name="twitter:title" content="Suno v6 Review: Edit Mode, Tier Breakdown, and the Forced Migration · Trust Node Logic">
+<meta name="twitter:title" content="Suno v6 Review: Edit Mode, Tiers &amp; Migration · Trust Node Logic">
 <meta name="twitter:description" content="Suno v6 review: forced migration with no rollback, edit-first workflows, v6-mini free tier with no commercial rights, and early reception from producers.">
 <meta name="twitter:image" content="https://trustnodelogic.com/assets/images/sunov6-card-og.webp">
 
@@ -53,7 +53,7 @@
       "@type": "WebPage",
       "@id": "https://trustnodelogic.com/sunov6.html#webpage",
       "url": "https://trustnodelogic.com/sunov6.html",
-      "name": "Suno v6 Review: Edit Mode, Tier Breakdown, and the Forced Migration · Trust Node Logic",
+      "name": "Suno v6 Review: Edit Mode, Tiers & Migration · Trust Node Logic",
       "description": "Suno v6 review: forced migration with no rollback, edit-first workflows, v6-mini free tier with no commercial rights, and early reception from producers.",
       "isPartOf": {
         "@id": "https://trustnodelogic.com/#website"
@@ -770,7 +770,7 @@ footer.site .navlinks a { color: var(--text-faint); }
   </div>
 </nav>
 
-<div class="wrap">
+<main class="wrap" id="main-content">
 
   <nav class="crumb" aria-label="Breadcrumb">
     <a href="https://trustnodelogic.com/index.html">Home</a> /
@@ -791,217 +791,231 @@ footer.site .navlinks a { color: var(--text-faint); }
     </figure>
   </header>
 
-  <div class="body">
+  <article class="body">
 
     <p>Most platform updates give you a choice. This one did not. On September 9, Suno retired every model it has ever shipped (v5.5, v4.5, v3, all of it) and moved the entire product onto a new three-model family trained on licensed catalog from Warner Music Group, BMG, and Believe. Researched at Trust Node Logic, here is what actually changed under the hood, what each tier gets you, and what the early reception is telling producers who got migrated whether they asked for it or not.</p>
 
-    <h3>The Sequence</h3>
-    <div class="sequence">
-      <div class="seq-item">
-        <div class="seq-date">NOV 2025</div>
-        <div class="seq-title">The Settlement</div>
-        <div class="seq-body">Suno settles with Warner Music Group, opening the door to a licensing relationship instead of a litigation one.</div>
-      </div>
-      <div class="seq-item">
-        <div class="seq-date">AUG 2026</div>
-        <div class="seq-title">The BMG Deal</div>
-        <div class="seq-body">A preemptive agreement with BMG covers recordings and publishing before any lawsuit gets filed, with an opt-in requirement for rights holders.</div>
-      </div>
-      <div class="seq-item">
-        <div class="seq-date">SEP 8 2026</div>
-        <div class="seq-title">Believe Joins</div>
-        <div class="seq-body">Believe and TuneCore sign on one day before launch, bringing a third major distributor's catalog into the training pipeline.</div>
-      </div>
-      <div class="seq-item">
-        <div class="seq-date">SEP 9 2026</div>
-        <div class="seq-title">v6 Goes Live</div>
-        <div class="seq-body">The full model family launches globally. Suno's Chief Product Officer confirms prior models retire the same day, rollout permitting.</div>
-      </div>
-    </div>
-
-    <p>Read against that sequence, v6 is not really a model update. It is the product side of a licensing strategy nine months in the making, the same pattern we mapped when <a href="https://trustnodelogic.com/sunonewtos.html">Suno's terms of service quietly rewrote who owns what you upload</a>.</p>
-
-    <h2>What Actually Changed</h2>
-
-    <div class="breakdown">
-      <div class="bd-item">
-        <div class="bd-num">01</div>
-        <div class="bd-text">
-          <strong>Every prior model is retired, not deprecated.</strong>
-          <p>v5.5, v4.5, and v3 stop generating new songs once your account's rollout completes. Your existing library stays playable and remixable. There is no toggle back.</p>
+    <section class="sequence-section" aria-labelledby="heading-sequence">
+      <h3 id="heading-sequence">The Sequence</h3>
+      <div class="sequence">
+        <div class="seq-item">
+          <div class="seq-date">NOV 2025</div>
+          <div class="seq-title">The Settlement</div>
+          <div class="seq-body">Suno settles with Warner Music Group, opening the door to a licensing relationship instead of a litigation one.</div>
+        </div>
+        <div class="seq-item">
+          <div class="seq-date">AUG 2026</div>
+          <div class="seq-title">The BMG Deal</div>
+          <div class="seq-body">A preemptive agreement with BMG covers recordings and publishing before any lawsuit gets filed, with an opt-in requirement for rights holders.</div>
+        </div>
+        <div class="seq-item">
+          <div class="seq-date">SEP 8 2026</div>
+          <div class="seq-title">Believe Joins</div>
+          <div class="seq-body">Believe and TuneCore sign on one day before launch, bringing a third major distributor's catalog into the training pipeline.</div>
+        </div>
+        <div class="seq-item">
+          <div class="seq-date">SEP 9 2026</div>
+          <div class="seq-title">v6 Goes Live</div>
+          <div class="seq-body">The full model family launches globally. Suno's Chief Product Officer confirms prior models retire the same day, rollout permitting.</div>
         </div>
       </div>
-      <div class="bd-item">
-        <div class="bd-num">02</div>
-        <div class="bd-text">
-          <strong>Training data is licensed, not scraped.</strong>
-          <p>Suno says v6 was built on catalog from Warner Music Group, BMG, and Believe rather than the training data used for earlier versions, directly addressing the copyright exposure that drove the original lawsuits.</p>
+
+      <p>Read against that sequence, v6 is not really a model update. It is the product side of a licensing strategy nine months in the making, the same pattern we mapped when <a href="https://trustnodelogic.com/sunonewtos.html">Suno's terms of service quietly rewrote who owns what you upload</a>.</p>
+    </section>
+
+    <section class="changes-section" aria-labelledby="heading-changes">
+      <h2 id="heading-changes">What Actually Changed</h2>
+
+      <div class="breakdown">
+        <div class="bd-item">
+          <div class="bd-num">01</div>
+          <div class="bd-text">
+            <strong>Every prior model is retired, not deprecated.</strong>
+            <p>v5.5, v4.5, and v3 stop generating new songs once your account's rollout completes. Your existing library stays playable and remixable. There is no toggle back.</p>
+          </div>
+        </div>
+        <div class="bd-item">
+          <div class="bd-num">02</div>
+          <div class="bd-text">
+            <strong>Training data is licensed, not scraped.</strong>
+            <p>Suno says v6 was built on catalog from Warner Music Group, BMG, and Believe rather than the training data used for earlier versions, directly addressing the copyright exposure that drove the original lawsuits.</p>
+          </div>
+        </div>
+        <div class="bd-item">
+          <div class="bd-num">03</div>
+          <div class="bd-text">
+            <strong>Generation flips from a monologue to a conversation.</strong>
+            <p>v5.5 mostly generated whole songs from a prompt. v6 is built around editing a song you already have: change one section, keep the rest, in a single plain-language instruction.</p>
+          </div>
+        </div>
+        <div class="bd-item">
+          <div class="bd-num">04</div>
+          <div class="bd-text">
+            <strong>Isolation moves inside the model.</strong>
+            <p>Pulling an instrument or a sample out of a track used to mean external tools. v6 handles isolation natively, in the same prompt window as everything else.</p>
+          </div>
+        </div>
+        <div class="bd-item">
+          <div class="bd-num">05</div>
+          <div class="bd-text">
+            <strong>Mashups stop requiring a DAW.</strong>
+            <p>Attach two or three of your own tracks and describe how they should combine. v6 handles the multi-source blend in one request instead of manual layering.</p>
+          </div>
+        </div>
+        <div class="bd-item">
+          <div class="bd-num">06</div>
+          <div class="bd-text">
+            <strong>Free tier provides zero commercial rights and no downloads.</strong>
+            <p>v6-mini is positioned by Suno's product lead as beating any competitor's paid model, but it is strictly non-commercial. You do not have commercial rights in the free tier, and direct file downloads are disabled. It functions purely as an in-browser preview engine; commercial rights and master audio exports require an active Pro ($8/mo) or Premier ($24/mo) subscription.</p>
+          </div>
         </div>
       </div>
-      <div class="bd-item">
-        <div class="bd-num">03</div>
-        <div class="bd-text">
-          <strong>Generation flips from a monologue to a conversation.</strong>
-          <p>v5.5 mostly generated whole songs from a prompt. v6 is built around editing a song you already have: change one section, keep the rest, in a single plain-language instruction.</p>
+    </section>
+
+    <section class="tiers-section" aria-labelledby="heading-tiers">
+      <h2 id="heading-tiers">Model Tiers, Side by Side</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Access</th>
+              <th>Profile</th>
+              <th>Commercial Rights</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>v6</td>
+              <td>Pro &amp; Premier</td>
+              <td>Reliable, precise, the flagship for finished output</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>v6-wild</td>
+              <td>Pro &amp; Premier</td>
+              <td>Experimental, less predictable, built for raw material you refine later</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>v6-mini</td>
+              <td>Everyone (free)</td>
+              <td>Fast preview engine, no edit or mashup tools</td>
+              <td>No (Strictly non-commercial)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The practical split: use v6-wild to generate texture and happy accidents, then pull the result into the flagship v6 model to polish it into something releasable. Sitting above all three, a <strong>Create Custom Model</strong> option has appeared in beta, priced at 100 credits, for training on your own uploads. Suno has not published documentation on it yet. Producers should note the licensing boundaries: free tier generations carry no commercial rights whatsoever, meaning monetization, streaming distribution, or sync pitching requires upgrading to Pro or Premier.</p>
+    </section>
+
+    <section class="workflow-section" aria-labelledby="heading-workflow">
+      <h2 id="heading-workflow">The New Workflow</h2>
+
+      <p>The clearest way to understand v6 is through the instruction pattern itself. Instead of writing one long prompt and hoping for the whole song, you work in passes.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-title">Start with material</div>
+          <p>Generate a new v6 track, or upload something you already have: a previous song, a voice memo, a reference image, even a short video.</p>
+        </div>
+        <div class="step">
+          <div class="step-title">Point at a section</div>
+          <p>Name it ("the chorus"), timestamp it ("0:45 to 1:30"), or describe it ("the guitar break in the middle"). v6 parses all three.</p>
+        </div>
+        <div class="step">
+          <div class="step-title">Give one instruction</div>
+          <p>A single clear sentence does the work. No need to re-describe the whole track.</p>
+        </div>
+        <div class="step">
+          <div class="step-title">Everything else holds</div>
+          <p>Key, harmony, and groove in the untouched sections stay put. Only the targeted section regenerates.</p>
         </div>
       </div>
-      <div class="bd-item">
-        <div class="bd-num">04</div>
-        <div class="bd-text">
-          <strong>Isolation moves inside the model.</strong>
-          <p>Pulling an instrument or a sample out of a track used to mean external tools. v6 handles isolation natively, in the same prompt window as everything else.</p>
+
+      <div class="prompt-label">Edit example</div>
+      <div class="prompt-block">"Change the chorus so it's sung by a gospel choir."</div>
+
+      <div class="prompt-label">Isolation example</div>
+      <div class="prompt-block">"Sample the guitar riff at 0:45, then build a new beat around it."</div>
+
+      <div class="prompt-label">Mashup example</div>
+      <div class="prompt-block">"Combine the verse from Track A with the chorus of Track B, and layer in the synths from Track C."</div>
+
+      <p>For anyone who has already run stem-splitting workflows by hand, this is the same job compressed into a single request. Worth comparing against how we broke down <a href="https://trustnodelogic.com/Suno101.html">structural meta-tags and post-production shaping in Suno 101</a>, since v6's edit mode replaces a chunk of that manual process outright. For the complete seven-stage prompting architecture, style slider physics, and DAW stem isolation workflows, read the companion guide: <a href="https://trustnodelogic.com/suno6.html">How to Use Suno V6: Complete Field Guide</a>.</p>
+    </section>
+
+    <section class="reception-section" aria-labelledby="heading-reception">
+      <h2 id="heading-reception">The Reception</h2>
+
+      <p>Coverage from Digital Music News, Variety, and Music Business Worldwide all landed on the same word: mixed. The threads on r/SunoAI make that concrete, and reading two of them side by side says more than any press summary.</p>
+
+      <div class="reception-grid">
+        <div class="reception-item">
+          <span class="reception-label neg">The Backlash</span>
+          <p>One long-time subscriber argues Suno built its reputation on precise creative control and clean, punchy audio, and says v6 trades that away with no way to opt out.</p>
+          <span class="r-quote">&ldquo;a slap in the face to long-time users&rdquo;</span>
+          <div class="r-attr"><a href="https://www.reddit.com/user/Unlikely-Carob9251/">u/Unlikely-Carob9251</a> &middot; <a href="https://www.reddit.com/r/SunoAI/comments/1wbubyq/v6_is_garbage_and_a_joke/">r/SunoAI, "V6 is garbage and a joke"</a></div>
+        </div>
+        <div class="reception-item">
+          <span class="reception-label mix">The Measured Middle</span>
+          <p>Writing a day and a half into the rollout, one user said the results hold up, but only once you stop grading v6 against its predecessor.</p>
+          <span class="r-quote">&ldquo;V5.5 wearing a nicer audio codec&rdquo;</span>
+          <div class="r-attr"><a href="https://www.reddit.com/user/Few_Mathematician695/">u/Few_Mathematician695</a> &middot; <a href="https://www.reddit.com/r/SunoAI/comments/1wc0qsn/v6_after_a_day_and_a_half_idk_guys_maybe_actually/">r/SunoAI, "V6 after a day and a half"</a></div>
+        </div>
+        <div class="reception-item">
+          <span class="reception-label mix">The Gap</span>
+          <p>Rollout is staggered and Suno has not published a per-account timeline, so some Pro and Premier subscribers are still on v5.5 with no explanation, and there is no rollback option once the switch lands. Worth noting directly: across the threads reviewed for this piece, nothing resembling enthusiasm turned up yet, a real gap against Suno's own "best yet" framing.</p>
         </div>
       </div>
-      <div class="bd-item">
-        <div class="bd-num">05</div>
-        <div class="bd-text">
-          <strong>Mashups stop requiring a DAW.</strong>
-          <p>Attach two or three of your own tracks and describe how they should combine. v6 handles the multi-source blend in one request instead of manual layering.</p>
+
+      <p class="closer-line">Generation was never the scarce resource here. What v6 is actually selling is control over material you already made, and control is a harder thing to get consistently right on day one than raw output ever was.</p>
+    </section>
+
+    <section class="faq-section" id="faq" aria-labelledby="heading-faq">
+      <h2 id="heading-faq">Quick Questions</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <div class="faq-q">Can I still use Suno v5.5?</div>
+          <div class="faq-a">Not once your account finishes the v6 rollout. Songs already in your library stay accessible, you just cannot generate new ones on the old engine.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What is v6-wild for?</div>
+          <div class="faq-a">Raw material. It trades reliability for range, meant to be fed back into the flagship v6 model for refinement rather than used as a finished track.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do you have commercial rights in the free tier with v6-mini?</div>
+          <div class="faq-a">No. You do not have commercial rights in the free tier. While v6-mini is accessible to all free accounts, Suno's licensing structure reserves commercial ownership and audio downloads exclusively for paid Pro and Premier subscriptions. Free tier output cannot be monetized or released commercially.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What's the Custom Model beta?</div>
+          <div class="faq-a">A new option in the model picker, marked Beta, that trains on your own uploads for 100 credits. Suno has not published detailed documentation on it yet.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is v6 actually better than v5.5?</div>
+          <div class="faq-a">Depends what you make. Editing, isolation, and mashup work are clear upgrades. Several producers report v5.5 still sounding stronger for hip-hop, lo-fi, and ambient generations.</div>
         </div>
       </div>
-      <div class="bd-item">
-        <div class="bd-num">06</div>
-        <div class="bd-text">
-          <strong>Free tier provides zero commercial rights and no downloads.</strong>
-          <p>v6-mini is positioned by Suno's product lead as beating any competitor's paid model, but it is strictly non-commercial. You do not have commercial rights in the free tier, and direct file downloads are disabled. It functions purely as an in-browser preview engine; commercial rights and master audio exports require an active Pro ($8/mo) or Premier ($24/mo) subscription.</p>
-        </div>
+    </section>
+
+    <section class="sources-section" aria-label="Sources and Further Reading">
+      <div class="sources">
+        Sources &amp; further reading: Suno's official "Introducing v6" announcement and release notes &middot; launch coverage from TechCrunch, Variety, Engadget, and Music Business Worldwide &middot; early reception reporting from Digital Music News &middot; this is field research, not a Suno endorsement, test each tier against your own genre before committing a session to it.
       </div>
-    </div>
+    </section>
 
-    <h2>Model Tiers, Side by Side</h2>
+  </article>
 
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Model</th>
-            <th>Access</th>
-            <th>Profile</th>
-            <th>Commercial Rights</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>v6</td>
-            <td>Pro &amp; Premier</td>
-            <td>Reliable, precise, the flagship for finished output</td>
-            <td>Yes</td>
-          </tr>
-          <tr>
-            <td>v6-wild</td>
-            <td>Pro &amp; Premier</td>
-            <td>Experimental, less predictable, built for raw material you refine later</td>
-            <td>Yes</td>
-          </tr>
-          <tr>
-            <td>v6-mini</td>
-            <td>Everyone (free)</td>
-            <td>Fast preview engine, no edit or mashup tools</td>
-            <td>No (Strictly non-commercial)</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p>The practical split: use v6-wild to generate texture and happy accidents, then pull the result into the flagship v6 model to polish it into something releasable. Sitting above all three, a <strong>Create Custom Model</strong> option has appeared in beta, priced at 100 credits, for training on your own uploads. Suno has not published documentation on it yet. Producers should note the licensing boundaries: free tier generations carry no commercial rights whatsoever, meaning monetization, streaming distribution, or sync pitching requires upgrading to Pro or Premier.</p>
-
-    <h2>The New Workflow</h2>
-
-    <p>The clearest way to understand v6 is through the instruction pattern itself. Instead of writing one long prompt and hoping for the whole song, you work in passes.</p>
-
-    <div class="steps">
-      <div class="step">
-        <div class="step-title">Start with material</div>
-        <p>Generate a new v6 track, or upload something you already have: a previous song, a voice memo, a reference image, even a short video.</p>
-      </div>
-      <div class="step">
-        <div class="step-title">Point at a section</div>
-        <p>Name it ("the chorus"), timestamp it ("0:45 to 1:30"), or describe it ("the guitar break in the middle"). v6 parses all three.</p>
-      </div>
-      <div class="step">
-        <div class="step-title">Give one instruction</div>
-        <p>A single clear sentence does the work. No need to re-describe the whole track.</p>
-      </div>
-      <div class="step">
-        <div class="step-title">Everything else holds</div>
-        <p>Key, harmony, and groove in the untouched sections stay put. Only the targeted section regenerates.</p>
-      </div>
-    </div>
-
-    <div class="prompt-label">Edit example</div>
-    <div class="prompt-block">"Change the chorus so it's sung by a gospel choir."</div>
-
-    <div class="prompt-label">Isolation example</div>
-    <div class="prompt-block">"Sample the guitar riff at 0:45, then build a new beat around it."</div>
-
-    <div class="prompt-label">Mashup example</div>
-    <div class="prompt-block">"Combine the verse from Track A with the chorus of Track B, and layer in the synths from Track C."</div>
-
-    <p>For anyone who has already run stem-splitting workflows by hand, this is the same job compressed into a single request. Worth comparing against how we broke down <a href="https://trustnodelogic.com/Suno101.html">structural meta-tags and post-production shaping in Suno 101</a>, since v6's edit mode replaces a chunk of that manual process outright. For the complete seven-stage prompting architecture, style slider physics, and DAW stem isolation workflows, read the companion guide: <a href="https://trustnodelogic.com/suno6.html">How to Use Suno V6: Complete Field Guide</a>.</p>
-
-    <h2>The Reception</h2>
-
-    <p>Coverage from Digital Music News, Variety, and Music Business Worldwide all landed on the same word: mixed. The threads on r/SunoAI make that concrete, and reading two of them side by side says more than any press summary.</p>
-
-    <div class="reception-grid">
-      <div class="reception-item">
-        <span class="reception-label neg">The Backlash</span>
-        <p>One long-time subscriber argues Suno built its reputation on precise creative control and clean, punchy audio, and says v6 trades that away with no way to opt out.</p>
-        <span class="r-quote">&ldquo;a slap in the face to long-time users&rdquo;</span>
-        <div class="r-attr"><a href="https://www.reddit.com/user/Unlikely-Carob9251/">u/Unlikely-Carob9251</a> &middot; <a href="https://www.reddit.com/r/SunoAI/comments/1wbubyq/v6_is_garbage_and_a_joke/">r/SunoAI, "V6 is garbage and a joke"</a></div>
-      </div>
-      <div class="reception-item">
-        <span class="reception-label mix">The Measured Middle</span>
-        <p>Writing a day and a half into the rollout, one user said the results hold up, but only once you stop grading v6 against its predecessor.</p>
-        <span class="r-quote">&ldquo;V5.5 wearing a nicer audio codec&rdquo;</span>
-        <div class="r-attr"><a href="https://www.reddit.com/user/Few_Mathematician695/">u/Few_Mathematician695</a> &middot; <a href="https://www.reddit.com/r/SunoAI/comments/1wc0qsn/v6_after_a_day_and_a_half_idk_guys_maybe_actually/">r/SunoAI, "V6 after a day and a half"</a></div>
-      </div>
-      <div class="reception-item">
-        <span class="reception-label mix">The Gap</span>
-        <p>Rollout is staggered and Suno has not published a per-account timeline, so some Pro and Premier subscribers are still on v5.5 with no explanation, and there is no rollback option once the switch lands. Worth noting directly: across the threads reviewed for this piece, nothing resembling enthusiasm turned up yet, a real gap against Suno's own "best yet" framing.</p>
-      </div>
-    </div>
-
-    <p class="closer-line">Generation was never the scarce resource here. What v6 is actually selling is control over material you already made, and control is a harder thing to get consistently right on day one than raw output ever was.</p>
-
-    <h2>Quick Questions</h2>
-    <div class="faq">
-      <div class="faq-item">
-        <div class="faq-q">Can I still use Suno v5.5?</div>
-        <div class="faq-a">Not once your account finishes the v6 rollout. Songs already in your library stay accessible, you just cannot generate new ones on the old engine.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">What is v6-wild for?</div>
-        <div class="faq-a">Raw material. It trades reliability for range, meant to be fed back into the flagship v6 model for refinement rather than used as a finished track.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Do you have commercial rights in the free tier with v6-mini?</div>
-        <div class="faq-a">No. You do not have commercial rights in the free tier. While v6-mini is accessible to all free accounts, Suno's licensing structure reserves commercial ownership and audio downloads exclusively for paid Pro and Premier subscriptions. Free tier output cannot be monetized or released commercially.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">What's the Custom Model beta?</div>
-        <div class="faq-a">A new option in the model picker, marked Beta, that trains on your own uploads for 100 credits. Suno has not published detailed documentation on it yet.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Is v6 actually better than v5.5?</div>
-        <div class="faq-a">Depends what you make. Editing, isolation, and mashup work are clear upgrades. Several producers report v5.5 still sounding stronger for hip-hop, lo-fi, and ambient generations.</div>
-      </div>
-    </div>
-
-    <div class="sources">
-      Sources &amp; further reading: Suno's official "Introducing v6" announcement and release notes &middot; launch coverage from TechCrunch, Variety, Engadget, and Music Business Worldwide &middot; early reception reporting from Digital Music News &middot; this is field research, not a Suno endorsement, test each tier against your own genre before committing a session to it.
-    </div>
-
-  </div>
-
-  <div class="author-cta">
+  <aside class="author-cta" aria-label="Community and Standards">
     <p>Suno's model migrations keep moving faster than any single platform's documentation. That is exactly the gap r/hybridproduction exists to track: what actually changed under the hood versus what the announcement post says, and how that affects a workflow built on provenance rather than lock-in.</p>
     <div class="cta-links">
       <a href="https://www.reddit.com/r/hybridproduction/">Join r/hybridproduction &rarr;</a>
       <a href="https://trustnodelogic.com/what-is-hybrid.html">Read the Hybrid Production Manifesto</a>
       <a href="https://trustnodelogic.com/hybridproductionstandard.html">HPS-1.0 Specification</a>
     </div>
-  </div>
+  </aside>
 
   <aside class="tnl-author-entity-card" itemscope itemtype="https://schema.org/Person" aria-label="Author Profile and Network">
     <div class="tnl-author-header">
@@ -1039,7 +1053,7 @@ footer.site .navlinks a { color: var(--text-faint); }
     </div>
   </aside>
 
-  <div class="continue-reading">
+  <nav class="continue-reading" aria-label="Related Field Notes">
     <div class="cr-label">Continue Reading Field Notes</div>
     <a class="cr-item" href="https://trustnodelogic.com/suno6.html">
       <div class="cr-kicker">Production Guide</div>
@@ -1062,9 +1076,9 @@ footer.site .navlinks a { color: var(--text-faint); }
       <div class="cr-desc">How text encoders and latent vectors turn a prompt into audio, useful context for why v6's edit instructions behave the way they do.</div>
     </a>
     <a class="all-notes" href="https://trustnodelogic.com/field-notes.html">ALL FIELD NOTES &rarr;</a>
-  </div>
+  </nav>
 
-</div>
+</main>
 
 <footer class="site">
   <div class="wrap">
