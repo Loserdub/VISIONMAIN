@@ -328,7 +328,7 @@
  .spec-docket-bar {
   background: #050607;
   border-bottom: 1px solid var(--border);
-  padding: 10px 0;
+  padding: 8px 0;
   font-family: var(--font-mono);
   font-size: 11px;
  }
@@ -337,7 +337,7 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px 16px;
  }
  .docket-status {
   display: flex;
@@ -347,6 +347,7 @@
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  font-size: 10.5px;
  }
  .docket-status-tag {
   color: var(--cyan);
@@ -355,7 +356,7 @@
  .docket-code {
   color: #fff;
   font-weight: 700;
-  padding: 1px 6px;
+  padding: 2px 6px;
   background: rgba(0, 240, 255, 0.1);
   border: 1px solid rgba(0, 240, 255, 0.25);
  }
@@ -382,11 +383,16 @@
  .docket-jumps {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   flex-wrap: wrap;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 10.5px;
+ }
+ @media (max-width: 1080px) {
+  .docket-jumps {
+   display: none;
+  }
  }
  .docket-jumps a {
   color: var(--muted);
@@ -406,6 +412,7 @@
   border: 1px solid rgba(0, 240, 255, 0.3);
   cursor: pointer;
   transition: all .15s ease;
+  white-space: nowrap;
  }
  .docket-btn-takeaway:hover {
   background: rgba(0, 240, 255, 0.12);
@@ -414,15 +421,15 @@
  }
 
  /* ---------- Standard Hero Section ---------- */
- header.hero {
-  padding: 72px 0 68px;
+ .hero {
+  padding: 44px 0 56px;
   border-bottom: 1px solid var(--border);
   position: relative;
   overflow: hidden;
   background: radial-gradient(circle at 80% 20%, rgba(0, 240, 255, 0.04) 0%, transparent 55%),
               radial-gradient(circle at 10% 80%, rgba(255, 159, 28, 0.03) 0%, transparent 45%);
  }
- header.hero::before {
+ .hero::before {
   content: '';
   position: absolute;
   top: 0;
@@ -486,6 +493,17 @@
  }
  .docket-stamp-label { color: var(--muted-dim); }
  .docket-stamp-val { color: var(--emerald); font-weight: 600; }
+ @media (max-width: 580px) {
+  .hero-top-bar {
+   flex-direction: column;
+   align-items: flex-start;
+   gap: 12px;
+  }
+  .hero-docket-stamp {
+   text-align: left;
+   align-items: flex-start;
+  }
+ }
 
  /* Regulatory Callout Docket */
  .regulatory-callout {
@@ -2418,32 +2436,24 @@
   margin-right: 6px;
  }
 
- /* ---------- HPS Sticky Lateral Telemetry Rail (Desktop) ---------- */
+ /* ---------- HPS Sticky Lateral Telemetry Rail (Desktop >= 1600px) ---------- */
  .hps-telemetry-rail {
   display: none;
   position: fixed;
-  top: 112px;
-  left: 18px;
-  width: 148px;
+  top: 76px;
+  width: 160px;
   background: rgba(11, 14, 18, 0.94);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 14px 12px;
+  padding: 16px 14px;
   z-index: 40;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
  }
- @media (min-width: 1260px) {
+ @media (min-width: 1600px) {
   .hps-telemetry-rail {
    display: flex;
    flex-direction: column;
-   left: max(14px, calc((100vw - 1240px) / 2 - 164px));
-  }
- }
- @media (min-width: 1536px) {
-  .hps-telemetry-rail {
-   width: 164px;
-   left: max(20px, calc((100vw - 1240px) / 2 - 184px));
-   padding: 16px 14px;
+   left: calc((100vw - 1240px) / 2 - 176px);
   }
  }
  .rail-header {
@@ -2580,7 +2590,7 @@
   border-color: var(--cyan);
  }
 
- /* ---------- HPS Mobile Stepper Pill (Viewport < 1260px) ---------- */
+ /* ---------- HPS Mobile Stepper Pill (Viewport < 1600px) ---------- */
  .hps-mobile-stepper {
   position: fixed;
   bottom: 18px;
@@ -2593,7 +2603,7 @@
   gap: 5px;
   filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.8));
  }
- @media (min-width: 1260px) {
+ @media (min-width: 1600px) {
   .hps-mobile-stepper {
    display: none;
   }
@@ -2836,7 +2846,7 @@
    <span class="docket-sep">/</span>
    <span class="docket-item">RAW PCM SHA-256</span>
    <span class="docket-sep">/</span>
-   <span class="docket-status-ready">RATIFIED SPECIFICATION · EU AI ACT ART. 50 READY</span>
+   <span class="docket-status-ready">EU AI ACT ART. 50 READY</span>
   </div>
   <div class="docket-jumps">
    <a href="#perspectives">01 Stakeholders</a>
@@ -2850,8 +2860,17 @@
  </div>
 </div>
 
-<!-- Standard Hero Header -->
-<header class="hero">
+<!-- Breadcrumbs Hierarchy -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="./index.html">Home</a>
+  <span aria-hidden="true">/</span>
+  <a href="./field-notes.html">Field Notes</a>
+  <span aria-hidden="true">/</span>
+  <span class="current" aria-current="page">Hybrid Production Standard (HPS-1.0)</span>
+</nav>
+
+<!-- Standard Hero Section -->
+<section class="hero" id="overview">
 <div class="wrap">
  <div class="hero-top-bar">
   <div class="hero-spec-badge">
@@ -2933,18 +2952,9 @@
   <span class="pill"><span class="pill-prefix">CRYPTO:</span> Ed25519 Cryptographic Proof</span>
  </div>
 </div>
-</header>
+</section>
 
-<!-- Breadcrumbs Hierarchy -->
-<nav class="breadcrumb" aria-label="Breadcrumb">
-  <a href="./index.html">Home</a>
-  <span aria-hidden="true">/</span>
-  <a href="./field-notes.html">Field Notes</a>
-  <span aria-hidden="true">/</span>
-  <span class="current" aria-current="page">Hybrid Production Standard (HPS-1.0)</span>
-</nav>
-
-<!-- Sticky Lateral Telemetry Rail (Desktop >= 1260px) -->
+<!-- Sticky Lateral Telemetry Rail (Desktop >= 1600px) -->
 <aside class="hps-telemetry-rail" id="hps-telemetry-rail" aria-label="Specification Telemetry Wayfinding">
   <div class="rail-header">
     <div class="rail-telemetry-status">
