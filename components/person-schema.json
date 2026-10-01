@@ -1,0 +1,111 @@
+{
+  "@type": "Person",
+  "@id": "https://trustnodelogic.com/#person",
+  "name": "Justin Ray",
+  "additionalName": "Justin Tyler Ray",
+  "alternateName": [
+    "JRAY",
+    "loserdub",
+    "VISION",
+    "Flawed Future",
+    "le vide",
+    "disarray"
+  ],
+  "url": "https://trustnodelogic.com",
+  "image": "https://trustnodelogic.com/bio-avatar.jpg",
+  "email": "mailto:trustnodelogic@gmail.com",
+  "jobTitle": [
+    "Music Producer",
+    "Music Artist",
+    "Pioneer of Hybrid AI Music Production",
+    "Audio Engineer",
+    "Creative Technologist"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "East Lansing",
+    "addressRegion": "MI",
+    "addressCountry": "US"
+  },
+  "knowsAbout": [
+    {
+      "@type": "DefinedTerm",
+      "name": "Hybrid Music Production",
+      "description": "The methodology of integrating generative AI audio models into professional digital audio workstation workflows."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Generative Artificial Intelligence",
+      "url": "https://en.wikipedia.org/wiki/Generative_artificial_intelligence",
+      "sameAs": "https://www.wikidata.org/wiki/Q116972040"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Digital Audio Workstation",
+      "url": "https://en.wikipedia.org/wiki/Digital_audio_workstation",
+      "sameAs": "https://www.wikidata.org/wiki/Q11425"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Audio Engineering",
+      "url": "https://en.wikipedia.org/wiki/Audio_engineering",
+      "sameAs": "https://www.wikidata.org/wiki/Q654390"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Search Engine Optimization",
+      "url": "https://en.wikipedia.org/wiki/Search_engine_optimization",
+      "sameAs": "https://www.wikidata.org/wiki/Q180711"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Knowledge Graph",
+      "url": "https://en.wikipedia.org/wiki/Knowledge_graph",
+      "sameAs": "https://www.wikidata.org/wiki/Q33002955"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Web Audio API",
+      "url": "https://en.wikipedia.org/wiki/Web_Audio_API",
+      "sameAs": "https://www.wikidata.org/wiki/Q7978553"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "C2PA",
+      "url": "https://en.wikipedia.org/wiki/C2PA",
+      "sameAs": "https://www.wikidata.org/wiki/Q105622176"
+    },
+    "Hybrid Production Standard",
+    "HPS-1.0",
+    "EU AI Act Article 50",
+    "DDEX ERN 4.3",
+    "Spectral Splitting",
+    "MIXR Studio",
+    "SLERP Audio",
+    "Sound Design"
+  ],
+  "memberOf": [
+    {
+      "@id": "https://trustnodelogic.com/#organization"
+    },
+    {
+      "@id": "https://www.reddit.com/r/hybridproduction/#organization"
+    }
+  ],
+  "sameAs": [
+    "https://musicbrainz.org/artist/882fdb9b-8655-45dd-8e24-a59cd750d053",
+    "https://soundcloud.com/visiontracks",
+    "https://www.youtube.com/@loserdub",
+    "https://www.linkedin.com/in/jray-me/",
+    "https://x.com/TheInnerVision",
+    "https://www.instagram.com/jray.me/",
+    "https://open.spotify.com/artist/3VZelnnW9OR0DyR2qRn4Oq",
+    "https://open.spotify.com/artist/6GGZwLOLxVxYGOcMry3NDi",
+    "https://open.spotify.com/artist/42TmrCeIumkPRyTNOPP78t",
+    "https://open.spotify.com/artist/3FNFzRyU0PCA2vjihWsg6y",
+    "https://open.spotify.com/artist/6TlAxGL1Hm4FRWfTxprlMi",
+    "https://www.reddit.com/r/hybridproduction/",
+    "https://network.landr.com/users/vision-hybrid",
+    "https://github.com/loserdub"
+  ]
+}

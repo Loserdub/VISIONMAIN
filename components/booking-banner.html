@@ -1,0 +1,33 @@
+<!-- Direct Appointment Booking Section -->
+<div class="scroll-section tech-card p-8 sm:p-10 border border-white/20 hover:border-[#FF9F1C] transition-all max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left mt-12 mb-16">
+<div class="space-y-2 max-w-xl">
+<div class="inline-flex items-center gap-2 text-[10px] font-mono tracking-[0.25em] text-[#FF9F1C] uppercase">
+<span>[ DIRECT CALENDAR SCHEDULING ]</span>
+</div>
+<h2 class="text-2xl sm:text-3xl font-bold font-mono uppercase tracking-tight text-[#EAEAEA]">
+Schedule a Consultation
+</h2>
+<p class="text-xs sm:text-sm text-[#A1A1AA] font-mono leading-relaxed">
+Select a direct 1-on-1 time slot on Google Calendar for SEO/GEO advisory, studio scoping, or workflow strategy.
+</p>
+</div>
+<div class="flex-shrink-0 flex items-center justify-center">
+<!-- Google Calendar Appointment Scheduling begin -->
+<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+<script>
+(function() {
+  var target = document.currentScript;
+  window.addEventListener('load', function() {
+    calendar.schedulingButton.load({
+      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3squXeDo0Y94upJ6G02yuTBN9tyOu6gigan6s6aLuZDnaWA-eMgPwsBdVF1f8wQVr3NwIl0JYE?gv=true',
+      color: '#F4511E',
+      label: 'Book an appointment',
+      target,
+    });
+  });
+})();
+</script>
+<!-- end Google Calendar Appointment Scheduling -->
+</div>
+</div>

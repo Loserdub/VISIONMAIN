@@ -1,8 +1,1 @@
-{
-  "void\\index.html": [
-    "Missing from sitemap.xml: https://trustnodelogic.com/void\\index.html",
-    "Canonical URL mismatch: found 'https://trustnodelogic.com/void/', expected 'https://trustnodelogic.com/void\\index.html'",
-    "JSON-LD @graph missing Person entity",
-    "JSON-LD (WebPage) description mismatch: 'VOID 1.2 is a browser-native audio segme...' vs meta 'VOID 1.2 interactive browser audio utili...'"
-  ]
-}
+{}

@@ -1,25 +1,15 @@
-# Deploy static site to GitHub Pages
-name: Deploy to GitHub Pages
+name: Quality Gate & LAA-v2 Audit
 
 on:
-  push:
+  pull_request:
     branches: ["main"]
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  audit:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -51,15 +41,3 @@ jobs:
 
       - name: Run Repository Quality Gate & LAA-v2 Audit
         run: python scripts/comprehensive_audit.py
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: '.'
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4

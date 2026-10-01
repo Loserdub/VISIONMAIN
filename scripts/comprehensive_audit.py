@@ -10,21 +10,23 @@ def audit_repo():
     print("=" * 60)
 
     # Get all html files
-    all_html_files = sorted(glob.glob('**/*.html', recursive=True))
+    all_html_files = [f.replace('\\', '/') for f in sorted(glob.glob('**/*.html', recursive=True))]
     
     # Classify files
     social_cards = [f for f in all_html_files if f.startswith('field-notes-') or 'asset' in f.lower()]
+    components = [f for f in all_html_files if f.startswith('components/')]
     sub_apps = ['void/index.html', 'void15new.html']
     utility_pages = ['404.html', 'bio.html']
     
     # Main pages are all top-level content and application pages
     main_pages = [
         f for f in all_html_files 
-        if f not in social_cards and f not in sub_apps and f not in utility_pages and not f.startswith('assets')
+        if f not in social_cards and f not in sub_apps and f not in utility_pages and f not in components and not f.startswith('assets')
     ]
     
     print(f"Total HTML files: {len(all_html_files)}")
     print(f"Main site pages: {len(main_pages)}")
+    print(f"Component partials: {len(components)}")
     print(f"Social card templates: {len(social_cards)}")
     print(f"Sub-apps / Utilities: {len(sub_apps) + len(utility_pages)}")
     print("-" * 60)
@@ -63,7 +65,7 @@ def audit_repo():
             file_issues.append("Corrupted characters detected (\\ufffd)")
             
         # 2. Em-Dashes in user-facing pages
-        if not fpath.startswith('assets') and fpath not in social_cards:
+        if not fpath.startswith('assets') and fpath not in social_cards and fpath not in components:
             em_dashes = re.findall(r'—|&mdash;|&#8212;', raw_content)
             if em_dashes:
                 file_issues.append(f"Em-dashes (— or &mdash;) found: {len(em_dashes)}")
@@ -256,4 +258,10 @@ def audit_repo():
     return findings
 
 if __name__ == '__main__':
-    audit_repo()
+    import sys
+    findings = audit_repo()
+    if findings:
+        sys.exit(1)
+    else:
+        print("\nALL AUDIT CHECKS PASSED PERFECTLY (0 ISSUES).")
+        sys.exit(0)
