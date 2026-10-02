@@ -1419,6 +1419,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const searchInput = document.getElementById('searchInput');
   if (searchInput) {
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const paramQ = urlParams.get('q');
+      if (paramQ) {
+        searchInput.value = paramQ;
+        searchQuery = paramQ;
+        renderCards();
+      }
+    } catch (e) {}
+
     searchInput.addEventListener('input', (e) => {
       searchQuery = e.target.value;
       renderCards();

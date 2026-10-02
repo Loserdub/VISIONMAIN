@@ -63,3 +63,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Ping Search Engines via IndexNow
+        continue-on-error: true
+        run: python scripts/submit_indexnow.py --force
