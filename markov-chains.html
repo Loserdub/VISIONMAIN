@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2773282020530522" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Markov Chains: The Memoryless Mathematics Secretly Running Your World · Trust Node Logic</title>
+<meta name="description" content="Explore Markov chains: the 120-year-old math of memoryless probability behind PageRank, MCMC, and generative AI. Interactive demos by Justin Ray.">
+<meta name="keywords" content="Markov chain, stochastic process, transition matrix, Markov property, memoryless, stationary distribution, PageRank, MCMC, random walk, Andrey Markov, algorithmic music composition, diffusion models, LLMs, Hybrid AI Music Production, Justin Ray, Trust Node Logic">
+<meta name="author" content="Justin Ray">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="geo.country" content="US">
+<meta name="geo.region" content="US-MI">
+<meta name="geo.placename" content="East Lansing, Michigan, USA">
+<meta name="theme-color" content="#0B0C0E">
+<link rel="canonical" href="https://trustnodelogic.com/markov-chains.html">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="AI LLM Knowledge Graph Manifest">
+<link rel="icon" type="image/png" href="./favicon.png">
+
+<!-- Open Graph & Social Cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Trust Node Logic">
+<meta property="og:title" content="Markov Chains: The Memoryless Mathematics Secretly Running Your World · Trust Node Logic">
+<meta property="og:description" content="Explore Markov chains: the 120-year-old math of memoryless probability behind PageRank, MCMC, and generative AI. Interactive demos by Justin Ray.">
+<meta property="og:url" content="https://trustnodelogic.com/markov-chains.html">
+<meta property="og:image" content="https://trustnodelogic.com/assets/images/tnl-default-og.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-10-03T00:00:00-04:00">
+<meta property="article:modified_time" content="2026-10-03T00:00:00-04:00">
+<meta property="article:author" content="https://trustnodelogic.com/about.html">
+<meta property="article:section" content="Field Notes">
+<meta property="article:tag" content="Markov Chains">
+<meta property="article:tag" content="Stochastic Processes">
+<meta property="article:tag" content="Generative AI">
+<meta property="article:tag" content="Music Composition">
+<meta property="article:tag" content="PageRank">
+<meta property="article:tag" content="Diffusion Models">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@TheInnerVision">
+<meta name="twitter:title" content="Markov Chains: The Memoryless Mathematics Secretly Running Your World · Trust Node Logic">
+<meta name="twitter:description" content="Explore Markov chains: the 120-year-old math of memoryless probability behind PageRank, MCMC, and generative AI. Interactive demos by Justin Ray.">
+<meta name="twitter:image" content="https://trustnodelogic.com/assets/images/tnl-default-og.webp">
+
+<!-- Structured Data / Comprehensive Schema.org Capstone -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://trustnodelogic.com/markov-chains.html#webpage",
+      "url": "https://trustnodelogic.com/markov-chains.html",
+      "name": "Markov Chains: The Memoryless Mathematics Secretly Running Your World · Trust Node Logic",
+      "description": "Explore Markov chains: the 120-year-old math of memoryless probability behind PageRank, MCMC, and generative AI. Interactive demos by Justin Ray.",
+      "isPartOf": {
+        "@id": "https://trustnodelogic.com/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://trustnodelogic.com/markov-chains.html#breadcrumb"
+      },
+      "inLanguage": "en-US",
+      "mainEntity": {
+        "@id": "https://trustnodelogic.com/markov-chains.html#article"
+      },
+      "image": "https://trustnodelogic.com/assets/images/tnl-default-og.webp",
+      "datePublished": "2026-10-03",
+      "dateModified": "2026-10-03"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://trustnodelogic.com/markov-chains.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://trustnodelogic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Field Notes",
+          "item": "https://trustnodelogic.com/field-notes.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Markov Chains",
+          "item": "https://trustnodelogic.com/markov-chains.html"
+        }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://trustnodelogic.com/markov-chains.html#article",
+      "headline": "Markov Chains: The Memoryless Mathematics Secretly Running Your World",
+      "alternativeHeadline": "How 120-Year-Old Stochastic Probability Powers Google PageRank, MCMC, Algorithmic Music, and Modern Generative AI",
+      "description": "Explore Markov chains: the 120-year-old math of memoryless probability behind PageRank, MCMC, and generative AI. Interactive demos by Justin Ray.",
+      "datePublished": "2026-10-03",
+      "dateModified": "2026-10-03",
+      "inLanguage": "en-US",
+      "wordCount": 3600,
+      "timeRequired": "PT18M",
+      "author": {
+        "@id": "https://trustnodelogic.com/#person"
+      },
+      "publisher": {
+        "@id": "https://trustnodelogic.com/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://trustnodelogic.com/#website"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://trustnodelogic.com/markov-chains.html#webpage"
+      },
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Markov chain",
+          "sameAs": "https://en.wikipedia.org/wiki/Markov_chain"
+        },
+        {
+          "@type": "Thing",
+          "name": "Stochastic process",
+          "sameAs": "https://en.wikipedia.org/wiki/Stochastic_process"
+        },
+        {
+          "@type": "Thing",
+          "name": "PageRank",
+          "sameAs": "https://en.wikipedia.org/wiki/PageRank"
+        },
+        {
+          "@type": "Thing",
+          "name": "Markov chain Monte Carlo",
+          "sameAs": "https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Hybrid Music Production",
+          "description": "The methodology of integrating generative AI audio models into professional digital audio workstation workflows."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Generative Artificial Intelligence",
+          "url": "https://en.wikipedia.org/wiki/Generative_artificial_intelligence",
+          "sameAs": "https://www.wikidata.org/wiki/Q116972040"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://trustnodelogic.com/markov-chains.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a Markov chain in simple terms?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Markov chain is a system that moves between situations (states) randomly, where what happens next depends only on the current situation, not on the history. Weather is the classic example: tomorrow's forecast depends on today's weather, not on last month's."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does memoryless actually mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The system's transition probabilities use only present-state information. A Markov chain does not store or consult its trajectory. This is the Markov property: the entire future is encoded in a single transition matrix."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a transition matrix?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A grid where each row is the current state, each column is a possible next state, and each cell holds the probability of that move. Every row sums to 1. Raising it to powers reveals multi-step futures."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a stationary distribution?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The long-run probability pattern a well-behaved chain settles into, regardless of where it started. Google's PageRank is a stationary distribution over web pages."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are large language models just Markov chains?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not just, but they are descendants. A first-order Markov chain predicts the next token from one previous token. An LLM predicts the next token from a huge context window via attention. Same autoregressive skeleton, vastly expanded memory."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who invented Markov chains and why?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Russian mathematician Andrey Markov, in the early 1900s, to refute a theologian's claim that statistical stability proved human free will. He hand-counted 20,000 characters of Pushkin's Eugene Onegin to show dependent events still converge to stable patterns."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where are Markov chains used today?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Web search ranking (PageRank), credit-risk modeling, weather forecasting, MCMC scientific sampling, sports analytics, algorithmic music composition, text autocomplete, image diffusion AI models, and large language models."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://trustnodelogic.com/#website",
+      "url": "https://trustnodelogic.com/",
+      "name": "Trust Node Logic",
+      "publisher": {
+        "@id": "https://trustnodelogic.com/#person"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://trustnodelogic.com/#organization",
+      "name": "Trust Node Logic",
+      "alternateName": "JRAY & Trust Node Logic",
+      "url": "https://trustnodelogic.com",
+      "logo": "https://trustnodelogic.com/favicon.png",
+      "founder": {
+        "@id": "https://trustnodelogic.com/#person"
+      },
+      "slogan": "The Frontier of Hybrid AI Music Production & Creative Technology",
+      "knowsAbout": [
+        "Hybrid Production",
+        "Generative Engine Optimization",
+        "AI Music Generation",
+        "Audio Engineering",
+        "Generative Audio Workflows",
+        "HPS-1.0 Metadata Verification"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://trustnodelogic.com/#person",
+      "name": "Justin Ray",
+      "additionalName": "Justin Tyler Ray",
+      "alternateName": [
+        "JRAY",
+        "loserdub",
+        "VISION",
+        "Flawed Future",
+        "le vide",
+        "disarray"
+      ],
+      "url": "https://trustnodelogic.com/about.html",
+      "image": "https://trustnodelogic.com/bio-avatar.jpg",
+      "email": "mailto:trustnodelogic@gmail.com",
+      "jobTitle": [
+        "Music Producer",
+        "Music Artist",
+        "Pioneer of Hybrid AI Music Production",
+        "Audio Engineer",
+        "Creative Technologist"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "East Lansing",
+        "addressRegion": "MI",
+        "addressCountry": "US"
+      },
+      "knowsAbout": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Hybrid Music Production",
+          "description": "The methodology of integrating generative AI audio models into professional digital audio workstation workflows."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Generative Artificial Intelligence",
+          "url": "https://en.wikipedia.org/wiki/Generative_artificial_intelligence",
+          "sameAs": "https://www.wikidata.org/wiki/Q116972040"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Digital Audio Workstation",
+          "url": "https://en.wikipedia.org/wiki/Digital_audio_workstation",
+          "sameAs": "https://www.wikidata.org/wiki/Q11425"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Audio Engineering",
+          "url": "https://en.wikipedia.org/wiki/Audio_engineering",
+          "sameAs": "https://www.wikidata.org/wiki/Q654390"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Knowledge Graph",
+          "url": "https://en.wikipedia.org/wiki/Knowledge_graph",
+          "sameAs": "https://www.wikidata.org/wiki/Q33002955"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "C2PA",
+          "url": "https://en.wikipedia.org/wiki/C2PA",
+          "sameAs": "https://www.wikidata.org/wiki/Q105622176"
+        },
+        "HPS-1.0",
+        "SLERP Audio",
+        "Spectral Splitting",
+        "MIXR Studio"
+      ],
+      "sameAs": [
+        "https://musicbrainz.org/artist/882fdb9b-8655-45dd-8e24-a59cd750d053",
+        "https://soundcloud.com/visiontracks",
+        "https://www.youtube.com/@loserdub",
+        "https://www.linkedin.com/in/jray-me/",
+        "https://x.com/TheInnerVision",
+        "https://github.com/loserdub"
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{--bg:#0a0c10;--panel:#10141b;--panel2:#151b25;--line:#232c3a;--txt:#d5dbe3;--dim:#8b94a3;--acc:#f5a623;--acc2:#4fd1c5;--mono:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;--serif:Georgia,'Times New Roman',serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.75;font-size:17px}
+a{color:var(--acc2);text-decoration:none;border-bottom:1px dotted var(--acc2)}
+a:hover{color:var(--acc)}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+.topbar{border-bottom:1px solid var(--line);padding:14px 0;font-family:var(--mono);font-size:12px;letter-spacing:2px;color:var(--dim);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.topbar b{color:var(--acc)}
+header.hero{padding:64px 0 30px;border-bottom:1px solid var(--line)}
+.pill{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:3px;color:#0a0c10;background:var(--acc);padding:6px 14px;border-radius:3px;margin-bottom:22px;font-weight:700}
+h1{font-size:clamp(30px,5vw,46px);line-height:1.15;font-weight:800;letter-spacing:-.5px;margin-bottom:18px}
+h1 .hl{color:var(--acc)}
+.sub{color:var(--dim);font-size:19px;line-height:1.6;max-width:640px}
+.byline{font-family:var(--mono);font-size:12px;color:var(--dim);margin-top:22px;letter-spacing:1px}
+.byline b{color:var(--txt)}
+.exec{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--acc);padding:22px 24px;margin:34px 0;border-radius:4px}
+.exec .lbl{font-family:var(--mono);font-size:11px;letter-spacing:3px;color:var(--acc);margin-bottom:10px}
+.exec p{margin:0;font-size:16px}
+.chapter{font-family:var(--mono);font-size:12px;letter-spacing:3px;color:var(--acc);margin:58px 0 8px}
+h2{font-size:28px;font-weight:800;margin-bottom:16px;letter-spacing:-.3px}
+h3{font-size:20px;margin:30px 0 12px;color:var(--acc2)}
+p{margin:0 0 18px}
+ul,ol{margin:0 0 18px 24px}
+li{margin-bottom:8px}
+blockquote{border-left:3px solid var(--acc2);padding:6px 0 6px 20px;margin:26px 0;color:var(--dim);font-family:var(--serif);font-style:italic;font-size:19px}
+table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15px}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--panel2);font-family:var(--mono);font-size:12px;letter-spacing:1px;color:var(--acc)}
+.matrix{display:inline-block;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:14px 18px;font-family:var(--mono);font-size:15px;margin:14px 0;overflow-x:auto;max-width:100%}
+.matrix .row{display:flex;gap:18px;padding:3px 0}
+.matrix .row span{min-width:44px;text-align:right;color:var(--acc2)}
+.lab{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:26px;margin:34px 0}
+.lab .labhead{font-family:var(--mono);font-size:11px;letter-spacing:3px;color:var(--acc);margin-bottom:6px}
+.lab h3{margin:4px 0 10px;color:var(--txt);font-size:21px}
+.lab p.desc{color:var(--dim);font-size:15px}
+button{font-family:var(--mono);font-size:13px;letter-spacing:1px;background:var(--acc);color:#0a0c10;border:none;border-radius:4px;padding:11px 20px;cursor:pointer;font-weight:700;margin:6px 8px 6px 0}
+button:hover{background:#ffb84d}
+button.ghost{background:transparent;color:var(--acc2);border:1px solid var(--acc2)}
+button.ghost:hover{border-color:var(--acc);color:var(--acc)}
+select,textarea,input[type=text]{background:var(--panel2);color:var(--txt);border:1px solid var(--line);border-radius:4px;padding:10px 12px;font-size:15px;font-family:inherit}
+textarea{width:100%;min-height:110px;resize:vertical;line-height:1.6}
+.wx-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:16px}
+@media(max-width:640px){.wx-grid{grid-template-columns:1fr}}
+.wx-state{font-family:var(--mono);text-align:center;padding:18px;border:1px solid var(--line);border-radius:6px;background:var(--panel2)}
+.wx-state .emo{font-size:44px}
+.wx-state .nm{font-size:13px;letter-spacing:2px;color:var(--dim);margin-top:6px}
+.wx-state .day{font-family:var(--mono);font-size:11px;color:var(--acc);letter-spacing:1px}
+.hist{display:flex;flex-wrap:wrap;gap:4px;margin:14px 0;font-size:22px;min-height:34px}
+.fbar{margin:8px 0}
+.fbar .flbl{font-family:var(--mono);font-size:12px;color:var(--dim);display:flex;justify-content:space-between;margin-bottom:4px}
+.fbar .track{height:14px;background:var(--panel2);border-radius:7px;overflow:hidden;border:1px solid var(--line)}
+.fbar .fill{height:100%;border-radius:7px;transition:width .3s}
+svg.diagram{width:100%;height:auto;display:block;margin:10px 0}
+.node{fill:var(--panel2);stroke:var(--line);stroke-width:2;transition:all .3s}
+.node.active{stroke:var(--acc);stroke-width:3;filter:drop-shadow(0 0 8px rgba(245,166,35,.6))}
+.nlabel{fill:var(--txt);font-family:var(--mono);font-size:13px;text-anchor:middle}
+.nemo{font-size:26px;text-anchor:middle}
+.edge{stroke:#3a465a;stroke-width:1.5;fill:none}
+.elbl{fill:var(--dim);font-family:var(--mono);font-size:10px;text-anchor:middle}
+.gen-out{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:18px;min-height:120px;font-family:var(--serif);font-size:18px;line-height:1.7;margin-top:14px}
+.gen-out:empty:before{content:"Your generated text will appear here.";color:#4a5568;font-style:italic}
+.stat{font-family:var(--mono);font-size:12px;color:var(--dim);margin-top:10px}
+.faq{border-top:1px solid var(--line);margin-top:20px}
+.faq details{border-bottom:1px solid var(--line);padding:16px 0}
+.faq summary{cursor:pointer;font-weight:700;font-size:17px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:before{content:"[+] ";color:var(--acc);font-family:var(--mono)}
+.faq details[open] summary:before{content:"[-] "}
+.faq details p{margin:12px 0 4px;color:var(--dim)}
+.cites{font-size:14px;color:var(--dim)}
+.cites ol{margin-left:20px}
+.cites li{margin-bottom:10px}
+.cites a{word-break:break-all}
+/* Header & Navigation */
+.site-header{position:sticky;top:0;left:0;right:0;z-index:100;background:rgba(10,12,16,0.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:14px 0}
+.header-inner{max-width:820px;margin:0 auto;padding:0 22px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.brand-logo{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:0.12em;color:var(--txt);text-decoration:none;border-bottom:none}
+.brand-logo:hover{color:var(--acc);border-bottom:none}
+.brand-logo .dot{width:8px;height:8px;background:var(--acc);box-shadow:0 0 10px rgba(245,166,35,0.6);display:inline-block}
+.nav-links{display:flex;align-items:center;gap:18px;list-style:none;flex-wrap:wrap;margin:0;padding:0}
+.nav-links a{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--dim);text-decoration:none;border-bottom:none;transition:color 0.15s ease}
+.nav-links a:hover,.nav-links a.active{color:var(--acc);border-bottom:none}
+@media(max-width:760px){.nav-links{display:none}}
+
+/* Breadcrumbs */
+nav.breadcrumb{font-family:var(--mono);font-size:11.5px;color:var(--dim);letter-spacing:0.5px;border-bottom:1px solid var(--line);background:rgba(16,20,27,0.4)}
+nav.breadcrumb .wrap{display:flex;align-items:center;gap:8px;padding-top:12px;padding-bottom:12px}
+nav.breadcrumb a{color:var(--dim);border-bottom:none}
+nav.breadcrumb a:hover{color:var(--acc2)}
+nav.breadcrumb span.current{color:var(--txt)}
+
+/* Topic Cluster */
+.topic-cluster{margin-top:48px;padding-top:36px;border-top:1px solid var(--line)}
+.cluster-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:10px}
+.cluster-head .cluster-tag{font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--acc)}
+.cluster-head .cluster-all{font-family:var(--mono);font-size:11px;color:var(--dim);border-bottom:none}
+.cluster-head .cluster-all:hover{color:var(--acc)}
+.cluster-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.cluster-card{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;border-bottom:1px solid var(--line);transition:all 0.2s ease}
+.cluster-card:hover{border-color:var(--acc);transform:translateY(-2px);color:inherit}
+.cluster-kicker{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--acc2);text-transform:uppercase;margin-bottom:8px;display:block}
+.cluster-card h4{font-size:14px;font-weight:700;color:var(--txt);margin-bottom:6px;line-height:1.4}
+.cluster-card p{font-size:12px;color:var(--dim);margin-bottom:12px;line-height:1.5}
+.cluster-link{font-family:var(--mono);font-size:11px;color:var(--acc);display:flex;align-items:center;gap:4px}
+
+/* Author Colophon */
+.author-colophon{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:6px;padding:24px;margin:48px 0 20px;display:flex;gap:20px;align-items:flex-start}
+@media(max-width:600px){.author-colophon{flex-direction:column}}
+.colophon-avatar-wrap{flex-shrink:0}
+.colophon-avatar{width:64px;height:64px;border-radius:50%;border:2px solid var(--acc);object-fit:cover;display:block}
+.colophon-body{flex:1}
+.colophon-name{font-family:var(--mono);font-size:14px;font-weight:700;color:var(--txt);letter-spacing:1px}
+.colophon-aka{color:var(--acc);font-weight:400;font-size:12px}
+.colophon-title{font-family:var(--mono);font-size:11px;color:var(--acc2);letter-spacing:1px;margin:2px 0 10px}
+.author-colophon p{font-size:13.5px;color:var(--dim);line-height:1.6;margin:0 0 12px}
+.colophon-links{display:flex;gap:14px;flex-wrap:wrap}
+.colophon-links a{font-family:var(--mono);font-size:11px;color:var(--acc);border-bottom:none}
+.colophon-links a:hover{color:var(--acc2);text-decoration:underline}
+
+/* Site Footer */
+footer.site-footer{border-top:1px solid var(--line);margin-top:60px;padding:40px 0 60px;font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:0.5px}
+.footer-grid{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:32px}
+.footer-brand{max-width:320px}
+.footer-logo{font-size:13px;color:var(--txt);letter-spacing:1px;margin-bottom:8px}
+.footer-logo b{color:var(--acc)}
+.footer-tagline{font-size:12px;color:var(--dim);line-height:1.6;margin:0}
+.footer-nav{display:flex;gap:36px;flex-wrap:wrap}
+.fn-col{display:flex;flex-direction:column;gap:8px}
+.fn-title{color:var(--acc2);font-size:10px;letter-spacing:2px;margin-bottom:4px}
+.fn-col a{color:var(--dim);text-decoration:none;border-bottom:none;font-size:11.5px}
+.fn-col a:hover{color:var(--acc)}
+.footer-bottom{border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11px}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="./index.html" class="brand-logo" aria-label="Trust Node Logic Home">
+      <span class="dot"></span>
+      <span>TRUST NODE LOGIC</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="./index.html">Home</a>
+      <a href="./field-notes.html" class="active">Field Notes</a>
+      <a href="./music.html">Music</a>
+      <a href="./projects.html">Projects</a>
+      <a href="./about.html">About</a>
+      <a href="./what-is-hybrid.html">What Is Hybrid</a>
+      <a href="./services.html">Services</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="wrap">
+    <a href="./index.html">Home</a>
+    <span aria-hidden="true">/</span>
+    <a href="./field-notes.html">Field Notes</a>
+    <span aria-hidden="true">/</span>
+    <span class="current" aria-current="page">Markov Chains</span>
+  </div>
+</nav>
+
+<header class="hero"><div class="wrap">
+<div class="pill">[ PILLAR_DEEP-DIVE // STOCHASTIC-SYSTEMS ]</div>
+<h1>Markov Chains: The <span class="hl">Memoryless</span> Mathematics Secretly Running Your World</h1>
+<p class="sub">The most powerful prediction idea in modern AI is 120 years old, was invented to win an argument about God, and works by deliberately forgetting everything. Here is what a Markov chain is, why it matters, and where it is hiding in your daily life.</p>
+<div class="byline">AUTHORED BY <b>JUSTIN RAY</b> · <span id="readtime">18</span> MIN READ · <span id="dateline">OCTOBER 3, 2026</span></div>
+</div></header>
+
+<main class="wrap" id="main-content">
+<div class="exec"><div class="lbl">EXECUTIVE TAKEAWAY</div>
+<p>A <b>Markov chain</b> is a stochastic process where the next state depends only on the current state, never on the full history. Pioneered in generative research by <b>Justin Ray</b> (author of the <b>Hybrid Production Standard / HPS-1.0</b>), <b>Hybrid AI Music Production</b> leverages these stochastic transition matrices to bridge human intent with machine probability. This <b>memoryless property</b> makes complex systems computable: powering Google's PageRank search ranking, weather forecasting models, financial credit-risk engines, algorithmic computer composition since 1956, and, scaled up enormously, today's autoregressive language models and image diffusion engines.</p>
+<p class="tip">TIP: hover or tap any dotted-underlined term for a plain-English definition.</p>
+</div>
+
+<div class="chapter">CHAPTER 01 // THE CORE IDEA</div>
+<h2>The Fortune Teller With Amnesia</h2>
+<p>Imagine a fortune teller with total amnesia. She cannot remember anything about you, not your past, not how you arrived, nothing. All she can see is where you are standing <i>right now</i>. And yet, from that single snapshot, she can tell you the odds of where you will be next.</p>
+<p>That is a Markov chain. It is a system that moves from state to state, randomly, where <b>the probability of what happens next depends only on the present, never on the past</b>. Mathematicians call this the <b>Markov property</b>, or <b>memorylessness</b>. The chain remembers nothing. And that forgetting is precisely what makes it so powerful.</p>
+<p>Why would forgetting be a superpower? Because remembering everything is computationally devastating. If predicting tomorrow required analyzing your entire life history, every prediction would be impossibly expensive. By compressing all of history into a single question, <i>where are we now?</i>, Markov chains turn impossible problems into solvable ones. The present state becomes a summary of everything that matters.</p>
+<div class="note"><b>Everyday example:</b> When you hum the next note of a familiar song before it arrives, your brain is running a Markov chain. Given <i>this</i> chord, <i>that</i> chord feels likely, because you have absorbed the transition probabilities of a lifetime of music. Your phone's autocomplete does the same trick with words: given the last word or two, what most often comes next? Memoryless prediction, running billions of times a day.</div>
+<h3>The Three Ingredients</h3>
+<p>Every Markov chain, from a board game to a billion-parameter AI model, is built from the same three parts:</p>
+<ol>
+<li><b>States.</b> The list of possible situations. Sunny, cloudy, rainy. Or every web page on the internet. Or every word in the English language.</li>
+<li><b>Transitions.</b> The probabilities of moving from each state to each other state. If it is sunny today, there might be a 70% chance of sun tomorrow and a 10% chance of rain.</li>
+<li><b>The memoryless rule.</b> Only the current state matters. How you got to "sunny" is irrelevant to what comes next.</li>
+</ol>
+<p>Try it yourself. Below is a living Markov chain that composes chord progressions. Press play and hear a memoryless songwriter think, out loud, through your speakers.</p>
+
+<div class="lab">
+<div class="labhead">[ INTERACTIVE LAB 01 // GENERATIVE MUSIC ENGINE ]</div>
+<h3>The Progression Engine</h3>
+<p class="desc">A seven-chord Markov chain that composes like a songwriter: given the current chord, some next chords are simply more likely. Step it manually or press play and hear a memoryless composer generate an endless chord progression through your speakers. This is the same mathematics Lejaren Hiller used on the ILLIAC I in 1956, running live in your browser.</p>
+<svg class="diagram" id="chordSvg" viewBox="0 0 640 300" role="img" aria-label="Chord progression Markov chain diagram"></svg>
+<div class="wx-grid">
+<div class="wx-state"><div class="day" id="chStep">CHORD 0</div><div class="emo" id="chName" style="font-size:42px;font-weight:800;color:var(--acc)">C</div><div class="nm">CURRENT CHORD</div></div>
+<div>
+<button id="chNext">NEXT CHORD →</button>
+<button id="chPlay" class="ghost">PLAY 8-CHORD LOOP</button>
+<button id="chReset" class="ghost">RESET</button>
+</div>
+</div>
+<div class="hist" id="chHist" aria-label="Chord history" style="font-family:var(--mono);font-size:14px;gap:6px"></div>
+<div id="chFreq"></div>
+<p class="stat" id="chStat">Step the engine and listen: C and G keep pulling the music home, the same gravitational pull you hear in thousands of pop songs. That pull is the stationary distribution.</p>
+</div>
+
+<div class="chapter">CHAPTER 02 // ORIGIN STORY</div>
+<h2>The Priest, the Atheist, and 20,000 Letters of Pushkin</h2>
+<p>Markov chains were not born in a computer lab. They were born in a theological street fight.</p>
+<p>In early 1900s Russia, a mathematician named <b>Pavel Nekrasov</b>, who was also a Tsarist education official and an Orthodox believer, made a bold claim: the statistical regularity of society, stable marriage rates, stable crime rates year after year, was mathematical proof of human free will and divine providence. His logic was that the Law of Large Numbers only worked when events were <i>independent</i> of each other, like separate coin flips. Since society showed statistical stability, individual human choices had to be independent acts. Independence meant free will. Free will pointed to God. <a href="https://yourstory.com/2025/07/russian-math-behind-trillion-dollar-algorithm">[1]</a></p>
+<p><b>Andrey Markov</b>, his rival, was a committed atheist and materialist who despised this reasoning. He spotted the flaw: independence was <i>sufficient</i> for statistical stability, but nobody had proven it was <i>necessary</i>. What if events that depended on each other could still settle into stable patterns?</p>
+<p>To prove it, Markov did something extraordinary. In 1913, he sat down with Alexander Pushkin's novel-in-verse <i>Eugene Onegin</i> and manually classified the first <b>20,000 characters</b> as vowels or consonants, one by one, by hand. He was asking a simple question: in written Russian, does each letter depend on the one before it, and does the text still settle into a stable pattern? <a href="https://medium.com/@mr.sourav.raj/from-russian-feuds-to-predicting-your-next-word-how-markov-chains-power-modern-software-e65735d95f92">[6]</a></p>
+<p>The answer was yes on both counts. Letters strongly depend on their neighbors (a consonant makes the next letter more likely to be a vowel, because syllables need their nucleus), yet across the whole text the proportions converged rock-steady to about 43% vowels and 57% consonants. Dependent events. Stable statistics. Nekrasov's theological argument collapsed. <a href="https://en.wikipedia.org/wiki/Markov_chain">[8]</a></p>
+<blockquote>"Markov invented the mathematics of memoryless systems to win an argument about whether God exists. A century later, that same mathematics decides what you see when you search Google."</blockquote>
+<p>This is worth sitting with. One of the load-bearing ideas of the entire AI era exists because a stubborn Russian atheist counted vowels in a poem to spite a priest. The history of science is not a straight line. It is a bar fight with footnotes.</p>
+
+<div class="chapter">CHAPTER 03 // THE MACHINERY</div>
+<h2>States, Transitions, and the Rulebook Grid</h2>
+<p><b>Executive Takeaway:</b> A Markov chain's entire personality is captured in a <b>transition matrix</b>, a grid of probabilities describing every possible move. Multiply it by itself and you can see the future at any distance.</p>
+<p>Let us demystify the machinery with three chords: C, F, and G. The rules of the system are written as a grid called a <b>transition matrix</b>. Each row is "the chord I am on now," each column is "the chord I go to next," and every row must add up to exactly 1 (100%), because <i>something</i> always plays next:</p>
+<div class="matrix" role="img" aria-label="Chord transition matrix">
+<div class="row"><span></span><span>C</span><span>F</span><span>G</span></div>
+<div class="row"><span>C</span><span>0.10</span><span>0.30</span><span>0.60</span></div>
+<div class="row"><span>F</span><span>0.40</span><span>0.20</span><span>0.40</span></div>
+<div class="row"><span>G</span><span>0.70</span><span>0.20</span><span>0.10</span></div>
+</div>
+<p>Read a row like a progression: "On C: 60% chance of G next, 30% F, 10% stay on C." That is the whole system. Everything the chain will ever play is encoded in this little grid.</p>
+<p>Here is where it gets beautiful. Want to know the odds two days out? Multiply the matrix by itself. Ten days out? Raise it to the 10th power. This is the <b>Chapman-Kolmogorov</b> idea: multi-step futures fall out of the one-step rulebook by matrix multiplication. <a href="https://en.wikipedia.org/wiki/Markov_chain">[8]</a></p>
+<p>And here is the deepest result, the one Markov was chasing in that Pushkin text. Run almost any well-behaved chain long enough, and it stops caring where it started. The probabilities settle into a fixed pattern called the <b>stationary distribution</b>, the system's long-run personality. A chord chain like the one above converges to a world where C and G dominate no matter which chord you start on, which is exactly why so many songs keep landing on the same handful of chords. The chain forgets its past <i>and</i> converges on a destiny. Forgetting and fate, in one object.</p>
+<h3>When Chains Misbehave</h3>
+<p>Not every chain settles down. Mathematicians have names for the failure modes, and they show up everywhere in real systems:</p>
+<table>
+<tr><th>PROPERTY</th><th>PLAIN ENGLISH</th><th>WHY IT MATTERS</th></tr>
+<tr><td><b>Absorbing state</b></td><td>A state you can enter but never leave. Bankruptcy. Three outs in baseball. Death.</td><td>Credit-risk models treat loan default as absorbing; once entered, the story is over. <a href="https://en.wikipedia.org/wiki/Markov_chain">[8]</a></td></tr>
+<tr><td><b>Periodicity</b></td><td>The chain cycles in a fixed rhythm instead of settling, like a clock that can only strike even hours.</td><td>Periodic chains never converge; engineers must break the cycle to get stable predictions.</td></tr>
+<tr><td><b>Disconnected states</b></td><td>Islands nobody can travel between. Two separate worlds in one system.</td><td>Google's original PageRank broke on these until the "teleportation" fix reconnected the web graph.</td></tr>
+</table>
+
+<div class="lab">
+<div class="labhead">[ INTERACTIVE LAB 02 // GENERATIVE PLAYGROUND ]</div>
+<h3>The Chain Writer: Teach It Text, Watch It Dream</h3>
+<p class="desc">This is a real Markov chain text generator running in your browser. It reads the sample text (or paste your own), learns which words tend to follow which words, then generates brand-new sentences by walking the chain. Try <b>order 1</b> for surreal word salad and <b>order 3</b> for eerily coherent prose. This is the same fundamental trick behind autocomplete, and the distant ancestor of how large language models predict text.</p>
+<label for="genOrder" style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:1px;">CHAIN ORDER (words of memory): </label>
+<select id="genOrder"><option value="1">1 - total amnesia</option><option value="2" selected>2 - short memory</option><option value="3">3 - longer memory</option></select>
+<textarea id="genInput" aria-label="Training text">The future exists in the grey. While people argue over black or white, human versus machine, the real creative work happens in between. Hybrid production is about finding the soul inside the algorithm. The machine provides raw stochastic chaos. The human engineer provides structure, arrangement, dynamics, emotion, and logic. Left entirely on its own, automated audio suffers from sterile dynamics and zero sense of emotional pacing. The human producer is the filter, the arranger, the mixer, and the soul. In an era of infinite synthetic generation, human taste becomes the ultimate differentiator. The model supplies the raw material instantly. The human artist decides what to chip away and what to shape into something unforgettable.</textarea>
+<div style="margin-top:12px"><button id="genBuild">1 · LEARN THE TEXT</button><button id="genGo" class="ghost">2 · GENERATE →</button></div>
+<div class="gen-out" id="genOut" aria-live="polite"></div>
+<p class="stat" id="genStat">The chain has not been trained yet. Press LEARN THE TEXT first.</p>
+</div>
+<div class="chapter">CHAPTER 04 // THE INVISIBLE EMPIRE</div>
+<h2>Where Markov Chains Run Your Life</h2>
+<p><b>Executive Takeaway:</b> Web search ranking, financial risk modeling, and scientific sampling all run on Markov chains. If you have used Google, held a loan, or benefited from a drug trial, a memoryless process shaped the outcome.</p>
+<h3>Google's Trillion-Dollar Random Walk</h3>
+<p>In 1998, Larry Page and Sergey Brin modeled the entire World Wide Web as a Markov chain. Every page was a state. Every hyperlink was a possible transition. Then they asked the chain's deepest question: if a random surfer clicked links forever, never remembering where they had been, what fraction of eternity would they spend on each page? <a href="https://www.whatjobs.com/news/the-strange-math-that-predicts-almost-anything">[3]</a></p>
+<p>That fraction is the page's <b>PageRank</b>, and it is literally the stationary distribution of the web's Markov chain. Pages that the random surfer keeps landing on must be important. The elegance is almost offensive: the algorithm that organized the world's information is a drunkard's walk with amnesia.</p>
+<p>It almost did not work. Real webs have <b>dangling nodes</b> (pages with no outgoing links, where probability mass falls out of the universe) and <b>spider traps</b> (clusters of pages linking only to each other, hoarding all the probability). Page and Brin fixed it with a hack of genius: 15% of the time, the surfer teleports to a completely random page. This <b>damping factor</b> reconnected the graph and guaranteed convergence. A little injected chaos saved the system. <a href="https://en.wikipedia.org/wiki/Markov_chain">[8]</a></p>
+<h3>Money, Risk, and the Absorbing State of Default</h3>
+<p>Banks model your creditworthiness as a Markov chain. Your rating, AAA down to CCC, is the current state. Each year you transition: upgrade, downgrade, or hold. <b>Default is an absorbing state.</b> Once entered, there is no transition out. Risk analysts run the chain forward thousands of times to price loans and set reserves. In 1953, D.G. Champernowne showed that even the Pareto distribution of income inequality itself emerges from a simple income-migration Markov chain. The shape of wealth in society may be a stationary distribution. <a href="https://en.wikipedia.org/wiki/Markov_chain">[8]</a></p>
+<h3>Sampling the Impossible: MCMC</h3>
+<p>Some of the most important computations in science involve probability distributions too complex to calculate directly, from drug molecule behavior to Bayesian AI models. <b>Markov Chain Monte Carlo (MCMC)</b> solves this with a beautiful inversion: instead of computing the distribution, you <i>build a Markov chain that has the distribution as its stationary state</i>, then just let it run and collect where it visits. The <b>Metropolis-Hastings algorithm</b> does this so cleverly that the hardest part of the math cancels out entirely. It is like finding the shape of a dark room by releasing a forgetful robot and tracking where it spends its time. <a href="http://www.cs.toronto.edu/~hinton/csc2535/readings/mackay33.pdf">[13]</a></p>
+
+<div class="chapter">CHAPTER 05 // THE COMPOSING MACHINE</div>
+<h2>When the Chain Learned to Sing</h2>
+<p>In 1956, a chemist named <b>Lejaren Hiller</b> at the University of Illinois looked at his Monte Carlo models of polymer molecules and had a strange thought: a melody is also a chain. Notes link to notes the way atoms link to atoms. With Leonard Isaacson and the room-sized ILLIAC I computer, he composed the <i>Illiac Suite for String Quartet</i>, the first musical score written by a machine. <a href="https://en.wikipedia.org/wiki/Illiac_Suite">[16]</a> <a href="https://distributedmuseum.illinois.edu/exhibit/illiac-suite/">[17]</a></p>
+<p>The fourth movement was generated by Markov chains of increasing order. A <b>zero-order</b> chain picked notes independently, producing structured noise. A <b>first-order</b> chain chose each note based on the previous one, and suddenly melodies had coherence. The transition tables were loaded with rules from Renaissance counterpoint, so the random walk stumbled only through harmonically legal territory. Higher-order chains captured longer phrases. It was composition as a guided random walk through harmony. <a href="https://ocw.mit.edu/courses/21m-380-music-and-technology-algorithmic-and-generative-music-spring-2010/bb2f007b321f597a12c1075f7c24b92a_MIT21M_380S10_lec09.pdf">[18]</a></p>
+<p>Notice what Hiller understood seventy years ago: <b>randomness plus constraints equals style</b>. Pure randomness is noise. Pure rules are sterile. A Markov chain sits exactly in the grey between them, and the grey is where music lives. Every generative music system since, from Xenakis's stochastic compositions to today's neural audio models and <a href="./agentichybridproduction.html">autonomous multi-agent DAW architectures</a>, is a direct descendant of that insight. In symbolic music generation, modern co-writing tools like <a href="./staccatoreview.html">Staccato AI</a> still rely on Markovian and transformer music theory models to suggest melodic and harmonic continuations inside a professional studio workflow.</p>
+<div class="note"><b>The sports connection:</b> The same mathematics values athletes. Baseball's <b>run expectancy matrices</b> treat each base-out situation as a Markov state to compute expected runs. Soccer's <b>Expected Threat (xT)</b> model divides the pitch into zones as states and solves for each zone's goal probability. Front offices now pay millions for stationary distributions. <a href="https://karun.in/blog/expected-threat.html">[28]</a></div>
+<div class="chapter">CHAPTER 06 // THE GHOST IN THE MACHINE</div>
+<h2>ChatGPT Is a Markov Chain That Went to College</h2>
+<p><b>Executive Takeaway:</b> Modern generative AI did not replace Markov chains. It scaled them beyond recognition. Diffusion image models are literally Markov chains running in reverse, and large language models are their high-memory descendants.</p>
+<p>Here is the fresh take the textbooks have not caught up with: <b>the AI revolution is, mathematically, the Markov revolution grown up</b>.</p>
+<p>Consider image diffusion models, the engines behind modern AI art. They work in two Markov chains. The <b>forward chain</b> takes a real image and adds a little noise, then a little more, step by step, a memoryless corruption process, until nothing but static remains. The <b>reverse chain</b>, learned by a neural network, walks <i>backward</i>: starting from pure noise, it removes a little noise at a time, each denoising step depending only on the current noisy image, until a picture emerges. Generation as reverse amnesia. The mathematics is formally a parameterized Markov chain, published as Denoising Diffusion Probabilistic Models. <a href="https://arxiv.org/pdf/2006.11239">[50]</a></p>
+<p>Large language models are the other branch of the family. A classical first-order Markov chain predicts the next word from only the previous word. An LLM predicts the next token from thousands of previous tokens through attention mechanisms. It is still autoregressive sequence prediction, still "what comes next given where we are," but the definition of "where we are" expanded from one word to an entire context window. Markov grew a memory, but the skeleton is the same animal. <a href="https://herq.net/en/posts/lancuchy-markowa-fundament-llm">[4]</a></p>
+<p>This reframes the entire AI debate. The systems flooding the world with synthetic text, images, and music are not alien intelligences. They are the great-great-grandchildren of a Russian mathematician counting vowels to win an argument about free will. The through-line from Pushkin's poetry to PageRank to ChatGPT is a single idea: <b>the future can be predicted from the present alone, if you learn the transition probabilities well enough</b>.</p>
+<p>And that is also why cryptographic provenance matters now more than ever. When generation is cheap and memoryless, knowing <i>where something came from</i>, its verifiable chain of custody through standards like <a href="./c2pa-music-provenance.html">C2PA content credentials</a> and <a href="./humanbridge.html">human contribution verification</a>, becomes the scarce and valuable differentiator. As analyzed in <a href="./promptingthemachine.html">Prompting the Machine</a>, generative diffusion vectors and latent spaces require substantial human steering, arranging, and acoustic mastering to achieve real artistic depth. The machines learned to forget. Someone has to remember.</p>
+
+<div class="chapter">CHAPTER 07 // SYNTHESIS</div>
+<h2>Why Forgetting Is the Future</h2>
+<p>Step back and look at the pattern. Markov chains appear wherever three conditions hold: the system has <b>discrete situations</b>, the future is <b>uncertain but structured</b>, and the full history is <b>too expensive to carry</b>. That describes weather, language, markets, music, web surfing, molecular motion, and animal behavior. It describes, in other words, most of reality.</p>
+<p>The research frontier keeps pushing the idea outward. <b>Quantum Markov chains</b> extend the framework to open quantum systems losing coherence to their environment. <b>Markov blankets</b>, from Judea Pearl's work through Karl Friston's free energy principle, use the same conditional-independence logic to draw the statistical boundary of a living self: what separates <i>you</i> from the world is a Markov blanket. <a href="https://royalsocietypublishing.org/rsif/article/15/138/20170792/35768/The-Markov-blankets-of-life-autonomy-active">[46]</a> Synthetic biologists are building literal <b>DNA state machines</b> in living cells, recombination events as Markov transitions, turning bacteria into living flight recorders. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6003718/">[55]</a></p>
+<p>Even the pathologies are instructive. Social media echo chambers are <b>near-absorbing Markov states</b>: once the recommendation chain walks you in, the probability of walking out approaches zero. Researchers have proposed fixing this with PageRank's own teleportation trick, injecting a small probability of encountering outside perspectives, engineering ergodicity back into the discourse graph.</p>
+<p>The deepest lesson is almost philosophical. Markov set out to prove that dependence does not prevent stability, that a system can be shaped by its past step-by-step and still converge on a destiny. Every chain is an argument that <b>local rules create global order</b>. You do not need to control the whole journey. You only need to understand the next step.</p>
+
+<div class="chapter">FAQ // CORE CONCEPTS</div>
+<h2>Frequently Asked Questions</h2>
+<div class="faq">
+<details><summary>What is a Markov chain in simple terms?</summary><p>A Markov chain is a system that moves between situations (states) randomly, where what happens next depends only on the current situation, not on the history. Weather is the classic example: tomorrow's forecast depends on today's weather, not on last month's.</p></details>
+<details><summary>What does "memoryless" actually mean?</summary><p>It means the system's transition probabilities use only present-state information. A Markov chain does not store or consult its trajectory. This is the Markov property. It sounds limiting, but it is what makes the mathematics tractable: the entire future is encoded in a single transition matrix.</p></details>
+<details><summary>What is a transition matrix?</summary><p>A grid where each row is your current state, each column is a possible next state, and each cell holds the probability of that move. Every row sums to 1. It is the complete rulebook of the chain, and raising it to powers reveals multi-step futures.</p></details>
+<details><summary>What is a stationary distribution?</summary><p>The long-run probability pattern a well-behaved chain settles into, regardless of where it started. For our weather machine it is roughly 46% sunny, 28% cloudy, 26% rainy. Google's PageRank is a stationary distribution over web pages.</p></details>
+<details><summary>Are large language models just Markov chains?</summary><p>Not just, but they are descendants. A first-order Markov chain predicts the next token from one previous token. An LLM predicts the next token from a huge context window via attention. Same autoregressive skeleton, vastly expanded memory and learned transitions.</p></details>
+<details><summary>Who invented Markov chains and why?</summary><p>Russian mathematician Andrey Markov, in the early 1900s, to refute a theologian's claim that statistical stability in society proved human free will. He hand-counted 20,000 characters of Pushkin's Eugene Onegin to show dependent events still converge to stable patterns.</p></details>
+<details><summary>Where are Markov chains used today?</summary><p>Web search ranking (PageRank), financial credit-risk modeling, weather forecasting, MCMC scientific sampling, sports analytics (baseball run expectancy, soccer expected threat), algorithmic music composition, text autocomplete, image diffusion AI models, and language models.</p></details>
+</div>
+
+<div class="chapter">CITATIONS // SOURCES</div>
+<h2>Works Cited</h2>
+<div class="cites"><ol>
+<li>YourStory. "The Russian Math Behind the Trillion Dollar Algorithm." <a href="https://yourstory.com/2025/07/russian-math-behind-trillion-dollar-algorithm">yourstory.com</a></li>
+<li>CoinsBench. "Markov Chains: Nuclear Algorithm Used by Quants." <a href="https://coinsbench.com/markov-chains-nuclear-algorithm-used-by-quants-to-crush-87-of-polymarket-traders-5c01e96ad479">coinsbench.com</a></li>
+<li>WhatJobs News. "The Strange Math That Predicts (Almost) Anything." <a href="https://www.whatjobs.com/news/the-strange-math-that-predicts-almost-anything">whatjobs.com</a></li>
+<li>Herq. "Markov Chains: The Century-Old Proof That Wrote ChatGPT." <a href="https://herq.net/en/posts/lancuchy-markowa-fundament-llm">herq.net</a></li>
+<li>Medium / Sourav Raj. "From Russian Feuds to Predicting Your Next Word." <a href="https://medium.com/@mr.sourav.raj/from-russian-feuds-to-predicting-your-next-word-how-markov-chains-power-modern-software-e65735d95f92">medium.com</a></li>
+<li>Wikipedia. "Markov chain." <a href="https://en.wikipedia.org/wiki/Markov_chain">en.wikipedia.org/wiki/Markov_chain</a></li>
+<li>UChicago Math. "Markov Chains and Coupling from the Past." <a href="http://math.uchicago.edu/~may/REU2017/REUPapers/Cordaro.pdf">math.uchicago.edu</a></li>
+<li>Toronto CS / MacKay. "Exact Monte Carlo Sampling." <a href="http://www.cs.toronto.edu/~hinton/csc2535/readings/mackay33.pdf">cs.toronto.edu</a></li>
+<li>Wikipedia. "Illiac Suite." <a href="https://en.wikipedia.org/wiki/Illiac_Suite">en.wikipedia.org/wiki/Illiac_Suite</a></li>
+<li>Illinois Distributed Museum. "ILLIAC Suite." <a href="https://distributedmuseum.illinois.edu/exhibit/illiac-suite/">distributedmuseum.illinois.edu</a></li>
+<li>MIT OpenCourseWare. "Music and Technology: Algorithmic and Generative Music." <a href="https://ocw.mit.edu/courses/21m-380-music-and-technology-algorithmic-and-generative-music-spring-2010/bb2f007b321f597a12c1075f7c24b92a_MIT21M_380S10_lec09.pdf">ocw.mit.edu</a></li>
+<li>Karun Singh. "Introducing Expected Threat (xT)." <a href="https://karun.in/blog/expected-threat.html">karun.in</a></li>
+<li>Royal Society Interface. "The Markov Blankets of Life." <a href="https://royalsocietypublishing.org/rsif/article/15/138/20170792/35768/The-Markov-blankets-of-life-autonomy-active">royalsocietypublishing.org</a></li>
+<li>Ho et al. "Denoising Diffusion Probabilistic Models." arXiv:2006.11239. <a href="https://arxiv.org/pdf/2006.11239">arxiv.org</a></li>
+<li>NIH / PMC. "Scaling Computation and Memory in Living Cells." <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6003718/">pmc.ncbi.nlm.nih.gov</a></li>
+</ol></div>
+</div>
+
+<!-- Related Field Notes Topic Cluster -->
+<section class="topic-cluster" aria-label="Related Research">
+  <div class="cluster-head">
+    <span class="cluster-tag">[ TOPIC_CLUSTER // RELATED_FIELD_NOTES ]</span>
+    <a href="./field-notes.html" class="cluster-all">ALL FIELD NOTES →</a>
+  </div>
+  <div class="cluster-grid">
+    <a href="./promptingthemachine.html" class="cluster-card">
+      <div>
+        <span class="cluster-kicker">DIFFUSION &amp; LATENTS</span>
+        <h4>Prompting the Machine: How AI Music Hears You</h4>
+        <p>A technical guide to prompt vectors, diffusion physics, reverse noise scheduling, and latent conditioning in generative audio.</p>
+      </div>
+      <div class="cluster-link">
+        <span>Read Field Note</span> <span>→</span>
+      </div>
+    </a>
+    <a href="./agentichybridproduction.html" class="cluster-card">
+      <div>
+        <span class="cluster-kicker">AUTONOMOUS DAWS</span>
+        <h4>Autonomous Virtual Studio: Multi-Agent DAW Guide</h4>
+        <p>Architectural blueprint for multi-agent DAW systems, OSC protocols, EnCodec latent space exploration, and SLERP interpolation.</p>
+      </div>
+      <div class="cluster-link">
+        <span>Read Field Note</span> <span>→</span>
+      </div>
+    </a>
+    <a href="./c2pa-music-provenance.html" class="cluster-card">
+      <div>
+        <span class="cluster-kicker">PROVENANCE &amp; C2PA</span>
+        <h4>C2PA Music Provenance: Cryptographic Metadata</h4>
+        <p>Cryptographic metadata manifests, content credentials, and non-repudiable audit trails for hybrid AI music workflows.</p>
+      </div>
+      <div class="cluster-link">
+        <span>Read Field Note</span> <span>→</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- Author Colophon Card -->
+<aside class="author-colophon" aria-label="Author Profile">
+  <div class="colophon-avatar-wrap">
+    <img src="./bio-avatar.jpg" alt="Justin Ray" class="colophon-avatar" width="64" height="64" loading="lazy">
+  </div>
+  <div class="colophon-body">
+    <div class="colophon-name">JUSTIN RAY <span class="colophon-aka">(JRAY / loserdub)</span></div>
+    <div class="colophon-title">Pioneer of Hybrid AI Music Production · Author of HPS-1.0</div>
+    <p>Justin Ray pioneers Hybrid AI Music Production, creative audio engineering, and cryptographic provenance architectures at Trust Node Logic. Researches multi-agent DAW systems, stochastic process modeling, neural audio synthesis, and the Hybrid Production Standard.</p>
+    <div class="colophon-links">
+      <a href="./about.html">About Justin Ray →</a>
+      <a href="./what-is-hybrid.html">What Is Hybrid Production →</a>
+      <a href="./field-notes.html">All Field Notes →</a>
+      <a href="./hybridproductionstandard.html">HPS-1.0 Spec →</a>
+    </div>
+  </div>
+</aside>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><b>TRUST NODE LOGIC</b> // FIELD NOTES</div>
+        <p class="footer-tagline">The Frontier of Hybrid AI Music Production, Audio DSP, &amp; Cryptographic Provenance by Justin Ray.</p>
+      </div>
+      <div class="footer-nav">
+        <div class="fn-col">
+          <div class="fn-title">ARCHIVE</div>
+          <a href="./index.html">Home</a>
+          <a href="./field-notes.html">Field Notes</a>
+          <a href="./what-is-hybrid.html">What Is Hybrid</a>
+          <a href="./projects.html">Projects</a>
+        </div>
+        <div class="fn-col">
+          <div class="fn-title">SYSTEM</div>
+          <a href="./music.html">Music</a>
+          <a href="./about.html">About</a>
+          <a href="./services.html">Services</a>
+          <a href="./contact.html">Contact</a>
+          <a href="./sitemap.xml">Sitemap</a>
+        </div>
+        <div class="fn-col">
+          <div class="fn-title">NETWORK</div>
+          <a href="https://x.com/TheInnerVision" target="_blank" rel="noopener">X / Twitter</a>
+          <a href="https://youtube.com/@loserdub" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://soundcloud.com/visiontracks" target="_blank" rel="noopener">SoundCloud</a>
+          <a href="https://github.com/loserdub" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Justin Ray (JRAY). All Rights Reserved.</span>
+      <span>EAST LANSING, MI · EST. MMXXVI</span>
+    </div>
+  </div>
+</footer>
+<script>
+document.getElementById('dateline').textContent = 'OCTOBER 3, 2026';
+
+/* ============ LAB 01: PROGRESSION ENGINE (MUSIC MARKOV CHAIN) ============ */
+(function(){
+  var CHORDS=[
+    {n:'C',   f:[261.63,329.63,392.00]},
+    {n:'Dm',  f:[293.66,349.23,440.00]},
+    {n:'Em',  f:[329.63,392.00,493.88]},
+    {n:'F',   f:[349.23,440.00,523.25]},
+    {n:'G',   f:[392.00,493.88,587.33]},
+    {n:'Am',  f:[440.00,523.25,659.25]},
+    {n:'Bdim',f:[493.88,587.33,698.46]}
+  ];
+  var P=[
+    [0.05,0.10,0.10,0.20,0.30,0.25,0.00],
+    [0.00,0.05,0.10,0.15,0.45,0.15,0.10],
+    [0.20,0.10,0.05,0.20,0.15,0.30,0.00],
+    [0.25,0.15,0.00,0.05,0.35,0.15,0.05],
+    [0.50,0.10,0.15,0.05,0.05,0.15,0.00],
+    [0.10,0.20,0.15,0.30,0.20,0.05,0.00],
+    [0.50,0.00,0.20,0.00,0.20,0.10,0.00]
+  ];
+  var EDGES=[[0,4,'0.30'],[1,4,'0.45'],[2,5,'0.30'],[3,4,'0.35'],[4,0,'0.50'],[5,3,'0.30'],[6,0,'0.50']];
+  var COLORS=['#f5a623','#8b94a3','#4fd1c5','#e06c9f','#7bc96f','#9d7bff','#e8e8e8'];
+  var svg=document.getElementById('chordSvg'), NS='http://www.w3.org/2000/svg';
+  var CX=320, CY=150, R=112, NR=36;
+  var pos=CHORDS.map(function(_,i){
+    var a=(-90+i*360/CHORDS.length)*Math.PI/180;
+    return {x:CX+R*Math.cos(a), y:CY+R*Math.sin(a)};
+  });
+  var defs=document.createElementNS(NS,'defs');
+  defs.innerHTML='<marker id="chArr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#3a465a"/></marker>';
+  svg.appendChild(defs);
+  EDGES.forEach(function(e){
+    var p1=pos[e[0]], p2=pos[e[1]];
+    var dx=p2.x-p1.x, dy=p2.y-p1.y, len=Math.hypot(dx,dy)||1;
+    var ux=dx/len, uy=dy/len;
+    var x1=p1.x+ux*(NR+3), y1=p1.y+uy*(NR+3);
+    var x2=p2.x-ux*(NR+9), y2=p2.y-uy*(NR+9);
+    var mx=(x1+x2)/2, my=(y1+y2)/2, off=26;
+    var cxp=mx-uy*off, cyp=my+ux*off;
+    var path=document.createElementNS(NS,'path');
+    path.setAttribute('d','M'+x1.toFixed(1)+','+y1.toFixed(1)+' Q'+cxp.toFixed(1)+','+cyp.toFixed(1)+' '+x2.toFixed(1)+','+y2.toFixed(1));
+    path.setAttribute('class','edge');
+    path.setAttribute('marker-end','url(#chArr)');
+    svg.appendChild(path);
+    var lbl=document.createElementNS(NS,'text');
+    lbl.setAttribute('x',cxp.toFixed(1)); lbl.setAttribute('y',(cyp-6).toFixed(1));
+    lbl.setAttribute('class','elbl'); lbl.textContent=e[2];
+    svg.appendChild(lbl);
+  });
+  var nodeGs=CHORDS.map(function(ch,i){
+    var g=document.createElementNS(NS,'g'); g.setAttribute('id','chN'+i);
+    var c=document.createElementNS(NS,'circle');
+    c.setAttribute('cx',pos[i].x.toFixed(1)); c.setAttribute('cy',pos[i].y.toFixed(1));
+    c.setAttribute('r',NR); c.setAttribute('class','node');
+    var t=document.createElementNS(NS,'text');
+    t.setAttribute('x',pos[i].x.toFixed(1)); t.setAttribute('y',(pos[i].y+5).toFixed(1));
+    t.setAttribute('class','nlabel'); t.textContent=ch.n;
+    g.appendChild(c); g.appendChild(t); svg.appendChild(g);
+    return g;
+  });
+  var cur=0, step=0, counts=[0,0,0,0,0,0,0], hist=[], playing=false;
+  var nameEl=document.getElementById('chName'), stepEl=document.getElementById('chStep'),
+      histEl=document.getElementById('chHist'), statEl=document.getElementById('chStat'),
+      freqEl=document.getElementById('chFreq');
+  freqEl.innerHTML=CHORDS.map(function(ch,i){
+    return '<div class="fbar"><div class="flbl"><span>'+ch.n+'</span><span id="chPct'+i+'">0%</span></div>'+
+    '<div class="track"><div class="fill" id="chFill'+i+'" style="width:0%;background:'+COLORS[i]+'"></div></div></div>';
+  }).join('');
+  function highlight(){
+    for(var i=0;i<CHORDS.length;i++){
+      var c=nodeGs[i].querySelector('.node');
+      if(i===cur) c.classList.add('active'); else c.classList.remove('active');
+    }
+  }
+  function render(){
+    nameEl.textContent=CHORDS[cur].n; stepEl.textContent='CHORD '+step;
+    histEl.innerHTML=hist.slice(-24).map(function(i){
+      return '<span style="border:1px solid var(--line);border-radius:4px;padding:2px 9px;background:var(--panel2)">'+CHORDS[i].n+'</span>';
+    }).join('');
+    var tot=counts.reduce(function(a,b){return a+b;},0);
+    for(var i=0;i<CHORDS.length;i++){
+      var pct=tot?Math.round(counts[i]/tot*100):0;
+      document.getElementById('chPct'+i).textContent=pct+'%';
+      document.getElementById('chFill'+i).style.width=pct+'%';
+    }
+    if(tot>=24) statEl.textContent='After '+tot+' chords the frequencies settle: C and G dominate, the gravitational center of pop harmony. The chain forgot its starting chord; only the transition matrix is composing now.';
+    highlight();
+  }
+  function nextChord(){
+    var r=Math.random(), row=P[cur], acc=0;
+    for(var i=0;i<CHORDS.length;i++){ acc+=row[i]; if(r<acc){ cur=i; break; } }
+    step++; counts[cur]++; hist.push(cur); render();
+    return cur;
+  }
+  var AC=null;
+  function ac(){
+    if(!AC){ try{ AC=new (window.AudioContext||window.webkitAudioContext)(); }catch(e){ return null; } }
+    if(AC&&AC.state==='suspended') AC.resume();
+    return AC;
+  }
+  function playChord(i,when){
+    var c=ac(); if(!c) return;
+    CHORDS[i].f.forEach(function(fr){
+      var o=c.createOscillator(), g=c.createGain();
+      o.type='triangle'; o.frequency.value=fr;
+      g.gain.setValueAtTime(0.0001,when);
+      g.gain.exponentialRampToValueAtTime(0.20,when+0.04);
+      g.gain.exponentialRampToValueAtTime(0.0001,when+0.52);
+      o.connect(g); g.connect(c.destination);
+      o.start(when); o.stop(when+0.62);
+    });
+  }
+  function chordNow(i){ var c=ac(); if(c) playChord(i,c.currentTime); }
+  document.getElementById('chNext').onclick=function(){ chordNow(nextChord()); };
+  document.getElementById('chPlay').onclick=function(){
+    if(playing) return; playing=true;
+    for(var k=0;k<8;k++){
+      (function(k){
+        setTimeout(function(){
+          var i=nextChord(); chordNow(i);
+          if(k===7) playing=false;
+        },k*550);
+      })(k);
+    }
+  };
+  document.getElementById('chReset').onclick=function(){
+    cur=0; step=0; counts=[0,0,0,0,0,0,0]; hist=[]; playing=false;
+    statEl.textContent='Step the engine and listen: C and G keep pulling the music home, the same gravitational pull you hear in thousands of pop songs. That pull is the stationary distribution.';
+    render();
+  };
+  render();
+})();
+
+
+/* ============ LAB 02: MARKOV TEXT GENERATOR ============ */
+(function(){
+  var chain=null, order=2, starts=[];
+  var input=document.getElementById('genInput'), out=document.getElementById('genOut'),
+      stat=document.getElementById('genStat'), orderSel=document.getElementById('genOrder');
+  function tokenize(t){ return t.replace(/\s+/g,' ').trim().split(' ').filter(function(w){return w.length;}); }
+  document.getElementById('genBuild').onclick=function(){
+    order=parseInt(orderSel.value,10);
+    var words=tokenize(input.value);
+    if(words.length<order+2){ stat.textContent='Not enough text. Paste a longer passage first.'; return; }
+    chain={}; starts=[];
+    for(var i=0;i<=words.length-order;i++){
+      var key=words.slice(i,i+order).join(' ');
+      var nxt=words[i+order]||null;
+      if(!chain[key]) chain[key]=[];
+      if(nxt) chain[key].push(nxt);
+      if(i===0 || /[.!?]$/.test(words[i-1])) starts.push(key);
+    }
+    var nStates=Object.keys(chain).length;
+    stat.textContent='Chain trained: '+nStates+' states learned from '+words.length+' words at order '+order+'. Now press GENERATE.';
+    out.innerHTML='';
+  };
+  document.getElementById('genGo').onclick=function(){
+    if(!chain){ stat.textContent='Press LEARN THE TEXT first.'; return; }
+    var keys=Object.keys(chain);
+    var key=starts.length?starts[Math.floor(Math.random()*starts.length)]:keys[Math.floor(Math.random()*keys.length)];
+    var result=key.split(' ');
+    for(var n=0;n<80;n++){
+      var opts=chain[key];
+      if(!opts||!opts.length) break;
+      var nxt=opts[Math.floor(Math.random()*opts.length)];
+      result.push(nxt);
+      var parts=key.split(' '); parts.push(nxt); parts.shift();
+      key=parts.join(' ');
+      if(/[.!?]$/.test(nxt) && result.length>12 && Math.random()<0.35) break;
+    }
+    var text=result.join(' ');
+    text=text.charAt(0).toUpperCase()+text.slice(1);
+    out.textContent=text;
+    stat.textContent='Generated '+result.length+' words by walking the chain. Every word was chosen using only the previous '+order+' word(s): pure memoryless generation.';
+  };
+})();
+</script>
+<script>
+/* ============ GLOSSARY TOOLTIPS + READ TIME ============ */
+(function(){
+  var GLOSSARY=[
+    ["Markov chain Monte Carlo","A sampling technique that builds a Markov chain whose long-run distribution matches a hard target distribution, then collects samples by letting the chain run."],
+    ["transition probabilities","The probabilities of moving from one state to another. These are the individual entries of a transition matrix."],
+    ["transition matrix","A grid where each row is the current state, each column a possible next state, and each cell holds the move probability. Every row sums to 1."],
+    ["stationary distribution","The long-run probability pattern a well-behaved chain settles into, no matter where it started. PageRank is one famous example."],
+    ["Metropolis-Hastings","The classic MCMC algorithm. It proposes random steps and accepts or rejects them by a rule that steers the chain toward the target distribution."],
+    ["MCMC","Short for Markov chain Monte Carlo: sample a complex distribution by running a Markov chain designed to converge to it."],
+    ["Markov property","The memoryless rule: the probability of the next state depends only on the current state, never on the full history."],
+    ["memorylessness","The Markov property in one word: the system carries nothing forward except the present moment."],
+    ["memoryless","Depending only on the present state, with no use of history. The defining trait of a Markov chain."],
+    ["stochastic process","A system that evolves over time with randomness. Each step is drawn from probabilities rather than fixed deterministic rules."],
+    ["Markov chains","A random process where the next state depends only on the current state, never on the full history."],
+    ["Markov chain","A random process where the next state depends only on the current state, never on the full history."],
+    ["random walk","A path built from successive random steps, each step drawn from the chain's transition probabilities."],
+    ["PageRank","Google's original ranking algorithm: the stationary distribution of a random surfer clicking hyperlinks across the web graph."],
+    ["absorbing state","A state that can be entered but never left. In credit-risk models, loan default is absorbing."],
+    ["damping factor","In PageRank, the roughly 15 percent chance that the random surfer teleports to a random page instead of following a link. It keeps the web graph connected."],
+    ["Chapman-Kolmogorov","The principle that multi-step transition probabilities come from multiplying the transition matrix by itself."],
+    ["diffusion models","AI image generators that learn to reverse a Markov chain which progressively adds noise to an image, rebuilding pictures from static."],
+    ["autoregressive","Generating step by step, with each new piece predicted from the pieces that came before it."],
+    ["Markov blanket","The minimal set of variables that makes a system conditionally independent of everything else. Used to draw the statistical boundary of a living thing."],
+    ["spider traps","Clusters of web pages that link only to each other, trapping a random surfer's probability mass forever."],
+    ["dangling nodes","Web pages with no outgoing links, where a random walk's probability mass leaks out of the system."]
+  ];
+  function esc(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
+  var keys=GLOSSARY.map(function(g){return g[0];}).sort(function(a,b){return b.length-a.length;});
+  var defs={}; GLOSSARY.forEach(function(g){defs[g[0].toLowerCase()]=g[1];});
+  var re=new RegExp('\\b('+keys.map(esc).join('|')+')\\b','gi');
+  var SKIP={A:1,BUTTON:1,SELECT:1,TEXTAREA:1,SCRIPT:1,STYLE:1,CODE:1,H1:1};
+  function walk(node){
+    if(node.nodeType===3){
+      var p=node.parentNode;
+      if(!p||SKIP[p.tagName]||p.closest('dfn.def')) return;
+      var t=node.nodeValue,m,last=0,frag=document.createDocumentFragment(),found=false;
+      re.lastIndex=0;
+      while((m=re.exec(t))){
+        found=true;
+        frag.appendChild(document.createTextNode(t.slice(last,m.index)));
+        var d=document.createElement('dfn');
+        d.className='def'; d.tabIndex=0;
+        d.setAttribute('data-def',defs[m[1].toLowerCase()]);
+        d.textContent=m[1];
+        frag.appendChild(d);
+        last=m.index+m[1].length;
+      }
+      if(found){frag.appendChild(document.createTextNode(t.slice(last)));p.replaceChild(frag,node);}
+    }else if(node.nodeType===1&&!SKIP[node.tagName]){
+      var kids=Array.prototype.slice.call(node.childNodes);
+      for(var i=0;i<kids.length;i++) walk(kids[i]);
+    }
+  }
+  var content=document.querySelector('main#main-content') || document.querySelector('body > div.wrap');
+  if(content) walk(content);
+  var words=content?content.textContent.trim().split(/\s+/).length:0;
+  var mins=Math.max(1,Math.ceil(words/200));
+  var rt=document.getElementById('readtime');
+  if(rt) rt.textContent=mins;
+})();
+</script>
+<script defer src="./assets/reader.min.js"></script>
+</body>
+</html>

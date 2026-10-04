@@ -814,7 +814,7 @@
 <p class="lede-sub">This isn't a list of prompt tricks. It's the machinery underneath them: what a text-to-music model does with your words before a note comes out the other side, what Suno's sliders are actually adjusting, and where the field is headed once you look past the two names everyone already knows.</p>
 <h2>It's Not a Jukebox. It's a Sculptor.</h2>
 <p>The most useful thing to unlearn first: a tool like Suno isn't searching a library of existing songs and handing you the closest match. Nothing is being "found." Every waveform you hear was synthesized from nothing, built up from mathematical noise into something structured, guided the entire way by a model that learned, from an enormous body of recorded and captioned audio, what "sad piano" or "90s boom-bap drums" or "breathy female vocal" tend to sound like.</p>
-<p>The dominant technique behind that is called <strong>diffusion</strong>, borrowed from the same family of methods that power AI image generation. Instead of building a song note by note in order, a diffusion model starts with something close to static and gradually refines it in dozens of small steps, at every step nudging the noise a little closer to a target shape - the shape described by your prompt. It's less like writing a sentence left to right and more like a sculptor working a whole block at once, roughing in the form before refining detail.</p>
+<p>The dominant technique behind that is called <strong>diffusion</strong> (mathematically parameterized as a reverse <a href="./markov-chains.html">Markov chain</a> that denoises latent states), borrowed from the same family of methods that power AI image generation. Instead of building a song note by note in order, a diffusion model starts with something close to static and gradually refines it in dozens of small steps, at every step nudging the noise a little closer to a target shape - the shape described by your prompt. It's less like writing a sentence left to right and more like a sculptor working a whole block at once, roughing in the form before refining detail.</p>
 <div class="duo">
 <div class="duo-card human">
 <h3>Older Approach</h3>
@@ -1027,6 +1027,11 @@
 <div class="continue-kicker">Forecast</div>
 <div class="continue-title">The Liquidity of Sound →</div>
 <div class="continue-desc">A 2026 - 2031 forecast on continuous generative audio streams.</div>
+</a>
+<a class="continue-card" href="./markov-chains.html">
+<div class="continue-kicker">Stochastic Systems</div>
+<div class="continue-title">Markov Chains in AI →</div>
+<div class="continue-desc">The 120-year-old math of memoryless probability behind diffusion and PageRank.</div>
 </a>
 <a class="continue-card" href="./mixrstudio.html">
 <div class="continue-kicker">Web App</div>

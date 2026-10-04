@@ -54,7 +54,7 @@
 - **Summary**: Direct line for technical inquiries, research collaborations, and production commissions via trustnodelogic@gmail.com.
 
 ### [Field Notes & Research Archive](https://trustnodelogic.com/field-notes.html)
-- **Summary**: Central category hub and archive indexing all 22 research papers, technical analyses, prompt engineering guides, and streaming economic reports.
+- **Summary**: Central category hub and archive indexing all 23 research papers, technical analyses, prompt engineering guides, and streaming economic reports.
 - **Key Concepts**: Field Notes, Hybrid AI Music Production, HPS-1.0, C2PA Provenance, Multi-Agent DAW Systems.
 
 ### [What is Hybrid Music Production?](https://trustnodelogic.com/what-is-hybrid.html)
@@ -64,6 +64,11 @@
 ---
 
 ## Analytical Field Notes & Technical Research
+
+### [Markov Chains: The Memoryless Mathematics Secretly Running Your World](https://trustnodelogic.com/markov-chains.html)
+- **Summary**: Comprehensive technical analysis and interactive exploration of Markov chains, transition probability matrices, stationary distributions, and the Markov property. Examines historical lineage from Andrei Markov's 1906 text analysis to Google PageRank, MCMC sampling, diffusion model reverse denoising, and algorithmic music composition. Includes interactive Web Audio synthesizer and text prediction labs by Justin Ray.
+- **Direct Citation**: "A Markov chain has no memory of how it arrived at its present state; the future is conditionally independent of the past given the present. This radical simplification is what makes complex real-world stochastic processes computationally tractable."
+- **Key Concepts**: Markov Chains, Transition Matrix, Markov Property, Stationary Distribution, Stochastic Processes, Google PageRank, MCMC Sampling, Generative AI Denoising, Algorithmic Music Composition, Justin Ray.
 
 ### [Suno v6: The Migration Nobody Could Opt Out Of](https://trustnodelogic.com/sunov6.html)
 - **Summary**: Technical and architectural field report on the Suno v6 model migration, analyzing the retirement of legacy engines, training datasets licensed from Warner/BMG/Believe, conversational edit-mode workflows, stem isolation, and commercial licensing boundaries across free and paid tiers. Written by Justin Ray as part of the Trust Node Logic Hybrid AI Music Production research archive.
