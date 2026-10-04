@@ -342,6 +342,50 @@
     .eq-bar-4 { animation: eqPulse4 0.95s ease-in-out infinite; }
     .eq-bar-5 { animation: eqPulse5 1.15s ease-in-out infinite; }
 
+    /* ─── Hero Tri-Hub Intent Gateway Cards ─── */
+    .hero-gateway-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(18, 20, 23, 0.98) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .hero-gateway-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1.5px;
+      opacity: 0.35;
+      transition: opacity 0.25s ease;
+    }
+    .hero-gateway-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.65);
+    }
+    .hero-gateway-card:hover::before {
+      opacity: 0.85;
+    }
+
+    /* Pillars 01 & 02: Tech & Standard (Dark Amber) */
+    .hero-gateway-amber::before {
+      background: #D97706;
+    }
+    .hero-gateway-amber:hover {
+      border-color: rgba(255, 159, 28, 0.38);
+    }
+
+    /* Pillar 03: The Artist (Dark Emerald) */
+    .hero-gateway-emerald::before {
+      background: #059669;
+    }
+    .hero-gateway-emerald:hover {
+      border-color: rgba(16, 185, 129, 0.35);
+    }
+
     /* Bespoke Portal Cards: Unique Visual Identity per Section */
     .portal-card-music {
       background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(18, 20, 23, 0.98) 55%, rgba(6, 78, 59, 0.15) 100%);
@@ -646,6 +690,10 @@
         transform: none;
         transition: none !important;
       }
+      .hero-gateway-card {
+        transition: none !important;
+        transform: none !important;
+      }
     }
 
     .portal-card-tools {
@@ -906,7 +954,7 @@
   <div class="w-full max-w-5xl mt-12 grid grid-cols-1 md:grid-cols-3 gap-5 text-left">
     
     <!-- PILLAR 01: THE STANDARD -->
-    <a href="./hybridproductionstandard.html" class="tech-card p-6 flex flex-col justify-between group border-white/15 hover:border-[#FF9F1C] transition-all">
+    <a href="./hybridproductionstandard.html" class="hero-gateway-card hero-gateway-amber p-6 flex flex-col justify-between group">
       <div>
         <div class="flex items-center justify-between mb-4">
           <span class="text-[10px] font-mono tracking-[0.2em] uppercase text-[#FF9F1C] font-semibold">[ 01 // THE STANDARD ]</span>
@@ -926,7 +974,7 @@
     </a>
 
     <!-- PILLAR 02: THE SUITE -->
-    <a href="./projects.html" class="tech-card p-6 flex flex-col justify-between group border-white/15 hover:border-[#FF9F1C] transition-all">
+    <a href="./projects.html" class="hero-gateway-card hero-gateway-amber p-6 flex flex-col justify-between group">
       <div>
         <div class="flex items-center justify-between mb-4">
           <span class="text-[10px] font-mono tracking-[0.2em] uppercase text-[#FF9F1C] font-semibold">[ 02 // THE SUITE ]</span>
@@ -946,7 +994,7 @@
     </a>
 
     <!-- PILLAR 03: THE ARTIST -->
-    <a href="./music.html" class="tech-card p-6 flex flex-col justify-between group border-white/15 hover:border-[#10B981] transition-all">
+    <a href="./music.html" class="hero-gateway-card hero-gateway-emerald p-6 flex flex-col justify-between group">
       <div>
         <div class="flex items-center justify-between mb-4">
           <span class="text-[10px] font-mono tracking-[0.2em] uppercase text-[#10B981] font-semibold">[ 03 // THE ARTIST ]</span>
