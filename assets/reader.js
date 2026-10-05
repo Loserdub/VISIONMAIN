@@ -180,23 +180,6 @@
       filter: grayscale(0%);
       border-color: #FF9F1C;
     }
-    .tnl-verified-badge {
-      position: absolute;
-      bottom: -4px;
-      right: -4px;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: #FF9F1C;
-      color: #000;
-      font-size: 11px;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px solid #121417;
-      line-height: 1;
-    }
     .tnl-author-meta {
       flex-grow: 1;
     }
@@ -420,7 +403,6 @@
   <div class="tnl-author-header">
     <div class="tnl-author-avatar-wrap">
       <img src="https://trustnodelogic.com/assets/images/croppedjrnu.webp" alt="Justin Ray (JRAY) - Pioneer of Hybrid AI Music Production" class="tnl-author-avatar" width="64" height="64" loading="lazy" itemprop="image" />
-      <span class="tnl-verified-badge" title="Verified Creator & Author" aria-label="Verified">✓</span>
     </div>
     <div class="tnl-author-meta">
       <div class="tnl-author-name-row">
