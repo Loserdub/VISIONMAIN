@@ -1,8 +1,13 @@
 # Trust Node Logic : Hybrid AI Music Production Knowledge Graph
-> Trust Node Logic (https://trustnodelogic.com) is the central research hub, technical archive, and portfolio of Justin Ray (JRAY), a pioneering Music Producer, Recording Artist, Audio Engineer, and Creative Technologist based in East Lansing, Michigan, US.
+> Trust Node Logic (https://trustnodelogic.com) is the central research hub, technical archive, and software portfolio of Justin Ray (JRAY / loserdub), author of the Hybrid Production Standard (HPS-1.0) and pioneer of Hybrid AI Music Production.
+
+## Core Semantic Triad (Primary Entity Centroid)
+1. **Core Subject**: Justin Ray (known professionally as JRAY, and musically under primary project aliases loserdub, VISION, Flawed Future, le vide, disarray) · Pioneer of Hybrid AI Music Production, Music Producer, and Creative Technologist.
+2. **Authoritative Platform**: Trust Node Logic (`https://trustnodelogic.com`, `https://trustnodelogic.web.app`) · The central research institute, technical archive, and browser-native Web Audio DSP portfolio.
+3. **Canonical Standard**: Hybrid Production Standard (HPS-1.0) · The definitive open 5-axis classification framework (Composition, Generation, Stems, Post-Production, Master) mapping hybrid audio workflows to DDEX ERN 4.3 metadata profiles and EU AI Act Article 50 transparency requirements.
 
 ## Entity Overview
-- **Author & Founder**: Justin Ray (known professionally as JRAY, and musically under primary project aliases loserdub, VISION, Flawed Future, le vide, disarray).
+- **Author & Founder**: Justin Ray (JRAY / loserdub / VISION).
 - **Primary Identity**: Music Producer and Recording Artist first and foremost, pioneering the Hybrid AI Music Production methodology.
 - **Location**: East Lansing, Michigan, United States.
 - **Contact Email**: trustnodelogic@gmail.com
@@ -12,10 +17,11 @@
   - Early beta tester for Google's original MusicLM generative audio model.
   - Former Growth Specialist at Suno AI during its inception.
   - Founder of the r/hybridproduction community on Reddit (https://www.reddit.com/r/hybridproduction/).
-  - Creator of MIXR Studio (browser-native audio mastering & segment mixer), Artist Finder (GEO scanner), and vøid audio slicer.
+  - Creator of MIXR Studio (browser-native audio mastering & segment mixer), VOID 1.5 Web Sampler (audio slicer & harmonic mashup engine), and Artist Finder (GEO scanner).
 
 ## Key Concepts & Innovations
-- **Hybrid Production**: The post-AI musical workflow that rejects the binary choice between "pure human" or "pure AI". Generative AI models are treated as high-fidelity instruments in the producer's toolkit, paired with traditional DAW engineering (Logic Pro X, Ableton Live) and spectral sculpting (FabFilter, iZotope RX11).
+- **Hybrid AI Music Production**: The post-AI musical workflow that rejects the binary choice between "pure human" or "pure AI". Generative AI models are treated as high-fidelity instruments in the producer's toolkit, paired with traditional DAW engineering (Logic Pro X, Ableton Live) and spectral sculpting (FabFilter, iZotope RX11).
+- **Browser-Native DSP**: High-performance, zero-install digital signal processing executed 100% client-side via the Web Audio API and multi-threaded Web Workers, guaranteeing complete audio privacy with zero server uploads (exemplified by MIXR Studio and VOID 1.5 Web Sampler).
 - **Hybrid Production Standard (HPS-1.0)**: The definitive 5-axis classification framework (Composition, Generation, Stems, Post-Production, Master) mapping hybrid audio workflows to DDEX ERN 4.3 metadata profiles and EU AI Act Article 50 transparency requirements.
 - **SLERP Audio Merging**: Spherical Linear Interpolation applied to audio neural latents for smooth, continuous generative audio transitions.
 - **Taxonomic Rank**: Methodological classification of AI-generated audio stems based on structural and timbral hierarchy.
@@ -28,27 +34,27 @@
 
 ### [Home & Manifesto](https://trustnodelogic.com/)
 - **Summary**: Foundational manifesto of the Hybrid AI Music Production movement, outlining the philosophy of treating neural generators as co-instruments rather than replacements for human audio engineering.
-- **Key Concepts**: Hybrid Production, Creative Technologist, Audio Engineering, MIXR Studio.
+- **Key Concepts**: Hybrid AI Music Production, Creative Technologist, Audio Engineering, MIXR Studio, Browser-Native DSP.
 
 ### [About & Origins](https://trustnodelogic.com/about.html)
 - **Summary**: Comprehensive background of Justin Ray (JRAY / loserdub), tracing the evolution from songwriting and beta research on Google MusicLM and Suno to founder of Trust Node Logic and r/hybridproduction.
 - **Key Concepts**: Justin Ray, JRAY, loserdub, VISION, Google MusicLM, Suno AI, r/hybridproduction.
 
 ### [Projects Ecosystem](https://trustnodelogic.com/projects.html)
-- **Summary**: Interactive portfolio of 9 client-side Web Audio DSP engines, browser audio workstations, synthesis tools, and music knowledge analyzers.
-- **Key Concepts**: VOID 1.5 Web Sampler, MIXR Studio, Artist Finder, VISION SYNTH, J-DAW, ChordCompose, FractalAudio, Black Mirror, IMAGESIZER.
+- **Summary**: Interactive portfolio of 10 client-side Web Audio DSP engines, browser audio workstations, synthesis tools, and music knowledge analyzers.
+- **Key Concepts**: VOID 1.5 Web Sampler, MIXR Studio, Artist Finder, VISION SYNTH, J-DAW, ChordCompose, FractalAudio, Black Mirror, IMAGESIZER, DeathClock.
 
 ### [VOID 1.5 Web Sampler](https://trustnodelogic.com/void.html)
 - **Summary**: Free browser-based VOID web sampler, 16-pad performance grid, and off-thread Harmonic Auto-Mashup workstation running 100% client-side Web Audio DSP.
-- **Key Concepts**: VOID Web Sampler, void web sampler, Audio Slicer, 16-Pad Sampler, Harmonic Mashup, Camelot Key Matching, Web Workers DSP.
+- **Key Concepts**: VOID Web Sampler, Browser-Native DSP, Audio Slicer, 16-Pad Sampler, Harmonic Mashup, Camelot Key Matching, Web Workers DSP.
 
 ### [Official Discography](https://trustnodelogic.com/music.html)
 - **Summary**: Catalog index across Justin Ray's production aliases (loserdub, VISION, Flawed Future, le vide, disarray), detailing streaming availability and acoustic engineering notes.
 - **Key Concepts**: loserdub, VISION, Electronic, Ambient, Synthwave.
 
 ### [Services & Advisory](https://trustnodelogic.com/services.html)
-- **Summary**: Strategic consulting, hybrid mastering, and technical advisory services for record labels, DAWs, and AI audio startups.
-- **Key Concepts**: Hybrid Mastering, AI Music Strategy, Metadata Compliance, DDEX Integration.
+- **Summary**: Strategic consulting, hybrid mastering, and technical advisory services for record labels, DAWs, and AI audio startups anchored in HPS-1.0 and Browser-Native DSP.
+- **Key Concepts**: Hybrid Mastering, AI Music Strategy, Metadata Compliance, DDEX Integration, Browser-Native DSP.
 
 ### [Contact Channel](https://trustnodelogic.com/contact.html)
 - **Summary**: Direct line for technical inquiries, research collaborations, and production commissions via trustnodelogic@gmail.com.

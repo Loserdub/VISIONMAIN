@@ -1,5 +1,33 @@
 Sitemap: https://trustnodelogic.com/sitemap.xml
 
+# AI & LLM Knowledge Graph Manifest
+# https://trustnodelogic.com/llms.txt
+
+User-agent: GPTBot
+Allow: /
+Disallow: /void/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /void/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /void/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /void/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /void/
+
+User-agent: CCBot
+Allow: /
+Disallow: /void/
+
 User-agent: *
 Allow: /
 Disallow: /void/
+

@@ -35,13 +35,23 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "CollectionPage",
+      "@type": ["WebPage", "CollectionPage"],
       "@id": "https://trustnodelogic.com/projects.html#webpage",
       "url": "https://trustnodelogic.com/projects.html",
-      "name": "Projects | Justin Ray : Browser Audio Tools & Creative Apps",
-      "description": "Browser audio tools and creative apps by Justin Ray.",
+      "name": "Projects & Audio Technology Suite · Trust Node Logic",
+      "description": "Explore interactive audio tools, MIXR Studio mastering, VOID 1.5 web sampler, DSP experiments, and hybrid music apps by Justin Ray.",
       "isPartOf": {
         "@id": "https://trustnodelogic.com/#website"
+      },
+      "about": [
+        { "@id": "https://trustnodelogic.com/#person" },
+        { "@id": "https://trustnodelogic.com/#organization" },
+        { "@id": "https://trustnodelogic.com/hybridproductionstandard.html#article" },
+        { "@id": "https://trustnodelogic.com/mixrstudio.html#softwareapplication" },
+        { "@id": "https://trustnodelogic.com/void.html#softwareapplication" }
+      ],
+      "mainEntity": {
+        "@id": "https://trustnodelogic.com/projects.html#tools-list"
       },
       "breadcrumb": {
         "@id": "https://trustnodelogic.com/projects.html#breadcrumb"
@@ -67,6 +77,95 @@
       ]
     },
     {
+      "@type": "ItemList",
+      "@id": "https://trustnodelogic.com/projects.html#tools-list",
+      "name": "Browser-Native DSP & Audio Software Suite",
+      "description": "Interactive browser-native DSP workstations, web samplers, and generative audio tools engineered by Justin Ray.",
+      "numberOfItems": 10,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "VOID 1.5 Web Sampler",
+          "item": {
+            "@id": "https://trustnodelogic.com/void.html#softwareapplication"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "MIXR Studio Web Mastering Workstation",
+          "item": {
+            "@id": "https://trustnodelogic.com/mixrstudio.html#softwareapplication"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "V I S I O N Subtractive Synth",
+          "item": {
+            "@id": "https://trustnodelogic.com/projects.html#vision-synth"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "J-DAW Web Audio Workstation",
+          "item": {
+            "@id": "https://trustnodelogic.com/projects.html#jdaw"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "ChordCompose Harmonic Studio",
+          "item": {
+            "@id": "https://trustnodelogic.com/projects.html#chordcompose"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Artist Finder Music Discovery Engine",
+          "item": {
+            "@id": "https://trustnodelogic.com/projects.html#artist-finder"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "FractalAudio Non-Linear Synthesizer",
+          "item": {
+            "@id": "https://trustnodelogic.com/projects.html#fractalaudio"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Black Mirror Visualizer",
+          "item": {
+            "@id": "https://trustnodelogic.com/projects.html#blackmirror"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "IMAGESIZER Asset Compressor",
+          "item": {
+            "@id": "https://trustnodelogic.com/projects.html#imagesizer"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "DeathClock Mortality Timer",
+          "item": {
+            "@id": "https://trustnodelogic.com/projects.html#deathclock"
+          }
+        }
+      ]
+    },
+    {
       "@type": "Person",
       "@id": "https://trustnodelogic.com/#person",
       "name": "Justin Ray",
@@ -74,6 +173,7 @@
       "alternateName": [
         "JRAY",
         "loserdub",
+        "V I S I O N",
         "VISION",
         "Flawed Future",
         "le vide",
@@ -81,13 +181,41 @@
       ],
       "url": "https://trustnodelogic.com",
       "image": "https://trustnodelogic.com/bio-avatar.jpg",
-      "email": "mailto:justin@trustnodelogic.com",
+      "email": "mailto:trustnodelogic@gmail.com",
       "jobTitle": [
         "Music Producer",
         "Music Artist",
         "Pioneer of Hybrid AI Music Production",
         "Audio Engineer",
         "Creative Technologist"
+      ],
+      "worksFor": {
+        "@id": "https://trustnodelogic.com/#organization"
+      },
+      "creator": [
+        {
+          "@id": "https://trustnodelogic.com/hybridproductionstandard.html#article"
+        },
+        {
+          "@id": "https://trustnodelogic.com/mixrstudio.html#softwareapplication"
+        },
+        {
+          "@id": "https://trustnodelogic.com/void.html#softwareapplication"
+        },
+        {
+          "@id": "https://trustnodelogic.com/music.html#loserdub"
+        },
+        {
+          "@id": "https://trustnodelogic.com/music.html#vision"
+        }
+      ],
+      "performerIn": [
+        {
+          "@id": "https://trustnodelogic.com/music.html#loserdub"
+        },
+        {
+          "@id": "https://trustnodelogic.com/music.html#vision"
+        }
       ],
       "address": {
         "@type": "PostalAddress",
@@ -594,7 +722,7 @@
             <div class="max-w-3xl">
               <div class="inline-flex items-center gap-2.5 text-[10px] font-mono tracking-[0.2em] text-[#71717A] uppercase mb-3">
                 <span class="w-2 h-2 bg-[#FF9F1C] animate-pulse"></span>
-                <span class="text-[#FF9F1C] font-semibold">[ LAB_REGISTRY // ARCHITECTURE_v2.6 ]</span>
+                <span class="text-[#FF9F1C] font-semibold">[ LAB_REGISTRY // BROWSER-NATIVE DSP_v2.6 ]</span>
                 <span class="text-white/20">|</span>
                 <span>EAST LANSING MI</span>
               </div>
@@ -602,7 +730,7 @@
                 AUDIO ENGINES &amp; LAB
               </h1>
               <p class="text-xs sm:text-sm font-mono text-[#A1A1AA] mt-4 leading-relaxed max-w-2xl">
-                Browser audio tools, DSP engines, and creative experiments engineered by <strong class="text-[#EAEAEA]">Justin Ray</strong> for Hybrid AI Music Production workflows.
+                Browser-Native DSP tools, audio engines, and creative experiments engineered by <strong class="text-[#EAEAEA]">Justin Ray</strong> for Hybrid AI Music Production workflows.
               </p>
             </div>
 
@@ -645,7 +773,7 @@
           <div class="flex items-center justify-between mb-4 border-b border-white/[0.08] pb-2">
             <div class="flex items-center gap-3">
               <span class="text-xs font-mono text-[#FF9F1C] font-bold">[ 01 ]</span>
-              <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-[#EAEAEA]">FLAGSHIP AUDIO WORKSTATIONS</h2>
+              <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-[#EAEAEA]">FLAGSHIP BROWSER-NATIVE DSP WORKSTATIONS</h2>
             </div>
             <span class="text-[10px] font-mono text-[#71717A] uppercase">PRIMARY DEPLOYMENTS</span>
           </div>
@@ -653,7 +781,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
             <!-- 1. VØID 1.5 Web Sampler -->
-            <a href="./void.html" class="lab-card tool-theme-void group block" data-project-item data-category="flagship synth-daw" aria-label="Launch VOID 1.5 Web Sampler">
+            <a id="void" href="./void.html" class="lab-card tool-theme-void group block" data-project-item data-category="flagship synth-daw" aria-label="Launch VOID 1.5 Web Sampler">
               <!-- Technical Schematic Preview: 16-Pad Sampler & Waveform -->
               <div class="schematic-box h-44 sm:h-52 w-full p-4">
                 <div class="case-header-chip text-[#39FF14] border-[#39FF14]/30">
@@ -752,7 +880,7 @@
             </a>
 
             <!-- 2. MIXR Studio -->
-            <a href="./mixrstudio.html" class="lab-card tool-theme-mixr group block" data-project-item data-category="flagship synth-daw" aria-label="Open MIXR Studio Mastering Suite">
+            <a id="mixr" href="./mixrstudio.html" class="lab-card tool-theme-mixr group block" data-project-item data-category="flagship synth-daw" aria-label="Open MIXR Studio Browser-Native DSP Mastering Workstation">
               <!-- Technical Schematic Preview: 3-Bar Audio Segment Motif -->
               <div class="schematic-box h-44 sm:h-52 w-full p-4">
                 <div class="case-header-chip text-[#00D9FF] border-[#00D9FF]/30">
@@ -836,8 +964,8 @@
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-            <!-- 3. VISION SYNTH -->
-            <a href="https://loserdub.github.io/Subtractive/" target="_blank" rel="noopener noreferrer" class="lab-card tool-theme-synth group block" data-project-item data-category="synth-daw" aria-label="Open VISION SYNTH in new tab">
+            <!-- 3. V I S I O N Subtractive Synth -->
+            <a id="vision-synth" href="https://loserdub.github.io/Subtractive/" target="_blank" rel="noopener noreferrer" class="lab-card tool-theme-synth group block" data-project-item data-category="synth-daw" aria-label="Open V I S I O N Subtractive Synth in new tab">
               <!-- Schematic: Dual-Oscillator & ADSR Filter Envelope -->
               <div class="schematic-box h-32 w-full p-3">
                 <div class="case-header-chip text-[#818CF8] border-[#818CF8]/30">
@@ -861,7 +989,7 @@
                   </div>
 
                   <h3 class="text-lg font-bold font-mono uppercase text-[#EAEAEA] group-hover:text-[#818CF8] transition-colors">
-                    VISION SYNTH
+                    V I S I O N SYNTH
                   </h3>
 
                   <p class="text-xs text-[#A1A1AA] mt-2 font-sans leading-relaxed">
@@ -884,7 +1012,7 @@
             </a>
 
             <!-- 4. J-DAW -->
-            <a href="https://loserdub.github.io/jdaw/" target="_blank" rel="noopener noreferrer" class="lab-card tool-theme-jdaw group block" data-project-item data-category="synth-daw" aria-label="Open J-DAW in new tab">
+            <a id="jdaw" href="https://loserdub.github.io/jdaw/" target="_blank" rel="noopener noreferrer" class="lab-card tool-theme-jdaw group block" data-project-item data-category="synth-daw" aria-label="Open J-DAW in new tab">
               <!-- Schematic: Multi-Track Timeline & Stem Arrangement -->
               <div class="schematic-box h-32 w-full p-3">
                 <div class="case-header-chip text-[#FF9F1C] border-[#FF9F1C]/30">
@@ -938,7 +1066,7 @@
             </a>
 
             <!-- 5. ChordCompose -->
-            <a href="https://loserdub.github.io/chordcreate/" target="_blank" rel="noopener noreferrer" class="lab-card tool-theme-chord group block" data-project-item data-category="synth-daw" aria-label="Open ChordCompose in new tab">
+            <a id="chordcompose" href="https://loserdub.github.io/chordcreate/" target="_blank" rel="noopener noreferrer" class="lab-card tool-theme-chord group block" data-project-item data-category="synth-daw" aria-label="Open ChordCompose in new tab">
               <!-- Schematic: Harmonic Ladder & MIDI Progression Matrix -->
               <div class="schematic-box h-32 w-full p-3">
                 <div class="case-header-chip text-[#14B8A6] border-[#14B8A6]/30">
@@ -1015,7 +1143,7 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
             <!-- 6. Artist Finder -->
-            <a href="./artistfinder.html" class="lab-card tool-theme-artistfinder group block" data-project-item data-category="utility" aria-label="Open Artist Finder signal checker">
+            <a id="artist-finder" href="./artistfinder.html" class="lab-card tool-theme-artistfinder group block" data-project-item data-category="utility" aria-label="Open Artist Finder GEO signal analyzer">
               <!-- Schematic: Entity Salience Target Radar -->
               <div class="schematic-box h-32 w-full p-3">
                 <div class="case-header-chip text-[#38BDF8] border-[#38BDF8]/30">
@@ -1065,7 +1193,7 @@
             </a>
 
             <!-- 7. FractalAudio -->
-            <a href="https://loserdub.github.io/FractalAudio/" target="_blank" rel="noopener noreferrer" class="lab-card tool-theme-fractal group block" data-project-item data-category="utility" aria-label="Open FractalAudio in new tab">
+            <a id="fractalaudio" href="https://loserdub.github.io/FractalAudio/" target="_blank" rel="noopener noreferrer" class="lab-card tool-theme-fractal group block" data-project-item data-category="utility" aria-label="Open FractalAudio granular synthesizer in new tab">
               <!-- Schematic: Multilayer Fractal Mandala Flower -->
               <div class="schematic-box h-32 w-full p-3">
                 <div class="case-header-chip text-[#FB7185] border-[#FB7185]/30">
@@ -1159,7 +1287,7 @@
             </a>
 
             <!-- 8. Black Mirror -->
-            <a href="./black-mirror.html" class="lab-card tool-theme-blackmirror group block" data-project-item data-category="utility" aria-label="Open Black Mirror visualizer">
+            <a id="blackmirror" href="./black-mirror.html" class="lab-card tool-theme-blackmirror group block" data-project-item data-category="utility" aria-label="Open Black Mirror visualizer">
               <!-- Curated Preview: Black Mirror Visualizer Card -->
               <div class="case-preview-viewport h-32 w-full">
                 <img src="assets/images/black-mirror-card-og.webp" alt="Black Mirror audio reactive visualizer preview" class="w-full h-full object-cover object-center" loading="lazy" width="400" height="210">
@@ -1203,7 +1331,7 @@
             </a>
 
             <!-- 9. IMAGESIZER -->
-            <a href="https://loserdub.github.io/IMAGESIZER" target="_blank" rel="noopener noreferrer" class="lab-card tool-theme-imagesizer group block" data-project-item data-category="utility" aria-label="Open IMAGESIZER in new tab">
+            <a id="imagesizer" href="https://loserdub.github.io/IMAGESIZER" target="_blank" rel="noopener noreferrer" class="lab-card tool-theme-imagesizer group block" data-project-item data-category="utility" aria-label="Open IMAGESIZER in new tab">
               <!-- Schematic: Aspect Ratio & Resolution Crop Matrix -->
               <div class="schematic-box h-32 w-full p-3">
                 <div class="case-header-chip text-[#34D399] border-[#34D399]/30">
@@ -1271,7 +1399,7 @@
           <div class="grid grid-cols-1 max-w-sm sm:max-w-md mx-auto">
 
             <!-- 10. DeathClock -->
-            <a href="https://loserdub.github.io/deathclock/" target="_blank" rel="noopener noreferrer" class="lab-card tool-theme-deathclock group block" data-project-item data-category="side-project" aria-label="Open DeathClock mortality calculator in new tab">
+            <a id="deathclock" href="https://loserdub.github.io/deathclock/" target="_blank" rel="noopener noreferrer" class="lab-card tool-theme-deathclock group block" data-project-item data-category="side-project" aria-label="Open DeathClock mortality calculator in new tab">
               <!-- Schematic: Circular Clock with Skull Center -->
               <div class="schematic-box h-36 sm:h-40 w-full p-3">
                 <div class="case-header-chip text-[#E63946] border-[#E63946]/30">

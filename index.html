@@ -72,6 +72,47 @@
  "mainEntityOfPage": {
  "@id": "https://trustnodelogic.com/#webpage"
  },
+ "worksFor": {
+ "@id": "https://trustnodelogic.com/#organization"
+ },
+ "creator": [
+ {
+ "@type": "TechArticle",
+ "@id": "https://trustnodelogic.com/hybridproductionstandard.html#article",
+ "name": "Hybrid Production Standard (HPS-1.0)",
+ "url": "https://trustnodelogic.com/hybridproductionstandard.html"
+ },
+ {
+ "@type": "WebApplication",
+ "@id": "https://trustnodelogic.com/mixrstudio.html#softwareapplication",
+ "name": "MIXR Studio",
+ "url": "https://trustnodelogic.com/mixrstudio.html"
+ },
+ {
+ "@type": "WebApplication",
+ "@id": "https://trustnodelogic.com/void.html#softwareapplication",
+ "name": "VOID 1.5 Web Sampler",
+ "url": "https://trustnodelogic.com/void.html"
+ },
+ {
+ "@type": "WebApplication",
+ "@id": "https://trustnodelogic.com/artistfinder.html#softwareapplication",
+ "name": "Artist Finder",
+ "url": "https://trustnodelogic.com/artistfinder.html"
+ }
+ ],
+ "performerIn": [
+ {
+ "@type": "MusicGroup",
+ "@id": "https://trustnodelogic.com/music.html#loserdub",
+ "name": "loserdub"
+ },
+ {
+ "@type": "MusicGroup",
+ "@id": "https://trustnodelogic.com/music.html#vision",
+ "name": "VISION"
+ }
+ ],
  "address": {
  "@type": "PostalAddress",
  "addressLocality": "East Lansing",
@@ -227,6 +268,9 @@
  },
  {
  "@id": "https://trustnodelogic.com/#organization"
+ },
+ {
+ "@id": "https://trustnodelogic.com/hybridproductionstandard.html#article"
  },
  {
  "@id": "https://www.reddit.com/r/hybridproduction/#organization"
@@ -954,7 +998,7 @@
   <div class="w-full max-w-5xl mt-12 grid grid-cols-1 md:grid-cols-3 gap-5 text-left">
     
     <!-- PILLAR 01: THE STANDARD -->
-    <a href="./hybridproductionstandard.html" class="hero-gateway-card hero-gateway-amber p-6 flex flex-col justify-between group">
+    <a href="./hybridproductionstandard.html" class="hero-gateway-card hero-gateway-amber p-6 flex flex-col justify-between group" aria-label="Inspect Hybrid Production Standard (HPS-1.0) Specification">
       <div>
         <div class="flex items-center justify-between mb-4">
           <span class="text-[10px] font-mono tracking-[0.2em] uppercase text-[#FF9F1C] font-semibold">[ 01 // THE STANDARD ]</span>
@@ -974,17 +1018,17 @@
     </a>
 
     <!-- PILLAR 02: THE SUITE -->
-    <a href="./projects.html" class="hero-gateway-card hero-gateway-amber p-6 flex flex-col justify-between group">
+    <a href="./projects.html" class="hero-gateway-card hero-gateway-amber p-6 flex flex-col justify-between group" aria-label="Launch Browser-Native DSP Audio Engines &amp; Lab">
       <div>
         <div class="flex items-center justify-between mb-4">
           <span class="text-[10px] font-mono tracking-[0.2em] uppercase text-[#FF9F1C] font-semibold">[ 02 // THE SUITE ]</span>
-          <span class="text-[10px] font-mono text-[#71717A] group-hover:text-[#FF9F1C] transition-colors">9 ENGINES →</span>
+          <span class="text-[10px] font-mono text-[#71717A] group-hover:text-[#FF9F1C] transition-colors">10 ENGINES →</span>
         </div>
         <h2 class="text-lg font-bold font-mono text-[#EAEAEA] uppercase tracking-wide group-hover:text-[#FF9F1C] transition-colors">
           AUDIO ENGINES &amp; LAB
         </h2>
         <p class="text-xs font-mono text-[#A1A1AA] mt-2.5 leading-relaxed font-light">
-          9 Zero-Install Web DSP Tools · VOID 1.5 · MIXR Studio
+          10 Zero-Install Browser-Native DSP Tools · VOID 1.5 · MIXR Studio
         </p>
       </div>
       <div class="mt-6 pt-4 border-t border-white/[0.08] flex items-center justify-between text-[10px] font-mono text-[#71717A]">
@@ -994,7 +1038,7 @@
     </a>
 
     <!-- PILLAR 03: THE ARTIST -->
-    <a href="./music.html" class="hero-gateway-card hero-gateway-emerald p-6 flex flex-col justify-between group">
+    <a href="./music.html" class="hero-gateway-card hero-gateway-emerald p-6 flex flex-col justify-between group" aria-label="Stream Justin Ray Discography across loserdub and VISION">
       <div>
         <div class="flex items-center justify-between mb-4">
           <span class="text-[10px] font-mono tracking-[0.2em] uppercase text-[#10B981] font-semibold">[ 03 // THE ARTIST ]</span>
@@ -1146,16 +1190,16 @@
     <div class="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-white/10 pb-4">
       <div>
         <span class="text-[10px] font-mono tracking-[0.25em] text-[#FF9F1C] uppercase block mb-1">02 // Interactive Web Audio Lab</span>
-        <h2 class="text-3xl font-bold uppercase tracking-tight text-[#EAEAEA]">Browser Audio Engines</h2>
+        <h2 class="text-3xl font-bold uppercase tracking-tight text-[#EAEAEA]">Browser-Native DSP Engines</h2>
       </div>
-      <span class="text-xs font-mono text-[#71717A]">Free · Zero Install · Web DSP</span>
+      <span class="text-xs font-mono text-[#71717A]">Free · Zero Install · Browser-Native DSP</span>
     </div>
 
     <!-- Dual Flagship Launchpads Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
       
       <!-- MIXR Studio Block (Mastering Suite) -->
-      <a href="./mixrstudio.html" class="tech-card p-8 flex flex-col justify-between text-left group border-[#FF9F1C]/30 hover:border-[#FF9F1C] transition-all">
+      <a href="./mixrstudio.html" class="tech-card p-8 flex flex-col justify-between text-left group border-[#FF9F1C]/30 hover:border-[#FF9F1C] transition-all" aria-label="Open MIXR Studio Browser-Native DSP Mastering Suite">
         <div>
           <div class="flex items-center justify-between mb-4">
             <span class="tech-tag tech-tag-amber">FREE MASTERING SUITE</span>
@@ -1175,7 +1219,7 @@
             </div>
             <div class="flex items-center gap-2">
               <span class="text-[#FF9F1C] text-[10px] font-semibold tracking-wider uppercase">ARCH:</span>
-              <span>Zero-Install Web Audio DSP Workstation</span>
+              <span>Browser-Native DSP Mastering Workstation</span>
             </div>
           </div>
         </div>
@@ -1186,7 +1230,7 @@
       </a>
 
       <!-- VOID 1.5 Web Sampler Block (Granular Audio Slicer) -->
-      <a href="./void.html" class="tech-card p-8 flex flex-col justify-between text-left group border-white/15 hover:border-[#FF9F1C] transition-all">
+      <a href="./void.html" class="tech-card p-8 flex flex-col justify-between text-left group border-white/15 hover:border-[#FF9F1C] transition-all" aria-label="Launch VOID 1.5 Browser-Native DSP Web Sampler">
         <div>
           <div class="flex items-center justify-between mb-4">
             <span class="tech-tag tech-tag-platinum">NEW · WEB SAMPLER</span>
@@ -1227,7 +1271,7 @@
         </p>
       </div>
       <a href="./projects.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#0B0C0E] border border-white/20 hover:border-[#FF9F1C] text-xs font-mono text-[#EAEAEA] hover:text-[#FF9F1C] transition-all whitespace-nowrap self-start sm:self-auto">
-        <span>Explore all 9 tools in Projects &amp; Lab</span>
+        <span>Explore all 10 tools in Projects &amp; Lab</span>
         <span>→</span>
       </a>
     </div>
@@ -1241,7 +1285,7 @@
         <span class="text-[10px] font-mono tracking-[0.25em] text-[#FF9F1C] uppercase block mb-1">03 // Technical Investigations</span>
         <h2 class="text-3xl font-bold uppercase tracking-tight text-[#EAEAEA]">Field Notes &amp; Research Archive</h2>
       </div>
-      <span class="text-xs font-mono text-[#71717A]">19 Original Research Papers</span>
+      <span class="text-xs font-mono text-[#71717A]">23 Original Research Papers</span>
     </div>
 
     <div class="tech-card p-8 sm:p-12 border-[#FF9F1C]/40 bg-gradient-to-br from-[#121417] via-[#0E1013] to-[#141824] relative overflow-hidden group">
@@ -1250,7 +1294,7 @@
         <div class="max-w-2xl">
           <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#0B0C0E] border border-[#FF9F1C]/30 text-[10px] font-mono tracking-[0.18em] text-[#FF9F1C] uppercase mb-4">
             <span class="w-1.5 h-1.5 bg-[#FF9F1C] animate-terminal-blink"></span>
-            <span>RESEARCH ARCHIVE // 19 ANALYTICAL FIELD NOTES</span>
+            <span>RESEARCH ARCHIVE // 23 ANALYTICAL FIELD NOTES</span>
           </div>
           <h3 class="text-2xl sm:text-3xl font-bold uppercase tracking-tight text-[#EAEAEA] mb-3 group-hover:text-[#FF9F1C] transition-colors">
             EMPIRICAL BENCHMARKS &amp; AI AUDIO PAPERS
@@ -1260,6 +1304,7 @@
           </p>
           <div class="flex flex-wrap gap-2 text-[10px] font-mono text-[#71717A]">
             <a href="./staccatoreview.html" class="px-2.5 py-1 bg-[#0B0C0E] border border-[#FF9F1C]/40 text-[#FF9F1C] hover:border-[#FF9F1C] transition-colors">Staccato AI Review</a>
+            <a href="./markov-chains.html" class="px-2.5 py-1 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] hover:text-[#EAEAEA] transition-colors">Markov Chains DSP</a>
             <a href="./humanbridge.html" class="px-2.5 py-1 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] hover:text-[#EAEAEA] transition-colors">Human Contribution Score</a>
             <a href="./sunonewtos.html" class="px-2.5 py-1 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] hover:text-[#EAEAEA] transition-colors">Suno Terms of Service</a>
             <a href="./c2pa-music-provenance.html" class="px-2.5 py-1 bg-[#0B0C0E] border border-white/10 hover:border-[#FF9F1C] hover:text-[#EAEAEA] transition-colors">C2PA Steganography</a>
@@ -1267,7 +1312,7 @@
           </div>
         </div>
         <a href="./field-notes.html" class="inline-flex items-center justify-center gap-3 px-6 py-4 bg-[#FF9F1C] hover:bg-[#FFB042] text-black font-mono font-bold text-xs tracking-widest uppercase transition-all shadow-[0_0_25px_rgba(255,159,28,0.3)] hover:shadow-[0_0_35px_rgba(255,159,28,0.55)] whitespace-nowrap flex-shrink-0 self-start md:self-center">
-          <span>EXPLORE ALL 19 FIELD NOTES</span>
+          <span>EXPLORE ALL 23 FIELD NOTES</span>
           <span>→</span>
         </a>
       </div>
