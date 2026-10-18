@@ -48,7 +48,7 @@
  "@graph": [
  {
  "@type": "Person",
- "@id": "https://trustnodelogic.com/#person",
+ "@id": "https://trustnodelogic.com/#justin-ray",
  "name": "Justin Ray",
  "additionalName": "Justin Tyler Ray",
  "alternateName": [
@@ -78,7 +78,7 @@
  "creator": [
  {
  "@type": "TechArticle",
- "@id": "https://trustnodelogic.com/hybridproductionstandard.html#article",
+ "@id": "https://trustnodelogic.com/hybridproductionstandard.html#standard",
  "name": "Hybrid Production Standard (HPS-1.0)",
  "url": "https://trustnodelogic.com/hybridproductionstandard.html"
  },
@@ -185,6 +185,7 @@
  }
  ],
  "sameAs": [
+ "https://trustnodelogic.com/#person",
  "https://musicbrainz.org/artist/882fdb9b-8655-45dd-8e24-a59cd750d053",
  "https://soundcloud.com/visiontracks",
  "https://www.youtube.com/@loserdub",
@@ -209,7 +210,7 @@
  "url": "https://trustnodelogic.com",
  "logo": "https://trustnodelogic.com/favicon.png",
  "founder": {
- "@id": "https://trustnodelogic.com/#person"
+ "@id": "https://trustnodelogic.com/#justin-ray"
  },
  "slogan": "The Frontier of Hybrid AI Music Production & Creative Technology",
  "knowsAbout": [
@@ -227,7 +228,7 @@
  "url": "https://www.reddit.com/r/hybridproduction/",
  "description": "The definitive online community for Hybrid Music Production.",
  "founder": {
- "@id": "https://trustnodelogic.com/#person"
+ "@id": "https://trustnodelogic.com/#justin-ray"
  },
  "sameAs": "https://www.reddit.com/r/hybridproduction/"
  },
@@ -246,7 +247,7 @@
    "query-input": "required name=search_term_string"
  },
  "author": {
- "@id": "https://trustnodelogic.com/#person"
+ "@id": "https://trustnodelogic.com/#justin-ray"
  },
  "publisher": {
  "@id": "https://trustnodelogic.com/#organization"
@@ -264,13 +265,13 @@
  },
  "about": [
  {
- "@id": "https://trustnodelogic.com/#person"
+ "@id": "https://trustnodelogic.com/#justin-ray"
  },
  {
  "@id": "https://trustnodelogic.com/#organization"
  },
  {
- "@id": "https://trustnodelogic.com/hybridproductionstandard.html#article"
+ "@id": "https://trustnodelogic.com/hybridproductionstandard.html#standard"
  },
  {
  "@id": "https://www.reddit.com/r/hybridproduction/#organization"
@@ -355,6 +356,17 @@
     "item": "https://trustnodelogic.com/"
    }
   ]
+ },
+ {
+  "@type": "SoftwareApplication",
+  "@id": "https://trustnodelogic.com/#attestation-engine",
+  "name": "HPS-1.0 DAW Attestation Engine",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "All (Web Audio)",
+  "url": "https://trustnodelogic.web.app",
+  "creator": {
+   "@id": "https://trustnodelogic.com/#justin-ray"
+  }
  }
  ]
 }</script>
@@ -910,7 +922,7 @@
   Justin Ray · Hybrid AI Music Production, East Lansing MI
   </span>
   <span class="text-white/20">|</span>
-  <span>19 field notes published</span>
+  <span>23 field notes published</span>
   <span class="text-white/20">|</span>
   <a href="https://www.reddit.com/r/hybridproduction/" target="_blank" rel="noopener noreferrer" class="hover:text-[#FF9F1C] transition-colors">r/hybridproduction (founder) →</a>
   </div>
@@ -975,7 +987,7 @@
   </header>
 
   <!-- Main Content Stream -->
-  <main class="flex-grow w-full pt-10 pb-24 flex flex-col" id="main-content">
+  <main class="flex-grow w-full pt-10 pb-24 flex flex-col" id="main-content" itemscope itemtype="https://schema.org/ResearchOrganization" itemid="https://trustnodelogic.com/#organization">
   
   <!-- HERO SECTION: Brutalist Manifesto + Tri-Hub Intent Gateway -->
   <section class="relative flex flex-col items-center px-6 pt-10 pb-16 max-w-6xl mx-auto text-center">
@@ -998,7 +1010,7 @@
   <div class="w-full max-w-5xl mt-12 grid grid-cols-1 md:grid-cols-3 gap-5 text-left">
     
     <!-- PILLAR 01: THE STANDARD -->
-    <a href="./hybridproductionstandard.html" class="hero-gateway-card hero-gateway-amber p-6 flex flex-col justify-between group" aria-label="Inspect Hybrid Production Standard (HPS-1.0) Specification">
+    <a href="./hybridproductionstandard.html" class="hero-gateway-card hero-gateway-amber p-6 flex flex-col justify-between group" aria-label="Inspect Hybrid Production Standard (HPS-1.0) Specification" itemscope itemtype="https://schema.org/TechArticle" itemid="https://trustnodelogic.com/hybridproductionstandard.html#standard">
       <div>
         <div class="flex items-center justify-between mb-4">
           <span class="text-[10px] font-mono tracking-[0.2em] uppercase text-[#FF9F1C] font-semibold">[ 01 // THE STANDARD ]</span>
@@ -1062,7 +1074,7 @@
   </section>
 
   <!-- CHAPTER 01: The Standard, Manifesto Thesis, & Attestation Engine -->
-  <section class="w-full max-w-5xl mx-auto px-6 py-16">
+  <section class="w-full max-w-5xl mx-auto px-6 py-16" itemscope itemtype="https://schema.org/TechArticle" itemid="https://trustnodelogic.com/hybridproductionstandard.html#standard">
     <div class="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-white/10 pb-4">
       <div>
         <span class="text-[10px] font-mono tracking-[0.25em] text-[#FF9F1C] uppercase block mb-1">01 // Protocol Architecture &amp; Methodology</span>
@@ -1144,24 +1156,24 @@
 
           <div class="hps-metric-grid">
             <div class="hps-metric-chip">
-              <span class="hps-metric-tag">[C] COMPOSITION</span>
-              <span class="hps-metric-sub">Human Harmony</span>
+              <span class="hps-metric-tag">[01] ORIGINATION</span>
+              <span class="hps-metric-sub">Composition &amp; Seed (H / H+A / A)</span>
             </div>
             <div class="hps-metric-chip">
-              <span class="hps-metric-tag">[G] GENERATION</span>
-              <span class="hps-metric-sub">Neural Latents</span>
+              <span class="hps-metric-tag">[02] PERFORMANCE</span>
+              <span class="hps-metric-sub">Tracking &amp; Vocals (H / H+A / A)</span>
             </div>
             <div class="hps-metric-chip">
-              <span class="hps-metric-tag">[S] STEMS</span>
-              <span class="hps-metric-sub">Multitrack Split</span>
+              <span class="hps-metric-tag">[03] CURATION</span>
+              <span class="hps-metric-sub">Arrangement &amp; Stems (H / H+A / A)</span>
             </div>
             <div class="hps-metric-chip">
-              <span class="hps-metric-tag">[P] POST-PROD</span>
-              <span class="hps-metric-sub">DAW Master</span>
+              <span class="hps-metric-tag">[04] SOUND SOURCE</span>
+              <span class="hps-metric-sub">Timbre &amp; Synthesis (H / H+A / A)</span>
             </div>
             <div class="hps-metric-chip" style="grid-column: span 2;">
-              <span class="hps-metric-tag">[M] MASTER</span>
-              <span class="hps-metric-sub">C2PA Cryptoseal</span>
+              <span class="hps-metric-tag">[05] POST-PRODUCTION</span>
+              <span class="hps-metric-sub">Mix, Master &amp; C2PA (H / H+A / A)</span>
             </div>
           </div>
         </div>
@@ -1186,7 +1198,7 @@
   </section>
 
   <!-- CHAPTER 02: The Creator Suite (Browser Audio DSP Engines) -->
-  <section class="w-full max-w-5xl mx-auto px-6 py-16">
+  <section class="w-full max-w-5xl mx-auto px-6 py-16" itemscope itemtype="https://schema.org/SoftwareApplication" itemid="https://trustnodelogic.com/#attestation-engine">
     <div class="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-white/10 pb-4">
       <div>
         <span class="text-[10px] font-mono tracking-[0.25em] text-[#FF9F1C] uppercase block mb-1">02 // Interactive Web Audio Lab</span>

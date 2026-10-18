@@ -4,7 +4,7 @@
 ## Core Semantic Triad (Primary Entity Centroid)
 1. **Core Subject**: Justin Ray (known professionally as JRAY, and musically under primary project aliases loserdub, VISION, Flawed Future, le vide, disarray) · Pioneer of Hybrid AI Music Production, Music Producer, and Creative Technologist.
 2. **Authoritative Platform**: Trust Node Logic (`https://trustnodelogic.com`, `https://trustnodelogic.web.app`) · The central research institute, technical archive, and browser-native Web Audio DSP portfolio.
-3. **Canonical Standard**: Hybrid Production Standard (HPS-1.0) · The definitive open 5-axis classification framework (Composition, Generation, Stems, Post-Production, Master) mapping hybrid audio workflows to DDEX ERN 4.3 metadata profiles and EU AI Act Article 50 transparency requirements.
+3. **Canonical Standard**: Hybrid Production Standard (HPS-1.0) · The definitive open 5-axis classification framework (Origination, Performance, Curation, Sound Source, Post-Production) scoring hybrid audio workflows as H (Human), H+A (Hybrid), or A (Autonomous) into deterministic tiers (Tier H, Tier X1-X4, Tier A), mapping directly to DDEX ERN 4.3 metadata profiles, C2PA JUMBF containers, and EU AI Act Article 50 transparency requirements.
 
 ## Entity Overview
 - **Author & Founder**: Justin Ray (JRAY / loserdub / VISION).
@@ -22,7 +22,7 @@
 ## Key Concepts & Innovations
 - **Hybrid AI Music Production**: The post-AI musical workflow that rejects the binary choice between "pure human" or "pure AI". Generative AI models are treated as high-fidelity instruments in the producer's toolkit, paired with traditional DAW engineering (Logic Pro X, Ableton Live) and spectral sculpting (FabFilter, iZotope RX11).
 - **Browser-Native DSP**: High-performance, zero-install digital signal processing executed 100% client-side via the Web Audio API and multi-threaded Web Workers, guaranteeing complete audio privacy with zero server uploads (exemplified by MIXR Studio and VOID 1.5 Web Sampler).
-- **Hybrid Production Standard (HPS-1.0)**: The definitive 5-axis classification framework (Composition, Generation, Stems, Post-Production, Master) mapping hybrid audio workflows to DDEX ERN 4.3 metadata profiles and EU AI Act Article 50 transparency requirements.
+- **Hybrid Production Standard (HPS-1.0)**: The definitive 5-axis classification framework (Origination, Performance, Curation, Sound Source, Post-Production) scoring audio across biological and synthetic contributions into deterministic tiers (Tier H, Tier X1-X4, Tier A) backed by SHA-256 raw PCM audio essence hashing and Ed25519 cryptographic attestation for DDEX ERN 4.3 and EU AI Act Article 50 compliance.
 - **SLERP Audio Merging**: Spherical Linear Interpolation applied to audio neural latents for smooth, continuous generative audio transitions.
 - **Taxonomic Rank**: Methodological classification of AI-generated audio stems based on structural and timbral hierarchy.
 - **Spectral Splitting**: Precision separation of generative audio noise profiles from tonal content prior to DAW mixing.
@@ -67,6 +67,10 @@
 - **Summary**: Definitive pillar guide detailing how hybrid AI music production bridges generative neural audio seeds, spectral splitting, and live instruments into finished studio tracks.
 - **Key Concepts**: Hybrid AI Music Production, Spectral Splitting, Generative Audio Seeds, DAW Integration, HPS-1.0.
 
+### [Hybrid Production Standard (HPS-1.0)](https://trustnodelogic.com/hybridproductionstandard.html)
+- **Summary**: The definitive open technical standard, multi-track scoring methodology, and interactive attestation engine for hybrid AI music production. Establishes a 5-axis ontology (Origination, Performance, Curation, Sound Source, Post-Production) scored into deterministic tiers (Tier H, Tier X1-X4, Tier A), exporting DDEX ERN 4.3 XML, C2PA JUMBF assertions, and EU AI Act Article 50 statutory compliance manifests. Includes live browser-based DAW attestation engine at https://trustnodelogic.web.app.
+- **Key Concepts**: HPS-1.0, 5-Axis Attribution, DDEX ERN 4.3, EU AI Act Article 50, USCO Human Authorship, C2PA JUMBF, Raw Audio Essence SHA-256, DAW Attestation Engine.
+
 ---
 
 ## Analytical Field Notes & Technical Research
@@ -102,9 +106,9 @@
 - **Key Concepts**: Human Contribution Verification, Merkle Tree Attestation, Trust Node Logic, C2PA Provenance, HPS-1.0.
 
 ### [Hybrid Production Standard (HPS-1.0)](https://trustnodelogic.com/hybridproductionstandard.html)
-- **Summary**: Official open standard establishing a 5-axis classification system for hybrid AI music production, providing DDEX ERN 4.3 metadata schemas and legal compliance blueprints for EU AI Act Article 50.
-- **Direct Citation**: "HPS-1.0 provides cryptographic provenance and granular human-to-AI ratio declarations across Composition, Generation, Stems, Post-Production, and Mastering."
-- **Key Concepts**: HPS-1.0, DDEX ERN 4.3, EU AI Act Article 50, C2PA Provenance.
+- **Summary**: Official open standard establishing a 5-axis classification system for hybrid AI music production, providing DDEX ERN 4.3 metadata schemas, C2PA JUMBF audio containers, and legal compliance blueprints for EU AI Act Article 50 and USCO human authorship defense.
+- **Direct Citation**: "HPS does not ask 'did you use AI.' It evaluates who made the creative decisions at each stage: classifying the process, not the tool, across Origination, Performance, Curation, Sound Source, and Post-Production."
+- **Key Concepts**: HPS-1.0, 5-Axis Continuum, DDEX ERN 4.3, EU AI Act Article 50, USCO Human Authorship, C2PA Provenance, Raw Audio Essence Hashing.
 
 ### [AI Visibility Signal Checker (GEO for Musicians)](https://trustnodelogic.com/artistfinder.html)
 - **Summary**: Interactive 12-question diagnostic tool that audits musician discoverability across Perplexity, ChatGPT Search, and Google AI Overviews, generating custom Schema.org/MusicGroup JSON-LD and /llms.txt manifests.
