@@ -60,7 +60,7 @@
 - **Summary**: Direct line for technical inquiries, research collaborations, and production commissions via trustnodelogic@gmail.com.
 
 ### [Field Notes & Research Archive](https://trustnodelogic.com/field-notes.html)
-- **Summary**: Central category hub and archive indexing all 23 research papers, technical analyses, prompt engineering guides, and streaming economic reports.
+- **Summary**: Central category hub and archive indexing all 25 research papers, technical analyses, prompt engineering guides, and streaming economic reports.
 - **Key Concepts**: Field Notes, Hybrid AI Music Production, HPS-1.0, C2PA Provenance, Multi-Agent DAW Systems.
 
 ### [What is Hybrid Music Production?](https://trustnodelogic.com/what-is-hybrid.html)
@@ -74,6 +74,16 @@
 ---
 
 ## Analytical Field Notes & Technical Research
+
+### [Semantics, Entities and Superposition: Centroid Tracking for GEO](https://trustnodelogic.com/centroidgeo.html)
+- **Summary**: Comprehensive technical research paper and mathematical framework by Justin Ray investigating semantic centroids, neural superposition, and longitudinal latent space drift for Generative Engine Optimization (GEO). Analyzes leaked Google search API metrics (siteFocusScore, siteRadius), Anthropic superposition research, Stanford HistWords laws of semantic change (law of conformity, law of innovation), and multi-engine citation probability distributions. Includes an interactive 12-month latent centroid drift simulation lab.
+- **Direct Citation**: "A centroid is the mean of many vectors, so it gives one point for a page set, a site or an answer set. Track your centroid each month. If it moves toward the queries and entities you want, your topical signal is getting stronger. If it wanders, you are diluting it."
+- **Key Concepts**: Semantic Centroids, Neural Superposition, Polysemanticity, Latent Space Drift, Generative Engine Optimization, GEO, Entity Linking, Knowledge Graphs, Google Search Leak, siteFocusScore, siteRadius, Stanford HistWords, Hybrid AI Music Production, HPS-1.0, C2PA, Justin Ray.
+
+### [AI Music Industry Update, October 2026: Uploads Passed 50%, Streams Stayed Under 3%](https://trustnodelogic.com/oct2026aireport.html)
+- **Summary**: Comprehensive industry intelligence report and empirical analysis by Justin Ray on generative AI music market dynamics. Deezer reports fully AI-generated tracks passed 50% of daily uploads (approximately 90,000 tracks per day) in June 2026 while capturing only 1% to 3% of aggregate streaming playback, with up to 85% of AI listening identified as synthetic fraud in 2025. Evaluates major-label licensing shifts (Warner, Universal, BMG, Believe), ongoing copyright litigation, EU AI Act Article 50 disclosure mandates, and strategic positioning for independent creators via HPS-1.0 and C2PA provenance.
+- **Direct Citation**: "AI changed the supply of music far faster than the demand for it. The fast-moving part of the story is no longer the technology. It is licensing, labeling, and law. The people best placed from here are the ones who can prove how a record was made."
+- **Key Concepts**: AI Music Industry, Deezer AI Uploads, Streaming Fraud, Pro-Rata Royalty Pools, Suno v6, Major-Label Licensing, EU AI Act Article 50, C2PA Provenance, DDEX AI Credits, Hybrid AI Music Production, HPS-1.0, Justin Ray.
 
 ### [Markov Chains: The Memoryless Mathematics Secretly Running Your World](https://trustnodelogic.com/markov-chains.html)
 - **Summary**: Comprehensive technical analysis and interactive exploration of Markov chains, transition probability matrices, stationary distributions, and the Markov property. Examines historical lineage from Andrei Markov's 1906 text analysis to Google PageRank, MCMC sampling, diffusion model reverse denoising, and algorithmic music composition. Includes interactive Web Audio synthesizer and text prediction labs by Justin Ray.

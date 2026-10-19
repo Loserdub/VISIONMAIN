@@ -4,7 +4,7 @@
   <!-- Homepage (Canonical Hub) -->
   <url>
     <loc>https://trustnodelogic.com/</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -55,12 +55,24 @@
 
   <url>
     <loc>https://trustnodelogic.com/field-notes.html</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Article and content pages -->
+  <url>
+    <loc>https://trustnodelogic.com/centroidgeo.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://trustnodelogic.com/oct2026aireport.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://trustnodelogic.com/markov-chains.html</loc>
     <lastmod>2026-10-17</lastmod>

@@ -5,11 +5,11 @@ from bs4 import BeautifulSoup
 sitemap_pages = [
     'index.html', 'Suno101.html', 'about.html', 'agentichybridproduction.html',
     'artistfinder.html', 'black-mirror.html', 'c2pa-music-provenance.html',
-    'contact.html', 'field-notes.html', 'fingerprint.html', 'futureofhybrid.html',
+    'centroidgeo.html', 'contact.html', 'field-notes.html', 'fingerprint.html', 'futureofhybrid.html',
     'hp2026.html', 'humanbridge.html', 'hybridproductionstandard.html',
     'lastnewgenre.html', 'liquidears.html', 'machinehumanhybrid.html',
     'may2026tools.html', 'mixrstudio.html', 'music.html',
-    'musicindustryforecast.html', 'neuralvocals.html', 'projects.html',
+    'musicindustryforecast.html', 'neuralvocals.html', 'oct2026aireport.html', 'projects.html',
     'promptingthemachine.html', 'saturation.html', 'services.html',
     'songstructure.html', 'staccatoreview.html', 'suno6.html', 'sunonewtos.html',
     'sunov6.html', 'trainingday.html', 'void.html', 'what-is-hybrid.html'
