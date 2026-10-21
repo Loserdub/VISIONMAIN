@@ -309,6 +309,32 @@
       border-bottom-style: solid;
       border-bottom-color: #FF9F1C;
     }
+
+    /* 6. Semi-dim hardware spotlight for technical panels & cards */
+    .tech-card,
+    .lab-card,
+    .fn-card,
+    .hps-cta-card,
+    .cluster-card,
+    .pillar-card,
+    .hero-gateway-card,
+    .tnl-author-entity-card {
+      position: relative;
+      background-image: radial-gradient(
+        450px circle at var(--mouse-x, -1000px) var(--mouse-y, -1000px),
+        rgba(255, 159, 28, 0.05),
+        transparent 50%
+      ) !important;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .tech-card:hover,
+    .fn-card:hover,
+    .hps-cta-card:hover,
+    .cluster-card:hover,
+    .pillar-card:hover {
+      box-shadow: 0 0 24px -4px rgba(255, 159, 28, 0.06), 0 8px 24px -6px rgba(0, 0, 0, 0.6) !important;
+    }
   `;
 
   function init() {
@@ -395,6 +421,9 @@
 
     // 5. Author Card & Byline Networking Enhancement
     initAuthorCards();
+
+    // 6. Semi-Dim Hardware Spotlight for Cards & Panels
+    initCardSpotlight();
   }
 
   function getAuthorCardHTML() {
@@ -522,6 +551,47 @@
     };
     if (window.location.hash) revealHash();
     window.addEventListener('hashchange', revealHash);
+  }
+
+  function initCardSpotlight() {
+    if (window.matchMedia && window.matchMedia('(hover: none)').matches) return;
+
+    let rafId = null;
+    let latestEvent = null;
+
+    const cards = Array.from(document.querySelectorAll(
+      '.tech-card, .lab-card, .fn-card, .hps-cta-card, .cluster-card, .pillar-card, .hero-gateway-card, .tnl-author-entity-card'
+    ));
+
+    if (!cards.length) return;
+
+    function updateSpotlights() {
+      if (!latestEvent) return;
+      const x = latestEvent.clientX;
+      const y = latestEvent.clientY;
+
+      for (let i = 0; i < cards.length; i++) {
+        const card = cards[i];
+        const rect = card.getBoundingClientRect();
+        if (
+          x >= rect.left - 450 &&
+          x <= rect.right + 450 &&
+          y >= rect.top - 450 &&
+          y <= rect.bottom + 450
+        ) {
+          card.style.setProperty('--mouse-x', (x - rect.left) + 'px');
+          card.style.setProperty('--mouse-y', (y - rect.top) + 'px');
+        }
+      }
+      rafId = null;
+    }
+
+    window.addEventListener('pointermove', (e) => {
+      latestEvent = e;
+      if (!rafId) {
+        rafId = requestAnimationFrame(updateSpotlights);
+      }
+    }, { passive: true });
   }
 
   if (document.readyState === 'loading') {
