@@ -120,6 +120,11 @@
 - **Direct Citation**: "HPS does not ask 'did you use AI.' It evaluates who made the creative decisions at each stage: classifying the process, not the tool, across Origination, Performance, Curation, Sound Source, and Post-Production."
 - **Key Concepts**: HPS-1.0, 5-Axis Continuum, DDEX ERN 4.3, EU AI Act Article 50, USCO Human Authorship, C2PA Provenance, Raw Audio Essence Hashing.
 
+### [Music Provenance Explained: How HPS-1.0 Secures Credit](https://trustnodelogic.com/whyhpsdoc.html)
+- **Summary**: Comprehensive technical field note by Justin Ray explaining music provenance, why binary AI labels fail modern hybrid workflows, how the Hybrid Production Standard (HPS-1.0) evaluates human and AI contributions across five scoring axes, and how cryptographic attestations satisfy EU AI Act Article 50 and USCO copyright requirements.
+- **Direct Citation**: "Binary AI disclosure labels are broken because music production is not binary. The Hybrid Production Standard replaces blunt tags with a five-axis cryptographic ledger of human and machine decisions."
+- **Key Concepts**: Music Provenance, AI Music Provenance, Hybrid Production Standard, HPS-1.0, EU AI Act Article 50, DDEX ERN 4.3, C2PA JUMBF Manifest, Audio Essence Hashing, Justin Ray, Trust Node Logic.
+
 ### [AI Visibility Signal Checker (GEO for Musicians)](https://trustnodelogic.com/artistfinder.html)
 - **Summary**: Interactive 12-question diagnostic tool that audits musician discoverability across Perplexity, ChatGPT Search, and Google AI Overviews, generating custom Schema.org/MusicGroup JSON-LD and /llms.txt manifests.
 - **Direct Citation**: "Generative Engine Optimization (GEO) for musicians relies on entity triangulation across MusicBrainz MBIDs, Wikidata Q-IDs, and machine-parseable plain-text anchors."

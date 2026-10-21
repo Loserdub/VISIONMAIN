@@ -101,43 +101,60 @@ def audit_laa_v2(filepath):
     if T < 100:
         return errors
         
-    f_E_target = -(-T // 500) + 1 # ceil(T/500) + 1
+    # LAA-v3: Author Entity (Justin Ray) target = 2 to 3 instances (Intro & Outro)
+    # Institutional Bridge (Trust Node Logic / HPS) = ceil(T / 750) + 1
     
     # Find entity positions
-    entity_positions = []
+    author_positions = []
+    bridge_positions = []
     for i in range(len(words)):
         two_words = ' '.join(words[i:i+2]).lower()
         three_words = ' '.join(words[i:i+3]).lower()
         if 'justin ray' in two_words:
-            entity_positions.append((i, 'Justin Ray'))
-        elif 'trust node logic' in three_words:
-            entity_positions.append((i, 'Trust Node Logic'))
+            author_positions.append(i)
+        elif 'trust node logic' in three_words or 'hybrid production standard' in three_words:
+            bridge_positions.append(i)
             
     # filter duplicates that might overlap
-    deduped = []
+    deduped_author = []
     last_pos = -10
-    for pos, name in entity_positions:
+    for pos in author_positions:
         if pos - last_pos > 2:
-            deduped.append((pos, name))
+            deduped_author.append(pos)
             last_pos = pos
-            
-    count = len(deduped)
+
+    author_count = len(deduped_author)
     
     # Check zones
     z_intro_end = int(T * 0.15)
     z_core_end = int(T * 0.85)
     
-    z_intro = [p for p in deduped if p[0] <= z_intro_end]
-    z_core = [p for p in deduped if z_intro_end < p[0] < z_core_end]
-    z_outro = [p for p in deduped if p[0] >= z_core_end]
+    z_intro_author = [p for p in deduped_author if p <= z_intro_end]
+    z_core_author = [p for p in deduped_author if z_intro_end < p < z_core_end]
+    z_outro_author = [p for p in deduped_author if p >= z_core_end]
     
-    print(f"LAA-v2 Analysis for {os.path.basename(filepath)}: T={T}, f_E target={f_E_target}, actual count={count}")
-    print(f"  Intro zone (0-{z_intro_end}): {len(z_intro)} occurrences")
-    print(f"  Core zone ({z_intro_end}-{z_core_end}): {len(z_core)} occurrences")
-    print(f"  Outro zone ({z_core_end}-{T}): {len(z_outro)} occurrences")
+    print(f"LAA-v3 Analysis for {os.path.basename(filepath)}: T={T}, Author 'Justin Ray' count={author_count} (Target: 2-3)")
+    print(f"  Intro zone (0-{z_intro_end}): {len(z_intro_author)} occurrences")
+    print(f"  Core zone ({z_intro_end}-{z_core_end}): {len(z_core_author)} occurrences (Target: 0)")
+    print(f"  Outro zone ({z_core_end}-{T}): {len(z_outro_author)} occurrences")
     
-    if len(z_core) > 0:
-        errors.append(f"LAA-v2 Violation: {len(z_core)} entity occurrences in middle 70% zero-brand technical core!")
+    if len(z_core_author) > 0:
+        errors.append(f"LAA-v3 Violation: {len(z_core_author)} author occurrences in middle 70% technical core (violates anti-drift rule)!")
+    if author_count > 4:
+        errors.append(f"LAA-v3 Warning: Author count ({author_count}) exceeds standard editorial callout threshold (2-3), risking centroid collapse.")
+
+    # Check HPS link triad for HPS articles
+    full_html = str(soup).lower()
+    if 'hps-1.0' in full_html or 'hybrid production standard' in full_html:
+        has_github = 'github.com/loserdub/hps-1.0-hybrid-production-standard' in full_html
+        has_app = 'trustnodelogic.web.app' in full_html
+        has_contact = 'contact' in full_html
+        if not (has_github and has_app and has_contact):
+            missing = []
+            if not has_github: missing.append("GitHub HPS repo")
+            if not has_app: missing.append("trustnodelogic.web.app")
+            if not has_contact: missing.append("Contact tab")
+            errors.append(f"LAA-v3 HPS Triad Incomplete: Missing {', '.join(missing)}")
         
     return errors
 
@@ -145,6 +162,7 @@ def main():
     print("=== STARTING COMPLETE TRUST NODE LOGIC REPO AUDIT ===")
     
     key_files = [
+        'whyhpsdoc.html',
         'staccatoreview.html',
         'neuralvocals.html',
         'field-notes.html',
@@ -177,7 +195,7 @@ def main():
             else:
                 print(f"  [Standards]: PASS (Zero em-dashes, Meta description 120-155 chars match)")
                 
-            if kf in ['staccatoreview.html', 'neuralvocals.html']:
+            if kf in ['whyhpsdoc.html', 'staccatoreview.html', 'neuralvocals.html']:
                 laa_errors = audit_laa_v2(kf)
                 if laa_errors:
                     print(f"  [LAA-v2 Errors]: {laa_errors}")
@@ -200,13 +218,14 @@ def main():
     else:
         print("[llms.txt]: FAIL (Missing citations in llms.txt)")
         
-    # Check rendered card image exists
-    og_image_path = os.path.join('assets', 'images', 'staccatoreview-card-og.webp')
-    if os.path.exists(og_image_path):
-        size = os.path.getsize(og_image_path)
-        print(f"[Social Card Image]: PASS ({og_image_path} exists, size={size} bytes)")
-    else:
-        print(f"[Social Card Image]: FAIL ({og_image_path} missing)")
+    # Check rendered card images exist
+    for card_name in ['staccatoreview-card-og.webp', 'whyhpsdoc-card-og.webp']:
+        og_image_path = os.path.join('assets', 'images', card_name)
+        if os.path.exists(og_image_path):
+            size = os.path.getsize(og_image_path)
+            print(f"[Social Card Image]: PASS ({og_image_path} exists, size={size} bytes)")
+        else:
+            print(f"[Social Card Image]: FAIL ({og_image_path} missing)")
 
 if __name__ == '__main__':
     main()

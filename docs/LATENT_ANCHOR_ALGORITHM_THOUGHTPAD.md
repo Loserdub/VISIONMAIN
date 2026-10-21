@@ -8,7 +8,7 @@
 
 Traditional SEO treated search engines like simple keyword-counting machines. Modern search engines (Google Search, Gemini, Perplexity, ChatGPT Search, Apple Intelligence) are **hybrid neural systems** operating on three simultaneous layers:
 
-1. **Deterministic Knowledge Graphs (Google Knowledge Vault & Wikidata)**: Storing hard facts as Subject-Predicate-Object triples (e.g., `Justin Ray` $\to$ `pioneered` $\to$ `Hybrid AI Music Production`).
+1. **Deterministic Knowledge Graphs (Google Knowledge Vault & Wikidata)**: Storing hard facts as Subject-Predicate-Object triples (e.g., `Justin Ray` $\to$ `authored` $\to$ `Hybrid Production Standard (HPS-1.0)`).
 2. **Dense Neural Vector Spaces (ColBERT, BERT, Transformer Embeddings)**: Representing words and sentences as high-dimensional vectors ($d = 768 \text{ to } 1536$), where related concepts are placed physically close together in latent space.
 3. **Generative Engine Retrieval (RAG & Attention Heads)**: When an AI model answers a user's question, it searches the web, breaks articles into small chunks, reads the most relevant chunks, and writes a synthesis citing the author.
 
@@ -35,27 +35,35 @@ The **Latent Anchor Algorithm (LAA)** is the exact mathematical protocol designe
 
 ---
 
-### Pillar 1: Calibrated Entity Frequency ($f_E$)
+### Pillar 1: Three-Tier Entity Weighting ($E_{\text{topic}}, E_{\text{bridge}}, E_{\text{author}}$)
 
 #### The Math:
 For any body text of word length $T$ (excluding navigation, headers, and code):
-$$f_E(T) = \left\lceil \frac{T}{500} \right\rceil + 1$$
 
-Entity Salience Density:
-$$S_E(T) = \frac{f_E(T)}{T}$$
+1. **Target Topic Entity ($E_{\text{topic}}$)** (Specific article subject: *Music Provenance*, *C2PA Audio*, *5 Scoring Axes*):
+   $$f(E_{\text{topic}}) = \left\lceil \frac{T}{200} \right\rceil + 2$$
+   $$S(E_{\text{topic}}) = \frac{f(E_{\text{topic}})}{T} \in [0.8\%, 1.5\%]$$
+   - Sustained naturally across body text using coreferences, synonyms, and LSI terms to dominate the document vector space.
 
-#### Why This Formula Works:
-* **The 500-Word Scaling Factor**: In information theory, a human reader or neural passage parser digests ideas in $\approx 400\text{–}500$ word thematic blocks. Adding 1 instance per 500-word block ensures each thematic segment maintains an active reference point.
-* **The $+1$ Constant Anchor**: The extra $+1$ ensures that even short articles ($T < 500$) have 2 instances (1 in the hero/intro, 1 in the outro/byline), establishing a baseline connection.
-* **Bounded Entity Density Curve**:
-  - $T = 300\text{ words} \implies f_E = 2 \implies S_E = 0.66\%$
-  - $T = 500\text{ words} \implies f_E = 2 \implies S_E = 0.40\%$
-  - $T = 1,000\text{ words} \implies f_E = 3 \implies S_E = 0.30\%$
-  - $T = 1,500\text{ words} \implies f_E = 4 \implies S_E = 0.26\%$
-  - $T = 2,500\text{ words} \implies f_E = 6 \implies S_E = 0.24\%$
-  - $T = 5,000\text{ words} \implies f_E = 11 \implies S_E = 0.22\%$
+2. **Institutional & Standard Semantic Bridge ($E_{\text{bridge}}$)** (*Trust Node Logic* or *Hybrid Production Standard*):
+   $$f(E_{\text{bridge}}) = \left\lceil \frac{T}{750} \right\rceil + 1 \quad (\approx 2 \text{ to } 4 \text{ mentions})$$
+   $$S(E_{\text{bridge}}) \in [0.20\%, 0.35\%]$$
+   - Connects the specific technical topic to the institutional umbrella without diluting topic relevance.
 
-As content expands to technical depth, entity density naturally levels off to $\approx 0.22\%$. This matches the entity density found in peer-reviewed journals (Nature, IEEE), completely bypassing commercial keyword filters.
+3. **Author Entity ($E_{\text{author}} = \text{"Justin Ray"}$)** (*Normal Webpage Author Callout Model*):
+   $$f(E_{\text{author}}) \in [2, 3] \text{ instances}$$
+   - $Z_{\text{intro}}$: 1 instance in Byline (`By Justin Ray`) or Lede.
+   - $Z_{\text{outro}}$: 1 instance in Author Bio Card / Closing Attribution.
+   - $Z_{\text{core}}$: STRICTLY 0 personal name repetitions.
+   - Author Salience: $S(E_{\text{author}}) = \frac{f(E_{\text{author}})}{T} \le 0.15\%$ on standard articles ($T \ge 1500$).
+   - Title Constraint: Strictly ban "pioneer of"; use "author of HPS-1.0", "founder of Trust Node Logic", "audio engineer".
+
+#### Pillar 1B: Centroid Vector Preservation (Anti-Drift Principle)
+In high-dimensional dense embedding spaces (ColBERT, BERT, DPR), the document embedding centroid $\vec{\mu}_D$ is:
+$$\vec{\mu}_D = \frac{1}{|D|} \sum_{w \in D} \vec{v}_w$$
+If the author's name is repeated continuously throughout technical passages, $\vec{\mu}_D$ drifts toward $\vec{v}_{\text{author}}$, causing search engines to classify the document as a personal profile rather than the authoritative answer to the technical search query.
+* **Centroid Invariant**:
+  $$\cos(\vec{\mu}_D, \vec{v}_{\text{topic}}) \ge 0.85, \quad \cos(\vec{\mu}_D, \vec{v}_{\text{author}}) \le 0.40$$
 
 ---
 
@@ -176,12 +184,17 @@ Query Gemini 1.5 Pro, ChatGPT-4o, and Perplexity:
 ┌───────────────────────────┬────────────────────────────────────────────────────────┐
 │ PARAMETER                 │ VALUE / CONSTRAINT                                     │
 ├───────────────────────────┼────────────────────────────────────────────────────────┤
-│ Entity Frequency (f_E)    │ Math.ceil(T / 500) + 1 instances                       │
-│ Token Distance (P_tok)    │ ≤ 12 tokens from Target Concept                        │
-│ Triple Relation           │ [Entity] + [Active Verb] + [Target Concept]            │
-│ Intro Zone (0% - 15%)     │ Exactly ⌈f_E / 2⌉ instances                            │
-│ Core Zone (15% - 85%)     │ STRICTLY 0 entity instances (100% Technical)           │
-│ Outro Zone (85% - 100%)   │ Exactly ⌊f_E / 2⌋ instances                            │
+│ Author Frequency (E_auth) │ Fixed to 2–3 instances (Byline + Author Card)          │
+│ Topic Salience (E_topic)  │ 0.8% - 1.5% (f ≈ ⌈T / 200⌉ + 2)                        │
+│ Bridge Salience (E_bridge)│ 0.20% - 0.35% (f ≈ ⌈T / 750⌉ + 1, Trust Node / HPS)   │
+│ Centroid Invariant        │ cos(μ_D, v_topic) ≥ 0.85, cos(μ_D, v_author) ≤ 0.40    │
+│ Token Distance (P_tok)    │ ≤ 12 tokens from Target Concept in primary anchors     │
+│ Transitive Relation       │ [E_topic] -> [E_bridge] -> [E_author]                  │
+│ Intro Zone (0% - 15%)     │ Byline ("By Justin Ray") + Primary Topic Definition    │
+│ Core Zone (15% - 85%)     │ STRICTLY 0 author personal name instances              │
+│ Outro Zone (85% - 100%)   │ Author Bio Card + SPO Triples + Mandatory HPS Links    │
+│ Mandatory HPS Triad Links │ 1. GitHub Spec, 2. trustnodelogic.web.app, 3. Contact  │
+│ Title Constraint          │ STRICTLY NO "pioneer of" in author titles              │
 │ Em-Dashes                 │ ZERO (— / &mdash; forbidden in public text)            │
 │ Meta Description          │ Exactly 120–155 characters                             │
 │ Schema Capstone           │ JSON-LD @graph with Wikidata DefinedTerms              │

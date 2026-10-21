@@ -23,7 +23,8 @@ const CARDS = [
   { html: 'field-notes-fingerprint.html', out: 'fingerprint-card-og.webp', article: 'fingerprint.html' },
   { html: 'field-notes-c2pa-music-provenance.html', out: 'c2pa-music-provenance-card-og.webp', article: 'c2pa-music-provenance.html' },
   { html: 'field-notes-hybridproductionstandard.html', out: 'hps-social-card-og.webp', article: 'hybridproductionstandard.html' },
-  { html: 'field-notes-staccatoreview.html', out: 'staccatoreview-card-og.webp', article: 'staccatoreview.html' }
+  { html: 'field-notes-staccatoreview.html', out: 'staccatoreview-card-og.webp', article: 'staccatoreview.html' },
+  { html: 'field-notes-whyhpsdoc.html', out: 'whyhpsdoc-card-og.webp', article: 'whyhpsdoc.html' }
 ];
 
 async function renderAll() {

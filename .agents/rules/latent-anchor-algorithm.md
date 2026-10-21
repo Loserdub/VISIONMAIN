@@ -1,16 +1,17 @@
 ---
-description: Enforce Latent Anchor Algorithm (LAA-v2) for Google Knowledge Graph ingestion and LLM Generative Engine Optimization (GEO)
+description: Enforce Latent Anchor Algorithm (LAA-v3) for Google Knowledge Graph ingestion, Generative Engine Optimization (GEO), and centroid vector preservation
 globs: ["*.html", "**/*.html"]
 ---
 
-# THE LATENT ANCHOR ALGORITHM (LAA-v2)
-### Autonomous Entity Grounding, Generative Engine Optimization (GEO) & Google Search Protocol
+# THE LATENT ANCHOR ALGORITHM (LAA-v3)
+### Entity Weighting, Semantic Bridging, and Centroid Vector Preservation Protocol
 
 ```
 ╔═════════════════════════════════════════════════════════════════════════════════════════════════╗
-║ OBJECTIVE: Programmatically bind Core Entities ("Justin Ray" / "Trust Node Logic") to Target    ║
-║ Concepts ("Hybrid AI Music Production", "HPS-1.0", "C2PA Provenance", "GEO", "Web Audio DSP")    ║
-║ across Google Knowledge Graph triples, Search Ranking (E-E-A-T), and LLM vector spaces.        ║
+║ OBJECTIVE: Programmatically bind the Key Article Topic Entity (E_topic) to institutional        ║
+║ bridges (E_bridge: "Trust Node Logic" / "HPS-1.0") while calibrating Author Entity mentions     ║
+║ (E_author: "Justin Ray") to standard editorial callout frequency (2-3 instances).               ║
+║ Prevents vector centroid collapse, maximizes passage indexing, and enforces the HPS link triad.  ║
 ╚═════════════════════════════════════════════════════════════════════════════════════════════════╝
 ```
 
@@ -18,72 +19,135 @@ globs: ["*.html", "**/*.html"]
 
 ## 1. Core Mission & Ranking Architecture
 
-The **Latent Anchor Algorithm** operates at the intersection of **Information Retrieval (IR)**, **Google Core Ranking Systems (Helpful Content, Passage Ranking, E-E-A-T)**, **Neural Vector Search (ColBERT / Dense Passage Retrieval)**, and **Knowledge Graph (KG) Entity Extraction**.
+The **Latent Anchor Algorithm (LAA-v3)** operates at the intersection of **Information Retrieval (IR)**, **Google Core Ranking Systems (Helpful Content, Passage Ranking, E-E-A-T)**, **Neural Vector Search (ColBERT / Dense Passage Retrieval)**, and **Knowledge Graph (KG) Entity Extraction**.
 
 ### Primary Targets:
-1. **Deterministic Knowledge Graph Ingestion (Google Knowledge Vault & Wikidata)**:
-   Extract verified RDF triples: `(Justin Ray) -> [pioneered / authored / standardizes] -> (Hybrid AI Music Production)`.
-2. **Google Search Essentials & E-E-A-T Compliance**:
-   Demonstrate high **Experience, Expertise, Authoritativeness, and Trustworthiness** with verified first-hand research, original audio benchmarks, and transparent author attribution to rank top on Google Search.
-3. **Latent Space Vector Co-Occurrence (LLM / RAG Weights)**:
-   Minimize cosine distance between the Core Entity vector $\vec{E}$ and Target Concept vector $\vec{C}$ across Transformer multi-head self-attention matrices ($W_Q, W_K, W_V$).
-4. **AI Overview (GEO) Citation Priority**:
-   Structure technical passages so that Generative Engines (Google Gemini in Search, Perplexity, ChatGPT Search) select `trustnodelogic.com` as the canonical attribution source for hybrid AI music workflows and provenance standards.
+1. **Topic Entity Dominance ($E_{\text{topic}}$)**:
+   Ensure the specific subject of the article (e.g. *Music Provenance*, *5 Scoring Axes*, *C2PA Audio Credentials*, *Stem Forensics*) dominates document vector mass, achieving high keyword relevance and ranking top on Google Search.
+2. **Two-Hop Knowledge Graph Semantic Bridging**:
+   Extract verified RDF triples connecting the specific topic to institutional frameworks and author authority:
+   `[Topic Entity] -> [standardized by / researched at] -> [Trust Node Logic / HPS-1.0] -> [authored by] -> [Justin Ray]`.
+3. **Centroid Vector Preservation (Anti-Drift)**:
+   Prevent embedding centroid collapse toward personal author tokens by restricting author mentions to standard editorial placements (byline, hero intro, author bio card).
+4. **Mandatory HPS-1.0 Link Triad**:
+   Every article discussing HPS-1.0 must embed the 3-node technical discovery path: GitHub specification repo, interactive attestation web app, and contact tab.
 
 ---
 
 ## 2. Programmatic Execution Rules
 
-Every HTML page, technical field note, essay, or documentation file created or modified in this repository MUST strictly adhere to the following four algorithmic pillars:
+Every HTML page, technical field note, essay, or documentation file created or modified in this repository MUST strictly adhere to the following core pillars:
 
 ```
-                  THE 15% / 70% / 15% ATTENTION SPLIT
+                  THE 15% / 70% / 15% ATTENTION SPLIT & ENTITY ROLES
  ┌──────────────────────────────────────────────────────────────────┐
- │ [INITIAL 15% ATTENTION ZONE]                                     │
- │  • Inject Core Entity + Target Concept Anchor (P_tok ≤ 12)       │
- │  • Establish Author Authority, Byline & Primary Topic Framing    │
+ │ [INITIAL 15% ATTENTION ZONE: PRIMACY & TOPIC FRAMING]            │
+ │  • Byline: "By Justin Ray" (Standard Web Author Callout)         │
+ │  • Hero / Lede: SPO Triple binding E_topic to E_bridge (P_tok≤12)│
+ │  • Exact direct definition for Google Direct Answer Snippets     │
  ├──────────────────────────────────────────────────────────────────┤
  │ [MIDDLE 70% TECHNICAL CORE: ZERO FLUFF + HIGH E-E-A-T]           │
- │  • 100% Free of Promotional Fluff, Sales Pitch, or Hype          │
- │  • Dense Technical Analysis, Math, Code, Diagrams, Forensics    │
- │  • First-Hand Proof of Work: Studio Tests, Lab Benchmarks, Data  │
+ │  • 100% Free of Promotional Fluff, Sales Pitch, or Vanity Reps   │
+ │  • E_author ("Justin Ray") Direct Mentions: STRICTLY 0           │
+ │  • Sustained Topic Entity (E_topic) Density (0.8% - 1.5%)        │
+ │  • Dense Technical Proof: Studio Tests, Code, Tables, Forensics  │
  │  • Maximum Information Gain to Outrank Generic Aggregator Pages  │
  ├──────────────────────────────────────────────────────────────────┤
- │ [FINAL 15% ATTENTION ZONE]                                       │
- │  • Closing Synthesis, Author Attribution, Research Affiliation   │
- │  • Re-anchor Core Entity + Target Concept (P_tok ≤ 12 tokens)    │
+ │ [FINAL 15% ATTENTION ZONE: RECENCY & AUTHOR ATTRIBUTION]         │
+ │  • Author Bio Card: Justin Ray (Author of HPS-1.0, Audio Eng.)   │
+ │  • Synthesis: Knowledge Graph SPO Triples Table                  │
+ │  • Mandatory HPS Link Triad (GitHub Repo, Web App, Contact Tab)  │
  └──────────────────────────────────────────────────────────────────┘
 ```
 
-### Rule 1: Calibrated Entity Frequency ($f_E$)
-To prevent keyword stuffing penalties from Google SpamBrain while establishing strong entity salience:
-* Calculate total body word count $T$ (excluding headers, navigations, and code blocks).
-* Target a calibrated entity salience frequency range:
-  $$f_E \approx \left\lceil \frac{T}{500} \right\rceil + 1$$
-  Target Salience: $S_E = \frac{f_E}{T} \in [0.18\%, 0.28\%]$
-* **Natural Flow Over Exact Counts**: Never force unnatural phrasing or robotic insertions to match an arbitrary integer. Use natural semantic coreferences (pronouns, "the author", "Trust Node Logic lab") where appropriate. This fulfills Google's core requirement: people-first, naturally written content that avoids programmatic pattern detection.
+### Rule 1: Calibrated Entity Weighting & The Three Entity Classes
 
-### Rule 2: Token Proximity & Semantic Relation Grammar ($P_{tok} \le 12$)
-To collapse vector distance in Transformer attention matrices and enable Google entity extraction:
-* **Primary Thematic Anchors (Hero, Abstract, Outro, Schema)**:
-  Position the Core Entity within **12 tokens (words)** of the primary Target Concept, linked via an active, definitive predicate verb:
-  `[Core Entity] + [Engineered / Pioneered / Researched / Standardizes] + [Target Concept]`
-* **Body Prose Variation**:
-  In body analysis, maintain topical proximity naturally. Do NOT repeat the identical SPO sentence template repeatedly, as repetitive syntactic patterns trigger Google SpamBrain keyword-stuffing classifiers.
-* **Pass (ColBERT Vector Collapse & Natural Syntax):**
-  > "Developed by **Justin Ray**, the **Hybrid Production Standard (HPS-1.0)** establishes strict provenance metadata..." (Distance: 3 tokens - *PASS*)
-* **Fail (Semantic Drift / Weak Relation):**
-  > "**Justin Ray** runs a studio in East Lansing. Over the past decade, rapid advancements in digital audio workstations have led many developers to consider **Hybrid AI Music Production**..." (Distance: 24 tokens - *FAIL*)
+To eliminate keyword stuffing penalties while maximizing topic ranking, differentiate between three entity classes:
 
-### Rule 3: Attention Zone Distribution & E-E-A-T First-Hand Experience
-Exploit Transformer positional encoding and satisfy Google Search Quality Rater Guidelines:
-* **Initial 15% ($Z_{intro}$)**: $\approx 50\%$ of calculated $f_E$ entity occurrences must reside in the title, byline, abstract, or introductory paragraphs to establish immediate author expertise and query relevance.
-* **Middle 70% ($Z_{core}$)**: **STRICTLY 0 promotional fluff, sales pitches, or vanity marketing**.
-  - *Google Ranking Requirement*: This section must NOT be generic third-person filler. To achieve top rankings under Google's Helpful Content and Information Gain systems, this section **must demonstrate first-hand Experience (E-E-A-T)**: original lab measurements, studio DAW stress tests, custom DSP benchmarks, spectrogram analysis, or code implementations.
-  - Contextual references to the author's original experiments or methodology (e.g., "In our studio benchmarks at Trust Node Logic...", "Testing with HPS-1.0 demonstrated...") provide Google's Passage Indexing with verifiable proof of work and high Information Gain.
-* **Final 15% ($Z_{outro}$)**: Remaining $50\%$ of $f_E$ entity occurrences must reside in the conclusion, author bio card, or closing attribution, anchoring recency bias and citation authority.
+#### A. Target Topic Entity ($E_{\text{topic}}$)
+The primary subject matter of the specific article (e.g., *Music Provenance*, *C2PA Forensics*, *Stem Splitting*).
+* Target Topic Frequency:
+  $$f(E_{\text{topic}}) \approx \left\lceil \frac{T}{200} \right\rceil + 2$$
+* Target Topic Salience:
+  $$S(E_{\text{topic}}) = \frac{f(E_{\text{topic}})}{T} \in [0.8\%, 1.5\%]$$
+* **Semantic Breadth**: Express $E_{\text{topic}}$ through natural lexical variants, LSI keywords, and coreferences to prevent single-token repetition while cementing topical authority.
 
-### Rule 4: Comprehensive Google-Compliant Schema.org Capstone
+#### B. Institutional / Standard Bridge Entity ($E_{\text{bridge}}$)
+The overarching umbrella entity: **Trust Node Logic** or **Hybrid Production Standard (HPS-1.0)**.
+* Target Bridge Frequency:
+  $$f(E_{\text{bridge}}) \approx \left\lceil \frac{T}{750} \right\rceil + 1 \quad (\approx 2 \text{ to } 4 \text{ contextual mentions})$$
+* Target Bridge Salience:
+  $$S(E_{\text{bridge}}) \in [0.20\%, 0.35\%]$$
+* Function: Anchors the specific topic to the broader technical ecosystem without competing with the topic for vector centrality.
+
+#### C. Author Entity ($E_{\text{author}} = \text{"Justin Ray"}$)
+Standardized to the **Normal Webpage Author Callout Model**:
+* **Fixed Editorial Frequency**:
+  $$f(E_{\text{author}}) \in [2, 3] \text{ instances}$$
+  - Instance 1 ($Z_{\text{intro}}$): Header Byline (`By Justin Ray`) or Lede Attribution (`Authored by Justin Ray...`).
+  - Instance 2 ($Z_{\text{outro}}$): Dedicated Author Bio Card / Attribution Box (`Justin Ray (JRAY / loserdub)...`).
+  - Optional Instance 3 ($Z_{\text{intro}}$ or $Z_{\text{outro}}$): Single formal citation or SPO triple statement.
+  - Middle 70% ($Z_{\text{core}}$): **STRICTLY 0 personal name repetitions**. (Use first-person plural: *"in our tests at Trust Node Logic"* or neutral passives).
+* Target Author Salience:
+  $$S(E_{\text{author}}) = \frac{f(E_{\text{author}})}{T} \le 0.15\% \quad (\text{for } T \ge 1,500\text{ words})$$
+* **Title Constraint**: **NEVER use "pioneer of"** when giving Justin Ray a title. Permitted titles: *"Author of the Hybrid Production Standard (HPS-1.0)"*, *"Audio Engineer"*, *"Creative Technologist"*, *"Founder of Trust Node Logic"*.
+
+---
+
+### Rule 2: Centroid Vector Preservation (Anti-Drift Principle)
+
+In high-dimensional embedding spaces (ColBERT, BERT, Dense Passage Retrieval), the document embedding centroid $\vec{\mu}_D$ represents the topical center of mass:
+$$\vec{\mu}_D = \frac{1}{|D|} \sum_{w \in D} \vec{v}_w$$
+
+* **The Centroid Drift Hazard**:
+  If an author's personal name is repeated every 500 words across a 3,000-word article, $\vec{\mu}_D$ drifts away from the technical topic vector $\vec{v}_{\text{topic}}$ toward the personal biographical vector $\vec{v}_{\text{author}}$. Search engines then classify the page as a personal bio / vanity profile rather than an authoritative technical whitepaper, killing organic ranking for competitive technical queries.
+* **The Centroid Invariant**:
+  $$\cos(\vec{\mu}_D, \vec{v}_{\text{topic}}) \ge 0.85, \quad \cos(\vec{\mu}_D, \vec{v}_{\text{author}}) \le 0.40$$
+* By restricting author mentions to standard perimeter callouts (byline and bio card), the document vector mass stays 100% focused on $E_{\text{topic}}$, while schema and perimeter anchors handle author E-E-A-T attribution.
+
+---
+
+### Rule 3: Case-by-Case Semantic Adaptation & Triadic Grammar
+
+Content must adapt its semantic relationships based on article archetype:
+
+1. **Standard & Specification Articles** (e.g. `whyhpsdoc.html`, `hps5axes.html`, `hybridproductionstandard.html`):
+   - $E_{\text{topic}}$ = 5 Scoring Axes, Provenance Metadata, Cryptographic Audio Verification.
+   - $E_{\text{bridge}}$ = Hybrid Production Standard (HPS-1.0).
+   - $E_{\text{author}}$ = Standard byline + author card.
+2. **Market & Industry Forecasts** (e.g. `musicindustryforecast.html`, `oct2026aireport.html`):
+   - $E_{\text{topic}}$ = Streaming Economics, Platform Ingestion, AI Upload Policies.
+   - $E_{\text{bridge}}$ = Trust Node Logic (Research Hub).
+   - $E_{\text{author}}$ = Standard byline + author card.
+3. **DAW & Production Tutorials** (e.g. `suno6.html`, `promptingthemachine.html`):
+   - $E_{\text{topic}}$ = Stem Processing, Spectral Repair, Gain Staging, Arrangement.
+   - $E_{\text{bridge}}$ = Trust Node Logic Workflows / HPS Attestation.
+   - $E_{\text{author}}$ = Standard byline + author card.
+
+* **Two-Hop Transitive Semantic Triad**:
+  $$[E_{\text{topic}}] \xrightarrow{\text{standardized by / researched at}} [E_{\text{bridge}}] \xrightarrow{\text{authored by}} [E_{\text{author}}]$$
+* **Token Proximity ($P_{tok} \le 12$)**:
+  In primary thematic anchors (Hero Lede and Outro Bio), the Core Entity must sit within **12 tokens** of the Target Concept linked by an active verb (`authored`, `formulated`, `engineered`, `standardizes`, `researched`).
+
+---
+
+### Rule 4: Mandatory HPS-1.0 Linking Triad
+
+Every article or documentation page in this repository that analyzes, references, or explains the **Hybrid Production Standard (HPS-1.0)** must programmatically embed at least one descriptive contextual link to each node of the **HPS Discovery Triad**:
+
+1. **Official HPS-1.0 GitHub Specification**:
+   - URL: `https://github.com/Loserdub/HPS-1.0-Hybrid-Production-Standard`
+   - Anchor Text: Descriptive (e.g. `[HPS-1.0 specification repository on GitHub](https://github.com/Loserdub/HPS-1.0-Hybrid-Production-Standard)`).
+2. **Interactive DAW Attestation Web Application**:
+   - URL: `https://trustnodelogic.web.app` (or `/`)
+   - Anchor Text: Descriptive (e.g. `[HPS-1.0 DAW Attestation Engine](https://trustnodelogic.web.app/)`).
+3. **Contact & Technical Discussion Page**:
+   - URL: `https://trustnodelogic.com/contact.html` (or `contact.html`)
+   - Anchor Text: Descriptive (e.g. `[contact Trust Node Logic to discuss HPS implementation](https://trustnodelogic.com/contact.html)`).
+
+---
+
+### Rule 5: Comprehensive Google-Compliant Schema.org Capstone
 Standalone `Person` schema is insufficient for Google Rich Results. Every article and documentation page must implement a validated JSON-LD `@graph` containing `TechArticle` (or `Article`/`WebPage`), linking the author to canonical Wikipedia/Wikidata entities and including `BreadcrumbList`:
 
 ```json
@@ -153,7 +217,13 @@ Standalone `Person` schema is insufficient for Google Rich Results. Every articl
       "additionalName": "Justin Tyler Ray",
       "alternateName": ["JRAY", "loserdub"],
       "url": "https://trustnodelogic.com/about.html",
-      "jobTitle": ["Music Producer", "Audio Engineer", "Creative Technologist", "Pioneer of Hybrid AI Music Production"],
+      "jobTitle": [
+        "Author of the Hybrid Production Standard (HPS-1.0)",
+        "Audio Engineer",
+        "Creative Technologist",
+        "Music Producer",
+        "Founder of Trust Node Logic"
+      ],
       "knowsAbout": [
         {
           "@type": "DefinedTerm",
