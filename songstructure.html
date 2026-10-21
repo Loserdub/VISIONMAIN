@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -725,12 +725,13 @@
 </nav>
 
 
+<main>
 <header class="hero wrap">
 <p class="eyebrow">Field Notes · Structural Analysis</p>
 <h1>The Architecture of the Three-Minute Song</h1>
 <p class="dek">How verse-chorus-bridge songwriting built for CDs, downloads, and terrestrial radio gave way to front-loaded, algorithm-tuned arrangements built for streaming, and what the runtime and structure data actually says about it.</p>
 <div class="byline">
-<span>By <b>JRAY</b> <span style="color:var(--text-mute)">(Justin Tyler Ray)</span></span>
+<span>By <b>Justin Tyler Ray</b> (JRAY) &middot; Pioneer of Hybrid AI Music Production</span>
 <span class="dot">·</span>
 <span>Lansing / Okemos, MI</span>
 <span class="dot">·</span>
@@ -739,7 +740,6 @@
 <span id="readTime">12 min read</span>
 </div>
 </header>
-<main>
 <section class="wrap">
 <p class="lede">The architecture of popular music has always adapted to the constraints of its distribution medium. The physical capacity of a ten-inch 78 rpm record held early twentieth-century compositions under three minutes. The mechanics of modern digital platforms now dictate current musical form in much the same way, only the constraint isn't a groove running out of room. It's a skip button and a thirty-second royalty clock.</p>
 <p>This piece compares two distinct industry epochs: the mature <b>CD and digital download era (2000-2018)</b>, when arrangements were optimized for physical sales, a la carte downloads, and Top 40 radio, and the mature <b>algorithmic streaming era (2019-present)</b>, dominated by pay-per-play Digital Service Platforms and short-form video, where songs are shaped by completion rate, skip behavior, and recommendation-engine telemetry. The 2000-2018 era rewarded narrative tension, dynamic builds, and predictable verse-chorus-bridge conventions. The post-2019 era rewards compression: front-loaded hooks, eliminated transitions, flattened dynamics.</p>
@@ -1001,8 +1001,7 @@
  </div>
  </section>
 
-</main>
-<footer class="wrap">
+<section class="wrap my-12">
 <div class="bio-card">
 <div aria-hidden="true" class="bio-mark">JR</div>
 <div>
@@ -1015,10 +1014,27 @@
 </div>
 </div>
 </div>
-<nav aria-label="Site" class="footer-nav">
-<span>© <span id="yr"></span> Trust Node Logic · Justin Tyler Ray</span>
-<span><a href="./what-is-hybrid.html">← Back to Field Notes</a></span>
+</section>
+</main>
+
+<!-- Rigid Terminal Footer -->
+<footer class="w-full bg-[#0B0C0E] border-t border-white/10 py-8 mt-auto z-20 relative">
+<div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="text-[#71717A] text-xs font-mono tracking-widest uppercase text-center md:text-left">
+© <span id="yr">2026</span> Justin Ray (JRAY). All Rights Reserved.
+</div>
+<nav class="flex flex-wrap justify-center gap-6 text-xs font-mono tracking-widest uppercase text-[#71717A]" aria-label="Footer navigation">
+<a href="./index.html" class="hover:text-[#EAEAEA] transition-colors">Home</a>
+<a href="./hybridproductionstandard.html" class="hover:text-[#EAEAEA] transition-colors">The Standard</a>
+<a href="./projects.html" class="hover:text-[#EAEAEA] transition-colors">The Suite</a>
+<a href="./field-notes.html" class="hover:text-[#EAEAEA] transition-colors">Field Notes</a>
+<a href="./music.html" class="hover:text-[#EAEAEA] transition-colors">Music</a>
+<a href="./about.html" class="hover:text-[#EAEAEA] transition-colors">About</a>
+<a href="./services.html" class="hover:text-[#EAEAEA] transition-colors">Services</a>
+<a href="./contact.html" class="hover:text-[#EAEAEA] transition-colors">Contact</a>
+<a href="./sitemap.xml" class="hover:text-[#EAEAEA] transition-colors">Sitemap</a>
 </nav>
+</div>
 </footer>
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
