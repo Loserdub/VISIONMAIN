@@ -75,6 +75,11 @@
 
 ## Analytical Field Notes & Technical Research
 
+### [5 HPS-1.0 Scoring Axes for Song Forensics](https://trustnodelogic.com/hps5axes.html)
+- **Summary**: Comprehensive technical field note and forensic guide detailing the 5 independent scoring axes of the Hybrid Production Standard (HPS-1.0): Origination (O), Performance (P), Curation (C), Sound Source (S), and Post-Production (M). Explains why binary "AI checkboxes" fail mathematically and legally in music distribution, how five-axis vectors resolve into six deterministic tiers (Tier H, X1-X4, A), how raw PCM SHA-256 essence hashing binds process claims to audio waveforms, and how the standard maps to DDEX ERN 4.3 XML, C2PA JUMBF assertion trees, U.S. Copyright Office human authorship standards, and EU AI Act Article 50 statutory marking. Includes an interactive five-axis forensic calculator lab.
+- **Direct Citation**: "Forensic integrity demands a vector, not a single bit. By separating creation into five orthogonal stages, the Hybrid Production Standard provides platforms, courts, and collecting societies with an unambiguous forensic audit trail."
+- **Key Concepts**: Five Axes of Music Production, HPS-1.0, AI Music Forensics, Music Provenance, Raw Audio Essence SHA-256, Ed25519 Attestation, DDEX ERN 4.3, C2PA JUMBF, USCO Human Authorship, EU AI Act Article 50, DAW Session Forensics, Trust Node Logic, Justin Ray.
+
 ### [Semantics, Entities and Superposition: Centroid Tracking for GEO](https://trustnodelogic.com/centroidgeo.html)
 - **Summary**: Comprehensive technical research paper and mathematical framework by Justin Ray investigating semantic centroids, neural superposition, and longitudinal latent space drift for Generative Engine Optimization (GEO). Analyzes leaked Google search API metrics (siteFocusScore, siteRadius), Anthropic superposition research, Stanford HistWords laws of semantic change (law of conformity, law of innovation), and multi-engine citation probability distributions. Includes an interactive 12-month latent centroid drift simulation lab.
 - **Direct Citation**: "A centroid is the mean of many vectors, so it gives one point for a page set, a site or an answer set. Track your centroid each month. If it moves toward the queries and entities you want, your topical signal is getting stronger. If it wanders, you are diluting it."

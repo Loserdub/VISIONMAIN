@@ -84,11 +84,18 @@
       "@id": "https://trustnodelogic.com/field-notes.html#articlelist",
       "name": "Trust Node Logic Field Notes & Technical Research",
       "description": "Comprehensive index of research essays, technical specifications, and architectural guides on generative audio, DSP engineering, and hybrid workflows.",
-      "numberOfItems": 25,
+      "numberOfItems": 26,
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
+          "name": "5 HPS-1.0 Scoring Axes for Song Forensics",
+          "url": "https://trustnodelogic.com/hps5axes.html",
+          "description": "HPS-1.0 scores recordings on Origination, Performance, Curation, Sound Source, and Post-Production. A forensic guide to music provenance and copyright defense."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
           "name": "Semantics, Entities and Superposition: Centroid Tracking for GEO",
           "url": "https://trustnodelogic.com/centroidgeo.html",
           "description": "Justin Ray explores semantic centroids, neural superposition, and latent space drift to optimize GEO and search engine citation probabilities."
@@ -646,7 +653,27 @@
             <span>18 MIN READ</span>
           </div>
         </article>
-                <article class="fn-card p-6 flex flex-col justify-between group relative cursor-pointer" onclick="window.location.href='centroidgeo.html'">
+        <article class="fn-card p-6 flex flex-col justify-between group relative cursor-pointer" onclick="window.location.href='hps5axes.html'">
+          <div>
+            <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-3">
+              <span>OCT 21, 2026</span>
+              <span class="text-[10px] font-mono tracking-wider uppercase text-[#FF9F1C] font-semibold">
+                ● NEW // FORENSICS &amp; STANDARDS
+              </span>
+            </div>
+            <h2 class="text-base font-bold font-sans text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors leading-snug mb-3">
+              <a href="hps5axes.html" class="hover:underline focus:outline-none" onclick="event.stopPropagation()">The 5 Scoring Axes of the Hybrid Production Standard: What Each Axis Proves in Song Forensics</a>
+            </h2>
+            <p class="text-xs text-[#A1A1AA] leading-relaxed font-sans">HPS-1.0 scores recordings on Origination, Performance, Curation, Sound Source, and Post-Production. A forensic guide to music provenance and copyright defense.</p>
+          </div>
+          <div class="mt-6 flex items-center justify-between text-[10px] font-mono text-[#71717A]">
+            <a href="hps5axes.html" class="text-[#FF9F1C] font-semibold inline-flex items-center gap-1 group-hover:underline" aria-label="Read 5 HPS-1.0 Scoring Axes for Song Forensics" onclick="event.stopPropagation()">
+              <span>READ FIELD NOTE</span> <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+            <span>11 MIN READ</span>
+          </div>
+        </article>
+        <article class="fn-card p-6 flex flex-col justify-between group relative cursor-pointer" onclick="window.location.href='centroidgeo.html'">
           <div>
             <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-3">
               <span>OCT 19, 2026</span>
@@ -1165,6 +1192,16 @@
 
 <script>
 const ARTICLES = [
+  {
+    title: "The 5 Scoring Axes of the Hybrid Production Standard: What Each Axis Proves in Song Forensics",
+    url: "hps5axes.html",
+    date: "OCT 21, 2026",
+    categoryGroup: "standards",
+    categoryLabel: "FORENSICS & STANDARDS",
+    desc: "HPS-1.0 scores recordings on Origination, Performance, Curation, Sound Source, and Post-Production. A forensic guide to music provenance and copyright defense.",
+    readTime: "11 MIN READ",
+    isNew: true
+  },
   {
     title: "Semantics, Entities and Superposition: Centroid Tracking for GEO",
     url: "centroidgeo.html",
