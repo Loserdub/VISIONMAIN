@@ -306,6 +306,26 @@ An audit of navigation bars was conducted across all pages at 375px viewport wid
 
 ---
 
+### Task 9: 404.html Styling and Standalone CSS Architecture Fix
+
+#### A. Root Cause Analysis
+1. **`<base href="/">` Conflict:** `404.html` contained an isolated `<base href="/">` tag (the only file in the repository with one). In local preview and file test environments, this caused the browser to resolve root-relative paths like `/style.css`, `/favicon.png`, and `/assets/reader.min.js` to the filesystem root (`file:///C:/style.css`), triggering `net::ERR_FILE_NOT_FOUND` errors and stripping all CSS styling.
+2. **Missing Standalone Fallbacks:** The page relied heavily on Tailwind utility classes without self-contained CSS fallbacks in `<style>`, causing raw checkbox inputs `[ ] ≡ ✕` and unstyled blue hyperlinks to render if the stylesheet failed to load.
+
+#### B. Remediation Performed
+1. **Base Tag Removal & Relative Paths:** Removed `<base href="/">` and converted all external asset links to relative paths (`./style.css`, `./favicon.png`, `./assets/reader.min.js`) matching repository standards.
+2. **Resilient Embedded CSS (`<style>`):** Added self-contained brutalist CSS tokens and classes:
+   - Button styling: `.btn-primary` (solid `#FF9F1C` amber with hover glow) and `.btn-secondary` (dark surface `#121417` with subtle border).
+   - Mobile menu robustness: `#mobile-menu-toggle { display: none !important; }` and `.mobile-drawer` toggle state ensuring raw checkboxes never appear in viewports.
+   - Component classes: `.tech-card`, `.breadcrumb`, `.status-badge`, and dot-matrix background.
+3. **Internal Navigation Standardization:** Standardized all 32 internal links to relative `./` targets in the header, mobile drawer, action buttons, popular coordinates, and footer, ensuring complete link validity both locally and in production.
+4. **Browser & Console Verification:** Tested across 375px, 768px, and 1280px viewports in headless Chrome DevTools:
+   - 0 console errors (`ERR_FILE_NOT_FOUND` eliminated).
+   - Clean dark brutalist aesthetic with JetBrains Mono and Space Grotesk typography.
+   - Interactive mobile drawer tested and verified operational.
+
+---
+
 ## 3. Verification & Compliance Checklist
 
 - [x] Title separator convention: ` · Trust Node Logic` applied across all pages (excluding read-only `hps-engine.html`).
@@ -317,5 +337,7 @@ An audit of navigation bars was conducted across all pages at 375px viewport wid
 - [x] `hps-engine.html` audited in read-only mode with exhaustive technical claims cataloged.
 - [x] `index.html` HPS card restored to a single clickable `<a>` with engine link cleanly separated outside.
 - [x] Mobile nav audit completed at 375px width.
+- [x] `404.html` styling and relative asset resolution fixed and visually verified.
 - [x] Zero em dashes in git diff.
 - [x] Internal link resolution script passed with zero broken links.
+
