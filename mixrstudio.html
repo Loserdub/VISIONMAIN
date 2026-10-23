@@ -444,7 +444,8 @@
  .section-head {
  display: flex;
  align-items: center;
- gap: 10px;
+ flex-wrap: wrap;
+ gap: 8px;
  }
 
  .section-label {
@@ -1591,6 +1592,142 @@
  color: var(--accent);
  }
 
+ /* Master Header Export Group */
+ .master-export-group {
+ display: inline-flex;
+ align-items: center;
+ gap: 8px;
+ margin-left: auto;
+ }
+
+ .master-export-select {
+ background: var(--surface2);
+ color: var(--text);
+ border: 1px solid var(--border);
+ font-family: var(--font-mono);
+ font-size: 10px;
+ padding: 4px 8px;
+ cursor: pointer;
+ height: 28px;
+ width: 175px;
+ flex: 0 0 auto;
+ border-radius: var(--radius);
+ outline: none;
+ transition: border-color 0.15s;
+ }
+
+ .master-export-select:hover {
+ border-color: var(--border-hover);
+ }
+
+ .master-export-select:focus {
+ border-color: var(--accent);
+ }
+
+ .master-export-btn {
+ display: inline-flex;
+ align-items: center;
+ gap: 6px;
+ padding: 4px 12px;
+ background: var(--accent);
+ color: var(--bg);
+ border: 1px solid var(--accent);
+ font-family: var(--font-mono);
+ font-size: 11px;
+ font-weight: 700;
+ letter-spacing: 0.08em;
+ text-transform: uppercase;
+ cursor: pointer;
+ height: 28px;
+ transition: all 0.2s ease;
+ box-shadow: 0 0 10px rgba(255, 159, 28, 0.2);
+ }
+
+ .master-export-btn:hover:not(:disabled) {
+ background: #FFAE34;
+ box-shadow: 0 0 16px rgba(255, 159, 28, 0.4);
+ transform: translateY(-1px);
+ }
+
+ .master-export-btn:disabled {
+ background: var(--surface2);
+ color: var(--text-dim);
+ border-color: var(--border);
+ cursor: not-allowed;
+ box-shadow: none;
+ transform: none;
+ opacity: 0.6;
+ }
+
+ .master-export-btn .export-shortcut {
+ font-size: 9px;
+ opacity: 0.75;
+ padding: 1px 4px;
+ background: rgba(0, 0, 0, 0.3);
+ border-radius: 2px;
+ }
+
+ /* Transport Bar Quick Bounce Button */
+ .transport-export-btn {
+ display: inline-flex;
+ align-items: center;
+ gap: 4px;
+ padding: 0 10px;
+ height: 26px;
+ background: var(--surface2);
+ border: 1px solid var(--border);
+ color: var(--accent);
+ font-family: var(--font-mono);
+ font-size: 10px;
+ font-weight: 700;
+ letter-spacing: 0.08em;
+ text-transform: uppercase;
+ cursor: pointer;
+ transition: all 0.15s;
+ white-space: nowrap;
+ margin-left: auto;
+ }
+
+ .transport-export-btn:hover:not(:disabled) {
+ background: var(--accent);
+ color: var(--bg);
+ border-color: var(--accent);
+ }
+
+ .transport-export-btn:disabled {
+ opacity: 0.35;
+ cursor: not-allowed;
+ color: var(--text-dim);
+ }
+
+ @media (max-width: 768px) {
+ .master-export-group {
+ width: 100%;
+ margin-left: 0;
+ margin-top: 6px;
+ display: flex;
+ align-items: center;
+ gap: 6px;
+ }
+ .master-export-select {
+ width: 160px;
+ max-width: 160px;
+ flex: 0 0 auto;
+ font-size: 9.5px;
+ padding: 3px 6px;
+ }
+ .master-export-btn {
+ flex: 0 0 auto;
+ padding: 4px 10px;
+ font-size: 10px;
+ gap: 4px;
+ white-space: nowrap;
+ }
+ .master-export-btn .export-shortcut {
+ display: none;
+ }
+ }
+
  /* suggestions */
  .suggestions-wrap {
  margin-top: 10px;
@@ -2066,8 +2203,19 @@
 <div class="section-line"></div>
 <button class="icon-btn accent" onclick="magicMix()" style="font-size:11px; width:auto; padding:0 8px;" title="auto generate remix">✨ magic mix</button>
 <button class="icon-btn accent" disabled="" id="undo-btn" onclick="undo()" style="font-size:11px; width:auto; padding:0 8px;" title="undo last action (Ctrl+Z)">↩ undo</button>
-<button class="icon-btn accent" onclick="clearMaster()" style="font-size:11px;" title="clear master">✕
- clear</button>
+<button class="icon-btn accent" onclick="clearMaster()" style="font-size:11px;" title="clear master">✕ clear</button>
+<div class="master-export-group" id="master-export-group">
+  <select id="master-export-format-select" class="master-export-select" title="Master Export Format & Bit-Depth" onchange="syncExportFormats(this.value)">
+    <option value="16-44100">16-bit · 44.1 kHz (CD)</option>
+    <option value="24-48000" selected>24-bit · 48 kHz (Studio Pro)</option>
+    <option value="32-48000">32-bit Float · 48 kHz (Lossless)</option>
+  </select>
+  <button class="master-export-btn" id="export-master-header-btn" disabled onclick="exportMix()" title="Add segments to master timeline to export">
+    <span class="export-icon">⬇</span>
+    <span class="export-label">EXPORT MASTER</span>
+    <span class="export-shortcut">Ctrl+E</span>
+  </button>
+</div>
 </div>
 <!-- master settings & hybrid mastering bar -->
 <div class="master-toolbar-wrap" id="master-toolbar">
@@ -2160,6 +2308,9 @@
 <div class="vu-fill" id="vu-fill-r"></div>
 </div>
 </div>
+<button class="transport-export-btn" id="export-transport-btn" disabled onclick="exportMix()" title="Add segments to master timeline to export">
+  ⬇ BOUNCE
+</button>
 </div>
 <div class="suggestions-wrap" id="suggestions-wrap">
 <div class="suggestions-label">suggested next</div>
@@ -2174,7 +2325,7 @@
  © 2026 <a class="footer-link" href="https://trustnodelogic.com/">trustnodelogic.com</a> · All Rights Reserved
  </div>
 <div style="display: flex; align-items: center; gap: 8px;">
-  <select id="export-format-select" class="lane-select" style="background: var(--surface2); color: var(--text); border: 1px solid var(--border); font-family: var(--font-mono); font-size: 10px; padding: 4px 8px; cursor: pointer; height: 32px; border-radius: 0px;" title="Select Export Format & Bit-Depth">
+  <select id="export-format-select" class="lane-select" onchange="syncExportFormats(this.value)" style="background: var(--surface2); color: var(--text); border: 1px solid var(--border); font-family: var(--font-mono); font-size: 10px; padding: 4px 8px; cursor: pointer; height: 32px; border-radius: 0px;" title="Select Export Format & Bit-Depth">
     <option value="16-44100">16-bit · 44.1 kHz (CD)</option>
     <option value="24-48000" selected>24-bit · 48 kHz (Studio Pro)</option>
     <option value="32-48000">32-bit Float · 48 kHz (Lossless)</option>
@@ -4044,7 +4195,7 @@
   const hasSegs = masterSegments.length > 0;
   document.getElementById('play-btn').disabled = !hasSegs;
   document.getElementById('stop-btn').disabled = !hasSegs;
-  document.getElementById('export-btn').disabled = !hasSegs;
+  syncMasterExportUI();
 
   container.innerHTML = '';
 
@@ -4977,13 +5128,63 @@
     return out;
   }
 
+  function syncExportFormats(val) {
+    const s1 = document.getElementById('master-export-format-select');
+    const s2 = document.getElementById('export-format-select');
+    if (s1 && s1.value !== val) s1.value = val;
+    if (s2 && s2.value !== val) s2.value = val;
+  }
+
+  function syncMasterExportUI() {
+    const hasSegs = masterSegments && masterSegments.length > 0;
+    const headerBtn = document.getElementById('export-master-header-btn');
+    const transBtn = document.getElementById('export-transport-btn');
+    const footerBtn = document.getElementById('export-btn');
+
+    if (headerBtn) {
+      headerBtn.disabled = !hasSegs;
+      headerBtn.title = hasSegs ? "Export Master WAV (Ctrl+E)" : "Add segments to master timeline to export";
+    }
+    if (transBtn) {
+      transBtn.disabled = !hasSegs;
+      transBtn.title = hasSegs ? "Quick Bounce Master WAV (Ctrl+E)" : "Add segments to master timeline to export";
+    }
+    if (footerBtn) {
+      footerBtn.disabled = !hasSegs;
+      footerBtn.title = hasSegs ? "Export Master WAV (Ctrl+E)" : "Add segments to master timeline to export";
+    }
+  }
+
+  function setExportButtonsProgress(statusText, isRendering = true) {
+    const headerBtn = document.getElementById('export-master-header-btn');
+    const transBtn = document.getElementById('export-transport-btn');
+    const footerBtn = document.getElementById('export-btn');
+
+    if (headerBtn) {
+      headerBtn.disabled = isRendering;
+      if (isRendering) {
+        headerBtn.innerHTML = `<span class="export-icon">⏳</span><span class="export-label">${statusText}</span>`;
+      } else {
+        headerBtn.innerHTML = `<span class="export-icon">⬇</span><span class="export-label">EXPORT MASTER</span><span class="export-shortcut">Ctrl+E</span>`;
+      }
+    }
+    if (transBtn) {
+      transBtn.disabled = isRendering;
+      transBtn.textContent = isRendering ? '⏳ BOUNCING' : '⬇ BOUNCE';
+    }
+    if (footerBtn) {
+      footerBtn.disabled = isRendering;
+      footerBtn.textContent = isRendering ? `⏳ ${statusText.toLowerCase()}` : '⬇ export wav';
+    }
+  }
+
   // export
   async function exportMix() {
   if (!masterSegments.length) return;
-  const btn = document.getElementById('export-btn');
-  btn.textContent = '⏳ rendering...'; btn.disabled = true;
+  setExportButtonsProgress('RENDERING...', true);
   try {
-  const fmtVal = document.getElementById('export-format-select') ? document.getElementById('export-format-select').value : '24-48000';
+  const fmtSelect = document.getElementById('master-export-format-select') || document.getElementById('export-format-select');
+  const fmtVal = fmtSelect ? fmtSelect.value : '24-48000';
   const [bitDepthStr, srStr] = fmtVal.split('-');
   const bitDepth = parseInt(bitDepthStr, 10) || 24;
   const sr = parseInt(srStr, 10) || 48000;
@@ -5146,18 +5347,18 @@
   });
 
   const rendered = await offCtx.startRendering();
-  btn.textContent = '⏳ measuring LUFS...';
+  setExportButtonsProgress('MEASURING LUFS...', true);
   const lufsStats = await measureIntegratedLufsAsync(rendered);
   let finalBuffer = rendered;
   if (targetLufs !== 'off') {
-    btn.textContent = `⏳ mastering ${targetLufs} LUFS...`;
+    setExportButtonsProgress(`MASTERING ${targetLufs} LUFS...`, true);
     finalBuffer = normalizeLufsAndLimit(rendered, targetLufs, masterCeilingDb, lufsStats.lufs);
     const postStats = await measureIntegratedLufsAsync(finalBuffer);
     updateMasterLufsBadge(postStats.lufs, postStats.truePeakDb);
   } else {
     updateMasterLufsBadge(lufsStats.lufs, lufsStats.truePeakDb);
   }
-  btn.textContent = '⏳ encoding WAV...';
+  setExportButtonsProgress('ENCODING WAV...', true);
   const wavBuffer = await encodeWavAsync(finalBuffer, bitDepth);
   const blob = new Blob([wavBuffer], { type: 'audio/wav' });
   const url = URL.createObjectURL(blob);
@@ -5171,7 +5372,8 @@
   console.error('Export failed:', e);
   alert('Export failed: ' + e.message);
   } finally {
-  btn.textContent = '⬇ export wav'; btn.disabled = false;
+  setExportButtonsProgress('', false);
+  syncMasterExportUI();
   }
   }
 
@@ -5341,7 +5543,7 @@
  }
  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'e') {
  e.preventDefault();
- if (masterSegments.length && !document.getElementById('export-btn').disabled) {
+ if (masterSegments.length && (!document.getElementById('export-master-header-btn') || !document.getElementById('export-master-header-btn').disabled)) {
  exportMix();
  }
  return;
