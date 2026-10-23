@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2773282020530522"
-     crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2773282020530522" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Liquid Ear: Adaptive Neural Audio · Trust Node Logic</title>
 <meta name="description" content="Liquid neural networks trade frozen weights for continuous adaptation. Analysis of adaptive neural feedback in mixing and mastering by Justin Ray.">
 <meta name="author" content="Justin Ray">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<meta name="keywords" content="liquid neural networks, audio production, liquid ear, adaptive audio DSP, continuous neural feedback, hybrid production, Justin Ray, JRAY, audio mastering AI">
+<meta name="keywords" content="liquid neural networks, audio production, liquid ear, adaptive audio DSP, continuous neural feedback, hybrid production, Justin Ray, JRAY, audio mastering AI, LFM2 architecture">
 <meta name="geo.country" content="US">
 <meta name="geo.placename" content="East Lansing, Michigan, USA">
 <meta name="geo.region" content="US-MI">
@@ -20,11 +18,12 @@
 <meta property="og:title" content="The Liquid Ear: Adaptive Neural Audio · Trust Node Logic">
 <meta property="og:description" content="Liquid neural networks trade frozen weights for continuous adaptation. Analysis of adaptive neural feedback in mixing and mastering by Justin Ray.">
 <meta property="og:url" content="https://trustnodelogic.com/liquidears.html">
-<meta property="og:site_name" content="TrustNodeLogic - Field Notes">
+<meta property="og:site_name" content="Trust Node Logic - Field Notes">
 <meta property="og:image" content="https://trustnodelogic.com/assets/images/liquidears-card-og.webp">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="article:published_time" content="2026-07-04T00:00:00-04:00">
+<meta property="article:modified_time" content="2026-10-23T00:00:00-04:00">
 <meta property="article:author" content="Justin Ray">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Liquid Ear: Adaptive Neural Audio · Trust Node Logic">
@@ -33,7 +32,8 @@
 <link rel="icon" type="image/png" href="./favicon.png">
 
 <!-- Structured Data / JSON-LD -->
-<script type="application/ld+json">{
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -97,7 +97,7 @@
         "@id": "https://trustnodelogic.com/#organization"
       },
       "datePublished": "2026-07-21",
-      "dateModified": "2026-10-17",
+      "dateModified": "2026-10-23",
       "image": "https://trustnodelogic.com/assets/images/tnl-default-og.webp",
       "inLanguage": "en-US"
     },
@@ -120,7 +120,7 @@
       "jobTitle": [
         "Music Producer",
         "Music Artist",
-        "Pioneer of Hybrid AI Music Production",
+        "Author of the Hybrid Production Standard (HPS-1.0)",
         "Audio Engineer",
         "Creative Technologist"
       ],
@@ -210,8 +210,8 @@
       "@type": "WebSite",
       "@id": "https://trustnodelogic.com/#website",
       "url": "https://trustnodelogic.com",
-      "name": "Trust Node Logic | Pioneer of Hybrid AI Music Production",
-      "description": "Official hub of Justin Ray (JRAY / loserdub), pioneer of the Hybrid AI Music Production methodology, creative technologist, and founder of r/hybridproduction.",
+      "name": "Trust Node Logic · Hybrid Production Standard Hub",
+      "description": "Official research hub and software portfolio of Justin Ray (JRAY / loserdub), author of the Hybrid Production Standard (HPS-1.0) and founder of Trust Node Logic.",
       "author": {
         "@id": "https://trustnodelogic.com/#person"
       },
@@ -221,703 +221,1341 @@
       "inLanguage": "en-US"
     }
   ]
-}</script>
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link href="./style.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
- :root {
- --bg-void: #060811;
- --bg-panel: #0d1224;
- --bg-panel-alt: #10172c;
- --border-hairline: rgba(148, 158, 199, 0.16);
- --border-hairline-strong: rgba(148, 158, 199, 0.28);
- --text-primary: #eef0f8;
- --text-secondary: #9aa2c0;
- --text-tertiary: #6b7396;
- --accent-blue: #5b8cff;
- --accent-blue-soft: rgba(91, 140, 255, 0.14);
- --accent-purple: #a06bff;
- --accent-purple-soft: rgba(160, 107, 255, 0.14);
- --font-display: 'Playfair Display', Georgia, serif;
- --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
- --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
- --measure: 700px;
- }
+:root {
+  --bg: #08090A;
+  --surface: #121417;
+  --surface-sub: #181B20;
+  --panel-border: rgba(255, 255, 255, 0.1);
+  --panel-border-bright: rgba(255, 159, 28, 0.4);
+  --ink: #EAEAEA;
+  --ink-dim: #A1A1AA;
+  --ink-muted: #71717A;
+  --orange: #FF9F1C;
+  --cyan: #00F0FF;
+  --green: #39FF14;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+}
 
- * { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
- html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
- body {
- margin: 0;
- background: var(--bg-void);
- background-image:
- radial-gradient(ellipse 900px 500px at 15% -10%, rgba(91,140,255,0.10), transparent 60%),
- radial-gradient(ellipse 900px 600px at 90% 20%, rgba(160,107,255,0.08), transparent 60%);
- background-attachment: fixed;
- color: var(--text-primary);
- font-family: var(--font-body);
- font-size: 17px;
- line-height: 1.7;
- -webkit-font-smoothing: antialiased;
- }
+body {
+  background-color: var(--bg);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--ink);
+  font-family: var(--font-display);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
- a { color: var(--accent-blue); text-decoration-color: rgba(91,140,255,0.35); text-underline-offset: 3px; }
- a:hover { text-decoration-color: var(--accent-blue); }
+::selection {
+  background: rgba(255, 159, 28, 0.25);
+  color: #FFFFFF;
+}
 
- ::selection { background: var(--accent-purple-soft); }
+/* Header Navigation */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(11, 12, 14, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--panel-border);
+  padding: 14px 24px;
+}
 
- /* ---------- NAV ---------- */
- header.site-nav {
- position: sticky;
- top: 0;
- z-index: 50;
- display: flex;
- align-items: center;
- justify-content: space-between;
- padding: 1.1rem 6vw;
- background: rgba(6, 8, 17, 0.82);
- backdrop-filter: blur(10px);
- border-bottom: 1px solid var(--border-hairline);
- }
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
 
- .site-nav .logo {
- font-family: var(--font-mono);
- font-weight: 700;
- letter-spacing: 0.04em;
- color: var(--text-primary);
- text-decoration: none;
- font-size: 0.95rem;
- }
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--ink);
+  text-decoration: none;
+}
 
- .site-nav nav {
- display: flex;
- gap: 1.6rem;
- flex-wrap: wrap;
- }
+.brand-logo .dot {
+  width: 10px;
+  height: 10px;
+  background: var(--orange);
+  display: inline-block;
+}
 
- .site-nav nav a {
- font-family: var(--font-mono);
- font-size: 0.78rem;
- letter-spacing: 0.03em;
- color: var(--text-secondary);
- text-decoration: none;
- transition: color 0.15s ease;
- }
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
- .site-nav nav a:hover { color: var(--text-primary); }
- .site-nav nav a.current { color: var(--accent-blue); }
+.nav-links a {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
 
- /* ---------- BREADCRUMB ---------- */
- .breadcrumb {
- max-width: var(--measure);
- margin: 2rem auto 0;
- padding: 0 6vw;
- font-family: var(--font-mono);
- font-size: 0.72rem;
- color: var(--text-tertiary);
- letter-spacing: 0.02em;
- }
- .breadcrumb a { color: var(--text-tertiary); text-decoration: none; }
- .breadcrumb a:hover { color: var(--accent-blue); }
- .breadcrumb .sep { margin: 0 0.5rem; opacity: 0.5; }
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--orange);
+}
 
- /* ---------- HERO ---------- */
- .hero {
- max-width: var(--measure);
- margin: 0 auto;
- padding: 1.5rem 6vw 0;
- }
+.nav-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(255, 159, 28, 0.12);
+  border: 1px solid var(--panel-border-bright);
+  color: var(--orange);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 0.2s, color 0.2s;
+}
 
- .eyebrow {
- display: inline-block;
- font-family: var(--font-mono);
- font-size: 0.72rem;
- letter-spacing: 0.14em;
- text-transform: uppercase;
- color: var(--accent-purple);
- margin-bottom: 1.1rem;
- }
+.nav-action:hover {
+  background: var(--orange);
+  color: #08090A;
+}
 
- h1.title {
- font-family: var(--font-display);
- font-weight: 700;
- font-size: clamp(2.4rem, 6vw, 3.4rem);
- line-height: 1.08;
- margin: 0 0 1rem;
- background: linear-gradient(100deg, #ffffff 30%, #c9d3ff 65%, var(--accent-purple) 100%);
- -webkit-background-clip: text;
- background-clip: text;
- -webkit-text-fill-color: transparent;
- }
+/* Breadcrumbs */
+.breadcrumbs {
+  max-width: 1040px;
+  margin: 20px auto 0;
+  padding: 0 24px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  width: 100%;
+}
 
- .deck {
- font-size: 1.15rem;
- color: var(--text-secondary);
- max-width: 620px;
- margin: 0 0 1.6rem;
- font-weight: 400;
- }
+.breadcrumbs a {
+  color: var(--ink-muted);
+  text-decoration: none;
+}
 
- .meta-row {
- display: flex;
- gap: 1.5rem;
- flex-wrap: wrap;
- align-items: center;
- font-family: var(--font-mono);
- font-size: 0.75rem;
- color: var(--text-tertiary);
- padding-bottom: 1.6rem;
- border-bottom: 1px solid var(--border-hairline);
- margin-bottom: 0;
- }
+.breadcrumbs a:hover {
+  color: var(--orange);
+}
 
- .tag-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1.6rem; }
- .tag {
- font-family: var(--font-mono);
- font-size: 0.7rem;
- color: var(--text-secondary);
- border: 1px solid var(--border-hairline-strong);
- padding: 0.28rem 0.7rem;
- border-radius: 999px;
- letter-spacing: 0.02em;
- }
+.breadcrumbs .current {
+  color: var(--orange);
+}
 
- /* ---------- SIGNATURE DIAGRAM ---------- */
- .signature-wrap {
- max-width: var(--measure);
- margin: 2.4rem auto 0;
- padding: 0 6vw;
- }
- .signature-panel {
- border: 1px solid var(--border-hairline);
- background: var(--bg-panel);
- border-radius: 10px;
- padding: 1.8rem 1.6rem 1.4rem;
- }
- .signature-panel svg { width: 100%; height: auto; display: block; }
- .signature-caption {
- display: flex;
- justify-content: space-between;
- font-family: var(--font-mono);
- font-size: 0.68rem;
- letter-spacing: 0.06em;
- text-transform: uppercase;
- color: var(--text-tertiary);
- margin-top: 0.9rem;
- }
- .signature-caption span.left-label { color: var(--text-tertiary); }
- .signature-caption span.right-label { color: var(--accent-blue); }
+/* Main Wrap & Article */
+.wrap {
+  max-width: 1040px;
+  width: 100%;
+  margin: 24px auto 80px;
+  padding: 0 24px;
+  flex: 1;
+}
 
- .flow-line {
- stroke-dasharray: 6 10;
- animation: flow 3.2s linear infinite;
- }
- @keyframes flow {
- to { stroke-dashoffset: -160; }
- }
- @media (prefers-reduced-motion: reduce) {
- .flow-line { animation: none; }
- }
+article {
+  background: var(--surface);
+  border: 1px solid var(--panel-border);
+  padding: 48px;
+}
 
- /* ---------- ARTICLE BODY ---------- */
- article.body-copy {
- max-width: var(--measure);
- margin: 0 auto;
- padding: 2.6rem 6vw 4rem;
- }
+@media (max-width: 768px) {
+  article {
+    padding: 24px 20px;
+  }
+  .nav-links {
+    display: none;
+  }
+  .site-header {
+    padding: 12px 16px;
+  }
+  .wrap {
+    padding: 0 16px;
+    margin: 16px auto 60px;
+  }
+}
 
- article.body-copy p { color: #dde1f0; margin: 0 0 1.3rem; }
+/* Hero Section */
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange);
+  display: block;
+  margin-bottom: 12px;
+}
 
- h2.section-head {
- font-family: var(--font-display);
- font-weight: 600;
- font-size: clamp(1.5rem, 3.4vw, 1.9rem);
- color: var(--text-primary);
- margin: 3rem 0 1.2rem;
- padding-top: 0.4rem;
- border-top: 1px solid var(--border-hairline);
- }
- article.body-copy > h2.section-head:first-child { border-top: none; padding-top: 0; }
+.title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 14px;
+}
 
- h3.subhead {
- font-family: var(--font-mono);
- font-size: 0.95rem;
- letter-spacing: 0.01em;
- color: var(--accent-blue);
- margin: 1.8rem 0 0.9rem;
- text-transform: none;
- }
+h1 {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0;
+}
 
- ul.feature-list { margin: 0 0 1.4rem; padding-left: 0; list-style: none; }
- ul.feature-list li {
- position: relative;
- padding-left: 1.4rem;
- margin-bottom: 0.9rem;
- color: #dde1f0;
- }
- ul.feature-list li::before {
- content: "";
- position: absolute;
- left: 0;
- top: 0.55em;
- width: 6px;
- height: 6px;
- border-radius: 50%;
- background: var(--accent-purple);
- }
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.85rem;
+  }
+}
 
- strong { color: var(--text-primary); font-weight: 600; }
+.holiday-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface-sub);
+  border: 1px solid var(--panel-border);
+  color: var(--ink-dim);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  text-transform: uppercase;
+}
 
- /* ---------- CALLOUTS ---------- */
- aside.field-note, aside.reality-check, aside.further-reading {
- margin: 2.2rem 0;
- padding: 1.4rem 1.6rem;
- border-radius: 8px;
- background: var(--bg-panel);
- border-left: 3px solid var(--accent-blue);
- }
- aside.reality-check {
- background: var(--bg-panel-alt);
- border-left: 3px solid var(--accent-purple);
- }
- aside.further-reading {
- border: 1px solid var(--border-hairline);
- border-left: 3px solid var(--accent-blue);
- background: transparent;
- }
- .callout-label {
- display: block;
- font-family: var(--font-mono);
- font-size: 0.68rem;
- letter-spacing: 0.12em;
- text-transform: uppercase;
- color: var(--accent-blue);
- margin-bottom: 0.6rem;
- }
- aside.reality-check .callout-label { color: var(--accent-purple); }
- aside.field-note p, aside.reality-check p, aside.further-reading p { margin: 0; color: var(--text-secondary); font-size: 0.98rem; }
- aside.further-reading ul { margin: 0.4rem 0 0; padding-left: 1.1rem; }
- aside.further-reading li { margin-bottom: 0.5rem; color: var(--text-secondary); font-size: 0.95rem; }
+.holiday-badge svg {
+  display: block;
+  flex-shrink: 0;
+}
 
- /* ---------- FAQ ---------- */
- .faq-item { margin-bottom: 1.6rem; }
- .faq-item h3 {
- font-family: var(--font-body);
- font-weight: 600;
- font-size: 1.02rem;
- color: var(--text-primary);
- margin: 0 0 0.5rem;
- }
- .faq-item p { color: var(--text-secondary); margin: 0; }
+.dek {
+  font-size: 1.15rem;
+  color: var(--ink-dim);
+  line-height: 1.6;
+  margin: 16px 0 24px;
+  font-weight: 300;
+}
 
- /* ---------- CTA BLOCK ---------- */
- .cta-block {
- max-width: var(--measure);
- margin: 1rem auto 4rem;
- padding: 0 6vw;
- }
- .cta-panel {
- background: linear-gradient(135deg, var(--accent-blue-soft), var(--accent-purple-soft));
- border: 1px solid var(--border-hairline-strong);
- border-radius: 12px;
- padding: 2rem 1.8rem;
- }
- .cta-panel h3 {
- font-family: var(--font-display);
- font-size: 1.35rem;
- margin: 0 0 0.6rem;
- color: var(--text-primary);
- }
- .cta-panel p { color: var(--text-secondary); margin: 0 0 1.2rem; }
- .cta-links { display: flex; gap: 0.9rem; flex-wrap: wrap; }
- .btn {
- display: inline-block;
- font-family: var(--font-mono);
- font-size: 0.8rem;
- padding: 0.65rem 1.1rem;
- border-radius: 6px;
- text-decoration: none;
- letter-spacing: 0.02em;
- }
- .btn-primary { background: var(--text-primary); color: var(--bg-void); }
- .btn-secondary { border: 1px solid var(--border-hairline-strong); color: var(--text-primary); }
+.byline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-muted);
+  border-top: 1px solid var(--panel-border);
+  border-bottom: 1px solid var(--panel-border);
+  padding: 12px 0;
+  margin-bottom: 24px;
+}
 
- /* ---------- FOOTER ---------- */
- footer.site-footer {
- border-top: 1px solid var(--border-hairline);
- padding: 2.6rem 6vw 3rem;
- text-align: center;
- }
- footer.site-footer .footer-links {
- display: flex;
- justify-content: center;
- gap: 1.4rem;
- flex-wrap: wrap;
- font-family: var(--font-mono);
- font-size: 0.78rem;
- margin-bottom: 1.2rem;
- }
- footer.site-footer .footer-links a { color: var(--text-secondary); text-decoration: none; }
- footer.site-footer .footer-links a:hover { color: var(--accent-blue); }
- footer.site-footer .copyright {
- font-family: var(--font-mono);
- font-size: 0.72rem;
- color: var(--text-tertiary);
- }
- footer.site-footer .copyright a { color: var(--text-tertiary); }
+.byline a {
+  color: var(--ink);
+  text-decoration: none;
+}
 
- @media (max-width: 640px) {
- .site-nav { padding: 1rem 5vw; }
- .site-nav nav { gap: 1rem; }
- .site-nav nav a { font-size: 0.72rem; }
- }
+.byline a:hover {
+  color: var(--orange);
+}
 
- /* ---------- HOLIDAY BADGE ---------- */
- .title-row {
- display: flex;
- align-items: center;
- gap: 0.9rem;
- flex-wrap: wrap;
- }
- .holiday-badge {
- display: inline-flex;
- align-items: center;
- gap: 0.45rem;
- font-family: var(--font-mono);
- font-size: 0.72rem;
- letter-spacing: 0.04em;
- color: #dfe3f5;
- background: rgba(200, 16, 46, 0.10);
- border: 1px solid rgba(200, 16, 46, 0.32);
- padding: 0.32rem 0.7rem 0.32rem 0.5rem;
- border-radius: 999px;
- white-space: nowrap;
- }
- .holiday-badge svg { display: block; flex-shrink: 0; border-radius: 2px; }
+.tag-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange);
+  background: rgba(255, 159, 28, 0.08);
+  border: 1px solid rgba(255, 159, 28, 0.25);
+  padding: 4px 10px;
+}
+
+/* Signature Architecture SVG Diagram */
+.signature-wrap {
+  margin: 32px 0 40px;
+  border: 1px solid var(--panel-border);
+  background: var(--surface-sub);
+  padding: 24px;
+}
+
+.signature-panel svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.signature-caption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--panel-border);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.signature-caption .left-label {
+  color: var(--ink-muted);
+}
+
+.signature-caption .right-label {
+  color: var(--cyan);
+}
+
+.flow-line {
+  stroke-dasharray: 8 4;
+  animation: liquidFlow 14s linear infinite;
+}
+
+@keyframes liquidFlow {
+  to {
+    stroke-dashoffset: -120;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flow-line {
+    animation: none;
+  }
+}
+
+/* Typography & Headings */
+h2 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 48px 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--panel-border);
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+h2::before {
+  content: "//";
+  font-family: var(--font-mono);
+  color: var(--orange);
+  font-weight: 700;
+}
+
+h3 {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--orange);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 28px 0 12px;
+}
+
+p, li {
+  font-size: 15px;
+  color: var(--ink-dim);
+  line-height: 1.7;
+}
+
+p strong, li strong {
+  color: var(--ink);
+}
+
+a.inline-link {
+  color: var(--orange);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a.inline-link:hover {
+  color: #FFFFFF;
+}
+
+ul.feature-list {
+  margin: 18px 0 28px;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+ul.feature-list li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 15px;
+  color: var(--ink-dim);
+  line-height: 1.65;
+}
+
+ul.feature-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--orange);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+/* Callouts */
+aside.field-note,
+aside.reality-check,
+aside.further-reading {
+  background: var(--surface-sub);
+  border: 1px solid var(--panel-border);
+  border-left: 3px solid var(--orange);
+  padding: 20px 24px;
+  margin: 28px 0;
+}
+
+aside.reality-check {
+  border-left-color: var(--cyan);
+}
+
+aside.further-reading {
+  border-left-color: var(--orange);
+}
+
+.callout-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 8px;
+}
+
+aside.reality-check .callout-label {
+  color: var(--cyan);
+}
+
+aside.field-note p,
+aside.reality-check p {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--ink-dim);
+  line-height: 1.65;
+}
+
+aside.further-reading ul {
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+
+aside.further-reading li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--ink-dim);
+}
+
+aside.further-reading a {
+  color: var(--orange);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+aside.further-reading a:hover {
+  color: #FFFFFF;
+}
+
+/* Technical Specification Table */
+.tscroll {
+  overflow-x: auto;
+  margin: 28px 0 36px;
+  border: 1px solid var(--panel-border);
+  background: var(--surface-sub);
+}
+
+table.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+}
+
+table.spec-table th {
+  text-align: left;
+  padding: 12px 14px;
+  color: var(--orange);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid var(--panel-border);
+}
+
+table.spec-table td {
+  padding: 12px 14px;
+  color: var(--ink-dim);
+  border-bottom: 1px solid var(--panel-border);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+table.spec-table tr:last-child td {
+  border-bottom: none;
+}
+
+table.spec-table td:first-child {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* FAQ Accordion Details */
+.faq-block {
+  margin: 24px 0 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+details.faq-item {
+  background: var(--surface-sub);
+  border: 1px solid var(--panel-border);
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+details.faq-item:hover {
+  border-color: rgba(255, 159, 28, 0.3);
+}
+
+details.faq-item[open] {
+  border-color: var(--panel-border-bright);
+}
+
+details.faq-item summary {
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+  outline: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+details.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+details.faq-item summary::after {
+  content: "+";
+  font-family: var(--font-mono);
+  font-size: 16px;
+  color: var(--orange);
+  font-weight: 700;
+  transition: transform 0.2s;
+}
+
+details.faq-item[open] summary::after {
+  content: "−";
+  transform: rotate(0deg);
+}
+
+details.faq-item summary:hover {
+  color: var(--orange);
+}
+
+details.faq-item p {
+  margin: 12px 0 0;
+  font-size: 13.5px;
+  color: var(--ink-dim);
+  line-height: 1.6;
+}
+
+/* Mandatory HPS-1.0 Triad Box */
+.triad-box {
+  background: rgba(255, 159, 28, 0.04);
+  border: 1px solid var(--panel-border-bright);
+  padding: 24px;
+  margin: 40px 0;
+}
+
+.triad-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 14px;
+}
+
+.triad-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .triad-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.triad-link {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--panel-border);
+  padding: 14px;
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+
+.triad-link:hover {
+  border-color: var(--orange);
+}
+
+.triad-link-kicker {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.triad-link-title {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  text-transform: uppercase;
+}
+
+/* Hero CTA Sandbox Box */
+.hero-cta-box {
+  background: var(--surface-sub);
+  border: 1px solid var(--panel-border-bright);
+  padding: 24px;
+  margin: 36px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .hero-cta-box {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.hero-cta-text h3 {
+  margin: 0 0 6px;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.hero-cta-text p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--ink-dim);
+  line-height: 1.5;
+}
+
+.hero-cta-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Author Card */
+.author-card {
+  border-top: 1px solid var(--panel-border);
+  padding-top: 28px;
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .author-card {
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+  }
+}
+
+.author-avatar {
+  width: 72px;
+  height: 72px;
+  border: 1px solid var(--orange);
+  flex-shrink: 0;
+  background: var(--surface-sub);
+  object-fit: cover;
+}
+
+.author-info h4 {
+  margin: 0 0 4px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+}
+
+.author-info p {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--ink-dim);
+  line-height: 1.55;
+}
+
+/* Topic Cluster */
+.cluster-section {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--panel-border);
+}
+
+.cluster-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.cluster-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+.cluster-link {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.cluster-link:hover {
+  color: var(--orange);
+}
+
+.cluster-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .cluster-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.tech-card {
+  background: var(--surface-sub);
+  border: 1px solid var(--panel-border);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.tech-card:hover {
+  border-color: var(--orange);
+  transform: translateY(-2px);
+}
+
+.tech-card-kicker {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 8px;
+}
+
+.tech-card-title {
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 8px;
+  transition: color 0.2s;
+}
+
+.tech-card:hover .tech-card-title {
+  color: var(--orange);
+}
+
+.tech-card-desc {
+  font-size: 12.5px;
+  color: var(--ink-dim);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.tech-card-footer {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--panel-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--ink-muted);
+}
+
+.tech-card-action {
+  color: var(--ink);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tech-card:hover .tech-card-action {
+  color: var(--orange);
+}
+
+/* Terminal Footer */
+.sitefoot {
+  border-top: 1px solid var(--panel-border);
+  padding: 32px 24px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-muted);
+  max-width: 1040px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.sitefoot .fnav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.sitefoot .fnav a {
+  color: var(--ink-muted);
+  text-decoration: none;
+}
+
+.sitefoot .fnav a:hover {
+  color: var(--orange);
+}
 </style>
-<link href="/sitemap.xml" rel="sitemap" type="application/xml"/>
-<link href="/llms.txt" rel="alternate" title="AI LLM Knowledge Graph Manifest" type="text/plain"/>
 </head>
 <body>
-<!-- Brutalist Sticky Header -->
-  <header class="sticky top-0 left-0 right-0 z-50 bg-[#0B0C0E]/95 backdrop-blur-md border-b border-white/10 py-3.5">
-    <div class="container mx-auto px-6 flex justify-between items-center relative">
-      
-      <a href="/" class="flex items-center gap-3 group h-9 overflow-hidden w-[220px]" aria-label="Home">
-        <div class="w-5 h-5 border border-[#FF9F1C] bg-[#FF9F1C]/10 flex items-center justify-center flex-shrink-0 text-[#FF9F1C] font-mono text-xs font-bold">
-          <span>▪</span>
-        </div>
-        <div class="relative h-full flex items-center w-full">
-          <span class="absolute inset-0 flex items-center text-xs font-mono tracking-[0.16em] uppercase font-bold text-[#EAEAEA] transition-transform duration-300 transform group-hover:-translate-y-full">
-            TRUSTNODELOGIC
-          </span>
-          <span class="absolute inset-0 flex items-center text-xs font-mono tracking-[0.22em] uppercase font-bold text-[#FF9F1C] transition-transform duration-300 transform translate-y-full group-hover:translate-y-0">
-            TNL // RESEARCH
-          </span>
-        </div>
-      </a>
 
-      <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center gap-6 text-[11px] font-mono tracking-[0.14em] uppercase text-[#71717A]" aria-label="Main navigation">
-        <a href="/" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">HOME</a>
-        <a href="./field-notes.html" class="text-[#FF9F1C] font-semibold relative py-1 border-b border-[#FF9F1C]">FIELD NOTES</a>
-        <a href="./music.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">MUSIC</a>
-        <a href="./projects.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">PROJECTS</a>
-        <a href="./about.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">ABOUT</a>
-        <a href="./what-is-hybrid.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">WHAT IS HYBRID</a>
-        <a href="./services.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">SERVICES</a>
-        <a href="./contact.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">CONTACT</a>
-      </nav>
-
-      <!-- Mobile Hamburger Toggle -->
-      <input type="checkbox" id="mobile-menu-toggle" class="peer hidden">
-      <label for="mobile-menu-toggle" class="md:hidden text-[#EAEAEA] cursor-pointer peer-checked:hidden block p-1 hover:text-[#FF9F1C] transition-colors border border-white/10" aria-label="Open menu">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
-      </label>
-      <label for="mobile-menu-toggle" class="md:hidden text-[#EAEAEA] cursor-pointer peer-checked:block hidden p-1 hover:text-[#FF9F1C] transition-colors border border-white/10" aria-label="Close menu">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
-      </label>
-
-      <div class="absolute top-full left-0 right-0 bg-[#0B0C0E] border-b border-white/20 shadow-2xl py-6 px-6 hidden peer-checked:flex flex-col items-center gap-4 text-center">
-        <nav class="flex flex-col gap-3 text-center text-xs font-mono tracking-widest uppercase text-[#EAEAEA] font-medium w-full max-w-xs" aria-label="Mobile navigation">
-          <a href="/" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">HOME</a>
-          <a href="./field-notes.html" class="text-[#FF9F1C] py-2 border-b border-white/10 font-bold">FIELD NOTES</a>
-          <a href="./music.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">MUSIC</a>
-          <a href="./projects.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">PROJECTS</a>
-          <a href="./about.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">ABOUT</a>
-          <a href="./what-is-hybrid.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">WHAT IS HYBRID</a>
-          <a href="./services.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">SERVICES</a>
-          <a href="./contact.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">CONTACT</a>
-        </nav>
-      </div>
-
-    </div>
-  </header>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand-logo" href="./index.html">
+      <span class="dot"></span>
+      TRUST NODE LOGIC
+    </a>
+    <ul class="nav-links">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./hybridproductionstandard.html">HPS-1.0</a></li>
+      <li><a href="./field-notes.html" class="active">Field Notes</a></li>
+      <li><a href="./projects.html">Suite</a></li>
+      <li><a href="./music.html">Music</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+    </ul>
+    <a class="nav-action" href="https://trustnodelogic.web.app" target="_blank" rel="noopener noreferrer">
+      <span>HPS ENGINE</span> ↗
+    </a>
+  </div>
+</header>
 
 <!-- Breadcrumbs Hierarchy -->
-<nav class="breadcrumb" aria-label="Breadcrumb">
-  <a href="/">Home</a>
-  <span aria-hidden="true">/</span>
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="./index.html">Home</a>
+  <span>/</span>
   <a href="./field-notes.html">Field Notes</a>
-  <span aria-hidden="true">/</span>
-  <span class="current" aria-current="page">The Liquid Ear</span>
+  <span>/</span>
+  <span class="current">The Liquid Ear</span>
 </nav>
 
-<main id="main-content">
-<div class="hero">
-<span class="eyebrow">Field Notes · AI Architecture</span>
-<div class="title-row">
-<h1 class="title">The Liquid Ear</h1>
-<span aria-label="Happy 4th of July" class="holiday-badge" title="Happy 4th of July">
-<svg aria-label="United States flag" height="14" role="img" viewbox="0 0 30 20" width="20" xmlns="http://www.w3.org/2000/svg">
-<rect fill="#fff" height="20" width="30"></rect>
-<g fill="#c8102e">
-<rect height="1.54" width="30" y="0"></rect>
-<rect height="1.54" width="30" y="3.08"></rect>
-<rect height="1.54" width="30" y="6.16"></rect>
-<rect height="1.54" width="30" y="9.24"></rect>
-<rect height="1.54" width="30" y="12.32"></rect>
-<rect height="1.54" width="30" y="15.4"></rect>
-<rect height="1.54" width="30" y="18.46"></rect>
-</g>
-<rect fill="#0a3161" height="10.8" width="13"></rect>
-<g fill="#fff">
-<circle cx="2" cy="1.6" r="0.55"></circle>
-<circle cx="5" cy="1.6" r="0.55"></circle>
-<circle cx="8" cy="1.6" r="0.55"></circle>
-<circle cx="11" cy="1.6" r="0.55"></circle>
-<circle cx="3.5" cy="3.6" r="0.55"></circle>
-<circle cx="6.5" cy="3.6" r="0.55"></circle>
-<circle cx="9.5" cy="3.6" r="0.55"></circle>
-<circle cx="2" cy="5.6" r="0.55"></circle>
-<circle cx="5" cy="5.6" r="0.55"></circle>
-<circle cx="8" cy="5.6" r="0.55"></circle>
-<circle cx="11" cy="5.6" r="0.55"></circle>
-<circle cx="3.5" cy="7.6" r="0.55"></circle>
-<circle cx="6.5" cy="7.6" r="0.55"></circle>
-<circle cx="9.5" cy="7.6" r="0.55"></circle>
-<circle cx="2" cy="9.4" r="0.55"></circle>
-<circle cx="5" cy="9.4" r="0.55"></circle>
-<circle cx="8" cy="9.4" r="0.55"></circle>
-<circle cx="11" cy="9.4" r="0.55"></circle>
-</g>
-</svg>
- Happy 4th of July
- </span>
-</div>
-<p class="deck">Liquid neural networks were built to keep adapting after training ends. Here's what that architecture could mean for audio production, and where the idea is still just a bet.</p>
-<div class="meta-row">
-<span>Jul 4, 2026</span>
-<span>·</span>
-<span>Researched by <strong>Justin Ray</strong> (JRAY) &middot; Pioneer of Hybrid AI Music Production</span>
-<span>·</span>
-<span>~8 min read</span>
-</div>
-<div class="tag-row">
-<span class="tag">liquid neural networks</span>
-<span class="tag">edge AI</span>
-<span class="tag">adaptive audio</span>
-<span class="tag">hybrid production</span>
-</div>
-</div>
-<div class="signature-wrap">
-<div class="signature-panel">
-<svg aria-label="Diagram comparing a rigid fixed-weight network on the left to a continuously flowing liquid network on the right" role="img" viewbox="0 0 900 220" xmlns="http://www.w3.org/2000/svg">
-<defs>
-<lineargradient id="liquidGrad" x1="0%" x2="100%" y1="0%" y2="0%">
-<stop offset="0%" stop-color="#5b8cff"></stop>
-<stop offset="100%" stop-color="#a06bff"></stop>
-</lineargradient>
-</defs>
-<!-- Rigid grid, left -->
-<g fill="none" stroke="#3a4166" stroke-width="1.5">
-<line x1="60" x2="180" y1="60" y2="60"></line>
-<line x1="60" x2="180" y1="110" y2="110"></line>
-<line x1="60" x2="180" y1="160" y2="160"></line>
-<line x1="180" x2="300" y1="60" y2="110"></line>
-<line x1="180" x2="300" y1="110" y2="110"></line>
-<line x1="180" x2="300" y1="160" y2="110"></line>
-<line x1="60" x2="180" y1="60" y2="110"></line>
-<line x1="60" x2="180" y1="160" y2="110"></line>
-</g>
-<g fill="#6b7396">
-<circle cx="60" cy="60" r="6"></circle>
-<circle cx="60" cy="110" r="6"></circle>
-<circle cx="60" cy="160" r="6"></circle>
-<circle cx="180" cy="60" r="6"></circle>
-<circle cx="180" cy="110" r="6"></circle>
-<circle cx="180" cy="160" r="6"></circle>
-<circle cx="300" cy="110" r="7"></circle>
-</g>
-<!-- Divider -->
-<line stroke="#20263f" stroke-width="1" x1="450" x2="450" y1="20" y2="200"></line>
-<!-- Liquid flow, right -->
-<path class="flow-line" d="M 600 110 C 660 40, 700 180, 760 60 S 820 150, 840 110" fill="none" stroke="url(#liquidGrad)" stroke-linecap="round" stroke-width="2.5"></path>
-<path d="M 600 110 C 660 40, 700 180, 760 60 S 820 150, 840 110" fill="none" opacity="0.18" stroke="url(#liquidGrad)" stroke-width="2.5"></path>
-<g fill="#c9d3ff">
-<circle cx="600" cy="110" r="6"></circle>
-<circle cx="700" cy="88" r="5"></circle>
-<circle cx="760" cy="60" r="6"></circle>
-<circle cx="840" cy="110" r="6"></circle>
-</g>
-</svg>
-<div class="signature-caption">
-<span class="left-label">Fixed weights, trained once</span>
-<span class="right-label">Liquid state, adapting continuously</span>
-</div>
-</div>
-</div>
-<article class="body-copy">
-<p>Every plugin you own learned everything it will ever know before you opened your DAW. The reverb, the AI mastering chain, the stem separator, all of it trained once and shipped frozen. It doesn't matter how many hours you spend inside a session: the model at the center of that plugin is exactly as smart today as the day you installed it.</p>
-<p>Liquid neural networks are one of the few ideas in machine learning built specifically to break that rule. They weren't designed for music. They were designed for robots and vehicles that have to keep functioning as the world around them keeps shifting. But the property that makes them useful for a drone flying through changing wind, the ability to keep adjusting after training ends, is exactly the property most audio AI is missing.</p>
-<p>This is an intro-level walk through what liquid neural networks actually are, why the company built around them is betting on small adaptive models instead of ever-bigger transformers, and where that leaves the honest state of the art if you're trying to build with this today instead of just reading about it.</p>
-<h2 class="section-head">What Actually Makes a Network "Liquid"</h2>
-<p>A conventional neural network learns a set of weights during training, then locks them in. Inference is just running fixed math on new input. A liquid neural network, more precisely a Liquid Time-Constant network, models each neuron as a small system of ordinary differential equations instead. The neuron's time constant, essentially how quickly it reacts, changes continuously based on the input it's receiving right now, not just the weights it learned months ago.</p>
-<p>The idea traces back to Radu Grosu's lab at TU Wien, where Ramin Hasani completed his PhD and Mathias Lechner his master's degree. It was then scaled up at MIT CSAIL, where Hasani and Lechner joined Daniela Rus and Alexander Amini and published the "Liquid Time-Constant Networks" paper. The inspiration came from an unlikely place: C. elegans, a roundworm with only 302 neurons total, which still manages remarkably complex adaptive behavior because its synaptic dynamics aren't fixed. Hasani built that same flexibility into an artificial network using nested differential equations instead of a static activation function.</p>
-<p>The early results were the part that got attention. Networks with as few as nineteen neurons matched or outperformed conventional recurrent networks many times their size on continuous control tasks like driving and navigation, while staying interpretable and provably stable. A follow-up paper in Nature Machine Intelligence introduced closed-form approximations of these dynamics, making the whole approach dramatically more practical to actually run, since solving differential equations at inference time is expensive.</p>
-<aside class="field-note">
-<span class="callout-label">Field Note</span>
-<p>The through-line worth remembering: a liquid network doesn't just have different weights than a transformer, it has a fundamentally different relationship with time. It's built to keep changing shape in response to what it's currently hearing, not just what it was trained on.</p>
-</aside>
-<h2 class="section-head">From Lab Concept to Shipping Company</h2>
-<p>The same four researchers founded Liquid AI, a Cambridge, Massachusetts lab that's since been described as one of the more highly valued AI startups working outside the standard transformer playbook. Instead of building large cloud models and compressing them down for smaller devices, Liquid AI designs its Liquid Foundation Models, or LFMs, from the ground up for the hardware they'll actually run on.</p>
-<p>The first LFM generation shipped in 2024 as dense 1B and 3B models plus a 40B mixture-of-experts model. The second generation, LFM2, moved to a hybrid architecture combining gated short convolutions with a smaller number of attention blocks, and delivers roughly double the CPU decode and prefill speed of similarly sized transformer models. The family now spans from 350 million to 8.3 billion parameters, and critically for this piece, it's no longer text-only. Newer LFM2 releases include models built specifically for interleaved audio and text: text-to-speech, speech-to-text, and voice chat, running at a fraction of the memory footprint you'd expect from a comparable transformer stack.</p>
-<p>It's worth being precise here: a shipping LFM isn't a literal stack of ODE-solving neurons at every layer. It's a hybrid architecture descended from liquid dynamical-systems research, tuned hard for efficiency. Liquid AI has already shown this working outside the lab, partnering with AMD to fine-tune and deploy an LFM directly on a Ryzen AI processor for local, offline meeting summarization, no cloud round trip required.</p>
-<h2 class="section-head">Where This Gets Interesting for Audio Production</h2>
-<h3>The hub-and-spoke case</h3>
-<p>Heavy reasoning, the kind involved in generating a full arrangement or separating stems from a dense mix, is genuinely expensive and probably stays centralized in a cloud hub for a while yet. But the other half of that picture, an adaptive layer of intelligence that lives on your own machine, your own controller, your own plugin, has mostly been a diagram and a hope. LFMs are the first concrete, shipping proof that the spoke half of that architecture is becoming real instead of aspirational.</p>
-<h3>Concrete places this could land</h3>
-<ul class="feature-list">
-<li><strong>Adaptive mastering and mixing chains</strong> that respond to how a track's energy actually shifts section to section, instead of applying one static preset from the first bar to the last.</li>
-<li><strong>On-device, continually personalizing segment detection</strong> that improves the more it hears a specific artist's own catalog, without ever uploading stems to a server. This is directly relevant to how MIXR Studio's energy-based segment detection already works, and where it could go next.</li>
-<li><strong>Live performance intelligence</strong> that lives inside a hardware controller and keeps adjusting to tempo drift and dynamics mid-set, instead of running from a fixed pretrained state. It's part of why I'm building toward a multiverse-style live rig on Push 2 that reacts in real time rather than replaying a script.</li>
-<li><strong>A mix plugin whose internal state keeps drifting</strong> toward a specific producer's habits over months of use, versus a frozen model that behaves identically on day one and day one thousand.</li>
-</ul>
-<h2 class="section-head">The Honest Limitations</h2>
-<aside class="reality-check">
-<span class="callout-label">Reality Check</span>
-<p>Most of the public, rigorously demonstrated results for liquid architectures are still on small-scale continuous control and perception tasks, not large-scale generative audio. The audio-capable LFM2 models that exist today are built for efficient voice assistants and speech interaction, not for competing with dedicated generative music systems on fidelity. Real-time differential equation solving is also just computationally awkward, which is exactly why shipping models lean on closed-form approximations and hybrid layers rather than pure liquid dynamics throughout. And the tooling a DAW plugin developer actually needs, kernels, SDKs, quantized runtimes, is years behind what the transformer and diffusion ecosystem already has.</p>
-</aside>
-<p>None of that makes the idea less worth tracking. It just means this is a real, differently shaped bet on where efficient adaptive intelligence is headed, not a rack you can buy and drop into a session today. Treat it accordingly.</p>
-<h2 class="section-head">Why This Already Fits Hybrid Production Ideology</h2>
-<p>The <a href="https://trustnodelogic.com/what-is-hybrid.html">hybrid production manifesto</a> rejects the binary of pure human or pure machine, and treats generative AI as an instrument that gets shaped through use, not a black box you accept as-is. Liquid neural networks are basically that philosophy expressed as an architecture: intelligence that keeps being reshaped by what it encounters, instead of arriving finished and staying that way forever.</p>
-<p>That's the whole reason this is worth writing up for <a href="https://www.reddit.com/r/hybridproduction/">r/hybridproduction</a> rather than filing it under pure research trivia. The producers in that community aren't waiting for AI to get handed to them fully formed. They're the ones most likely to notice when an architecture built for self-driving cars turns out to describe exactly what an adaptive mix engine should have been doing all along.</p>
-<h2 class="section-head">Quick Questions</h2>
-<div class="faq-item">
-<h3>What is a liquid neural network?</h3>
-<p>A continuous-time architecture where each neuron behaves like a small differential equation instead of a fixed activation function. Its response speed changes based on current input, letting the network keep adapting after training instead of staying frozen.</p>
-</div>
-<div class="faq-item">
-<h3>Are liquid neural networks the same as Liquid AI's LFM models?</h3>
-<p>Related, not identical. Liquid time-constant networks are the original MIT CSAIL and TU Wien research. LFMs are commercial hybrid models descended from that research, tuned for efficient on-device deployment rather than a pure ODE-solving stack at every layer.</p>
-</div>
-<div class="faq-item">
-<h3>Can liquid neural networks generate music or audio right now?</h3>
-<p>Not in the way transformer or diffusion-based systems currently do. There are strong results on small-scale control and perception tasks, and newer LFM releases include efficient audio-native models for speech, but nothing yet competes with dedicated generative music models on fidelity.</p>
-</div>
-<div class="faq-item">
-<h3>Why would this matter to music producers?</h3>
-<p>Because most audio AI ships as a frozen model that behaves identically forever. A production model that keeps adapting to a specific room, performer, or producer's habits, without a cloud round trip, changes what "AI-assisted" actually means.</p>
-</div>
-<aside class="further-reading">
-<span class="callout-label">Further Reading</span>
-<ul>
-<li><a href="https://arxiv.org/abs/2006.04439">Liquid Time-Constant Networks</a>, the original paper by Hasani, Lechner, Amini, Rus, and Grosu.</li>
-<li><a href="https://news.mit.edu/2021/machine-learning-adapts-0128">MIT News coverage</a> of the original liquid network research.</li>
-<li><a href="https://www.liquid.ai/">Liquid AI</a>, the company built around this research.</li>
-<li><a href="https://www.liquid.ai/models">Liquid Foundation Models</a>, the current LFM lineup including audio-native releases.</li>
-</ul>
-</aside>
+<div class="wrap">
+  <article>
+    <span class="kicker">// FIELD NOTES · AI ARCHITECTURE</span>
+    <div class="title-row">
+      <h1>The Liquid Ear</h1>
+      <span class="holiday-badge" aria-label="Happy 4th of July" title="Happy 4th of July">
+        <svg aria-label="United States flag" height="14" role="img" viewBox="0 0 30 20" width="20" xmlns="http://www.w3.org/2000/svg">
+          <rect fill="#fff" height="20" width="30"></rect>
+          <g fill="#c8102e">
+            <rect height="1.54" width="30" y="0"></rect>
+            <rect height="1.54" width="30" y="3.08"></rect>
+            <rect height="1.54" width="30" y="6.16"></rect>
+            <rect height="1.54" width="30" y="9.24"></rect>
+            <rect height="1.54" width="30" y="12.32"></rect>
+            <rect height="1.54" width="30" y="15.4"></rect>
+            <rect height="1.54" width="30" y="18.46"></rect>
+          </g>
+          <rect fill="#0a3161" height="10.8" width="13"></rect>
+          <g fill="#fff">
+            <circle cx="2" cy="1.6" r="0.55"></circle>
+            <circle cx="5" cy="1.6" r="0.55"></circle>
+            <circle cx="8" cy="1.6" r="0.55"></circle>
+            <circle cx="11" cy="1.6" r="0.55"></circle>
+            <circle cx="3.5" cy="3.6" r="0.55"></circle>
+            <circle cx="6.5" cy="3.6" r="0.55"></circle>
+            <circle cx="9.5" cy="3.6" r="0.55"></circle>
+            <circle cx="2" cy="5.6" r="0.55"></circle>
+            <circle cx="5" cy="5.6" r="0.55"></circle>
+            <circle cx="8" cy="5.6" r="0.55"></circle>
+            <circle cx="11" cy="5.6" r="0.55"></circle>
+            <circle cx="3.5" cy="7.6" r="0.55"></circle>
+            <circle cx="6.5" cy="7.6" r="0.55"></circle>
+            <circle cx="9.5" cy="7.6" r="0.55"></circle>
+            <circle cx="2" cy="9.4" r="0.55"></circle>
+            <circle cx="5" cy="9.4" r="0.55"></circle>
+            <circle cx="8" cy="9.4" r="0.55"></circle>
+            <circle cx="11" cy="9.4" r="0.55"></circle>
+          </g>
+        </svg>
+        Happy 4th of July
+      </span>
+    </div>
 
- <!-- Related Field Notes Topic Cluster -->
- <section class="mt-16 pt-8 border-t border-white/10 w-full max-w-4xl mx-auto px-4" aria-label="Related Research">
- <div class="flex items-center justify-between mb-6">
- <div class="flex items-center gap-2 text-xs font-mono tracking-wider text-[#FF9F1C] uppercase">
- <span>[ TOPIC_CLUSTER // RELATED_FIELD_NOTES ]</span>
- </div>
- <a href="./field-notes.html" class="text-xs font-mono text-[#71717A] hover:text-[#FF9F1C] transition-colors">ALL FIELD NOTES (25) →</a>
- </div>
- <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
- <a href="./agentichybridproduction.html" class="tech-card p-5 bg-[#121417] border border-white/10 hover:border-[#FF9F1C] flex flex-col justify-between group transition-all">
- <div>
- <span class="text-[10px] font-mono tracking-widest text-[#FF9F1C] uppercase block mb-2">ARCHITECTURE // MULTI-AGENT</span>
- <h3 class="text-sm font-bold font-mono text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors mb-2">Autonomous Virtual Studio</h3>
- <p class="text-xs text-[#71717A] font-light leading-relaxed">Multi-agent AI music systems, OSC protocols, EnCodec latent spaces, and Ableton automation.</p>
- </div>
- <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-[#71717A] group-hover:text-[#EAEAEA]">
-          <span class="text-[10px] tracking-wider uppercase text-[#71717A]">15 MIN READ</span>
-          <span class="inline-flex items-center gap-1 text-[#EAEAEA] group-hover:text-[#FF9F1C] font-semibold transition-colors">
-            <span>Deploy Agent Orchestration</span>
-            <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">→</span>
-          </span>
-        </div>
-      </a>
- <a href="./what-is-hybrid.html" class="tech-card p-5 bg-[#121417] border border-white/10 hover:border-[#FF9F1C] flex flex-col justify-between group transition-all">
- <div>
- <span class="text-[10px] font-mono tracking-widest text-[#FF9F1C] uppercase block mb-2">CORE PILLAR // MASTER GUIDE</span>
- <h3 class="text-sm font-bold font-mono text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors mb-2">What Is Hybrid Production?</h3>
- <p class="text-xs text-[#71717A] font-light leading-relaxed">The foundational pillar guide to blending generative seeds, spectral splitting, and live instruments.</p>
- </div>
- <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-[#71717A] group-hover:text-[#EAEAEA]">
-          <span class="text-[10px] tracking-wider uppercase text-[#71717A]">15 MIN READ</span>
-          <span class="inline-flex items-center gap-1 text-[#EAEAEA] group-hover:text-[#FF9F1C] font-semibold transition-colors">
-            <span>Explore Hybrid Methodology</span>
-            <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">→</span>
-          </span>
-        </div>
-      </a>
- <a href="./machinehumanhybrid.html" class="tech-card p-5 bg-[#121417] border border-white/10 hover:border-[#FF9F1C] flex flex-col justify-between group transition-all">
- <div>
- <span class="text-[10px] font-mono tracking-widest text-[#FF9F1C] uppercase block mb-2">AUTHORSHIP // DAW INTEGRATION</span>
- <h3 class="text-sm font-bold font-mono text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors mb-2">Drawing the Line: Authorship</h3>
- <p class="text-xs text-[#71717A] font-light leading-relaxed">Copyright thresholds, substantial human authorship criteria, and prompt-to-DAW hybrid workflows.</p>
- </div>
- <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-[#71717A] group-hover:text-[#EAEAEA]">
-          <span class="text-[10px] tracking-wider uppercase text-[#71717A]">10 MIN READ</span>
-          <span class="inline-flex items-center gap-1 text-[#EAEAEA] group-hover:text-[#FF9F1C] font-semibold transition-colors">
-            <span>Demarcate Human Authorship</span>
-            <span class="text-[#FF9F1C] group-hover:translate-x-1 transition-transform">→</span>
-          </span>
-        </div>
-      </a>
- </div>
- </section>
+    <p class="dek">Liquid neural networks were built to keep adapting after training ends. Here is what that architecture could mean for audio production, and where the idea is still just a bet.</p>
 
-</article>
-<div class="cta-block">
-<div class="cta-panel">
-<h3>Building the adaptive layer</h3>
-<p>MIXR Studio is the current step toward browser-native, adaptive audio tooling. If liquid architectures interest you, this is the sandbox where that thinking is already happening.</p>
-<div class="cta-links">
-<a class="btn btn-primary" href="https://trustnodelogic.com/mixrstudio.html">Try MIXR Studio</a>
-<a class="btn btn-secondary" href="https://trustnodelogic.com/agentichybridproduction.html">Read: The Autonomous Virtual Studio</a>
-<a class="btn btn-secondary" href="https://www.reddit.com/r/hybridproduction/">Join r/hybridproduction</a>
+    <div class="byline">
+      <span>By <a href="./about.html"><strong>Justin Ray</strong> (JRAY)</a></span>
+      <span>·</span>
+      <span>Author of HPS-1.0</span>
+      <span>·</span>
+      <span>East Lansing, MI</span>
+      <span>·</span>
+      <span>Trust Node Logic</span>
+      <span>·</span>
+      <span>Jul 4, 2026</span>
+      <span>·</span>
+      <span>~8 min read</span>
+    </div>
+
+    <div class="tag-row">
+      <span class="tag">LIQUID NEURAL NETWORKS</span>
+      <span class="tag">EDGE AI</span>
+      <span class="tag">ADAPTIVE AUDIO DSP</span>
+      <span class="tag">HYBRID PRODUCTION</span>
+      <span class="tag">LFM2 ARCHITECTURE</span>
+    </div>
+
+    <!-- Signature Diagram: Rigid Grid vs Liquid State -->
+    <div class="signature-wrap">
+      <div class="signature-panel">
+        <svg aria-label="Diagram comparing a rigid fixed-weight network on the left to a continuously flowing liquid network on the right" role="img" viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="liquidGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#FF9F1C"></stop>
+              <stop offset="100%" stop-color="#00F0FF"></stop>
+            </linearGradient>
+            <filter id="liquidGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="3" result="blur"></feGaussianBlur>
+              <feComposite in="SourceGraphic" in2="blur" operator="over"></feComposite>
+            </filter>
+          </defs>
+          <!-- Rigid grid, left (frozen weights) -->
+          <g fill="none" stroke="rgba(255, 255, 255, 0.16)" stroke-width="1.5">
+            <line x1="60" y1="60" x2="180" y2="60"></line>
+            <line x1="60" y1="110" x2="180" y2="110"></line>
+            <line x1="60" y1="160" x2="180" y2="160"></line>
+            <line x1="180" y1="60" x2="300" y2="110"></line>
+            <line x1="180" y1="110" x2="300" y2="110"></line>
+            <line x1="180" y1="160" x2="300" y2="110"></line>
+            <line x1="60" y1="60" x2="180" y2="110"></line>
+            <line x1="60" y1="160" x2="180" y2="110"></line>
+          </g>
+          <g fill="#71717A">
+            <circle cx="60" cy="60" r="6"></circle>
+            <circle cx="60" cy="110" r="6"></circle>
+            <circle cx="60" cy="160" r="6"></circle>
+            <circle cx="180" cy="60" r="6"></circle>
+            <circle cx="180" cy="110" r="6"></circle>
+            <circle cx="180" cy="160" r="6"></circle>
+            <circle cx="300" cy="110" r="7" fill="#A1A1AA"></circle>
+          </g>
+          <!-- Divider -->
+          <line stroke="rgba(255, 255, 255, 0.12)" stroke-dasharray="4 4" stroke-width="1" x1="450" y1="20" x2="450" y2="200"></line>
+          <!-- Liquid flow, right (adaptive continuous state) -->
+          <path d="M 600 110 C 660 40, 700 180, 760 60 S 820 150, 840 110" fill="none" opacity="0.25" stroke="url(#liquidGrad)" stroke-width="6" filter="url(#liquidGlow)"></path>
+          <path class="flow-line" d="M 600 110 C 660 40, 700 180, 760 60 S 820 150, 840 110" fill="none" stroke="url(#liquidGrad)" stroke-linecap="round" stroke-width="2.5"></path>
+          <g>
+            <circle cx="600" cy="110" r="6" fill="#FF9F1C"></circle>
+            <circle cx="700" cy="88" r="5" fill="#FFAE34"></circle>
+            <circle cx="760" cy="60" r="6" fill="#00E5FF"></circle>
+            <circle cx="840" cy="110" r="6" fill="#00F0FF"></circle>
+          </g>
+        </svg>
+        <div class="signature-caption">
+          <span class="left-label">Fixed weights · Trained once · Static inference</span>
+          <span class="right-label">Liquid state · Adapting continuously · Dynamical ODE feedback</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Core Article Body -->
+    <p>Every plugin you own learned everything it will ever know before you opened your DAW. The reverb, the AI mastering chain, the stem separator, all of it trained once and shipped frozen. It does not matter how many hours you spend inside a session: the model at the center of that plugin is exactly as smart today as the day you installed it.</p>
+
+    <p>Liquid neural networks are one of the few ideas in machine learning built specifically to break that rule. They were not designed for music. They were designed for robots and vehicles that have to keep functioning as the world around them keeps shifting. But the property that makes them useful for a drone flying through changing wind, the ability to keep adjusting after training ends, is exactly the property most audio AI is missing.</p>
+
+    <p>This is an intro-level walk through what liquid neural networks actually are, why the company built around them is betting on small adaptive models instead of ever-bigger transformers, and where that leaves the honest state of the art if you are trying to build with this today instead of just reading about it.</p>
+
+    <h2>What Actually Makes a Network "Liquid"</h2>
+
+    <p>A conventional neural network learns a set of weights during training, then locks them in. Inference is just running fixed math on new input. A liquid neural network, more precisely a Liquid Time-Constant network, models each neuron as a small system of ordinary differential equations instead. The neuron's time constant, essentially how quickly it reacts, changes continuously based on the input it is receiving right now, not just the weights it learned months ago.</p>
+
+    <p>The idea traces back to Radu Grosu's lab at TU Wien, where Ramin Hasani completed his PhD and Mathias Lechner his master's degree. It was then scaled up at MIT CSAIL, where Hasani and Lechner joined Daniela Rus and Alexander Amini and published the "Liquid Time-Constant Networks" paper. The inspiration came from an unlikely place: <em>C. elegans</em>, a roundworm with only 302 neurons total, which still manages remarkably complex adaptive behavior because its synaptic dynamics are not fixed. Hasani built that same flexibility into an artificial network using nested differential equations instead of a static activation function.</p>
+
+    <p>The early results were the part that got attention. Networks with as few as nineteen neurons matched or outperformed conventional recurrent networks many times their size on continuous control tasks like driving and navigation, while staying interpretable and provably stable. A follow-up paper in <em>Nature Machine Intelligence</em> introduced closed-form approximations of these dynamics, making the whole approach dramatically more practical to actually run, since solving differential equations at inference time is expensive.</p>
+
+    <aside class="field-note">
+      <span class="callout-label">// Field Note</span>
+      <p>The through-line worth remembering: a liquid network does not just have different weights than a transformer, it has a fundamentally different relationship with time. It is built to keep changing shape in response to what it is currently hearing, not just what it was trained on.</p>
+    </aside>
+
+    <h2>From Lab Concept to Shipping Company</h2>
+
+    <p>The same four researchers founded Liquid AI, a Cambridge, Massachusetts lab that has since been described as one of the more highly valued AI startups working outside the standard transformer playbook. Instead of building large cloud models and compressing them down for smaller devices, Liquid AI designs its Liquid Foundation Models, or LFMs, from the ground up for the hardware they will actually run on.</p>
+
+    <p>The first LFM generation shipped in 2024 as dense 1B and 3B models plus a 40B mixture-of-experts model. The second generation, LFM2, moved to a hybrid architecture combining gated short convolutions with a smaller number of attention blocks, and delivers roughly double the CPU decode and prefill speed of similarly sized transformer models. The family now spans from 350 million to 8.3 billion parameters, and critically for this piece, it is no longer text-only. Newer LFM2 releases include models built specifically for interleaved audio and text: text-to-speech, speech-to-text, and voice chat, running at a fraction of the memory footprint you would expect from a comparable transformer stack.</p>
+
+    <p>It is worth being precise here: a shipping LFM is not a literal stack of ODE-solving neurons at every layer. It is a hybrid architecture descended from liquid dynamical-systems research, tuned hard for efficiency. Liquid AI has already shown this working outside the lab, partnering with AMD to fine-tune and deploy an LFM directly on a Ryzen AI processor for local, offline meeting summarization, no cloud round trip required.</p>
+
+    <!-- Technical Comparison Spec Table -->
+    <div class="tscroll">
+      <table class="spec-table" aria-label="Neural Architecture Comparison in Audio Production">
+        <thead>
+          <tr>
+            <th>Architecture Dimension</th>
+            <th>Static Transformers (AudioLM / Suno Backbone)</th>
+            <th>Pure Liquid LTCs (MIT CSAIL Research)</th>
+            <th>Liquid Foundation Models (LFM2 Hybrid)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Weight Mutability</td>
+            <td>100% Frozen post-training</td>
+            <td>Continuous ODE-modulated time constants</td>
+            <td>Hybrid adaptive state + short-conv gating</td>
+          </tr>
+          <tr>
+            <td>Inference Paradigm</td>
+            <td>Static matrix multiplications</td>
+            <td>Numerical ODE differential equation solver</td>
+            <td>Closed-form linear convolutions + sparse attention</td>
+          </tr>
+          <tr>
+            <td>Time Sensitivity</td>
+            <td>Discrete token steps with O(N²) KV cache</td>
+            <td>Continuous physical time domain</td>
+            <td>Linear-complexity prefill and streaming decode</td>
+          </tr>
+          <tr>
+            <td>Edge Memory Footprint</td>
+            <td>Heavy VRAM requirement (16GB - 48GB+)</td>
+            <td>Ultra-minimal (19 - 100 neurons)</td>
+            <td>350M - 8B params, optimized for local NPU / CPU</td>
+          </tr>
+          <tr>
+            <td>Current Audio Role</td>
+            <td>Generative stem &amp; full arrangement synthesis</td>
+            <td>Continuous sensor control and robotics</td>
+            <td>Edge voice, low-latency DSP feedback &amp; assistant chat</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Where This Gets Interesting for Audio Production</h2>
+
+    <h3>The Hub-and-Spoke Case</h3>
+    <p>Heavy reasoning, the kind involved in generating a full arrangement or separating stems from a dense mix, is genuinely expensive and probably stays centralized in a cloud hub for a while yet. But the other half of that picture, an adaptive layer of intelligence that lives on your own machine, your own controller, your own plugin, has mostly been a diagram and a hope. LFMs are the first concrete, shipping proof that the spoke half of that architecture is becoming real instead of aspirational.</p>
+
+    <h3>Concrete Places This Could Land</h3>
+    <ul class="feature-list">
+      <li><strong>Adaptive mastering and mixing chains</strong> that respond to how a track's energy actually shifts section to section, instead of applying one static preset from the first bar to the last.</li>
+      <li><strong>On-device, continually personalizing segment detection</strong> that improves the more it hears a specific artist's own catalog, without ever uploading stems to a server. This is directly relevant to how MIXR Studio's energy-based segment detection already works, and where it could go next.</li>
+      <li><strong>Live performance intelligence</strong> that lives inside a hardware controller and keeps adjusting to tempo drift and dynamics mid-set, instead of running from a fixed pretrained state. It is part of why research at Trust Node Logic builds toward a multiverse-style live rig on Push 2 that reacts in real time rather than replaying a script.</li>
+      <li><strong>A mix plugin whose internal state keeps drifting</strong> toward a specific producer's habits over months of use, versus a frozen model that behaves identically on day one and day one thousand.</li>
+    </ul>
+
+    <h2>The Honest Limitations</h2>
+
+    <aside class="reality-check">
+      <span class="callout-label">// Reality Check</span>
+      <p>Most of the public, rigorously demonstrated results for liquid architectures are still on small-scale continuous control and perception tasks, not large-scale generative audio. The audio-capable LFM2 models that exist today are built for efficient voice assistants and speech interaction, not for competing with dedicated generative music systems on fidelity. Real-time differential equation solving is also just computationally awkward, which is exactly why shipping models lean on closed-form approximations and hybrid layers rather than pure liquid dynamics throughout. And the tooling a DAW plugin developer actually needs, kernels, SDKs, quantized runtimes, is years behind what the transformer and diffusion ecosystem already has.</p>
+    </aside>
+
+    <p>None of that makes the idea less worth tracking. It just means this is a real, differently shaped bet on where efficient adaptive intelligence is headed, not a rack you can buy and drop into a session today. Treat it accordingly.</p>
+
+    <h2>Why This Already Fits Hybrid Production Ideology</h2>
+
+    <p>The <a class="inline-link" href="./what-is-hybrid.html">hybrid production manifesto</a> rejects the binary of pure human or pure machine, and treats generative AI as an instrument that gets shaped through use, not a black box you accept as-is. Liquid neural networks are basically that philosophy expressed as an architecture: intelligence that keeps being reshaped by what it encounters, instead of arriving finished and staying that way forever.</p>
+
+    <p>That is the whole reason this is worth writing up for <a class="inline-link" href="https://www.reddit.com/r/hybridproduction/" target="_blank" rel="noopener noreferrer">r/hybridproduction</a> rather than filing it under pure research trivia. The producers in that community are not waiting for AI to get handed to them fully formed. They are the ones most likely to notice when an architecture built for self-driving cars turns out to describe exactly what an adaptive mix engine should have been doing all along.</p>
+
+    <h2>Quick Questions</h2>
+
+    <div class="faq-block">
+      <details class="faq-item">
+        <summary>What is a liquid neural network?</summary>
+        <p>A continuous-time architecture where each neuron behaves like a small differential equation instead of a fixed activation function. Its response speed changes based on current input, letting the network keep adapting after training instead of staying frozen.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Are liquid neural networks the same as Liquid AI's LFM models?</summary>
+        <p>Related, not identical. Liquid time-constant networks are the original MIT CSAIL and TU Wien research. LFMs are commercial hybrid models descended from that research, tuned for efficient on-device deployment rather than a pure ODE-solving stack at every layer.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can liquid neural networks generate music or audio right now?</summary>
+        <p>Not in the way transformer or diffusion-based systems currently do. There are strong results on small-scale control and perception tasks, and newer LFM releases include efficient audio-native models for speech, but nothing yet competes with dedicated generative music models on fidelity.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Why would this matter to music producers?</summary>
+        <p>Because most audio AI ships as a frozen model that behaves identically forever. A production model that keeps adapting to a specific room, performer, or producer's habits, without a cloud round trip, changes what "AI-assisted" actually means.</p>
+      </details>
+    </div>
+
+    <aside class="further-reading">
+      <span class="callout-label">// Further Reading &amp; Primary Sources</span>
+      <ul>
+        <li><a href="https://arxiv.org/abs/2006.04439" target="_blank" rel="noopener noreferrer">Liquid Time-Constant Networks</a> · The original research paper by Hasani, Lechner, Amini, Rus, and Grosu.</li>
+        <li><a href="https://news.mit.edu/2021/machine-learning-adapts-0128" target="_blank" rel="noopener noreferrer">MIT News Coverage</a> · Documentation of the original liquid network breakthrough.</li>
+        <li><a href="https://www.liquid.ai/" target="_blank" rel="noopener noreferrer">Liquid AI</a> · The research startup pioneering Liquid Foundation Models.</li>
+        <li><a href="https://www.liquid.ai/models" target="_blank" rel="noopener noreferrer">Liquid Foundation Models</a> · The current LFM lineup including audio-native releases.</li>
+      </ul>
+    </aside>
+
+    <!-- Knowledge Graph SPO Summary Table -->
+    <div class="tscroll" style="margin-top: 36px;">
+      <table class="spec-table" aria-label="Knowledge Graph Entities and Relations">
+        <thead>
+          <tr>
+            <th>Subject Entity</th>
+            <th>Predicate (Relation)</th>
+            <th>Object Entity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Liquid Neural Networks</td>
+            <td>modelsContinuousDynamics</td>
+            <td>Ordinary Differential Equations (ODEs)</td>
+          </tr>
+          <tr>
+            <td>Liquid Time-Constant Networks</td>
+            <td>researchedAt</td>
+            <td>MIT CSAIL &amp; TU Wien (Hasani, Lechner, Rus, Amini, Grosu)</td>
+          </tr>
+          <tr>
+            <td>Liquid Foundation Models (LFM2)</td>
+            <td>incorporatesArchitecture</td>
+            <td>Gated Short Convolutions + Sparse Attention</td>
+          </tr>
+          <tr>
+            <td>Liquid AI &amp; AMD</td>
+            <td>demonstratesEdgeExecution</td>
+            <td>Local Ryzen AI NPU Audio / Speech Processing</td>
+          </tr>
+          <tr>
+            <td>MIXR Studio</td>
+            <td>implementsAdaptiveInterface</td>
+            <td>Dynamic Energy-Based Audio Segment Detection</td>
+          </tr>
+          <tr>
+            <td>Hybrid Production Standard (HPS-1.0)</td>
+            <td>authoredBy</td>
+            <td>Justin Ray (Trust Node Logic)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Mandatory HPS-1.0 Linking Triad -->
+    <div class="triad-box">
+      <div class="triad-title">[ HPS-1.0 CANONICAL ECOSYSTEM TRIAD ]</div>
+      <div class="triad-grid">
+        <a class="triad-link" href="https://github.com/Loserdub/HPS-1.0-Hybrid-Production-Standard" target="_blank" rel="noopener noreferrer">
+          <span class="triad-link-kicker">GitHub Repository</span>
+          <span class="triad-link-title">Open HPS-1.0 Specification ↗</span>
+        </a>
+        <a class="triad-link" href="https://trustnodelogic.web.app" target="_blank" rel="noopener noreferrer">
+          <span class="triad-link-kicker">Operational Web Workstation</span>
+          <span class="triad-link-title">Launch Attestation Engine ↗</span>
+        </a>
+        <a class="triad-link" href="./contact.html">
+          <span class="triad-link-kicker">Consultation &amp; Advisory</span>
+          <span class="triad-link-title">Discuss Studio Implementation →</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Hero CTA Sandbox Box -->
+    <div class="hero-cta-box">
+      <div class="hero-cta-text">
+        <h3>Building the Adaptive Audio Layer</h3>
+        <p>MIXR Studio is our browser-native testbed for dynamic buffers and energy segmentation. Explore how adaptive thinking is applied to live DAW workflows.</p>
+      </div>
+      <div class="hero-cta-actions">
+        <a class="nav-action" href="./mixrstudio.html">Try MIXR Studio →</a>
+        <a class="nav-action" href="./agentichybridproduction.html">Read Studio Research →</a>
+      </div>
+    </div>
+
+    <!-- Author Bio Card -->
+    <div class="author-card">
+      <img src="bio-avatar.jpg" alt="Justin Ray" class="author-avatar" width="72" height="72" loading="lazy">
+      <div class="author-info">
+        <h4>Justin Ray (JRAY / loserdub)</h4>
+        <p>Author of the Hybrid Production Standard (HPS-1.0) and founder of Trust Node Logic. Researches continuous neural architectures, adaptive DSP pipelines, and audio provenance from East Lansing, MI.</p>
+      </div>
+    </div>
+
+    <!-- Related Field Notes Topic Cluster -->
+    <section class="cluster-section" aria-label="Related Field Notes Research">
+      <div class="cluster-header">
+        <div class="cluster-title">[ TOPIC_CLUSTER // RELATED_FIELD_NOTES ]</div>
+        <a href="./field-notes.html" class="cluster-link">ALL FIELD NOTES (25) →</a>
+      </div>
+      <div class="cluster-grid">
+        <a href="./agentichybridproduction.html" class="tech-card">
+          <div>
+            <div class="tech-card-kicker">ARCHITECTURE // MULTI-AGENT</div>
+            <h3 class="tech-card-title">Autonomous Virtual Studio</h3>
+            <p class="tech-card-desc">Multi-agent AI music systems, OSC protocols, EnCodec latent spaces, and Ableton automation.</p>
+          </div>
+          <div class="tech-card-footer">
+            <span>15 MIN READ</span>
+            <span class="tech-card-action">Deploy Orchestration →</span>
+          </div>
+        </a>
+        <a href="./what-is-hybrid.html" class="tech-card">
+          <div>
+            <div class="tech-card-kicker">CORE PILLAR // MASTER GUIDE</div>
+            <h3 class="tech-card-title">What Is Hybrid Production?</h3>
+            <p class="tech-card-desc">The foundational pillar guide to blending generative seeds, spectral splitting, and live instruments.</p>
+          </div>
+          <div class="tech-card-footer">
+            <span>15 MIN READ</span>
+            <span class="tech-card-action">Explore Methodology →</span>
+          </div>
+        </a>
+        <a href="./machinehumanhybrid.html" class="tech-card">
+          <div>
+            <div class="tech-card-kicker">AUTHORSHIP // DAW INTEGRATION</div>
+            <h3 class="tech-card-title">Drawing the Line: Authorship</h3>
+            <p class="tech-card-desc">Copyright thresholds, substantial human authorship criteria, and prompt-to-DAW hybrid workflows.</p>
+          </div>
+          <div class="tech-card-footer">
+            <span>10 MIN READ</span>
+            <span class="tech-card-action">Demarcate Authorship →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </article>
 </div>
-</div>
-</div>
-</main>
+
 <!-- Rigid Terminal Footer -->
-<footer class="w-full bg-[#0B0C0E] border-t border-white/10 py-8 mt-auto z-20 relative">
-<div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-<div class="text-[#71717A] text-xs font-mono tracking-widest uppercase text-center md:text-left">
-© 2026 Justin Ray (JRAY). All Rights Reserved.
-</div>
-<nav class="flex flex-wrap justify-center gap-6 text-xs font-mono tracking-widest uppercase text-[#71717A]" aria-label="Footer navigation">
-<a href="/" class="hover:text-[#EAEAEA] transition-colors">Home</a>
-<a href="./hybridproductionstandard.html" class="hover:text-[#EAEAEA] transition-colors">The Standard</a>
-<a href="./projects.html" class="hover:text-[#EAEAEA] transition-colors">The Suite</a>
-<a href="./field-notes.html" class="hover:text-[#EAEAEA] transition-colors">Field Notes</a>
-<a href="./music.html" class="hover:text-[#EAEAEA] transition-colors">Music</a>
-<a href="./about.html" class="hover:text-[#EAEAEA] transition-colors">About</a>
-<a href="./services.html" class="hover:text-[#EAEAEA] transition-colors">Services</a>
-<a href="./contact.html" class="hover:text-[#EAEAEA] transition-colors">Contact</a>
-<a href="./sitemap.xml" class="hover:text-[#EAEAEA] transition-colors">Sitemap</a>
-</nav>
-</div>
+<footer class="sitefoot">
+  <div>&copy; 2026 Justin Ray (JRAY). All Rights Reserved.</div>
+  <nav class="fnav" aria-label="Footer navigation">
+    <a href="./index.html">Home</a>
+    <a href="./hybridproductionstandard.html">HPS-1.0</a>
+    <a href="./field-notes.html">Field Notes</a>
+    <a href="./music.html">Music</a>
+    <a href="./projects.html">Projects</a>
+    <a href="./about.html">About</a>
+    <a href="./contact.html">Contact</a>
+    <a href="./sitemap.xml">Sitemap</a>
+  </nav>
 </footer>
+
 <script defer src="./assets/reader.min.js"></script>
 </body>
 </html>

@@ -351,6 +351,48 @@ An automated audit across all HTML, JS, JSON, XML, and Markdown files in the rep
 
 ---
 
+### Task 11: liquidears.html Design Modernization (HPS Engine Reference)
+
+#### A. Objectives & Visual Reference
+Upgraded `liquidears.html` ("The Liquid Ear") to conform to the modern dark brutalist design system established in `hps-engine.html`:
+- Migrated from legacy blue/purple palette (`--accent-blue: #5b8cff`, `--accent-purple: #a06bff`, `--bg-void: #060811`) to brutalist design tokens (`--bg: #08090A`, `--surface: #121417`, `--surface-sub: #181B20`, `--orange: #FF9F1C`, `--cyan: #00F0FF`, dot matrix canvas).
+- Unified DOM layout structure into `.wrap > article` (1040px max width, 48px desktop / 20px mobile padding) replacing fragmented outer-hero wrapper.
+
+#### B. Component Architecture & Transformations Applied
+1. **Sticky Brutalist Header & Navigation:**
+   - Standardized top navigation with brand logo (`.brand-logo` with amber dot indicator), uppercase monospace navigation items, and external CTA button (`[ HPS ENGINE ↗ ]`).
+   - Verified single-line layout stability across mobile (375px), tablet (768px), and desktop (1280px) viewports with zero horizontal blowout.
+2. **Hero & Metadata Callout:**
+   - Added monospace kicker (`// FIELD NOTES · AI ARCHITECTURE`), display uppercase H1 (`THE LIQUID EAR`), brutalist 4th of July badge with American flag SVG, and deck summary.
+   - Standardized byline to the Author Callout model: `By Justin Ray (JRAY) · Author of HPS-1.0 · East Lansing, MI · Trust Node Logic · Jul 4, 2026 · ~8 min read`.
+   - Updated topic tags to amber-accented brutalist pills (`LIQUID NEURAL NETWORKS`, `EDGE AI`, `ADAPTIVE AUDIO DSP`, `HYBRID PRODUCTION`, `LFM2 ARCHITECTURE`).
+3. **Signature Architecture Flow Diagram:**
+   - Recolored the signature comparison SVG into the brutalist amber/cyan theme:
+     - Left side (frozen weights): subtle white hairline grid (`rgba(255, 255, 255, 0.16)`) with muted gray nodes (`#71717A`).
+     - Right side (adaptive liquid flow): linear gradient flow line (`#FF9F1C` to `#00F0FF`) with ambient glow and animated dashed flow stroke (`@keyframes liquidFlow`).
+     - Standardized caption: `Fixed weights · Trained once · Static inference` / `Liquid state · Adapting continuously · Dynamical ODE feedback`.
+4. **E-E-A-T Technical Specification Table:**
+   - Integrated a comparative specification table (`table.spec-table` within `.tscroll`) evaluating Static Transformers (AudioLM / Suno Backbone), Pure Liquid LTCs (MIT CSAIL Research), and Liquid Foundation Models (LFM2 Hybrid) across Weight Mutability, Inference Paradigm, Time Sensitivity, Edge Memory Footprint, and Current Audio Role.
+5. **Interactive Quick Questions (FAQ):**
+   - Converted static Q&A divs into interactive `<details class="faq-item">` elements with accessible `<summary>` toggles, custom brutalist `+`/`−` markers, and hover states.
+6. **Mandatory Ecosystem Triad Box (`.triad-box`):**
+   - Integrated the 3 canonical HPS ecosystem links:
+     - GitHub Repository: Open HPS-1.0 Specification ↗
+     - Operational Web Workstation: Launch Attestation Engine ↗
+     - Consultation & Advisory: Discuss Studio Implementation →
+7. **Hero CTA Sandbox & Author Card:**
+   - Added adaptive sandbox callout linking to MIXR Studio (`mixrstudio.html`) and studio research (`agentichybridproduction.html`).
+   - Integrated standardized Author Bio Card with avatar, East Lansing, MI attribution, and zero "pioneer of" terminology.
+8. **Topic Cluster & Terminal Footer:**
+   - Restyled related field notes grid (`agentichybridproduction.html`, `what-is-hybrid.html`, `machinehumanhybrid.html`) into interactive `.tech-card` components.
+   - Replaced legacy footer with standardized brutalist `.sitefoot` and `.fnav`.
+9. **SEO, JSON-LD, & Discovery Feeds:**
+   - Sanitized JSON-LD: updated `dateModified` to `2026-10-23`, removed "Pioneer of" instances, set location strictly to East Lansing, MI.
+   - Updated `sitemap.xml` `<lastmod>` for `liquidears.html` to `2026-10-23`.
+   - Replaced all corrupted `\ufffd` separator characters with middle dots (`·`) and hyphens.
+
+---
+
 ## 3. Verification & Compliance Checklist
 
 - [x] Title separator convention: ` · Trust Node Logic` applied across all pages (excluding read-only `hps-engine.html`).
@@ -364,6 +406,7 @@ An automated audit across all HTML, JS, JSON, XML, and Markdown files in the rep
 - [x] Mobile nav audit completed at 375px width.
 - [x] `404.html` styling and relative asset resolution fixed and visually verified.
 - [x] Geographic normalization: "Okemos" and non-East Lansing references removed; 100% normalized to "East Lansing, MI".
+- [x] `liquidears.html` modernized to match `hps-engine.html` color palette, layout, typography, spec table, interactive FAQs, and triad.
 - [x] Zero em dashes in git diff.
 - [x] Internal link resolution script passed with zero broken links.
 
