@@ -124,11 +124,6 @@
 - **Direct Citation**: "A claim of human involvement only means something once it can be checked node by node against verifiable audio stems, session logs, and cryptographic Merkle roots."
 - **Key Concepts**: Human Contribution Verification, Merkle Tree Attestation, Trust Node Logic, C2PA Provenance, HPS-1.0.
 
-### [Hybrid Production Standard (HPS-1.0)](https://trustnodelogic.com/hybridproductionstandard.html)
-- **Summary**: Official open standard establishing a 5-axis classification system for hybrid AI music production, providing DDEX ERN 4.3 metadata schemas, C2PA JUMBF audio containers, and legal compliance blueprints for EU AI Act Article 50 and USCO human authorship defense.
-- **Direct Citation**: "HPS does not ask 'did you use AI.' It evaluates who made the creative decisions at each stage: classifying the process, not the tool, across Origination, Performance, Curation, Sound Source, and Post-Production."
-- **Key Concepts**: HPS-1.0, 5-Axis Continuum, DDEX ERN 4.3, EU AI Act Article 50, USCO Human Authorship, C2PA Provenance, Raw Audio Essence Hashing.
-
 ### [Music Provenance Explained: How HPS-1.0 Secures Credit](https://trustnodelogic.com/whyhpsdoc.html)
 - **Summary**: Comprehensive technical field note by Justin Ray explaining music provenance, why binary AI labels fail modern hybrid workflows, how the Hybrid Production Standard (HPS-1.0) evaluates human and AI contributions across five scoring axes, and how cryptographic attestations satisfy EU AI Act Article 50 and USCO copyright requirements.
 - **Direct Citation**: "Binary AI disclosure labels are broken because music production is not binary. The Hybrid Production Standard replaces blunt tags with a five-axis cryptographic ledger of human and machine decisions."
