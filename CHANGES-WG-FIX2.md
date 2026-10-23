@@ -326,6 +326,31 @@ An audit of navigation bars was conducted across all pages at 375px viewport wid
 
 ---
 
+### Task 10: Geographic Normalization to East Lansing, MI
+
+#### A. Scope & Repository Audit
+An automated audit across all HTML, JS, JSON, XML, and Markdown files in the repository was executed to detect any non-East Lansing geographic claims, specifically targeting mentions of "Okemos", "Lansing" without "East", or regional outliers.
+
+#### B. Remediations Applied
+1. **`songstructure.html`:**
+   - **Line 736 (Byline):** Replaced `Lansing / Okemos, MI` with `East Lansing, MI`. Replaced "Pioneer of Hybrid AI Music Production" with "Author of HPS-1.0".
+   - **Line 1009 (Bio Card):** Replaced `based in the Lansing / Okemos, Michigan area` with `based in East Lansing, MI`. Replaced "hybrid production pioneer" with "audio engineer".
+2. **`musicindustryforecast.html`:**
+   - **Line 1242 (Author Block):** Replaced `Based in Lansing, MI.` with `Based in East Lansing, MI.` Replaced "pioneer of the Hybrid Production methodology" with "author of the Hybrid Production Standard (HPS-1.0)".
+3. **`services.html`:**
+   - **Line 12 (Keywords):** Replaced `music producer Lansing MI, audio mixing services Lansing MI, music mastering Lansing` with `music producer East Lansing MI, audio mixing services East Lansing MI, music mastering East Lansing`.
+   - **Line 137 (Schema Description):** Replaced `in Lansing, Michigan and globally` with `in East Lansing, Michigan and globally`.
+   - **Lines 148-150 (Schema `areaServed`):** Removed redundant `{ "@type": "City", "name": "Lansing, MI" }` entry, maintaining `{ "@type": "City", "name": "East Lansing, MI" }`.
+   - **Line 622 (Studio Description):** Replaced `locally in Lansing and East Lansing, MI` with `locally in East Lansing, MI`.
+   - **Line 633 (Capabilities List):** Replaced `Local studio recording (Lansing, MI)` with `Local studio recording (East Lansing, MI)`.
+
+#### C. Verification Results
+- Repository-wide scan confirms **0 occurrences of "Okemos"**.
+- Repository-wide scan confirms **0 non-East Lansing location claims**.
+- All Schema.org JSON-LD blocks validated without syntax errors.
+
+---
+
 ## 3. Verification & Compliance Checklist
 
 - [x] Title separator convention: ` · Trust Node Logic` applied across all pages (excluding read-only `hps-engine.html`).
@@ -338,6 +363,7 @@ An audit of navigation bars was conducted across all pages at 375px viewport wid
 - [x] `index.html` HPS card restored to a single clickable `<a>` with engine link cleanly separated outside.
 - [x] Mobile nav audit completed at 375px width.
 - [x] `404.html` styling and relative asset resolution fixed and visually verified.
+- [x] Geographic normalization: "Okemos" and non-East Lansing references removed; 100% normalized to "East Lansing, MI".
 - [x] Zero em dashes in git diff.
 - [x] Internal link resolution script passed with zero broken links.
 
