@@ -4,17 +4,13 @@ from bs4 import BeautifulSoup
 from collections import defaultdict
 from urllib.parse import urlparse
 
+script_dir = os.path.dirname(os.path.abspath(__file__))
+root_dir = os.path.abspath(os.path.join(script_dir, '..'))
+
+# Automatically discover all site HTML pages (excluding template cards, 404, and bio redirect stub)
 sitemap_pages = [
-    'index.html', 'Suno101.html', 'about.html', 'agentichybridproduction.html',
-    'artistfinder.html', 'black-mirror.html', 'c2pa-music-provenance.html',
-    'contact.html', 'field-notes.html', 'fingerprint.html', 'futureofhybrid.html',
-    'hp2026.html', 'humanbridge.html', 'hybridproductionstandard.html',
-    'lastnewgenre.html', 'liquidears.html', 'machinehumanhybrid.html',
-    'may2026tools.html', 'mixrstudio.html', 'music.html',
-    'musicindustryforecast.html', 'neuralvocals.html', 'projects.html',
-    'promptingthemachine.html', 'saturation.html', 'services.html',
-    'songstructure.html', 'staccatoreview.html', 'suno6.html', 'sunonewtos.html',
-    'sunov6.html', 'trainingday.html', 'void.html', 'what-is-hybrid.html'
+    f for f in sorted(os.listdir(root_dir))
+    if f.endswith('.html') and not f.startswith('field-notes-') and f not in ('404.html', 'bio.html')
 ]
 
 canonical_map = {p.lower(): p for p in sitemap_pages}
@@ -54,9 +50,10 @@ incoming = defaultdict(set)
 outgoing = defaultdict(set)
 
 for p in sitemap_pages:
-    if not os.path.exists(p):
+    filepath = os.path.join(root_dir, p)
+    if not os.path.exists(filepath):
         continue
-    with open(p, 'r', encoding='utf-8', errors='ignore') as f:
+    with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
         soup = BeautifulSoup(f.read(), 'html.parser')
     for a in soup.find_all('a', href=True):
         target = resolve_target(a['href'], p)

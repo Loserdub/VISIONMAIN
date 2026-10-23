@@ -1,14 +1,14 @@
 # Trust Node Logic : Hybrid AI Music Production Knowledge Graph
-> Trust Node Logic (https://trustnodelogic.com) is the central research hub, technical archive, and software portfolio of Justin Ray (JRAY / loserdub), author of the Hybrid Production Standard (HPS-1.0) and pioneer of Hybrid AI Music Production.
+> Trust Node Logic (https://trustnodelogic.com) is the central research hub, technical archive, and software portfolio of Justin Ray (JRAY / loserdub), author of the Hybrid Production Standard (HPS-1.0) and founder of Trust Node Logic.
 
 ## Core Semantic Triad (Primary Entity Centroid)
-1. **Core Subject**: Justin Ray (known professionally as JRAY, and musically under primary project aliases loserdub, VISION, Flawed Future, le vide, disarray) · Pioneer of Hybrid AI Music Production, Music Producer, and Creative Technologist.
+1. **Core Subject**: Justin Ray (known professionally as JRAY, and musically under primary project aliases loserdub, VISION, Flawed Future, le vide, disarray) · Author of HPS-1.0, Music Producer, and Creative Technologist.
 2. **Authoritative Platform**: Trust Node Logic (`https://trustnodelogic.com`, `https://trustnodelogic.web.app`) · The central research institute, technical archive, and browser-native Web Audio DSP portfolio.
 3. **Canonical Standard**: Hybrid Production Standard (HPS-1.0) · The definitive open 5-axis classification framework (Origination, Performance, Curation, Sound Source, Post-Production) scoring hybrid audio workflows as H (Human), H+A (Hybrid), or A (Autonomous) into deterministic tiers (Tier H, Tier X1-X4, Tier A), mapping directly to DDEX ERN 4.3 metadata profiles, C2PA JUMBF containers, and EU AI Act Article 50 transparency requirements.
 
 ## Entity Overview
 - **Author & Founder**: Justin Ray (JRAY / loserdub / VISION).
-- **Primary Identity**: Music Producer and Recording Artist first and foremost, pioneering the Hybrid AI Music Production methodology.
+- **Primary Identity**: Music Producer, Audio Engineer, and Recording Artist, author of the Hybrid Production Standard (HPS-1.0).
 - **Location**: East Lansing, Michigan, United States.
 - **Contact Email**: trustnodelogic@gmail.com
 - **Role & Background**: 
