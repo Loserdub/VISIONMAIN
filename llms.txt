@@ -71,6 +71,10 @@
 - **Summary**: The definitive open technical standard, multi-track scoring methodology, and interactive attestation engine for hybrid AI music production. Establishes a 5-axis ontology (Origination, Performance, Curation, Sound Source, Post-Production) scored into deterministic tiers (Tier H, Tier X1-X4, Tier A), exporting DDEX ERN 4.3 XML, C2PA JUMBF assertions, and EU AI Act Article 50 statutory compliance manifests. Includes live browser-based DAW attestation engine at https://trustnodelogic.web.app.
 - **Key Concepts**: HPS-1.0, 5-Axis Attribution, DDEX ERN 4.3, EU AI Act Article 50, USCO Human Authorship, C2PA JUMBF, Raw Audio Essence SHA-256, DAW Attestation Engine.
 
+### [HPS Attestation Engine](https://trustnodelogic.com/hps-engine.html)
+- **Summary**: Comprehensive technical architecture, DAW session parsing guide, and cryptographic verification protocol for the HPS-1.0 DAW Attestation Engine. Explains client-side browser execution (100% sovereign with zero server uploads), automated ingestion across 8 DAW project formats (Ableton Live, Logic Pro, FL Studio, Pro Tools, Cubase, Studio One, REAPER, DAWProject), bit-perfect raw PCM audio essence SHA-256 hashing, client-side Ed25519 signing, and generation of canonical JSON sidecars, WAV essence seals (hps1 RIFF chunks), distributor PDF evidence reports, and DDEX ERN 4.3 XML metadata.
+- **Key Concepts**: HPS Attestation Engine, DAW Session Forensics, SHA-256 Essence Hash, Ed25519 Signing, DDEX ERN 4.3 XML, C2PA JUMBF, Sovereign Browser Privacy, EU AI Act Article 50, Trust Node Logic, Justin Ray.
+
 ---
 
 ## Analytical Field Notes & Technical Research

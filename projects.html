@@ -47,6 +47,7 @@
         { "@id": "https://trustnodelogic.com/#person" },
         { "@id": "https://trustnodelogic.com/#organization" },
         { "@id": "https://trustnodelogic.com/hybridproductionstandard.html#article" },
+        { "@id": "https://trustnodelogic.com/hps-engine.html#softwareapplication" },
         { "@id": "https://trustnodelogic.com/mixrstudio.html#softwareapplication" },
         { "@id": "https://trustnodelogic.com/void.html#softwareapplication" }
       ],
@@ -81,11 +82,19 @@
       "@id": "https://trustnodelogic.com/projects.html#tools-list",
       "name": "Browser-Native DSP & Audio Software Suite",
       "description": "Interactive browser-native DSP workstations, web samplers, and generative audio tools engineered by Justin Ray.",
-      "numberOfItems": 10,
+      "numberOfItems": 11,
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
+          "name": "HPS Attestation Engine",
+          "item": {
+            "@id": "https://trustnodelogic.com/hps-engine.html#softwareapplication"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
           "name": "VOID 1.5 Web Sampler",
           "item": {
             "@id": "https://trustnodelogic.com/void.html#softwareapplication"
@@ -93,7 +102,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 2,
+          "position": 3,
           "name": "MIXR Studio Web Mastering Workstation",
           "item": {
             "@id": "https://trustnodelogic.com/mixrstudio.html#softwareapplication"
@@ -101,7 +110,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 3,
+          "position": 4,
           "name": "V I S I O N Subtractive Synth",
           "item": {
             "@id": "https://trustnodelogic.com/projects.html#vision-synth"
@@ -109,7 +118,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 4,
+          "position": 5,
           "name": "J-DAW Web Audio Workstation",
           "item": {
             "@id": "https://trustnodelogic.com/projects.html#jdaw"
@@ -117,7 +126,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 5,
+          "position": 6,
           "name": "ChordCompose Harmonic Studio",
           "item": {
             "@id": "https://trustnodelogic.com/projects.html#chordcompose"
@@ -125,7 +134,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 6,
+          "position": 7,
           "name": "Artist Finder Music Discovery Engine",
           "item": {
             "@id": "https://trustnodelogic.com/projects.html#artist-finder"
@@ -133,7 +142,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 7,
+          "position": 8,
           "name": "FractalAudio Non-Linear Synthesizer",
           "item": {
             "@id": "https://trustnodelogic.com/projects.html#fractalaudio"
@@ -141,7 +150,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 8,
+          "position": 9,
           "name": "Black Mirror Visualizer",
           "item": {
             "@id": "https://trustnodelogic.com/projects.html#blackmirror"
@@ -149,7 +158,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 9,
+          "position": 10,
           "name": "IMAGESIZER Asset Compressor",
           "item": {
             "@id": "https://trustnodelogic.com/projects.html#imagesizer"
@@ -157,7 +166,7 @@
         },
         {
           "@type": "ListItem",
-          "position": 10,
+          "position": 11,
           "name": "DeathClock Mortality Timer",
           "item": {
             "@id": "https://trustnodelogic.com/projects.html#deathclock"
@@ -456,6 +465,12 @@
     --undertone: #FF9F1C;
     --undertone-rgb: 255, 159, 28;
   }
+  .tool-theme-hps {
+    --accent: #FF9F1C;
+    --accent-rgb: 255, 159, 28;
+    --undertone: #E08A10;
+    --undertone-rgb: 224, 138, 16;
+  }
 
   /* ─── Editorial Portfolio Showcase Card System ─── */
   .lab-card {
@@ -738,7 +753,7 @@
             <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-2 text-[10px] font-mono shrink-0">
               <div class="bg-[#121417] border border-white/10 p-2.5">
                 <span class="text-[#71717A] block text-[9px]">TOTAL ENGINES</span>
-                <span class="text-[#FF9F1C] font-bold text-xs">10 DEPLOYED</span>
+                <span class="text-[#FF9F1C] font-bold text-xs">11 DEPLOYED</span>
               </div>
               <div class="bg-[#121417] border border-white/10 p-2.5">
                 <span class="text-[#71717A] block text-[9px]">EXECUTION</span>
@@ -758,8 +773,8 @@
           <!-- Interactive Category Filter Bar -->
           <div class="flex flex-wrap items-center gap-2 mt-8 pt-6 border-t border-white/[0.08]" role="toolbar" aria-label="Filter projects by category">
             <span class="text-[10px] font-mono uppercase tracking-widest text-[#71717A] mr-2">FILTER:</span>
-            <button type="button" class="filter-btn filter-active" data-filter-btn="all" aria-pressed="true">[ ALL // 10 ]</button>
-            <button type="button" class="filter-btn" data-filter-btn="flagship" aria-pressed="false">[ FLAGSHIP DSP // 02 ]</button>
+            <button type="button" class="filter-btn filter-active" data-filter-btn="all" aria-pressed="true">[ ALL // 11 ]</button>
+            <button type="button" class="filter-btn" data-filter-btn="flagship" aria-pressed="false">[ FLAGSHIP DSP // 03 ]</button>
             <button type="button" class="filter-btn" data-filter-btn="synth-daw" aria-pressed="false">[ SYNTHS &amp; DAWS // 03 ]</button>
             <button type="button" class="filter-btn" data-filter-btn="utility" aria-pressed="false">[ LAB &amp; UTILITIES // 04 ]</button>
             <button type="button" class="filter-btn" data-filter-btn="side-project" aria-pressed="false">[ SIDE PROJECTS // 01 ]</button>
@@ -942,6 +957,78 @@
                   <span class="text-[10px] font-mono text-[#71717A]">[STATUS: LIVE // IN-BROWSER]</span>
                   <span class="lab-action-link">
                     LAUNCH STUDIO →
+                  </span>
+                </div>
+              </div>
+            </a>
+
+            <!-- 3. HPS Attestation Engine -->
+            <a id="hps-engine" href="./hps-engine.html" class="lab-card tool-theme-hps group block" data-project-item data-category="flagship utility" aria-label="Open HPS Attestation Engine Technical Architecture and DAW Provenance Guide">
+              <!-- Technical Schematic Preview: 5-Axis Waveform & Essence Hash -->
+              <div class="schematic-box h-44 sm:h-52 w-full p-4">
+                <div class="case-header-chip text-[#FF9F1C] border-[#FF9F1C]/30">
+                  <span class="w-1.5 h-1.5 bg-[#FF9F1C] animate-pulse"></span>
+                  <span>DAW PROVENANCE // SHA-256 ESSENCE SEAL</span>
+                </div>
+                <div class="absolute top-3 right-4 font-mono text-[9px] text-[#71717A]">ED25519 / DDEX ERN 4.3</div>
+                
+                <!-- Centered Vector Graphic: 5-Axis Node Network & Signature Seal -->
+                <svg class="schematic-svg w-full max-w-sm h-32" viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Central Hexagonal Provenance Token -->
+                  <polygon points="160,25 195,45 195,85 160,105 125,85 125,45" fill="rgba(255,159,28,0.12)" stroke="#FF9F1C" stroke-width="1.5" />
+                  <circle cx="160" cy="65" r="16" fill="rgba(255,159,28,0.2)" stroke="#FF9F1C" stroke-width="1" />
+                  <text x="160" y="69" text-anchor="middle" fill="#FF9F1C" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="bold">HPS</text>
+                  <!-- Connecting Vectors -->
+                  <line x1="75" y1="40" x2="125" y2="45" stroke="rgba(255,159,28,0.4)" stroke-width="1" stroke-dasharray="2 2" />
+                  <line x1="75" y1="90" x2="125" y2="85" stroke="rgba(255,159,28,0.4)" stroke-width="1" stroke-dasharray="2 2" />
+                  <line x1="245" y1="40" x2="195" y2="45" stroke="rgba(255,159,28,0.4)" stroke-width="1" stroke-dasharray="2 2" />
+                  <line x1="245" y1="90" x2="195" y2="85" stroke="rgba(255,159,28,0.4)" stroke-width="1" stroke-dasharray="2 2" />
+                  <!-- Outer Nodes -->
+                  <rect x="50" y="32" width="25" height="16" fill="#121417" stroke="#FF9F1C" stroke-width="1" />
+                  <text x="62" y="44" text-anchor="middle" fill="#FF9F1C" font-family="'JetBrains Mono', monospace" font-size="8">ALS</text>
+                  <rect x="50" y="82" width="25" height="16" fill="#121417" stroke="#FF9F1C" stroke-width="1" />
+                  <text x="62" y="94" text-anchor="middle" fill="#FF9F1C" font-family="'JetBrains Mono', monospace" font-size="8">LPX</text>
+                  <rect x="245" y="32" width="25" height="16" fill="#121417" stroke="#FF9F1C" stroke-width="1" />
+                  <text x="257" y="44" text-anchor="middle" fill="#FF9F1C" font-family="'JetBrains Mono', monospace" font-size="8">PTX</text>
+                  <rect x="245" y="82" width="25" height="16" fill="#121417" stroke="#FF9F1C" stroke-width="1" />
+                  <text x="257" y="94" text-anchor="middle" fill="#FF9F1C" font-family="'JetBrains Mono', monospace" font-size="8">DDX</text>
+                </svg>
+              </div>
+
+              <!-- Card Body Content -->
+              <div class="p-6 flex flex-col justify-between flex-grow">
+                <div>
+                  <div class="flex items-center justify-between text-[10px] font-mono mb-3">
+                    <span class="text-[#FF9F1C] font-bold">[ PROVENANCE // ATTESTATION ]</span>
+                    <span class="text-[10px] font-mono text-[#71717A]">8 DAW FORMATS</span>
+                  </div>
+
+                  <h3 class="text-xl sm:text-2xl font-bold font-mono uppercase text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors">
+                    HPS Attestation Engine
+                  </h3>
+                  
+                  <p class="text-xs sm:text-sm text-[#A1A1AA] mt-3 font-sans leading-relaxed">
+                    Browser-native audio provenance application scanning 8 DAW formats, hashing raw PCM essence, and signing DDEX ERN 4.3 manifests.
+                  </p>
+
+                  <!-- Technical Callout Strip -->
+                  <div class="mt-4 pt-3 border-t border-white/[0.08] space-y-1.5 text-[11px] font-mono">
+                    <div class="flex items-center justify-between">
+                      <span class="text-[#71717A]">[CORE_TECH]</span>
+                      <span class="text-[#FF9F1C]">SHA-256 PCM hash, Ed25519 signing</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <span class="text-[#71717A]">[DELIVERABLES]</span>
+                      <span class="text-[#EAEAEA]">PDF evidence, DDEX XML, JSON sidecar</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Footer Action -->
+                <div class="mt-6 pt-4 border-t border-white/[0.08] flex items-center justify-between">
+                  <span class="text-[10px] font-mono text-[#71717A]">[STATUS: LIVE // IN-BROWSER]</span>
+                  <span class="lab-action-link">
+                    VIEW GUIDE →
                   </span>
                 </div>
               </div>
@@ -1506,6 +1593,9 @@
         <div class="scroll-section mt-16 text-center space-y-2 text-xs font-mono text-[#71717A] border-t border-white/10 pt-10">
           <p>Interactive DSP tools engineered by <strong class="text-[#EAEAEA]">Trust Node Logic</strong> for Browser Audio Tools.</p>
           <p class="pt-2"><a href="./services.html" class="text-[#FF9F1C] hover:underline">Looking for custom DSP development, web tools, or technical consulting? View Services →</a></p>
+          <div style="margin-top: 18px; font-size: 11px; color: #71717A;">
+            [ CHANGELOG: 2026-10-22 · Added HPS Attestation Engine (DAW provenance and DDEX ERN 4.3 verification) to flagship deployments. ]
+          </div>
         </div>
       </section>
     </main>
