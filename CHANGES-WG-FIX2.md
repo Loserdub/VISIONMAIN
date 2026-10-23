@@ -23,7 +23,7 @@
 | `songstructure.html` | Modified | Updated meta description and schemas to accurately match 90 bars at 120 BPM in 4/4 (146 chars), and updated title separator to middle dot (56 chars) |
 | `index.html` | Modified | Restored HPS card to a fully clickable `<a>` element pointing to `hybridproductionstandard.html`, removed all nested `<a>` elements within the card, and placed the HPS Attestation Engine launch strip in a separate container outside the card |
 | `field-notes.html` | Modified | Standardized title separator to middle dot (` · Trust Node Logic`, 59 chars) across `<title>`, OpenGraph, Twitter, and JSON-LD |
-| `mixrstudio.html` | Modified | Standardized title separator to middle dot (` · Trust Node Logic`, 59 chars) across `<title>`, OpenGraph, Twitter, and JSON-LD |
+| `mixrstudio.html` | Modified | Standardized title separator to middle dot (` · Trust Node Logic`, 59 chars) across `<title>`, OpenGraph, Twitter, and JSON-LD; shortened header nav label from `HPS Attestation Engine ↗` to `HPS Engine ↗` to restore original header height on mobile viewports |
 | `projects.html` | Modified | Standardized title separator to middle dot (` · Trust Node Logic`, 59 chars) across `<title>`, OpenGraph, Twitter, and JSON-LD |
 | `saturation.html` | Modified | Standardized title separator to middle dot (` · Trust Node Logic`, 59 chars) across `<title>`, OpenGraph, Twitter, and JSON-LD |
 | `staccatoreview.html` | Modified | Standardized title separator to middle dot (` · Trust Node Logic`, 59 chars) across `<title>`, OpenGraph, Twitter, and JSON-LD |
@@ -290,11 +290,16 @@ An audit of navigation bars was conducted across all pages at 375px viewport wid
    - The mobile menu opens into a full-width vertical drawer (`w-full max-w-xs flex flex-col items-center gap-4`).
    - **Result:** No labels wrap or overflow horizontally at 375px width.
 
-2. **`mixrstudio.html` Header Nav Bar:**
-   - **Observed Behavior:** The tool navigation header in `mixrstudio.html` (lines 2020-2027) uses an inline flex container with `flex-wrap: wrap`.
-   - **Wrapped Label:** With the addition of `HPS Attestation Engine ↗` (24 characters) in WG6, the nav items (`home`, `field notes`, `projects`, `about`, `HPS Attestation Engine ↗`, `? guide`) break into **3 wrapped lines** on screens <= 375px.
-   - **Impact:** While no text overflows the viewport horizontally, the header height increases by ~32px, pushing the waveform workspace down.
-   - **Recommended Future Enhancement:** Abbreviate the mobile label in `mixrstudio.html` to `HPS Engine ↗` or collapse into an icon/dropdown on viewports < 420px.
+2. **`mixrstudio.html` Header Nav Bar & Remediation:**
+   - **Prior Deviation:** In WG6, the nav link was changed from `app ↗` to `HPS Attestation Engine ↗` (24 characters), which caused the nav items (`home`, `field notes`, `projects`, `about`, `HPS Attestation Engine ↗`, `? guide`) to break across 3 wrapped lines on 375px mobile screens, expanding header height to 126px.
+   - **Remediation:** Shortened the link label to `HPS Engine ↗` (preserving `href="https://trustnodelogic.web.app"`, `target="_blank"`, and `rel="noopener"`).
+   - **Height Benchmark vs origin/main:** Verified in headless Chrome across 375px, 768px, and 1280px viewports:
+
+| Viewport Width | `origin/main` Header Height | Current (`HPS Engine ↗`) Header Height | Status |
+|---|---|---|---|
+| 375px (Mobile) | 94px (2 lines) | 94px (2 lines) | Verified: No taller than origin/main |
+| 768px (Tablet) | 62px (1 line) | 62px (1 line) | Verified: Identical to origin/main |
+| 1280px (Desktop) | 62px (1 line) | 62px (1 line) | Verified: Identical to origin/main |
 
 3. **`projects.html` Filter Bar & Navigation:**
    - Filter chips use `flex-wrap: wrap` and naturally wrap into two lines cleanly without horizontal clipping or scrollbar breakage at 375px.
