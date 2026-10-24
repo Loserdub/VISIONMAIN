@@ -556,131 +556,209 @@
  <div class="h-[1px] w-16 bg-[#FF9F1C] mx-auto mt-8"></div>
  </div>
 
- <!-- 3 High-End Service Cards Grid -->
- <div class="scroll-section grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+ <!-- 3 High-End Service Pillars Composition -->
+ <div class="scroll-section grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16 items-stretch">
  
- <!-- Card 1: Search & AI Visibility Engineering -->
- <div class="tech-card p-8 flex flex-col justify-between group border-white/10 hover:border-[#FF9F1C]/60 transition-all">
+ <!-- Pillar 1: Search & AI Visibility Engineering (Light Editorial Treatment) -->
+ <div id="service-seo-geo" class="p-8 sm:p-9 flex flex-col justify-between group bg-[#F7F6F2] border border-[#DEDCD5] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.8),0_10px_25px_-5px_rgba(0,0,0,0.25)] relative transition-all hover:border-[#245BFF]/50">
  <div>
- <div class="flex items-center justify-between text-xs font-mono text-[#71717A] mb-4">
- <span class="text-[#FF9F1C] font-semibold tracking-wider uppercase">01 / DIGITAL PRESENCE</span>
- <span class="text-[10px] tracking-wider uppercase border border-[#FF9F1C]/30 text-[#FF9F1C] px-2.5 py-0.5">GEO &amp; SEO</span>
+ <div class="flex items-center justify-between text-xs font-mono text-[#52525B] mb-4">
+ <span class="text-[#245BFF] font-semibold tracking-wider uppercase">01 / DIGITAL PRESENCE</span>
+ <span class="text-[10px] tracking-wider uppercase border border-[#245BFF]/30 bg-[#245BFF]/10 text-[#245BFF] px-2.5 py-0.5 font-mono font-medium">GEO &amp; SEO</span>
  </div>
- <h2 class="text-xl font-bold font-mono uppercase tracking-tight text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors mb-3">
+ <h2 class="text-xl sm:text-2xl font-bold font-mono uppercase tracking-tight text-[#171A20] group-hover:text-[#245BFF] transition-colors mb-3">
  Search &amp; AI Visibility Engineering
  </h2>
- <p class="text-xs text-[#A1A1AA] leading-relaxed mb-4 font-sans">
+ <p class="text-xs sm:text-[13px] text-[#3F3F46] leading-relaxed mb-4 font-sans">
  Comprehensive digital presence and discoverability engineering. We construct high-performance websites and calibrate brand entity graphs to establish authoritative citation across search engines and AI generative models (ChatGPT, Perplexity, Google AI Overviews).
  </p>
- <p class="text-xs text-[#71717A] font-mono leading-relaxed mb-6">
- Audit your AI footprint with the <a href="./artistfinder.html" class="text-[#00F0FF] hover:underline font-medium">Artist Finder AI visibility diagnostic</a>.
+ <p class="text-xs text-[#52525B] font-mono leading-relaxed mb-5">
+ Audit your AI footprint with the <a href="./artistfinder.html" class="text-[#245BFF] hover:underline font-semibold">Artist Finder AI visibility diagnostic</a>.
  </p>
+
+ <!-- Pillar 1 Diagram: Network Entity System Map -->
+ <div class="w-full my-5 p-3.5 bg-white border border-[#E2DFD8] overflow-hidden" aria-hidden="true">
+ <svg viewBox="0 0 320 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto block">
+   <!-- Subtle Grid -->
+   <line x1="0" y1="32" x2="320" y2="32" stroke="#E2DFD8" stroke-dasharray="3 3"/>
+   <line x1="80" y1="0" x2="80" y2="64" stroke="#E2DFD8" stroke-dasharray="3 3"/>
+   <line x1="160" y1="0" x2="160" y2="64" stroke="#E2DFD8" stroke-dasharray="3 3"/>
+   <line x1="240" y1="0" x2="240" y2="64" stroke="#E2DFD8" stroke-dasharray="3 3"/>
+   <!-- Connection Links -->
+   <path d="M40 32 L110 16 L180 32 L250 16 L290 32" stroke="#245BFF" stroke-width="1.5" stroke-linecap="square"/>
+   <path d="M110 48 L180 32 L250 48" stroke="#71717A" stroke-width="1.2" stroke-linecap="square" stroke-dasharray="2 2"/>
+   <!-- Network Nodes -->
+   <rect x="34" y="26" width="12" height="12" fill="#171A20" stroke="#245BFF" stroke-width="1.5"/>
+   <circle cx="110" cy="16" r="4.5" fill="#245BFF"/>
+   <circle cx="110" cy="48" r="3.5" fill="#171A20" stroke="#71717A"/>
+   <rect x="174" y="26" width="12" height="12" fill="#245BFF"/>
+   <circle cx="250" cy="16" r="4.5" fill="#171A20" stroke="#245BFF"/>
+   <circle cx="250" cy="48" r="3.5" fill="#71717A"/>
+   <rect x="284" y="26" width="12" height="12" fill="#171A20" stroke="#245BFF" stroke-width="1.5"/>
+   <!-- Labels -->
+   <text x="34" y="52" font-family="monospace" font-size="7" fill="#52525B" font-weight="bold">SOURCE</text>
+   <text x="146" y="16" font-family="monospace" font-size="7" fill="#245BFF" font-weight="bold">JSON-LD</text>
+   <text x="260" y="58" font-family="monospace" font-size="7" fill="#52525B" font-weight="bold">llms.txt</text>
+ </svg>
+ </div>
  
- <div class="border-t border-white/[0.08] pt-5">
- <span class="text-[10px] font-mono tracking-widest text-[#EAEAEA] uppercase block mb-3 font-semibold">Capabilities &amp; Deliverables</span>
- <ul class="space-y-2 text-xs font-mono text-[#71717A] list-none">
- <li class="flex items-start gap-2.5"><span class="text-[#FF9F1C] shrink-0">•</span><span>Technical search audits and Core Web Vitals optimization</span></li>
- <li class="flex items-start gap-2.5"><span class="text-[#FF9F1C] shrink-0">•</span><span>Structured data schemas and JSON-LD knowledge graphs</span></li>
- <li class="flex items-start gap-2.5"><span class="text-[#FF9F1C] shrink-0">•</span><span>Generative Engine Optimization (GEO) for AI citations</span></li>
- <li class="flex items-start gap-2.5"><span class="text-[#FF9F1C] shrink-0">•</span><span>AI crawler manifests (llms.txt) and machine discovery feeds</span></li>
- <li class="flex items-start gap-2.5"><span class="text-[#FF9F1C] shrink-0">•</span><span>Modern web architecture and responsive interface development</span></li>
- <li class="flex items-start gap-2.5"><span class="text-[#FF9F1C] shrink-0">•</span><span>Entity definition, Wikidata mapping, and brand authority</span></li>
+ <div class="border-t border-[#E2DFD8] pt-5">
+ <span class="text-[10px] font-mono tracking-widest text-[#171A20] uppercase block mb-3 font-bold">Capabilities &amp; Deliverables</span>
+ <ul class="space-y-2 text-xs font-mono text-[#52525B] list-none">
+ <li class="flex items-start gap-2.5"><span class="text-[#245BFF] shrink-0 font-bold">•</span><span>Technical search audits and Core Web Vitals optimization</span></li>
+ <li class="flex items-start gap-2.5"><span class="text-[#245BFF] shrink-0 font-bold">•</span><span>Structured data schemas and JSON-LD knowledge graphs</span></li>
+ <li class="flex items-start gap-2.5"><span class="text-[#245BFF] shrink-0 font-bold">•</span><span>Generative Engine Optimization (GEO) for AI citations</span></li>
+ <li class="flex items-start gap-2.5"><span class="text-[#245BFF] shrink-0 font-bold">•</span><span>AI crawler manifests (llms.txt) and machine discovery feeds</span></li>
+ <li class="flex items-start gap-2.5"><span class="text-[#245BFF] shrink-0 font-bold">•</span><span>Modern web architecture and responsive interface development</span></li>
+ <li class="flex items-start gap-2.5"><span class="text-[#245BFF] shrink-0 font-bold">•</span><span>Entity definition, Wikidata mapping, and brand authority</span></li>
  </ul>
- <div class="mt-4 pt-3 border-t border-white/5 text-[11px] font-mono text-[#71717A]">
- <span class="text-[#EAEAEA]">Deliverables:</span> JSON-LD Knowledge Graph · llms.txt · Full Audit
+ <div class="mt-4 pt-3 border-t border-[#E2DFD8] text-[11px] font-mono text-[#52525B]">
+ <span class="text-[#171A20] font-semibold">Deliverables:</span> JSON-LD Knowledge Graph · llms.txt · Full Audit
  </div>
  </div>
  </div>
  
- <div class="mt-8 pt-4 border-t border-white/[0.08] flex flex-col gap-2.5">
- <a href="./contact.html?service=seo-geo-web" class="w-full py-3 bg-[#121417] border border-white/20 hover:border-[#FF9F1C] text-xs font-mono text-center tracking-widest text-[#EAEAEA] hover:text-[#FF9F1C] transition-all font-semibold uppercase flex items-center justify-center gap-2">
+ <div class="mt-8 pt-4 border-t border-[#E2DFD8] flex flex-col gap-2.5">
+ <a href="./contact.html?service=seo-geo-web" class="w-full py-3 bg-[#171A20] border border-[#171A20] hover:bg-[#245BFF] hover:border-[#245BFF] text-xs font-mono text-center tracking-widest text-white transition-all font-semibold uppercase flex items-center justify-center gap-2">
  <span>Inquire About Project</span>
  <span>→</span>
  </a>
- <a href="./artistfinder.html" class="w-full py-2 bg-transparent border border-white/10 hover:border-[#00F0FF] text-[11px] font-mono text-center tracking-wider text-[#71717A] hover:text-[#00F0FF] transition-all flex items-center justify-center gap-2">
+ <a href="./artistfinder.html" class="w-full py-2 bg-transparent border border-[#DEDCD5] hover:border-[#245BFF] text-[11px] font-mono text-center tracking-wider text-[#52525B] hover:text-[#245BFF] transition-all flex items-center justify-center gap-2">
  <span>Run Diagnostic Audit</span>
  <span>↗</span>
  </a>
  </div>
  </div>
 
- <!-- Card 2: Music Production, Mixing & Mastering -->
- <div class="tech-card p-8 flex flex-col justify-between group border-white/20 hover:border-[#FF9F1C] transition-all">
+ <!-- Pillar 2: Music Production, Mixing & Mastering (Carbon Audio Lab Treatment) -->
+ <div id="service-music-production" class="p-8 sm:p-9 flex flex-col justify-between group bg-[#121417] border border-white/15 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.16),0_12px_30px_-5px_rgba(0,0,0,0.5)] relative transition-all hover:border-[#B9F36A]/60">
  <div>
  <div class="flex items-center justify-between text-xs font-mono text-[#71717A] mb-4">
- <span class="text-[#FF9F1C] font-semibold tracking-wider uppercase">02 / AUDIO ENGINEERING</span>
- <span class="text-[10px] tracking-wider uppercase border border-[#FF9F1C]/30 text-[#FF9F1C] px-2.5 py-0.5">STUDIO &amp; DSP</span>
+ <span class="text-[#B9F36A] font-semibold tracking-wider uppercase font-mono">02 / AUDIO ENGINEERING</span>
+ <span class="text-[10px] tracking-wider uppercase border border-[#B9F36A]/30 bg-[#B9F36A]/10 text-[#B9F36A] px-2.5 py-0.5 font-mono font-medium">STUDIO &amp; DSP</span>
  </div>
- <h2 class="text-xl font-bold font-mono uppercase tracking-tight text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors mb-3">
+ <h2 class="text-xl sm:text-2xl font-bold font-mono uppercase tracking-tight text-[#FFFFFF] group-hover:text-[#B9F36A] transition-colors mb-3">
  Music Production, Audio Mixing &amp; Mastering
  </h2>
- <p class="text-xs text-[#A1A1AA] leading-relaxed mb-6 font-sans">
+ <p class="text-xs sm:text-[13px] text-[#C5CBD3] leading-relaxed mb-4 font-sans">
  Master-grade multi-track mixing, precision stereo mastering, and full studio production. Serving artists locally in East Lansing, MI, as well as labels and producers worldwide through secure remote stem workflows.
  </p>
+
+ <!-- Pillar 2 Diagram: Modular DSP Audio Waveform & Stem Matrix -->
+ <div class="w-full my-5 p-3.5 bg-[#0B0C0E] border border-white/10 overflow-hidden" aria-hidden="true">
+ <svg viewBox="0 0 320 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto block">
+   <!-- Spectrum Background Ticks -->
+   <line x1="0" y1="52" x2="320" y2="52" stroke="#23272F" stroke-width="1"/>
+   <line x1="64" y1="12" x2="64" y2="52" stroke="#23272F" stroke-dasharray="2 2"/>
+   <line x1="160" y1="12" x2="160" y2="52" stroke="#23272F" stroke-dasharray="2 2"/>
+   <line x1="256" y1="12" x2="256" y2="52" stroke="#23272F" stroke-dasharray="2 2"/>
+   <!-- Harmonic Resonance Band (Cobalt) -->
+   <path d="M0 46 C40 44, 70 30, 110 30 C150 30, 180 48, 220 48 C260 48, 290 38, 320 40" stroke="#245BFF" stroke-width="1.5" stroke-dasharray="3 2"/>
+   <!-- Master Waveform Curve (Acid Lime) -->
+   <path d="M0 50 Q 40 48, 70 32 T 130 16 T 180 38 T 240 18 T 290 34 T 320 46" stroke="#B9F36A" stroke-width="2" stroke-linecap="square"/>
+   <!-- Peak Markers & Nodes -->
+   <circle cx="130" cy="16" r="3.5" fill="#B9F36A"/>
+   <line x1="130" y1="16" x2="130" y2="52" stroke="#B9F36A" stroke-width="0.8" stroke-dasharray="2 2"/>
+   <circle cx="240" cy="18" r="3" fill="#245BFF"/>
+   <line x1="240" y1="18" x2="240" y2="52" stroke="#245BFF" stroke-width="0.8" stroke-dasharray="2 2"/>
+   <!-- DSP Matrix Labels -->
+   <text x="8" y="18" font-family="monospace" font-size="7" fill="#71717A">24-BIT / 48kHz</text>
+   <text x="124" y="10" font-family="monospace" font-size="7" fill="#B9F36A" font-weight="bold">PEAK</text>
+   <text x="265" y="18" font-family="monospace" font-size="7" fill="#245BFF">DSP // SLERP</text>
+ </svg>
+ </div>
  
  <div class="border-t border-white/[0.08] pt-5">
- <span class="text-[10px] font-mono tracking-widest text-[#EAEAEA] uppercase block mb-3 font-semibold">Capabilities &amp; Deliverables</span>
- <ul class="space-y-2 text-xs font-mono text-[#71717A] list-none">
- <li class="flex items-start gap-2.5"><span class="text-[#FF9F1C] shrink-0">•</span><span>Full music production, custom composition, and sound design</span></li>
- <li class="flex items-start gap-2.5"><span class="text-[#FF9F1C] shrink-0">•</span><span>Professional multi-track stem mixing and stereo mastering</span></li>
- <li class="flex items-start gap-2.5"><span class="text-[#FF9F1C] shrink-0">•</span><span>Vocal tuning, phase alignment, cleanup, and spectral repair</span></li>
- <li class="flex items-start gap-2.5"><span class="text-[#FF9F1C] shrink-0">•</span><span>Hybrid AI stem integration, neural cleanup, and browser-native DSP (<a href="./mixrstudio.html" class="text-[#00D9FF] hover:underline font-semibold">MIXR Studio</a>, <a href="./void.html" class="text-[#39FF14] hover:underline font-semibold">VOID 1.5</a>)</span></li>
- <li class="flex items-start gap-2.5"><span class="text-[#FF9F1C] shrink-0">•</span><span>Streaming loudness optimization (Spotify, Apple Music, Dolby/BWF)</span></li>
- <li class="flex items-start gap-2.5"><span class="text-[#FF9F1C] shrink-0">•</span><span>Local studio recording (East Lansing, MI) and secure remote delivery</span></li>
+ <span class="text-[10px] font-mono tracking-widest text-[#FFFFFF] uppercase block mb-3 font-semibold">Capabilities &amp; Deliverables</span>
+ <ul class="space-y-2 text-xs font-mono text-[#A1A1AA] list-none">
+ <li class="flex items-start gap-2.5"><span class="text-[#B9F36A] shrink-0 font-bold">•</span><span>Full music production, custom composition, and sound design</span></li>
+ <li class="flex items-start gap-2.5"><span class="text-[#B9F36A] shrink-0 font-bold">•</span><span>Professional multi-track stem mixing and stereo mastering</span></li>
+ <li class="flex items-start gap-2.5"><span class="text-[#B9F36A] shrink-0 font-bold">•</span><span>Vocal tuning, phase alignment, cleanup, and spectral repair</span></li>
+ <li class="flex items-start gap-2.5"><span class="text-[#B9F36A] shrink-0 font-bold">•</span><span>Hybrid AI stem integration, neural cleanup, and browser-native DSP (<a href="./mixrstudio.html" class="text-[#00F0FF] hover:underline font-semibold">MIXR Studio</a>, <a href="./void.html" class="text-[#B9F36A] hover:underline font-semibold">VOID 1.5</a>)</span></li>
+ <li class="flex items-start gap-2.5"><span class="text-[#B9F36A] shrink-0 font-bold">•</span><span>Streaming loudness optimization (Spotify, Apple Music, Dolby/BWF)</span></li>
+ <li class="flex items-start gap-2.5"><span class="text-[#B9F36A] shrink-0 font-bold">•</span><span>Local studio recording (East Lansing, MI) and secure remote delivery</span></li>
  </ul>
  <div class="mt-4 pt-3 border-t border-white/5 text-[11px] font-mono text-[#71717A]">
- <span class="text-[#EAEAEA]">Deliverables:</span> 24-bit/48kHz Master WAV · Stem Archives · DDP/BWF
+ <span class="text-[#FFFFFF]">Deliverables:</span> 24-bit/48kHz Master WAV · Stem Archives · DDP/BWF
  </div>
  </div>
  </div>
  
  <div class="mt-8 pt-4 border-t border-white/[0.08] flex flex-col gap-2.5">
- <a href="./contact.html?service=music-production" class="w-full py-3 bg-[#FF9F1C] hover:bg-[#ffb042] text-black text-xs font-mono text-center tracking-widest font-bold uppercase transition-all shadow-[0_0_20px_rgba(255,159,28,0.2)] flex items-center justify-center gap-2">
+ <a href="./contact.html?service=music-production" class="w-full py-3 bg-[#B9F36A] hover:bg-[#a8e858] text-[#0B0C0E] text-xs font-mono text-center tracking-widest font-bold uppercase transition-all shadow-[0_0_20px_rgba(185,243,106,0.25)] flex items-center justify-center gap-2">
  <span>Book Studio Production</span>
  <span>→</span>
  </a>
- <a href="./music.html" class="w-full py-2 bg-transparent border border-white/10 hover:border-white/30 text-[11px] font-mono text-center tracking-wider text-[#71717A] hover:text-[#EAEAEA] transition-all flex items-center justify-center gap-2">
+ <a href="./music.html" class="w-full py-2 bg-transparent border border-white/10 hover:border-white/30 text-[11px] font-mono text-center tracking-wider text-[#A1A1AA] hover:text-[#FFFFFF] transition-all flex items-center justify-center gap-2">
  <span>Listen to Audio Discography</span>
  <span>↗</span>
  </a>
  </div>
  </div>
 
- <!-- Card 3: Creative Direction & Studio Advisory -->
- <div class="tech-card p-8 flex flex-col justify-between group border-white/10 hover:border-[#FF9F1C]/60 transition-all">
+ <!-- Pillar 3: Creative Direction & Studio Advisory (Warm Architectural Treatment) -->
+ <div id="service-creative" class="p-8 sm:p-9 flex flex-col justify-between group bg-[#FAF9F5] border border-[#DEDCD5] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.8),0_10px_25px_-5px_rgba(0,0,0,0.25)] relative transition-all hover:border-[#245BFF]/50">
  <div>
- <div class="flex items-center justify-between text-xs font-mono text-[#71717A] mb-4">
- <span class="text-[#FF9F1C] font-semibold tracking-wider uppercase">03 / CREATIVE ADVISORY</span>
- <span class="text-[10px] tracking-wider uppercase border border-white/20 text-[#A1A1AA] px-2.5 py-0.5">STRATEGY</span>
+ <div class="flex items-center justify-between text-xs font-mono text-[#52525B] mb-4">
+ <span class="text-[#FF9F1C] font-semibold tracking-wider uppercase font-mono">03 / CREATIVE ADVISORY</span>
+ <span class="text-[10px] tracking-wider uppercase border border-black/15 bg-black/5 text-[#52525B] px-2.5 py-0.5 font-mono font-medium">STRATEGY</span>
  </div>
- <h2 class="text-xl font-bold font-mono uppercase tracking-tight text-[#EAEAEA] group-hover:text-[#FF9F1C] transition-colors mb-3">
+ <h2 class="text-xl sm:text-2xl font-bold font-mono uppercase tracking-tight text-[#171A20] group-hover:text-[#245BFF] transition-colors mb-3">
  Creative Direction &amp; Studio Advisory
  </h2>
- <p class="text-xs text-[#A1A1AA] leading-relaxed mb-6 font-sans">
+ <p class="text-xs sm:text-[13px] text-[#3F3F46] leading-relaxed mb-4 font-sans">
  Strategic consultation for record labels, creative agencies, and production teams integrating emerging AI technologies into professional studio environments without compromising artistic integrity.
  </p>
+
+ <!-- Pillar 3 Diagram: Architectural Convergence & Systems Alignment Map -->
+ <div class="w-full my-5 p-3.5 bg-white border border-[#E2DFD8] overflow-hidden" aria-hidden="true">
+ <svg viewBox="0 0 320 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto block">
+   <!-- Disparate Nodes on Left -->
+   <rect x="20" y="10" width="8" height="8" fill="#52525B"/>
+   <rect x="24" y="46" width="8" height="8" fill="#52525B"/>
+   <rect x="50" y="28" width="8" height="8" fill="#71717A"/>
+   <!-- Convergence Vectors -->
+   <path d="M28 14 Q 90 14, 140 32" stroke="#71717A" stroke-width="1.2" stroke-dasharray="2 2"/>
+   <path d="M32 50 Q 90 50, 140 32" stroke="#71717A" stroke-width="1.2" stroke-dasharray="2 2"/>
+   <path d="M58 32 L 140 32" stroke="#245BFF" stroke-width="1.5"/>
+   <!-- Central Convergence Axis -->
+   <line x1="140" y1="6" x2="140" y2="58" stroke="#171A20" stroke-width="1.5"/>
+   <circle cx="140" cy="32" r="5" fill="#171A20" stroke="#FF9F1C" stroke-width="1.5"/>
+   <!-- Harmonized Architecture on Right -->
+   <line x1="145" y1="18" x2="300" y2="18" stroke="#245BFF" stroke-width="1.5"/>
+   <line x1="145" y1="32" x2="300" y2="32" stroke="#171A20" stroke-width="1.5"/>
+   <line x1="145" y1="46" x2="300" y2="46" stroke="#52525B" stroke-width="1.5"/>
+   <rect x="290" y="14" width="8" height="8" fill="#245BFF"/>
+   <rect x="290" y="28" width="8" height="8" fill="#171A20"/>
+   <rect x="290" y="42" width="8" height="8" fill="#52525B"/>
+   <!-- Labels -->
+   <text x="14" y="32" font-family="monospace" font-size="7" fill="#71717A">INPUTS</text>
+   <text x="148" y="14" font-family="monospace" font-size="7" fill="#245BFF" font-weight="bold">ALIGNMENT</text>
+   <text x="215" y="58" font-family="monospace" font-size="7" fill="#52525B">HPS-1.0 PROVENANCE</text>
+ </svg>
+ </div>
  
- <div class="border-t border-white/[0.08] pt-5">
- <span class="text-[10px] font-mono tracking-widest text-[#EAEAEA] uppercase block mb-3 font-semibold">Capabilities &amp; Deliverables</span>
- <ul class="space-y-2 text-xs font-mono text-[#71717A] list-none">
- <li class="flex items-start gap-2.5"><span class="text-[#FF9F1C] shrink-0">•</span><span>Hybrid production workflow design and pipeline engineering</span></li>
- <li class="flex items-start gap-2.5"><span class="text-[#FF9F1C] shrink-0">•</span><span>Generative audio model evaluation, testing, and benchmarks</span></li>
- <li class="flex items-start gap-2.5"><span class="text-[#FF9F1C] shrink-0">•</span><span>Human-in-the-loop creative direction and quality control</span></li>
- <li class="flex items-start gap-2.5"><span class="text-[#FF9F1C] shrink-0">•</span><span>Advisory on integrating AI tools into existing studio setups</span></li>
- <li class="flex items-start gap-2.5"><span class="text-[#FF9F1C] shrink-0">•</span><span>Metadata governance, DDEX attribution, and ethical provenance (<a href="./hybridproductionstandard.html" class="text-[#FF9F1C] hover:underline font-semibold">HPS-1.0</a>)</span></li>
+ <div class="border-t border-[#E2DFD8] pt-5">
+ <span class="text-[10px] font-mono tracking-widest text-[#171A20] uppercase block mb-3 font-bold">Capabilities &amp; Deliverables</span>
+ <ul class="space-y-2 text-xs font-mono text-[#52525B] list-none">
+ <li class="flex items-start gap-2.5"><span class="text-[#245BFF] shrink-0 font-bold">•</span><span>Hybrid production workflow design and pipeline engineering</span></li>
+ <li class="flex items-start gap-2.5"><span class="text-[#245BFF] shrink-0 font-bold">•</span><span>Generative audio model evaluation, testing, and benchmarks</span></li>
+ <li class="flex items-start gap-2.5"><span class="text-[#245BFF] shrink-0 font-bold">•</span><span>Human-in-the-loop creative direction and quality control</span></li>
+ <li class="flex items-start gap-2.5"><span class="text-[#245BFF] shrink-0 font-bold">•</span><span>Advisory on integrating AI tools into existing studio setups</span></li>
+ <li class="flex items-start gap-2.5"><span class="text-[#245BFF] shrink-0 font-bold">•</span><span>Metadata governance, DDEX attribution, and ethical provenance (<a href="./hybridproductionstandard.html" class="text-[#245BFF] hover:underline font-semibold">HPS-1.0</a>)</span></li>
  </ul>
- <div class="mt-4 pt-3 border-t border-white/5 text-[11px] font-mono text-[#71717A]">
- <span class="text-[#EAEAEA]">Deliverables:</span> Workflow Blueprint · Architecture Audit · 1-on-1 Sessions
+ <div class="mt-4 pt-3 border-t border-[#E2DFD8] text-[11px] font-mono text-[#52525B]">
+ <span class="text-[#171A20] font-semibold">Deliverables:</span> Workflow Blueprint · Architecture Audit · 1-on-1 Sessions
  </div>
  </div>
  </div>
  
- <div class="mt-8 pt-4 border-t border-white/[0.08] flex flex-col gap-2.5">
- <a href="./contact.html?service=creative-consultation" class="w-full py-3 bg-[#121417] border border-white/20 hover:border-[#FF9F1C] text-xs font-mono text-center tracking-widest text-[#EAEAEA] hover:text-[#FF9F1C] transition-all font-semibold uppercase flex items-center justify-center gap-2">
+ <div class="mt-8 pt-4 border-t border-[#E2DFD8] flex flex-col gap-2.5">
+ <a href="./contact.html?service=creative-consultation" class="w-full py-3 bg-[#171A20] border border-[#171A20] hover:bg-[#245BFF] hover:border-[#245BFF] text-xs font-mono text-center tracking-widest text-white transition-all font-semibold uppercase flex items-center justify-center gap-2">
  <span>Inquire About Engagement</span>
  <span>→</span>
  </a>
- <a href="./what-is-hybrid.html" class="w-full py-2 bg-transparent border border-white/10 hover:border-[#FF9F1C]/40 text-[11px] font-mono text-center tracking-wider text-[#71717A] hover:text-[#FF9F1C] transition-all flex items-center justify-center gap-2">
+ <a href="./what-is-hybrid.html" class="w-full py-2 bg-transparent border border-[#DEDCD5] hover:border-[#245BFF] text-[11px] font-mono text-center tracking-wider text-[#52525B] hover:text-[#245BFF] transition-all flex items-center justify-center gap-2">
  <span>Read Methodology Guide</span>
  <span>↗</span>
  </a>
@@ -689,20 +767,41 @@
 
  </div>
 
- <!-- Direct Consultation Intake Section -->
- <div class="scroll-section tech-card p-8 sm:p-10 border border-white/20 hover:border-[#FF9F1C] transition-all max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left mb-16">
- <div class="space-y-2 max-w-xl">
- <div class="inline-flex items-center gap-2 text-[10px] font-mono tracking-[0.25em] text-[#FF9F1C] uppercase font-semibold">
- <span>DIRECT CONSULTATION INTAKE</span>
+ <!-- Inter-Section Connecting Line (Bridges 3 Pillars to CTA) -->
+ <div class="max-w-5xl mx-auto mb-6 px-4 hidden sm:block" aria-hidden="true">
+   <div class="flex items-center justify-between text-[10px] font-mono text-[#71717A] mb-2 tracking-widest uppercase">
+     <span>01 / DIGITAL SYSTEMS</span>
+     <span>02 / AUDIO DSP</span>
+     <span>03 / STUDIO ADVISORY</span>
+   </div>
+   <div class="h-[1px] w-full bg-gradient-to-r from-[#245BFF]/40 via-[#B9F36A]/50 to-[#FF9F1C]/40 relative">
+     <div class="absolute left-1/2 -top-1 w-2 h-2 bg-[#245BFF] -translate-x-1/2"></div>
+   </div>
  </div>
- <h2 class="text-2xl sm:text-3xl font-bold font-mono uppercase tracking-tight text-[#EAEAEA]">
- Schedule a Consultation
+
+ <!-- Unified Conclusion CTA Section: Have a problem worth solving? -->
+ <div class="scroll-section tech-card p-8 sm:p-12 border border-white/15 max-w-5xl mx-auto mb-16 relative overflow-hidden bg-[#121417] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15),0_20px_40px_-15px_rgba(0,0,0,0.7)]">
+ <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 lg:gap-12 text-left">
+ 
+ <div class="space-y-3 max-w-xl">
+ <div class="inline-flex items-center gap-2 text-[10px] font-mono tracking-[0.25em] text-[#FF9F1C] uppercase font-semibold">
+ <span>[ INTAKE // DIRECT ENGAGEMENT ]</span>
+ </div>
+ <h2 class="text-2xl sm:text-4xl font-bold font-mono uppercase tracking-tight text-[#FFFFFF]">
+ Have a problem worth solving?
  </h2>
- <p class="text-xs sm:text-sm text-[#A1A1AA] font-mono leading-relaxed">
- Select a dedicated consultation window on Google Calendar to discuss studio production, technical SEO and GEO architecture, or workflow integration.
+ <p class="text-xs sm:text-sm text-[#A1A1AA] font-sans leading-relaxed">
+ Bring us the bottleneck, the unfinished idea, or the workflow that needs rethinking. Let's work out what to build.
  </p>
  </div>
- <div class="flex-shrink-0 flex items-center justify-center">
+
+ <div class="flex-shrink-0 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full lg:w-auto">
+ <a href="./contact.html" class="px-7 py-3.5 bg-[#245BFF] hover:bg-[#1a47d4] text-white text-xs font-mono tracking-widest font-bold uppercase transition-all shadow-[0_0_25px_rgba(36,91,255,0.35)] flex items-center justify-center gap-2 whitespace-nowrap">
+ <span>Start a Conversation</span>
+ <span>→</span>
+ </a>
+ 
+ <div class="flex items-center justify-center">
  <!-- Google Calendar Appointment Scheduling begin -->
  <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
  <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
@@ -720,6 +819,9 @@
  })();
  </script>
  <!-- end Google Calendar Appointment Scheduling -->
+ </div>
+ </div>
+
  </div>
  </div>
 
