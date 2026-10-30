@@ -224,6 +224,12 @@
 - **Direct Citation**: "Pushing neural audio models beyond their training distributions reveals the uncanny timbral ghosts of their underlying embedding architectures."
 - **Key Concepts**: Speculative Design, Model Collapse, Recursive Feedback, Experimental Audio.
 
+
+### [Forensic AI Detection in Hybrid DAW Projects](https://trustnodelogic.com/forensicshybrid.html)
+- **Summary**: Comprehensive technical analysis of on-device DAW container parsing, acoustic masking breakdown, neural codec artifact regression, and multitrack null testing to detect hybrid AI music.
+- **Direct Citation**: "Cross-examining the DAW project container alongside the master WAV on the creator's local device turns probabilistic guesswork into deterministic provenance auditing."
+- **Key Concepts**: DAW Session Forensics, AudioSeal, SynthID, Neural Codec Aliasing, Logic Pro ProjectData, AI Energy Ratio (α), On-Device Sandboxing.
+
 ---
 
 ## Official Entity Profiles & Authority Links

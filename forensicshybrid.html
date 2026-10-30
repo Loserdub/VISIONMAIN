@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2773282020530522" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forensic AI Detection in Hybrid DAWs · Trust Node Logic</title>
+<meta name="description" content="On-device forensic AI audio detection parses DAW project files and master WAVs to catch hybrid AI music. Technical research report by Justin Ray.">
+<meta name="author" content="Justin Ray">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="keywords" content="Forensic AI music detection, DAW project forensics, hybrid audio production, AudioSeal, SynthID, neural codec artifacts, Logic Pro ProjectData, Ableton Live session analysis, audio steganography, MIDI forensics, on-device audio verification, AI energy ratio, acoustic masking, spectral analysis, C2PA music provenance, HPS-1.0, Justin Ray, Trust Node Logic">
+<meta name="geo.placename" content="East Lansing, Michigan, USA">
+<meta name="geo.region" content="US-MI">
+<meta name="geo.country" content="US">
+<link rel="canonical" href="https://trustnodelogic.com/forensicshybrid.html">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="AI LLM Knowledge Graph Manifest">
+<link rel="icon" type="image/png" href="./favicon.png">
+
+<!-- OpenGraph & Twitter Cards -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Trust Node Logic">
+<meta property="og:title" content="Forensic AI Detection in Hybrid DAWs · Trust Node Logic">
+<meta property="og:description" content="On-device forensic AI audio detection parses DAW project files and master WAVs to catch hybrid AI music. Technical research report by Justin Ray.">
+<meta property="og:url" content="https://trustnodelogic.com/forensicshybrid.html">
+<meta property="og:image" content="https://trustnodelogic.com/assets/images/forensicshybrid-card-og.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-10-29T00:00:00-04:00">
+<meta property="article:modified_time" content="2026-10-29T00:00:00-04:00">
+<meta property="article:author" content="Justin Ray">
+<meta property="article:section" content="Field Notes">
+<meta property="article:tag" content="Forensic AI Music Detection">
+<meta property="article:tag" content="DAW Project Forensics">
+<meta property="article:tag" content="Hybrid Audio Production">
+<meta property="article:tag" content="AudioSeal">
+<meta property="article:tag" content="HPS-1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Forensic AI Detection in Hybrid DAWs · Trust Node Logic">
+<meta name="twitter:description" content="On-device forensic AI audio detection parses DAW project files and master WAVs to catch hybrid AI music. Technical research report by Justin Ray.">
+<meta name="twitter:image" content="https://trustnodelogic.com/assets/images/forensicshybrid-card-og.webp">
+<meta name="twitter:creator" content="@TheInnerVision">
+
+<!-- Fonts & Core Stylesheet -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+
+<!-- Structured Data / JSON-LD Capstone -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://trustnodelogic.com/#website",
+      "url": "https://trustnodelogic.com/",
+      "name": "Trust Node Logic",
+      "description": "Audio intelligence, DAW provenance standards, and hybrid AI music production research.",
+      "publisher": {
+        "@id": "https://trustnodelogic.com/#person"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://trustnodelogic.com/forensicshybrid.html#article",
+      "isPartOf": {
+        "@id": "https://trustnodelogic.com/#website"
+      },
+      "headline": "Forensic AI Detection in Hybrid DAW Projects: Project-Aware, On-Device Verification",
+      "description": "On-device forensic AI audio detection parses DAW project files and master WAVs to catch hybrid AI music. Technical research report by Justin Ray.",
+      "inLanguage": "en-US",
+      "mainEntityOfPage": "https://trustnodelogic.com/forensicshybrid.html",
+      "datePublished": "2026-10-29T00:00:00-04:00",
+      "dateModified": "2026-10-29T00:00:00-04:00",
+      "image": [
+        "https://trustnodelogic.com/assets/images/forensicshybrid-card-og.webp",
+        "https://trustnodelogic.com/assets/images/local-forensic-pipeline-architecture.png",
+        "https://trustnodelogic.com/assets/images/daw-binary-forensics-deleted-stems.png",
+        "https://trustnodelogic.com/assets/images/ai-detection-accuracy-spectral-masking.png"
+      ],
+      "keywords": "Forensic AI music detection, DAW project forensics, hybrid audio production, AudioSeal, SynthID, neural codec artifacts, Logic Pro ProjectData, Ableton Live session analysis, audio steganography, MIDI forensics, on-device audio verification, AI energy ratio, acoustic masking, spectral analysis, C2PA music provenance, HPS-1.0, Justin Ray, Trust Node Logic",
+      "author": {
+        "@id": "https://trustnodelogic.com/#person"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Trust Node Logic",
+        "url": "https://trustnodelogic.com"
+      },
+      "about": [
+        { "@type": "Thing", "name": "AI-generated music detection" },
+        { "@type": "Thing", "name": "Digital audio workstation project forensics" },
+        { "@type": "Thing", "name": "Audio watermarking" },
+        { "@type": "Thing", "name": "Hybrid Music Production" }
+      ],
+      "articleSection": "Field Notes",
+      "proficiencyLevel": "Expert"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://trustnodelogic.com/forensicshybrid.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://trustnodelogic.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Field Notes",
+          "item": "https://trustnodelogic.com/field-notes.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Forensic AI Detection in Hybrid DAWs",
+          "item": "https://trustnodelogic.com/forensicshybrid.html"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://trustnodelogic.com/#person",
+      "name": "Justin Ray",
+      "additionalName": "Justin Tyler Ray",
+      "alternateName": ["JRAY", "loserdub"],
+      "url": "https://trustnodelogic.com/about.html",
+      "jobTitle": [
+        "Author of the Hybrid Production Standard (HPS-1.0)",
+        "Audio Engineer",
+        "Creative Technologist",
+        "Founder of Trust Node Logic"
+      ],
+      "sameAs": [
+        "https://github.com/Loserdub",
+        "https://musicbrainz.org/artist/882fdb9b-8655-45dd-8e24-a59cd750d053",
+        "https://x.com/TheInnerVision"
+      ],
+      "knowsAbout": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Hybrid Music Production",
+          "description": "The methodology of integrating generative AI audio models into professional digital audio workstation workflows."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Audio Forensics",
+          "url": "https://en.wikipedia.org/wiki/Audio_forensics",
+          "sameAs": "https://www.wikidata.org/wiki/Q3621743"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Digital Audio Workstation",
+          "url": "https://en.wikipedia.org/wiki/Digital_audio_workstation",
+          "sameAs": "https://www.wikidata.org/wiki/Q1055741"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Generative Artificial Intelligence",
+          "url": "https://en.wikipedia.org/wiki/Generative_artificial_intelligence",
+          "sameAs": "https://www.wikidata.org/wiki/Q116972040"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://trustnodelogic.com/forensicshybrid.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can AI use be detected in a hybrid music project without uploading it to the cloud?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. A four-stage local pipeline parses DAW project files, scans watermarks and codec artifacts, evaluates MIDI statistics, and cross-correlates multitrack stems against the master WAV entirely on the user device via ONNX Runtime, CoreML, or TensorRT."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does deleting an AI stem from a DAW timeline remove the evidence?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. In Logic Pro, deleting a clip removes the 80-byte EvSq timeline event but preserves the AuFl file definition and AuRg region chunks, flipping the in-use flag at byte 0 from 1 to 0. Project metadata plists can also preserve absolute origin paths."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do master-only AI music detectors fail on hybrid tracks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mixing, EQ, reverb, pitch shifting, and limiting mask neural codec artifacts. Codec artifacts sit primarily in mid and high frequencies, so synthetic drums and guitars are caught reliably, synthetic vocals partially, and synthetic bass largely escapes detection under dense arrangements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the AI energy ratio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The AI energy ratio, denoted α ∈ [0, 1], is a continuous regression estimate of the proportion of a mix total acoustic energy contributed by synthetic stems. CNN regressors reach a mean absolute error of 0.076 and R² of 0.85 on held-out hybrid mixtures."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --bg-main: #0B0C0E;
+    --panel-bg: #121417;
+    --panel-subtle: #171A1F;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.15);
+    --text-primary: #EAEAEA;
+    --text-muted: #A1A1AA;
+    --text-dim: #9CA3AF;
+    --accent-amber: #FF9F1C;
+    --accent-amber-glow: rgba(255, 159, 28, 0.15);
+    --accent-cyan: #00F0FF;
+    --accent-cyan-dim: rgba(0, 240, 255, 0.12);
+    --accent-green: #10B981;
+    --sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+    --body-font: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --maxw: 880px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--body-font);
+    font-size: 16.5px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a { color: var(--accent-amber); text-decoration: none; transition: color 0.15s ease; }
+  a:hover { color: #FFAE33; text-decoration: underline; text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--accent-amber); outline-offset: 2px; }
+
+  /* Breadcrumb Navigation */
+  .breadcrumb {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 20px 24px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .breadcrumb a { color: var(--text-dim); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--accent-amber); }
+  .breadcrumb span[aria-hidden] { color: rgba(255, 255, 255, 0.2); font-size: 10px; }
+  .breadcrumb .current { color: var(--text-primary); }
+
+  /* Main Container */
+  main {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 28px 24px 80px;
+  }
+
+  /* Typography */
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: var(--accent-amber);
+    text-transform: uppercase;
+    margin: 0 0 12px;
+  }
+  h1 {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.2;
+    color: #FFFFFF;
+    margin: 0 0 16px;
+    letter-spacing: -0.02em;
+  }
+  h2 {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 1.3;
+    color: #FFFFFF;
+    margin: 48px 0 16px;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--text-primary);
+    margin: 30px 0 12px;
+  }
+
+  .meta {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-dim);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 18px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .meta span, .meta time { display: inline-flex; align-items: center; }
+
+  /* Executive Summary / Answer Box */
+  .answer {
+    border-left: 3px solid var(--accent-amber);
+    background: rgba(255, 159, 28, 0.05);
+    padding: 22px 24px;
+    margin: 28px 0;
+    border-top: 1px solid rgba(255, 159, 28, 0.15);
+    border-right: 1px solid rgba(255, 159, 28, 0.15);
+    border-bottom: 1px solid rgba(255, 159, 28, 0.15);
+  }
+  .answer p { margin: 0 0 12px; color: var(--text-primary); }
+  .answer p:last-child { margin: 0; }
+  .answer strong { color: #FFFFFF; }
+
+  .def {
+    font-family: var(--mono);
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: var(--text-muted);
+    background: var(--panel-bg);
+    border: 1px solid var(--border-subtle);
+    padding: 18px 20px;
+    margin: 24px 0;
+  }
+  .def b { color: var(--accent-amber); font-weight: 600; }
+  .def code { color: var(--accent-cyan); }
+
+  .formula {
+    font-family: var(--mono);
+    font-size: 13.5px;
+    background: #08090B;
+    border: 1px solid var(--border-subtle);
+    border-left: 3px solid var(--accent-cyan);
+    padding: 14px 18px;
+    margin: 20px 0;
+    overflow-x: auto;
+    color: #C7D6FF;
+  }
+
+  /* Tables */
+  .tw {
+    overflow-x: auto;
+    margin: 26px 0;
+    border: 1px solid var(--border-subtle);
+    background: var(--panel-bg);
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 620px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  th, td {
+    padding: 12px 14px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  th {
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-amber);
+    background: #0E1013;
+    border-bottom: 1px solid var(--border-strong);
+  }
+  tr:last-child td { border-bottom: 0; }
+
+  /* Figures & Captions */
+  figure {
+    margin: 36px 0;
+  }
+  figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--border-strong);
+    background: #08090B;
+  }
+  figcaption {
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--text-dim);
+    margin-top: 10px;
+    padding-left: 2px;
+  }
+
+  /* Callouts & Notes */
+  .note {
+    border-left: 3px solid #FF5555;
+    background: rgba(255, 85, 85, 0.08);
+    border: 1px solid rgba(255, 85, 85, 0.2);
+    border-left-width: 3px;
+    padding: 16px 20px;
+    margin: 24px 0;
+    font-size: 14.5px;
+    color: var(--text-primary);
+  }
+  .note strong { color: #FFFFFF; }
+
+  /* Code Blocks */
+  code {
+    font-family: var(--mono);
+    font-size: 0.88em;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-subtle);
+    padding: 2px 6px;
+    color: #C7D6FF;
+  }
+
+  /* Lists */
+  ul, ol { padding-left: 24px; margin: 18px 0; }
+  li { margin: 8px 0; }
+  sup a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent-cyan);
+    text-decoration: none;
+    padding: 0 1px;
+  }
+  sup a:hover { text-decoration: underline; color: var(--accent-amber); }
+
+  /* FAQ Accordions */
+  details {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-subtle);
+    padding: 14px 18px;
+    margin: 12px 0;
+    transition: border-color 0.15s ease;
+  }
+  details[open] {
+    border-color: var(--border-strong);
+  }
+  summary {
+    cursor: pointer;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 15.5px;
+    color: #FFFFFF;
+  }
+  details p {
+    margin: 12px 0 0;
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--text-muted);
+  }
+
+  /* Topic Tags */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 18px 0 36px;
+  }
+  .tags li {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-subtle);
+    padding: 4px 10px;
+    color: var(--text-dim);
+    margin: 0;
+  }
+
+  /* Related Field Notes Grid */
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin: 20px 0 40px;
+  }
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--panel-bg);
+    border: 1px solid var(--border-subtle);
+    padding: 18px;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+  .related-card:hover {
+    border-color: var(--accent-amber);
+    text-decoration: none;
+    transform: translateY(-2px);
+  }
+  .rc-title {
+    font-family: var(--sans);
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+  }
+  .related-card:hover .rc-title { color: var(--accent-amber); }
+  .rc-desc {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: var(--text-muted);
+  }
+
+  /* Funnel CTA Banner */
+  .hps-funnel-cta {
+    background: var(--panel-bg);
+    border: 1px solid var(--accent-amber);
+    padding: 28px;
+    margin: 44px 0;
+  }
+  .funnel-kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-amber);
+    margin-bottom: 8px;
+  }
+  .hps-funnel-cta h3 {
+    margin: 0 0 12px;
+    font-size: 20px;
+    color: #FFFFFF;
+  }
+  .hps-funnel-cta p {
+    margin: 0 0 20px;
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--text-muted);
+  }
+  .funnel-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent-amber);
+    color: #08090A;
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 10px 18px;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+  .btn-primary:hover {
+    background: #FFAE33;
+    color: #08090A;
+    text-decoration: none;
+  }
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-strong);
+    color: var(--text-primary);
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    padding: 10px 18px;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+  .btn-secondary:hover {
+    border-color: var(--accent-amber);
+    color: var(--accent-amber);
+    text-decoration: none;
+  }
+
+  /* Author Attribution Card */
+  .attribution-card {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-subtle);
+    padding: 24px;
+    margin: 44px 0;
+  }
+  .author-tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-amber);
+    margin-bottom: 12px;
+  }
+  .attribution-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+  .author-avatar-box {
+    width: 52px;
+    height: 52px;
+    background: rgba(255, 159, 28, 0.12);
+    border: 1px solid var(--accent-amber);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--accent-amber);
+    flex-shrink: 0;
+  }
+  .attribution-name {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 17px;
+    color: #FFFFFF;
+  }
+  .attribution-role {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 2px;
+  }
+  .attribution-card p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin: 0 0 14px;
+  }
+  .attribution-links {
+    font-family: var(--mono);
+    font-size: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    color: var(--text-dim);
+  }
+  .attribution-links a { color: var(--accent-cyan); text-decoration: none; }
+  .attribution-links a:hover { color: var(--accent-amber); text-decoration: underline; }
+
+  /* References */
+  .refs {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: var(--text-muted);
+    padding-left: 24px;
+    word-break: break-word;
+  }
+  .refs li { margin: 10px 0; }
+  .refs a { color: var(--accent-cyan); word-break: break-all; }
+  .refs a:hover { color: var(--accent-amber); }
+</style>
+</head>
+<body>
+
+<!-- Brutalist Sticky Header -->
+<header class="sticky top-0 left-0 right-0 z-50 bg-[#0B0C0E]/95 backdrop-blur-md border-b border-white/10 py-3.5">
+  <div class="container mx-auto px-6 flex justify-between items-center relative">
+    
+    <a href="/" class="flex items-center gap-3 group h-9 overflow-hidden w-[220px]" aria-label="Home">
+      <div class="w-5 h-5 border border-[#FF9F1C] bg-[#FF9F1C]/10 flex items-center justify-center flex-shrink-0 text-[#FF9F1C] font-mono text-xs font-bold">
+        <span>▪</span>
+      </div>
+      <div class="relative h-full flex items-center w-full">
+        <span class="absolute inset-0 flex items-center text-xs font-mono tracking-[0.16em] uppercase font-bold text-[#EAEAEA] transition-transform duration-300 transform group-hover:-translate-y-full">
+          TRUSTNODELOGIC
+        </span>
+        <span class="absolute inset-0 flex items-center text-xs font-mono tracking-[0.22em] uppercase font-bold text-[#FF9F1C] transition-transform duration-300 transform translate-y-full group-hover:translate-y-0">
+          TNL // RESEARCH
+        </span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center gap-6 text-[11px] font-mono tracking-[0.14em] uppercase text-[#71717A]" aria-label="Main navigation">
+      <a href="/" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">HOME</a>
+      <a href="./field-notes.html" class="text-[#FF9F1C] font-semibold relative py-1 border-b border-[#FF9F1C]">FIELD NOTES</a>
+      <a href="./music.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">MUSIC</a>
+      <a href="./projects.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">PROJECTS</a>
+      <a href="./about.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">ABOUT</a>
+      <a href="./what-is-hybrid.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">WHAT IS HYBRID</a>
+      <a href="./services.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">SERVICES</a>
+      <a href="./contact.html" class="hover:text-[#EAEAEA] hover:border-b hover:border-white/40 py-1 transition-colors">CONTACT</a>
+    </nav>
+
+    <!-- Mobile Hamburger Toggle -->
+    <input type="checkbox" id="mobile-menu-toggle" class="peer hidden">
+    <label for="mobile-menu-toggle" class="md:hidden text-[#EAEAEA] cursor-pointer peer-checked:hidden block p-1 hover:text-[#FF9F1C] transition-colors border border-white/10" aria-label="Open menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
+    </label>
+    <label for="mobile-menu-toggle" class="md:hidden text-[#EAEAEA] cursor-pointer peer-checked:block hidden p-1 hover:text-[#FF9F1C] transition-colors border border-white/10" aria-label="Close menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+    </label>
+
+    <div class="absolute top-full left-0 right-0 bg-[#0B0C0E] border-b border-white/20 shadow-2xl py-6 px-6 hidden peer-checked:flex flex-col items-center gap-4 text-center">
+      <nav class="flex flex-col gap-3 text-center text-xs font-mono tracking-widest uppercase text-[#EAEAEA] font-medium w-full max-w-xs" aria-label="Mobile navigation">
+        <a href="/" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">HOME</a>
+        <a href="./field-notes.html" class="text-[#FF9F1C] py-2 border-b border-white/10 font-bold">FIELD NOTES</a>
+        <a href="./music.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">MUSIC</a>
+        <a href="./projects.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">PROJECTS</a>
+        <a href="./about.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">ABOUT</a>
+        <a href="./what-is-hybrid.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">WHAT IS HYBRID</a>
+        <a href="./services.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">SERVICES</a>
+        <a href="./contact.html" class="hover:text-[#FF9F1C] py-2 border-b border-white/10 transition-colors">CONTACT</a>
+      </nav>
+    </div>
+
+  </div>
+</header>
+
+<!-- Breadcrumbs Hierarchy -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  <span aria-hidden="true">/</span>
+  <a href="./field-notes.html">Field Notes</a>
+  <span aria-hidden="true">/</span>
+  <span class="current" aria-current="page">Forensic AI Detection in Hybrid DAWs</span>
+</nav>
+
+<main id="main-content">
+<article>
+
+  <header>
+    <div class="eyebrow">[ FIELD NOTE #26 // AUDIO FORENSICS &amp; DAW SESSION VERIFICATION ]</div>
+    <h1>Forensic AI Detection in Hybrid DAW Projects: Project-Aware, On-Device Verification</h1>
+    <div class="meta">
+      <span>Researched at <a href="/" class="text-[#EAEAEA] hover:text-[#FF9F1C] font-semibold">Trust Node Logic</a> by <a href="./about.html" class="text-[#EAEAEA] hover:text-[#FF9F1C] font-semibold">Justin Ray</a> · Author of HPS-1.0</span>
+      <time datetime="2026-10-29">October 29, 2026</time>
+      <span>14 min read</span>
+      <span>TNL Field Note #26</span>
+    </div>
+  </header>
+
+  <div class="answer">
+    <p><strong>Direct Answer:</strong> Forensic AI audio detection in hybrid music production requires cross-examining native Digital Audio Workstation (DAW) project containers alongside stereo master renders. Master-only detectors degrade from 99.8% to below 18% accuracy when synthetic stems are mixed with human performances, EQed, or low-pass filtered.</p>
+    <p>By executing four synchronized forensic planes on-device (DAW container parsing, proactive watermark extraction, symbolic MIDI entropy auditing, and master-to-session phase-inverted null tests), engineers expose deleted scratch stems, estimate continuous AI energy ratios (α ∈ [0, 1]), and verify authentic provenance without cloud egress.</p>
+  </div>
+
+  <p>
+    A rendered stereo master conceals the structural lineage of modern music production. A DAW project folder, conversely, holds an immutable, time-stamped graph of every referenced audio file, timeline placement, edit slice, plugin chain, and MIDI performance behind that render. Cross-examining both assets within a zero-cloud-egress sandbox transforms probabilistic guessing into deterministic acoustic auditing.<sup><a href="#r1">[1]</a><a href="#r2">[2]</a></sup>
+  </p>
+
+  <h2 id="key-facts">// 01. Key Facts at a Glance</h2>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr>
+          <th>Verification Parameter</th>
+          <th>Observed Benchmark &amp; Forensic Standard</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>On-Device Local Feasibility</td>
+          <td>Verified across 4 concurrent stages on Apple Silicon and x86_64 via ONNX Runtime, CoreML, and TensorRT.<sup><a href="#r38">[38]</a></sup></td>
+        </tr>
+        <tr>
+          <td>Master-Only Binary Accuracy</td>
+          <td>99.3% to 99.8% on isolated synthetic tracks; collapses drastically once stems are blended with live instruments.<sup><a href="#r3">[3]</a></sup></td>
+        </tr>
+        <tr>
+          <td>Hybrid Regression Performance</td>
+          <td>Mean Absolute Error (MAE) of 0.076 and R² of 0.85 for continuous AI energy ratio α estimation.<sup><a href="#r3">[3]</a></sup></td>
+        </tr>
+        <tr>
+          <td>Acoustic Masking Blind Spot</td>
+          <td>Synthetic bass under dense arrangements. Brickwall low-pass filtering below 5 kHz collapses spectral F1 below 0.20.<sup><a href="#r3">[3]</a><a href="#r31">[31]</a></sup></td>
+        </tr>
+        <tr>
+          <td>Primary Session Footprint</td>
+          <td>Deleted AI stems retained in the audio pool, evidenced by an in-use flag flipped to 0 in Logic Pro ProjectData.<sup><a href="#r2">[2]</a></sup></td>
+        </tr>
+        <tr>
+          <td>Pipeline Execution Latency</td>
+          <td>Under 1.0 s for Stages 1 through 3; 1.5 to 4.0 s for Stage 4A; up to 12.0 s if conditional stem demixing is required.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="why-master-only-fails">// 02. Why Master-Only Detection Fails on Hybrid Music</h2>
+  <p>
+    Binary deep-learning classifiers trained on isolated stereo masters achieve impressive 99.3% to 99.8% accuracy on untouched end-to-end renders from models like Suno, Udio, or Riffusion. However, their detection reliability plunges when synthetic stems are layered with human microphone tracks or subjected to aggressive dynamic EQ, convolution reverb, formant shifting, and brickwall limiting. This failure stems from acoustic masking combined with catastrophic domain shift.<sup><a href="#r3">[3]</a></sup>
+  </p>
+  <p>
+    To address this, modern forensics reframes detection from flat binary classification into continuous regression. Rather than returning a binary flag, the model estimates the AI energy ratio (α), representing the proportion of a final mix's total acoustic energy contributed by synthetic generators:
+  </p>
+  <div class="formula">
+    α ∈ [0, 1] &nbsp;&nbsp;|&nbsp;&nbsp; MAE = 0.076, R² = 0.85 on held-out hybrid multitrack mixtures
+  </div>
+  <p>
+    Nevertheless, master-only regression suffers from severe frequency-dependent blind spots. Neural vocoders and neural codecs leave distinct high-frequency aliasing and phase incoherence in mid and high bands. Consequently, synthetic guitars and drums are flagged with high confidence, synthetic vocals only partially, while synthetic sub-bass remains virtually undetectable under a dense arrangement.<sup><a href="#r3">[3]</a></sup>
+  </p>
+
+  <h2 id="four-planes">// 03. The Four Verification Planes</h2>
+  <ol>
+    <li><strong>Pre-Mix Signal Inspection:</strong> Direct analysis of raw, unmixed PCM stems in the project audio pool, recovering dry textures prior to destructive fader automation, dynamic compression, or masking.</li>
+    <li><strong>Structural and Graph Forensics:</strong> Binary and XML parsing of DAW session files (Ableton <code>.als</code>, Logic <code>.logicx</code>, FL Studio <code>.flp</code>, Pro Tools <code>.ptx</code>, REAPER <code>.rpp</code>) to audit edit take counts, plugin state, unedited stem drops, and backup history.</li>
+    <li><strong>Symbolic MIDI Analysis:</strong> Examination of velocity entropy, micro-timing distributions, note-off durations, and quantization grids to identify synthetic composition engines and automated audio-to-MIDI transcription.<sup><a href="#r8">[8]</a></sup></li>
+    <li><strong>Render-to-Score Cross-Correlation &amp; Null Testing:</strong> Sub-sample phase alignment of project stems against the rendered master, isolating unauthenticated energy residuals to prevent decoy-project spoofing.<sup><a href="#r2">[2]</a></sup></li>
+  </ol>
+
+  <figure>
+    <img src="./assets/images/local-forensic-pipeline-architecture.png" width="1408" height="768" loading="eager" fetchpriority="high" decoding="async" alt="Diagram of the local device sandbox: a DAW project folder and rendered master WAV feed four parallel analyzers (graph parser, MIDI extractor, stem scanner, master stem separator) that merge into a composite hybrid AI attribution report with zero cloud egress.">
+    <figcaption>Figure 1: Local forensic pipeline architecture. Four analyzers operate concurrently inside a zero-cloud-egress sandbox to generate a unified session attribution report.</figcaption>
+  </figure>
+
+  <h2 id="layer-1">// 04. Layer 1: DAW Project Container and Graph Forensics</h2>
+  <p>
+    To protect artist intellectual property, verification operates entirely on-device by parsing proprietary session containers straight from disk without launching the host DAW application.<sup><a href="#r2">[2]</a></sup> Each container format exposes unique forensic footprints:
+  </p>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr>
+          <th>DAW Platform</th>
+          <th>Container Architecture</th>
+          <th>Forensic Session Nodes</th>
+          <th>Deleted Asset &amp; Historical Retention</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Ableton Live</strong></td>
+          <td><code>.als</code> (gzip-compressed XML, exceeding 200,000 lines for 20 tracks)<sup><a href="#r9">[9]</a></sup></td>
+          <td>DTLiveset, DTTrack, DTDevice, DTClip, DTSampleRef, DTNote, DTAutomation</td>
+          <td>Persistent object IDs, uncollected file paths in DTSampleRef, sequential backup sets.</td>
+        </tr>
+        <tr>
+          <td><strong>Logic Pro</strong></td>
+          <td><code>.logicx</code> package containing little-endian binary <code>ProjectData</code> and plists<sup><a href="#r2">[2]</a></sup></td>
+          <td>AuFl (audio pool), AuRg (regions), EvSq (80-byte timeline events), Trak, AuCU (plugins)</td>
+          <td>Deleted clips remain in AuRg with in-use = 0; MetaData.plist retains absolute paths; Project File Backups.</td>
+        </tr>
+        <tr>
+          <td><strong>FL Studio</strong></td>
+          <td><code>.flp</code> binary event stream, parsed offline via PyFLP<sup><a href="#r10">[10]</a></sup></td>
+          <td>Channel, Pattern notes, GeneratorState (0x31), FXState (0x32), InsertState (0x40)</td>
+          <td>Delphi-epoch creation timestamps, persistent absolute <code>data_path</code> to render targets.</td>
+        </tr>
+        <tr>
+          <td><strong>Pro Tools</strong></td>
+          <td><code>.ptx</code> session plus Audio Files and Session File Backups<sup><a href="#r13">[13]</a></sup></td>
+          <td>Routing matrices, insert plugin chains, SMPTE track coordinates</td>
+          <td>Timestamped backup snapshots, unreferenced audio clips residing in Audio Files pool.</td>
+        </tr>
+        <tr>
+          <td><strong>REAPER</strong></td>
+          <td><code>.rpp</code> plaintext hierarchical tree<sup><a href="#r22">[22]</a></sup></td>
+          <td>TRACK, ITEM, TAKE, SOURCE WAVE, Base64 VST state blocks</td>
+          <td>Automatic <code>.rpp-bak</code> revisions, inactive TAKE lanes, unreferenced media markers.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    In Ableton Live, inspecting the directory hierarchy reveals whether "Collect All and Save" was executed and uncovers frozen tracks where third-party AI generator plugins were flattened. Renaming track labels or reordering mixer channels does not alter underlying persistent object IDs.
+  </p>
+
+  <h3 id="deleted-stems">Deleted AI Scratch Stems and "Save As" Leaks</h3>
+  <p>
+    A prevalent hybrid workflow involves generating a full backing track in Suno or Udio, importing it as a scratch track, recording acoustic guitars or vocals over the guide, and subsequently deleting the synthetic stem prior to final mixdown. In Apple Logic Pro, this editing action fails to eliminate the forensic footprint:<sup><a href="#r2">[2]</a></sup>
+  </p>
+  <ul>
+    <li>Session arrangement timelines reside in the <code>EvSq</code> binary chunk as fixed 80-byte records. Region placements correspond to event type <code>0x24</code> at byte offset 0, with a 48-bit timeline clock and region group references at offsets 40 and 44.</li>
+    <li>Deleting a clip from the timeline deletes only the 80-byte <code>EvSq</code> event. Logic Pro retains the parent <code>AuFl</code> file pool reference and all associated <code>AuRg</code> region chunks, merely flipping byte offset 0 of the AuRg header from 1 (active) to 0 (orphaned).</li>
+    <li>Trimming or splitting stems creates derivative <code>AuRg</code> entries appending <code>.1</code>, <code>.2</code> to the region label.</li>
+    <li><code>MetaData.plist</code> frequently retains absolute download paths (such as <code>~/Downloads/suno_stem_v2.wav</code>) across successive "Save As" iterations.</li>
+  </ul>
+  <p>
+    The Logic Pro ProjectData container opens with magic bytes <code>23 47 c0 ab</code> and a 24-byte header length (0x18). Each subsequent chunk maintains a 36-byte header with a reversed 4-character tag (e.g., <code>gRuA</code> on disk for AuRg).
+  </p>
+
+  <figure>
+    <img src="./assets/images/daw-binary-forensics-deleted-stems.png" width="825" height="1999" loading="lazy" decoding="async" alt="Logic Pro ProjectData binary structure diagram illustrating EvSq timeline events, AuRg audio region chunks, AuFl file pools, and an orphaned region retaining in-use flag 0 with absolute origin paths.">
+    <figcaption>Figure 2: Binary forensics of DAW project containers. In Logic Pro ProjectData, deleted AI clips preserve AuRg audio region definitions with in-use flags set to 0 and retain absolute origin paths.</figcaption>
+  </figure>
+
+  <h3 id="structure-metadata">Structural Heuristics and Container File Metadata</h3>
+  <p>
+    Authentic human studio productions demonstrate multitrack comping lanes, crossfades, elastique/time-warp markers, and continuous parameter automation. Conversely, a session consisting of four to eight full-length audio tracks that all align rigidly to bar 1 (<code>0x87000000</code> in Logic Pro) with zero punch-ins, zero takes, and minimal automation strongly indicates separated stems from stem splitters (such as LALAL.AI, Moises, or RipX) or text-to-music models imported into an empty template.<sup><a href="#r2">[2]</a></sup>
+  </p>
+  <p>
+    Embedded RIFF and Broadcast Wave Format (BWF) headers provide complementary verification via <code>bext</code> Originator and CodingHistory tags, MP4 <code>mvhd</code> creation dates, and C2PA Content Credentials manifests.<sup><a href="#r28">[28]</a></sup> While metadata can be deliberately stripped, codec generation history is permanent. Compressed AI downloads (128 kbps MP3 for Suno, 192 kbps for Riffusion, 256 kbps for Udio) subsequently bounced to 24-bit 48 kHz WAV files retain brickwall spectral drop-offs above 16 kHz to 18 kHz alongside distinct MP3 frame boundaries.<sup><a href="#r8">[8]</a></sup>
+  </p>
+
+  <h2 id="layer-2">// 05. Layer 2: Pre-Mix Signal and Codec Forensics</h2>
+  <p>
+    Every audio asset located in the session pool, alongside the stereo master render, is processed through three independent signal analyzers:
+  </p>
+
+  <h3 id="watermarks">Proactive Watermark Detection (AudioSeal, SynthID, WavMark)</h3>
+  <p>
+    Generative audio engines increasingly embed acoustic watermarks to satisfy statutory obligations such as European Union AI Act Article 50. Analysis runs on raw unmixed pool stems (where watermarks remain pristine) and on the final master WAV via frame-localized decoders:<sup><a href="#r4">[4]</a></sup>
+  </p>
+  <ul>
+    <li><strong>AudioSeal (Meta):</strong> Sample-level localized watermark carrying a 16-bit payload. Robust against EQ, pitch shifting, dynamic compression, and lossy MP3 compression down to 128 kbps. A single-pass convolutional detector isolates the exact sub-second timeline boundaries of spliced AI stems.<sup><a href="#r34">[34]</a><a href="#r35">[35]</a></sup></li>
+    <li><strong>SynthID, WavMark, SilentCipher, XAttnMark:</strong> Frequency and phase modulation schemes. Google DeepMind's SynthID embeds pseudonoise signatures into low-energy spectral sub-bands. Open-weight schemes like AudioSeal, WavMark, SilentCipher, and XAttnMark execute locally on CPU via ONNX Runtime without network access.<sup><a href="#r42">[42]</a></sup></li>
+    <li><strong>Proprietary Model Layers:</strong> Reported frequency distributions utilize ultrasonic bands (19 kHz to 22 kHz), mid-frequency spectral fingerprints (8 kHz to 12 kHz), and low-frequency phase steganography (50 Hz to 150 Hz).<sup><a href="#r26">[26]</a></sup></li>
+  </ul>
+
+  <h3 id="passive">Passive Codec and Vocoder Artifact Analysis</h3>
+  <p>
+    When generative audio originates from open-source models lacking embedded watermarks, forensic inspection targets neural vocoder synthesis artifacts. Transposed convolution operations in neural audio decoders induce characteristic high-frequency aliasing and periodic checkerboard spectral spikes. For models like Suno, the characteristic spectral signature displays aliasing between 6 kHz and 10 kHz (peaking near 7.5 kHz) alongside unnatural harmonic buildup between 200 Hz and 400 Hz (peaking near 280 Hz).<sup><a href="#r50">[50]</a></sup> Phase-unaware loss functions also leave inter-frame phase incoherence and artificially smoothed vocal formants.<sup><a href="#r46">[46]</a></sup>
+  </p>
+
+  <div class="tw">
+    <table>
+      <thead>
+        <tr>
+          <th>Forensic Signal Model</th>
+          <th>Analytical Methodology</th>
+          <th>Reported Detection Accuracy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Codec-Reconstruction CNN</td>
+          <td>6 convolutional layers (16 to 512 kernels) on 128-frame STFT magnitude and phase<sup><a href="#r6">[6]</a></sup></td>
+          <td>99.8% accuracy on pure neural codec reconstruction</td>
+        </tr>
+        <tr>
+          <td>CLAM Contrastive Network</td>
+          <td>Dual-stream contrastive encoder with triplet loss for unseen generative architectures<sup><a href="#r7">[7]</a></sup></td>
+          <td>0.993 on SONICS benchmark; 0.925 F1 on out-of-distribution generators</td>
+        </tr>
+        <tr>
+          <td>CLAP Embeddings + SVM</td>
+          <td>512-dimensional joint audio-text embeddings mapped to an SVM hyperplane<sup><a href="#r8">[8]</a></sup></td>
+          <td>Separates synthetic clusters from acoustic acoustic instruments</td>
+        </tr>
+        <tr>
+          <td>Hybrid α Energy Regressor</td>
+          <td>Multiscale convolutional backbone evaluating multitrack pool stems and bounced master<sup><a href="#r3">[3]</a></sup></td>
+          <td>MAE 0.076, R² 0.85 on complex multitrack arrangements</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <figure>
+    <img src="./assets/images/ai-detection-accuracy-spectral-masking.png" width="1331" height="1999" loading="lazy" decoding="async" alt="Two-panel technical analysis: Panel 1 illustrates AI detector accuracy degradation from 99.8% down to 18% F1 under low-pass filtering; Panel 2 charts stem sensitivity by frequency, showing bass staying masked below 400 Hz.">
+    <figcaption>Figure 3: AI audio detector accuracy collapses under spectral masking and dynamic filtering. Neural codec artifacts concentrate above 4 kHz, leaving synthetic sub-bass masked in commercial masters.</figcaption>
+  </figure>
+
+  <h3 id="midi">Symbolic and MIDI Performance Forensics</h3>
+  <p>
+    When AI-generated or transcribed MIDI drives high-end virtual sample instruments (such as Kontakt, Omnisphere, or Serum), the rendered PCM contains zero neural codec artifacts and zero watermarks.<sup><a href="#r14">[14]</a></sup> However, the project container retains raw symbolic performance events (e.g., <code>DTNote</code> structures in Ableton or Pattern notes in FL Studio). Each symbolic event forms a four-dimensional vector:
+  </p>
+  <div class="formula">
+    p<sup>n</sup> = (pitch, duration, velocity, Δt<sub>grid</sub>) ∈ ℝ<sup>4</sup>
+  </div>
+  <ul>
+    <li><strong>Velocity Entropy:</strong> Physical human performances produce continuous, non-uniform velocity curves. Automated text-to-MIDI models and algorithmic arpeggiators generate fixed velocities or unnaturally narrow Markovian distributions. An LSTM trained on (pitch, velocity, duration) achieves 99% classification accuracy, with velocity variance serving as the primary discriminatory feature.<sup><a href="#r8">[8]</a></sup></li>
+    <li><strong>Micro-Timing and Quantization:</strong> Human instrumentalists exhibit intentional rubato and rhythmic anticipation. Transcribed audio-to-MIDI snaps rigidly to grid ticks (16th or 32nd notes) or displays stochastic timing jitter caused by transient detection errors.<sup><a href="#r14">[14]</a></sup></li>
+    <li><strong>Take History and Note-Off Velocity:</strong> Live-tracked MIDI captures varied note-off release velocities and overdub take lanes across session backups. Imported external <code>.mid</code> files feature flat note-off values (typically 64) and appear as complete 32-bar blocks across adjacent backups.</li>
+  </ul>
+
+  <h2 id="layer-3">// 06. Layer 3: Cross-Verification Between DAW Session and Master Audio</h2>
+  <p>
+    Auditing project files and stereo masters in isolation remains susceptible to two evasion attacks: <strong>Decoy Projects</strong> (submitting an unrelated human session or deleting AI tracks) and <strong>Stem Washing</strong> (running synthetic stems through resynthesis models like ACE-Step 1.5 XL at 0.4 denoising to strip watermarks).<sup><a href="#r26">[26]</a></sup> Defeating both requires a rigorous render-to-score null test:<sup><a href="#r11">[11]</a></sup>
+  </p>
+  <ol>
+    <li><strong>Perceptual Hash Alignment:</strong> Wang, Panako (tempo-robust within ±5%), and Haitsma acoustic fingerprints verify that session audio matches the master timeline. Unrelated audio exhibits under 0.1% fingerprint overlap, whereas genuine stems yield 25% to 100% overlap despite heavy dynamic processing.<sup><a href="#r38">[38]</a></sup></li>
+    <li><strong>Sliding-Window Cross-Correlation:</strong> Normalizes stem time offsets to sub-sample accuracy. Fader levels and EQ settings parsed from the mixer state (DTMixer, AuCO/AuCU, InsertState) are modeled, after which the project's authenticated multitrack energy is phase-inverted and subtracted from the master render in a null test.<sup><a href="#r11">[11]</a></sup></li>
+    <li><strong>Residual Anomaly Isolation:</strong> A pristine session render leaves behind only nonlinear mastering colorations (analog tape saturation, limiter inter-sample pumping, reverb tails). An uncredited, muted, or deleted AI vocal or synthesizer loop remains intact in the residual null signal, where the codec CNN and AudioSeal detect it and trigger a session integrity fault.</li>
+  </ol>
+  <p>
+    In Logic Pro, timeline event seconds are calculated deterministically from the <code>EvSq</code> position offset:
+  </p>
+  <div class="formula">
+    timeline_seconds = (EvSq_position − 0x87000000) / (65536 × ticks_per_second)
+  </div>
+  <p>
+    If a project contains only bounced stem stems, the on-device pipeline executes conditional 4-stem demixing (via Demucs v4 or BS-Roformer on ONNX Runtime/CoreML) to isolate vocal, drum, bass, and instrumental layers. Comparing separated layers localizes the hybrid interface: for example, smooth vocoder vocal formants displaying 7.5 kHz notches running alongside an acoustic drum stem with organic transient dynamics.<sup><a href="#r4">[4]</a></sup>
+  </p>
+
+  <h3 id="evasion">Evasion Techniques and Forensic Countermeasures</h3>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr>
+          <th>Adversarial Evasion Vector</th>
+          <th>Master-Only Classifier Weakness</th>
+          <th>Project-Aware Forensic Countermeasure</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Brickwall Low-Pass Filter &lt; 5 kHz</td>
+          <td>Spectral CNN F1 collapses below 0.20</td>
+          <td>Inspect pre-fader pool files; cross-check filter cutoffs against active EQ plugins; audit 50-150 Hz phase steganography.</td>
+        </tr>
+        <tr>
+          <td>Neural Resynthesis ("Stem Washing")</td>
+          <td>Strips original generator watermarks</td>
+          <td>Contrastive out-of-distribution detection (CLAM, 0.925 OOD F1) identifies secondary diffusion model vocoder aliasing.<sup><a href="#r7">[7]</a></sup></td>
+        </tr>
+        <tr>
+          <td>AI Audio-to-MIDI into Sample Libraries</td>
+          <td>Zero vocoder artifacts or watermarks exist in audio</td>
+          <td>MIDI LSTM evaluation; velocity entropy scoring; detection of flat note-off values across session backups.</td>
+        </tr>
+        <tr>
+          <td>Deleted Reference Stem / Decoy Session</td>
+          <td>Session containers are never inspected</td>
+          <td>Recover in-use = 0 region definitions; execute phase-inverted master-to-session residual null test.</td>
+        </tr>
+        <tr>
+          <td>Dense Multitrack Masking &amp; Time-Stretching</td>
+          <td>Synthetic bass remains undetected; domain shift degrades CNNs</td>
+          <td>Audit isolated dry pool files directly; deploy localized AudioSeal and on-device stem isolation.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="layer-4">// 07. Layer 4: On-Device Architecture and Compute Budget</h2>
+  <p>
+    No audio chunk, spectrogram matrix, embedding vector, or session file may ever transmit over the network. The pipeline employs an efficient cascading funnel architecture: inexpensive byte-level operations run first, invoking intensive neural inference only when structural anomalies require deeper verification.<sup><a href="#r38">[38]</a></sup>
+  </p>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr>
+          <th>Pipeline Funnel Stage</th>
+          <th>Analytical Operations Executed</th>
+          <th>Runtime Framework</th>
+          <th>Execution Latency</th>
+          <th>Peak Memory</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Stage 1: Container &amp; Graph Audit</td>
+          <td>Gzip XML parsing, PyFLP decoding, binary chunk scanning, BWF bext/fmt header checks, C2PA extraction</td>
+          <td>Rust or Python on CPU</td>
+          <td>150 to 500 ms</td>
+          <td>&lt; 50 MB</td>
+        </tr>
+        <tr>
+          <td>Stage 2: Alignment &amp; Watermarks</td>
+          <td>Wang/Panako acoustic fingerprinting, AudioSeal ONNX inference, phase-inverted null test</td>
+          <td>Rust audiofp, tract-onnx, realfft, rayon</td>
+          <td>0.5 to 2.5 s</td>
+          <td>~150 MB</td>
+        </tr>
+        <tr>
+          <td>Stage 3: Symbolic MIDI Forensics</td>
+          <td>3-feature LSTM inference, micro-timing entropy, note-off velocity variance calculation</td>
+          <td>ONNX Runtime CPU (INT8 / FP16)</td>
+          <td>100 to 300 ms</td>
+          <td>~80 MB</td>
+        </tr>
+        <tr>
+          <td>Stage 4A: Codec &amp; OOD Scanning</td>
+          <td>6-layer CNN, α energy regression, CLAM contrastive scan, CLAP + SVM on pool WAVs and residual</td>
+          <td>CoreML (macOS) or TensorRT (Windows)</td>
+          <td>1.5 to 4.0 s</td>
+          <td>~600 MB</td>
+        </tr>
+        <tr>
+          <td>Stage 4B: Conditional Stem Demixing</td>
+          <td>Demucs v4 or BS-Roformer demixing, executed only if unverified flattened master bounces exist</td>
+          <td>CoreML, TensorRT, or DirectML</td>
+          <td>4.0 to 12.0 s</td>
+          <td>1.5 to 2.5 GB</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    Hardware microbenchmarks demonstrate that Wang fingerprinting at 8 kHz executes at approximately 714x real-time (42 ms for 30 seconds of audio), while AudioSeal watermark detection requires roughly 409 ms per 10-second audio window on standard mobile CPUs (such as Intel Core i5-1135G7 or Apple Silicon M-series).<sup><a href="#r38">[38]</a></sup>
+  </p>
+
+  <h2 id="limitations">// 08. Calibration, False Positives, and Forensic Limitations</h2>
+  <div class="note">
+    <strong>Benchmark Calibration Notice:</strong> Several reported figures originate from preprints, developer whitepapers, and laboratory benchmarks rather than peer-reviewed commercial audits. Forensic scores must be treated as probabilistic indicators, not absolute legal determinations.
+  </div>
+  <ul>
+    <li><strong>False Positive Management:</strong> Commercial black-box audio detectors evaluating single stereo masters have demonstrated false-positive error rates as high as 4.7% on pristine acoustic recordings.<sup><a href="#r32">[32]</a></sup></li>
+    <li><strong>Assistive DSP vs. Generative Audio:</strong> Legitimate studio tools (such as iZotope RX spectral repair, neural de-reverberation, and dynamic resonance suppressors) alter spectral smoothness without constituting generative music. The engine evaluates the host plugin graph (DTDevice, AuCU) and inspects pre-plugin pool WAVs before generating flags.</li>
+    <li><strong>Tamper Resistance &amp; Memory Safety:</strong> Decoded sample buffers must enforce strict memory bounds (DecodeLimits), while neural network weights must be cryptographically pinned and signed within the binary to prevent spoofed pass-through models.<sup><a href="#r53">[53]</a></sup></li>
+    <li><strong>Third-Party Legal Verification:</strong> Perceptual fingerprints do not constitute cryptographic signatures. Final attestation manifests must bind SHA-256 hashes of the master WAV and session bundle into signed hardware enclave tokens.</li>
+  </ul>
+
+  <h2 id="blueprint">// 09. Implementation Blueprint: The Four-Part Provenance Matrix</h2>
+  <p>
+    Forensic reports should produce a composite four-part provenance matrix rather than a reductive pass/fail flag. Every run initiates with project-to-master null reconciliation. Any master energy unverified by active session tracks triggers forced residual demixing. Orphaned pool files and backup histories in <code>Project File Backups/</code> are subsequently audited. A deleted pool file testing positive for 6 kHz to 10 kHz vocoder aliasing can be cross-correlated against MIDI onsets to detect human re-recordings of synthetic prompts:
+  </p>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr>
+          <th>Provenance Scorecard Metric</th>
+          <th>Forensic Measurement &amp; Verification Methodology</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Session Integrity Score (0 to 100%)</td>
+          <td>Quantifies acoustic correspondence between the DAW session graph and the rendered stereo master.</td>
+        </tr>
+        <tr>
+          <td>Acoustic AI Energy Ratio (α ∈ [0, 1])</td>
+          <td>Continuous regression estimate of master energy contributed by neural codecs or vocoders, resolved per stem.</td>
+        </tr>
+        <tr>
+          <td>Stem Watermark &amp; Artifact Localization</td>
+          <td>Exact timeline coordinates and track references identifying localized watermarks or vocoder anomalies.</td>
+        </tr>
+        <tr>
+          <td>Symbolic Composition Authenticity Score</td>
+          <td>Evaluates whether MIDI instrument tracks are driven by physical human performance or algorithmic generation.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="knowledge-graph">// 10. The Knowledge Graph: Deterministic Relations</h2>
+  <p>
+    For search crawlers, AI retrieval models, and audio engineers, the foundational facts of this specification resolve into deterministic Subject-Predicate-Object relations:
+  </p>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr>
+          <th>Subject (Entity)</th>
+          <th>Predicate (Relation)</th>
+          <th>Object (Concept)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Trust Node Logic</td>
+          <td>researches and standardizes</td>
+          <td>hybrid DAW session forensics and on-device audio verification</td>
+        </tr>
+        <tr>
+          <td>Hybrid Production Standard (HPS-1.0)</td>
+          <td>evaluates music provenance across</td>
+          <td>five independent scoring axes (O, P, C, S, M)</td>
+        </tr>
+        <tr>
+          <td>On-Device Forensic Pipeline</td>
+          <td>cross-examines</td>
+          <td>DAW project containers against stereo master renders</td>
+        </tr>
+        <tr>
+          <td>Logic Pro ProjectData</td>
+          <td>retains deleted audio clips as</td>
+          <td>AuRg chunks with in-use flag 0</td>
+        </tr>
+        <tr>
+          <td>AI Energy Ratio (α)</td>
+          <td>quantifies</td>
+          <td>synthetic stem energy proportion in hybrid audio mixes</td>
+        </tr>
+        <tr>
+          <td>AudioSeal and SynthID</td>
+          <td>embed localized watermarks for</td>
+          <td>tamper-evident neural audio tracking</td>
+        </tr>
+        <tr>
+          <td>HPS-1.0 Attestation Engine</td>
+          <td>operates entirely client-side via</td>
+          <td>local browser sandboxes with zero cloud egress</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="faq">// 11. Frequently Asked Questions</h2>
+  <details>
+    <summary>Can AI use be detected in a hybrid music project without uploading it to the cloud?</summary>
+    <p>Yes. A four-stage local pipeline parses DAW project files, scans watermarks and codec artifacts, evaluates MIDI statistics, and cross-correlates multitrack stems against the master WAV entirely on the user device via ONNX Runtime, CoreML, or TensorRT.</p>
+  </details>
+  <details>
+    <summary>Does deleting an AI stem from a DAW timeline remove the evidence?</summary>
+    <p>No. In Logic Pro, deleting a clip removes the 80-byte EvSq timeline event but preserves the AuFl file definition and AuRg region chunks, flipping the in-use flag at byte 0 from 1 to 0. Project metadata plists can also preserve absolute origin paths.</p>
+  </details>
+  <details>
+    <summary>Why do master-only AI music detectors fail on hybrid tracks?</summary>
+    <p>Mixing, EQ, reverb, pitch shifting, and limiting mask neural codec artifacts. Codec artifacts sit primarily in mid and high frequencies, so synthetic drums and guitars are caught reliably, synthetic vocals partially, and synthetic bass largely escapes detection under dense arrangements.</p>
+  </details>
+  <details>
+    <summary>What is the AI energy ratio α?</summary>
+    <p>The AI energy ratio, denoted α ∈ [0, 1], is a continuous regression estimate of the proportion of a mix total acoustic energy contributed by synthetic stems. CNN regressors reach a mean absolute error of 0.076 and R² of 0.85 on held-out hybrid mixtures.</p>
+  </details>
+
+  <h3 style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); margin-top: 36px;">
+    TOPICAL ENTITIES &amp; KNOWLEDGE GRAPH TAGS
+  </h3>
+  <ul class="tags" aria-label="Topic tags">
+    <li>Forensic AI Music Detection</li>
+    <li>DAW Project Forensics</li>
+    <li>Hybrid Audio Production</li>
+    <li>AudioSeal Watermark</li>
+    <li>SynthID</li>
+    <li>Neural Codec Artifacts</li>
+    <li>Logic Pro ProjectData</li>
+    <li>Ableton Live Session Analysis</li>
+    <li>MIDI Forensics</li>
+    <li>AI Energy Ratio</li>
+    <li>Phase Null Testing</li>
+    <li>HPS-1.0 Standard</li>
+    <li>Trust Node Logic</li>
+  </ul>
+
+  <h3 style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); margin-top: 36px;">
+    RELATED FIELD NOTES
+  </h3>
+  <div class="related-grid">
+    <a href="./c2pa-music-provenance.html" class="related-card">
+      <div class="rc-title">C2PA Music Provenance Standards</div>
+      <div class="rc-desc">Cryptographic JUMBF container manifests and tamper-evident audio content credentials.</div>
+    </a>
+    <a href="./hps5axes.html" class="related-card">
+      <div class="rc-title">5 HPS-1.0 Scoring Axes</div>
+      <div class="rc-desc">Decomposing music production into Origination, Performance, Curation, Sound Source, and Mix.</div>
+    </a>
+    <a href="./fingerprint.html" class="related-card">
+      <div class="rc-title">Watermarks in AI Audio</div>
+      <div class="rc-desc">Acoustic steganography, perceptual audio watermarks, and spread-spectrum tracking.</div>
+    </a>
+    <a href="./hp2026.html" class="related-card">
+      <div class="rc-title">The Trust Signal Chain (2026 Rulings)</div>
+      <div class="rc-desc">Courts, statutory compliance, EU AI Act Article 50, and streaming platform ingestion.</div>
+    </a>
+  </div>
+
+  <!-- Mandatory HPS-1.0 Funnel & Attestation Engine Advertisement -->
+  <aside class="hps-funnel-cta" aria-labelledby="cta-title">
+    <div class="funnel-kicker">[ ON-DEVICE ATTESTATION // VERIFIABLE CHAIN OF TITLE ]</div>
+    <h3 id="cta-title">Verify Your DAW Project in the HPS-1.0 Attestation Engine</h3>
+    <p>
+      Developed by <strong>Trust Node Logic</strong>, the <strong>Hybrid Production Standard (HPS-1.0)</strong> provides the cryptographic multitrack provenance vector required for copyright defense, distributor ingestion, and EU AI Act compliance. The browser-native Attestation Engine scans native session files directly on your machine, computes SHA-256 essence hashes over decoded raw PCM audio, and signs your five-axis manifest locally with Ed25519 - zero cloud egress, 100% private.
+    </p>
+    <div class="funnel-links">
+      <a class="btn-primary" href="https://trustnodelogic.web.app" target="_blank" rel="noopener noreferrer">
+        <span>Launch DAW Attestation Engine</span>
+        <span>↗</span>
+      </a>
+      <a class="btn-secondary" href="https://github.com/Loserdub/HPS-1.0-Hybrid-Production-Standard" target="_blank" rel="noopener noreferrer">
+        <span>Inspect HPS-1.0 Specification (GitHub) ↗</span>
+      </a>
+      <a class="btn-secondary" href="./contact.html">
+        <span>Contact About HPS Implementation →</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Author Attribution Card -->
+  <div class="attribution-card">
+    <div class="author-tag">[ RESEARCHER &amp; SPECIFICATION AUTHOR ]</div>
+    <div class="attribution-header">
+      <div class="author-avatar-box">JR</div>
+      <div>
+        <div class="attribution-name">Justin Ray (JRAY / loserdub)</div>
+        <div class="attribution-role">Author of HPS-1.0 · Audio Engineer · Founder, Trust Node Logic</div>
+      </div>
+    </div>
+    <p>
+      An audio engineer, creative technologist, and author of the Hybrid Production Standard (HPS-1.0) based in East Lansing, Michigan, his research at Trust Node Logic focuses on cryptographic audio provenance, DAW session forensics, and human-in-the-loop verification architectures.
+    </p>
+    <div class="attribution-links">
+      <a href="./about.html">About Author</a>
+      <span>·</span>
+      <a href="https://github.com/Loserdub" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span>·</span>
+      <a href="https://musicbrainz.org/artist/882fdb9b-8655-45dd-8e24-a59cd750d053" target="_blank" rel="noopener noreferrer">MusicBrainz</a>
+      <span>·</span>
+      <a href="https://x.com/TheInnerVision" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+    </div>
+  </div>
+
+  <h2 id="sources">// 14. Research Citations &amp; References</h2>
+  <ol class="refs">
+    <li id="r1" value="1"><a href="https://www.researchgate.net/publication/414725311_From_Audio_Deepfake_Detection_to_AI-Generated_Music_Detection-A_Pathway_and_Overview" target="_blank" rel="noopener noreferrer">From Audio Deepfake Detection to AI-Generated Music Detection: A Pathway and Overview</a>, ResearchGate.</li>
+    <li id="r2" value="2"><a href="https://miyagawa.co/blog/logic-projectdata" target="_blank" rel="noopener noreferrer">Inside Logic Pro's ProjectData</a>, Tatsuhiko Miyagawa.</li>
+    <li id="r3" value="3"><a href="https://arxiv.org/html/2608.07285v1" target="_blank" rel="noopener noreferrer">How Much AI Is in This Track? Quantifying the Proportion of AI in Music</a>, arXiv:2608.07285.</li>
+    <li id="r4" value="4"><a href="https://isolate.audio/articles/ai-song-detector" target="_blank" rel="noopener noreferrer">AI Song Detector: How to Spot AI-Generated Music</a>, Isolate Audio.</li>
+    <li id="r6" value="6"><a href="https://arxiv.org/pdf/2501.10111" target="_blank" rel="noopener noreferrer">AI-Generated Music Detection and its Challenges</a>, arXiv:2501.10111.</li>
+    <li id="r7" value="7"><a href="https://arxiv.org/html/2512.00621" target="_blank" rel="noopener noreferrer">Detecting Synthetic Music with Dual-Stream Contrastive Learning</a>, arXiv:2512.00621.</li>
+    <li id="r8" value="8"><a href="https://makebestmusic.com/blog/how-detectable-is-ai-music" target="_blank" rel="noopener noreferrer">How Detectable Is AI Music When Simple Edits Fool Every Tool</a>, MakeBestMusic.</li>
+    <li id="r9" value="9"><a href="https://github.com/krfantasy/alsdiff" target="_blank" rel="noopener noreferrer">alsdiff: Ableton Live Set XML Diffing</a>, GitHub.</li>
+    <li id="r10" value="10"><a href="https://pyflp.readthedocs.io/en/latest/_modules/pyflp/project.html" target="_blank" rel="noopener noreferrer">pyflp.project: FL Studio Project Parser</a>, PyFLP Documentation.</li>
+    <li id="r11" value="11"><a href="https://discuss.huggingface.co/t/an-open-research-lab-for-measuring-not-prompting-music-production-in-a-daw/180782" target="_blank" rel="noopener noreferrer">An open research lab for measuring, not prompting, music production in a DAW</a>, Hugging Face.</li>
+    <li id="r12" value="12"><a href="https://www.mslinn.com/av_studio/ableton_live_set.html" target="_blank" rel="noopener noreferrer">Ableton Live Set Tools</a>, Mike Slinn.</li>
+    <li id="r13" value="13"><a href="https://proaudiosignal.com/the-pro-tools-post-production-masterclass-session-setup-timecode-mathematics-and-advanced-asset-ingestion/" target="_blank" rel="noopener noreferrer">Session Setup, Timecode Mathematics, and Advanced Asset Ingestion</a>, Pro Audio Signal.</li>
+    <li id="r14" value="14"><a href="https://makebestmusic.com/blog/can-ai-play-sheet-music" target="_blank" rel="noopener noreferrer">Can AI Play Sheet Music With Real Expression and Feel?</a>, MakeBestMusic.</li>
+    <li id="r22" value="22"><a href="https://forums.cockos.com/showthread.php?p=2624859" target="_blank" rel="noopener noreferrer">Converting Ableton Live .als to REAPER .RPP</a>, Cockos Forums.</li>
+    <li id="r26" value="26"><a href="https://www.reddit.com/r/SunoAI/comments/1saljy9/psa_i_tested_all_the_suno_watermark_removal_tools/" target="_blank" rel="noopener noreferrer">PSA: Testing Suno Watermark Removal Tools</a>, r/SunoAI.</li>
+    <li id="r28" value="28"><a href="https://blackboxrecorder.in/tools/free-audio-metadata-viewer" target="_blank" rel="noopener noreferrer">Free Audio Metadata Viewer</a>, BlackBox.</li>
+    <li id="r31" value="31"><a href="https://erasy.co/blog/best-ai-music-artifact-removal-software" target="_blank" rel="noopener noreferrer">Best AI Music Artifact Removal Software in 2026</a>, Erasy.</li>
+    <li id="r32" value="32"><a href="https://sunowatermark.com/blog/undetectr-review-2026/" target="_blank" rel="noopener noreferrer">Undetectr Review 2026: Commercial Detector Reliability</a>, sunowatermark.com.</li>
+    <li id="r34" value="34"><a href="https://dasha.ai/blog/audio-watermarking" target="_blank" rel="noopener noreferrer">Audio Watermarking: Techniques, Detection, and Limits</a>, Dasha AI.</li>
+    <li id="r35" value="35"><a href="https://arxiv.org/html/2401.17264v2" target="_blank" rel="noopener noreferrer">Proactive Detection of Voice Cloning with Localized Watermarking (AudioSeal)</a>, arXiv:2401.17264.</li>
+    <li id="r38" value="38"><a href="https://docs.rs/crate/audiofp/latest" target="_blank" rel="noopener noreferrer">audiofp: Rust Audio Fingerprinting Crate</a>, Docs.rs.</li>
+    <li id="r42" value="42"><a href="https://sunowatermark.com/synthid-audio-watermarking/" target="_blank" rel="noopener noreferrer">SynthID and AI Music: How Audio Watermarking Works</a>, sunowatermark.com.</li>
+    <li id="r46" value="46"><a href="https://arxiv.org/html/2407.04575v1" target="_blank" rel="noopener noreferrer">Artifacts-Free and Phase-Aware High-Fidelity GAN-Based Vocoder</a>, arXiv:2407.04575.</li>
+    <li id="r50" value="50"><a href="https://humanizemastering.com/" target="_blank" rel="noopener noreferrer">Humanize Mastering: Forensic Output Analysis</a>.</li>
+    <li id="r53" value="53"><a href="https://github.com/themankindproject/audiofp" target="_blank" rel="noopener noreferrer">audiofp: Robust Audio Fingerprinting SDK</a>, GitHub.</li>
+  </ol>
+
+</article>
+</main>
+
+<!-- Rigid Terminal Footer -->
+<footer class="w-full bg-[#0B0C0E] border-t border-white/10 py-8 mt-auto z-20 relative">
+  <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="text-[#71717A] text-xs font-mono tracking-widest uppercase text-center md:text-left">
+      &copy; 2026 Justin Ray (JRAY). All Rights Reserved.
+    </div>
+    <nav class="flex flex-wrap justify-center gap-6 text-xs font-mono tracking-widest uppercase text-[#71717A]" aria-label="Footer navigation">
+      <a href="/" class="hover:text-[#EAEAEA] transition-colors">Home</a>
+      <a href="./hybridproductionstandard.html" class="hover:text-[#EAEAEA] transition-colors">The Standard</a>
+      <a href="./projects.html" class="hover:text-[#EAEAEA] transition-colors">The Suite</a>
+      <a href="./field-notes.html" class="hover:text-[#EAEAEA] transition-colors">Field Notes</a>
+      <a href="./music.html" class="hover:text-[#EAEAEA] transition-colors">Music</a>
+      <a href="./about.html" class="hover:text-[#EAEAEA] transition-colors">About</a>
+      <a href="./services.html" class="hover:text-[#EAEAEA] transition-colors">Services</a>
+      <a href="./contact.html" class="hover:text-[#EAEAEA] transition-colors">Contact</a>
+      <a href="./sitemap.xml" class="hover:text-[#EAEAEA] transition-colors">Sitemap</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
