@@ -16,7 +16,7 @@ def audit_repo():
     social_cards = [f for f in all_html_files if f.startswith('field-notes-') or 'asset' in f.lower()]
     components = [f for f in all_html_files if f.startswith('components/')]
     sub_apps = ['void/index.html', 'void15new.html']
-    utility_pages = ['404.html', 'bio.html']
+    utility_pages = ['404.html', 'bio.html', 'TOS.html', 'privacy.html']
     
     # Main pages are all top-level content and application pages
     main_pages = [
