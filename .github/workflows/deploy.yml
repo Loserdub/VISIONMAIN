@@ -55,10 +55,27 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Stage Production Site Artifact
+        run: |
+          rm -rf _site
+          mkdir -p _site
+          for f in *.html; do
+            case "$f" in
+              field-notes-*.html|void15new.html) continue ;;
+              *) cp "$f" _site/ ;;
+            esac
+          done
+          for f in style.css .nojekyll CNAME robots.txt sitemap.xml llms.txt humans.txt favicon.png bio-avatar.jpg *.txt; do
+            [ -f "$f" ] && cp "$f" _site/
+          done
+          cp -r assets _site/assets
+          rm -f _site/assets/*.html
+          cp -r void _site/void
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: '_site'
 
       - name: Deploy to GitHub Pages
         id: deployment

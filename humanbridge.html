@@ -38,7 +38,9 @@
 <link rel="icon" type="image/png" href="./favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="./style.css">
 
 <!-- Structured Data / JSON-LD -->
@@ -981,7 +983,10 @@
   <!-- Author Bio Card -->
   <div class="bio-card">
     <div class="bio-header">
-      <img src="./bio-avatar.jpg" alt="Justin Ray" class="bio-avatar" width="52" height="52" loading="lazy">
+      <picture style="display:contents">
+        <source srcset="./assets/images/bio-avatar.webp" type="image/webp">
+        <img src="./bio-avatar.jpg" alt="Justin Ray" class="bio-avatar" width="52" height="52" loading="lazy" decoding="async">
+      </picture>
       <div>
         <div class="bio-title">Justin Ray (JRAY / loserdub)</div>
         <div class="bio-sub">Author of HPS-1.0 · Founder of Trust Node Logic</div>

@@ -223,10 +223,9 @@
 }</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
 <link href="./style.css" rel="stylesheet"/>
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="alternate" type="text/plain" href="/llms.txt" title="AI LLM Knowledge Graph Manifest">
@@ -723,7 +722,7 @@
 <section style="margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--border);">
 <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; color: var(--cyan); text-transform: uppercase; margin-bottom: 12px;">AUTHOR &amp; RESEARCH ARCHIVE</div>
 <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 32px; background: var(--bg-panel); padding: 20px; border-radius: 8px; border: 1px solid var(--border);">
-<img alt="Justin Ray Logo" src="./favicon.png" style="width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--cyan-line);"/>
+<img alt="Justin Ray Logo" src="./favicon.png" width="48" height="48" loading="lazy" decoding="async" style="width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--cyan-line);"/>
 <div>
 <div style="font-family: var(--font-display); font-weight: 700; font-size: 16px; color: var(--text);">Justin Ray (JRAY)</div>
 <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-muted);">Pioneer of Hybrid AI Music Production • East Lansing, MI</div>

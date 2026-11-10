@@ -40,7 +40,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="./style.css">
 
 <!-- Structured Data / JSON-LD Capstone -->
@@ -718,7 +720,7 @@
 <figure class="article-diagram">
   <picture>
     <source srcset="./assets/images/formant.webp" type="image/webp">
-    <img src="./assets/images/formant.png" alt="Formant shifting diagram illustrating vocal tract tuning and separation of pitch from timbre, showing original spectral peaks F1, F2, F3 compared to transposed formant peaks F1', F2', F3' with pitch preserved" width="1408" height="768" loading="lazy" decoding="async">
+    <img src="./assets/images/formant.png" alt="Formant shifting diagram illustrating vocal tract tuning and separation of pitch from timbre, showing original spectral peaks F1, F2, F3 compared to transposed formant peaks F1', F2', F3' with pitch preserved" width="1408" height="768" loading="eager" fetchpriority="high" decoding="async">
   </picture>
 </figure>
 <h2>Reshaping the Signal</h2>

@@ -45,7 +45,9 @@
 <!-- Fonts & Core Stylesheet -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="./style.css">
 
 <!-- Structured Data / JSON-LD Capstone -->
@@ -831,7 +833,10 @@
   </ol>
 
   <figure>
-    <img src="./assets/images/local-forensic-pipeline-architecture.png" width="1408" height="768" loading="eager" fetchpriority="high" decoding="async" alt="Diagram of the local device sandbox: a DAW project folder and rendered master WAV feed four parallel analyzers (graph parser, MIDI extractor, stem scanner, master stem separator) that merge into a composite hybrid AI attribution report with zero cloud egress.">
+    <picture>
+      <source srcset="./assets/images/local-forensic-pipeline-architecture.webp" type="image/webp">
+      <img src="./assets/images/local-forensic-pipeline-architecture.png" width="1408" height="768" loading="eager" fetchpriority="high" decoding="async" alt="Diagram of the local device sandbox: a DAW project folder and rendered master WAV feed four parallel analyzers (graph parser, MIDI extractor, stem scanner, master stem separator) that merge into a composite hybrid AI attribution report with zero cloud egress.">
+    </picture>
     <figcaption>Figure 1: Local forensic pipeline architecture. Four analyzers operate concurrently inside a zero-cloud-egress sandbox to generate a unified session attribution report.</figcaption>
   </figure>
 
@@ -902,7 +907,10 @@
   </p>
 
   <figure>
-    <img src="./assets/images/daw-binary-forensics-deleted-stems.png" width="825" height="1999" loading="lazy" decoding="async" alt="Logic Pro ProjectData binary structure diagram illustrating EvSq timeline events, AuRg audio region chunks, AuFl file pools, and an orphaned region retaining in-use flag 0 with absolute origin paths.">
+    <picture>
+      <source srcset="./assets/images/daw-binary-forensics-deleted-stems.webp" type="image/webp">
+      <img src="./assets/images/daw-binary-forensics-deleted-stems.png" width="825" height="1999" loading="lazy" decoding="async" alt="Logic Pro ProjectData binary structure diagram illustrating EvSq timeline events, AuRg audio region chunks, AuFl file pools, and an orphaned region retaining in-use flag 0 with absolute origin paths.">
+    </picture>
     <figcaption>Figure 2: Binary forensics of DAW project containers. In Logic Pro ProjectData, deleted AI clips preserve AuRg audio region definitions with in-use flags set to 0 and retain absolute origin paths.</figcaption>
   </figure>
 
@@ -969,7 +977,10 @@
   </div>
 
   <figure>
-    <img src="./assets/images/ai-detection-accuracy-spectral-masking.png" width="1331" height="1999" loading="lazy" decoding="async" alt="Two-panel technical analysis: Panel 1 illustrates AI detector accuracy degradation from 99.8% down to 18% F1 under low-pass filtering; Panel 2 charts stem sensitivity by frequency, showing bass staying masked below 400 Hz.">
+    <picture>
+      <source srcset="./assets/images/ai-detection-accuracy-spectral-masking.webp" type="image/webp">
+      <img src="./assets/images/ai-detection-accuracy-spectral-masking.png" width="1331" height="1999" loading="lazy" decoding="async" alt="Two-panel technical analysis: Panel 1 illustrates AI detector accuracy degradation from 99.8% down to 18% F1 under low-pass filtering; Panel 2 charts stem sensitivity by frequency, showing bass staying masked below 400 Hz.">
+    </picture>
     <figcaption>Figure 3: AI audio detector accuracy collapses under spectral masking and dynamic filtering. Neural codec artifacts concentrate above 4 kHz, leaving synthetic sub-bass masked in commercial masters.</figcaption>
   </figure>
 

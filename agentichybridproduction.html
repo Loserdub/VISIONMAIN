@@ -223,11 +223,11 @@
 }</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Syne:wght@400;600;700;800&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"></noscript>
 <link href="./style.css" rel="stylesheet"/>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500;700&display=swap');
-
  :root {
  --bg: #020305;
  --bg-1: #05060c;
@@ -956,7 +956,10 @@
 <p>The critical constraint: the Orchestrator must never execute audio processing itself. Designing the control layer to take on execution tasks consistently creates computational bottlenecks. The Orchestrator's only job is to decompose goals, assign workers, track state, and handle failures. This separation is what makes the system scalable.</p>
 <p>When routing composition tasks to symbolic assistants, agents can trigger theory-grounded MIDI co-writers to draft melodic progressions without generating unverified audio stems. For a field analysis of how symbolic models interface with professional DAWs, review our <a href="./staccatoreview.html">Staccato AI DAW co-writer analysis</a>.</p>
 <figure>
-<img alt="Multi-Agent Virtual Studio Architecture diagram: Human User sends natural language to Orchestrator Agent, which routes via MCP to Composition, Mix, and Mastering Agents. Agents share audio via Fastio Server MCP Workspaces and control Ableton Live API via OSC messaging." loading="lazy" src="./assets/images/agentic-studio-architecture.jpg"/>
+<picture>
+<source srcset="./assets/images/agentic-studio-architecture.webp" type="image/webp"/>
+<img alt="Multi-Agent Virtual Studio Architecture diagram: Human User sends natural language to Orchestrator Agent, which routes via MCP to Composition, Mix, and Mastering Agents. Agents share audio via Fastio Server MCP Workspaces and control Ableton Live API via OSC messaging." width="1600" height="1860" loading="eager" fetchpriority="high" decoding="async" src="./assets/images/agentic-studio-architecture.jpg"/>
+</picture>
 <figcaption><strong>Fig. 1 - Multi-Agent Virtual Studio Architecture.</strong> The Orchestrator routes tasks to specialized agents via MCP configuration. Agents share audio files through persistent Fastio MCP workspaces and control the DAW environment in real-time using OSC messaging into the Ableton Live API. Data sources: Cogitx.ai, Fastio Storage, Fastio API, Flowhunt, Ziforge.</figcaption>
 </figure>
 <div class="section-header" id="mcp-osc">
@@ -1035,7 +1038,10 @@
 </tbody>
 </table>
 <figure>
-<img alt="Audio Merging comparison: Time Domain waveform comping showing phase cancellation and artifacts versus Latent Domain SLERP showing smooth trajectory across manifold sphere and unified output waveform" loading="lazy" src="./assets/images/audio-merging-slerp-comping.jpg"/>
+<picture>
+<source srcset="./assets/images/audio-merging-slerp-comping.webp" type="image/webp"/>
+<img alt="Audio Merging comparison: Time Domain waveform comping showing phase cancellation and artifacts versus Latent Domain SLERP showing smooth trajectory across manifold sphere and unified output waveform" width="1600" height="1226" loading="lazy" decoding="async" src="./assets/images/audio-merging-slerp-comping.jpg"/>
+</picture>
 <figcaption><strong>Fig. 2 - Audio Merging: Waveform Comping vs. Latent Space SLERP.</strong> Traditional audio comping in the time domain results in phase cancellation and acoustic artifacts. Mapping audio into a continuous latent space and utilizing Spherical Linear Interpolation (SLERP) generates a smooth, semantically coherent transition between distinct musical arrangements.</figcaption>
 </figure>
 <div class="section-header" id="roadmap">
