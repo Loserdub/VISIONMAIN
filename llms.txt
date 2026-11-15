@@ -52,6 +52,14 @@
 - **Summary**: Catalog index across Justin Ray's production aliases (loserdub, VISION, Flawed Future, le vide, disarray), detailing streaming availability and acoustic engineering notes.
 - **Key Concepts**: loserdub, VISION, Electronic, Ambient, Synthwave.
 
+### [Artists & Collaborations](https://trustnodelogic.com/artists.html)
+- **Summary**: Directory of collaborating musical artists, vocalists, and co-creators working alongside Justin Ray across hybrid electronic productions.
+- **Key Concepts**: Collaborative Artists, Vocalists, Features, Hybrid Music, Co-Creators.
+
+### [loserdub Project](https://trustnodelogic.com/loserdub.html)
+- **Summary**: Dedicated artist profile for loserdub, exploring indie electronic, alternative, and experimental music releases authored and produced by Justin Ray in East Lansing, MI.
+- **Key Concepts**: loserdub, Indie Electronic, Alternative, Experimental, MusicBrainz, East Lansing Michigan.
+
 ### [Services & Advisory](https://trustnodelogic.com/services.html)
 - **Summary**: Strategic consulting, hybrid mastering, and technical advisory services for record labels, DAWs, and AI audio startups anchored in HPS-1.0 and Browser-Native DSP.
 - **Key Concepts**: Hybrid Mastering, AI Music Strategy, Metadata Compliance, DDEX Integration, Browser-Native DSP.

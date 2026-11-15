@@ -28,7 +28,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Install Python Dependencies
         run: |
@@ -38,8 +38,8 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
 
       - name: Install Node Dependencies
         run: npm ci
@@ -65,7 +65,7 @@ jobs:
               *) cp "$f" _site/ ;;
             esac
           done
-          for f in style.css .nojekyll CNAME robots.txt sitemap.xml llms.txt humans.txt favicon.png bio-avatar.jpg *.txt; do
+          for f in style.css .nojekyll CNAME robots.txt sitemap.xml llms.txt humans.txt favicon.png bio-avatar.jpg loserdubbanner*.png *.txt; do
             [ -f "$f" ] && cp "$f" _site/
           done
           cp -r assets _site/assets
@@ -75,7 +75,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '_site'
+          path: "_site"
 
       - name: Deploy to GitHub Pages
         id: deployment
