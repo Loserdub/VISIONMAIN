@@ -1,0 +1,119 @@
+.record-site {
+  --paper: #f2f0e9;
+  --muted: #b0b2b3;
+  --rule: #35373a;
+  --amber: #ff9f1c;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+  background: #08090a;
+  color: var(--paper);
+}
+.record-site .breadcrumb, .record-page {
+  width: min(100% - 3rem, 74rem);
+  margin-inline: auto;
+}
+.record-site .breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-top: 1.15rem;
+  color: var(--muted);
+  font: .71rem/1.5 var(--mono);
+}
+.record-site .breadcrumb a:hover, .record-page a:hover { color: var(--amber); }
+.record-site #root > header nav[aria-label="Main navigation"] a { opacity: 1; }
+.record-site #root > header nav, .record-site footer { color: var(--muted); }
+.record-page { margin-block: 1.2rem 3rem; }
+.record-site .record-page > .scroll-target { opacity: 1; transform: none; transition: none; }
+.record-site #tnl-reading-progress { display: none; }
+.record-page [id] { scroll-margin-top: 5rem; }
+.record-page a:focus-visible, .record-page button:focus-visible, .record-page summary:focus-visible { outline: 2px solid #00f0ff !important; outline-offset: 3px !important; }
+.record-intro { display: flex; align-items: end; justify-content: space-between; gap: 1.25rem; padding-bottom: 1.15rem; }
+.record-title { font: 600 clamp(3.35rem, 9vw, 7.1rem)/.93 "Space Grotesk", Arial, sans-serif; letter-spacing: -.075em; }
+.record-intro p { max-width: 29rem; margin-bottom: .2rem; color: var(--muted); font-size: 1rem; }
+.record-intro p a, .credits a { text-decoration: underline; text-underline-offset: .22em; }
+.catalog-label { color: var(--muted); font: 500 .72rem/1.5 var(--mono); letter-spacing: .075em; text-transform: uppercase; }
+.station { border-top: 1px solid var(--rule); margin-bottom: 1.4rem; }
+.station-heading, .record-bar, .archive-nav, .credit-links { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.25rem; }
+.station-heading { justify-content: space-between; padding-block: .72rem; }
+.station-heading h2 { display: flex; align-items: center; gap: .6rem; font: 600 .9rem/1.4 var(--mono); }
+.station-heading h2::before { content: ""; width: .55rem; height: .55rem; background: var(--amber); }
+.station-heading a, .artist-links a, .credit-links a, .archive-nav a, .catalog-action, .deck-controls button { font: 500 .8rem/1.5 var(--mono); }
+.station iframe { display: block; width: 100%; height: 230px; border: 0; background: #121417; }
+.artist-banner { display: block; background: #101316; }
+.banner-image { display: block; width: 100%; height: auto; aspect-ratio: 3 / 1; object-fit: cover; }
+.record-bar { justify-content: space-between; padding: .9rem 1.15rem; background: #171a1d; border-bottom: 1px solid var(--rule); }
+.record-bar h2 { font-size: 1.2rem; font-weight: 600; letter-spacing: -.035em; }
+.catalog-action { color: var(--amber); }
+.artist-banner:hover .record-bar { background: #202327; }
+.project-spread { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-block: 1rem; }
+.vision-card, .roster-card { border: 1px solid var(--rule); background: #121417; min-width: 0; }
+.vision-card { display: grid; grid-template-columns: minmax(0, .88fr) minmax(0, 1fr); color: var(--paper); }
+.vision-card img { align-self: stretch; width: 100%; height: 100%; min-height: 12rem; object-fit: cover; }
+.vision-copy, .roster-copy { display: flex; flex-direction: column; justify-content: center; align-items: start; gap: .7rem; padding: clamp(1rem, 2.5vw, 2rem); }
+.project-name { font: 600 clamp(1.85rem, 3.5vw, 3.3rem)/1 "Space Grotesk", Arial, sans-serif; letter-spacing: -.065em; }
+.vision-copy p, .roster-copy p { color: var(--muted); font-size: 1rem; line-height: 1.4; }
+.roster-card { display: grid; grid-template-columns: minmax(0, .88fr) minmax(0, 1fr); }
+.sleeves { display: grid; place-items: center; overflow: hidden; background: #202224; min-height: 12rem; isolation: isolate; }
+.sleeves img { grid-area: 1/1; width: 62%; aspect-ratio: 1; box-shadow: 0 3px 12px #0009; border: 2px solid #c5c3b9; transition: transform .55s ease; }
+.sleeves [data-depth="0"] { transform: translate(-5%, 3%) rotate(-6deg); z-index: 3; }
+.sleeves [data-depth="1"] { transform: translate(8%, -4%) rotate(5deg); z-index: 2; }
+.sleeves [data-depth="2"] { transform: translate(17%, -7%) rotate(12deg); z-index: 1; }
+.deck-controls { display: flex; flex-wrap: wrap; gap: .4rem; }
+.deck-controls[hidden] { display: none; }
+.deck-controls button { border: 1px solid #585b60; padding: .45rem .65rem; color: var(--paper); cursor: pointer; }
+.deck-controls button:hover { border-color: var(--amber); }
+.roster-card .catalog-action, .artist-links a, .archive-nav a, .credit-links a { text-decoration: underline; text-underline-offset: .24em; }
+.sleeve-link { color: var(--paper); text-decoration: underline; text-underline-offset: .2em; }
+.artist-links, .archive-nav { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem 1.5rem; padding: .75rem 0; border-block: 1px solid var(--rule); }
+.artist-links a, .archive-nav a, .credit-links a { display: inline-flex; align-items: center; min-height: 2.75rem; }
+.archive-nav { margin-bottom: 1rem; }
+.archive-intro .catalog-label { margin-bottom: .55rem; }
+.release-section { margin-top: clamp(2.4rem, 5vw, 4.2rem); }
+.release-section h2 { font: 600 clamp(1.9rem, 4vw, 3.1rem)/1.1 "Space Grotesk", Arial, sans-serif; letter-spacing: -.055em; margin-bottom: 1rem; }
+.release-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 1rem; }
+.release-table th, .release-table td { border-bottom: 1px solid var(--rule); padding: .9rem .6rem; vertical-align: top; }
+.release-table th:first-child, .release-table td:first-child { padding-left: 0; }
+.release-table thead th { color: var(--muted); font: 500 .72rem/1.45 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+.release-table tbody th { text-align: left; font-weight: 500; }
+.release-info { display: flex; gap: 1rem; align-items: center; }
+.release-info img { width: clamp(3.6rem, 8vw, 6.2rem); aspect-ratio: 1; height: auto; object-fit: contain; background: #111214; }
+.release-info strong { display: block; font: 600 clamp(1.05rem, 2vw, 1.5rem)/1.14 "Space Grotesk", Arial, sans-serif; letter-spacing: -.035em; }
+.release-info small, .album-date, .track-details, .singles td:first-child { color: var(--muted); font: .8rem/1.6 var(--mono); }
+.release-info small { display: block; margin-top: .3rem; }
+.albums .album-date, .albums td:last-child { vertical-align: middle; }
+.track-details summary { cursor: pointer; color: var(--amber); padding-block: .55rem; }
+.track-details ol { margin: .35rem 0 .6rem; padding-left: 1.8rem; list-style: decimal; }
+.track-details li { padding-block: .15rem; }
+.track-details li a, .singles a, .platform-links a { text-decoration: underline; text-underline-offset: .2em; }
+.singles td { color: var(--muted); }
+.singles td:nth-child(2) { color: var(--paper); }
+.platform-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.credits { margin-top: 2rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: .9rem; }
+.credits summary { cursor: pointer; min-height: 44px; padding-block: .8rem; }
+.credits table { font-size: .9rem; margin-bottom: 1rem; }
+.credits table th, .credits table td { text-align: left; padding: .25rem 1.4rem .25rem 0; }
+.credits p { margin: .65rem 0; }
+@media (max-width: 760px) {
+  .project-spread { grid-template-columns: 1fr; }
+  .vision-card, .roster-card { grid-template-columns: minmax(0, .65fr) minmax(0, 1fr); }
+  .vision-card img, .sleeves { min-height: 10rem; }
+}
+@media (max-width: 600px) {
+  .record-page, .record-site .breadcrumb { width: calc(100% - 2rem); }
+  .record-intro { align-items: start; flex-direction: column; gap: .65rem; }
+  .record-bar { padding: .8rem; gap: .35rem 1rem; }
+  .record-bar h2 { font-size: 1rem; }
+  .artist-links, .archive-nav { column-gap: 1rem; }
+  .albums thead { position: absolute; width: 1px; height: 1px; clip-path: inset(50%); overflow: hidden; }
+  .albums, .albums tbody { display: block; }
+  .albums tbody tr { display: grid; gap: .1rem; padding-block: .9rem; border-bottom: 1px solid var(--rule); }
+  .albums tbody th, .albums tbody td { padding: 0; border: 0; }
+  .albums tbody td:last-child { padding-left: 4.2rem; }
+  .album-date, .record-table-date { display: none; }
+  .albums .release-info { gap: .6rem; }
+  .albums .release-info small { max-width: 12rem; }
+  .mobile-date { display: block; }
+  .singles { font-size: .9rem; }
+}
+@media (min-width: 601px) { .mobile-date { display: none; } }
+@media (prefers-reduced-motion: reduce) { .sleeves img { transition: none; } }
