@@ -49,12 +49,12 @@
 - **Key Concepts**: VOID Web Sampler, Browser-Native DSP, Audio Slicer, 16-Pad Sampler, Harmonic Mashup, Camelot Key Matching, Web Workers DSP.
 
 ### [Official Discography](https://trustnodelogic.com/music.html)
-- **Summary**: Independent music catalog with the SoundCloud stream, loserdub discography, VISION hybrid testing ground, and artist profiles for le vide, Flawed Future and disarray.
-- **Key Concepts**: loserdub, VISION, Electronic, Ambient, Synthwave.
+- **Summary**: Independent music catalog with the SoundCloud stream, loserdub discography, VISION hybrid testing ground, and shared recording credits linked to the artist roster.
+- **Key Concepts**: loserdub, VISION, SoundCloud, albums, recording credits.
 
-### [Artists & Collaborations](https://trustnodelogic.com/artists.html)
-- **Summary**: Directory of collaborating musical artists, vocalists, and co-creators working alongside Justin Ray across hybrid electronic productions.
-- **Key Concepts**: Collaborative Artists, Vocalists, Features, Hybrid Music, Co-Creators.
+### [Artist Roster](https://trustnodelogic.com/artists.html)
+- **Summary**: Artist profiles and listening links for le vide, Flawed Future and disarray, with selected recordings that credit these aliases alongside loserdub.
+- **Key Concepts**: le vide, Flawed Future, disarray, artist roster, shared credits.
 
 ### [loserdub Project](https://trustnodelogic.com/loserdub.html)
 - **Summary**: Illustrated loserdub discography with original album and EP covers, expandable tracklists, MusicBrainz credits, and singles from the East Lansing recording project.

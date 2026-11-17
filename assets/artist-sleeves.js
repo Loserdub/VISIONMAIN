@@ -4,7 +4,7 @@
 
   const sleeves = Array.from(deck.querySelectorAll(".sleeves img"));
   const caption = deck.querySelector("[data-sleeve-caption]");
-  const profileLink = deck.querySelector("[data-sleeve-link]");
+  const directoryLink = deck.querySelector(".roster-entry");
   const toggle = deck.querySelector("[data-rotation]");
   const next = deck.querySelector("[data-next-sleeve]");
   const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -18,14 +18,12 @@
     sleeves.forEach((sleeve, index) => {
       sleeve.dataset.depth = (index - front + sleeves.length) % sleeves.length;
     });
-    const current = sleeves[front].dataset;
-    caption.textContent = current.artist;
-    profileLink.href = document.getElementById(current.profile).href;
+    caption.textContent = sleeves[front].dataset.artist;
   }
 
   function schedule() {
     window.clearInterval(timer);
-    if (rotating && visible && !document.hidden && !profileLink.matches(":hover, :focus")) {
+    if (rotating && visible && !document.hidden && !directoryLink.matches(":hover, :focus")) {
       timer = window.setInterval(advance, 6500);
     }
   }
@@ -46,7 +44,7 @@
   motion.addEventListener("change", () => setRotation(!motion.matches));
   document.addEventListener("visibilitychange", schedule);
   ["pointerenter", "pointerleave", "focus", "blur"].forEach(event => {
-    profileLink.addEventListener(event, () => requestAnimationFrame(schedule));
+    directoryLink.addEventListener(event, () => requestAnimationFrame(schedule));
   });
   new IntersectionObserver(([entry]) => {
     visible = entry.isIntersecting;
