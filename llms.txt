@@ -238,6 +238,11 @@
 - **Direct Citation**: "Cross-examining the DAW project container alongside the master WAV on the creator's local device turns probabilistic guesswork into deterministic provenance auditing."
 - **Key Concepts**: DAW Session Forensics, AudioSeal, SynthID, Neural Codec Aliasing, Logic Pro ProjectData, AI Energy Ratio (α), On-Device Sandboxing.
 
+### [Independent Artist Economics 2026: Splits, Meta Ads and Deal Structures](https://trustnodelogic.com/independentecon2027.html)
+- **Summary**: Comprehensive financial and rights management field note by Justin Ray modeling 2026 unit economics for independent artists. Investigates streaming payout dilution ($31.7B global revenue vs. 74% of self-releasers earning <$1,000), split sheet audit recovery before the April 2027 MLC mechanical black-box sunset, Meta advertising math (-97% direct streaming ROI vs. 2.3x to 14.55x ROAS on owned fan checkouts), and comparative three-year financial modeling between 360 contracts ($277,500 net cash, 0% equity) and 80/20 label services ($1.30M cash and retained master equity).
+- **Direct Citation**: "Unit economics discipline replaces the volume-first streaming playbook. Auditing mechanical splits and pricing label contracts against retained catalog equity is the fundamental dividing line for independent longevity."
+- **Key Concepts**: Independent Artist Economics, The MLC Mechanical Splits, SoundExchange Neighboring Rights, Meta Ads Unit Economics, 360 Deal Recoupment, Label Services Master Equity, HPS-1.0 Provenance Attestation.
+
 ---
 
 ## Official Entity Profiles & Authority Links
