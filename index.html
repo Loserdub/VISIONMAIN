@@ -207,6 +207,7 @@
  "name": "Trust Node Logic",
  "alternateName": "JRAY & Trust Node Logic",
  "url": "https://trustnodelogic.com",
+ "email": "mailto:trustnodelogic@gmail.com",
  "logo": "https://trustnodelogic.com/favicon.png",
  "founder": {
  "@id": "https://trustnodelogic.com/#person"
@@ -264,6 +265,12 @@
  "mainEntityOfPage": "https://trustnodelogic.com/",
  "datePublished": "2026-02-12",
  "dateModified": "2026-11-24",
+ "author": {
+ "@id": "https://trustnodelogic.com/#person"
+ },
+ "publisher": {
+ "@id": "https://trustnodelogic.com/#organization"
+ },
  "isPartOf": {
  "@id": "https://trustnodelogic.com/#website"
  },
@@ -339,6 +346,24 @@
  },
  {
  "@type": "WebPage",
+ "name": "Field Notes",
+ "url": "https://trustnodelogic.com/field-notes.html",
+ "image": "https://trustnodelogic.com/assets/images/tnl-default-og.webp"
+ },
+ {
+ "@type": "WebPage",
+ "name": "HPS Attestation Engine",
+ "url": "https://trustnodelogic.com/hps-engine.html",
+ "image": "https://trustnodelogic.com/assets/images/tnl-default-og.webp"
+ },
+ {
+ "@type": "WebPage",
+ "name": "VOID 1.5 Web Sampler",
+ "url": "https://trustnodelogic.com/void.html",
+ "image": "https://trustnodelogic.com/assets/images/tnl-default-og.webp"
+ },
+ {
+ "@type": "WebPage",
  "name": "The Trust Signal Chain (2026)",
  "url": "https://trustnodelogic.com/hp2026.html",
  "image": "https://trustnodelogic.com/assets/images/tnl-default-og.webp"
@@ -367,8 +392,17 @@
   "name": "HPS-1.0 DAW Attestation Engine",
   "applicationCategory": "MultimediaApplication",
   "operatingSystem": "All (Web Audio)",
+  "softwareVersion": "1.0",
   "url": "https://hps.trustnodelogic.com/",
   "sameAs": "https://trustnodelogic.web.app",
+  "offers": {
+   "@type": "Offer",
+   "price": "0",
+   "priceCurrency": "USD"
+  },
+  "author": {
+   "@id": "https://trustnodelogic.com/#person"
+  },
   "creator": {
    "@id": "https://trustnodelogic.com/#person"
   }
@@ -479,29 +513,105 @@
   <main id="main-content" class="lab-home">
     <section class="lab-hero" id="attestation-engine" aria-labelledby="engine-title">
       <div class="lab-intro">
-        <p class="lab-byline">Independent music technology lab by Justin Ray</p>
+        <div class="lab-status-row">
+          <span class="lab-status-dot animate-pulse" aria-hidden="true"></span>
+          <span class="lab-status-code">[ TRUST_NODE_LOGIC // HPS-1.0_LAB ]</span>
+          <span class="lab-status-sep" aria-hidden="true">|</span>
+          <span>EAST LANSING, MI</span>
+        </div>
+        <p class="lab-byline">Trust Node Logic: independent music technology lab founded by Justin Ray</p>
         <h1 id="engine-title">Document how your music <span>was made.</span></h1>
+        <div class="lab-hero-rule" aria-hidden="true"></div>
         <p class="lab-lede">Review human and AI contributions to your recording in the HPS Attestation Engine.</p>
+        <div class="lab-hero-tags">
+          <span class="tech-tag tech-tag-amber">HPS-1.0 STANDARD</span>
+          <span class="tech-tag">8 DAW FORMATS</span>
+          <span class="tech-tag">SHA-256 + ED25519</span>
+        </div>
         <div class="lab-actions">
           <a class="lab-launch" href="https://hps.trustnodelogic.com/">Open HPS Attestation Engine <span aria-hidden="true">↗</span></a>
-          <a class="lab-link" href="/hps-engine.html">Engine guide</a>
+          <a class="lab-btn-secondary" href="./hps-engine.html">Engine Guide <span aria-hidden="true">→</span></a>
+          <a class="lab-link" href="./hybridproductionstandard.html">HPS-1.0 Spec</a>
         </div>
       </div>
-      <img class="lab-poster" src="./assets/images/hps-human-to-machine.webp"
-           width="1122" height="1402" fetchpriority="high"
-           alt="HPS production provenance poster. Human to machine and everything in-between. Production tiers H, X1, X2, X3, X4, and A.">
+
+      <figure class="lab-poster-frame tech-bracket">
+        <div class="lab-poster-bar">
+          <span><strong>HPS-1.0 SPECTRUM</strong> // TIERS H TO A</span>
+          <span>CLIENT DSP</span>
+        </div>
+        <div class="lab-poster-viewport">
+          <img class="lab-poster" src="./assets/images/hps-human-to-machine.webp"
+               width="1122" height="1402" fetchpriority="high"
+               alt="HPS production provenance poster. Human to machine and everything in-between. Production tiers H, X1, X2, X3, X4, and A.">
+        </div>
+        <figcaption class="lab-poster-foot">
+          <span>PROVENANCE ARCHIVE</span>
+          <span>DDEX ERN 4.3 READY</span>
+        </figcaption>
+      </figure>
     </section>
 
     <section class="lab-band" aria-labelledby="workflow-title">
-      <h2 id="workflow-title">How attestation works</h2>
-      <ol class="lab-steps">
-        <li>Open your session</li>
-        <li>Review five axes</li>
-        <li>Export your report</li>
-      </ol>
+      <div class="lab-band-head">
+        <div class="lab-band-title-group">
+          <span class="lab-band-num">[ 01 ]</span>
+          <h2 id="workflow-title">How attestation works</h2>
+        </div>
+        <span class="lab-band-meta">3-STAGE LOCAL PROVENANCE PIPELINE</span>
+      </div>
+
+      <div class="lab-pipeline">
+        <article class="tech-card lab-step-card">
+          <div>
+            <div class="lab-step-top">
+              <span class="lab-step-index">01 // INGEST</span>
+              <span class="tech-tag tech-tag-amber">ZERO UPLOAD</span>
+            </div>
+            <h3>Open your session</h3>
+            <p>Load your DAW project container or audio stems locally in the browser across 8 supported DAW formats.</p>
+          </div>
+          <div class="lab-step-spec">
+            <span>[INPUTS]</span>
+            <strong>ALS · LPX · PTX · FLP · WAV</strong>
+          </div>
+        </article>
+
+        <article class="tech-card lab-step-card">
+          <div>
+            <div class="lab-step-top">
+              <span class="lab-step-index">02 // CLASSIFY</span>
+              <span class="tech-tag">5 AXES</span>
+            </div>
+            <h3>Review five axes</h3>
+            <p>Audit human, hybrid, and AI contributions across origination, performance, curation, sound source, and post-production.</p>
+          </div>
+          <div class="lab-step-spec">
+            <span>[CLASSIFICATION]</span>
+            <strong>H · X1-X4 · A TIERS</strong>
+          </div>
+        </article>
+
+        <article class="tech-card lab-step-card">
+          <div>
+            <div class="lab-step-top">
+              <span class="lab-step-index">03 // SEAL</span>
+              <span class="tech-tag tech-tag-platinum">SIGNED</span>
+            </div>
+            <h3>Export your report</h3>
+            <p>Generate a SHA-256 PCM essence hash and Ed25519 signature with portable documentation for labels and distributors.</p>
+          </div>
+          <div class="lab-step-spec">
+            <span>[DELIVERABLES]</span>
+            <strong>PDF · JSON · DDEX ERN 4.3</strong>
+          </div>
+        </article>
+      </div>
+
       <div class="lab-reference-links">
-        <a class="lab-link" href="./hybridproductionstandard.html">HPS-1.0 specification</a>
-        <a class="lab-link" href="./what-is-hybrid.html">What is hybrid production?</a>
+        <a class="lab-link" href="./hybridproductionstandard.html">HPS-1.0 specification →</a>
+        <a class="lab-link" href="./what-is-hybrid.html">What is hybrid production? →</a>
+        <a class="lab-link" href="https://trustnodelogic.web.app">DAW attestation web app ↗</a>
       </div>
     </section>
 
@@ -550,43 +660,59 @@
   </main>
 
  <!-- Rigid Terminal Footer -->
- <footer class="w-full bg-[#0B0C0E] border-t border-white/10 py-8 mt-auto z-20 relative">
+ <footer class="w-full bg-[#0B0C0E] border-t border-white/10 py-10 mt-auto z-20 relative">
  <div class="lab-footer">
-   <aside aria-label="About the founder">
-     <p class="lab-signature">The future exists in the grey.</p>
-     <p><a href="./about.html">Justin Ray</a> founded the lab and authored HPS-1.0. He releases records as loserdub and VISION.</p>
-     <nav aria-label="Artist profiles">
-       <a href="https://x.com/TheInnerVision" target="_blank" rel="noopener noreferrer">X</a>
-       <a href="https://youtube.com/@loserdub" target="_blank" rel="noopener noreferrer">YouTube</a>
-       <a href="https://www.linkedin.com/in/jray-me/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-       <a href="https://network.landr.com/users/vision-hybrid" target="_blank" rel="noopener noreferrer">LANDR Network</a>
-     </nav>
+   <aside class="author-colophon lab-footer-colophon" aria-label="About the founder">
+     <div>
+       <p class="lab-signature">The future exists in the grey.</p>
+       <p><a href="./about.html">Justin Ray</a> (JRAY) founded Trust Node Logic and authored the <a href="./hybridproductionstandard.html">Hybrid Production Standard (HPS-1.0)</a>, releasing records as <a href="./music.html#loserdub">loserdub</a> and <a href="./music.html#vision">VISION</a>.</p>
+     </div>
+     <div>
+       <span class="lab-triad-label">[ HPS-1.0 IMPLEMENTATION &amp; DISCOVERY ]</span>
+       <nav class="lab-triad-links" aria-label="Implementation resources">
+         <a href="https://github.com/Loserdub/HPS-1.0-Hybrid-Production-Standard" target="_blank" rel="noopener noreferrer">HPS-1.0 Spec on GitHub ↗</a>
+         <a href="https://trustnodelogic.web.app" target="_blank" rel="noopener noreferrer">DAW Attestation Web App ↗</a>
+         <a href="https://trustnodelogic.com/contact.html">Discuss HPS Implementation →</a>
+       </nav>
+     </div>
    </aside>
-   <div class="lab-resources">
-     <details>
-       <summary>Field notes archive links</summary>
-       <nav aria-label="More research articles">
+
+   <div class="lab-footer-side">
+     <nav class="lab-social-grid" aria-label="Artist profiles">
+       <a href="https://x.com/TheInnerVision" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" class="tech-card lab-social-tile">
+         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+         <span>X / Twitter</span>
+       </a>
+       <a href="https://youtube.com/@loserdub" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="tech-card lab-social-tile">
+         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
+         <span>YouTube</span>
+       </a>
+       <a href="https://www.linkedin.com/in/jray-me/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="tech-card lab-social-tile">
+         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+         <span>LinkedIn</span>
+       </a>
+       <a href="https://network.landr.com/users/vision-hybrid" target="_blank" rel="noopener noreferrer" aria-label="LANDR Network" class="tech-card lab-social-tile">
+         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"></path></svg>
+         <span>LANDR</span>
+       </a>
+     </nav>
+
+     <div class="tech-card lab-archive-panel">
+       <div class="lab-archive-head">
+         <span>[ SELECTED RESEARCH ARCHIVE ]</span>
+         <a href="./field-notes.html">ALL PAPERS →</a>
+       </div>
+       <nav class="lab-archive-links" aria-label="More research articles">
          <a href="./centroidgeo.html">Centroid GEO</a>
-         <a href="./oct2026aireport.html">October 2026 AI report</a>
-         <a href="./staccatoreview.html">Staccato AI review</a>
-         <a href="./markov-chains.html">Markov chains in DSP</a>
+         <a href="./oct2026aireport.html">October 2026 AI Report</a>
+         <a href="./staccatoreview.html">Staccato AI Review</a>
+         <a href="./markov-chains.html">Markov Chains in DSP</a>
          <a href="./humanbridge.html">Human Contribution Score</a>
-         <a href="./sunonewtos.html">Suno terms of service</a>
-         <a href="./c2pa-music-provenance.html">C2PA music provenance</a>
-         <a href="./agentichybridproduction.html">Multi-agent DAWs</a>
+         <a href="./sunonewtos.html">Suno Terms of Service</a>
+         <a href="./c2pa-music-provenance.html">C2PA Music Provenance</a>
+         <a href="./agentichybridproduction.html">Multi-Agent DAWs</a>
        </nav>
-     </details>
-     <details>
-       <summary>Attestation resources</summary>
-       <table aria-label="Attestation tools and standards"><tbody>
-         <tr><th scope="row">Classification</th><td>The <a href="./hybridproductionstandard.html">Hybrid Production Standard</a> defines the five production axes.</td></tr>
-         <tr><th scope="row">Implementation</th><td>The <a href="https://trustnodelogic.web.app">DAW attestation web app</a> applies the standard to a session.</td></tr>
-       </tbody></table>
-       <nav aria-label="Implementation resources">
-         <a href="https://github.com/Loserdub/HPS-1.0-Hybrid-Production-Standard">HPS specification on GitHub</a>
-         <a href="https://trustnodelogic.com/contact.html">Discuss HPS implementation</a>
-       </nav>
-     </details>
+     </div>
    </div>
  </div>
  <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
@@ -601,6 +727,7 @@
  <a href="./music.html" class="hover:text-[#EAEAEA] transition-colors">Music</a>
  <a href="./about.html" class="hover:text-[#EAEAEA] transition-colors">About</a>
  <a href="./services.html" class="hover:text-[#EAEAEA] transition-colors">Services</a>
+ <a href="./contact.html" class="hover:text-[#EAEAEA] transition-colors">Contact</a>
  <a href="./sitemap.xml" class="hover:text-[#EAEAEA] transition-colors">Sitemap</a>
  </nav>
  </div>
