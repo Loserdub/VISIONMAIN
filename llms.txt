@@ -32,9 +32,8 @@
 
 ## Core Pages & Applications
 
-### [Home & Manifesto](https://trustnodelogic.com/)
-- **Summary**: Foundational manifesto of the Hybrid AI Music Production movement, outlining the philosophy of treating neural generators as co-instruments rather than replacements for human audio engineering.
-- **Key Concepts**: Hybrid AI Music Production, Creative Technologist, Audio Engineering, MIXR Studio, Browser-Native DSP.
+### [Trust Node Logic](https://trustnodelogic.com/)
+The lab is home to the [HPS Attestation Engine](https://hps.trustnodelogic.com/), browser audio tools, research field notes, independent releases, and studio services.
 
 ### [About & Origins](https://trustnodelogic.com/about.html)
 - **Summary**: Comprehensive background of Justin Ray (JRAY / loserdub), tracing the evolution from songwriting and beta research on Google MusicLM and Suno to founder of Trust Node Logic and r/hybridproduction.

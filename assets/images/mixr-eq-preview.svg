@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 140">
+  <defs>
+    <linearGradient id="fill" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop stop-color="#00f0ff" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#00f0ff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke="#596167" stroke-width=".7">
+    <rect x="36" y="6" width="396" height="110"/>
+    <path d="M36 33.5h396 M36 61h396 M36 88.5h396 M78 6v110 M123 6v110 M165 6v110 M212 6v110 M258 6v110 M301 6v110 M337 6v110 M378 6v110"/>
+  </g>
+  <path d="M36 76 C76 75 94 43 124 44 S197 71 256 73 S367 46 432 45 V116 H36Z" fill="url(#fill)"/>
+  <g stroke="#00f0ff" fill="none">
+    <path stroke-width="3" d="M36 76 C76 75 94 43 124 44 S197 71 256 73 S367 46 432 45"/>
+    <g fill="#10191b" stroke-width="2">
+      <circle cx="78" cy="62" r="4.5"/><circle cx="124" cy="44" r="4.5"/>
+      <circle cx="256" cy="73" r="4.5"/><circle cx="337" cy="61" r="4.5"/>
+    </g>
+  </g>
+  <g fill="#c8c8cd" font-family="monospace" font-size="10">
+    <g text-anchor="end"><text x="28" y="10">+12</text><text x="28" y="37">+6</text><text x="28" y="65">0</text><text x="28" y="92">-6</text><text x="28" y="119">-12</text></g>
+    <g text-anchor="middle"><text x="36" y="134">20</text><text x="78" y="134">50</text><text x="123" y="134">100</text><text x="165" y="134">250</text><text x="212" y="134">500</text><text x="258" y="134">1k</text><text x="301" y="134">2.5k</text><text x="337" y="134">5k</text><text x="378" y="134">10k</text><text x="428" y="134">20k</text></g>
+  </g>
+</svg>
