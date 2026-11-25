@@ -23,12 +23,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
-          python-version: "3.11"
+          python-version: "3.12"
 
       - name: Install Python Dependencies
         run: |
@@ -36,9 +36,9 @@ jobs:
           pip install beautifulsoup4 lxml
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: "20"
+          node-version: "24"
           cache: "npm"
 
       - name: Install Node Dependencies
@@ -53,7 +53,7 @@ jobs:
         run: python scripts/comprehensive_audit.py
 
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Stage Production Site Artifact
         run: |
@@ -65,21 +65,36 @@ jobs:
               *) cp "$f" _site/ ;;
             esac
           done
-          for f in style.css .nojekyll CNAME robots.txt sitemap.xml llms.txt humans.txt favicon.png bio-avatar.jpg loserdubbanner*.png *.txt; do
+          for f in style.css .nojekyll CNAME robots.txt sitemap.xml llms.txt humans.txt favicon.png bio-avatar.jpg *.txt; do
             [ -f "$f" ] && cp "$f" _site/
           done
           cp -r assets _site/assets
           rm -f _site/assets/*.html
+          rm -f _site/assets/images/loserdubbanner*.png \
+                _site/assets/images/absss.png \
+                _site/assets/images/cyclediagram.jpg \
+                _site/assets/images/music-card.png \
+                _site/assets/images/black-mirror-card.png \
+                _site/assets/images/mixr-card.png \
+                _site/assets/images/forensicssocial.jpg \
+                _site/assets/images/bio-card-og.jpg \
+                _site/assets/images/hps-social-card.png \
+                _site/assets/images/machine-promptcard.png
           cp -r void _site/void
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: "_site"
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
+
+      - name: Verify Live Deployment
+        run: |
+          curl -fsSI --retry 3 --retry-delay 5 "${{ steps.deployment.outputs.page_url }}"
+          curl -fsSL --retry 3 --retry-delay 5 "${{ steps.deployment.outputs.page_url }}" | grep -q "hps-human-to-machine.webp"
 
       - name: Ping Search Engines via IndexNow
         continue-on-error: true

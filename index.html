@@ -424,8 +424,6 @@
  <link rel="prefetch" href="./field-notes.html">
  <link rel="prefetch" href="./music.html">
  <link rel="prefetch" href="./projects.html">
-
-  <link rel="stylesheet" href="./assets/home.css">
 </head>
 <body class="bg-[#0B0C0E] text-[#EAEAEA] antialiased overflow-x-hidden dot-matrix-bg selection:bg-[#FF9F1C] selection:text-black font-sans min-h-screen flex flex-col">
  
@@ -606,6 +604,74 @@
             <strong>PDF · JSON · DDEX ERN 4.3</strong>
           </div>
         </article>
+      </div>
+
+      <div class="lab-sim tech-card" id="hps-tier-simulator">
+        <div class="lab-sim-head">
+          <div class="lab-sim-title"><span>[ LIVE ]</span> 5-AXIS TIER SIMULATOR (HPS-1.0)</div>
+          <div class="lab-sim-presets" role="group" aria-label="Production tier presets">
+            <button type="button" class="lab-preset-btn" data-preset="H">Tier H Preset</button>
+            <button type="button" class="lab-preset-btn" data-preset="X1">Tier X1 Preset</button>
+            <button type="button" class="lab-preset-btn" data-preset="X4">Tier X4 Preset</button>
+            <button type="button" class="lab-preset-btn" data-preset="A">Tier A Preset</button>
+          </div>
+        </div>
+        <div class="lab-sim-grid">
+          <div class="lab-sim-axes">
+            <div class="lab-axis-row">
+              <span class="lab-axis-label"><span>01</span>Origination (O)</span>
+              <div class="lab-axis-group" data-axis="origination" role="group" aria-label="Origination axis">
+                <button type="button" class="lab-axis-btn is-active" data-val="H" aria-pressed="true">H</button>
+                <button type="button" class="lab-axis-btn" data-val="H+A" aria-pressed="false">H+A</button>
+                <button type="button" class="lab-axis-btn" data-val="A" aria-pressed="false">A</button>
+              </div>
+            </div>
+            <div class="lab-axis-row">
+              <span class="lab-axis-label"><span>02</span>Performance (P)</span>
+              <div class="lab-axis-group" data-axis="performance" role="group" aria-label="Performance axis">
+                <button type="button" class="lab-axis-btn is-active" data-val="H" aria-pressed="true">H</button>
+                <button type="button" class="lab-axis-btn" data-val="H+A" aria-pressed="false">H+A</button>
+                <button type="button" class="lab-axis-btn" data-val="A" aria-pressed="false">A</button>
+              </div>
+            </div>
+            <div class="lab-axis-row">
+              <span class="lab-axis-label"><span>03</span>Curation (C)</span>
+              <div class="lab-axis-group" data-axis="curation" role="group" aria-label="Curation axis">
+                <button type="button" class="lab-axis-btn is-active" data-val="H" aria-pressed="true">H</button>
+                <button type="button" class="lab-axis-btn" data-val="H+A" aria-pressed="false">H+A</button>
+                <button type="button" class="lab-axis-btn" data-val="A" aria-pressed="false">A</button>
+              </div>
+            </div>
+            <div class="lab-axis-row">
+              <span class="lab-axis-label"><span>04</span>Sound Source (S)</span>
+              <div class="lab-axis-group" data-axis="sound_source" role="group" aria-label="Sound Source axis">
+                <button type="button" class="lab-axis-btn" data-val="H" aria-pressed="false">H</button>
+                <button type="button" class="lab-axis-btn is-active" data-val="H+A" aria-pressed="true">H+A</button>
+                <button type="button" class="lab-axis-btn" data-val="A" aria-pressed="false">A</button>
+              </div>
+            </div>
+            <div class="lab-axis-row">
+              <span class="lab-axis-label"><span>05</span>Post-Production (M)</span>
+              <div class="lab-axis-group" data-axis="post_production" role="group" aria-label="Post-Production axis">
+                <button type="button" class="lab-axis-btn" data-val="H" aria-pressed="false">H</button>
+                <button type="button" class="lab-axis-btn is-active" data-val="H+A" aria-pressed="true">H+A</button>
+                <button type="button" class="lab-axis-btn" data-val="A" aria-pressed="false">A</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="lab-sim-readout" aria-live="polite">
+            <div>
+              <span class="lab-tier-badge" id="sim-tier-badge" data-tier="X1">[HPS-X1] HUMAN-LED HYBRID</span>
+              <div class="lab-sim-vector" id="sim-vector" style="margin-top: 0.75rem;">Vector: [O:H, P:H, C:H, S:H+A, M:H+A]</div>
+              <p class="lab-sim-desc" id="sim-desc" style="margin-top: 0.75rem;">Human core composition, live performance, and DAW arrangement, with generative textures or assistive mastering.</p>
+            </div>
+            <div class="lab-sim-meta">
+              <div>[LEGAL] <strong id="sim-legal">USCO copyrightable; synthetic elements disclaimed</strong></div>
+              <div>[FULL ENGINE] <a class="lab-link" href="./hps5axes.html">5-Axis Deep Dive →</a></div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="lab-reference-links">
@@ -809,6 +875,123 @@
       } else {
         setTimeout(initViewportPrefetch, 2000);
       }
+    })();
+  </script>
+
+  <!-- Interactive HPS-1.0 5-Axis Tier Simulator -->
+  <script>
+    (function() {
+      var sim = document.getElementById('hps-tier-simulator');
+      if (!sim) return;
+
+      var state = {
+        origination: 'H',
+        performance: 'H',
+        curation: 'H',
+        sound_source: 'H+A',
+        post_production: 'H+A'
+      };
+
+      var presets = {
+        H: { origination: 'H', performance: 'H', curation: 'H', sound_source: 'H', post_production: 'H' },
+        X1: { origination: 'H', performance: 'H', curation: 'H', sound_source: 'H+A', post_production: 'H+A' },
+        X4: { origination: 'A', performance: 'A', curation: 'H', sound_source: 'A', post_production: 'H+A' },
+        A: { origination: 'A', performance: 'A', curation: 'A', sound_source: 'A', post_production: 'A' }
+      };
+
+      var badgeEl = document.getElementById('sim-tier-badge');
+      var vectorEl = document.getElementById('sim-vector');
+      var descEl = document.getElementById('sim-desc');
+      var legalEl = document.getElementById('sim-legal');
+
+      function scoreTier(s) {
+        var o = s.origination, p = s.performance, c = s.curation, ss = s.sound_source, m = s.post_production;
+        if (o === 'H' && p === 'H' && c === 'H' && ss === 'H' && (m === 'H' || m === 'H+A')) {
+          return {
+            code: 'H',
+            badge: '[HPS-H] HUMAN PRODUCTION',
+            desc: '100% human composition, live performance, acoustic/instrument sources, and arrangement with optional assistive mastering.',
+            legal: 'Full USCO human authorship; exempt from EU AI Act Art. 50 synthetic marking'
+          };
+        }
+        if (o === 'H' && p === 'H' && c === 'H') {
+          return {
+            code: 'X1',
+            badge: '[HPS-X1] HUMAN-LED HYBRID',
+            desc: 'Human core composition, live performance, and DAW arrangement, with generative textures or assistive mastering.',
+            legal: 'USCO copyrightable; synthetic elements disclaimed'
+          };
+        }
+        if (o === 'A' && p === 'A' && c === 'A' && ss === 'A') {
+          return {
+            code: 'A',
+            badge: '[HPS-A] AI PRODUCTION',
+            desc: 'Autonomous generative synthesis where human input is restricted to prompting or unedited audio export.',
+            legal: 'No USCO human authorship; EU AI Act Art. 50 synthetic marking required'
+          };
+        }
+        if (o === 'A' && p === 'A' && c === 'H') {
+          return {
+            code: 'X4',
+            badge: '[HPS-X4] CURATED HYBRID',
+            desc: 'AI executed composition and vocal synthesis while a human producer performed selection, chopping, and arrangement.',
+            legal: 'Raw stems uncopyrightable; compilation/arrangement claim under Circular 56'
+          };
+        }
+        if (o === 'A' && (p === 'H' || p === 'H+A') && c === 'H') {
+          return {
+            code: 'X3',
+            badge: '[HPS-X3] AI-LED HYBRID',
+            desc: 'AI model generated the initial seed while a human producer re-tracked instruments and rebuilt structure.',
+            legal: 'Protectable human derivative work; prompt seed disclaimed'
+          };
+        }
+        return {
+          code: 'X2',
+          badge: '[HPS-X2] CO-CREATIVE HYBRID',
+          desc: 'Collaborative human and generative ideation during melody writing or tracking while keeping human structural control.',
+          legal: 'Case-by-case USCO registration; human layers isolated in manifest'
+        };
+      }
+
+      function syncUI() {
+        sim.querySelectorAll('.lab-axis-group').forEach(function(group) {
+          var axis = group.getAttribute('data-axis');
+          var val = state[axis];
+          group.querySelectorAll('.lab-axis-btn').forEach(function(btn) {
+            var active = btn.getAttribute('data-val') === val;
+            btn.classList.toggle('is-active', active);
+            btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+          });
+        });
+
+        var res = scoreTier(state);
+        badgeEl.setAttribute('data-tier', res.code);
+        badgeEl.textContent = res.badge;
+        vectorEl.textContent = 'Vector: [O:' + state.origination + ', P:' + state.performance + ', C:' + state.curation + ', S:' + state.sound_source + ', M:' + state.post_production + ']';
+        descEl.textContent = res.desc;
+        legalEl.textContent = res.legal;
+      }
+
+      sim.addEventListener('click', function(e) {
+        var axisBtn = e.target.closest('.lab-axis-btn');
+        if (axisBtn) {
+          var group = axisBtn.closest('.lab-axis-group');
+          if (group) {
+            state[group.getAttribute('data-axis')] = axisBtn.getAttribute('data-val');
+            syncUI();
+          }
+          return;
+        }
+        var presetBtn = e.target.closest('.lab-preset-btn');
+        if (presetBtn) {
+          var p = presets[presetBtn.getAttribute('data-preset')];
+          if (p) {
+            Object.keys(p).forEach(function(k) { state[k] = p[k]; });
+            syncUI();
+          }
+        }
+      }, { passive: true });
     })();
   </script>
 </body>
