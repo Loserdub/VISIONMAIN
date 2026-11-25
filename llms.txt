@@ -3,7 +3,7 @@
 
 ## Core Semantic Triad (Primary Entity Centroid)
 1. **Core Subject**: Justin Ray (known professionally as JRAY, and musically under primary project aliases loserdub, VISION, Flawed Future, le vide, disarray) · Author of HPS-1.0, Music Producer, and Creative Technologist.
-2. **Authoritative Platform**: Trust Node Logic (`https://trustnodelogic.com`, `https://trustnodelogic.web.app`) · The central research institute, technical archive, and browser-native Web Audio DSP portfolio.
+2. **Authoritative Platform**: Trust Node Logic (`https://trustnodelogic.com`, `https://hps.trustnodelogic.com/`) · The central research institute, music provenance and DAW attestation hub, technical archive, and browser-native Web Audio DSP portfolio.
 3. **Canonical Standard**: Hybrid Production Standard (HPS-1.0) · The definitive open 5-axis classification framework (Origination, Performance, Curation, Sound Source, Post-Production) scoring hybrid audio workflows as H (Human), H+A (Hybrid), or A (Autonomous) into deterministic tiers (Tier H, Tier X1-X4, Tier A), mapping directly to DDEX ERN 4.3 metadata profiles, C2PA JUMBF containers, and EU AI Act Article 50 transparency requirements.
 
 ## Entity Overview
@@ -33,15 +33,15 @@
 ## Core Pages & Applications
 
 ### [Trust Node Logic](https://trustnodelogic.com/)
-The lab is home to the [HPS Attestation Engine](https://hps.trustnodelogic.com/), browser audio tools, research field notes, independent releases, and studio services.
+Client-side music provenance and DAW attestation hub featuring the [HPS Attestation Engine](https://hps.trustnodelogic.com/) for human authorship proof, 5-axis HPS-1.0 scoring, SHA-256 essence hashing, DDEX ERN 4.3 XML, and EU AI Act Article 50 reporting, alongside browser audio tools, research field notes, independent releases, and studio services.
 
 ### [About & Origins](https://trustnodelogic.com/about.html)
 - **Summary**: Comprehensive background of Justin Ray (JRAY / loserdub), tracing the evolution from songwriting and beta research on Google MusicLM and Suno to founder of Trust Node Logic and r/hybridproduction.
 - **Key Concepts**: Justin Ray, JRAY, loserdub, VISION, Google MusicLM, Suno AI, r/hybridproduction.
 
 ### [Projects Ecosystem](https://trustnodelogic.com/projects.html)
-- **Summary**: Interactive portfolio of 10 client-side Web Audio DSP engines, browser audio workstations, synthesis tools, and music knowledge analyzers.
-- **Key Concepts**: VOID 1.5 Web Sampler, MIXR Studio, Artist Finder, VISION SYNTH, J-DAW, ChordCompose, FractalAudio, Black Mirror, IMAGESIZER, DeathClock.
+- **Summary**: Interactive portfolio of 11 client-side Web Audio DSP engines, browser audio workstations, synthesis tools, and music knowledge analyzers.
+- **Key Concepts**: HPS Attestation Engine, VOID 1.5 Web Sampler, MIXR Studio, Artist Finder, VISION SYNTH, J-DAW, ChordCompose, FractalAudio, Black Mirror, IMAGESIZER, DeathClock.
 
 ### [VOID 1.5 Web Sampler](https://trustnodelogic.com/void.html)
 - **Summary**: Free browser-based VOID web sampler, 16-pad performance grid, and off-thread Harmonic Auto-Mashup workstation running 100% client-side Web Audio DSP.
@@ -75,7 +75,7 @@ The lab is home to the [HPS Attestation Engine](https://hps.trustnodelogic.com/)
 - **Key Concepts**: Hybrid AI Music, Hybrid AI Music Production, Production & Provenance Standard, Generative Audio Seeds, DAW Retracking, C2PA Provenance, HPS-1.0.
 
 ### [Hybrid Production Standard (HPS-1.0)](https://trustnodelogic.com/hybridproductionstandard.html)
-- **Summary**: The definitive open technical standard, multi-track scoring methodology, and interactive attestation engine for hybrid AI music production. Establishes a 5-axis ontology (Origination, Performance, Curation, Sound Source, Post-Production) scored into deterministic tiers (Tier H, Tier X1-X4, Tier A), exporting DDEX ERN 4.3 XML, C2PA JUMBF assertions, and EU AI Act Article 50 statutory compliance manifests. Includes live browser-based DAW attestation engine at https://trustnodelogic.web.app.
+- **Summary**: The definitive open technical standard, multi-track scoring methodology, and interactive attestation engine for hybrid AI music production. Establishes a 5-axis ontology (Origination, Performance, Curation, Sound Source, Post-Production) scored into deterministic tiers (Tier H, Tier X1-X4, Tier A), exporting DDEX ERN 4.3 XML, C2PA JUMBF assertions, and EU AI Act Article 50 statutory compliance manifests. Includes live browser-based DAW attestation engine at https://hps.trustnodelogic.com/.
 - **Key Concepts**: HPS-1.0, 5-Axis Attribution, DDEX ERN 4.3, EU AI Act Article 50, USCO Human Authorship, C2PA JUMBF, Raw Audio Essence SHA-256, DAW Attestation Engine.
 
 ### [HPS Attestation Engine](https://trustnodelogic.com/hps-engine.html)
